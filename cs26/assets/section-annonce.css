@@ -1,0 +1,33 @@
+/* CS-26 · section-annonce.css · Bandeau d'annonce (§8.18) */
+.cs-annonce {
+  min-height: 40px;
+  background: var(--c-bg-2);
+  border-bottom: 1px solid var(--c-line);
+}
+.cs-annonce__interieur {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  min-height: 40px;
+}
+.cs-annonce__texte {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-small);
+  color: var(--c-text-2);
+  text-decoration: none;
+  max-width: none;
+}
+a.cs-annonce__texte:hover { color: var(--c-text); }
+a.cs-annonce__texte .cs-icone { color: var(--c-accent); }
+.cs-annonce__fermer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 40px;
+  color: var(--c-text-3);
+  margin-left: auto;
+}
+.cs-annonce__fermer:hover { color: var(--c-text); }

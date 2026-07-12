@@ -1,0 +1,114 @@
+{%- comment -%}
+  cs-services.liquid · Grille de services (§8.5) : router le visiteur vers
+  SON problème. Zone cliquable = toute la carte, ancres descriptives (YANIS).
+{%- endcomment -%}
+{%- if section.blocks.size > 0 -%}
+{{ 'section-services.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign anim = section.settings.animation
+  if anim == 'auto'
+    assign anim = 'up'
+  endif
+-%}
+<section id="{{ section.id }}"
+  class="cs-section cs-services{% if section.settings.bg_style == 'alt' %} cs-section--alt{% elsif section.settings.bg_style == 'halo' %} cs-section--halo{% endif %}"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container">
+    {%- if section.settings.titre != blank -%}
+      <header class="cs-section__tete" {% unless anim == 'none' %}data-reveal="{{ anim }}"{% endunless %}>
+        {% render 'eyebrow', texte: section.settings.eyebrow %}
+        <h2 class="cs-h2">{{ section.settings.titre | escape }}</h2>
+        {%- if section.settings.intro != blank -%}
+          <p>{{ section.settings.intro | escape }}</p>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    <div class="cs-services__grille" data-reveal-group>
+      {%- for block in section.blocks -%}
+        {%- if block.settings.titre != blank -%}
+          <article class="cs-carte cs-services__carte{% if block.settings.phare %} cs-services__carte--phare{% endif %}"
+            {% unless anim == 'none' %}data-reveal="{{ anim }}"{% endunless %} {{ block.shopify_attributes }}>
+            {%- if block.settings.phare -%}
+              <span class="cs-chip cs-chip--braise cs-services__tag">Le plus demandé</span>
+            {%- endif -%}
+            <span class="cs-pastille-icone">{% render 'icone', nom: block.settings.icone %}</span>
+            <h3 class="cs-h3 cs-services__titre">
+              {%- if block.settings.page != blank -%}
+                <a href="{{ block.settings.page }}" class="cs-services__lien-carte">{{ block.settings.titre | escape }}</a>
+              {%- else -%}
+                {{ block.settings.titre | escape }}
+              {%- endif -%}
+            </h3>
+            {%- if block.settings.texte != blank -%}
+              <p class="cs-services__texte">{{ block.settings.texte | escape }}</p>
+            {%- endif -%}
+            {%- if block.settings.page != blank -%}
+              <span class="cs-lien cs-services__decouvrir" aria-hidden="true">
+                Découvrir {% render 'icone', nom: 'fleche', taille: 18 %}
+              </span>
+              {% render 'icone', nom: 'fleche-45', taille: 20, classe: 'cs-carte__fleche' %}
+            {%- endif -%}
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CS · Services",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "info": "28 caractères max" },
+    { "type": "text", "id": "titre", "label": "Titre (H2)", "info": "60 caractères max" },
+    { "type": "textarea", "id": "intro", "label": "Introduction", "info": "180 caractères max" },
+    { "type": "select", "id": "bg_style", "label": "Fond",
+      "options": [ { "value": "base", "label": "Base" }, { "value": "alt", "label": "Alterné" }, { "value": "halo", "label": "Halo braise" } ], "default": "base" },
+    { "type": "select", "id": "animation", "label": "Animation d'apparition",
+      "options": [ { "value": "auto", "label": "Automatique (recommandé)" }, { "value": "up", "label": "Montée" }, { "value": "scale", "label": "Zoom" }, { "value": "clip", "label": "Rideau" }, { "value": "fade", "label": "Fondu" }, { "value": "none", "label": "Aucune" } ], "default": "auto" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service",
+      "limit": 6,
+      "settings": [
+        { "type": "url", "id": "page", "label": "Page du service", "info": "MUST : lien vers une page du manifest §9.1 (anti-404)." },
+        { "type": "select", "id": "icone", "label": "Icône",
+          "options": [
+            { "value": "site", "label": "Site" },
+            { "value": "seo", "label": "SEO" },
+            { "value": "cible", "label": "Google Ads" },
+            { "value": "social", "label": "Social Ads" },
+            { "value": "conversion", "label": "CRO / Conversion" },
+            { "value": "maintenance", "label": "Maintenance" },
+            { "value": "etincelle", "label": "Étincelle" },
+            { "value": "eclair", "label": "Éclair" }
+          ],
+          "default": "etincelle" },
+        { "type": "text", "id": "titre", "label": "Titre", "info": "28 caractères max" },
+        { "type": "textarea", "id": "texte", "label": "Texte", "info": "110 caractères max" },
+        { "type": "checkbox", "id": "phare", "label": "Carte phare (« Le plus demandé »)", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "CS · Services",
+      "blocks": [
+        { "type": "service", "settings": { "icone": "site", "titre": "Création de site" } },
+        { "type": "service", "settings": { "icone": "seo", "titre": "Référencement SEO" } },
+        { "type": "service", "settings": { "icone": "cible", "titre": "Google Ads" } },
+        { "type": "service", "settings": { "icone": "social", "titre": "Social Ads" } },
+        { "type": "service", "settings": { "icone": "conversion", "titre": "CRO / Conversion" } },
+        { "type": "service", "settings": { "icone": "maintenance", "titre": "Maintenance & growth" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,460 @@
+/* ============================================================
+   CS-26 · cs-base.css
+   Couches : 1 reset · 2 tokens statiques · 3 typographie ·
+   4 layout · 5 composants partagés · 6 utilitaires
+   Les tokens COULEUR sont injectés par layout/theme.liquid
+   ({% style %}) : aucun hex ici.
+   ============================================================ */
+
+/* ---------- 1 · RESET MINIMAL ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { min-height: 100svh; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img, picture, svg, canvas, video { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { background: none; border: 0; cursor: pointer; }
+a { color: inherit; }
+ul[class], ol[class] { list-style: none; padding: 0; }
+h1, h2, h3, h4, p { overflow-wrap: break-word; }
+
+/* ---------- 2 · TOKENS STATIQUES ---------- */
+:root {
+  /* Espacements §3.3 */
+  --sp-1: 4px;  --sp-2: 8px;   --sp-3: 12px; --sp-4: 16px; --sp-5: 24px;
+  --sp-6: 32px; --sp-7: 48px;  --sp-8: 64px; --sp-9: 96px; --sp-10: 120px;
+  --sp-section: clamp(64px, 8vw, 120px);
+
+  /* Rayons §3.4 */
+  --r-s: 10px; --r-m: 16px; --r-l: 24px; --r-xl: 32px; --r-pill: 999px;
+  --shape-amp: 56px;
+
+  /* Typo fluide §3.2 */
+  --fs-display: clamp(2.5rem, 1.4rem + 4.8vw, 4.5rem);
+  --fs-h1: clamp(2.125rem, 1.3rem + 3.6vw, 3.5rem);
+  --fs-h2: clamp(1.625rem, 1.15rem + 2.1vw, 2.5rem);
+  --fs-h3: clamp(1.185rem, 1.05rem + .6vw, 1.4rem);
+  --fs-body: clamp(1rem, .95rem + .25vw, 1.125rem);
+  --fs-small: .875rem;
+  --fs-eyebrow: .8125rem;
+
+  /* Motion §4.2 */
+  --d-1: 200ms; --d-2: 350ms; --d-3: 600ms; --d-4: 900ms;
+  --e-out: cubic-bezier(.22, 1, .36, 1);
+  --e-spring: cubic-bezier(.34, 1.35, .44, 1);
+  --e-inout: cubic-bezier(.65, 0, .35, 1);
+  --stagger: 80ms;
+
+  /* Ombres §3.5 (dark : défaut) */
+  --sh-1: 0 6px 24px rgba(4, 6, 10, .35);
+  --sh-2: 0 16px 48px rgba(4, 6, 10, .45);
+  --sh-accent: 0 12px 40px var(--c-glow);
+
+  --header-h: 60px;
+}
+@media (min-width: 640px) { :root { --shape-amp: 96px; } }
+@media (min-width: 900px) { :root { --header-h: 72px; } }
+html[data-scrolled] { --header-h: 60px; }
+
+[data-theme="light"] {
+  --sh-1: 0 6px 24px rgba(20, 22, 28, .10);
+  --sh-2: 0 16px 48px rgba(20, 22, 28, .16);
+}
+
+/* Motion levels §4.1 */
+[data-motion="soft"] { --d-1: 120ms; --d-2: 210ms; --d-3: 360ms; --d-4: 540ms; --stagger: 0ms; }
+
+/* ---------- 3 · TYPOGRAPHIE ---------- */
+body {
+  font-family: var(--font-texte, "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  color: var(--c-text-2);
+  background: var(--c-bg);
+}
+h1, h2, h3, .cs-display, .cs-h1, .cs-h2, .cs-h3 {
+  font-family: var(--font-display, "Bricolage Grotesque", system-ui, sans-serif);
+  color: var(--c-text);
+  font-weight: 600;
+  line-height: 1.12;
+}
+.cs-display { font-size: var(--fs-display); line-height: 1.04; font-weight: 700; }
+.cs-h1 { font-size: var(--fs-h1); }
+.cs-h2 { font-size: var(--fs-h2); }
+.cs-h3 { font-size: var(--fs-h3); }
+p { max-width: 62ch; }
+small, .cs-small { font-size: var(--fs-small); }
+.cs-meta { font-size: var(--fs-small); color: var(--c-text-3); }
+
+.cs-eyebrow {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--c-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  max-width: none;
+}
+.cs-eyebrow::before {
+  content: "";
+  width: 20px; height: 2px;
+  background: var(--g-braise);
+  border-radius: var(--r-pill);
+}
+
+/* Souligné braise signature (mot clé du H1, liens accent) */
+.cs-souligne {
+  background-image: var(--g-braise);
+  background-repeat: no-repeat;
+  background-position: 0 92%;
+  background-size: 100% .12em;
+}
+html.js [data-reveal-underline] .cs-souligne {
+  background-size: 0% .12em;
+  transition: background-size var(--d-3) var(--e-out) 350ms;
+}
+html.js [data-reveal-underline].is-in .cs-souligne { background-size: 100% .12em; }
+
+/* ---------- 4 · LAYOUT ---------- */
+.cs-container { width: min(100% - 40px, 1240px); margin-inline: auto; }
+@media (min-width: 900px) { .cs-container { width: min(100% - 64px, 1240px); } }
+
+.cs-section {
+  padding-block: var(--pt, var(--sp-section)) var(--pb, var(--sp-section));
+  position: relative;
+}
+.cs-section--alt { background: var(--c-bg-2); }
+.cs-section--halo {
+  background-color: var(--c-bg);
+  background-image:
+    radial-gradient(ellipse 70% 50% at 50% 0%, var(--c-glow), transparent 70%),
+    radial-gradient(var(--c-line) 1px, transparent 1px);
+  background-size: auto, 28px 28px;
+}
+
+.cs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-5); }
+@media (min-width: 640px) { .cs-grid { grid-template-columns: repeat(8, 1fr); } }
+@media (min-width: 900px) { .cs-grid { grid-template-columns: repeat(12, 1fr); } }
+
+.cs-section__tete { display: grid; gap: var(--sp-4); margin-bottom: var(--sp-7); max-width: 720px; }
+.cs-section__tete--centre { margin-inline: auto; text-align: center; justify-items: center; }
+
+/* ---------- 5 · COMPOSANTS PARTAGÉS ---------- */
+
+/* Verre §3.5 */
+.cs-glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-line);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-radius: var(--r-l);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .cs-glass { background: color-mix(in srgb, var(--c-surface) 92%, transparent); }
+}
+
+/* Boutons §4.10 */
+.cs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: 48px;
+  padding: var(--sp-3) var(--sp-5);
+  border-radius: var(--r-pill);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  text-decoration: none;
+  transition: transform var(--d-1) var(--e-out), box-shadow var(--d-1) var(--e-out),
+              background-color var(--d-1) var(--e-out), border-color var(--d-1) var(--e-out);
+}
+.cs-btn--primaire { background: var(--g-braise); color: var(--c-accent-ink); }
+.cs-btn--primaire:hover { transform: translateY(-2px); box-shadow: var(--sh-accent); }
+.cs-btn--primaire:active { transform: translateY(0) scale(.98); }
+.cs-btn--secondaire { border: 1px solid var(--c-line); color: var(--c-text); background: transparent; }
+.cs-btn--secondaire:hover { border-color: var(--glass-line); background: var(--glass-bg); }
+.cs-btn--secondaire:active { transform: scale(.98); }
+.cs-btn__reassurance {
+  display: block;
+  margin-top: var(--sp-2);
+  font-size: var(--fs-small);
+  color: var(--c-text-3);
+  max-width: none;
+}
+
+/* Lien accent : LE souligné signature §4.10 */
+.cs-lien {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--c-text);
+  font-weight: 500;
+  text-decoration: none;
+  background-image: var(--g-braise);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  padding-bottom: 2px;
+  transition: background-size var(--d-2) var(--e-out);
+}
+.cs-lien:hover, .cs-lien:focus-visible { background-size: 100% 2px; }
+.cs-lien .cs-icone { transition: transform var(--d-2) var(--e-out); }
+.cs-lien:hover .cs-icone { transform: translateX(3px); }
+
+/* Cartes §4.10 */
+.cs-carte {
+  position: relative;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-l);
+  padding: var(--sp-6);
+  transition: transform var(--d-2) var(--e-out), border-color var(--d-2) var(--e-out),
+              background-color var(--d-2) var(--e-out);
+}
+.cs-carte:hover { transform: translateY(-4px); border-color: var(--glass-line); background: var(--c-surface-2); }
+.cs-carte__fleche {
+  position: absolute;
+  top: var(--sp-5); right: var(--sp-5);
+  color: var(--c-accent);
+  opacity: 0;
+  transform: translate(-6px, 6px);
+  transition: opacity var(--d-2) var(--e-out), transform var(--d-2) var(--e-out);
+}
+.cs-carte:hover .cs-carte__fleche { opacity: 1; transform: translate(0, 0); }
+
+/* Pastille icône braise */
+.cs-pastille-icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  border-radius: var(--r-pill);
+  color: var(--c-accent);
+  background: linear-gradient(120deg,
+    color-mix(in srgb, var(--c-accent) 12%, transparent),
+    color-mix(in srgb, var(--c-accent-2) 12%, transparent));
+}
+
+/* Chips */
+.cs-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 44px;
+  padding: var(--sp-2) var(--sp-4);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-small);
+  color: var(--c-text-2);
+  text-decoration: none;
+  transition: border-color var(--d-1) var(--e-out), color var(--d-1) var(--e-out), background-color var(--d-1) var(--e-out);
+}
+.cs-chip:hover, .cs-chip[aria-pressed="true"] {
+  border-color: var(--c-accent);
+  color: var(--c-text);
+  background: color-mix(in srgb, var(--c-accent) 8%, transparent);
+}
+.cs-chip--braise {
+  border: 0;
+  background: var(--g-braise);
+  color: var(--c-accent-ink);
+  font-weight: 600;
+  min-height: 32px;
+}
+
+/* Formes signature §3.4 */
+[data-shape] { overflow: hidden; }
+[data-shape="soft"]      { border-radius: var(--r-l); }
+[data-shape="diag-1"]    { border-radius: var(--shape-amp) var(--r-l) var(--shape-amp) var(--r-l); }
+[data-shape="diag-2"]    { border-radius: var(--r-l) var(--shape-amp) var(--r-l) var(--shape-amp); }
+[data-shape="arche"]     { border-radius: var(--r-pill) var(--r-pill) var(--r-l) var(--r-l); }
+[data-shape="organique"] { border-radius: 58% 42% 46% 54% / 48% 56% 44% 52%; }
+
+.cs-forme { position: relative; }
+.cs-forme--halo::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  background: radial-gradient(closest-side, var(--c-glow), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+}
+.cs-forme img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Stat / chiffre clé */
+.cs-stat { display: grid; gap: var(--sp-2); align-content: start; }
+.cs-stat__value {
+  font-family: var(--font-display, "Bricolage Grotesque", sans-serif);
+  font-size: var(--fs-display);
+  font-weight: 700;
+  line-height: 1.04;
+  font-variant-numeric: tabular-nums;
+  background: var(--g-braise);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.cs-stat__label { color: var(--c-text); font-weight: 600; max-width: none; }
+.cs-stat__contexte { font-size: var(--fs-small); color: var(--c-text-3); max-width: none; }
+
+/* Étoiles d'avis */
+.cs-etoiles { display: inline-flex; gap: 2px; color: var(--c-accent); }
+.cs-etoiles svg { width: 16px; height: 16px; }
+
+/* Formulaires §4.10 */
+.cs-field { position: relative; display: grid; gap: var(--sp-1); }
+.cs-field__input {
+  width: 100%;
+  min-height: 52px;
+  padding: var(--sp-4) var(--sp-4) var(--sp-2);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-s);
+  color: var(--c-text);
+  transition: border-color var(--d-1) var(--e-out);
+}
+.cs-field__input:focus { outline: none; border-color: var(--c-accent); }
+.cs-field__label {
+  position: absolute;
+  top: 50%; left: var(--sp-4);
+  transform: translateY(-50%);
+  color: var(--c-text-3);
+  pointer-events: none;
+  transition: all var(--d-1) var(--e-out);
+}
+.cs-field__input:focus ~ .cs-field__label,
+.cs-field__input:not(:placeholder-shown) ~ .cs-field__label {
+  top: 14px;
+  font-size: .75rem;
+  color: var(--c-accent);
+}
+.cs-field--textarea .cs-field__label { top: 26px; }
+.cs-field--textarea .cs-field__input:focus ~ .cs-field__label,
+.cs-field--textarea .cs-field__input:not(:placeholder-shown) ~ .cs-field__label { top: 14px; }
+.cs-field__erreur {
+  font-size: var(--fs-small);
+  color: var(--c-err);
+  display: none;
+  max-width: none;
+}
+.cs-field.a-erreur .cs-field__input { border-color: var(--c-err); }
+.cs-field.a-erreur .cs-field__erreur { display: block; }
+
+.cs-radio-carte {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-height: 56px;
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-m);
+  cursor: pointer;
+  transition: border-color var(--d-1) var(--e-out), background-color var(--d-1) var(--e-out);
+}
+.cs-radio-carte:hover { border-color: var(--glass-line); }
+.cs-radio-carte:has(input:checked) {
+  border-color: var(--c-accent);
+  background: color-mix(in srgb, var(--c-accent) 8%, transparent);
+}
+.cs-radio-carte input { accent-color: var(--c-accent); width: 18px; height: 18px; }
+
+/* Accordéon §4.10 */
+.cs-accordeon__item { border-bottom: 1px solid var(--c-line); }
+.cs-accordeon__bouton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  width: 100%;
+  min-height: 56px;
+  padding: var(--sp-4) 0;
+  text-align: left;
+  color: var(--c-text);
+  font-family: var(--font-display, "Bricolage Grotesque", sans-serif);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+}
+.cs-accordeon__chevron { flex: 0 0 auto; transition: transform var(--d-2) var(--e-out); color: var(--c-accent); }
+.cs-accordeon__bouton[aria-expanded="true"] .cs-accordeon__chevron { transform: rotate(180deg); }
+.cs-accordeon__panneau {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--d-2) var(--e-out);
+}
+.cs-accordeon__bouton[aria-expanded="true"] + .cs-accordeon__panneau { grid-template-rows: 1fr; }
+.cs-accordeon__contenu { overflow: hidden; }
+.cs-accordeon__contenu > * { padding-bottom: var(--sp-4); }
+
+/* Reveal au scroll §4.3 */
+html.js [data-reveal] {
+  opacity: 0;
+  transition: opacity var(--d-3) var(--e-out), transform var(--d-3) var(--e-out);
+  transition-delay: calc(var(--i, 0) * var(--stagger));
+}
+html.js [data-reveal="up"]    { transform: translateY(24px); }
+html.js [data-reveal="scale"] { transform: scale(.94); }
+html.js [data-reveal="clip"]  { clip-path: inset(0 0 100% 0); transition-property: clip-path, opacity; }
+html.js [data-reveal].is-in   { opacity: 1; transform: none; clip-path: inset(0 0 0 0); }
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+}
+html.js[data-motion="off"] [data-reveal] { opacity: 1; transform: none; clip-path: none; transition: none; }
+
+/* Breadcrumb */
+.cs-breadcrumb { font-size: var(--fs-small); color: var(--c-text-3); }
+.cs-breadcrumb ol { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.cs-breadcrumb a { color: var(--c-text-3); text-decoration: none; }
+.cs-breadcrumb a:hover { color: var(--c-text); }
+.cs-breadcrumb li:not(:last-child)::after { content: "/"; margin-left: var(--sp-2); opacity: .5; }
+.cs-breadcrumb [aria-current="page"] { color: var(--c-text-2); }
+
+/* ---------- 6 · UTILITAIRES ---------- */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.no-scroll { overflow: hidden; }
+
+.cs-skip {
+  position: absolute;
+  top: -100%; left: var(--sp-4);
+  z-index: 200;
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--c-surface);
+  color: var(--c-text);
+  border-radius: 0 0 var(--r-s) var(--r-s);
+  text-decoration: none;
+}
+.cs-skip:focus { top: 0; }
+
+:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+
+::selection { background: color-mix(in srgb, var(--c-accent) 30%, transparent); color: var(--c-text); }
+
+/* Prose (articles, légal) */
+.cs-prose { display: grid; gap: var(--sp-4); }
+.cs-prose > * { max-width: 62ch; }
+.cs-prose h2 { font-size: var(--fs-h2); margin-top: var(--sp-6); }
+.cs-prose h3 { font-size: var(--fs-h3); margin-top: var(--sp-4); }
+.cs-prose a { color: var(--c-accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.cs-prose ul, .cs-prose ol { padding-left: 1.2em; display: grid; gap: var(--sp-2); }
+.cs-prose ul { list-style: disc; }
+.cs-prose ol { list-style: decimal; }
+.cs-prose blockquote {
+  border-left: 2px solid var(--c-accent);
+  padding-left: var(--sp-5);
+  color: var(--c-text);
+  font-family: var(--font-display, "Bricolage Grotesque", sans-serif);
+  font-size: var(--fs-h3);
+}
+.cs-prose table { border-collapse: collapse; width: 100%; font-size: var(--fs-small); }
+.cs-prose th, .cs-prose td { border: 1px solid var(--c-line); padding: var(--sp-3); text-align: left; }
+.cs-prose img { border-radius: var(--r-m); }
+.cs-prose figcaption { font-size: var(--fs-small); color: var(--c-text-3); margin-top: var(--sp-2); }

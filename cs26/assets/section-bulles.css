@@ -1,0 +1,62 @@
+/* CS-26 · section-bulles.css · Bulles flottantes (§8.9, positions §4.9) */
+
+.cs-bulles { position: relative; min-height: 520px; display: grid; place-items: center; }
+@media (max-width: 639px) { .cs-bulles { min-height: 380px; } }
+
+.cs-bulles__centre {
+  display: grid;
+  gap: var(--sp-4);
+  justify-items: center;
+  text-align: center;
+  max-width: 480px;
+  position: relative;
+  z-index: 2;
+}
+
+.cs-bulles__item {
+  position: absolute;
+  max-width: 200px;
+  z-index: 1;
+  animation: cs-float var(--fd, 7s) var(--e-inout) infinite alternate;
+}
+@keyframes cs-float {
+  to { transform: translateY(-10px); }
+}
+
+/* Positions §4.9 (desktop / mobile) + durées de float */
+.cs-bulles__item--1 { top: 8%; left: 6%; --fd: 6.5s; }
+.cs-bulles__item--2 { top: 3%; left: 58%; --fd: 8s; }
+.cs-bulles__item--3 { top: 38%; left: 82%; --fd: 7s; }
+.cs-bulles__item--4 { top: 64%; left: 8%; --fd: 9s; }
+.cs-bulles__item--5 { top: 74%; left: 54%; --fd: 7.5s; }
+.cs-bulles__item--6 { top: 42%; left: 34%; --fd: 8.5s; }
+@media (max-width: 639px) {
+  .cs-bulles__item--1 { top: 4%; left: 6%; }
+  .cs-bulles__item--2 { top: 10%; left: 58%; }
+  .cs-bulles__item--3 { top: 54%; left: 62%; }
+  .cs-bulles__item--4 { top: 62%; left: 6%; }
+  .cs-bulles__item--5, .cs-bulles__item--6 { display: none; }
+}
+
+.cs-bulles__pastille {
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--c-text);
+  white-space: nowrap;
+}
+.cs-bulles__icone {
+  display: grid;
+  gap: var(--sp-2);
+  justify-items: center;
+  text-align: center;
+}
+.cs-bulles__icone-label { font-size: var(--fs-small); color: var(--c-text-2); font-weight: 500; }
+
+/* Apparition initiale en scale spring (le reveal ajoute is-in) */
+html.js .cs-bulles__item { transition-timing-function: var(--e-spring); }
+
+@media (prefers-reduced-motion: reduce) { .cs-bulles__item { animation: none; } }
+[data-motion="off"] .cs-bulles__item { animation: none; }
+[data-motion="soft"] .cs-bulles__item { animation-duration: calc(var(--fd, 7s) * 1.6); }

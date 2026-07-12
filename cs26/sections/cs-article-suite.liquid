@@ -1,0 +1,94 @@
+{%- comment -%}
+  cs-article-suite.liquid · Fin d'article (§8.18, §9.7) : auteur E-E-A-T,
+  3 « À lire ensuite » du même silo (même premier tag, sinon les récents),
+  CTA contextuel unique.
+{%- endcomment -%}
+{{ 'section-article-suite.css' | asset_url | stylesheet_tag }}
+
+<section id="{{ section.id }}" class="cs-section cs-article-suite cs-section--alt"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container cs-article-suite__interieur">
+
+    {%- if section.settings.auteur_nom != blank -%}
+      <div class="cs-article-suite__auteur cs-glass" data-reveal="fade">
+        {%- if section.settings.auteur_photo != blank -%}
+          <div class="cs-article-suite__photo" data-shape="arche">
+            {% render 'image', img: section.settings.auteur_photo, sizes: '96px', ratio: '1/1', alt: section.settings.auteur_nom %}
+          </div>
+        {%- endif -%}
+        <div class="cs-article-suite__auteur-textes">
+          <p class="cs-article-suite__auteur-nom">{{ section.settings.auteur_nom | escape }}</p>
+          {%- if section.settings.auteur_bio != blank -%}
+            <p class="cs-article-suite__auteur-bio">{{ section.settings.auteur_bio | escape }}</p>
+          {%- endif -%}
+          {%- if section.settings.auteur_lien != blank -%}
+            <a class="cs-lien" href="{{ section.settings.auteur_lien }}">Son profil {% render 'icone', nom: 'fleche-45', taille: 14 %}</a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- liquid
+      assign tag_silo = article.tags.first
+      assign similaires = ''
+    -%}
+    <div class="cs-article-suite__lire">
+      <h2 class="cs-h2" data-reveal="up">À lire ensuite</h2>
+      <div class="cs-article-suite__grille" data-reveal-group>
+        {%- assign rendu = 0 -%}
+        {%- if tag_silo -%}
+          {%- for a in blog.articles -%}
+            {%- if rendu >= 3 %}{% break %}{% endif -%}
+            {%- if a.id != article.id and a.tags contains tag_silo -%}
+              {%- assign rendu = rendu | plus: 1 -%}
+              <a href="{{ a.url }}" class="cs-carte cs-article-suite__carte" data-reveal="up">
+                <span class="cs-chip">{{ a.tags.first | escape }}</span>
+                <h3 class="cs-h3">{{ a.title | escape }}</h3>
+                {% render 'icone', nom: 'fleche-45', taille: 20, classe: 'cs-carte__fleche' %}
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        {%- if rendu < 3 -%}
+          {%- for a in blog.articles -%}
+            {%- if rendu >= 3 %}{% break %}{% endif -%}
+            {%- unless a.id == article.id or a.tags contains tag_silo -%}
+              {%- assign rendu = rendu | plus: 1 -%}
+              <a href="{{ a.url }}" class="cs-carte cs-article-suite__carte" data-reveal="up">
+                {%- if a.tags.first -%}<span class="cs-chip">{{ a.tags.first | escape }}</span>{%- endif -%}
+                <h3 class="cs-h3">{{ a.title | escape }}</h3>
+                {% render 'icone', nom: 'fleche-45', taille: 20, classe: 'cs-carte__fleche' %}
+              </a>
+            {%- endunless -%}
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if section.settings.cta_titre != blank -%}
+      <div class="cs-article-suite__cta" data-reveal="scale">
+        <h2 class="cs-h3">{{ section.settings.cta_titre | escape }}</h2>
+        {% render 'bouton', label: section.settings.cta_label, popup: true, style: 'primaire', reassurance: section.settings.cta_reassurance %}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CS · Suite d'article",
+  "settings": [
+    { "type": "header", "content": "Auteur (E-E-A-T : personne réelle)" },
+    { "type": "image_picker", "id": "auteur_photo", "label": "Photo" },
+    { "type": "text", "id": "auteur_nom", "label": "Nom" },
+    { "type": "textarea", "id": "auteur_bio", "label": "Bio", "info": "160 caractères max" },
+    { "type": "url", "id": "auteur_lien", "label": "Lien profil (LinkedIn…)" },
+    { "type": "header", "content": "CTA contextuel unique" },
+    { "type": "text", "id": "cta_titre", "label": "Titre", "info": "60 caractères max", "default": "Ce guide appliqué à votre site ?" },
+    { "type": "text", "id": "cta_label", "label": "Bouton", "info": "24 caractères max", "default": "Mon audit gratuit" },
+    { "type": "text", "id": "cta_reassurance", "label": "Réassurance", "info": "70 caractères max", "default": "Réponse sous 48 h ouvrées. Sans engagement." },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 64, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ]
+}
+{% endschema %}

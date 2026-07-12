@@ -1,0 +1,243 @@
+{%- comment -%}
+  cs-popup-lead.liquid · Popup lead 3 étapes (§11.1) + barre sticky mobile (§8.17).
+  Jamais d'ouverture automatique à l'arrivée. Déclenché par tout élément
+  data-cs="popup-open". Soumission : formulaire contact natif Shopify,
+  réponses concaténées dans body, tag lead-audit ou lead-devis.
+{%- endcomment -%}
+{{ 'section-popup.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign mode = settings.popup_mode
+  assign service_slug = page.metafields.cs.service_slug | default: ''
+  assign ville_ctx = ''
+  if page.metafields.cs.ville
+    assign ville_ctx = page.metafields.cs.ville.value.nom.value | default: ''
+  endif
+-%}
+
+<div id="{{ section.id }}" data-cs="popup"
+  data-mode="{{ mode }}"
+  data-exit-intent="{{ settings.popup_exit_intent }}"
+  data-scroll-70="{{ settings.popup_scroll }}"
+  data-erreur-email="Cet email semble incomplet."
+  data-erreur-prenom="Il nous faut au moins votre prénom."
+  data-erreur-rgpd="Votre accord est nécessaire pour vous envoyer l'audit.">
+
+  <div class="cs-popup-overlay" data-cs-popup-fermer hidden></div>
+
+  <div class="cs-popup" role="dialog" aria-modal="true" aria-labelledby="cs-popup-titre-{{ section.id }}" hidden data-cs-popup-modal>
+    <div class="cs-popup__poignee" aria-hidden="true"></div>
+    <button type="button" class="cs-popup__fermer" data-cs-popup-fermer aria-label="Fermer">
+      {% render 'icone', nom: 'croix' %}
+    </button>
+
+    {%- form 'contact', class: 'cs-popup__form' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="cs-popup__succes" data-cs-popup-succes>
+          <span class="cs-popup__coche" aria-hidden="true">{% render 'icone', nom: 'check', taille: 32 %}</span>
+          <h2 class="cs-h2" id="cs-popup-titre-{{ section.id }}">C'est parti<span data-cs-succes-prenom></span>.</h2>
+          <p>{{ section.settings.succes_texte | escape }}</p>
+          <ol class="cs-popup__suite" role="list">
+            <li>{{ section.settings.succes_etape_1 | escape }}</li>
+            <li>{{ section.settings.succes_etape_2 | escape }}</li>
+          </ol>
+          {%- if section.settings.succes_lien_url != blank -%}
+            <a href="{{ section.settings.succes_lien_url }}" class="cs-lien">{{ section.settings.succes_lien_label | escape }} {% render 'icone', nom: 'fleche', taille: 18 %}</a>
+          {%- endif -%}
+        </div>
+      {%- else -%}
+
+        {%- if form.errors -%}
+          <p class="cs-popup__erreur-serveur" role="alert">Un détail bloque l'envoi. Vérifiez votre email puis réessayez.</p>
+        {%- endif -%}
+
+        <div class="cs-popup__progression" aria-hidden="true">
+          <span class="cs-popup__progression-barre" data-cs-progression></span>
+        </div>
+        <p class="cs-meta cs-popup__etape-label"><span aria-live="polite" data-cs-etape-label>Étape 1 sur 3</span></p>
+
+        <div class="cs-popup__piste" data-cs-piste>
+
+          {%- comment -%} Étape 1 · Objectif {%- endcomment -%}
+          <fieldset class="cs-popup__etape" data-cs-etape="1">
+            <legend class="cs-h3" id="cs-popup-titre-{{ section.id }}">{{ settings.popup_etape1_titre | escape }}</legend>
+            <div class="cs-popup__objectifs">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'objectif' and block.settings.label != blank -%}
+                  {%- unless block.settings.devis and mode == 'audit' -%}
+                  <label class="cs-radio-carte" {{ block.shopify_attributes }}>
+                    <input type="radio" name="objectif" value="{{ block.settings.label | escape }}"
+                      {% if block.settings.devis %}data-devis="true"{% endif %}
+                      {% if forloop.first %}checked{% endif %}>
+                    <span>{{ block.settings.label | escape }}</span>
+                  </label>
+                  {%- endunless -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+            <div class="cs-popup__nav">
+              <button type="button" class="cs-btn cs-btn--primaire" data-cs-suivant>Continuer {% render 'icone', nom: 'fleche', taille: 18 %}</button>
+            </div>
+          </fieldset>
+
+          {%- comment -%} Étape 2 · Contexte (aucun champ bloquant) {%- endcomment -%}
+          <fieldset class="cs-popup__etape" data-cs-etape="2">
+            <legend class="cs-h3">{{ settings.popup_etape2_titre | escape }}</legend>
+            <div class="cs-field">
+              <input class="cs-field__input" type="url" name="site_url" id="popup-url-{{ section.id }}" placeholder=" " inputmode="url" autocomplete="url">
+              <label class="cs-field__label" for="popup-url-{{ section.id }}">URL de votre site</label>
+            </div>
+            <label class="cs-popup__sans-site">
+              <input type="checkbox" name="pas_de_site" value="Pas encore de site"> Pas encore de site
+            </label>
+            <div class="cs-field">
+              <input class="cs-field__input" type="text" name="zone" id="popup-ville-{{ section.id }}" placeholder=" "
+                value="{{ ville_ctx | escape }}" autocomplete="address-level2">
+              <label class="cs-field__label" for="popup-ville-{{ section.id }}">Ville ou zone</label>
+            </div>
+            <div class="cs-field cs-field--select">
+              <select class="cs-field__input" name="budget" id="popup-budget-{{ section.id }}">
+                <option value="Je ne sais pas encore" selected>Je ne sais pas encore</option>
+                <option value="Moins de 1 000 €">Moins de 1 000 € / mois</option>
+                <option value="1 000 à 3 000 €">1 000 à 3 000 € / mois</option>
+                <option value="Plus de 3 000 €">Plus de 3 000 € / mois</option>
+              </select>
+              <label class="cs-field__label cs-field__label--haut" for="popup-budget-{{ section.id }}">Budget mensuel envisagé</label>
+            </div>
+            <div class="cs-popup__nav">
+              <button type="button" class="cs-btn cs-btn--secondaire" data-cs-retour>Retour</button>
+              <button type="button" class="cs-btn cs-btn--primaire" data-cs-suivant>Continuer {% render 'icone', nom: 'fleche', taille: 18 %}</button>
+              <button type="button" class="cs-popup__passer" data-cs-suivant data-cs-passer>Passer cette étape</button>
+            </div>
+          </fieldset>
+
+          {%- comment -%} Étape 3 · Coordonnées {%- endcomment -%}
+          <fieldset class="cs-popup__etape" data-cs-etape="3">
+            <legend class="cs-h3">{{ settings.popup_etape3_titre | escape }}</legend>
+            <div class="cs-field">
+              <input class="cs-field__input" type="text" name="contact[first_name]" id="popup-prenom-{{ section.id }}"
+                placeholder=" " autocomplete="given-name" required data-cs-prenom>
+              <label class="cs-field__label" for="popup-prenom-{{ section.id }}">Prénom</label>
+              <span class="cs-field__erreur" aria-live="polite"></span>
+            </div>
+            <div class="cs-field">
+              <input class="cs-field__input" type="email" name="contact[email]" id="popup-email-{{ section.id }}"
+                placeholder=" " autocomplete="email" required data-cs-email
+                {% if form.errors contains 'email' %}aria-invalid="true"{% endif %}>
+              <label class="cs-field__label" for="popup-email-{{ section.id }}">Email</label>
+              <span class="cs-field__erreur" aria-live="polite"></span>
+            </div>
+            <div class="cs-field">
+              <input class="cs-field__input" type="tel" name="contact[phone]" id="popup-tel-{{ section.id }}"
+                placeholder=" " autocomplete="tel">
+              <label class="cs-field__label" for="popup-tel-{{ section.id }}">Téléphone (optionnel)</label>
+              <span class="cs-meta">Uniquement si vous préférez qu'on vous appelle.</span>
+            </div>
+            <label class="cs-popup__rgpd">
+              <input type="checkbox" required data-cs-rgpd>
+              <span>J'accepte que mes réponses servent à préparer et m'envoyer l'audit.
+                {%- if settings.consent_politique_url != blank %} <a href="{{ settings.consent_politique_url }}">Politique de confidentialité</a>{% endif -%}</span>
+            </label>
+            <span class="cs-field__erreur" aria-live="polite" data-cs-rgpd-erreur></span>
+
+            {%- comment -%} Champs cachés : contexte, anti-spam, tag {%- endcomment -%}
+            <input type="hidden" name="contact[body]" value="" data-cs-corps>
+            <input type="hidden" name="contact[tags]" value="lead-audit" data-cs-tags>
+            <input type="hidden" name="service_contexte" value="{{ service_slug | escape }}">
+            <input type="hidden" name="page_source" value="{{ canonical_url | escape }}">
+            <input type="hidden" name="utm" value="" data-cs-utm>
+            <div class="cs-popup__hp" aria-hidden="true">
+              <label>Ne pas remplir <input type="text" name="site_web_confirmation" tabindex="-1" autocomplete="off" data-cs-hp></label>
+            </div>
+
+            <div class="cs-popup__nav">
+              <button type="button" class="cs-btn cs-btn--secondaire" data-cs-retour>Retour</button>
+              <div class="cs-bouton-groupe">
+                <button type="submit" class="cs-btn cs-btn--primaire" data-cs-envoyer
+                  data-label-audit="Recevoir mon audit gratuit" data-label-devis="Recevoir mon devis">
+                  Recevoir mon audit gratuit
+                </button>
+                <span class="cs-btn__reassurance">Réponse sous 48 h ouvrées. Sans engagement, sans relance agressive.</span>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+
+  {%- comment -%} Barre sticky mobile §8.17 {%- endcomment -%}
+  {%- liquid
+    assign sticky = false
+    if settings.sticky_active
+      if template.name == 'index' and settings.sticky_home
+        assign sticky = true
+      elsif template.suffix contains 'service' and settings.sticky_services
+        assign sticky = true
+      elsif template.suffix contains 'ville' and settings.sticky_villes
+        assign sticky = true
+      elsif template.suffix == 'audit' and settings.sticky_audit
+        assign sticky = true
+      elsif template.name == 'article' and settings.sticky_articles
+        assign sticky = true
+      endif
+    endif
+    if template.suffix == 'legal' or template.suffix == 'contact'
+      assign sticky = false
+    endif
+  -%}
+  {%- if sticky -%}
+    <div class="cs-sticky-cta" data-cs="sticky-cta" data-seuil="480"
+      data-article="{% if template.name == 'article' %}true{% else %}false{% endif %}">
+      <button type="button" class="cs-btn cs-btn--primaire cs-sticky-cta__bouton" data-cs="popup-open">
+        {{ section.settings.sticky_label | escape }}
+      </button>
+      {%- if settings.nap_telephone != blank -%}
+        <a class="cs-sticky-cta__tel" href="tel:{{ settings.nap_telephone | replace: ' ', '' }}" aria-label="Appeler">
+          {% render 'icone', nom: 'tel' %}
+        </a>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "CS · Popup lead",
+  "settings": [
+    { "type": "paragraph", "content": "Les titres des 3 étapes et le mode audit/devis se règlent dans Réglages du thème > Conversion." },
+    { "type": "header", "content": "Écran de succès" },
+    { "type": "textarea", "id": "succes_texte", "label": "Texte", "default": "Votre demande est bien arrivée. Voici la suite :" },
+    { "type": "text", "id": "succes_etape_1", "label": "Prochaine étape 1", "default": "Un membre de l'équipe analyse votre site." },
+    { "type": "text", "id": "succes_etape_2", "label": "Prochaine étape 2", "default": "Vous recevez l'audit sous 48 h ouvrées." },
+    { "type": "text", "id": "succes_lien_label", "label": "Lien secondaire (label)", "default": "Nos réalisations en attendant" },
+    { "type": "url", "id": "succes_lien_url", "label": "Lien secondaire (URL)" },
+    { "type": "header", "content": "Barre sticky mobile" },
+    { "type": "text", "id": "sticky_label", "label": "Bouton", "info": "24 caractères max", "default": "Audit gratuit" }
+  ],
+  "blocks": [
+    {
+      "type": "objectif",
+      "name": "Objectif (étape 1)",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Libellé" },
+        { "type": "checkbox", "id": "devis", "label": "Branche devis", "info": "Adapte les libellés suivants (bouton « Recevoir mon devis », tag lead-devis).", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "CS · Popup lead",
+      "blocks": [
+        { "type": "objectif", "settings": { "label": "Être trouvé sur Google" } },
+        { "type": "objectif", "settings": { "label": "Créer ou refondre mon site" } },
+        { "type": "objectif", "settings": { "label": "Booster mes ventes avec la pub" } },
+        { "type": "objectif", "settings": { "label": "Convertir plus de visiteurs" } },
+        { "type": "objectif", "settings": { "label": "J'ai déjà un projet précis (devis)", "devis": true } },
+        { "type": "objectif", "settings": { "label": "Autre" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

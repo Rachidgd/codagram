@@ -1,0 +1,34 @@
+{%- comment -%}
+  bouton.liquid · Bouton unique du thème (§5.9).
+  Params :
+    label       : texte du bouton (≤ 24 caractères, §12.2)
+    url         : destination (ignorée si popup)
+    style       : 'primaire' (défaut) | 'secondaire' | 'lien'
+    popup       : bool · ouvre le popup lead au lieu de naviguer (data-cs="popup-open")
+    reassurance : ligne sous le bouton (≤ 70 caractères)
+    icone       : nom d'icône optionnel (rendu après le label)
+{%- endcomment -%}
+{%- if label != blank -%}
+  {%- liquid
+    assign variante = style | default: 'primaire'
+  -%}
+  <div class="cs-bouton-groupe">
+    {%- if popup -%}
+      <button type="button"
+        class="{% if variante == 'lien' %}cs-lien{% else %}cs-btn cs-btn--{{ variante }}{% endif %}"
+        data-cs="popup-open">
+        {{ label | escape }}
+        {%- if icone %}{% render 'icone', nom: icone, taille: 20 %}{% endif -%}
+      </button>
+    {%- else -%}
+      <a href="{{ url | default: '#' }}"
+        class="{% if variante == 'lien' %}cs-lien{% else %}cs-btn cs-btn--{{ variante }}{% endif %}">
+        {{ label | escape }}
+        {%- if icone %}{% render 'icone', nom: icone, taille: 20 %}{% endif -%}
+      </a>
+    {%- endif -%}
+    {%- if reassurance != blank -%}
+      <span class="cs-btn__reassurance">{{ reassurance | escape }}</span>
+    {%- endif -%}
+  </div>
+{%- endif -%}

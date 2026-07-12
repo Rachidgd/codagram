@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "simple",
+        "cta_active": false,
+        "intro": "Toutes les pages du site, classées par silo. Chaque lien vient d'un menu réel."
+      }
+    },
+    "plan": {
+      "type": "cs-richtext",
+      "blocks": {
+        "silo_services": {
+          "type": "liste_menu",
+          "settings": {
+            "titre": "Services"
+          }
+        },
+        "silo_villes": {
+          "type": "liste_menu",
+          "settings": {
+            "titre": "Zones d'intervention"
+          }
+        },
+        "silo_ressources": {
+          "type": "liste_menu",
+          "settings": {
+            "titre": "Ressources"
+          }
+        },
+        "silo_legal": {
+          "type": "liste_menu",
+          "settings": {
+            "titre": "Informations légales"
+          }
+        }
+      },
+      "block_order": [
+        "silo_services",
+        "silo_villes",
+        "silo_ressources",
+        "silo_legal"
+      ],
+      "settings": {
+        "padding_haut": 48,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "plan"
+  ]
+}

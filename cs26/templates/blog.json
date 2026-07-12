@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "hub",
+        "cta_active": false,
+        "eyebrow": "Guides et conseils",
+        "intro": "Des réponses directes aux questions que vous vous posez vraiment : visibilité, conversion, budget."
+      }
+    },
+    "articles": {
+      "type": "cs-blog-teaser",
+      "settings": {
+        "mode": "hub",
+        "padding_haut": 48,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "articles"
+  ]
+}

@@ -1,0 +1,110 @@
+{%- comment -%}
+  cs-richtext.liquid · Contenu légal / simple, prose 62ch (§8.18).
+  Sert aussi le plan du site HTML (§10.4) via les blocks « liste_menu » :
+  chaque block liste un menu Shopify réel, donc zéro lien inventé.
+{%- endcomment -%}
+{{ 'section-richtext.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign anim = section.settings.animation
+  if anim == 'auto'
+    assign anim = 'fade'
+  endif
+-%}
+<section id="{{ section.id }}"
+  class="cs-section cs-richtext{% if section.settings.bg_style == 'alt' %} cs-section--alt{% elsif section.settings.bg_style == 'halo' %} cs-section--halo{% endif %}"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container cs-richtext__interieur">
+    {%- if section.settings.titre != blank -%}
+      <header class="cs-section__tete" {% unless anim == 'none' %}data-reveal="{{ anim }}"{% endunless %}>
+        {% render 'eyebrow', texte: section.settings.eyebrow %}
+        <h2 class="cs-h2">{{ section.settings.titre | escape }}</h2>
+      </header>
+    {%- endif -%}
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'prose' -%}
+          <div class="cs-prose" {{ block.shopify_attributes }}>
+            {{ block.settings.contenu }}
+          </div>
+        {%- when 'page' -%}
+          {%- liquid
+            assign page_source = page
+            if block.settings.page != blank
+              assign page_source = pages[block.settings.page]
+            endif
+          -%}
+          {%- if page_source.content != blank -%}
+            <div class="cs-prose" {{ block.shopify_attributes }}>
+              {{ page_source.content }}
+            </div>
+          {%- endif -%}
+        {%- when 'liste_menu' -%}
+          {%- assign menu_bloc = block.settings.menu -%}
+          {%- if menu_bloc != blank and menu_bloc.links.size > 0 -%}
+            <div class="cs-richtext__silo" {{ block.shopify_attributes }}>
+              <h3 class="cs-h3">{{ block.settings.titre | default: menu_bloc.title | escape }}</h3>
+              <ul class="cs-richtext__silo-liens" role="list">
+                {%- for link in menu_bloc.links -%}
+                  <li>
+                    <a href="{{ link.url }}" class="cs-lien">{{ link.title | escape }}</a>
+                    {%- if link.links.size > 0 -%}
+                      <ul class="cs-richtext__silo-sous" role="list">
+                        {%- for child in link.links -%}
+                          <li><a href="{{ child.url }}" class="cs-lien">{{ child.title | escape }}</a></li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endif -%}
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CS · Texte riche",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "info": "28 caractères max" },
+    { "type": "text", "id": "titre", "label": "Titre (H2)", "info": "60 caractères max" },
+    { "type": "select", "id": "bg_style", "label": "Fond",
+      "options": [ { "value": "base", "label": "Base" }, { "value": "alt", "label": "Alterné" }, { "value": "halo", "label": "Halo braise" } ], "default": "base" },
+    { "type": "select", "id": "animation", "label": "Animation d'apparition",
+      "options": [ { "value": "auto", "label": "Automatique (recommandé)" }, { "value": "up", "label": "Montée" }, { "value": "scale", "label": "Zoom" }, { "value": "clip", "label": "Rideau" }, { "value": "fade", "label": "Fondu" }, { "value": "none", "label": "Aucune" } ], "default": "auto" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "prose",
+      "name": "Texte",
+      "limit": 6,
+      "settings": [
+        { "type": "richtext", "id": "contenu", "label": "Contenu" }
+      ]
+    },
+    {
+      "type": "page",
+      "name": "Contenu d'une page",
+      "limit": 2,
+      "settings": [
+        { "type": "page", "id": "page", "label": "Page", "info": "Vide = contenu de la page courante (mentions, CGV… rédigés dans l'admin)." }
+      ]
+    },
+    {
+      "type": "liste_menu",
+      "name": "Liste de liens (silo)",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "titre", "label": "Titre du silo", "info": "40 caractères max" },
+        { "type": "link_list", "id": "menu", "label": "Menu source", "info": "Le plan du site liste des menus réels : zéro lien inventé, zéro 404." }
+      ]
+    }
+  ],
+  "presets": [ { "name": "CS · Texte riche" } ]
+}
+{% endschema %}

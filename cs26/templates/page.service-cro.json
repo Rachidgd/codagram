@@ -1,0 +1,244 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Optimisation de conversion",
+        "intro": "Même trafic, plus de clients. On identifie les frictions qui font fuir vos visiteurs et on les lève, une par une.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature": {
+      "type": "cs-bulles",
+      "blocks": {
+        "b1": {
+          "type": "pastille",
+          "settings": {
+            "texte": "Formulaire trop long"
+          }
+        },
+        "b2": {
+          "type": "pastille",
+          "settings": {
+            "texte": "Prix introuvable"
+          }
+        },
+        "b3": {
+          "type": "icone",
+          "settings": {
+            "icone": "horloge",
+            "label": "Site trop lent"
+          }
+        },
+        "b4": {
+          "type": "pastille",
+          "settings": {
+            "texte": "Preuve sociale absente"
+          }
+        },
+        "b5": {
+          "type": "icone",
+          "settings": {
+            "icone": "message",
+            "label": "Message flou"
+          }
+        },
+        "b6": {
+          "type": "pastille",
+          "settings": {
+            "texte": "CTA invisible sur mobile"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "settings": {
+        "eyebrow": "Les frictions typiques",
+        "titre": "Vos visiteurs partent pour des raisons précises.",
+        "texte": "Chacune de ces frictions se mesure, se teste et se corrige. C'est exactement notre travail.",
+        "cta_label": "Trouver mes frictions",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Mesure",
+            "texte": "Analytics propre, enregistrements de sessions, points de fuite identifiés."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Hypothèses",
+            "texte": "Chaque friction devient une hypothèse testable, priorisée par impact."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Tests",
+            "texte": "Modifications testées proprement, avec retour arrière toujours possible."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Généralisation",
+            "texte": "Ce qui gagne est déployé, documenté, et nourrit le test suivant."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Comment on augmente votre taux de conversion",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "titre": "Les gains mesurés",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "source": "metaobjects",
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Cas CRO",
+        "lien_hub": "/pages/realisations",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Faut-il beaucoup de trafic pour faire du CRO ?",
+            "reponse": "<p>Pour des tests statistiquement fiables, oui, un minimum est nécessaire. En dessous, on commence par les corrections d'évidence : vitesse, clarté du message, parcours mobile. L'audit vous dit dans quel cas vous êtes.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Allez-vous casser mon site ?",
+            "reponse": "<p>Non. Chaque modification est testée sur une part du trafic ou sur un environnement de préproduction, avec retour arrière immédiat possible. Votre site reste stable pendant toute la mission.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Sur quoi portent les tests ?",
+            "reponse": "<p>Messages, ordre des sections, formulaires, preuves, parcours d'achat. Jamais de gadget : on teste ce que les données désignent comme point de fuite.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions sur le CRO",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Même trafic, plus de clients.",
+        "texte": "Un audit gratuit de vos parcours : où partent vos visiteurs, et les trois corrections les plus rentables.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature",
+    "process",
+    "stats",
+    "projets",
+    "avis",
+    "faq",
+    "cta"
+  ]
+}

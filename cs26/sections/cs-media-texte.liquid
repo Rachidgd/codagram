@@ -1,0 +1,128 @@
+{%- comment -%}
+  cs-media-texte.liquid · Texte + image, formes signature (§8.7).
+  Un argument = une image de preuve. Image `clip`, textes `up` stagger,
+  badge `spring` en dernier.
+{%- endcomment -%}
+{{ 'section-media-texte.css' | asset_url | stylesheet_tag }}
+
+<section id="{{ section.id }}"
+  class="cs-section cs-media-texte{% if section.settings.bg_style == 'alt' %} cs-section--alt{% elsif section.settings.bg_style == 'halo' %} cs-section--halo{% endif %}"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container">
+    <div class="cs-media-texte__grille cs-media-texte__grille--image-{{ section.settings.image_position }}{% if section.settings.ordre_mobile == 'image' %} cs-media-texte__grille--mobile-image{% endif %}">
+
+      <div class="cs-media-texte__media" {% unless section.settings.animation == 'none' %}data-reveal="clip"{% endunless %}>
+        {% render 'forme',
+          img: section.settings.image,
+          shape: section.settings.shape,
+          halo: section.settings.halo,
+          ratio: '4/5',
+          sizes: '(min-width: 900px) 46vw, 92vw',
+          alt: section.settings.image_alt %}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'badge' and block.settings.texte != blank -%}
+            <div class="cs-media-texte__badge cs-glass cs-media-texte__badge--{{ block.settings.coin }}"
+              data-reveal="scale" style="--i: 4;" {{ block.shopify_attributes }}>
+              {{ block.settings.texte | escape }}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      <div class="cs-media-texte__contenu" data-reveal-group>
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="cs-eyebrow" data-reveal="up">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.titre != blank -%}
+          <h2 class="cs-h2" data-reveal="up">{{ section.settings.titre | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.corps != blank -%}
+          <div class="cs-media-texte__corps" data-reveal="up">{{ section.settings.corps }}</div>
+        {%- endif -%}
+        {%- liquid
+          assign a_puces = false
+          for block in section.blocks
+            if block.type == 'puce' and block.settings.texte != blank
+              assign a_puces = true
+            endif
+          endfor
+        -%}
+        {%- if a_puces -%}
+          <ul class="cs-media-texte__puces" role="list" data-reveal="up">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'puce' and block.settings.texte != blank -%}
+                <li {{ block.shopify_attributes }}>{% render 'icone', nom: 'check', taille: 18 %} {{ block.settings.texte | escape }}</li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+        {%- if section.settings.lien_label != blank and section.settings.lien != blank -%}
+          <a href="{{ section.settings.lien }}" class="cs-lien" data-reveal="up">
+            {{ section.settings.lien_label | escape }} {% render 'icone', nom: 'fleche', taille: 18 %}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CS · Media + texte",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image de preuve", "info": "Écran de projet, coulisses, résultat : jamais de stock cliché (§3.6)." },
+    { "type": "text", "id": "image_alt", "label": "Texte alternatif", "info": "Descriptif, obligatoire (§10.7)." },
+    { "type": "select", "id": "shape", "label": "Forme de l'image",
+      "options": [
+        { "value": "soft", "label": "Douce" },
+        { "value": "diag-1", "label": "Diagonale 1" },
+        { "value": "diag-2", "label": "Diagonale 2" },
+        { "value": "arche", "label": "Arche" },
+        { "value": "organique", "label": "Organique" }
+      ],
+      "default": "diag-1" },
+    { "type": "checkbox", "id": "halo", "label": "Halo braise derrière l'image", "default": false },
+    { "type": "select", "id": "image_position", "label": "Position de l'image (desktop)",
+      "options": [ { "value": "gauche", "label": "Gauche" }, { "value": "droite", "label": "Droite" } ], "default": "gauche" },
+    { "type": "select", "id": "ordre_mobile", "label": "Ordre mobile",
+      "options": [ { "value": "texte", "label": "Texte d'abord" }, { "value": "image", "label": "Image d'abord (si elle EST la preuve)" } ], "default": "texte" },
+    { "type": "header", "content": "Contenu" },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "info": "28 caractères max" },
+    { "type": "text", "id": "titre", "label": "Titre (H2)", "info": "60 caractères max" },
+    { "type": "richtext", "id": "corps", "label": "Corps", "info": "320 caractères max, 2 paragraphes max (§12.2)." },
+    { "type": "text", "id": "lien_label", "label": "Lien accent (label)", "info": "24 caractères max" },
+    { "type": "url", "id": "lien", "label": "Lien accent (URL)" },
+    { "type": "select", "id": "bg_style", "label": "Fond",
+      "options": [ { "value": "base", "label": "Base" }, { "value": "alt", "label": "Alterné" }, { "value": "halo", "label": "Halo braise" } ], "default": "base" },
+    { "type": "select", "id": "animation", "label": "Animation d'apparition",
+      "options": [ { "value": "auto", "label": "Automatique (recommandé)" }, { "value": "none", "label": "Aucune" } ], "default": "auto" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "puce",
+      "name": "Puce",
+      "limit": 3,
+      "settings": [
+        { "type": "text", "id": "texte", "label": "Texte", "info": "60 caractères max" }
+      ]
+    },
+    {
+      "type": "badge",
+      "name": "Badge chiffre",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "texte", "label": "Texte", "info": "40 caractères max. Chiffre réel (§2.3)." },
+        { "type": "select", "id": "coin", "label": "Coin d'ancrage",
+          "options": [
+            { "value": "haut-droit", "label": "Haut droit" },
+            { "value": "bas-gauche", "label": "Bas gauche" }
+          ],
+          "default": "bas-gauche" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "CS · Media + texte" } ]
+}
+{% endschema %}

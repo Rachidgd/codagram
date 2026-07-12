@@ -1,0 +1,7 @@
+{%- comment -%}
+  eyebrow.liquid · Sur-titre de section (≤ 28 caractères, §12.2).
+  Params : texte
+{%- endcomment -%}
+{%- if texte != blank -%}
+  <p class="cs-eyebrow">{{ texte | escape }}</p>
+{%- endif -%}

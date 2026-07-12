@@ -1,0 +1,21 @@
+{%- comment -%}
+  forme.liquid · Holder d'image signature (§3.4) : shape + halo optionnel.
+  Params :
+    img      : objet image Shopify
+    shape    : 'soft' | 'diag-1' | 'diag-2' | 'arche' | 'organique'
+               (défaut : settings.shape_defaut du thème)
+    halo     : bool · halo --c-glow flouté derrière le holder
+    ratio    : rapport d'aspect (défaut 4/5 portrait)
+    sizes    : attribut sizes transmis à image.liquid
+    priorite : bool · image au-dessus de la ligne de flottaison
+    alt      : texte alternatif
+{%- endcomment -%}
+{%- if img -%}
+  {%- liquid
+    assign forme_shape = shape | default: settings.shape_defaut | default: 'soft'
+    assign forme_ratio = ratio | default: '4/5'
+  -%}
+  <div class="cs-forme{% if halo %} cs-forme--halo{% endif %}" data-shape="{{ forme_shape }}">
+    {% render 'image', img: img, sizes: sizes, ratio: forme_ratio, priorite: priorite, alt: alt %}
+  </div>
+{%- endif -%}

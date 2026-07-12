@@ -1,0 +1,95 @@
+{%- comment -%}
+  cs-faq.liquid · Accordéon FAQ + schema FAQPage (§8.11).
+  Contenu des réponses dans le DOM initial (jamais injecté en JS).
+  JSON-LD généré UNIQUEMENT ici, une seule fois par page.
+{%- endcomment -%}
+{%- if section.blocks.size > 0 -%}
+{{ 'section-faq.css' | asset_url | stylesheet_tag }}
+
+<section id="{{ section.id }}"
+  class="cs-section cs-faq{% if section.settings.bg_style == 'alt' %} cs-section--alt{% elsif section.settings.bg_style == 'halo' %} cs-section--halo{% endif %}"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container cs-faq__interieur">
+    {%- if section.settings.titre != blank -%}
+      <header class="cs-section__tete" data-reveal="fade">
+        {% render 'eyebrow', texte: section.settings.eyebrow %}
+        <h2 class="cs-h2">{{ section.settings.titre | escape }}</h2>
+      </header>
+    {%- endif -%}
+
+    <div class="cs-accordeon" data-reveal-group>
+      {%- for block in section.blocks -%}
+        {%- if block.settings.question != blank and block.settings.reponse != blank -%}
+          {%- liquid
+            assign ouvert = false
+            if forloop.first and section.settings.premier_ouvert
+              assign ouvert = true
+            endif
+          -%}
+          <div class="cs-accordeon__item" data-reveal="fade" {{ block.shopify_attributes }}>
+            <h3 class="cs-faq__question">
+              <button type="button" class="cs-accordeon__bouton"
+                aria-expanded="{{ ouvert }}"
+                aria-controls="faq-{{ section.id }}-{{ forloop.index }}"
+                data-cs-accordeon>
+                {{ block.settings.question | escape }}
+                {% render 'icone', nom: 'chevron', taille: 20, classe: 'cs-accordeon__chevron' %}
+              </button>
+            </h3>
+            <div class="cs-accordeon__panneau" id="faq-{{ section.id }}-{{ forloop.index }}">
+              <div class="cs-accordeon__contenu">
+                <div class="cs-faq__reponse">{{ block.settings.reponse }}</div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% render 'schema-faq', faq_blocks: section.blocks %}
+
+<script>
+  /* Accordéon : bascule aria-expanded, la hauteur est animée en CSS
+     (grid-template-rows 0fr→1fr, §4.10). Contenu déjà dans le DOM. */
+  (function () {
+    var racine = document.getElementById('{{ section.id }}');
+    if (!racine) return;
+    racine.querySelectorAll('[data-cs-accordeon]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btn.setAttribute('aria-expanded', String(btn.getAttribute('aria-expanded') !== 'true'));
+      });
+    });
+  })();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CS · FAQ",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "info": "28 caractères max" },
+    { "type": "text", "id": "titre", "label": "Titre (H2)", "info": "60 caractères max" },
+    { "type": "checkbox", "id": "premier_ouvert", "label": "Premier item ouvert par défaut", "default": true },
+    { "type": "select", "id": "bg_style", "label": "Fond",
+      "options": [ { "value": "base", "label": "Base" }, { "value": "alt", "label": "Alterné" }, { "value": "halo", "label": "Halo braise" } ], "default": "base" },
+    { "type": "select", "id": "animation", "label": "Animation d'apparition",
+      "options": [ { "value": "auto", "label": "Automatique (accordéon)" }, { "value": "none", "label": "Aucune" } ], "default": "auto" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "limit": 8,
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "info": "80 caractères max" },
+        { "type": "richtext", "id": "reponse", "label": "Réponse", "info": "350 caractères max" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "CS · FAQ" } ]
+}
+{% endschema %}

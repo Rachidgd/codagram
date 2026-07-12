@@ -1,0 +1,123 @@
+{%- comment -%}
+  cs-blog-teaser.liquid · Articles (§8.18, §9.7).
+  Mode « teaser » : 3 derniers articles + lien « Tous les guides ».
+  Mode « hub » : grille paginée du blog courant (template blog.json).
+{%- endcomment -%}
+{{ 'section-blog-teaser.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign mode = section.settings.mode
+  if template.name == 'blog'
+    assign mode = 'hub'
+    assign blog_source = blog
+  else
+    assign blog_source = blogs[section.settings.blog]
+  endif
+-%}
+
+<section id="{{ section.id }}"
+  class="cs-section cs-blog-teaser{% if section.settings.bg_style == 'alt' %} cs-section--alt{% elsif section.settings.bg_style == 'halo' %} cs-section--halo{% endif %}"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container">
+    {%- if mode == 'teaser' and section.settings.titre != blank -%}
+      <header class="cs-section__tete" data-reveal="up">
+        {% render 'eyebrow', texte: section.settings.eyebrow %}
+        <h2 class="cs-h2">{{ section.settings.titre | escape }}</h2>
+      </header>
+    {%- endif -%}
+
+    {%- capture carte_article -%}{%- endcapture -%}
+
+    {%- if mode == 'hub' and blog_source -%}
+      {%- paginate blog_source.articles by 9 -%}
+        <div class="cs-blog-teaser__grille" data-reveal-group>
+          {%- for article in blog_source.articles -%}
+            <article class="cs-blog-teaser__carte" data-reveal="up">
+              <a href="{{ article.url }}" class="cs-blog-teaser__lien">
+                {%- if article.image -%}
+                  <div class="cs-blog-teaser__cover" data-shape="soft">
+                    {% render 'image', img: article.image, sizes: '(min-width: 900px) 30vw, 92vw', ratio: '3/2', alt: article.title %}
+                  </div>
+                {%- endif -%}
+                <div class="cs-blog-teaser__infos">
+                  {%- if article.tags.first -%}
+                    <span class="cs-chip">{{ article.tags.first | escape }}</span>
+                  {%- endif -%}
+                  <h3 class="cs-h3">{{ article.title | escape }}</h3>
+                  {%- if article.excerpt != blank -%}
+                    <p class="cs-blog-teaser__extrait">{{ article.excerpt | strip_html | truncate: 140 }}</p>
+                  {%- endif -%}
+                  {%- assign mots = article.content | strip_html | split: ' ' -%}
+                  <span class="cs-meta">{{ mots.size | divided_by: 200 | at_least: 1 }} min de lecture</span>
+                </div>
+              </a>
+            </article>
+          {%- endfor -%}
+        </div>
+        {%- if paginate.pages > 1 -%}
+          <nav class="cs-blog-teaser__pagination" aria-label="Pagination">
+            {%- if paginate.previous -%}
+              <a class="cs-chip" href="{{ paginate.previous.url }}">Page précédente</a>
+            {%- endif -%}
+            <span class="cs-meta">Page {{ paginate.current_page }} sur {{ paginate.pages }}</span>
+            {%- if paginate.next -%}
+              <a class="cs-chip" href="{{ paginate.next.url }}">Page suivante</a>
+            {%- endif -%}
+          </nav>
+        {%- endif -%}
+      {%- endpaginate -%}
+    {%- elsif blog_source -%}
+      <div class="cs-blog-teaser__grille" data-reveal-group>
+        {%- for article in blog_source.articles limit: 3 -%}
+          <article class="cs-blog-teaser__carte" data-reveal="up">
+            <a href="{{ article.url }}" class="cs-blog-teaser__lien">
+              {%- if article.image -%}
+                <div class="cs-blog-teaser__cover" data-shape="soft">
+                  {% render 'image', img: article.image, sizes: '(min-width: 900px) 30vw, 92vw', ratio: '3/2', alt: article.title %}
+                </div>
+              {%- endif -%}
+              <div class="cs-blog-teaser__infos">
+                {%- if article.tags.first -%}
+                  <span class="cs-chip">{{ article.tags.first | escape }}</span>
+                {%- endif -%}
+                <h3 class="cs-h3">{{ article.title | escape }}</h3>
+                {%- assign mots = article.content | strip_html | split: ' ' -%}
+                <span class="cs-meta">{{ mots.size | divided_by: 200 | at_least: 1 }} min de lecture</span>
+              </div>
+            </a>
+          </article>
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.lien_tous != blank -%}
+        <div class="cs-blog-teaser__pied">
+          <a href="{{ section.settings.lien_tous }}" class="cs-lien">Tous les guides {% render 'icone', nom: 'fleche', taille: 18 %}</a>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CS · Articles",
+  "settings": [
+    { "type": "select", "id": "mode", "label": "Mode",
+      "options": [
+        { "value": "teaser", "label": "Teaser (3 derniers articles)" },
+        { "value": "hub", "label": "Hub paginé (template blog)" }
+      ],
+      "default": "teaser" },
+    { "type": "blog", "id": "blog", "label": "Blog source (mode teaser)" },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "info": "28 caractères max" },
+    { "type": "text", "id": "titre", "label": "Titre (H2)", "info": "60 caractères max" },
+    { "type": "url", "id": "lien_tous", "label": "Lien « Tous les guides »" },
+    { "type": "select", "id": "bg_style", "label": "Fond",
+      "options": [ { "value": "base", "label": "Base" }, { "value": "alt", "label": "Alterné" }, { "value": "halo", "label": "Halo braise" } ], "default": "base" },
+    { "type": "select", "id": "animation", "label": "Animation d'apparition",
+      "options": [ { "value": "auto", "label": "Automatique (montée)" }, { "value": "none", "label": "Aucune" } ], "default": "auto" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "presets": [ { "name": "CS · Articles" } ]
+}
+{% endschema %}

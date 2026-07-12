@@ -1,0 +1,58 @@
+/* CS-26 · section-article.css · Article (§8.18) */
+
+.cs-article__progression {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  z-index: 130;
+  background: transparent;
+}
+.cs-article__progression-barre {
+  display: block;
+  height: 100%;
+  background: var(--g-braise);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.cs-article__tete { padding-block: calc(var(--header-h) + var(--sp-6)) var(--sp-6); }
+.cs-article__tete-interieur { display: grid; gap: var(--sp-4); justify-items: start; max-width: 780px; }
+.cs-article__tete .cs-chip { min-height: 28px; font-size: .8125rem; color: var(--c-accent); }
+.cs-article__cover { margin-bottom: var(--sp-7); max-width: 980px; }
+
+.cs-article__grille {
+  display: grid;
+  gap: var(--sp-7);
+  padding-bottom: var(--sp-8);
+}
+@media (min-width: 1240px) {
+  .cs-article__grille { grid-template-columns: 260px minmax(0, 720px); }
+}
+.cs-article__sommaire { display: none; }
+@media (min-width: 1240px) {
+  .cs-article__sommaire {
+    display: block;
+    position: sticky;
+    top: calc(var(--header-h) + var(--sp-5));
+    align-self: start;
+  }
+  .cs-article__sommaire ol { display: grid; gap: var(--sp-2); margin-top: var(--sp-4); }
+  .cs-article__sommaire a {
+    color: var(--c-text-3);
+    font-size: var(--fs-small);
+    text-decoration: none;
+    display: inline-block;
+    padding-block: var(--sp-1);
+  }
+  .cs-article__sommaire a:hover { color: var(--c-text); }
+}
+
+/* Encadré « À retenir » : blockquote éditorial stylé en carte braise */
+.cs-article__corps blockquote {
+  background: color-mix(in srgb, var(--c-accent) 8%, transparent);
+  border-left: 2px solid var(--c-accent);
+  border-radius: var(--r-m);
+  padding: var(--sp-5);
+  font-size: var(--fs-body);
+}
+.cs-article__corps h2 { scroll-margin-top: calc(var(--header-h) + var(--sp-5)); }

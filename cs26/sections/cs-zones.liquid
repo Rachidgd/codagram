@@ -1,0 +1,108 @@
+{%- comment -%}
+  cs-zones.liquid · Zones couvertes (§8.18) : chips des quartiers/communes
+  lues du metaobject `ville` de la page (repli : blocks), carte image
+  statique stylisée (PAS d'embed Google Maps : poids) + lien itinéraire GBP.
+{%- endcomment -%}
+{%- liquid
+  assign ville_meta = page.metafields.cs.ville.value
+  assign a_zones = false
+  if ville_meta and ville_meta.zones.value
+    assign a_zones = true
+  endif
+  for block in section.blocks
+    if block.settings.nom != blank
+      assign a_zones = true
+    endif
+  endfor
+-%}
+{%- if a_zones -%}
+{{ 'section-zones.css' | asset_url | stylesheet_tag }}
+
+<section id="{{ section.id }}"
+  class="cs-section cs-zones{% if section.settings.bg_style == 'alt' %} cs-section--alt{% elsif section.settings.bg_style == 'halo' %} cs-section--halo{% endif %}"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container cs-zones__grille">
+    <div class="cs-zones__contenu">
+      {%- if section.settings.titre != blank -%}
+        <header class="cs-section__tete" data-reveal="up">
+          {% render 'eyebrow', texte: section.settings.eyebrow %}
+          <h2 class="cs-h2">{{ section.settings.titre | escape }}</h2>
+          {%- if section.settings.intro != blank -%}
+            <p>{{ section.settings.intro | escape }}</p>
+          {%- endif -%}
+        </header>
+      {%- endif -%}
+      <div class="cs-zones__chips" data-reveal-group>
+        {%- if ville_meta and ville_meta.zones.value -%}
+          {%- for zone in ville_meta.zones.value -%}
+            <span class="cs-chip" data-reveal="scale">{{ zone | escape }}</span>
+          {%- endfor -%}
+        {%- endif -%}
+        {%- for block in section.blocks -%}
+          {%- if block.settings.nom != blank -%}
+            <span class="cs-chip" data-reveal="scale" {{ block.shopify_attributes }}>{{ block.settings.nom | escape }}</span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- liquid
+        assign gbp = ''
+        if ville_meta and ville_meta.gbp_url.value != blank
+          assign gbp = ville_meta.gbp_url.value
+        elsif settings.gbp_url != blank
+          assign gbp = settings.gbp_url
+        endif
+      -%}
+      {%- if gbp != blank -%}
+        <a class="cs-lien" href="{{ gbp }}?utm_source=site&utm_medium=zones&utm_campaign=gbp" rel="noopener" target="_blank">
+          Itinéraire via notre fiche Google {% render 'icone', nom: 'fleche-45', taille: 16 %}
+        </a>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.carte_image != blank -%}
+      <div class="cs-zones__carte" data-reveal="clip">
+        <div data-shape="{{ section.settings.shape }}">
+          {% render 'image', img: section.settings.carte_image, sizes: '(min-width: 900px) 46vw, 92vw', ratio: '4/3', alt: section.settings.carte_alt %}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CS · Zones couvertes",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "info": "28 caractères max" },
+    { "type": "text", "id": "titre", "label": "Titre (H2)", "info": "60 caractères max" },
+    { "type": "textarea", "id": "intro", "label": "Introduction", "info": "180 caractères max" },
+    { "type": "image_picker", "id": "carte_image", "label": "Carte statique stylisée" },
+    { "type": "text", "id": "carte_alt", "label": "Texte alternatif de la carte" },
+    { "type": "select", "id": "shape", "label": "Forme de la carte",
+      "options": [
+        { "value": "soft", "label": "Douce" },
+        { "value": "diag-1", "label": "Diagonale 1" },
+        { "value": "diag-2", "label": "Diagonale 2" },
+        { "value": "organique", "label": "Organique" }
+      ],
+      "default": "organique" },
+    { "type": "select", "id": "bg_style", "label": "Fond",
+      "options": [ { "value": "base", "label": "Base" }, { "value": "alt", "label": "Alterné" }, { "value": "halo", "label": "Halo braise" } ], "default": "base" },
+    { "type": "select", "id": "animation", "label": "Animation d'apparition",
+      "options": [ { "value": "auto", "label": "Automatique (chips en cascade)" }, { "value": "none", "label": "Aucune" } ], "default": "auto" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "zone",
+      "name": "Zone (repli sans metaobject)",
+      "limit": 16,
+      "settings": [
+        { "type": "text", "id": "nom", "label": "Quartier ou commune" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "CS · Zones couvertes" } ]
+}
+{% endschema %}

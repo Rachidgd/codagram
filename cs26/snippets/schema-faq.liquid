@@ -1,0 +1,14 @@
+{%- comment -%}
+  schema-faq.liquid · FAQPage généré depuis les blocks de cs-faq (§10.2).
+  Rendu UNIQUEMENT par cs-faq, une seule fois par page.
+  Params : faq_blocks (section.blocks)
+{%- endcomment -%}
+{%- if faq_blocks.size > 0 -%}
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  {%- for b in faq_blocks -%}
+  { "@type": "Question", "name": {{ b.settings.question | strip_html | json }},
+    "acceptedAnswer": { "@type": "Answer", "text": {{ b.settings.reponse | strip_html | json }} } }{% unless forloop.last %},{% endunless %}
+  {%- endfor -%} ] }
+</script>
+{%- endif -%}

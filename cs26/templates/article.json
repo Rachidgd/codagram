@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "article": {
+      "type": "cs-article",
+      "settings": {
+        "progression": true,
+        "sommaire": true
+      }
+    },
+    "suite": {
+      "type": "cs-article-suite",
+      "settings": {
+        "cta_titre": "Ce guide appliqué à votre site ?",
+        "cta_label": "Mon audit gratuit",
+        "cta_reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 64,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "article",
+    "suite"
+  ]
+}

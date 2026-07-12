@@ -1,0 +1,253 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Google Ads",
+        "intro": "Chaque euro traçable : des campagnes pilotées au coût par client acquis, pas au volume de clics.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Landing page dédiée",
+            "nous": "oui",
+            "alt_1": "non",
+            "alt_2": "~"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Suivi des conversions",
+            "nous": "oui",
+            "alt_1": "~",
+            "alt_2": "~"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Coût par lead suivi",
+            "nous": "oui",
+            "alt_1": "non",
+            "alt_2": "~"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Compte à votre nom",
+            "nous": "oui",
+            "alt_1": "~",
+            "alt_2": "oui"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Reporting compréhensible",
+            "nous": "oui",
+            "alt_1": "non",
+            "alt_2": "~"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Pourquoi ça change tout",
+        "titre": "Ads seul ou Ads + landing optimisée ?",
+        "intro": "La différence ne se joue pas dans l'enchère : elle se joue sur la page qui reçoit le clic.",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Campagne seule",
+        "col_3_titre": "Réglages par défaut",
+        "col_4_titre": "",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Cadrage économique",
+            "texte": "Votre marge, votre valeur client : on calcule le coût par lead soutenable."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Structure et annonces",
+            "texte": "Des campagnes propres, des annonces testées, des mots-clés négatifs tenus."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Landing dédiée",
+            "texte": "Le clic arrive sur une page conçue pour convertir, pas sur votre accueil."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Optimisation continue",
+            "texte": "Budgets réalloués chaque semaine vers ce qui produit des clients."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Comment on pilote vos campagnes",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "titre": "Les chiffres de nos campagnes",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "source": "metaobjects",
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Cas Google Ads",
+        "lien_hub": "/pages/realisations",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Quel budget publicitaire minimum ?",
+            "reponse": "<p>Cela dépend du coût par clic de votre secteur et de votre zone. L'audit gratuit chiffre le seuil en dessous duquel lancer des campagnes serait jeter de l'argent, et le budget réaliste pour apprendre vite.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Le compte publicitaire m'appartient-il ?",
+            "reponse": "<p>Oui. Le compte Google Ads est créé à votre nom, vous en gardez la propriété et l'historique. Nous y travaillons avec un accès gestionnaire, révocable à tout moment.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Comment mesurez-vous la rentabilité ?",
+            "reponse": "<p>Au coût par lead ou par vente, rapproché de votre marge réelle. Le nombre de clics et le taux d'impression sont des indicateurs de pilotage, jamais des résultats en soi.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions sur Google Ads",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Voyons ce que vos campagnes laissent filer.",
+        "texte": "Un audit gratuit de votre compte ou de votre potentiel publicitaire, chiffré et sans jargon.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature",
+    "process",
+    "stats",
+    "projets",
+    "avis",
+    "faq",
+    "cta"
+  ]
+}

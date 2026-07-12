@@ -1,0 +1,34 @@
+{%- comment -%}
+  social-meta.liquid · OpenGraph + Twitter Cards (§10.3).
+{%- endcomment -%}
+{%- liquid
+  assign og_type = 'website'
+  if template.name == 'article'
+    assign og_type = 'article'
+  endif
+  assign og_titre = page_title | default: shop.name
+  assign og_desc = page_description | default: settings.promesse_footer | default: shop.name
+
+  assign og_image = ''
+  if template.name == 'article' and article.image
+    assign og_image = article.image | image_url: width: 1200
+  elsif template.name == 'page' and page.metafields.cs.og_image
+    assign og_image = page.metafields.cs.og_image | image_url: width: 1200
+  elsif settings.og_image_defaut
+    assign og_image = settings.og_image_defaut | image_url: width: 1200
+  endif
+-%}
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:title" content="{{ og_titre | escape }}">
+<meta property="og:description" content="{{ og_desc | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:site_name" content="{{ shop.name | escape }}">
+<meta property="og:locale" content="fr_FR">
+{%- if og_image != blank %}
+<meta property="og:image" content="https:{{ og_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+{%- endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ og_titre | escape }}">
+<meta name="twitter:description" content="{{ og_desc | escape }}">

@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "stub": {
+      "type": "cs-stub",
+      "settings": {}
+    }
+  },
+  "order": [
+    "stub"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "type": "header",
+  "name": "Groupe d'en-tête",
+  "sections": {
+    "annonce": {
+      "type": "cs-annonce",
+      "settings": {
+        "texte": "",
+        "version": "1"
+      }
+    },
+    "header": {
+      "type": "cs-header",
+      "settings": {
+        "menu": "main-menu",
+        "transparent_home": true,
+        "cta_texte": "Audit gratuit",
+        "cta_popup": true,
+        "featured_titre": "Audit gratuit",
+        "featured_texte": "Ce que votre site laisse filer, chiffré sous 48 h. Sans engagement.",
+        "featured_bouton": "Commencer l'audit"
+      }
+    }
+  },
+  "order": ["annonce", "header"]
+}

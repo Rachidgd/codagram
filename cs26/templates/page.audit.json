@@ -1,0 +1,210 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "hub",
+        "cta_active": false,
+        "eyebrow": "Audit gratuit",
+        "intro": "Ce que votre site laisse filer, chiffré et expliqué. Livré sous 48 h ouvrées, sans engagement."
+      }
+    },
+    "garanties": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "horloge",
+            "titre": "Réponse sous 48 h",
+            "texte": "Chaque demande reçoit une réponse d'un humain sous 48 h ouvrées."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Sans engagement",
+            "texte": "L'audit est gratuit et ne vous engage à rien. Pas de relance agressive."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "document",
+            "titre": "Un plan actionnable",
+            "texte": "Des recommandations classées par impact, exploitables avec ou sans nous."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "settings": {
+        "bg_style": "alt",
+        "padding_haut": 64,
+        "padding_bas": 64
+      }
+    },
+    "contenu_audit": {
+      "type": "cs-process",
+      "blocks": {
+        "p1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Visibilité Google",
+            "texte": "Où vous apparaissez, où vos concurrents vous doublent, et pourquoi."
+          }
+        },
+        "p2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vitesse et technique",
+            "texte": "Ce qui ralentit votre site et ce que ça coûte en visiteurs perdus."
+          }
+        },
+        "p3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Parcours de conversion",
+            "texte": "Les frictions qui font fuir vos visiteurs avant le contact ou l'achat."
+          }
+        },
+        "p4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Plan d'action priorisé",
+            "texte": "Les actions classées par impact et par effort, à lancer dans l'ordre."
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "settings": {
+        "eyebrow": "Ce que contient l'audit",
+        "titre": "Quatre regards sur votre site, un plan.",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "formulaire": {
+      "type": "cs-contact",
+      "blocks": {
+        "obj_1": {
+          "type": "objectif",
+          "settings": {
+            "label": "Être trouvé sur Google"
+          }
+        },
+        "obj_2": {
+          "type": "objectif",
+          "settings": {
+            "label": "Créer ou refondre mon site"
+          }
+        },
+        "obj_3": {
+          "type": "objectif",
+          "settings": {
+            "label": "Booster mes ventes avec la pub"
+          }
+        },
+        "obj_4": {
+          "type": "objectif",
+          "settings": {
+            "label": "Convertir plus de visiteurs"
+          }
+        },
+        "obj_5": {
+          "type": "objectif",
+          "settings": {
+            "label": "J'ai déjà un projet précis (devis)",
+            "devis": true
+          }
+        },
+        "obj_6": {
+          "type": "objectif",
+          "settings": {
+            "label": "Autre"
+          }
+        }
+      },
+      "block_order": [
+        "obj_1",
+        "obj_2",
+        "obj_3",
+        "obj_4",
+        "obj_5",
+        "obj_6"
+      ],
+      "settings": {
+        "mode": "etapes",
+        "infos_titre": "Plutôt de vive voix ?",
+        "promesse": "Réponse sous 48 h ouvrées, par une personne, pas un robot.",
+        "padding_haut": 64,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ils sont passés par l'audit",
+        "source_donnees": "blocks",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Pourquoi l'audit est-il gratuit ?",
+            "reponse": "<p>Parce qu'il nous qualifie autant qu'il vous éclaire : si votre situation ne relève pas de nos métiers, on vous le dit et on vous oriente. S'il y a un vrai potentiel, l'audit devient la base d'une proposition précise.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Que dois-je préparer ?",
+            "reponse": "<p>Rien d'obligatoire. L'URL de votre site suffit pour démarrer. Un accès en lecture à vos statistiques rend l'audit plus précis, mais il peut attendre un second échange.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Vais-je être relancé sans fin ?",
+            "reponse": "<p>Non. Vous recevez l'audit, puis une seule proposition d'échange pour le commenter. Sans réponse de votre part, on en reste là. C'est écrit noir sur blanc dans nos engagements.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Avant de vous lancer",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "garanties",
+    "contenu_audit",
+    "formulaire",
+    "avis",
+    "faq"
+  ]
+}

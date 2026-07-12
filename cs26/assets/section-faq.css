@@ -1,0 +1,6 @@
+/* CS-26 · section-faq.css · Accordéon FAQ (§8.11) */
+
+.cs-faq__interieur { max-width: 720px; }
+.cs-faq__question { margin: 0; }
+.cs-faq__reponse { color: var(--c-text-2); }
+.cs-faq__reponse p { max-width: 62ch; }

@@ -1,0 +1,30 @@
+{%- comment -%}
+  gift_card.liquid · Stub plateforme requis par Shopify (§5.1).
+  Jamais maillé, noindex (posé par theme.liquid).
+{%- endcomment -%}
+{% layout none %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Carte cadeau · {{ shop.name }}</title>
+  {{ 'cs-base.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+  <main style="min-height: 100svh; display: grid; place-items: center; padding: 24px;">
+    <div style="display: grid; gap: 16px; text-align: center; max-width: 420px;">
+      <h1 class="cs-h2">Carte cadeau</h1>
+      <p class="cs-h3">{{ gift_card.initial_value | money }}</p>
+      <p>Code : <strong>{{ gift_card.code | format_code }}</strong></p>
+      {%- if gift_card.expired -%}
+        <p>Cette carte a expiré.</p>
+      {%- elsif gift_card.balance != gift_card.initial_value -%}
+        <p>Solde restant : {{ gift_card.balance | money }}</p>
+      {%- endif -%}
+      <a class="cs-btn cs-btn--primaire" href="{{ shop.url }}">Visiter le site</a>
+    </div>
+  </main>
+</body>
+</html>

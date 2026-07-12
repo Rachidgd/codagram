@@ -1,0 +1,135 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "ville",
+        "eyebrow": "Agence web locale",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement."
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Audit local",
+            "texte": "Votre visibilité sur votre zone, face à vos concurrents directs."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Plan d'action",
+            "texte": "Les leviers classés par impact pour votre marché précis."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Production",
+            "texte": "Site, contenus ou campagnes : un chantier à la fois, mesuré."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Suivi",
+            "texte": "Un compte rendu mensuel chiffré, en français clair."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Comment nous travaillons avec les entreprises locales",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "stack": {
+      "type": "cs-stack",
+      "settings": {
+        "eyebrow": "Nos services ici",
+        "titre": "Ce que nous pouvons construire ensemble",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "zones": {
+      "type": "cs-zones",
+      "settings": {
+        "eyebrow": "Zones couvertes",
+        "titre": "Nous intervenons dans ces quartiers et communes",
+        "shape": "organique",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "source": "metaobjects",
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Projets à découvrir",
+        "lien_hub": "/pages/realisations",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "settings": {
+        "titre": "Questions locales",
+        "premier_ouvert": true,
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Votre marché local, chiffré.",
+        "texte": "Un audit gratuit de votre visibilité sur votre zone : qui vous double, où, et comment reprendre la place.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "process",
+    "stack",
+    "avis",
+    "zones",
+    "projets",
+    "faq",
+    "cta"
+  ]
+}

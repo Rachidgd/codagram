@@ -1,0 +1,44 @@
+{%- comment -%}
+  cs-cta.liquid · Bande de conversion finale (§8.12).
+  Un seul cs-cta par page, en avant-dernière position des pages de vente.
+  Halo braise pulsant discret (4 s, opacité .5 → .7).
+{%- endcomment -%}
+{{ 'section-cta.css' | asset_url | stylesheet_tag }}
+
+<section id="{{ section.id }}" class="cs-section cs-cta"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container">
+    <div class="cs-cta__carte" data-reveal="scale">
+      <div class="cs-cta__halo" aria-hidden="true"></div>
+      <div class="cs-cta__contenu">
+        {%- if section.settings.titre != blank -%}
+          <h2 class="cs-h2">{{ section.settings.titre | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.texte != blank -%}
+          <p>{{ section.settings.texte | escape }}</p>
+        {%- endif -%}
+        {% render 'bouton', label: section.settings.cta_label, popup: true, style: 'primaire', reassurance: section.settings.reassurance %}
+        {%- if settings.nap_telephone != blank -%}
+          <p class="cs-cta__tel">ou appelez-nous :
+            <a href="tel:{{ settings.nap_telephone | replace: ' ', '' }}">{{ settings.nap_telephone | escape }}</a>
+          </p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CS · CTA final",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre (H2)", "info": "60 caractères max, orienté résultat", "default": "Voyons ce que votre site laisse filer." },
+    { "type": "textarea", "id": "texte", "label": "Texte", "info": "140 caractères max", "default": "Un audit concret de votre visibilité et de vos conversions, livré sous 48 h ouvrées." },
+    { "type": "text", "id": "cta_label", "label": "Bouton (popup)", "info": "24 caractères max", "default": "Mon audit gratuit" },
+    { "type": "text", "id": "reassurance", "label": "Réassurance", "info": "70 caractères max", "default": "Réponse sous 48 h ouvrées. Sans engagement." },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "presets": [ { "name": "CS · CTA final" } ]
+}
+{% endschema %}

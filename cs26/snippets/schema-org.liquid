@@ -1,0 +1,89 @@
+{%- comment -%}
+  schema-org.liquid · Organization + WebSite sur toutes les pages (layout),
+  variante ProfessionalService sur home, contact et pages villes (§10.2).
+  Les données viennent des settings Identité / NAP : rien d'inventé, un champ
+  vide est simplement omis du JSON-LD (§0.2).
+{%- endcomment -%}
+{%- liquid
+  assign sameas = ''
+  if settings.lien_instagram != blank
+    assign sameas = sameas | append: settings.lien_instagram | append: '|'
+  endif
+  if settings.lien_facebook != blank
+    assign sameas = sameas | append: settings.lien_facebook | append: '|'
+  endif
+  if settings.lien_linkedin != blank
+    assign sameas = sameas | append: settings.lien_linkedin | append: '|'
+  endif
+  if settings.lien_tiktok != blank
+    assign sameas = sameas | append: settings.lien_tiktok | append: '|'
+  endif
+  if settings.lien_youtube != blank
+    assign sameas = sameas | append: settings.lien_youtube | append: '|'
+  endif
+  if settings.gbp_url != blank
+    assign sameas = sameas | append: settings.gbp_url | append: '|'
+  endif
+  assign sameas_liste = sameas | split: '|'
+
+  assign est_local = false
+  if template.name == 'index'
+    assign est_local = true
+  elsif template.suffix == 'contact'
+    assign est_local = true
+  elsif template.suffix contains 'ville'
+    assign est_local = true
+  endif
+-%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": {% if est_local %}"ProfessionalService"{% else %}"Organization"{% endif %},
+      "@id": "{{ shop.url }}#organisation",
+      "name": {{ settings.nom_legal | default: shop.name | json }},
+      "url": {{ shop.url | json }}
+      {%- if settings.logo_theme %},
+      "logo": {{ settings.logo_theme | image_url: width: 600 | prepend: 'https:' | json }}
+      {%- endif %}
+      {%- if settings.nap_telephone != blank %},
+      "telephone": {{ settings.nap_telephone | json }}
+      {%- endif %}
+      {%- if settings.nap_email != blank %},
+      "email": {{ settings.nap_email | json }}
+      {%- endif %}
+      {%- if settings.nap_adresse != blank %},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": {{ settings.nap_adresse | json }}
+        {%- if settings.nap_ville != blank %},
+        "addressLocality": {{ settings.nap_ville | json }}
+        {%- endif %}
+        {%- if settings.nap_code_postal != blank %},
+        "postalCode": {{ settings.nap_code_postal | json }}
+        {%- endif %},
+        "addressCountry": "FR"
+      }
+      {%- endif %}
+      {%- if est_local and settings.nap_horaires != blank %},
+      "openingHours": {{ settings.nap_horaires | json }}
+      {%- endif %}
+      {%- if est_local and settings.zones_servies != blank %},
+      "areaServed": {{ settings.zones_servies | split: ',' | json }}
+      {%- endif %}
+      {%- if sameas_liste.size > 0 %},
+      "sameAs": {{ sameas_liste | json }}
+      {%- endif %}
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ shop.url }}#site",
+      "name": {{ shop.name | json }},
+      "url": {{ shop.url | json }},
+      "publisher": { "@id": "{{ shop.url }}#organisation" },
+      "inLanguage": "fr-FR"
+    }
+  ]
+}
+</script>

@@ -1,0 +1,19 @@
+/* CS-26 · section-equipe.css · Équipe (§8.18) */
+
+.cs-equipe__grille {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-6) var(--sp-4);
+}
+@media (min-width: 900px) { .cs-equipe__grille { grid-template-columns: repeat(4, 1fr); gap: var(--sp-6) var(--sp-5); } }
+
+.cs-equipe__carte { display: grid; gap: var(--sp-2); align-content: start; }
+.cs-equipe__photo { margin-bottom: var(--sp-2); }
+.cs-equipe__photo img {
+  filter: saturate(.35);
+  transition: filter var(--d-2) var(--e-out);
+}
+.cs-equipe__carte:hover .cs-equipe__photo img { filter: saturate(1); }
+@media (prefers-reduced-motion: reduce) { .cs-equipe__photo img { filter: none; } }
+.cs-equipe__role { color: var(--c-accent); font-size: var(--fs-small); font-weight: 600; }
+.cs-equipe__ligne { color: var(--c-text-2); font-size: var(--fs-small); }

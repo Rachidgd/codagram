@@ -1,0 +1,12 @@
+/* CS-26 · section-richtext.css */
+.cs-richtext__interieur { display: grid; gap: var(--sp-6); }
+.cs-richtext__silo { display: grid; gap: var(--sp-4); }
+.cs-richtext__silo-liens { display: grid; gap: var(--sp-3); }
+.cs-richtext__silo-liens > li { display: grid; gap: var(--sp-2); justify-items: start; }
+.cs-richtext__silo-sous {
+  display: grid;
+  gap: var(--sp-2);
+  padding-left: var(--sp-5);
+  border-left: 1px solid var(--c-line);
+  justify-items: start;
+}

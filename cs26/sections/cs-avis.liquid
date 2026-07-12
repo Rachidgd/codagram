@@ -1,0 +1,144 @@
+{%- comment -%}
+  cs-avis.liquid · Marquee d'avis 2 lignes opposées (§8.8, §4.6).
+  Sources : blocks OU metaobjects `avis`. 8 avis minimum pour le marquee,
+  sinon grille statique 2 colonnes. Aucun avis inventé (§2.3).
+{%- endcomment -%}
+{%- liquid
+  assign source = section.settings.source_donnees
+  assign nb = 0
+  if source == 'metaobjects'
+    assign entrees = shop.metaobjects['avis'].values
+    for m in entrees
+      if m.texte.value != blank
+        assign nb = nb | plus: 1
+      endif
+    endfor
+  else
+    for block in section.blocks
+      if block.settings.texte != blank
+        assign nb = nb | plus: 1
+      endif
+    endfor
+  endif
+-%}
+{%- if nb > 0 -%}
+{{ 'section-avis.css' | asset_url | stylesheet_tag }}
+
+{%- assign marquee = false -%}
+{%- if nb >= 8 %}{% assign marquee = true %}{% endif -%}
+
+<section id="{{ section.id }}"
+  class="cs-section cs-avis{% if section.settings.bg_style == 'alt' %} cs-section--alt{% elsif section.settings.bg_style == 'halo' %} cs-section--halo{% endif %}"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container">
+    <header class="cs-section__tete cs-section__tete--centre" data-reveal="fade">
+      {% render 'eyebrow', texte: section.settings.eyebrow %}
+      {%- if section.settings.titre != blank -%}
+        <h2 class="cs-h2">{{ section.settings.titre | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.note_moyenne != blank and section.settings.nb_avis != blank -%}
+        <p class="cs-avis__note">
+          <span class="cs-etoiles" aria-hidden="true">
+            {%- for i in (1..5) -%}
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.3 1.1 6-5.4-2.9-5.4 2.9 1.1-6L3.2 9.4l6.1-.8z"/></svg>
+            {%- endfor -%}
+          </span>
+          <strong>{{ section.settings.note_moyenne | escape }}/5</strong> · {{ section.settings.nb_avis | escape }} avis{% if section.settings.source_label != blank %} {{ section.settings.source_label | escape }}{% endif %}
+        </p>
+      {%- endif -%}
+    </header>
+  </div>
+
+  {%- if marquee -%}
+    <div class="cs-avis__viewport">
+      {%- for rangee in (1..2) -%}
+        <div class="cs-avis__row" {% if rangee == 2 %}data-dir="right"{% endif %}
+          style="--speed: {% if rangee == 1 %}{{ section.settings.vitesse_1 }}s{% else %}{{ section.settings.vitesse_2 }}s{% endif %};">
+          {%- for copie in (1..2) -%}
+            {%- if source == 'metaobjects' -%}
+              {%- for m in entrees -%}
+                {%- assign reste = forloop.index0 | modulo: 2 | plus: 1 -%}
+                {%- if m.texte.value != blank and reste == rangee -%}
+                  {% render 'avis-carte', auteur: m.auteur.value, ville: m.ville.value, texte: m.texte.value, note: m.note.value, source: m.source.value, cachee: copie > 1 %}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- else -%}
+              {%- for block in section.blocks -%}
+                {%- assign reste = forloop.index0 | modulo: 2 | plus: 1 -%}
+                {%- if block.settings.texte != blank and reste == rangee -%}
+                  {% render 'avis-carte', auteur: block.settings.auteur, ville: block.settings.ville, texte: block.settings.texte, note: block.settings.note, source: block.settings.source, cachee: copie > 1 %}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <div class="cs-container">
+      <div class="cs-avis__grille" data-reveal-group>
+        {%- if source == 'metaobjects' -%}
+          {%- for m in entrees -%}
+            {%- if m.texte.value != blank -%}
+              <div data-reveal="up">
+                {% render 'avis-carte', auteur: m.auteur.value, ville: m.ville.value, texte: m.texte.value, note: m.note.value, source: m.source.value %}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- for block in section.blocks -%}
+            {%- if block.settings.texte != blank -%}
+              <div data-reveal="up" {{ block.shopify_attributes }}>
+                {% render 'avis-carte', auteur: block.settings.auteur, ville: block.settings.ville, texte: block.settings.texte, note: block.settings.note, source: block.settings.source %}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CS · Avis clients",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "info": "28 caractères max" },
+    { "type": "text", "id": "titre", "label": "Titre (H2)", "info": "60 caractères max" },
+    { "type": "header", "content": "Note moyenne (réelle, sourcée §2.3)" },
+    { "type": "text", "id": "note_moyenne", "label": "Note", "info": "Ex. 4,9. Vide = non affichée." },
+    { "type": "text", "id": "nb_avis", "label": "Nombre d'avis", "info": "Ex. 87" },
+    { "type": "text", "id": "source_label", "label": "Source", "info": "Ex. Google" },
+    { "type": "header", "content": "Données" },
+    { "type": "select", "id": "source_donnees", "label": "Source des avis",
+      "options": [ { "value": "blocks", "label": "Blocks de la section" }, { "value": "metaobjects", "label": "Metaobjects « avis »" } ],
+      "default": "blocks" },
+    { "type": "range", "id": "vitesse_1", "label": "Vitesse ligne 1", "min": 20, "max": 80, "step": 2, "default": 42, "unit": "s" },
+    { "type": "range", "id": "vitesse_2", "label": "Vitesse ligne 2", "min": 20, "max": 80, "step": 2, "default": 50, "unit": "s" },
+    { "type": "select", "id": "bg_style", "label": "Fond",
+      "options": [ { "value": "base", "label": "Base" }, { "value": "alt", "label": "Alterné" }, { "value": "halo", "label": "Halo braise" } ], "default": "base" },
+    { "type": "select", "id": "animation", "label": "Animation d'apparition",
+      "options": [ { "value": "auto", "label": "Automatique (marquee)" }, { "value": "none", "label": "Aucune" } ], "default": "auto" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "avis",
+      "name": "Avis",
+      "limit": 16,
+      "settings": [
+        { "type": "text", "id": "auteur", "label": "Prénom" },
+        { "type": "text", "id": "ville", "label": "Ville" },
+        { "type": "range", "id": "note", "label": "Note", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "texte", "label": "Texte", "info": "220 caractères max. Avis réel, sourcé, jamais réécrit (§2.3)." },
+        { "type": "select", "id": "source", "label": "Source",
+          "options": [ { "value": "google", "label": "Google" }, { "value": "trustpilot", "label": "Trustpilot" }, { "value": "autre", "label": "Autre" } ],
+          "default": "google" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "CS · Avis clients" } ]
+}
+{% endschema %}

@@ -1,0 +1,219 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Référencement SEO",
+        "intro": "Une visibilité durable sur les requêtes qui rapportent. Des résultats datés, mesurés dans un reporting que vous comprenez.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature_stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "titre": "Des positions qui se mesurent",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "signature_media": {
+      "type": "cs-media-texte",
+      "settings": {
+        "shape": "diag-1",
+        "halo": true,
+        "image_position": "droite",
+        "ordre_mobile": "image",
+        "image_alt": "Courbe de progression Search Console d'un client, données sensibles floutées",
+        "eyebrow": "La preuve, pas la promesse",
+        "titre": "Des courbes réelles, pas des captures de vente.",
+        "corps": "<p>Chaque client accède à son tableau de bord : positions, clics, conversions. Les captures présentées ici viennent de comptes réels, anonymisées côté données sensibles.</p>",
+        "lien_label": "Voir les cas SEO",
+        "lien": "/pages/realisations",
+        "bg_style": "base",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Audit et requêtes",
+            "texte": "On identifie les requêtes qui amènent des clients, pas seulement du trafic."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Socle technique",
+            "texte": "Vitesse, structure, indexation : le site devient lisible pour Google."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Contenus",
+            "texte": "Une page par intention de recherche, écrite pour convaincre humains et moteurs."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Autorité",
+            "texte": "Maillage interne et liens entrants qui pèsent, gagnés proprement."
+          }
+        },
+        "etape_5": {
+          "type": "etape",
+          "settings": {
+            "titre": "Mesure",
+            "texte": "Positions, trafic, conversions : un reporting mensuel daté et commenté."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4",
+        "etape_5"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Comment on construit votre visibilité",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "source": "metaobjects",
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Cas SEO",
+        "lien_hub": "/pages/realisations",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "En combien de temps le SEO produit-il des effets ?",
+            "reponse": "<p>Plusieurs mois, selon la concurrence de votre marché et l'état de départ de votre site. On pose un calendrier réaliste dès l'audit, avec des jalons mesurés : vous voyez la progression avant les premières places.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Garantissez-vous la première position ?",
+            "reponse": "<p>Non, et personne ne le peut sérieusement : Google décide seul. Ce qu'on garantit : une méthode éprouvée, des actions documentées chaque mois, et l'arrêt du budget si les données montrent que ça ne prend pas.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Que contient le reporting mensuel ?",
+            "reponse": "<p>Vos positions sur les requêtes cibles, le trafic organique, les conversions attribuées, et la liste datée des actions menées. Un chiffre sans contexte n'y a pas sa place.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Faut-il produire du contenu tous les mois ?",
+            "reponse": "<p>Pas mécaniquement. On produit quand une intention de recherche le justifie, on améliore l'existant quand c'est plus rentable. Le volume suit la stratégie, jamais l'inverse.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "settings": {
+        "titre": "Vos questions sur le SEO",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Voyons ce que Google vous laisse filer.",
+        "texte": "Un audit gratuit de votre visibilité : vos positions, celles de vos concurrents, et le plan pour combler l'écart.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature_stats",
+    "signature_media",
+    "process",
+    "projets",
+    "avis",
+    "faq",
+    "cta"
+  ]
+}

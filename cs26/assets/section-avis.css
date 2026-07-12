@@ -1,0 +1,74 @@
+/* CS-26 · section-avis.css · Marquee d'avis 2 lignes (§8.8, §4.6) */
+
+.cs-avis__note {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  color: var(--c-text-2);
+  max-width: none;
+}
+.cs-avis__note strong { color: var(--c-text); font-variant-numeric: tabular-nums; }
+
+.cs-avis__viewport {
+  overflow: hidden;
+  display: grid;
+  gap: var(--sp-4);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.cs-avis__row {
+  display: flex;
+  gap: var(--sp-4);
+  width: max-content;
+  animation: cs-marquee var(--speed, 42s) linear infinite;
+}
+.cs-avis__row[data-dir="right"] { animation-direction: reverse; }
+@keyframes cs-marquee {
+  to { transform: translateX(-50%); }
+}
+@media (hover: hover) {
+  .cs-avis:hover .cs-avis__row { animation-play-state: paused; }
+}
+@media (max-width: 639px) {
+  .cs-avis__row { --speed: 56s; }
+  .cs-avis__row[data-dir="right"] { --speed: 64s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-avis__row { animation: none; }
+  .cs-avis__viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .cs-avis__viewport .cs-avis-carte { scroll-snap-align: start; }
+}
+[data-motion="off"] .cs-avis__row { animation: none; }
+[data-motion="off"] .cs-avis__viewport { overflow-x: auto; scroll-snap-type: x mandatory; mask-image: none; -webkit-mask-image: none; }
+[data-motion="soft"] .cs-avis__row { animation-duration: calc(var(--speed, 42s) * 1.6); }
+
+/* Carte avis : largeur fixe = hauteur de rangée réservée, CLS 0 */
+.cs-avis-carte {
+  width: 340px;
+  flex: 0 0 auto;
+  display: grid;
+  gap: var(--sp-3);
+  align-content: start;
+  padding: var(--sp-5);
+}
+@media (max-width: 639px) { .cs-avis-carte { width: 280px; } }
+.cs-avis-carte__texte { color: var(--c-text); max-width: none; }
+.cs-avis-carte__pied {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  font-size: var(--fs-small);
+  color: var(--c-text-3);
+}
+.cs-avis-carte__source { display: inline-flex; align-items: center; gap: var(--sp-1); }
+
+/* Grille statique (moins de 8 avis) */
+.cs-avis__grille { display: grid; gap: var(--sp-4); }
+@media (min-width: 640px) { .cs-avis__grille { grid-template-columns: repeat(2, 1fr); } }
+.cs-avis__grille .cs-avis-carte { width: auto; }

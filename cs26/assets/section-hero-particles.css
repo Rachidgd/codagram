@@ -1,0 +1,134 @@
+/* CS-26 · section-hero-particles.css · Hero home (§8.1) */
+
+.cs-hero {
+  position: relative;
+  min-height: min(92svh, 860px);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 10%, var(--c-glow), transparent 65%),
+    var(--c-bg);
+}
+.cs-hero__particules {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.cs-hero__interieur {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: var(--sp-5);
+  justify-items: center;
+  text-align: center;
+  padding-block: calc(var(--header-h) + var(--sp-7)) var(--sp-8);
+}
+@media (min-width: 900px) {
+  .cs-hero__interieur {
+    justify-items: start;
+    text-align: left;
+    max-width: none;
+  }
+  .cs-hero__titre, .cs-hero__sous-titre { margin-right: auto; }
+}
+.cs-hero__titre { max-width: 16ch; }
+.cs-hero__sous-titre { color: var(--c-text-2); max-width: 52ch; font-size: var(--fs-h3); font-weight: 400; }
+.cs-hero__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  width: 100%;
+}
+.cs-hero__cta .cs-bouton-groupe { width: 100%; text-align: center; }
+.cs-hero__cta .cs-btn { width: 100%; }
+@media (min-width: 640px) {
+  .cs-hero__cta { flex-direction: row; align-items: flex-start; justify-content: center; width: auto; }
+  .cs-hero__cta .cs-bouton-groupe, .cs-hero__cta .cs-btn { width: auto; }
+}
+@media (min-width: 900px) { .cs-hero__cta { justify-content: flex-start; } }
+
+.cs-hero__preuves {
+  display: flex;
+  gap: var(--sp-5);
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-block: var(--sp-2);
+}
+.cs-hero__preuve {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  white-space: nowrap;
+  font-size: var(--fs-small);
+  color: var(--c-text-3);
+}
+.cs-hero__preuve strong {
+  color: var(--c-text);
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.cs-hero__preuve:not(:last-child)::after { content: "·"; margin-left: var(--sp-3); color: var(--c-text-3); }
+
+/* Indicateur de scroll : trait vertical animé */
+.cs-hero__scroll {
+  position: absolute;
+  bottom: var(--sp-5);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px; height: 44px;
+  overflow: hidden;
+  border-radius: var(--r-pill);
+  background: var(--c-line);
+  z-index: 1;
+}
+.cs-hero__scroll span {
+  display: block;
+  width: 100%; height: 40%;
+  background: var(--g-braise);
+  animation: cs-hero-scroll 2.2s var(--e-inout) infinite;
+}
+@keyframes cs-hero-scroll {
+  0% { transform: translateY(-100%); }
+  60%, 100% { transform: translateY(280%); }
+}
+
+/* Séquence orchestrée §8.1 (uniquement sous JS ; tout visible sans JS) */
+html.js .cs-hero__eyebrow,
+html.js .cs-hero__titre,
+html.js .cs-hero__sous-titre,
+html.js .cs-hero__cta,
+html.js .cs-hero__preuves {
+  opacity: 0;
+  transition: opacity var(--d-3) var(--e-out), transform var(--d-3) var(--e-out);
+}
+html.js .cs-hero__titre { transform: translateY(24px); transition-delay: 100ms; }
+html.js .cs-hero__sous-titre { transform: translateY(24px); transition-delay: 250ms; }
+html.js .cs-hero__cta { transform: translateY(24px); transition-delay: 350ms; }
+html.js .cs-hero__preuves { transition-delay: 500ms; }
+html.js .cs-hero.is-in .cs-hero__eyebrow,
+html.js .cs-hero.is-in .cs-hero__titre,
+html.js .cs-hero.is-in .cs-hero__sous-titre,
+html.js .cs-hero.is-in .cs-hero__cta,
+html.js .cs-hero.is-in .cs-hero__preuves {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .cs-hero__eyebrow, html.js .cs-hero__titre, html.js .cs-hero__sous-titre,
+  html.js .cs-hero__cta, html.js .cs-hero__preuves {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  .cs-hero__scroll span { animation: none; }
+}
+html.js[data-motion="off"] .cs-hero__eyebrow, html.js[data-motion="off"] .cs-hero__titre,
+html.js[data-motion="off"] .cs-hero__sous-titre, html.js[data-motion="off"] .cs-hero__cta,
+html.js[data-motion="off"] .cs-hero__preuves {
+  opacity: 1; transform: none; transition: none;
+}
+[data-motion="off"] .cs-hero__scroll span { animation: none; }

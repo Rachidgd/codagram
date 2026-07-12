@@ -1,0 +1,220 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Social Ads",
+        "intro": "Des créas qui arrêtent le scroll et des audiences qui achètent. Testé, mesuré, réitéré chaque semaine.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature_creas": {
+      "type": "cs-media-texte",
+      "settings": {
+        "shape": "arche",
+        "halo": true,
+        "image_position": "gauche",
+        "ordre_mobile": "image",
+        "image_alt": "Exemples de créations publicitaires produites pour des clients",
+        "eyebrow": "Les créas",
+        "titre": "La créa fait 80 % du travail.",
+        "corps": "<p>Nous produisons les visuels et les vidéos avec vos produits et vos images. Chaque semaine, les variantes gagnantes restent, les autres sortent.</p>",
+        "bg_style": "base",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "signature_resultats": {
+      "type": "cs-media-texte",
+      "settings": {
+        "shape": "diag-2",
+        "image_position": "droite",
+        "ordre_mobile": "texte",
+        "image_alt": "Tableau de bord de campagne social ads, données sensibles floutées",
+        "eyebrow": "Les résultats",
+        "titre": "On regarde les ventes, pas les likes.",
+        "corps": "<p>Chaque campagne est reliée à vos conversions réelles. Les indicateurs de vanité restent au vestiaire : votre reporting parle en clients et en panier moyen.</p>",
+        "lien_label": "Voir les cas Social Ads",
+        "lien": "/pages/realisations",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Angle et promesse",
+            "texte": "Ce qui différencie votre offre, formulé pour un fil d'actualité."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Production des créas",
+            "texte": "Images et vidéos déclinées par angle, prêtes à être testées."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Tests structurés",
+            "texte": "Audiences et créas comparées proprement, décisions sur données."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Montée en puissance",
+            "texte": "On scale ce qui convertit, on coupe ce qui décore."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Comment on fait tourner vos campagnes",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "titre": "Les chiffres de nos campagnes",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "source": "metaobjects",
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Cas Social Ads",
+        "lien_hub": "/pages/realisations",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Qui produit les visuels et vidéos ?",
+            "reponse": "<p>Nous, à partir de votre matière : produits, coulisses, avis clients. Si un tournage est utile, on le cadre ensemble. Vous validez chaque créa avant diffusion.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Sur quelles plateformes diffusez-vous ?",
+            "reponse": "<p>Là où votre audience achète, pas partout par principe. Le choix se fait sur données à l'audit, puis se confirme ou s'infirme en quelques semaines de test.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Quand arrêtez-vous une campagne ?",
+            "reponse": "<p>Quand les données le disent : des règles de décision sont posées avant le lancement, avec des seuils partagés. Ni acharnement, ni panique au premier jour creux.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions sur les Social Ads",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Voyons ce que vos réseaux laissent filer.",
+        "texte": "Un audit gratuit de votre potentiel social ads : angles, audiences et budget de test réaliste.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature_creas",
+    "signature_resultats",
+    "process",
+    "stats",
+    "projets",
+    "avis",
+    "faq",
+    "cta"
+  ]
+}

@@ -1,0 +1,146 @@
+{%- comment -%}
+  cs-footer.liquid · Footer (§7) : particules braises + lueur bas-gauche (§4.5),
+  mini-CTA, plan de silos en 4 colonnes (accordéons mobiles), NAP, légal.
+{%- endcomment -%}
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+
+<footer id="{{ section.id }}" class="cs-footer" role="contentinfo">
+  {%- if section.settings.particules and settings.motion_level != 'off' -%}
+    <canvas class="cs-footer__particules" data-particles="footer" aria-hidden="true"></canvas>
+  {%- endif -%}
+  {%- if section.settings.lueur -%}
+    <div class="cs-footer__glow" aria-hidden="true"></div>
+  {%- endif -%}
+
+  <div class="cs-container cs-footer__interieur">
+
+    {%- comment -%} Rangée 1 · mini-CTA {%- endcomment -%}
+    {%- if section.settings.cta_texte != blank -%}
+      <div class="cs-footer__cta">
+        <p class="cs-footer__cta-texte cs-h3">{{ section.settings.cta_texte | escape }}</p>
+        {% render 'bouton', label: section.settings.cta_bouton, popup: true, style: 'primaire' %}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Rangée 2 · colonnes {%- endcomment -%}
+    <div class="cs-footer__colonnes">
+      <div class="cs-footer__marque">
+        {%- if settings.logo_theme -%}
+          <img src="{{ settings.logo_theme | image_url: width: 320 }}"
+            width="{{ settings.logo_largeur }}"
+            height="{{ settings.logo_largeur | divided_by: settings.logo_theme.aspect_ratio | round }}"
+            style="width: {{ settings.logo_largeur }}px; height: auto;"
+            alt="{{ shop.name | escape }}" loading="lazy">
+        {%- else -%}
+          <span class="cs-footer__logo-texte">{{ shop.name }}</span>
+        {%- endif -%}
+        {%- if settings.promesse_footer != blank -%}
+          <p class="cs-footer__promesse">{{ settings.promesse_footer | escape }}</p>
+        {%- endif -%}
+        <div class="cs-footer__reseaux">
+          {%- if settings.lien_instagram != blank -%}
+            <a href="{{ settings.lien_instagram }}" aria-label="Instagram" rel="noopener" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.lien_facebook != blank -%}
+            <a href="{{ settings.lien_facebook }}" aria-label="Facebook" rel="noopener" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M14 8h3V4.5h-3A4.5 4.5 0 0 0 9.5 9v2.5H7V15h2.5v6H13v-6h3l.5-3.5H13V9a1 1 0 0 1 1-1z"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.lien_linkedin != blank -%}
+            <a href="{{ settings.lien_linkedin }}" aria-label="LinkedIn" rel="noopener" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.lien_tiktok != blank -%}
+            <a href="{{ settings.lien_tiktok }}" aria-label="TikTok" rel="noopener" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2 4 5 4.5"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.lien_youtube != blank -%}
+            <a href="{{ settings.lien_youtube }}" aria-label="YouTube" rel="noopener" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M10 9.5l5 2.5-5 2.5z"/></svg>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- assign colonnes = 'menu_services|Services,menu_villes|Zones,menu_ressources|Ressources' | split: ',' -%}
+      {%- for colonne in colonnes -%}
+        {%- assign parties = colonne | split: '|' -%}
+        {%- assign menu_courant = section.settings[parties[0]] -%}
+        {%- if menu_courant != blank and menu_courant.links.size > 0 -%}
+          <nav class="cs-footer__colonne" aria-label="{{ menu_courant.title | escape }}">
+            <button type="button" class="cs-footer__colonne-titre" data-cs-footer-accordeon
+              aria-expanded="false" aria-controls="cs-footer-col-{{ forloop.index }}">
+              {{ menu_courant.title | escape }}
+              {% render 'icone', nom: 'chevron', taille: 16, classe: 'cs-accordeon__chevron' %}
+            </button>
+            <ul class="cs-footer__liens" id="cs-footer-col-{{ forloop.index }}" role="list">
+              {%- for link in menu_courant.links -%}
+                <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {%- endfor -%}
+            </ul>
+          </nav>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- comment -%} Rangée 3 · NAP + fiche Google {%- endcomment -%}
+    {%- if section.settings.afficher_nap -%}
+      <div class="cs-footer__nap">
+        {%- if settings.nap_adresse != blank -%}
+          <span class="cs-footer__nap-item">{% render 'icone', nom: 'pin', taille: 18 %}
+            {{ settings.nap_adresse | escape }}{% if settings.nap_code_postal != blank %}, {{ settings.nap_code_postal | escape }}{% endif %}{% if settings.nap_ville != blank %} {{ settings.nap_ville | escape }}{% endif %}</span>
+        {%- endif -%}
+        {%- if settings.nap_telephone != blank -%}
+          <a class="cs-footer__nap-item" href="tel:{{ settings.nap_telephone | replace: ' ', '' }}">
+            {% render 'icone', nom: 'tel', taille: 18 %} {{ settings.nap_telephone | escape }}</a>
+        {%- endif -%}
+        {%- if settings.nap_email != blank -%}
+          <a class="cs-footer__nap-item" href="mailto:{{ settings.nap_email }}">
+            {% render 'icone', nom: 'mail', taille: 18 %} {{ settings.nap_email | escape }}</a>
+        {%- endif -%}
+        {%- if settings.gbp_url != blank -%}
+          <a class="cs-footer__nap-item" href="{{ settings.gbp_url }}?utm_source=site&utm_medium=footer&utm_campaign=gbp" rel="noopener" target="_blank">
+            {% render 'icone', nom: 'gbp', taille: 18 %} Notre fiche Google</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Rangée 4 · légal {%- endcomment -%}
+    <div class="cs-footer__legal">
+      {%- assign menu_legal = section.settings.menu_legal -%}
+      {%- if menu_legal != blank -%}
+        <ul class="cs-footer__legal-liens" role="list">
+          {%- for link in menu_legal.links -%}
+            <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+          {%- endfor -%}
+          <li><button type="button" class="cs-footer__cookies" data-cs="consent-open">Gérer mes cookies</button></li>
+        </ul>
+      {%- endif -%}
+      <p class="cs-footer__copyright">© {{ 'now' | date: '%Y' }} {{ settings.nom_legal | default: shop.name | escape }}. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "CS · Footer",
+  "settings": [
+    { "type": "header", "content": "Mini-CTA" },
+    { "type": "text", "id": "cta_texte", "label": "Accroche", "info": "60 caractères max", "default": "Un projet ? Commencez par un audit gratuit." },
+    { "type": "text", "id": "cta_bouton", "label": "Bouton", "info": "24 caractères max", "default": "Commencer l'audit" },
+    { "type": "header", "content": "Menus" },
+    { "type": "link_list", "id": "menu_services", "label": "Colonne Services" },
+    { "type": "link_list", "id": "menu_villes", "label": "Colonne Zones" },
+    { "type": "link_list", "id": "menu_ressources", "label": "Colonne Ressources" },
+    { "type": "link_list", "id": "menu_legal", "label": "Liens légaux" },
+    { "type": "header", "content": "Ambiance" },
+    { "type": "checkbox", "id": "particules", "label": "Particules braises", "default": true },
+    { "type": "checkbox", "id": "lueur", "label": "Lueur bas-gauche", "default": true },
+    { "type": "checkbox", "id": "afficher_nap", "label": "Afficher le NAP complet", "default": true }
+  ]
+}
+{% endschema %}

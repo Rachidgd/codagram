@@ -1,0 +1,250 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Maintenance & growth",
+        "intro": "Votre site reste rapide, à jour et en croissance. Vous dormez tranquille, on surveille et on améliore.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "horloge",
+            "titre": "Délais d'intervention écrits",
+            "texte": "Chaque niveau de contrat fixe un délai d'intervention noir sur blanc."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Sauvegardes et sécurité",
+            "texte": "Sauvegardes régulières, mises à jour suivies, surveillance continue."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "conversion",
+            "titre": "Amélioration continue",
+            "texte": "Un temps mensuel dédié aux améliorations, priorisé par les données."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "document",
+            "titre": "Compte rendu mensuel",
+            "texte": "Ce qui a été fait, ce qui a été mesuré, ce qui vient ensuite."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Nos engagements",
+        "titre": "Ce que couvre votre contrat.",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Surveillance",
+            "texte": "Disponibilité, vitesse et sécurité surveillées en continu."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Mises à jour",
+            "texte": "Technique maintenue à jour, testée avant application."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Améliorations",
+            "texte": "Le temps prévu au contrat sert vos priorités du moment."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Compte rendu",
+            "texte": "Un bilan clair : fait, mesuré, planifié."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "Au quotidien",
+        "titre": "Comment se passe un mois de maintenance",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "titre": "La fiabilité en chiffres",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "source": "metaobjects",
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Sites que nous maintenons",
+        "lien_hub": "/pages/realisations",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Que couvre exactement la maintenance ?",
+            "reponse": "<p>Les mises à jour techniques, les sauvegardes, la surveillance de disponibilité et de sécurité, et un volume mensuel d'améliorations défini au contrat. Le périmètre exact est écrit, sans zone grise.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Quel est votre délai d'intervention ?",
+            "reponse": "<p>Il dépend du niveau de contrat choisi et il est contractuel. En cas d'incident bloquant, l'intervention est prioritaire sur tout le reste.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Les sauvegardes sont-elles vérifiées ?",
+            "reponse": "<p>Oui : une sauvegarde qui n'a jamais été restaurée n'est pas une sauvegarde. Des restaurations de test sont réalisées régulièrement.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Suis-je engagé sur la durée ?",
+            "reponse": "<p>Le contrat est résiliable selon un préavis simple, écrit dès la signature. Si vous partez, vous récupérez tous les accès et l'historique des interventions.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Mon site n'a pas été fait par vous : possible ?",
+            "reponse": "<p>Oui, après un audit technique qui vérifie l'état du site et chiffre une éventuelle remise à niveau avant de démarrer la maintenance.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "titre": "Vos questions sur la maintenance",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Dormez tranquille, on surveille.",
+        "texte": "Un audit gratuit de l'état technique de votre site : risques, vitesse et plan de remise à niveau.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature",
+    "process",
+    "stats",
+    "projets",
+    "avis",
+    "faq",
+    "cta"
+  ]
+}

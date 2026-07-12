@@ -1,0 +1,19 @@
+{%- comment -%}
+  schema-breadcrumb.liquid · BreadcrumbList (§10.2), appelé par breadcrumb.liquid.
+  Params : niveau_2_titre, niveau_2_url, courant
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": {{ shop.url | json }} }
+    {%- if niveau_2_titre != blank -%},
+    { "@type": "ListItem", "position": 2, "name": {{ niveau_2_titre | json }}, "item": {{ shop.url | append: niveau_2_url | json }} },
+    { "@type": "ListItem", "position": 3, "name": {{ courant | json }} }
+    {%- else -%},
+    { "@type": "ListItem", "position": 2, "name": {{ courant | json }} }
+    {%- endif -%}
+  ]
+}
+</script>
