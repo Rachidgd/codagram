@@ -9,9 +9,15 @@
         "cta_bouton": "Commencer l'audit",
         "particules": true,
         "lueur": true,
-        "afficher_nap": true
+        "afficher_nap": true,
+        "menu_services": "menu-footer-services-cs26",
+        "menu_villes": "menu-footer-villes-cs26",
+        "menu_ressources": "menu-footer-ressources-cs26",
+        "menu_legal": "menu-legal-cs26"
       }
     }
   },
-  "order": ["footer"]
+  "order": [
+    "footer"
+  ]
 }

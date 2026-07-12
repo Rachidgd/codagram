@@ -254,7 +254,6 @@
       "settings": {
         "eyebrow": "Résultats",
         "titre": "La preuve en rayon",
-        "source": "metaobjects",
         "nombre": 4,
         "filtres": false,
         "lien_hub": "/pages/resultats",

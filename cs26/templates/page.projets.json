@@ -13,7 +13,6 @@
     "projets": {
       "type": "cs-projets",
       "settings": {
-        "source": "metaobjects",
         "nombre": 12,
         "filtres": true,
         "bg_style": "base",

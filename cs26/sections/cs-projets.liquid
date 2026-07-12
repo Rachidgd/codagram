@@ -5,12 +5,7 @@
   (boutons aria-pressed), état « aucun résultat » écrit.
 {%- endcomment -%}
 {%- liquid
-  assign liste = ''
-  if section.settings.source == 'manuel'
-    assign entrees = section.settings.projets_choisis
-  else
-    assign entrees = shop.metaobjects['projet'].values
-  endif
+  assign entrees = shop.metaobjects['projet'].values
 
   assign courant_id = ''
   if template.name == 'metaobject'
@@ -159,13 +154,7 @@
     { "type": "text", "id": "eyebrow", "label": "Sur-titre", "info": "28 caractères max" },
     { "type": "text", "id": "titre", "label": "Titre (H2)", "info": "60 caractères max" },
     { "type": "textarea", "id": "intro", "label": "Introduction", "info": "180 caractères max" },
-    { "type": "select", "id": "source", "label": "Source",
-      "options": [
-        { "value": "metaobjects", "label": "Tous les metaobjects « projet »" },
-        { "value": "manuel", "label": "Sélection manuelle" }
-      ],
-      "default": "metaobjects" },
-    { "type": "metaobject_list", "id": "projets_choisis", "label": "Projets choisis (mode manuel)", "metaobject_type": "projet", "limit": 12 },
+    { "type": "paragraph", "content": "Source des cartes : les metaobjects « projet » (les plus récents d'abord). Sans metaobjects, la section ne rend rien." },
     { "type": "range", "id": "nombre", "label": "Nombre maximum", "min": 2, "max": 12, "step": 1, "default": 6 },
     { "type": "checkbox", "id": "filtres", "label": "Filtres par service et par ville", "default": true },
     { "type": "url", "id": "lien_hub", "label": "Lien « Voir toutes nos réalisations »" },

@@ -82,7 +82,7 @@
                           {% render 'bouton', label: section.settings.featured_bouton, popup: true, style: 'primaire' %}
                         </div>
                       {%- endif -%}
-                      {%- assign projet = section.settings.projet_mega -%}
+                      {%- assign projet = shop.metaobjects['projet'].values | first -%}
                       {%- if projet and projet.cover.value -%}
                         <a href="{{ projet.system.url }}" class="cs-mega__projet">
                           {% render 'image', img: projet.cover.value, sizes: '320px', ratio: '3/2', alt: projet.titre.value %}
@@ -250,7 +250,7 @@
     { "type": "text", "id": "featured_titre", "label": "Titre", "default": "Audit gratuit" },
     { "type": "textarea", "id": "featured_texte", "label": "Texte", "info": "90 caractères max", "default": "Ce que votre site laisse filer, chiffré sous 48 h. Sans engagement." },
     { "type": "text", "id": "featured_bouton", "label": "Bouton", "info": "24 caractères max", "default": "Commencer l'audit" },
-    { "type": "metaobject", "id": "projet_mega", "label": "Dernier projet affiché", "metaobject_type": "projet" }
+    { "type": "paragraph", "content": "La carte « Dernier projet » du mega menu affiche automatiquement le metaobject « projet » le plus récent, dès que la définition existe." }
   ],
   "blocks": [
     {

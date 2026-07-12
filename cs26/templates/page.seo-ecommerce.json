@@ -121,7 +121,6 @@
     "projets": {
       "type": "cs-projets",
       "settings": {
-        "source": "metaobjects",
         "nombre": 4,
         "filtres": true,
         "titre": "Cas SEO e-commerce",

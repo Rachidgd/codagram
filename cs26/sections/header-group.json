@@ -12,15 +12,19 @@
     "header": {
       "type": "cs-header",
       "settings": {
-        "menu": "main-menu",
+        "menu": "menu-principal-cs26",
         "transparent_home": true,
         "cta_texte": "Audit gratuit",
         "cta_popup": true,
         "featured_titre": "Audit gratuit",
         "featured_texte": "Ce que votre site laisse filer, chiffré sous 48 h. Sans engagement.",
-        "featured_bouton": "Commencer l'audit"
+        "featured_bouton": "Commencer l'audit",
+        "menu_villes": "menu-villes-cs26"
       }
     }
   },
-  "order": ["annonce", "header"]
+  "order": [
+    "annonce",
+    "header"
+  ]
 }

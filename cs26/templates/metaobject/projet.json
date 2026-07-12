@@ -42,7 +42,6 @@
     "similaires": {
       "type": "cs-projets",
       "settings": {
-        "source": "metaobjects",
         "nombre": 3,
         "filtres": false,
         "titre": "Projets similaires",
