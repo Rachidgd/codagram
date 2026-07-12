@@ -5,8 +5,8 @@
       "settings": {
         "titre": "Cette page n'existe pas (ou plus).",
         "texte": "Le lien qui vous a mené ici est cassé ou la page a déménagé. Voici les chemins qui mènent quelque part.",
-        "lien_services": "/pages/creation-site-internet",
-        "lien_realisations": "/pages/realisations",
+        "lien_services": "/pages/creation-site-vitrine",
+        "lien_realisations": "/pages/resultats",
         "lien_contact": "/pages/contact",
         "cta_label": "Commencer l'audit",
         "cta_reassurance": "Réponse sous 48 h ouvrées. Sans engagement."

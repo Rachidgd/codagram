@@ -4,8 +4,8 @@
       "type": "cs-hero-page",
       "settings": {
         "variante": "service",
-        "eyebrow": "Social Ads",
-        "intro": "Des créas qui arrêtent le scroll et des audiences qui achètent. Testé, mesuré, réitéré chaque semaine.",
+        "eyebrow": "Expert Meta Ads",
+        "intro": "Des campagnes Facebook et Instagram pilotées aux ventes : créas testées chaque semaine, budget réalloué vers ce qui convertit.",
         "cta_active": true,
         "cta_label": "Mon audit gratuit",
         "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
@@ -19,10 +19,10 @@
         "halo": true,
         "image_position": "gauche",
         "ordre_mobile": "image",
-        "image_alt": "Exemples de créations publicitaires produites pour des clients",
+        "image_alt": "Créations publicitaires Meta produites pour des clients",
         "eyebrow": "Les créas",
         "titre": "La créa fait 80 % du travail.",
-        "corps": "<p>Nous produisons les visuels et les vidéos avec vos produits et vos images. Chaque semaine, les variantes gagnantes restent, les autres sortent.</p>",
+        "corps": "<p>Nous produisons les visuels et vidéos avec votre matière : produits, coulisses, avis. Les variantes gagnantes restent, les autres sortent.</p>",
         "bg_style": "base",
         "animation": "auto",
         "padding_haut": 96,
@@ -33,18 +33,19 @@
       "type": "cs-media-texte",
       "settings": {
         "shape": "diag-2",
+        "halo": false,
         "image_position": "droite",
         "ordre_mobile": "texte",
-        "image_alt": "Tableau de bord de campagne social ads, données sensibles floutées",
+        "image_alt": "Tableau de bord de campagnes Meta Ads, données sensibles floutées",
         "eyebrow": "Les résultats",
         "titre": "On regarde les ventes, pas les likes.",
-        "corps": "<p>Chaque campagne est reliée à vos conversions réelles. Les indicateurs de vanité restent au vestiaire : votre reporting parle en clients et en panier moyen.</p>",
-        "lien_label": "Voir les cas Social Ads",
-        "lien": "/pages/resultats",
+        "corps": "<p>Chaque campagne est reliée à vos conversions réelles. Votre reporting parle en clients acquis et en coût par acquisition, jamais en portée.</p>",
         "bg_style": "alt",
         "animation": "auto",
         "padding_haut": 96,
-        "padding_bas": 96
+        "padding_bas": 96,
+        "lien_label": "Voir les cas Meta Ads",
+        "lien": "/pages/resultats"
       }
     },
     "process": {
@@ -54,7 +55,7 @@
           "type": "etape",
           "settings": {
             "titre": "Angle et promesse",
-            "texte": "Ce qui différencie votre offre, formulé pour un fil d'actualité."
+            "texte": "Ce qui différencie votre offre, formulé pour arrêter le scroll."
           }
         },
         "etape_2": {
@@ -139,7 +140,7 @@
         "source": "metaobjects",
         "nombre": 4,
         "filtres": true,
-        "titre": "Cas Social Ads",
+        "titre": "Cas Meta Ads",
         "lien_hub": "/pages/resultats",
         "bg_style": "base",
         "padding_haut": 96,
@@ -162,22 +163,22 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Qui produit les visuels et vidéos ?",
-            "reponse": "<p>Nous, à partir de votre matière : produits, coulisses, avis clients. Si un tournage est utile, on le cadre ensemble. Vous validez chaque créa avant diffusion.</p>"
+            "question": "Quel budget publicitaire pour commencer ?",
+            "reponse": "<p>Assez pour apprendre vite : le seuil dépend de votre panier moyen et de votre marché. L'audit gratuit chiffre un budget de test réaliste avant d'engager quoi que ce soit.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Sur quelles plateformes diffusez-vous ?",
-            "reponse": "<p>Là où votre audience achète, pas partout par principe. Le choix se fait sur données à l'audit, puis se confirme ou s'infirme en quelques semaines de test.</p>"
+            "question": "Qui produit les visuels et vidéos ?",
+            "reponse": "<p>Nous, à partir de votre matière. Vous validez chaque créa avant diffusion, et les droits restent les vôtres.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Quand arrêtez-vous une campagne ?",
-            "reponse": "<p>Quand les données le disent : des règles de décision sont posées avant le lancement, avec des seuils partagés. Ni acharnement, ni panique au premier jour creux.</p>"
+            "question": "Le compte publicitaire m'appartient-il ?",
+            "reponse": "<p>Oui. Le Business Manager et le compte publicitaire sont à votre nom ; notre accès est révocable à tout moment, avec l'historique conservé.</p>"
           }
         }
       },
@@ -187,7 +188,7 @@
         "q3"
       ],
       "settings": {
-        "titre": "Vos questions sur les Social Ads",
+        "titre": "Vos questions sur les Meta Ads",
         "premier_ouvert": true,
         "bg_style": "base",
         "padding_haut": 96,
@@ -197,8 +198,8 @@
     "cta": {
       "type": "cs-cta",
       "settings": {
-        "titre": "Voyons ce que vos réseaux laissent filer.",
-        "texte": "Un audit gratuit de votre potentiel social ads : angles, audiences et budget de test réaliste.",
+        "titre": "Voyons ce que vos pubs laissent filer.",
+        "texte": "Un audit gratuit de votre compte Meta ou de votre potentiel publicitaire, chiffré et sans jargon.",
         "cta_label": "Mon audit gratuit",
         "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
         "padding_haut": 96,

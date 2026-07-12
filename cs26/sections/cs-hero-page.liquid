@@ -61,8 +61,14 @@
             {%- endif -%}
           </div>
         {%- else -%}
-          {%- if section.settings.intro != blank -%}
-            <p class="cs-hero-page__intro" data-reveal="up">{{ section.settings.intro | escape }}</p>
+          {%- liquid
+            assign intro_hero = section.settings.intro
+            if intro_hero == blank and page.metafields.seo_ville.hero_subtitle.value != blank
+              assign intro_hero = page.metafields.seo_ville.hero_subtitle.value
+            endif
+          -%}
+          {%- if intro_hero != blank -%}
+            <p class="cs-hero-page__intro" data-reveal="up">{{ intro_hero | escape }}</p>
           {%- endif -%}
         {%- endif -%}
 

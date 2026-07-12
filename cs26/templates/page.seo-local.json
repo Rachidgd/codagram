@@ -1,0 +1,189 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "SEO local",
+        "intro": "Être choisi par les clients qui cherchent près de chez vous : fiche Google, pages locales et avis qui travaillent ensemble.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature": {
+      "type": "cs-media-texte",
+      "settings": {
+        "shape": "organique",
+        "halo": true,
+        "image_position": "gauche",
+        "ordre_mobile": "image",
+        "image_alt": "Fiche d'établissement Google optimisée d'un client",
+        "eyebrow": "La fiche Google",
+        "titre": "Votre fiche Google est votre deuxième vitrine.",
+        "corps": "<p>Catégories, photos, avis, posts : une fiche travaillée capte les recherches en carte avant même le clic vers votre site.</p>",
+        "bg_style": "base",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96,
+        "lien_label": "Voir les cas locaux",
+        "lien": "/pages/resultats"
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Audit local",
+            "texte": "Votre présence sur votre zone face à vos concurrents directs."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Fiche d'établissement",
+            "texte": "Optimisation complète et rythme de publication tenable."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Pages locales",
+            "texte": "Une page par zone réellement servie, avec du contenu local vrai."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Avis clients",
+            "texte": "Un système simple pour obtenir des avis réguliers et y répondre."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Comment on construit votre visibilité locale",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "titre": "Les résultats locaux",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "En combien de temps une fiche Google progresse-t-elle ?",
+            "reponse": "<p>Les premiers effets se voient en quelques semaines sur les recherches en carte ; la dynamique se confirme avec la régularité des avis et des publications.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Faut-il une page par ville ?",
+            "reponse": "<p>Une page par zone réellement servie, avec de la matière locale vraie : projets, avis, zones couvertes. Une page clonée avec le nom changé fait plus de mal que de bien.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Les avis comptent-ils vraiment pour le classement ?",
+            "reponse": "<p>Oui : volume, régularité et réponses pèsent dans le classement local, et davantage encore dans la décision du client qui compare trois fiches.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions sur le SEO local",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Votre zone de chalandise est sur Google.",
+        "texte": "Un audit gratuit de votre visibilité locale : fiche, pages, avis, et le plan pour passer devant.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature",
+    "process",
+    "stats",
+    "avis",
+    "faq",
+    "cta"
+  ]
+}

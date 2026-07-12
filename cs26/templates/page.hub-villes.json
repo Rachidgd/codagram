@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "hub",
+        "cta_active": true,
+        "eyebrow": "SEO partout en France",
+        "intro": "Un accompagnement SEO ancré dans votre marché local. Choisissez votre ville pour voir comment ça se joue chez vous.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement."
+      }
+    },
+    "villes": {
+      "type": "cs-richtext",
+      "blocks": {
+        "silo_villes": {
+          "type": "liste_menu",
+          "settings": {
+            "titre": "Nos villes d'intervention"
+          }
+        }
+      },
+      "block_order": [
+        "silo_villes"
+      ],
+      "settings": {
+        "eyebrow": "Villes couvertes",
+        "titre": "Choisissez votre ville",
+        "bg_style": "base",
+        "padding_haut": 48,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Votre ville n'est pas dans la liste ?",
+        "texte": "On travaille à distance partout en francophonie. Commencez par l'audit gratuit, on vous dit si on peut aider.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "villes",
+    "avis",
+    "cta"
+  ]
+}

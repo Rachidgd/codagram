@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "hub",
+        "cta_active": false,
+        "eyebrow": "Ressources",
+        "intro": "Guides, audits et outils pour progresser : des réponses directes, utilisables avec ou sans nous."
+      }
+    },
+    "articles": {
+      "type": "cs-blog-teaser",
+      "settings": {
+        "mode": "teaser",
+        "eyebrow": "Les guides",
+        "titre": "Derniers guides publiés",
+        "lien_tous": "/blogs/conseils",
+        "bg_style": "base",
+        "padding_haut": 48,
+        "padding_bas": 96
+      }
+    },
+    "liens": {
+      "type": "cs-richtext",
+      "blocks": {
+        "silo_audits": {
+          "type": "liste_menu",
+          "settings": {
+            "titre": "Nos audits et analyses"
+          }
+        }
+      },
+      "block_order": [
+        "silo_audits"
+      ],
+      "settings": {
+        "eyebrow": "Par où commencer",
+        "titre": "Les ressources classées par besoin",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Un regard extérieur vaut mille checklists.",
+        "texte": "Un audit gratuit et personnalisé de votre situation, livré sous 48 h ouvrées.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "articles",
+    "liens",
+    "cta"
+  ]
+}

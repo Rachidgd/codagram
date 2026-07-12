@@ -4,8 +4,8 @@
       "type": "cs-hero-page",
       "settings": {
         "variante": "service",
-        "eyebrow": "Google Ads",
-        "intro": "Chaque euro traçable : des campagnes pilotées au coût par client acquis, pas au volume de clics.",
+        "eyebrow": "Création de site vitrine",
+        "intro": "Un site vitrine qui travaille pour vous : clair en cinq secondes, trouvé sur Google, pensé pour déclencher le contact.",
         "cta_active": true,
         "cta_label": "Mon audit gratuit",
         "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
@@ -13,70 +13,52 @@
       }
     },
     "signature": {
-      "type": "cs-comparatif",
+      "type": "cs-stack",
       "blocks": {
-        "c1": {
-          "type": "critere",
+        "e1": {
+          "type": "carte",
           "settings": {
-            "label": "Landing page dédiée",
-            "nous": "oui",
-            "alt_1": "non",
-            "alt_2": "~"
+            "fond": "surface",
+            "titre": "Cadrage",
+            "texte": "Vos clients, vos offres, votre zone : on définit ce que le site doit déclencher (appels, demandes, passages) avant de dessiner."
           }
         },
-        "c2": {
-          "type": "critere",
+        "e2": {
+          "type": "carte",
           "settings": {
-            "label": "Suivi des conversions",
-            "nous": "oui",
-            "alt_1": "~",
-            "alt_2": "~"
+            "fond": "surface-2",
+            "titre": "Maquette",
+            "texte": "Chaque écran guide vers le contact. Vous validez sur maquette réelle, mobile d'abord."
           }
         },
-        "c3": {
-          "type": "critere",
+        "e3": {
+          "type": "carte",
           "settings": {
-            "label": "Coût par lead suivi",
-            "nous": "oui",
-            "alt_1": "non",
-            "alt_2": "~"
+            "fond": "verre",
+            "titre": "Construction",
+            "texte": "Un site rapide, éditable par vos soins, structuré pour vos requêtes locales."
           }
         },
-        "c4": {
-          "type": "critere",
+        "e4": {
+          "type": "carte",
           "settings": {
-            "label": "Compte à votre nom",
-            "nous": "oui",
-            "alt_1": "~",
-            "alt_2": "oui"
-          }
-        },
-        "c5": {
-          "type": "critere",
-          "settings": {
-            "label": "Reporting compréhensible",
-            "nous": "oui",
-            "alt_1": "non",
-            "alt_2": "~"
+            "fond": "surface",
+            "titre": "Mise en ligne et suivi",
+            "texte": "Lancement contrôlé, mesures branchées, premier bilan chiffré du trafic et des contacts."
           }
         }
       },
       "block_order": [
-        "c1",
-        "c2",
-        "c3",
-        "c4",
-        "c5"
+        "e1",
+        "e2",
+        "e3",
+        "e4"
       ],
       "settings": {
-        "eyebrow": "Pourquoi ça change tout",
-        "titre": "Ads seul ou Ads + landing optimisée ?",
-        "intro": "La différence ne se joue pas dans l'enchère : elle se joue sur la page qui reçoit le clic.",
-        "col_nous_titre": "Clickscreation",
-        "col_2_titre": "Campagne seule",
-        "col_3_titre": "Réglages par défaut",
-        "col_4_titre": "",
-        "bg_style": "alt",
+        "eyebrow": "La méthode",
+        "titre": "Votre site vitrine, en quatre couches.",
+        "numerotation": true,
+        "bg_style": "base",
         "padding_haut": 96,
         "padding_bas": 96
       }
@@ -87,29 +69,29 @@
         "etape_1": {
           "type": "etape",
           "settings": {
-            "titre": "Cadrage économique",
-            "texte": "Votre marge, votre valeur client : on calcule le coût par lead soutenable."
+            "titre": "Audit gratuit",
+            "texte": "Votre présence actuelle, vos concurrents locaux, votre potentiel."
           }
         },
         "etape_2": {
           "type": "etape",
           "settings": {
-            "titre": "Structure et annonces",
-            "texte": "Des campagnes propres, des annonces testées, des mots-clés négatifs tenus."
+            "titre": "Proposition",
+            "texte": "Périmètre, planning, budget : rien de flou, rien de caché."
           }
         },
         "etape_3": {
           "type": "etape",
           "settings": {
-            "titre": "Landing dédiée",
-            "texte": "Le clic arrive sur une page conçue pour convertir, pas sur votre accueil."
+            "titre": "Production",
+            "texte": "Un interlocuteur unique, des jalons de validation sur du concret."
           }
         },
         "etape_4": {
           "type": "etape",
           "settings": {
-            "titre": "Optimisation continue",
-            "texte": "Budgets réalloués chaque semaine vers ce qui produit des clients."
+            "titre": "Lancement",
+            "texte": "Mise en ligne contrôlée et passation complète des accès."
           }
         }
       },
@@ -120,8 +102,8 @@
         "etape_4"
       ],
       "settings": {
-        "eyebrow": "La méthode",
-        "titre": "Comment on pilote vos campagnes",
+        "eyebrow": "Le démarrage",
+        "titre": "Comment démarre votre projet",
         "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
@@ -161,7 +143,7 @@
         "c3"
       ],
       "settings": {
-        "titre": "Les chiffres de nos campagnes",
+        "titre": "Les chiffres de nos sites",
         "bg_style": "halo",
         "padding_haut": 96,
         "padding_bas": 96
@@ -173,7 +155,7 @@
         "source": "metaobjects",
         "nombre": 4,
         "filtres": true,
-        "titre": "Cas Google Ads",
+        "titre": "Sites vitrines livrés",
         "lien_hub": "/pages/resultats",
         "bg_style": "base",
         "padding_haut": 96,
@@ -196,22 +178,22 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Quel budget publicitaire minimum ?",
-            "reponse": "<p>Cela dépend du coût par clic de votre secteur et de votre zone. L'audit gratuit chiffre le seuil en dessous duquel lancer des campagnes serait jeter de l'argent, et le budget réaliste pour apprendre vite.</p>"
+            "question": "Le site m'appartient-il vraiment ?",
+            "reponse": "<p>Oui, entièrement : contenus, design, nom de domaine et accès sont à votre nom. En cas de séparation, vous partez avec tout et un document de passation.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Le compte publicitaire m'appartient-il ?",
-            "reponse": "<p>Oui. Le compte Google Ads est créé à votre nom, vous en gardez la propriété et l'historique. Nous y travaillons avec un accès gestionnaire, révocable à tout moment.</p>"
+            "question": "Puis-je modifier le site moi-même ?",
+            "reponse": "<p>Oui. Textes, images et sections s'éditent depuis une interface simple, sans toucher au code. Une session de prise en main est incluse.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Comment mesurez-vous la rentabilité ?",
-            "reponse": "<p>Au coût par lead ou par vente, rapproché de votre marge réelle. Le nombre de clics et le taux d'impression sont des indicateurs de pilotage, jamais des résultats en soi.</p>"
+            "question": "Un site vitrine peut-il vraiment m'apporter des clients ?",
+            "reponse": "<p>S'il est construit autour des recherches locales et d'un parcours de contact sans friction, oui. C'est exactement ce que mesure l'audit avant de commencer.</p>"
           }
         }
       },
@@ -221,7 +203,7 @@
         "q3"
       ],
       "settings": {
-        "titre": "Vos questions sur Google Ads",
+        "titre": "Vos questions sur le site vitrine",
         "premier_ouvert": true,
         "bg_style": "base",
         "padding_haut": 96,
@@ -231,8 +213,8 @@
     "cta": {
       "type": "cs-cta",
       "settings": {
-        "titre": "Voyons ce que vos campagnes laissent filer.",
-        "texte": "Un audit gratuit de votre compte ou de votre potentiel publicitaire, chiffré et sans jargon.",
+        "titre": "Votre vitrine devrait déclencher des appels.",
+        "texte": "Un audit gratuit de votre présence en ligne : ce qui manque, ce qui freine, et le plan pour y remédier.",
         "cta_label": "Mon audit gratuit",
         "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
         "padding_haut": 96,

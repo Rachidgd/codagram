@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "hub",
+        "cta_active": false,
+        "eyebrow": "Études de cas",
+        "intro": "Le détail de nos missions : le point de départ, ce qui a été fait, et les résultats datés."
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "source": "metaobjects",
+        "nombre": 6,
+        "filtres": false,
+        "bg_style": "base",
+        "padding_haut": 48,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ils racontent mieux que nous",
+        "source_donnees": "blocks",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "La prochaine étude de cas peut être la vôtre.",
+        "texte": "Un audit gratuit pour poser le point de départ : vos chiffres actuels, et ce qui est atteignable.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "projets",
+    "avis",
+    "cta"
+  ]
+}

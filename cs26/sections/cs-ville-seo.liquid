@@ -1,0 +1,93 @@
+{%- comment -%}
+  cs-ville-seo.liquid · Contenu local des pages « Consultant SEO {ville} ».
+  Repli documenté A7/§5.7 : la boutique n'a pas de metaobjects, le contenu
+  local vit dans les métachamps de page `seo_ville` (ville, region,
+  hero_subtitle, intro, contexte_local, faq en JSON). Un seul template
+  page.ville-seo.json partagé : le contenu reste unique par page (SELMA §9.5),
+  porté par les métachamps, jamais par du texte de template.
+{%- endcomment -%}
+{%- assign mf = page.metafields.seo_ville -%}
+{%- if mf.ville.value != blank -%}
+{{ 'section-ville-seo.css' | asset_url | stylesheet_tag }}
+
+<section id="{{ section.id }}"
+  class="cs-section cs-ville-seo{% if section.settings.bg_style == 'alt' %} cs-section--alt{% elsif section.settings.bg_style == 'halo' %} cs-section--halo{% endif %}"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container cs-ville-seo__interieur">
+
+    {%- if mf.intro.value != blank -%}
+      <div class="cs-ville-seo__intro" data-reveal="up">
+        {%- if mf.region.value != blank -%}
+          <p class="cs-eyebrow">{{ mf.ville.value | escape }} · {{ mf.region.value | escape }}</p>
+        {%- endif -%}
+        <div class="cs-prose">{{ mf.intro | metafield_tag }}</div>
+      </div>
+    {%- endif -%}
+
+    {%- if mf.contexte_local.value != blank -%}
+      <div class="cs-ville-seo__contexte" data-reveal="fade">
+        <h2 class="cs-h2">{{ section.settings.titre_contexte | escape }}</h2>
+        <div class="cs-prose">{{ mf.contexte_local | metafield_tag }}</div>
+      </div>
+    {%- endif -%}
+
+    {%- assign faq_locale = mf.faq.value -%}
+    {%- if faq_locale.size > 0 -%}
+      <div class="cs-ville-seo__faq" data-reveal-group>
+        <h2 class="cs-h2">{{ section.settings.titre_faq | escape }} {{ mf.ville.value | escape }}</h2>
+        <div class="cs-accordeon">
+          {%- for item in faq_locale -%}
+            <div class="cs-accordeon__item" data-reveal="fade">
+              <h3 class="cs-ville-seo__question">
+                <button type="button" class="cs-accordeon__bouton"
+                  aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                  aria-controls="faq-ville-{{ section.id }}-{{ forloop.index }}"
+                  data-cs-accordeon>
+                  {{ item.question | escape }}
+                  {% render 'icone', nom: 'chevron', taille: 20, classe: 'cs-accordeon__chevron' %}
+                </button>
+              </h3>
+              <div class="cs-accordeon__panneau" id="faq-ville-{{ section.id }}-{{ forloop.index }}">
+                <div class="cs-accordeon__contenu">
+                  <p class="cs-ville-seo__reponse">{{ item.reponse | escape }}</p>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+      {% render 'schema-faq', faq_items: faq_locale %}
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var racine = document.getElementById('{{ section.id }}');
+    if (!racine) return;
+    racine.querySelectorAll('[data-cs-accordeon]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btn.setAttribute('aria-expanded', String(btn.getAttribute('aria-expanded') !== 'true'));
+      });
+    });
+  })();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CS · Contenu local SEO",
+  "settings": [
+    { "type": "paragraph", "content": "Cette section lit les métachamps de page seo_ville (ville, region, intro, contexte_local, faq). Sans métachamps, elle ne rend rien : le contenu local vit sur la page, jamais dans le template." },
+    { "type": "text", "id": "titre_contexte", "label": "Titre du contexte local (H2)", "info": "60 caractères max", "default": "Votre marché local, tel qu'il se joue sur Google" },
+    { "type": "text", "id": "titre_faq", "label": "Titre de la FAQ (préfixe, la ville est ajoutée)", "info": "60 caractères max", "default": "Vos questions SEO à" },
+    { "type": "select", "id": "bg_style", "label": "Fond",
+      "options": [ { "value": "base", "label": "Base" }, { "value": "alt", "label": "Alterné" }, { "value": "halo", "label": "Halo braise" } ], "default": "base" },
+    { "type": "select", "id": "animation", "label": "Animation d'apparition",
+      "options": [ { "value": "auto", "label": "Automatique" }, { "value": "none", "label": "Aucune" } ], "default": "auto" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "presets": [ { "name": "CS · Contenu local SEO" } ]
+}
+{% endschema %}

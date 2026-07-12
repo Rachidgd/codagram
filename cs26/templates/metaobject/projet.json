@@ -46,7 +46,7 @@
         "nombre": 3,
         "filtres": false,
         "titre": "Projets similaires",
-        "lien_hub": "/pages/realisations",
+        "lien_hub": "/pages/resultats",
         "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 120

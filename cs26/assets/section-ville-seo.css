@@ -1,0 +1,8 @@
+/* CS-26 · section-ville-seo.css · Contenu local piloté par métachamps seo_ville */
+
+.cs-ville-seo__interieur { display: grid; gap: var(--sp-7); max-width: 780px; }
+.cs-ville-seo__intro { display: grid; gap: var(--sp-4); }
+.cs-ville-seo__contexte { display: grid; gap: var(--sp-4); }
+.cs-ville-seo__faq { display: grid; gap: var(--sp-4); }
+.cs-ville-seo__question { margin: 0; }
+.cs-ville-seo__reponse { color: var(--c-text-2); max-width: 62ch; }

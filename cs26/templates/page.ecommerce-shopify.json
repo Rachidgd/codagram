@@ -4,47 +4,48 @@
       "type": "cs-hero-page",
       "settings": {
         "variante": "service",
-        "eyebrow": "Social Ads",
-        "intro": "Des créas qui arrêtent le scroll et des audiences qui achètent. Testé, mesuré, réitéré chaque semaine.",
+        "eyebrow": "Création e-commerce Shopify",
+        "intro": "Une boutique Shopify construite pour vendre : fiches qui convainquent, tunnel sans friction, données branchées dès le premier jour.",
         "cta_active": true,
         "cta_label": "Mon audit gratuit",
         "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
         "shape": "diag-2"
       }
     },
-    "signature_creas": {
+    "signature_boutique": {
       "type": "cs-media-texte",
       "settings": {
-        "shape": "arche",
+        "shape": "diag-1",
         "halo": true,
         "image_position": "gauche",
         "ordre_mobile": "image",
-        "image_alt": "Exemples de créations publicitaires produites pour des clients",
-        "eyebrow": "Les créas",
-        "titre": "La créa fait 80 % du travail.",
-        "corps": "<p>Nous produisons les visuels et les vidéos avec vos produits et vos images. Chaque semaine, les variantes gagnantes restent, les autres sortent.</p>",
+        "image_alt": "Fiche produit d'une boutique Shopify réalisée par l'agence",
+        "eyebrow": "La boutique",
+        "titre": "Des fiches produit qui font ajouter au panier.",
+        "corps": "<p>Structure, photos, preuves, objections : chaque fiche est construite comme une page de vente, pas comme un catalogue.</p>",
         "bg_style": "base",
         "animation": "auto",
         "padding_haut": 96,
         "padding_bas": 96
       }
     },
-    "signature_resultats": {
+    "signature_tunnel": {
       "type": "cs-media-texte",
       "settings": {
         "shape": "diag-2",
+        "halo": false,
         "image_position": "droite",
         "ordre_mobile": "texte",
-        "image_alt": "Tableau de bord de campagne social ads, données sensibles floutées",
-        "eyebrow": "Les résultats",
-        "titre": "On regarde les ventes, pas les likes.",
-        "corps": "<p>Chaque campagne est reliée à vos conversions réelles. Les indicateurs de vanité restent au vestiaire : votre reporting parle en clients et en panier moyen.</p>",
-        "lien_label": "Voir les cas Social Ads",
-        "lien": "/pages/resultats",
+        "image_alt": "Tunnel d'achat optimisé d'une boutique Shopify",
+        "eyebrow": "Le tunnel",
+        "titre": "Un parcours d'achat sans fuite.",
+        "corps": "<p>Panier, livraison, paiement : on mesure chaque étape et on supprime ce qui fait abandonner. La vitesse mobile est traitée comme une fonctionnalité.</p>",
         "bg_style": "alt",
         "animation": "auto",
         "padding_haut": 96,
-        "padding_bas": 96
+        "padding_bas": 96,
+        "lien_label": "Voir les boutiques livrées",
+        "lien": "/pages/resultats"
       }
     },
     "process": {
@@ -53,29 +54,29 @@
         "etape_1": {
           "type": "etape",
           "settings": {
-            "titre": "Angle et promesse",
-            "texte": "Ce qui différencie votre offre, formulé pour un fil d'actualité."
+            "titre": "Cadrage e-commerce",
+            "texte": "Catalogue, marges, logistique : la boutique se conçoit autour de votre réalité."
           }
         },
         "etape_2": {
           "type": "etape",
           "settings": {
-            "titre": "Production des créas",
-            "texte": "Images et vidéos déclinées par angle, prêtes à être testées."
+            "titre": "Design et fiches",
+            "texte": "Maquettes orientées conversion, fiches produit rédigées pour vendre."
           }
         },
         "etape_3": {
           "type": "etape",
           "settings": {
-            "titre": "Tests structurés",
-            "texte": "Audiences et créas comparées proprement, décisions sur données."
+            "titre": "Construction Shopify",
+            "texte": "Thème propre, apps limitées au nécessaire, vitesse préservée."
           }
         },
         "etape_4": {
           "type": "etape",
           "settings": {
-            "titre": "Montée en puissance",
-            "texte": "On scale ce qui convertit, on coupe ce qui décore."
+            "titre": "Lancement et mesure",
+            "texte": "Tracking fiable, premiers tests, plan d'amélioration continue."
           }
         }
       },
@@ -87,7 +88,7 @@
       ],
       "settings": {
         "eyebrow": "La méthode",
-        "titre": "Comment on fait tourner vos campagnes",
+        "titre": "Comment on construit votre boutique",
         "bg_style": "base",
         "padding_haut": 96,
         "padding_bas": 96
@@ -127,7 +128,7 @@
         "c3"
       ],
       "settings": {
-        "titre": "Les chiffres de nos campagnes",
+        "titre": "Les chiffres de nos boutiques",
         "bg_style": "halo",
         "padding_haut": 96,
         "padding_bas": 96
@@ -139,7 +140,7 @@
         "source": "metaobjects",
         "nombre": 4,
         "filtres": true,
-        "titre": "Cas Social Ads",
+        "titre": "Boutiques livrées",
         "lien_hub": "/pages/resultats",
         "bg_style": "base",
         "padding_haut": 96,
@@ -162,22 +163,22 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Qui produit les visuels et vidéos ?",
-            "reponse": "<p>Nous, à partir de votre matière : produits, coulisses, avis clients. Si un tournage est utile, on le cadre ensemble. Vous validez chaque créa avant diffusion.</p>"
+            "question": "Pourquoi Shopify plutôt qu'une autre plateforme ?",
+            "reponse": "<p>Pour une PME, Shopify offre le meilleur rapport fiabilité, vitesse d'exécution et coût de maintenance. Si votre besoin sort de ce cadre, l'audit le dira honnêtement.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Sur quelles plateformes diffusez-vous ?",
-            "reponse": "<p>Là où votre audience achète, pas partout par principe. Le choix se fait sur données à l'audit, puis se confirme ou s'infirme en quelques semaines de test.</p>"
+            "question": "Puis-je gérer la boutique moi-même ensuite ?",
+            "reponse": "<p>Oui, c'est le principe : produits, prix, stocks, promotions et contenus se gèrent sans développeur. Une formation à la prise en main est incluse.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Quand arrêtez-vous une campagne ?",
-            "reponse": "<p>Quand les données le disent : des règles de décision sont posées avant le lancement, avec des seuils partagés. Ni acharnement, ni panique au premier jour creux.</p>"
+            "question": "Migrez-vous une boutique existante ?",
+            "reponse": "<p>Oui : produits, clients et commandes sont migrés, et les anciennes URL sont redirigées une par une pour préserver votre référencement.</p>"
           }
         }
       },
@@ -187,7 +188,7 @@
         "q3"
       ],
       "settings": {
-        "titre": "Vos questions sur les Social Ads",
+        "titre": "Vos questions sur Shopify",
         "premier_ouvert": true,
         "bg_style": "base",
         "padding_haut": 96,
@@ -197,8 +198,8 @@
     "cta": {
       "type": "cs-cta",
       "settings": {
-        "titre": "Voyons ce que vos réseaux laissent filer.",
-        "texte": "Un audit gratuit de votre potentiel social ads : angles, audiences et budget de test réaliste.",
+        "titre": "Voyons ce que votre boutique laisse filer.",
+        "texte": "Un audit gratuit de votre e-commerce : fiches, tunnel, vitesse, et les corrections classées par impact.",
         "cta_label": "Mon audit gratuit",
         "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
         "padding_haut": 96,
@@ -208,8 +209,8 @@
   },
   "order": [
     "hero",
-    "signature_creas",
-    "signature_resultats",
+    "signature_boutique",
+    "signature_tunnel",
     "process",
     "stats",
     "projets",

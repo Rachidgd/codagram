@@ -168,11 +168,14 @@
 
   {%- comment -%} Barre sticky mobile §8.17 {%- endcomment -%}
   {%- liquid
+    comment
+      Gabarits exclus de la barre sticky (§8.17) : légal, contact, pages
+      simples (mentions, politique…), plans du site, et page générique.
+    endcomment
+    assign suffixes_exclus = 'legal,contact,simple,plan-du-site,sitemap' | split: ','
     assign sticky = false
     if settings.sticky_active
       if template.name == 'index' and settings.sticky_home
-        assign sticky = true
-      elsif template.suffix contains 'service' and settings.sticky_services
         assign sticky = true
       elsif template.suffix contains 'ville' and settings.sticky_villes
         assign sticky = true
@@ -180,9 +183,13 @@
         assign sticky = true
       elsif template.name == 'article' and settings.sticky_articles
         assign sticky = true
+      elsif template.name == 'page' and template.suffix != blank and settings.sticky_services
+        unless suffixes_exclus contains template.suffix
+          assign sticky = true
+        endunless
       endif
     endif
-    if template.suffix == 'legal' or template.suffix == 'contact'
+    if suffixes_exclus contains template.suffix
       assign sticky = false
     endif
   -%}

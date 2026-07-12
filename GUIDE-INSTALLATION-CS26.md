@@ -1,107 +1,95 @@
 # CS-26 · Guide d'installation du thème Clickscreation
 
 Thème Shopify OS 2.0 construit selon la spécification maître CS-26 v1.0.
-Livrable : `clickscreation-cs26-theme-v1.0.0.zip`, prêt à uploader.
+Livrable : `clickscreation-cs26-theme-v1.1.0.zip`, prêt à uploader.
+**v1.1.0 : templates alignés sur les pages réelles de la boutique k4rdj6-sd
+(lecture faite via le connecteur Shopify le 12/07/2026).**
 
 ## 1. Upload
 
 Admin Shopify → Boutique en ligne → Thèmes → **Ajouter un thème → Téléverser un fichier zip**.
-Ne pas publier avant d'avoir déroulé la checklist ci-dessous (règle anti-404 §10.9 : zéro mise en ligne avant zéro erreur).
+Ne pas publier avant d'avoir déroulé la checklist ci-dessous (§10.9 : zéro mise en ligne avant zéro erreur).
 
-## 2. Pages à créer (handles EXACTS, manifest §9.1)
+## 2. Vos pages ↔ templates livrés (aucune page à créer)
 
-Admin → Boutique en ligne → Pages. Créer chaque page puis lui assigner son template (colonne de droite « Thème > Template »).
+Vos 49 pages portent déjà leur suffixe de template ; le thème livre un
+`page.<suffixe>.json` pour **chaque** suffixe. À l'upload, l'appariement est
+automatique — vérifiez simplement dans Pages → Thème → Template.
 
-| Page (handle exact) | Template à assigner |
-|---|---|
-| `creation-site-internet` | page.service-creation-site |
-| `agence-seo` | page.service-seo |
-| `agence-google-ads` | page.service-google-ads |
-| `agence-social-ads` | page.service-social-ads |
-| `optimisation-conversion-cro` | page.service-cro |
-| `maintenance-site-web` | page.service-maintenance |
-| `agence-web-<ville-1>` | page.ville-a (villes avec ≥ 2 projets locaux) |
-| `agence-web-<ville-2>` | page.ville-b (implantation récente) |
-| `agence-web-<ville-3>` | page.ville-c (marché concurrentiel) |
-| `realisations` | page.projets |
-| `audit-gratuit` | page.audit |
-| `contact` | page.contact |
-| `plan-du-site` | page.plan-du-site |
-| `mentions-legales`, `politique-de-confidentialite`, `cgv` | page.legal |
+| Suffixe déjà posé sur vos pages | Template livré | Gabarit |
+|---|---|---|
+| `contact` | page.contact | Formulaire + NAP |
+| `agence-seo` | page.agence-seo | Service (stats + preuve Search Console) |
+| `creation-site-vitrine` | page.creation-site-vitrine | Service (stack 4 étapes) |
+| `ecommerce-shopify` | page.ecommerce-shopify | Service (media ×2 : fiches + tunnel) |
+| `meta-ads` | page.meta-ads | Service (media ×2 : créas + résultats) |
+| `agence-meta-ads` | page.agence-meta-ads | Service (comparatif) |
+| `agence-shopify` | page.agence-shopify | Service (stack 3 terrains + garanties) |
+| `seo-ecommerce` | page.seo-ecommerce | Service (bulles chantiers) |
+| `seo-local` | page.seo-local | Service (media fiche Google) |
+| `resultats` | page.resultats | Hub réalisations + filtres |
+| `etudes-de-cas` | page.etudes-de-cas | Hub cas détaillés |
+| `ressources` | page.ressources | Hub guides + liens |
+| `hub-villes` | page.hub-villes | Hub des villes SEO |
+| `ville-seo` (12 pages Consultant SEO) | page.ville-seo | **Piloté par vos métachamps `seo_ville`** |
+| `ville-paris` … `ville-toulon` (9 pages Agence SEO) | page.ville-paris … page.ville-toulon | Gabarits A/B/C en rotation (§9.5) |
+| `simple` (audits, à-propos, mentions, politique…) | page.simple | Hero + contenu de la page + CTA |
+| `sitemap` | page.sitemap | Plan du site par silos (menus réels) |
 
-Blog : créer le blog `conseils` (les articles utilisent article.json automatiquement).
+Le manifest d'origine de la spec (page.service-*, page.ville-a/b/c, page.audit,
+page.projets, page.plan-du-site, page.legal) reste livré : gabarits optionnels
+réutilisables, leurs liens internes pointent déjà vers vos handles réels.
 
-## 3. Metaobjects (§5.7) — Paramètres → Données personnalisées → Metaobjects
+## 3. Pages villes SEO : vos métachamps `seo_ville` sont branchés
 
-### Définition `projet` (activer « Pages web » avec le template `projet`)
-Champs (clés exactes) : `titre` (texte) · `client` (texte) · `logo_client` (fichier) ·
-`autorisation_logo` (vrai/faux) · `cover` (fichier) · `extrait` (texte, ≤ 160) ·
-`secteur` (texte) · `ville` (texte) · `services` (liste de textes) ·
-`chiffre_1_valeur` / `chiffre_1_label` · `chiffre_2_valeur` / `chiffre_2_label` ·
-`chiffre_3_valeur` / `chiffre_3_label` (textes) · `contexte` (texte enrichi) ·
-`realisation` (texte enrichi) · `resultats` (texte enrichi) · `temoignage` (texte, ≤ 220) ·
-`temoignage_auteur` (texte) · `url_live` (URL) · `date` (date).
+Le template `page.ville-seo` lit les métachamps que vous avez déjà remplis :
+- `seo_ville.hero_subtitle` → sous-titre du hero,
+- `seo_ville.ville` + `seo_ville.region` → sur-titre local,
+- `seo_ville.intro` et `seo_ville.contexte_local` (texte enrichi) → corps local,
+- `seo_ville.faq` (JSON) → accordéon + schema FAQPage automatique.
 
-### Définition `ville`
-`nom` (texte) · `accroche` (texte, ≤ 150) · `zones` (liste de textes) ·
-`chiffre_1_valeur`/`chiffre_1_label` (+2, +3) · `gbp_url` (URL) ·
-`projets` (références projet) · `avis` (références avis).
+Un seul template, un contenu unique par ville (règle SELMA §9.5 respectée par les données, pas par du texte cloné).
 
-### Définition `avis`
-`auteur` (texte) · `ville` (texte) · `note` (entier 1-5) · `texte` (texte, ≤ 220) ·
-`source` (texte : google / trustpilot / autre) · `date` (date).
+## 4. Metaobjects (repli A7 appliqué)
 
-## 4. Metafields de page (namespace `cs`)
+Votre boutique n'a aucune définition de metaobject : les sections Réalisations
+(`cs-projets`, `cs-resultats`) restent masquées tant que les metaobjects
+`projet` n'existent pas — rien ne casse. Le jour où vous créez la définition
+`projet` (champs listés en annexe du guide précédent, clés `titre`, `client`,
+`cover`, `chiffre_1_valeur`…), les pages Résultats et Études de cas se peuplent seules.
 
-Paramètres → Données personnalisées → Pages :
-- `cs.service_slug` (texte) : posé sur chaque page service ; pré-remplit le popup.
-- `cs.ville` (référence metaobject `ville`) : posé sur chaque page ville ; alimente hero, zones et popup.
+## 5. Menus (uniquement vers des handles existants — anti-404)
 
-## 5. Menus (uniquement vers des handles du §2 — anti-404)
+Navigation → créer/vérifier :
+- `main-menu` : Services (avec vos pages services en sous-items), Résultats, Ressources, Contact.
+- `menu-villes` : vos pages villes publiées (rangée du mega menu).
+- Menus footer : services, villes, ressources, légal.
+Puis les brancher dans l'éditeur : Header (menu + menu villes), Footer (3 colonnes + légal),
+page Plan du site et page Ressources (blocks « Liste de liens »).
 
-Navigation → créer :
-- `main-menu` : Services (lien `/pages/creation-site-internet` + les 6 pages services en sous-items), Réalisations, Blog, Contact.
-- `menu-villes` : les pages villes publiées (rangée du mega menu).
-- `menu-footer-services`, `menu-footer-villes`, `menu-footer-ressources`, `menu-legal`.
-Puis les brancher : éditeur de thème → Header (menu + menu villes) et Footer (3 colonnes + légal).
+## 6. Réglages du thème
 
-## 6. Réglages du thème à renseigner
-
-- **Identité** : logo, favicon, nom légal, NAP complet, zones servies, fiche Google (`GBP_URL`), réseaux, image OG 1200 × 630.
+- **Identité** : logo, favicon, nom légal, NAP, zones servies, fiche Google, réseaux, image OG.
 - **Cookies** : ID GA4 (chargé uniquement après consentement, Consent Mode v2), lien politique.
-- **Conversion** : mode du popup (audit + devis par défaut), barre sticky.
-- Les palettes et le motion sont livrés préréglés aux valeurs de la spec (§3).
+- **Conversion** : mode du popup (audit + devis), barre sticky (active sur services, villes, hubs ; jamais sur simple/légal/contact).
 
 ## 7. Données réelles (§15 — rien n'est inventé)
 
-Les emplacements de preuve (chiffres, logos, avis, note moyenne) sont livrés **vides** :
-un champ vide = bloc non rendu, jamais rempli au hasard (§0.2). À fournir par le CEO :
-chiffres datés et attribuables, logos avec autorisation écrite (case à cocher dans le block logo),
-avis sourcés Google/Trustpilot, matière locale par ville (une ville sans matière locale n'est pas publiée, §9.5).
+Chiffres, logos, avis et note moyenne sont livrés **vides et masqués** (§0.2).
+Logos : la case « autorisation écrite obtenue » doit être cochée pour publier (§2.3).
 
 ## 8. QA avant publication (§10.9)
 
-1. `shopify theme check` sur le dossier du thème.
-2. Crawl préproduction (`npx linkinator <url> --recurse`) : zéro 404, zéro 301 interne.
-3. Rich Results Test sur home, service, ville, projet, article, contact, audit.
-4. Test sans JavaScript : tout le contenu doit se lire (§10.6).
-5. Les deux thèmes (sombre et clair) écran par écran, contrastes AA.
-6. Formulaire testé de bout en bout : email reçu, tags `lead-audit`/`lead-devis` posés, events dataLayer.
-7. Refus cookies réellement respecté : aucun hit GA4.
-8. Budgets §10.8 sur home + 1 service + 1 ville + 1 article (lab mobile 4G lente).
+1. Crawl préproduction (`npx linkinator <url> --recurse`) : zéro 404, zéro 301 interne.
+2. Rich Results Test : home, un service, une ville SEO (FAQPage métachamps), contact.
+3. Test sans JavaScript, deux thèmes (sombre/clair), contrastes AA, 320 px.
+4. Formulaire de bout en bout : email reçu, tags `lead-audit`/`lead-devis`, events dataLayer.
+5. Refus cookies réellement respecté : aucun hit GA4.
 
-## 9. Écarts documentés (arbitrages, §0 rappel final)
+## 9. Écarts documentés
 
-1. **`sections/cs-stub.liquid`** (hors arborescence §5.1) : les templates JSON de la
-   plateforme (product, collection, cart, search, customers/*) doivent référencer une
-   section ; ce fichier unique porte les stubs exigés « minimaux, noindex, jamais maillés ».
-   `templates/gift_card.liquid` ajouté : fichier requis par Shopify à l'upload.
-2. **Plan du site** : rendu par `cs-richtext` via des blocks « liste de liens (silo) »
-   branchés sur les menus réels (zéro lien inventé), plutôt qu'une section dédiée hors liste.
-3. **Labels de l'éditeur** : rédigés en français directement dans les `{% schema %}`
-   (le thème est monolingue FR) ; `fr.default.schema.json` reste présent.
-4. **`robots.txt.liquid` / `llms.txt`** (§10.5) : non inclus au zip — le robots.txt natif
-   Shopify autorise déjà GPTBot/ClaudeBot/PerplexityBot par défaut ; à confirmer côté infra
-   comme le prévoit la spec.
-5. **Textes par défaut** : propositions à valider (§12.4), dans les limites §12.2,
-   sans aucun chiffre, avis ou logo inventé.
+1. `sections/cs-stub.liquid` + `templates/gift_card.liquid` : stubs exigés par la plateforme.
+2. `sections/cs-ville-seo.liquid` : repli metaobjects → métachamps `seo_ville` (décision A7, votre modèle de données réel fait foi).
+3. Plan du site rendu par `cs-richtext` (blocks liste de menus réels).
+4. Labels de l'éditeur en français directement dans les schemas.
+5. Textes par défaut : propositions à valider (§12.4), limites §12.2, zéro donnée inventée.

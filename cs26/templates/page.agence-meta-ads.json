@@ -4,8 +4,8 @@
       "type": "cs-hero-page",
       "settings": {
         "variante": "service",
-        "eyebrow": "Google Ads",
-        "intro": "Chaque euro traçable : des campagnes pilotées au coût par client acquis, pas au volume de clics.",
+        "eyebrow": "Agence Meta Ads",
+        "intro": "Une agence qui traite vos campagnes Meta comme un compte d'exploitation : chaque euro dépensé doit se justifier en ventes.",
         "cta_active": true,
         "cta_label": "Mon audit gratuit",
         "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
@@ -18,7 +18,7 @@
         "c1": {
           "type": "critere",
           "settings": {
-            "label": "Landing page dédiée",
+            "label": "Créas testées chaque semaine",
             "nous": "oui",
             "alt_1": "non",
             "alt_2": "~"
@@ -27,7 +27,7 @@
         "c2": {
           "type": "critere",
           "settings": {
-            "label": "Suivi des conversions",
+            "label": "Tracking des conversions fiable",
             "nous": "oui",
             "alt_1": "~",
             "alt_2": "~"
@@ -36,28 +36,28 @@
         "c3": {
           "type": "critere",
           "settings": {
-            "label": "Coût par lead suivi",
+            "label": "Compte à votre nom",
             "nous": "oui",
-            "alt_1": "non",
+            "alt_1": "oui",
             "alt_2": "~"
           }
         },
         "c4": {
           "type": "critere",
           "settings": {
-            "label": "Compte à votre nom",
+            "label": "Reporting en coût par client",
             "nous": "oui",
-            "alt_1": "~",
-            "alt_2": "oui"
+            "alt_1": "non",
+            "alt_2": "~"
           }
         },
         "c5": {
           "type": "critere",
           "settings": {
-            "label": "Reporting compréhensible",
+            "label": "Règles d'arrêt partagées",
             "nous": "oui",
             "alt_1": "non",
-            "alt_2": "~"
+            "alt_2": "non"
           }
         }
       },
@@ -69,12 +69,12 @@
         "c5"
       ],
       "settings": {
-        "eyebrow": "Pourquoi ça change tout",
-        "titre": "Ads seul ou Ads + landing optimisée ?",
-        "intro": "La différence ne se joue pas dans l'enchère : elle se joue sur la page qui reçoit le clic.",
+        "eyebrow": "Choisir son pilotage",
+        "titre": "Gérer seul, boost, ou agence ?",
+        "intro": "La comparaison que vous faites déjà, posée noir sur blanc.",
         "col_nous_titre": "Clickscreation",
-        "col_2_titre": "Campagne seule",
-        "col_3_titre": "Réglages par défaut",
+        "col_2_titre": "Gestion en interne",
+        "col_3_titre": "Bouton booster",
         "col_4_titre": "",
         "bg_style": "alt",
         "padding_haut": 96,
@@ -87,29 +87,29 @@
         "etape_1": {
           "type": "etape",
           "settings": {
-            "titre": "Cadrage économique",
-            "texte": "Votre marge, votre valeur client : on calcule le coût par lead soutenable."
+            "titre": "Audit du compte",
+            "texte": "Structure, tracking, historique : ce qui marche, ce qui fuit."
           }
         },
         "etape_2": {
           "type": "etape",
           "settings": {
-            "titre": "Structure et annonces",
-            "texte": "Des campagnes propres, des annonces testées, des mots-clés négatifs tenus."
+            "titre": "Plan de tests",
+            "texte": "Angles, audiences et créas priorisés par potentiel."
           }
         },
         "etape_3": {
           "type": "etape",
           "settings": {
-            "titre": "Landing dédiée",
-            "texte": "Le clic arrive sur une page conçue pour convertir, pas sur votre accueil."
+            "titre": "Pilotage hebdo",
+            "texte": "Budgets réalloués chaque semaine sur les données."
           }
         },
         "etape_4": {
           "type": "etape",
           "settings": {
-            "titre": "Optimisation continue",
-            "texte": "Budgets réalloués chaque semaine vers ce qui produit des clients."
+            "titre": "Bilan mensuel",
+            "texte": "Coût par client, enseignements, prochaines étapes."
           }
         }
       },
@@ -121,8 +121,8 @@
       ],
       "settings": {
         "eyebrow": "La méthode",
-        "titre": "Comment on pilote vos campagnes",
-        "bg_style": "alt",
+        "titre": "Comment on reprend un compte en main",
+        "bg_style": "base",
         "padding_haut": 96,
         "padding_bas": 96
       }
@@ -161,7 +161,7 @@
         "c3"
       ],
       "settings": {
-        "titre": "Les chiffres de nos campagnes",
+        "titre": "Les chiffres de l'agence",
         "bg_style": "halo",
         "padding_haut": 96,
         "padding_bas": 96
@@ -173,7 +173,7 @@
         "source": "metaobjects",
         "nombre": 4,
         "filtres": true,
-        "titre": "Cas Google Ads",
+        "titre": "Comptes pilotés",
         "lien_hub": "/pages/resultats",
         "bg_style": "base",
         "padding_haut": 96,
@@ -196,22 +196,22 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Quel budget publicitaire minimum ?",
-            "reponse": "<p>Cela dépend du coût par clic de votre secteur et de votre zone. L'audit gratuit chiffre le seuil en dessous duquel lancer des campagnes serait jeter de l'argent, et le budget réaliste pour apprendre vite.</p>"
+            "question": "Reprenez-vous un compte déjà actif ?",
+            "reponse": "<p>Oui, sans repartir de zéro : l'historique a de la valeur. L'audit identifie ce qui doit être conservé, corrigé ou arrêté, puis le plan de tests s'appuie dessus.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Le compte publicitaire m'appartient-il ?",
-            "reponse": "<p>Oui. Le compte Google Ads est créé à votre nom, vous en gardez la propriété et l'historique. Nous y travaillons avec un accès gestionnaire, révocable à tout moment.</p>"
+            "question": "Comment sont facturés vos honoraires ?",
+            "reponse": "<p>Un forfait de pilotage clair, séparé du budget publicitaire qui reste dans votre compte. Le détail est posé dans la proposition, après l'audit.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Comment mesurez-vous la rentabilité ?",
-            "reponse": "<p>Au coût par lead ou par vente, rapproché de votre marge réelle. Le nombre de clics et le taux d'impression sont des indicateurs de pilotage, jamais des résultats en soi.</p>"
+            "question": "Que se passe-t-il si les résultats ne suivent pas ?",
+            "reponse": "<p>Des règles d'arrêt sont posées avant le lancement : si les seuils ne sont pas atteints après la phase de test, on arrête ou on réoriente, sur données partagées.</p>"
           }
         }
       },
@@ -221,7 +221,7 @@
         "q3"
       ],
       "settings": {
-        "titre": "Vos questions sur Google Ads",
+        "titre": "Vos questions à l'agence",
         "premier_ouvert": true,
         "bg_style": "base",
         "padding_haut": 96,
@@ -231,8 +231,8 @@
     "cta": {
       "type": "cs-cta",
       "settings": {
-        "titre": "Voyons ce que vos campagnes laissent filer.",
-        "texte": "Un audit gratuit de votre compte ou de votre potentiel publicitaire, chiffré et sans jargon.",
+        "titre": "Vos campagnes méritent un vrai pilote.",
+        "texte": "Un audit gratuit de votre compte Meta : structure, tracking, créas, et le plan pour faire mieux.",
         "cta_label": "Mon audit gratuit",
         "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
         "padding_haut": 96,

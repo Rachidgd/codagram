@@ -155,7 +155,7 @@
         "nombre": 4,
         "filtres": true,
         "titre": "Sites que nous maintenons",
-        "lien_hub": "/pages/realisations",
+        "lien_hub": "/pages/resultats",
         "bg_style": "base",
         "padding_haut": 96,
         "padding_bas": 96
