@@ -373,12 +373,64 @@
         "padding_haut": 96,
         "padding_bas": 96
       }
+    },
+    "resultats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "236",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "d'impressions",
+            "contexte": "Maison Ayla · avril → juin 2026",
+            "source_interne": "Search Console"
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "350",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "de clics",
+            "contexte": "Maison Ayla · avril → juin 2026",
+            "source_interne": "Search Console"
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "169",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "d'impressions / mois",
+            "contexte": "Noza & Co · mai → juin 2026",
+            "source_interne": "Search Console"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "eyebrow": "Résultats",
+        "titre": "Des résultats datés, pas des promesses",
+        "intro": "Trajectoires réelles observées sur des projets accompagnés (source : Search Console). Chaque marché, historique et niveau de concurrence est différent : ces chiffres ne constituent pas une garantie de résultat.",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
     "hero",
     "prestations",
     "signature_media",
+    "resultats",
     "process",
     "comparatif",
     "garantie",

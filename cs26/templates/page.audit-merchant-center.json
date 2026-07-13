@@ -1,0 +1,251 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Audit Google Merchant Center",
+        "titre": "Vos flux produits, propres et sans rejet",
+        "intro": "Pourquoi vos produits sont refusés ou sous-diffusés sur Google Shopping, et comment remettre votre flux en règle pour vendre.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "livrables": {
+      "type": "cs-stack",
+      "blocks": {
+        "e1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Erreurs et rejets",
+            "texte": "La liste de vos produits refusés, la cause de chaque rejet et la façon de le corriger."
+          }
+        },
+        "e2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Qualité du flux",
+            "texte": "Titres, descriptions, catégories : ce qui bride la diffusion de vos produits."
+          }
+        },
+        "e3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "Attributs manquants",
+            "texte": "GTIN, marque, disponibilité, prix : les champs qui manquent et pénalisent vos annonces."
+          }
+        },
+        "e4": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Opportunités Shopping",
+            "texte": "Les produits à potentiel sous-exploités et les réglages qui les feraient décoller."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "settings": {
+        "eyebrow": "Dans votre audit",
+        "titre": "Ce qu'on passe au crible",
+        "numerotation": false,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous demandez",
+            "texte": "Votre boutique et votre compte Merchant Center. Deux minutes."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "On analyse",
+            "texte": "Un expert audite votre flux et vos rejets, produit par produit si besoin."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous recevez",
+            "texte": "Votre audit sous 48 h : erreurs classées et corrections priorisées."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "On en parle",
+            "texte": "Un échange pour décider des corrections à mener en premier."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "Comment ça marche",
+        "titre": "De la demande à votre plan d'action",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "euro",
+            "titre": "100 % gratuit",
+            "texte": "Aucune carte, aucun engagement. L'audit est offert, que vous travailliez ensuite avec nous ou non."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Livré sous 48 h",
+            "texte": "Un document clair sous 48 heures ouvrées, pas un PDF automatique de quarante pages illisibles."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Priorisé et actionnable",
+            "texte": "Les actions classées par impact et par effort. Vous pouvez commencer seul si vous le souhaitez."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Sans blabla ni jargon",
+            "texte": "Un interlocuteur qui vous explique en clair, et qui vous dit franchement si un levier n'est pas pour vous."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Ce qu'on vous promet",
+        "titre": "Un audit sans piège",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Un flux Merchant Center mal réglé, ce sont des produits refusés, une diffusion bridée et des ventes qui échappent à Google Shopping. Notre audit identifie chaque rejet, sa cause et sa correction, puis remet vos titres, attributs et catégories en ordre pour maximiser la diffusion.</p><p>Vous recevez une liste claire, du rejet bloquant à l'optimisation fine, prête à être appliquée. Objectif : que vos meilleurs produits soient vus et achetés.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent lié à :</strong> le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a>, l'<a href=\"/pages/optimisation-cro\">optimisation CRO</a> et la <a href=\"/pages/creation-site-ecommerce-shopify\">boutique Shopify</a> qui alimente le flux. Voyez nos <a href=\"/pages/resultats\">résultats</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Audit Merchant Center",
+        "titre": "Un flux Google Shopping enfin propre",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "À qui s'adresse cet audit ?",
+            "reponse": "<p>À toute boutique qui diffuse (ou veut diffuser) ses produits sur Google Shopping et qui subit des rejets ou une faible visibilité.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Faut-il un accès à mon compte ?",
+            "reponse": "<p>Un accès en lecture au Merchant Center accélère l'analyse, mais on peut démarrer avec un export de votre flux.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Corrigez-vous vous-mêmes ensuite ?",
+            "reponse": "<p>Si vous le souhaitez. L'audit vous permet aussi de corriger seul : chaque point est expliqué en clair.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions sur l'audit",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Remettons votre flux Shopping en règle.",
+        "texte": "Votre audit Merchant Center offert, livré sous 48 h ouvrées. Sans engagement.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "livrables",
+    "process",
+    "garantie",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

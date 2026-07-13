@@ -1,0 +1,251 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Analyse concurrentielle Meta",
+        "titre": "Les pubs qui tournent chez vos concurrents",
+        "intro": "On décortique leurs créas, leurs angles et leur durée de diffusion pour repérer ce qui marche dans votre marché, et vous en faire profiter.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "livrables": {
+      "type": "cs-stack",
+      "blocks": {
+        "e1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Créas actives",
+            "texte": "Les publicités que vos concurrents diffusent en ce moment, visuels et messages à l'appui."
+          }
+        },
+        "e2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Angles gagnants",
+            "texte": "Les promesses et arguments qu'ils répètent : souvent le signe de ce qui convertit."
+          }
+        },
+        "e3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "Longévité",
+            "texte": "Les pubs diffusées depuis longtemps, un indice fort de rentabilité chez le concurrent."
+          }
+        },
+        "e4": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Idées pour vous",
+            "texte": "Ce que vous pouvez tester tout de suite, adapté à votre offre et à votre ton."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "settings": {
+        "eyebrow": "Ce qu'on vous livre",
+        "titre": "Le renseignement publicitaire de votre marché",
+        "numerotation": false,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous demandez",
+            "texte": "Votre marché et deux ou trois concurrents. Deux minutes."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "On analyse",
+            "texte": "Un expert explore leurs publicités actives et leur historique de diffusion."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous recevez",
+            "texte": "Sous 48 h : leurs angles décryptés et une liste d'idées à tester chez vous."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "On en parle",
+            "texte": "Un échange pour transformer ces idées en plan publicitaire."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "Comment ça marche",
+        "titre": "De la demande à votre plan d'action",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "euro",
+            "titre": "100 % gratuit",
+            "texte": "Aucune carte, aucun engagement. L'audit est offert, que vous travailliez ensuite avec nous ou non."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Livré sous 48 h",
+            "texte": "Un document clair sous 48 heures ouvrées, pas un PDF automatique de quarante pages illisibles."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Priorisé et actionnable",
+            "texte": "Les actions classées par impact et par effort. Vous pouvez commencer seul si vous le souhaitez."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Sans blabla ni jargon",
+            "texte": "Un interlocuteur qui vous explique en clair, et qui vous dit franchement si un levier n'est pas pour vous."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Ce qu'on vous promet",
+        "titre": "Un audit sans piège",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Vos concurrents paient déjà pour apprendre ce qui fonctionne. Autant en profiter. En analysant leurs publicités actives, leurs angles et depuis combien de temps ils les diffusent, on repère les messages qui convertissent dans votre marché, et ceux qui s'essoufflent.</p><p>Vous recevez un décryptage clair et une liste d'idées à tester, adaptées à votre offre. De quoi lancer vos campagnes avec une longueur d'avance plutôt qu'en partant de zéro.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Se prolonge avec :</strong> le pilotage <a href=\"/pages/expert-meta-ads\">Meta Ads</a> et un <a href=\"/pages/audit-meta-ads\">audit de votre compte</a>. Pour convertir le trafic, voyez l'<a href=\"/pages/optimisation-cro\">optimisation CRO</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Analyse concurrentielle Meta",
+        "titre": "Voir ce qui marche avant de dépenser",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Comment voyez-vous les pubs des concurrents ?",
+            "reponse": "<p>Via les bibliothèques publicitaires publiques de Meta, qui rendent visibles les annonces actives de chaque page. Rien d'intrusif ni de caché.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Est-ce que vous copiez leurs pubs ?",
+            "reponse": "<p>Non. On repère ce qui marche pour vous en inspirer intelligemment, adapté à votre offre et à votre ton, sans plagiat.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "C'est utile même si je débute ?",
+            "reponse": "<p>Surtout si vous débutez : vous évitez des mois de tests coûteux en partant de ce qui fonctionne déjà dans votre marché.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Passez devant vos concurrents sur Meta.",
+        "texte": "Une analyse concurrentielle offerte : leurs angles gagnants et vos idées à tester, sous 48 h. Sans engagement.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "livrables",
+    "process",
+    "garantie",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}
