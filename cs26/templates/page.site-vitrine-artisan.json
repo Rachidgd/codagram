@@ -309,21 +309,21 @@
           "type": "question",
           "settings": {
             "question": "Le bouche-à-oreille me suffit, pourquoi un site ?",
-            "reponse": "Il vous porte tant que le carnet est plein. Un site prend le relais dans les creux et capte les clients qui vous cherchent sur Google sans vous connaître."
+            "reponse": "<p>Il vous porte tant que le carnet est plein. Un site prend le relais dans les creux et capte les clients qui vous cherchent sur Google sans vous connaître.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
             "question": "Je n'ai pas le temps de gérer un site.",
-            "reponse": "C'est prévu pour ça : une fois en ligne, il tourne seul. Ajouter un chantier prend deux minutes, quand vous voulez."
+            "reponse": "<p>C'est prévu pour ça : une fois en ligne, il tourne seul. Ajouter un chantier prend deux minutes, quand vous voulez.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
             "question": "Comment montrer mes chantiers sans y passer des heures ?",
-            "reponse": "Quelques photos avant/après suffisent. On met en place le cadre, vous n'avez qu'à déposer les images."
+            "reponse": "<p>Quelques photos avant/après suffisent. On met en place le cadre, vous n'avez qu'à déposer les images.</p>"
           }
         }
       },

@@ -309,21 +309,21 @@
           "type": "question",
           "settings": {
             "question": "Ai-je vraiment besoin d'un site si j'ai déjà une fiche Google ?",
-            "reponse": "La fiche Google vous rend visible, le site vous rend crédible et convertit. La fiche amène le clic, le site transforme le clic en contact. Les deux se renforcent."
+            "reponse": "<p>La fiche Google vous rend visible, le site vous rend crédible et convertit. La fiche amène le clic, le site transforme le clic en contact. Les deux se renforcent.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
             "question": "Combien de temps avant d'être en ligne ?",
-            "reponse": "Selon le nombre de pages, comptez généralement deux à quatre semaines après l'audit. Le planning est fixé dès la proposition."
+            "reponse": "<p>Selon le nombre de pages, comptez généralement deux à quatre semaines après l'audit. Le planning est fixé dès la proposition.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
             "question": "Je n'ai ni textes ni belles photos, c'est bloquant ?",
-            "reponse": "Non. On part de ce que vous avez et on vous guide : structure des textes, conseils de prise de vue, rédaction orientée client si besoin."
+            "reponse": "<p>Non. On part de ce que vous avez et on vous guide : structure des textes, conseils de prise de vue, rédaction orientée client si besoin.</p>"
           }
         }
       },

@@ -309,21 +309,21 @@
           "type": "question",
           "settings": {
             "question": "Un profil LinkedIn ou Malt ne suffit-il pas ?",
-            "reponse": "Ils vous rendent trouvable, mais vous placent en comparaison directe sur le prix. Un site à vous raconte votre valeur et ramène la discussion sur le projet."
+            "reponse": "<p>Ils vous rendent trouvable, mais vous placent en comparaison directe sur le prix. Un site à vous raconte votre valeur et ramène la discussion sur le projet.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
             "question": "Je change souvent d'offre, le site suivra-t-il ?",
-            "reponse": "Oui. Il est éditable sans code : vous ajustez offres, tarifs et études de cas quand votre positionnement évolue."
+            "reponse": "<p>Oui. Il est éditable sans code : vous ajustez offres, tarifs et études de cas quand votre positionnement évolue.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
             "question": "Comment un site justifie-t-il des tarifs plus élevés ?",
-            "reponse": "En rendant vos résultats visibles au bon endroit. Le prospect arrive convaincu, ce qui déplace la négociation du prix vers la valeur."
+            "reponse": "<p>En rendant vos résultats visibles au bon endroit. Le prospect arrive convaincu, ce qui déplace la négociation du prix vers la valeur.</p>"
           }
         }
       },

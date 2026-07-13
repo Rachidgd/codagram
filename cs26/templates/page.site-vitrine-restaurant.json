@@ -309,21 +309,21 @@
           "type": "question",
           "settings": {
             "question": "Les gens ne réservent-ils pas déjà via Google ou les plateformes ?",
-            "reponse": "Certains oui, mais chaque réservation via une plateforme vous coûte une commission et vous prive de la relation client. Un site vous rend la main et la marge."
+            "reponse": "<p>Certains oui, mais chaque réservation via une plateforme vous coûte une commission et vous prive de la relation client. Un site vous rend la main et la marge.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
             "question": "Je change ma carte souvent, c'est compliqué ?",
-            "reponse": "Non. La carte s'édite en quelques clics, plats et prix compris, sans passer par nous."
+            "reponse": "<p>Non. La carte s'édite en quelques clics, plats et prix compris, sans passer par nous.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
             "question": "Et mes avis Google ?",
-            "reponse": "On les met en avant au bon endroit et on relie le site à votre fiche, pour que la preuve sociale travaille pour vous."
+            "reponse": "<p>On les met en avant au bon endroit et on relie le site à votre fiche, pour que la preuve sociale travaille pour vous.</p>"
           }
         }
       },
