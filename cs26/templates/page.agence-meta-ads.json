@@ -237,6 +237,35 @@
         "padding_haut": 96,
         "padding_bas": 120
       }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une agence Meta Ads sérieuse traite vos campagnes Facebook et Instagram comme un compte d'exploitation : chaque euro dépensé doit se justifier en clients acquis. Nous reprenons un compte existant sans repartir de zéro, car l'historique a de la valeur, puis nous corrigeons la structure, le tracking et les créas d'après un audit.</p><p>Le pilotage est hebdomadaire, avec des budgets réalloués vers ce qui produit des ventes et des règles d'arrêt fixées avant le lancement. Un forfait clair sépare nos honoraires du budget publicitaire, qui reste dans votre compte. Le reporting parle en coût par client et en panier moyen, jamais en portée ou en impressions.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> l'<a href=\"/pages/optimisation-cro\">optimisation CRO</a> pour convertir le trafic payant, une <a href=\"/pages/creation-site-ecommerce-shopify\">boutique Shopify</a> performante, et le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> pour un acquisition durable.</p><p>Voyez nos <a href=\"/pages/resultats\">campagnes clients</a> et leurs chiffres.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Pilotage publicitaire",
+        "titre": "Une agence Meta Ads qui rend des comptes en ventes",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
@@ -246,6 +275,7 @@
     "stats",
     "projets",
     "avis",
+    "seo",
     "faq",
     "cta"
   ]

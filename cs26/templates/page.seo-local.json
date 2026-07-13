@@ -175,6 +175,35 @@
         "padding_haut": 96,
         "padding_bas": 120
       }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Le SEO local vous fait choisir par les clients qui cherchent un professionnel près d'eux, au moment où ils sont prêts à contacter. Trois éléments travaillent ensemble : votre fiche d'établissement Google, des pages locales avec du contenu vrai, et un flux d'avis régulier. Une fiche bien travaillée capte des recherches en carte avant même le clic vers votre site.</p><p>Nous optimisons votre fiche, créons une page par zone réellement servie et mettons en place un système simple pour obtenir des avis et y répondre. Les premiers effets se voient en quelques semaines sur les recherches en carte, puis la dynamique se confirme avec la régularité. Une page clonée avec le nom changé fait plus de mal que de bien : chaque page locale porte de la matière réelle.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> le <a href=\"/pages/agence-seo\">référencement naturel</a> pour les requêtes nationales, et une <a href=\"/pages/creation-site-vitrine\">création de site vitrine</a> conçue pour convertir le trafic local.</p><p>Nous accompagnons les entreprises à <a href=\"/pages/consultant-seo-paris\">Paris</a>, <a href=\"/pages/consultant-seo-lyon\">Lyon</a>, <a href=\"/pages/consultant-seo-marseille\">Marseille</a> et <a href=\"/pages/consultant-seo-france\">dans toute la France</a>. Voyez nos <a href=\"/pages/resultats\">résultats locaux</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Clients de proximité",
+        "titre": "Le SEO local pour être choisi près de chez vous",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
@@ -183,6 +212,7 @@
     "process",
     "stats",
     "avis",
+    "seo",
     "faq",
     "cta"
   ]

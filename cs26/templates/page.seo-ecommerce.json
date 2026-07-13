@@ -178,6 +178,35 @@
         "padding_haut": 96,
         "padding_bas": 120
       }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Le SEO e-commerce transforme vos collections et vos fiches produits en portes d'entrée sur Google, avec du trafic qui achète plutôt que du trafic qui visite. Nous commençons par les collections, qui captent les recherches à fort volume, puis les fiches prennent le relais sur la longue traîne. Chaque page reçoit un contenu unique, jamais dupliqué.</p><p>Sur Shopify, les pièges sont connus : collections sans texte, fiches en doublon, filtres qui diluent, pages lentes, avis non exploités. Nous les diagnostiquons, les corrigeons par ordre d'impact, et nous surveillons positions, trafic et ventes organiques chaque mois. Une refonte se gère sans perte de référencement, avec redirections une par une.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> une <a href=\"/pages/creation-site-ecommerce-shopify\">boutique Shopify optimisée</a>, le <a href=\"/pages/agence-seo\">référencement naturel</a> global de votre marque, et les <a href=\"/pages/expert-meta-ads\">Meta Ads</a> pour un mix acquisition équilibré.</p><p>Nos <a href=\"/pages/resultats\">cas clients</a> montrent des boutiques qui vendent grâce à Google.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Ventes organiques",
+        "titre": "Le SEO e-commerce pour vendre sans acheter de trafic",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
@@ -185,6 +214,7 @@
     "signature",
     "process",
     "projets",
+    "seo",
     "faq",
     "cta"
   ]

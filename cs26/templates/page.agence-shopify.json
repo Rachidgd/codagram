@@ -163,6 +163,35 @@
         "padding_haut": 96,
         "padding_bas": 120
       }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une agence Shopify couvre trois terrains sous la même responsabilité : créer ou refondre votre boutique, l'optimiser dans la durée, et la faire croître. Nous construisons des boutiques pensées pour vendre, migrées sans perdre votre référencement ni vos données, puis nous mesurons vitesse, fiches et tunnel pour corriger ce qui freine.</p><p>La croissance branche SEO, publicité et CRO sur la même donnée : votre coût d'acquisition et votre marge. Nous limitons les applications au nécessaire, car chacune ralentit la boutique et crée une dépendance. Vous gardez la propriété du compte, du thème et des données, avec des délais d'intervention écrits au contrat.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> la <a href=\"/pages/creation-site-ecommerce-shopify\">création de boutique Shopify</a>, le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> pour vendre grâce à Google, et les <a href=\"/pages/expert-meta-ads\">Meta Ads</a> pour accélérer.</p><p>Nos <a href=\"/pages/resultats\">réalisations</a> montrent des boutiques accompagnées sur la durée.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Croissance e-commerce",
+        "titre": "Une agence Shopify responsable de vos ventes",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
@@ -171,6 +200,7 @@
     "garanties",
     "projets",
     "avis",
+    "seo",
     "faq",
     "cta"
   ]

@@ -203,6 +203,35 @@
         "padding_haut": 96,
         "padding_bas": 120
       }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une agence SEO fait venir sur votre site les personnes qui cherchent déjà ce que vous vendez, puis les transforme en demandes. Chez Clickscreation, le référencement naturel commence par un audit : nous regardons vos positions actuelles, celles de vos concurrents et les requêtes qui rapportent vraiment, avant d'écrire la moindre ligne.</p><p>Ensuite, trois leviers avancent ensemble. Le socle technique rend votre site lisible pour Google. Les contenus répondent à une intention de recherche par page, écrite pour convaincre autant que pour se positionner. Le maillage et les liens gagnés installent votre autorité. Chaque mois, un rapport daté montre vos positions, votre trafic et les demandes générées.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> le <a href=\"/pages/seo-local\">SEO local</a> pour capter les recherches près de chez vous, le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> pour vos collections et fiches produits, ou une <a href=\"/pages/creation-site-vitrine\">création de site</a> pensée pour le référencement dès le départ.</p><p>Nous intervenons à <a href=\"/pages/consultant-seo-paris\">Paris</a>, <a href=\"/pages/consultant-seo-lyon\">Lyon</a>, <a href=\"/pages/consultant-seo-marseille\">Marseille</a> et <a href=\"/pages/consultant-seo-france\">partout en France</a>. Découvrez nos <a href=\"/pages/resultats\">résultats clients</a> ou demandez votre <a href=\"/pages/audit-seo\">audit SEO gratuit</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Référencement naturel",
+        "titre": "Une agence SEO qui vise les demandes, pas les positions",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
@@ -212,6 +241,7 @@
     "process",
     "projets",
     "avis",
+    "seo",
     "faq",
     "cta"
   ]

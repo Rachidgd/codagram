@@ -204,6 +204,35 @@
         "padding_haut": 96,
         "padding_bas": 120
       }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une campagne Meta Ads rentable relie chaque euro dépensé à une vente ou à un lead réel, jamais à une portée. Sur Facebook et Instagram, la créa fait l'essentiel du travail : nous produisons vos visuels et vidéos à partir de votre matière, testons plusieurs angles chaque semaine, gardons ce qui convertit et coupons ce qui décore.</p><p>Avant de lancer, nous cadrons le coût par client soutenable à partir de votre marge, puis nous branchons un tracking fiable. Le pilotage se fait sur données, avec des règles d'arrêt partagées dès le départ. Votre Business Manager et votre compte publicitaire restent à votre nom, avec l'historique conservé.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> l'<a href=\"/pages/optimisation-cro\">optimisation CRO</a> pour que le trafic payant convertisse, une <a href=\"/pages/creation-site-ecommerce-shopify\">boutique Shopify</a> qui reçoit les clics, et le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> pour baisser votre coût d'acquisition dans la durée.</p><p>Un audit Meta Ads chiffre votre potentiel avant d'engager le moindre budget. Découvrez nos <a href=\"/pages/resultats\">campagnes clients</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Publicité rentable",
+        "titre": "Des Meta Ads pilotées aux ventes, pas aux likes",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
@@ -214,6 +243,7 @@
     "stats",
     "projets",
     "avis",
+    "seo",
     "faq",
     "cta"
   ]

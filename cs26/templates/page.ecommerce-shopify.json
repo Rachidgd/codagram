@@ -204,6 +204,35 @@
         "padding_haut": 96,
         "padding_bas": 120
       }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une boutique Shopify qui vend traite trois choses ensemble : des fiches produits qui convainquent, un tunnel d'achat sans fuite et une vitesse mobile irréprochable. Nous construisons chaque fiche comme une page de vente, avec structure, photos, preuves et objections levées, puis nous mesurons chaque étape du panier au paiement pour supprimer ce qui fait abandonner.</p><p>Le référencement est intégré dès le départ : collections qui répondent aux recherches, données structurées propres, contenus uniques. Nous limitons les applications au strict nécessaire, car chaque app ralentit la boutique. Vous gardez la propriété du compte Shopify, du thème et de vos données, et une migration éventuelle préserve vos anciennes URL une par une.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> pour vendre grâce à Google, les <a href=\"/pages/expert-meta-ads\">campagnes Meta Ads</a> pour accélérer les ventes, et l'<a href=\"/pages/optimisation-cro\">optimisation CRO</a> pour un meilleur taux de conversion.</p><p>Un audit e-commerce dresse l'état des lieux de votre boutique. Voyez d'abord nos <a href=\"/pages/resultats\">résultats clients</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Boutique qui vend",
+        "titre": "Une boutique Shopify pensée pour vendre et se référencer",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
@@ -214,6 +243,7 @@
     "stats",
     "projets",
     "avis",
+    "seo",
     "faq",
     "cta"
   ]

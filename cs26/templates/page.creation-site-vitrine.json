@@ -219,6 +219,35 @@
         "padding_haut": 96,
         "padding_bas": 120
       }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Un site vitrine efficace se comprend en cinq secondes, se trouve sur Google et pousse le visiteur à vous écrire ou à appeler. Nous concevons chaque écran autour d'une action attendue, pas autour d'une galerie de fonctionnalités. Le message d'abord, la preuve ensuite, le passage à l'acte sans friction.</p><p>Techniquement, votre site reste rapide sur mobile, éditable par vos soins et structuré pour vos requêtes locales. Vous gardez la propriété du nom de domaine, des contenus et de tous les accès. Une session de prise en main est incluse à la livraison, puis nous mesurons le trafic et les contacts pour améliorer ce que les données désignent.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> le <a href=\"/pages/agence-seo\">référencement naturel</a> pour être trouvé sur Google, le <a href=\"/pages/seo-local\">SEO local</a> pour votre zone, et l'<a href=\"/pages/optimisation-cro\">optimisation de la conversion</a> pour transformer plus de visiteurs.</p><p>Un projet e-commerce plutôt qu'une vitrine ? Voyez la <a href=\"/pages/creation-site-ecommerce-shopify\">création de boutique Shopify</a>. Nos <a href=\"/pages/resultats\">réalisations</a> montrent des sites qui génèrent de vraies demandes.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Site qui convertit",
+        "titre": "Un site vitrine construit pour déclencher le contact",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
@@ -228,6 +257,7 @@
     "stats",
     "projets",
     "avis",
+    "seo",
     "faq",
     "cta"
   ]
