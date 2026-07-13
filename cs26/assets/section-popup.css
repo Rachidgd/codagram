@@ -6,8 +6,8 @@
   z-index: 150;
   background: rgba(4, 6, 10, .6);
 }
-html.js .cs-popup-overlay { opacity: 0; transition: opacity var(--d-2) var(--e-inout); }
-html.js .cs-popup-overlay.is-ouvert { opacity: 1; }
+html.js .cs-popup-overlay { opacity: 0; pointer-events: none; transition: opacity var(--d-2) var(--e-inout); }
+html.js .cs-popup-overlay.is-ouvert { opacity: 1; pointer-events: auto; }
 
 .cs-popup {
   position: fixed;
@@ -31,8 +31,8 @@ html.js .cs-popup-overlay.is-ouvert { opacity: 1; }
   border-radius: var(--r-xl) var(--r-xl) 0 0;
   padding: var(--sp-5) var(--sp-5) calc(var(--sp-6) + env(safe-area-inset-bottom));
 }
-html.js .cs-popup { transform: translateY(100%); transition: transform var(--d-2) var(--e-inout); }
-html.js .cs-popup.is-ouvert { transform: translateY(0); }
+html.js .cs-popup { transform: translateY(100%); pointer-events: none; transition: transform var(--d-2) var(--e-inout); }
+html.js .cs-popup.is-ouvert { transform: translateY(0); pointer-events: auto; }
 .cs-popup__poignee {
   width: 48px; height: 4px;
   border-radius: var(--r-pill);

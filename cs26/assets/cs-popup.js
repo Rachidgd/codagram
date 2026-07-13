@@ -7,17 +7,26 @@
 (function () {
   'use strict';
 
-  var racine = document.querySelector('[data-cs="popup"]');
-  if (!racine) return;
-
-  var modal = racine.querySelector('[data-cs-popup-modal]');
-  var overlay = racine.querySelector('.cs-popup-overlay');
-  var form = racine.querySelector('.cs-popup__form');
   var html = document.documentElement;
+  var racine = document.querySelector('[data-cs="popup"]');
+  var modal = racine && racine.querySelector('[data-cs-popup-modal]');
+  var overlay = racine && racine.querySelector('.cs-popup-overlay');
+  var form = racine && racine.querySelector('.cs-popup__form');
   var declencheur = null;
   var ouvertA = 0;
   var etape = 1;
   var TOTAL = 3;
+
+  /* Résolution paresseuse : le popup vit dans le groupe « superpositions », que
+     l'éditeur de thème peut re-rendre. On relit toujours les nœuds courants au
+     moment d'ouvrir, jamais une référence figée au chargement. */
+  function resoudre() {
+    racine = document.querySelector('[data-cs="popup"]');
+    modal = racine && racine.querySelector('[data-cs-popup-modal]');
+    overlay = racine && racine.querySelector('.cs-popup-overlay');
+    form = racine && racine.querySelector('.cs-popup__form');
+    return racine;
+  }
 
   /* ----- Ouverture / fermeture ----- */
   function piegerFocus(e) {
@@ -32,6 +41,8 @@
   }
 
   function ouvrirPopup(source) {
+    if (!resoudre() || !modal || !overlay) return;
+    if (form && !form.dataset.csInit) initForm(form);
     declencheur = document.activeElement;
     ouvertA = Date.now();
     modal.hidden = false;
@@ -50,6 +61,7 @@
   }
 
   function fermerPopup(force) {
+    if (!modal || !overlay) return;
     if (!force && etape >= 2 && form && !form.querySelector('[data-cs-popup-succes]')) {
       if (!window.confirm('Vos réponses seront perdues. Fermer quand même ?')) return;
     }
@@ -73,24 +85,24 @@
       ouvrirPopup(section ? section.id || section.className.split(' ')[0] : 'page');
     }
   });
-  racine.querySelectorAll('[data-cs-popup-fermer]').forEach(function (el) {
-    el.addEventListener('click', function () { fermerPopup(false); });
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('[data-cs-popup-fermer]')) fermerPopup(false);
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && modal.classList.contains('is-ouvert')) fermerPopup(false);
+    if (e.key === 'Escape' && modal && modal.classList.contains('is-ouvert')) fermerPopup(false);
   });
 
   /* Déclencheurs optionnels, désactivés par défaut (§11.1) */
-  if (racine.dataset.exitIntent === 'true' && window.matchMedia('(pointer: fine)').matches) {
+  if (racine && racine.dataset.exitIntent === 'true' && window.matchMedia('(pointer: fine)').matches) {
     var exitFait = false;
     document.addEventListener('pointerleave', function (e) {
-      if (!exitFait && e.clientY <= 0 && !modal.classList.contains('is-ouvert')) {
+      if (!exitFait && e.clientY <= 0 && modal && !modal.classList.contains('is-ouvert')) {
         exitFait = true;
         ouvrirPopup('exit-intent');
       }
     });
   }
-  if (racine.dataset.scroll70 === 'true' && document.body.className.indexOf('template-suffix-service') !== -1) {
+  if (racine && racine.dataset.scroll70 === 'true' && document.body.className.indexOf('template-suffix-service') !== -1) {
     var scrollFait = false;
     window.addEventListener('scroll', function () {
       if (scrollFait) return;
@@ -248,7 +260,7 @@
   document.querySelectorAll('[data-cs="lead-inline"]').forEach(initForm);
 
   /* ----- Écran de succès après rechargement ----- */
-  var succes = racine.querySelector('[data-cs-popup-succes]');
+  var succes = racine && racine.querySelector('[data-cs-popup-succes]');
   if (succes) {
     var prenomSpan = succes.querySelector('[data-cs-succes-prenom]');
     try {
