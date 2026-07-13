@@ -1,7 +1,8 @@
 /* CS-26 · cs-core.js
    Socle JS : reveal au scroll (§4.3), compteurs (§4.7), état de scroll du
-   header, progression du stack (§4.8), chargement conditionnel des modules,
-   mini bus d'événements cs:* → dataLayer. Vanilla, zéro dépendance. */
+   header, progression du stack (§4.8), mini bus d'événements cs:* → dataLayer.
+   Vanilla, zéro dépendance. Les modules (menu, popup, consent, particules)
+   sont chargés statiquement par le layout ; chacun se garde lui-même. */
 (function () {
   'use strict';
 
@@ -186,35 +187,21 @@
     });
   }
 
-  /* ----- Chargement conditionnel des modules §5.3 ----- */
-  function chargerModules() {
-    var script = document.querySelector('script[data-cs-core]');
-    if (!script) return;
-    var modules = [
-      { cible: '[data-particles]', url: script.dataset.csParticles },
-      { cible: '[data-cs="menu"]', url: script.dataset.csMenu },
-      { cible: '[data-cs="popup"]', url: script.dataset.csPopup },
-      { cible: '[data-cs="consent"]', url: script.dataset.csConsent }
-    ];
-    modules.forEach(function (m) {
-      if (m.url && document.querySelector(m.cible)) {
-        var s = document.createElement('script');
-        s.src = m.url;
-        s.defer = true;
-        document.head.appendChild(s);
-      }
-    });
+  /* Chaque init est isolé : une erreur dans l'un ne casse pas les autres.
+     Les modules (cs-menu, cs-popup, cs-consent, cs-particles) sont chargés
+     statiquement par layout/theme.liquid — chacun se garde lui-même. */
+  function sur(nom, fn) {
+    try { fn(); } catch (e) { if (window.console) console.error('CS ' + nom, e); }
   }
 
   function boot() {
-    initReveal();
-    initCompteurs();
-    initHeaderScroll();
-    initStack();
-    initProgression();
-    initSticky();
-    initFiltres();
-    chargerModules();
+    sur('reveal', initReveal);
+    sur('compteurs', initCompteurs);
+    sur('header', initHeaderScroll);
+    sur('stack', initStack);
+    sur('progression', initProgression);
+    sur('sticky', initSticky);
+    sur('filtres', initFiltres);
   }
 
   if (document.readyState === 'loading') {

@@ -157,13 +157,12 @@
   {% sections 'footer-group' %}
   {% sections 'overlay-group' %}
 
-  <script
-    src="{{ 'cs-core.js' | asset_url }}"
-    defer
-    data-cs-core
-    data-cs-particles="{{ 'cs-particles.js' | asset_url }}"
-    data-cs-menu="{{ 'cs-menu.js' | asset_url }}"
-    data-cs-popup="{{ 'cs-popup.js' | asset_url }}"
-    data-cs-consent="{{ 'cs-consent.js' | asset_url }}"></script>
+  {%- comment -%} JS : chargement statique en defer. Chaque module se garde
+    lui-même (return si sa cible DOM n'existe pas), donc zéro coût inutile. {%- endcomment -%}
+  <script src="{{ 'cs-core.js' | asset_url }}" defer></script>
+  <script src="{{ 'cs-menu.js' | asset_url }}" defer></script>
+  <script src="{{ 'cs-popup.js' | asset_url }}" defer></script>
+  <script src="{{ 'cs-consent.js' | asset_url }}" defer></script>
+  <script src="{{ 'cs-particles.js' | asset_url }}" defer></script>
 </body>
 </html>
