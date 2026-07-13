@@ -43,59 +43,48 @@
               <div class="cs-mega" id="cs-mega-{{ section.id }}-{{ forloop.index }}" hidden>
                 <div class="cs-container cs-mega__interieur">
                   <div class="cs-mega__grille">
-                    <div class="cs-mega__gauche">
-                      <p class="cs-eyebrow">{{ link.title | escape }}</p>
-                      <ul class="cs-mega__services" role="list">
-                        {%- for child in link.links -%}
-                          {%- liquid
-                            assign icone_service = 'etincelle'
-                            assign baseline_service = ''
-                            for block in section.blocks
-                              if block.type == 'service' and block.settings.lien == child.url
-                                assign icone_service = block.settings.icone
-                                assign baseline_service = block.settings.baseline
-                              endif
-                            endfor
-                          -%}
-                          <li style="--i: {{ forloop.index0 }};">
-                            <a href="{{ child.url }}" class="cs-mega__service">
-                              <span class="cs-pastille-icone cs-mega__service-icone">{% render 'icone', nom: icone_service %}</span>
-                              <span class="cs-mega__service-textes">
-                                <span class="cs-mega__service-titre">{{ child.title | escape }}</span>
-                                {%- if baseline_service != blank -%}
-                                  <span class="cs-mega__service-baseline">{{ baseline_service | escape }}</span>
-                                {%- endif -%}
-                              </span>
-                              {% render 'icone', nom: 'fleche-45', taille: 16, classe: 'cs-mega__service-fleche' %}
-                            </a>
-                          </li>
-                        {%- endfor -%}
-                      </ul>
-                    </div>
-                    <div class="cs-mega__droite">
-                      {%- if section.settings.featured_titre != blank -%}
-                        <div class="cs-mega__featured">
-                          <p class="cs-mega__featured-titre">{{ section.settings.featured_titre | escape }}</p>
-                          {%- if section.settings.featured_texte != blank -%}
-                            <p class="cs-mega__featured-texte">{{ section.settings.featured_texte | escape }}</p>
+                    <ul class="cs-mega__colonnes" role="list">
+                      {%- for child in link.links -%}
+                        {%- liquid
+                          assign icone_service = 'etincelle'
+                          assign baseline_service = ''
+                          for block in section.blocks
+                            if block.type == 'service' and block.settings.lien == child.url
+                              assign icone_service = block.settings.icone
+                              assign baseline_service = block.settings.baseline
+                            endif
+                          endfor
+                        -%}
+                        <li class="cs-mega__col" style="--i: {{ forloop.index0 }};">
+                          <a href="{{ child.url }}" class="cs-mega__col-tete">
+                            <span class="cs-pastille-icone cs-mega__col-icone">{% render 'icone', nom: icone_service %}</span>
+                            <span class="cs-mega__col-textes">
+                              <span class="cs-mega__col-titre">{{ child.title | escape }}</span>
+                              {%- if baseline_service != blank -%}
+                                <span class="cs-mega__col-baseline">{{ baseline_service | escape }}</span>
+                              {%- endif -%}
+                            </span>
+                            {% render 'icone', nom: 'fleche-45', taille: 14, classe: 'cs-mega__col-fleche' %}
+                          </a>
+                          {%- if child.links.size > 0 -%}
+                            <ul class="cs-mega__sous" role="list">
+                              {%- for sous in child.links -%}
+                                <li><a href="{{ sous.url }}" class="cs-mega__sous-lien">{{ sous.title | escape }}</a></li>
+                              {%- endfor -%}
+                            </ul>
                           {%- endif -%}
-                          {% render 'bouton', label: section.settings.featured_bouton, popup: true, style: 'primaire' %}
-                        </div>
-                      {%- endif -%}
-                      {%- assign projet = shop.metaobjects['projet'].values | first -%}
-                      {%- if projet and projet.cover.value -%}
-                        <a href="{{ projet.system.url }}" class="cs-mega__projet">
-                          {% render 'image', img: projet.cover.value, sizes: '320px', ratio: '3/2', alt: projet.titre.value %}
-                          <span class="cs-mega__projet-textes">
-                            <span class="cs-meta">Dernier projet</span>
-                            <span class="cs-mega__projet-titre">{{ projet.titre.value | escape }}</span>
-                            {%- if projet.chiffre_1_valeur.value != blank -%}
-                              <span class="cs-chip cs-chip--braise">{{ projet.chiffre_1_valeur.value }} {{ projet.chiffre_1_label.value }}</span>
-                            {%- endif -%}
-                          </span>
-                        </a>
-                      {%- endif -%}
-                    </div>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                    {%- if section.settings.featured_titre != blank -%}
+                      <div class="cs-mega__featured">
+                        <p class="cs-mega__featured-titre">{{ section.settings.featured_titre | escape }}</p>
+                        {%- if section.settings.featured_texte != blank -%}
+                          <p class="cs-mega__featured-texte">{{ section.settings.featured_texte | escape }}</p>
+                        {%- endif -%}
+                        {% render 'bouton', label: section.settings.featured_bouton, popup: true, style: 'primaire' %}
+                      </div>
+                    {%- endif -%}
                   </div>
                   {%- if menu_villes != blank and menu_villes.links.size > 0 -%}
                     <div class="cs-mega__villes">
@@ -187,6 +176,13 @@
                           {% render 'icone', nom: icone_service, taille: 20 %}
                           {{ child.title | escape }}
                         </a>
+                        {%- if child.links.size > 0 -%}
+                          <ul class="cs-drawer__sous2" role="list">
+                            {%- for sous in child.links -%}
+                              <li><a href="{{ sous.url }}" class="cs-drawer__sous2-lien">{{ sous.title | escape }}</a></li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
                       </li>
                     {%- endfor -%}
                   </ul>
