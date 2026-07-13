@@ -12,46 +12,6 @@
         "shape": "diag-2"
       }
     },
-    "signature_stats": {
-      "type": "cs-stats",
-      "blocks": {
-        "c1": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        },
-        "c2": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        },
-        "c3": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        }
-      },
-      "block_order": [
-        "c1",
-        "c2",
-        "c3"
-      ],
-      "settings": {
-        "titre": "Des positions qui se mesurent",
-        "bg_style": "halo",
-        "padding_haut": 96,
-        "padding_bas": 96
-      }
-    },
     "signature_media": {
       "type": "cs-media-texte",
       "settings": {
@@ -137,16 +97,6 @@
         "padding_bas": 96
       }
     },
-    "avis": {
-      "type": "cs-avis",
-      "settings": {
-        "titre": "Ce que disent nos clients",
-        "source_donnees": "blocks",
-        "bg_style": "base",
-        "padding_haut": 96,
-        "padding_bas": 96
-      }
-    },
     "faq": {
       "type": "cs-faq",
       "blocks": {
@@ -177,13 +127,21 @@
             "question": "Faut-il produire du contenu tous les mois ?",
             "reponse": "<p>Pas mécaniquement. On produit quand une intention de recherche le justifie, on améliore l'existant quand c'est plus rentable. Le volume suit la stratégie, jamais l'inverse.</p>"
           }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Le SEO est-il rentable pour une petite structure ?",
+            "reponse": "<p>Souvent oui : contrairement à la publicité, le trafic gagné ne s'arrête pas quand le budget s'arrête. On chiffre votre potentiel dans l'audit, avant tout engagement, pour que la décision repose sur des données.</p>"
+          }
         }
       },
       "block_order": [
         "q1",
         "q2",
         "q3",
-        "q4"
+        "q4",
+        "q5"
       ],
       "settings": {
         "titre": "Vos questions sur le SEO",
@@ -232,15 +190,199 @@
         "padding_haut": 96,
         "padding_bas": 96
       }
+    },
+    "prestations": {
+      "type": "cs-services",
+      "blocks": {
+        "s1": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/audit-seo",
+            "icone": "seo",
+            "titre": "Audit SEO gratuit",
+            "texte": "Vos positions, celles des concurrents, et le plan chiffré. Livré sous 48 h.",
+            "phare": true
+          }
+        },
+        "s2": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/seo-local",
+            "icone": "pin",
+            "titre": "SEO local",
+            "texte": "Sortir dans le pack local et sur « métier + ville », là où l'intention d'achat est forte.",
+            "phare": false
+          }
+        },
+        "s3": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/seo-ecommerce",
+            "icone": "euro",
+            "titre": "SEO e-commerce",
+            "texte": "Collections et fiches produits structurées pour ranker et vendre.",
+            "phare": false
+          }
+        },
+        "s4": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/consultant-seo-france",
+            "icone": "cible",
+            "titre": "Consultant SEO France",
+            "texte": "Un interlocuteur unique, une stratégie sur mesure, partout en France.",
+            "phare": false
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "eyebrow": "Nos prestations",
+        "titre": "Le SEO qui vous ressemble",
+        "intro": "Local, e-commerce, national : on cible d'abord les requêtes qui amènent des clients, pas seulement du trafic.",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "comparatif": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Méthode",
+            "nous": "Audit, technique, contenu, liens",
+            "alt_1": "Recette générique",
+            "alt_2": "Selon le profil",
+            "alt_3": "Aucune"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Liens entrants",
+            "nous": "Gagnés proprement",
+            "alt_1": "Achetés en masse, risqué",
+            "alt_2": "Variable",
+            "alt_3": "Aucun"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Reporting",
+            "nous": "Mensuel, daté, commenté",
+            "alt_1": "Chiffres hors contexte",
+            "alt_2": "Rare",
+            "alt_3": "Aucun"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Engagement",
+            "nous": "Sans piège, arrêt possible",
+            "alt_1": "Contrat long imposé",
+            "alt_2": "Variable",
+            "alt_3": "Aucun"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Objectif visé",
+            "nous": "Des demandes, pas du vent",
+            "alt_1": "Trafic vanity",
+            "alt_2": "Variable",
+            "alt_3": "Rester invisible"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Le bon choix",
+        "titre": "Un vrai SEO, ou des positions pour la galerie ?",
+        "intro": "",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Agence low-cost",
+        "col_3_titre": "Freelance seul",
+        "col_4_titre": "Ne rien faire",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Transparence totale",
+            "texte": "Accès direct à votre reporting : positions, trafic, conversions, actions datées. Rien d'opaque."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Sans engagement piège",
+            "texte": "Pas de contrat qui vous enferme. Si les données montrent que ça ne prend pas, on arrête."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "maintenance",
+            "titre": "Vous gardez tout",
+            "texte": "Contenus, optimisations et accès restent à votre nom. Vous ne perdez rien en partant."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Mesuré, pas promis",
+            "texte": "On vise les demandes générées, pas les positions pour la galerie. Chiffré chaque mois."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Zéro risque",
+        "titre": "Nos engagements",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
     "hero",
-    "signature_stats",
+    "prestations",
     "signature_media",
     "process",
+    "comparatif",
+    "garantie",
     "projets",
-    "avis",
     "seo",
     "faq",
     "cta"

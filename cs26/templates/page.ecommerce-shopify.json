@@ -94,46 +94,6 @@
         "padding_bas": 96
       }
     },
-    "stats": {
-      "type": "cs-stats",
-      "blocks": {
-        "c1": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        },
-        "c2": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        },
-        "c3": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        }
-      },
-      "block_order": [
-        "c1",
-        "c2",
-        "c3"
-      ],
-      "settings": {
-        "titre": "Les chiffres de nos boutiques",
-        "bg_style": "halo",
-        "padding_haut": 96,
-        "padding_bas": 96
-      }
-    },
     "projets": {
       "type": "cs-projets",
       "settings": {
@@ -142,16 +102,6 @@
         "titre": "Boutiques livrées",
         "lien_hub": "/pages/resultats",
         "bg_style": "base",
-        "padding_haut": 96,
-        "padding_bas": 96
-      }
-    },
-    "avis": {
-      "type": "cs-avis",
-      "settings": {
-        "titre": "Ce que disent nos clients",
-        "source_donnees": "blocks",
-        "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
       }
@@ -179,12 +129,20 @@
             "question": "Migrez-vous une boutique existante ?",
             "reponse": "<p>Oui : produits, clients et commandes sont migrés, et les anciennes URL sont redirigées une par une pour préserver votre référencement.</p>"
           }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Les applications ne sont-elles pas indispensables ?",
+            "reponse": "<p>Chaque application ajoute un coût mensuel et ralentit la boutique. On ne garde que le strict nécessaire et on privilégie le natif Shopify quand il existe. Moins d'apps, plus de vitesse, plus de ventes.</p>"
+          }
         }
       },
       "block_order": [
         "q1",
         "q2",
-        "q3"
+        "q3",
+        "q4"
       ],
       "settings": {
         "titre": "Vos questions sur Shopify",
@@ -233,16 +191,200 @@
         "padding_haut": 96,
         "padding_bas": 96
       }
+    },
+    "prestations": {
+      "type": "cs-services",
+      "blocks": {
+        "s1": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/audit-ecommerce",
+            "icone": "euro",
+            "titre": "Audit e-commerce",
+            "texte": "Fiches, tunnel, vitesse : les fuites de votre boutique classées par impact. Sous 48 h.",
+            "phare": true
+          }
+        },
+        "s2": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/optimisation-cro",
+            "icone": "conversion",
+            "titre": "Optimisation CRO",
+            "texte": "Plus de ventes à trafic égal, par des tests structurés sur le tunnel.",
+            "phare": false
+          }
+        },
+        "s3": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/audit-merchant-center",
+            "icone": "cible",
+            "titre": "Audit Merchant Center",
+            "texte": "Des flux produits propres pour Google Shopping, sans rejets.",
+            "phare": false
+          }
+        },
+        "s4": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/seo-ecommerce",
+            "icone": "seo",
+            "titre": "SEO e-commerce",
+            "texte": "Collections et fiches qui rankent et vendent sur Google.",
+            "phare": false
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "eyebrow": "Nos prestations",
+        "titre": "Tout ce qui fait vendre une boutique",
+        "intro": "De la création à l'optimisation : chaque levier vise le chiffre d'affaires, pas la vanité.",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "comparatif": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Vitesse mobile",
+            "nous": "Traitée comme une feature",
+            "alt_1": "Plombée par les apps",
+            "alt_2": "Variable",
+            "alt_3": "Lente"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Fiches produit",
+            "nous": "Vraies pages de vente",
+            "alt_1": "Catalogue brut",
+            "alt_2": "Standard",
+            "alt_3": "Statiques"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Tunnel d'achat",
+            "nous": "Mesuré, sans fuite",
+            "alt_1": "Par défaut",
+            "alt_2": "Peu optimisé",
+            "alt_3": "Plein d'abandons"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Applications",
+            "nous": "Limitées au nécessaire",
+            "alt_1": "Empilées, coûteuses",
+            "alt_2": "Variable",
+            "alt_3": "Subies"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Référencement",
+            "nous": "Intégré dès la conception",
+            "alt_1": "En option",
+            "alt_2": "Après coup",
+            "alt_3": "Absent"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Le bon choix",
+        "titre": "Une boutique qui vend, ou un catalogue en ligne ?",
+        "intro": "",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Template + apps",
+        "col_3_titre": "Agence générique",
+        "col_4_titre": "Ne rien changer",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Propriété totale",
+            "texte": "Compte Shopify, thème et données à votre nom. Migration incluse, anciennes URL redirigées."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Vitesse préservée",
+            "texte": "La vitesse mobile est traitée comme une fonctionnalité. Applications limitées au strict nécessaire."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "maintenance",
+            "titre": "Autonomie complète",
+            "texte": "Produits, prix, stocks et promotions se gèrent sans développeur. Formation incluse."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Piloté aux ventes",
+            "texte": "Tracking fiable dès le lancement et plan d'amélioration classé par impact sur le chiffre d'affaires."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Zéro risque",
+        "titre": "Nos engagements",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
     "hero",
     "signature_boutique",
     "signature_tunnel",
+    "prestations",
     "process",
-    "stats",
+    "comparatif",
+    "garantie",
     "projets",
-    "avis",
     "seo",
     "faq",
     "cta"

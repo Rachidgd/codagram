@@ -94,46 +94,6 @@
         "padding_bas": 96
       }
     },
-    "stats": {
-      "type": "cs-stats",
-      "blocks": {
-        "c1": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        },
-        "c2": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        },
-        "c3": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        }
-      },
-      "block_order": [
-        "c1",
-        "c2",
-        "c3"
-      ],
-      "settings": {
-        "titre": "Les chiffres de nos campagnes",
-        "bg_style": "halo",
-        "padding_haut": 96,
-        "padding_bas": 96
-      }
-    },
     "projets": {
       "type": "cs-projets",
       "settings": {
@@ -142,16 +102,6 @@
         "titre": "Cas Meta Ads",
         "lien_hub": "/pages/resultats",
         "bg_style": "base",
-        "padding_haut": 96,
-        "padding_bas": 96
-      }
-    },
-    "avis": {
-      "type": "cs-avis",
-      "settings": {
-        "titre": "Ce que disent nos clients",
-        "source_donnees": "blocks",
-        "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
       }
@@ -179,12 +129,20 @@
             "question": "Le compte publicitaire m'appartient-il ?",
             "reponse": "<p>Oui. Le Business Manager et le compte publicitaire sont à votre nom ; notre accès est révocable à tout moment, avec l'historique conservé.</p>"
           }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Et si mes campagnes ne sont pas rentables ?",
+            "reponse": "<p>On fixe dès le départ le coût par client au-delà duquel on coupe. Si le test ne prend pas, on le dit et on arrête, sans vous enfermer dans un budget. La décision repose sur vos ventes, pas sur des promesses.</p>"
+          }
         }
       },
       "block_order": [
         "q1",
         "q2",
-        "q3"
+        "q3",
+        "q4"
       ],
       "settings": {
         "titre": "Vos questions sur les Meta Ads",
@@ -233,16 +191,200 @@
         "padding_haut": 96,
         "padding_bas": 96
       }
+    },
+    "prestations": {
+      "type": "cs-services",
+      "blocks": {
+        "s1": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/audit-meta-ads",
+            "icone": "cible",
+            "titre": "Audit Meta Ads",
+            "texte": "Votre compte ou votre potentiel, chiffré avant d'engager le moindre budget.",
+            "phare": true
+          }
+        },
+        "s2": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/analyse-concurrentielle-meta-ads",
+            "icone": "social",
+            "titre": "Analyse concurrentielle",
+            "texte": "Les publicités qui tournent chez vos concurrents, décryptées pour vous.",
+            "phare": false
+          }
+        },
+        "s3": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/optimisation-cro",
+            "icone": "conversion",
+            "titre": "Optimisation CRO",
+            "texte": "Pour que le trafic payant convertisse une fois arrivé sur le site.",
+            "phare": false
+          }
+        },
+        "s4": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/creation-site-ecommerce-shopify",
+            "icone": "euro",
+            "titre": "Boutique Shopify",
+            "texte": "Une boutique qui transforme les clics payants en ventes.",
+            "phare": false
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "eyebrow": "Nos prestations",
+        "titre": "La pub qui rapporte, du clic à la vente",
+        "intro": "On ne se contente pas de diffuser : on relie chaque euro à une vente et on nettoie ce qui reçoit le clic.",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "comparatif": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Pilotage",
+            "nous": "Sur les ventes réelles",
+            "alt_1": "Sur la portée",
+            "alt_2": "Sur des KPI vanity",
+            "alt_3": "Aucun"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Créas",
+            "nous": "Testées chaque semaine",
+            "alt_1": "Une par campagne",
+            "alt_2": "Standardisées",
+            "alt_3": "Aucune"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Budget",
+            "nous": "Réalloué vers ce qui convertit",
+            "alt_1": "Figé",
+            "alt_2": "Dilué sur des comptes",
+            "alt_3": "Zéro"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Compte publicitaire",
+            "nous": "À votre nom",
+            "alt_1": "Variable",
+            "alt_2": "Souvent partagé",
+            "alt_3": "Inutilisé"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Transparence",
+            "nous": "CPA et ventes, sans jargon",
+            "alt_1": "Variable",
+            "alt_2": "Reporting de portée",
+            "alt_3": "Aucune"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Le bon choix",
+        "titre": "Des ventes, ou des likes ?",
+        "intro": "",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Freelance junior",
+        "col_3_titre": "Agence volume",
+        "col_4_titre": "Ne rien faire",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Compte à votre nom",
+            "texte": "Business Manager et compte publicitaire vous appartiennent. Notre accès est révocable, historique conservé."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "etincelle",
+            "titre": "Créas incluses",
+            "texte": "On produit vos visuels et vidéos à partir de votre matière. Vous validez, les droits sont à vous."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Piloté aux ventes",
+            "texte": "Chaque euro relié à une vente ou un lead réel. Reporting en coût par client, jamais en portée."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Règles d'arrêt claires",
+            "texte": "Le coût par client soutenable est fixé dès le départ. Si le test ne prend pas, on coupe et on le dit."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Zéro risque",
+        "titre": "Nos engagements",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
     "hero",
     "signature_creas",
     "signature_resultats",
+    "prestations",
     "process",
-    "stats",
+    "comparatif",
+    "garantie",
     "projets",
-    "avis",
     "seo",
     "faq",
     "cta"
