@@ -109,46 +109,6 @@
         "padding_bas": 96
       }
     },
-    "stats": {
-      "type": "cs-stats",
-      "blocks": {
-        "c1": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        },
-        "c2": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        },
-        "c3": {
-          "type": "chiffre",
-          "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
-          }
-        }
-      },
-      "block_order": [
-        "c1",
-        "c2",
-        "c3"
-      ],
-      "settings": {
-        "titre": "Les chiffres de nos sites",
-        "bg_style": "halo",
-        "padding_haut": 96,
-        "padding_bas": 96
-      }
-    },
     "projets": {
       "type": "cs-projets",
       "settings": {
@@ -157,16 +117,6 @@
         "titre": "Sites vitrines livrés",
         "lien_hub": "/pages/resultats",
         "bg_style": "base",
-        "padding_haut": 96,
-        "padding_bas": 96
-      }
-    },
-    "avis": {
-      "type": "cs-avis",
-      "settings": {
-        "titre": "Ce que disent nos clients",
-        "source_donnees": "blocks",
-        "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
       }
@@ -232,7 +182,7 @@
         "mesh": {
           "type": "prose",
           "settings": {
-            "contenu": "<p><strong>Souvent combiné avec :</strong> le <a href=\"/pages/agence-seo\">référencement naturel</a> pour être trouvé sur Google, le <a href=\"/pages/seo-local\">SEO local</a> pour votre zone, et l'<a href=\"/pages/optimisation-cro\">optimisation de la conversion</a> pour transformer plus de visiteurs.</p><p>Un projet e-commerce plutôt qu'une vitrine ? Voyez la <a href=\"/pages/creation-site-ecommerce-shopify\">création de boutique Shopify</a>. Nos <a href=\"/pages/resultats\">réalisations</a> montrent des sites qui génèrent de vraies demandes.</p>"
+            "contenu": "<p><strong>Selon votre activité :</strong> site vitrine pour <a href=\"/pages/site-vitrine-pme-tpe\">PME et TPE</a>, <a href=\"/pages/site-vitrine-freelance\">indépendants et freelances</a>, <a href=\"/pages/site-vitrine-restaurant\">restaurants</a> ou <a href=\"/pages/site-vitrine-artisan\">artisans et BTP</a>.</p><p><strong>Souvent combiné avec :</strong> le <a href=\"/pages/agence-seo\">référencement naturel</a>, le <a href=\"/pages/seo-local\">SEO local</a> et l'<a href=\"/pages/optimisation-cro\">optimisation de la conversion</a>. Un projet e-commerce plutôt qu'une vitrine ? Voyez la <a href=\"/pages/creation-site-ecommerce-shopify\">création de boutique Shopify</a>. Nos <a href=\"/pages/resultats\">réalisations</a> montrent des sites qui génèrent de vraies demandes.</p>"
           }
         }
       },
@@ -248,15 +198,199 @@
         "padding_haut": 96,
         "padding_bas": 96
       }
+    },
+    "cibles": {
+      "type": "cs-services",
+      "blocks": {
+        "s1": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/site-vitrine-pme-tpe",
+            "icone": "site",
+            "titre": "PME / TPE",
+            "texte": "Un site crédible qui fait sonner le téléphone et arriver les demandes de devis.",
+            "phare": false
+          }
+        },
+        "s2": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/site-vitrine-freelance",
+            "icone": "etincelle",
+            "titre": "Indépendant / Freelance",
+            "texte": "Une vitrine qui vend votre expertise et attire de meilleurs clients.",
+            "phare": false
+          }
+        },
+        "s3": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/site-vitrine-restaurant",
+            "icone": "pin",
+            "titre": "Restaurant / CHR",
+            "texte": "Carte à jour, réservation directe sans commission, salle qui se remplit.",
+            "phare": false
+          }
+        },
+        "s4": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/site-vitrine-artisan",
+            "icone": "maintenance",
+            "titre": "Artisan / BTP",
+            "texte": "Vos chantiers en preuve, des demandes de devis qualifiées toute l'année.",
+            "phare": false
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "eyebrow": "Par métier",
+        "titre": "Un site pensé pour votre activité",
+        "intro": "Chaque métier a ses freins et ses attentes. On adapte le message, les preuves et le parcours de contact à votre cible.",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "comparatif": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Image renvoyée",
+            "nous": "Sur-mesure et cohérente",
+            "alt_1": "Template reconnaissable",
+            "alt_2": "Variable",
+            "alt_3": "Celle d'hier"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Trouvé sur Google",
+            "nous": "Structuré pour le local",
+            "alt_1": "Rarement optimisé",
+            "alt_2": "Selon le profil",
+            "alt_3": "Invisible"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Temps que ça vous coûte",
+            "nous": "Quelques validations",
+            "alt_1": "Vos soirées",
+            "alt_2": "Suivi à assurer",
+            "alt_3": "Zéro, et zéro client"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Génère des contacts",
+            "nous": "Parcours pensé pour ça",
+            "alt_1": "Si vous savez faire",
+            "alt_2": "Variable",
+            "alt_3": "Non"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Propriété et évolution",
+            "nous": "Tout à votre nom",
+            "alt_1": "Abonnement sans fin",
+            "alt_2": "Dépend du prestataire",
+            "alt_3": "Aucune"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Le bon choix",
+        "titre": "Site professionnel, ou bricolage ?",
+        "intro": "",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Site fait maison",
+        "col_3_titre": "Freelance seul",
+        "col_4_titre": "Ne rien changer",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Propriété totale",
+            "texte": "Nom de domaine, contenus et accès à votre nom, avec un document de passation à la livraison."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Délai annoncé tenu",
+            "texte": "Un planning fixé dès la proposition, des jalons de validation, une mise en ligne à la date prévue."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "maintenance",
+            "titre": "Éditable sans code",
+            "texte": "Vous mettez à jour textes, photos et offres depuis une interface simple. Prise en main incluse."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Résultats mesurés",
+            "texte": "Trafic et contacts branchés dès le lancement, premier bilan chiffré partagé avec vous."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Zéro risque",
+        "titre": "Nos engagements",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
     }
   },
   "order": [
     "hero",
     "signature",
+    "cibles",
     "process",
-    "stats",
+    "comparatif",
+    "garantie",
     "projets",
-    "avis",
     "seo",
     "faq",
     "cta"
