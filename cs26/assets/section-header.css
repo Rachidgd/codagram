@@ -4,7 +4,7 @@
 .cs-header-wrapper{position:sticky;top:0;z-index:100;padding-top:var(--sp-3);pointer-events:none;}
 .cs-header-wrapper>*{pointer-events:auto;}
 .cs-header{position:relative;background:transparent;}
-.cs-header__barre{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:var(--sp-5);height:var(--header-h);padding-inline:var(--sp-5);border-radius:var(--r-pill);background:var(--glass-bg);border:1px solid var(--glass-line);box-shadow:var(--sh-2);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);transition:height var(--d-2) var(--e-out),box-shadow var(--d-2) var(--e-out);}
+.cs-header__barre{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:var(--sp-5);height:var(--header-h);padding-inline:var(--sp-5);border-radius:var(--r-pill);background:var(--glass-bg);border:1px solid var(--glass-line);box-shadow:var(--sh-2);backdrop-filter:blur(10px) saturate(140%);-webkit-backdrop-filter:blur(10px) saturate(140%);transition:box-shadow var(--d-2) var(--e-out);}
 .cs-header--transparent{background:transparent;}
 html[data-scrolled] .cs-header__barre{box-shadow:0 14px 44px rgba(0,0,0,.30);}
 .cs-header__logo{display:inline-flex;align-items:center;text-decoration:none;}
@@ -16,8 +16,10 @@ html[data-scrolled] .cs-header__barre{box-shadow:0 14px 44px rgba(0,0,0,.30);}
 .cs-header__lien--mega .cs-icone{transition:transform var(--d-2) var(--e-out);}
 .cs-header__lien--mega[aria-expanded="true"] .cs-icone{transform:rotate(180deg);}
 .cs-header__item--mega{position:static;}
-.cs-mega{position:absolute;z-index:2;top:calc(100% + var(--sp-2));left:0;right:0;background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:var(--r-l);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);box-shadow:var(--sh-2);}
-html.js .cs-mega{opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity var(--d-2) var(--e-out),transform var(--d-2) var(--e-out);}
+/* Fond PLEIN (opaque) et sans backdrop-filter : lisible + rapide (le flou en
+   temps réel sur un grand panneau animé faisait ramer l'ouverture). */
+.cs-mega{position:absolute;z-index:2;top:calc(100% + var(--sp-2));left:0;right:0;background:var(--c-surface);border:1px solid var(--c-line);border-radius:var(--r-l);box-shadow:var(--sh-2);}
+html.js .cs-mega{opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .16s var(--e-out),transform .16s var(--e-out);}
 html.js .cs-mega.is-ouvert{opacity:1;transform:translateY(0);pointer-events:auto;}
 .cs-mega__interieur{padding-block:var(--sp-6);display:grid;gap:var(--sp-6);}
 .cs-mega__grille{display:grid;grid-template-columns:minmax(0,3fr) minmax(220px,1fr);gap:var(--sp-6);align-items:start;}
@@ -41,7 +43,7 @@ html.js .cs-mega.is-ouvert{opacity:1;transform:translateY(0);pointer-events:auto
 .cs-drawer__sous2{display:grid;gap:2px;padding-left:calc(20px + var(--sp-3));margin:2px 0 var(--sp-2);}
 .cs-drawer__sous2-lien{display:flex;align-items:center;min-height:36px;color:var(--c-text-3);font-size:var(--fs-small);text-decoration:none;}
 .cs-drawer__sous2-lien:hover{color:var(--c-text);}
-html.js .is-ouvert .cs-mega__services li,html.js .is-ouvert .cs-mega__col{animation:cs-mega-item var(--d-2) var(--e-out) both;animation-delay:calc(var(--i,0) * 45ms);}
+html.js .is-ouvert .cs-mega__services li{animation:cs-mega-item var(--d-2) var(--e-out) both;animation-delay:calc(var(--i,0) * 45ms);}
 @keyframes cs-mega-item{from{opacity:0;transform:translateY(6px);}
 to{opacity:1;transform:translateY(0);}
 }

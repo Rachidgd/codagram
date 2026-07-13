@@ -18,52 +18,120 @@
     "logos": {
       "type": "cs-logos",
       "settings": {
-        "titre": "Ils nous confient leurs clics",
+        "titre": "Ils nous confient leur croissance",
         "vitesse": 60,
         "padding_haut": 48,
         "padding_bas": 48
-      }
-    },
-    "stats": {
-      "type": "cs-stats",
+      },
       "blocks": {
-        "chiffre_1": {
-          "type": "chiffre",
+        "l1": {
+          "type": "logo",
           "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
+            "image": "shopify://shop_images/logo_noza.svg",
+            "nom": "Noza & Co",
+            "autorisation": true
           }
         },
-        "chiffre_2": {
-          "type": "chiffre",
+        "l2": {
+          "type": "logo",
           "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
+            "image": "shopify://shop_images/logo_maison_ayla.svg",
+            "nom": "Maison Ayla",
+            "autorisation": true
           }
         },
-        "chiffre_3": {
-          "type": "chiffre",
+        "l3": {
+          "type": "logo",
           "settings": {
-            "valeur": "",
-            "label": "",
-            "contexte": ""
+            "image": "shopify://shop_images/logo_saccabines.svg",
+            "nom": "Saccabines",
+            "autorisation": true
+          }
+        },
+        "l4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo_mbe.svg",
+            "nom": "MBE France",
+            "autorisation": true
+          }
+        },
+        "l5": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo_oshira_2.svg",
+            "nom": "Oshira",
+            "autorisation": true
+          }
+        },
+        "l6": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo_stellar_2.svg",
+            "nom": "Cabinet Stellar",
+            "autorisation": true
           }
         }
       },
       "block_order": [
-        "chiffre_1",
-        "chiffre_2",
-        "chiffre_3"
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6"
+      ]
+    },
+    "stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "350",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "de clics",
+            "contexte": "Maison Ayla · avril → juin 2026",
+            "source_interne": "Search Console"
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "169",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "d'impressions / mois",
+            "contexte": "Noza & Co · mai → juin 2026",
+            "source_interne": "Search Console"
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "20",
+            "prefixe": "",
+            "suffixe": " K",
+            "label": "impressions en 2 mois",
+            "contexte": "Saccabines · boutique lancée de zéro",
+            "source_interne": "Search Console"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
       ],
       "settings": {
         "eyebrow": "La preuve d'abord",
-        "titre": "Des résultats datés, pas des adjectifs.",
+        "titre": "Des résultats datés, pas des promesses",
         "bg_style": "halo",
         "animation": "auto",
         "padding_haut": 96,
-        "padding_bas": 96
+        "padding_bas": 96,
+        "intro": "Trajectoires réelles observées sur des projets accompagnés (source : Search Console). Chaque marché est différent : ces chiffres ne constituent pas une garantie de résultat."
       }
     },
     "services": {

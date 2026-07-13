@@ -84,9 +84,9 @@
 
   CSParticles.prototype.peupler = function () {
     var surface = this.w * this.h;
-    var count = Math.min(Math.max(Math.round(surface / 22000), 16), 70);
-    if (this.preset === 'footer') count = Math.min(count, 36);
-    if (window.innerWidth < 640) count = Math.round(count * 0.45);
+    var count = Math.min(Math.max(Math.round(surface / 30000), 12), 42);
+    if (this.preset === 'footer') count = Math.min(count, 28);
+    if (window.innerWidth < 640) count = Math.round(count * 0.4);
     if (machineModeste || motionSoft) count = Math.round(count * 0.5);
     this.liens = this.preset === 'hero' && !machineModeste;
     this.couleur = tokenCouleur(this.preset === 'hero' ? '--c-accent' : '--c-accent-2');
@@ -156,14 +156,14 @@
     ctx.clearRect(0, 0, this.w, this.h);
     if (liens) {
       ctx.lineWidth = 1;
+      ctx.strokeStyle = this.couleurLien;
       for (var i = 0; i < points.length; i++) {
         for (var j = i + 1; j < points.length; j++) {
           var dx = points[i].x - points[j].x;
           var dy = points[i].y - points[j].y;
           var d2 = dx * dx + dy * dy;
-          if (d2 < 12100) {
-            ctx.globalAlpha = (1 - Math.sqrt(d2) / 110) * 0.5;
-            ctx.strokeStyle = this.couleurLien;
+          if (d2 < 9025) {
+            ctx.globalAlpha = (1 - Math.sqrt(d2) / 95) * 0.5;
             ctx.beginPath();
             ctx.moveTo(points[i].x, points[i].y);
             ctx.lineTo(points[j].x, points[j].y);
