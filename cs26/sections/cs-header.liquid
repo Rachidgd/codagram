@@ -167,12 +167,12 @@
             {%- for link in menu.links -%}
               {%- if link.links.size > 0 -%}
                 <li class="cs-drawer__groupe">
-                  <button type="button" class="cs-drawer__accordeon" aria-expanded="true"
+                  <button type="button" class="cs-drawer__accordeon" aria-expanded="false"
                     aria-controls="cs-drawer-groupe-{{ forloop.index }}" data-cs-drawer-accordeon>
                     {{ link.title | escape }}
                     {% render 'icone', nom: 'chevron', taille: 18, classe: 'cs-accordeon__chevron' %}
                   </button>
-                  <ul class="cs-drawer__sous-liste" id="cs-drawer-groupe-{{ forloop.index }}" role="list">
+                  <ul class="cs-drawer__sous-liste" id="cs-drawer-groupe-{{ forloop.index }}" role="list" hidden>
                     {%- for child in link.links -%}
                       {%- liquid
                         assign icone_service = 'etincelle'
