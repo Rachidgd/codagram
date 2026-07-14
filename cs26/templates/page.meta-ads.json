@@ -155,8 +155,8 @@
     "cta": {
       "type": "cs-cta",
       "settings": {
-        "titre": "Voyons ce que vos pubs laissent filer.",
-        "texte": "Un audit gratuit de votre compte Meta ou de votre potentiel publicitaire, chiffré et sans jargon.",
+        "titre": "Transformons votre budget pub en ventes, pas en likes.",
+        "texte": "On cible les bonnes audiences, on teste les bonnes créas, et on pilote vos campagnes sur ce qui remplit vraiment le panier.",
         "cta_label": "Mon audit gratuit",
         "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
         "padding_haut": 96,

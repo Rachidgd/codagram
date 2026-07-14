@@ -154,8 +154,8 @@
     "cta": {
       "type": "cs-cta",
       "settings": {
-        "titre": "Voyons ce que Google vous laisse filer.",
-        "texte": "Un audit gratuit de votre visibilité : vos positions, celles de vos concurrents, et le plan pour combler l'écart.",
+        "titre": "Prenez les positions qui vous rapportent des clients.",
+        "texte": "On part de vos données pour cibler les requêtes qui convertissent, puis on construit votre visibilité mois après mois. Ça commence par un audit gratuit.",
         "cta_label": "Mon audit gratuit",
         "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
         "padding_haut": 96,
@@ -418,8 +418,8 @@
       ],
       "settings": {
         "eyebrow": "Résultats",
-        "titre": "Des résultats datés, pas des promesses",
-        "intro": "Trajectoires réelles observées sur des projets accompagnés (source : Search Console). Chaque marché, historique et niveau de concurrence est différent : ces chiffres ne constituent pas une garantie de résultat.",
+        "titre": "Ce que le SEO a produit, chiffré et daté",
+        "intro": "Des trajectoires réelles relevées sur des projets accompagnés en SEO (source : Search Console). Chaque secteur et chaque niveau de concurrence diffèrent : ces chiffres illustrent un travail, ils ne valent pas garantie de résultat.",
         "bg_style": "halo",
         "padding_haut": 96,
         "padding_bas": 96

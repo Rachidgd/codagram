@@ -110,28 +110,28 @@
           "type": "etape",
           "settings": {
             "titre": "Audit gratuit",
-            "texte": "Votre présence actuelle, vos concurrents locaux, votre potentiel de contacts."
+            "texte": "On regarde comment votre PME apparaît aujourd'hui face à vos concurrents de proximité, et le nombre de contacts que vous laissez filer."
           }
         },
         "etape_2": {
           "type": "etape",
           "settings": {
             "titre": "Proposition",
-            "texte": "Périmètre, planning, budget : rien de flou, rien de caché."
+            "texte": "Un devis lisible : ce qui est inclus, le planning, le prix ferme. Vous décidez sans aucune zone d'ombre."
           }
         },
         "etape_3": {
           "type": "etape",
           "settings": {
             "titre": "Production",
-            "texte": "Un interlocuteur unique, des validations sur du concret."
+            "texte": "Vous suivez l'avancée avec une seule personne et validez chaque étape sur des écrans réels, jamais sur des promesses."
           }
         },
         "etape_4": {
           "type": "etape",
           "settings": {
             "titre": "Lancement",
-            "texte": "Mise en ligne contrôlée et passation complète des accès."
+            "texte": "On met en ligne, on branche le suivi des appels et des formulaires, et vous récupérez l'intégralité de vos accès."
           }
         }
       },
@@ -143,7 +143,7 @@
       ],
       "settings": {
         "eyebrow": "Le démarrage",
-        "titre": "Comment démarre votre projet",
+        "titre": "Votre projet, étape par étape",
         "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
@@ -231,7 +231,7 @@
           "settings": {
             "icone": "bouclier",
             "titre": "Propriété totale",
-            "texte": "Nom de domaine, contenus et accès à votre nom, avec un document de passation à la livraison."
+            "texte": "Domaine, contenus et hébergement restent au nom de votre entreprise. Vous repartez avec tout, document de passation à l'appui."
           }
         },
         "g2": {
@@ -239,7 +239,7 @@
           "settings": {
             "icone": "eclair",
             "titre": "Délai annoncé tenu",
-            "texte": "Un planning fixé dès la proposition, des jalons de validation, une mise en ligne à la date prévue."
+            "texte": "Un planning arrêté dès le devis, des points de validation clairs, une mise en ligne à la date promise."
           }
         },
         "g3": {
@@ -247,7 +247,7 @@
           "settings": {
             "icone": "maintenance",
             "titre": "Éditable sans code",
-            "texte": "Vous mettez à jour textes, photos et offres depuis une interface simple. Prise en main incluse."
+            "texte": "Vous changez horaires, offres et photos depuis une interface simple, sans rappeler personne. Prise en main incluse."
           }
         },
         "g4": {
@@ -255,7 +255,7 @@
           "settings": {
             "icone": "cible",
             "titre": "Résultats mesurés",
-            "texte": "Trafic et contacts branchés dès le lancement, premier bilan chiffré partagé avec vous."
+            "texte": "Suivi des appels et des formulaires branché dès l'ouverture, premier bilan de contacts partagé avec vous."
           }
         }
       },

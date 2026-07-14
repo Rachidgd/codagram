@@ -104,7 +104,7 @@
       ],
       "settings": {
         "eyebrow": "Comment ça marche",
-        "titre": "De la demande à votre plan d'action",
+        "titre": "De la demande au plan de corrections",
         "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
@@ -117,32 +117,32 @@
           "type": "engagement",
           "settings": {
             "icone": "euro",
-            "titre": "100 % gratuit",
-            "texte": "Aucune carte, aucun engagement. L'audit est offert, que vous travailliez ensuite avec nous ou non."
+            "titre": "Gratuit, sans carte",
+            "texte": "Aucun moyen de paiement demandé. Le diagnostic vous appartient, que vous confiiez ou non les corrections à notre équipe."
           }
         },
         "g2": {
           "type": "engagement",
           "settings": {
             "icone": "eclair",
-            "titre": "Livré sous 48 h",
-            "texte": "Un document clair sous 48 heures ouvrées, pas un PDF automatique de quarante pages illisibles."
+            "titre": "Sous 48 heures ouvrées",
+            "texte": "Un document que vous comprenez, pas un audit robot illisible bourré de scores techniques hors sol."
           }
         },
         "g3": {
           "type": "engagement",
           "settings": {
             "icone": "cible",
-            "titre": "Priorisé et actionnable",
-            "texte": "Les actions classées par impact et par effort. Vous pouvez commencer seul si vous le souhaitez."
+            "titre": "Trié par impact sur les ventes",
+            "texte": "Chaque fuite est chiffrée en chiffre d'affaires potentiel et classée par effort. Les corrections rentables passent en premier."
           }
         },
         "g4": {
           "type": "engagement",
           "settings": {
             "icone": "bouclier",
-            "titre": "Sans blabla ni jargon",
-            "texte": "Un interlocuteur qui vous explique en clair, et qui vous dit franchement si un levier n'est pas pour vous."
+            "titre": "En français, pas en jargon",
+            "texte": "Un spécialiste e-commerce vous explique chaque point, et vous dit franchement ce qui peut attendre."
           }
         }
       },
@@ -153,8 +153,8 @@
         "g4"
       ],
       "settings": {
-        "eyebrow": "Ce qu'on vous promet",
-        "titre": "Un audit sans piège",
+        "eyebrow": "Nos engagements",
+        "titre": "Un diagnostic sans mauvaise surprise",
         "bg_style": "base",
         "padding_haut": 96,
         "padding_bas": 96

@@ -104,7 +104,7 @@
       ],
       "settings": {
         "eyebrow": "Comment ça marche",
-        "titre": "De la demande à votre plan d'action",
+        "titre": "De la demande aux idées à tester",
         "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
@@ -117,32 +117,32 @@
           "type": "engagement",
           "settings": {
             "icone": "euro",
-            "titre": "100 % gratuit",
-            "texte": "Aucune carte, aucun engagement. L'audit est offert, que vous travailliez ensuite avec nous ou non."
+            "titre": "Gratuite, sans carte",
+            "texte": "Vous repartez avec le décryptage même sans campagne à la clé. Aucun paiement n'est demandé."
           }
         },
         "g2": {
           "type": "engagement",
           "settings": {
             "icone": "eclair",
-            "titre": "Livré sous 48 h",
-            "texte": "Un document clair sous 48 heures ouvrées, pas un PDF automatique de quarante pages illisibles."
+            "titre": "Prête sous 48 h ouvrées",
+            "texte": "Une synthèse claire des angles qui tournent, pas des captures d'écran en vrac de la bibliothèque publicitaire."
           }
         },
         "g3": {
           "type": "engagement",
           "settings": {
             "icone": "cible",
-            "titre": "Priorisé et actionnable",
-            "texte": "Les actions classées par impact et par effort. Vous pouvez commencer seul si vous le souhaitez."
+            "titre": "Des idées prêtes à tester",
+            "texte": "Chaque angle repéré devient une piste de créa priorisée pour votre propre marque."
           }
         },
         "g4": {
           "type": "engagement",
           "settings": {
             "icone": "bouclier",
-            "titre": "Sans blabla ni jargon",
-            "texte": "Un interlocuteur qui vous explique en clair, et qui vous dit franchement si un levier n'est pas pour vous."
+            "titre": "Commentée par un expert",
+            "texte": "Un média-buyer vous dit ce qui est réplicable chez vous, et ce qui ne prendra pas dans votre marché."
           }
         }
       },
@@ -153,8 +153,8 @@
         "g4"
       ],
       "settings": {
-        "eyebrow": "Ce qu'on vous promet",
-        "titre": "Un audit sans piège",
+        "eyebrow": "Nos engagements",
+        "titre": "Une analyse concrète, pas un espionnage flou",
         "bg_style": "base",
         "padding_haut": 96,
         "padding_bas": 96

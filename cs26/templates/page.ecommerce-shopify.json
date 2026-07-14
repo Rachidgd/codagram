@@ -155,8 +155,8 @@
     "cta": {
       "type": "cs-cta",
       "settings": {
-        "titre": "Voyons ce que votre boutique laisse filer.",
-        "texte": "Un audit gratuit de votre e-commerce : fiches, tunnel, vitesse, et les corrections classées par impact.",
+        "titre": "Construisons la boutique qui vend pendant que vous dormez.",
+        "texte": "Fiches, tunnel d'achat et vitesse pensés ensemble pour un seul objectif : transformer plus de visiteurs en commandes.",
         "cta_label": "Mon audit gratuit",
         "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
         "padding_haut": 96,

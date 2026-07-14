@@ -23,12 +23,11 @@
   </div>
   <div class="cs-logos__viewport">
     <ul class="cs-logos__rangee" role="list">
-      {%- for copie in (1..2) -%}
+      {%- for copie in (1..4) -%}
         {%- for block in section.blocks -%}
           {%- if block.settings.image != blank and block.settings.autorisation -%}
-            <li class="cs-logos__bulle cs-glass" {% if copie == 2 %}aria-hidden="true"{% else %}{{ block.shopify_attributes }}{% endif %}>
-              <img src="{{ block.settings.image | image_url: width: 144 }}"
-                width="72" height="72"
+            <li class="cs-logos__item" {% if copie != 1 %}aria-hidden="true"{% else %}{{ block.shopify_attributes }}{% endif %}>
+              <img class="cs-logos__img" src="{{ block.settings.image | image_url: width: 320 }}"
                 alt="{% if copie == 1 %}{{ block.settings.nom | escape }}{% endif %}"
                 loading="lazy" decoding="async">
             </li>

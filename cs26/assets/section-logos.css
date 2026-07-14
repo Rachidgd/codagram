@@ -1,4 +1,7 @@
-/* CS-26 · section-logos.css · Marquee de bulles logos (§8.3) */
+/* CS-26 · section-logos.css · Marquee logos clients (§8.3)
+   Défilement continu et sans vide : 4 copies de la rangée, boucle sur -25 %
+   (= une copie), donc jamais d'espace, même sur grand écran. Logos libres
+   (sans cercle), plus grands. */
 
 .cs-logos__titre {
   text-align: center;
@@ -11,41 +14,40 @@
 }
 .cs-logos__viewport {
   overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
 .cs-logos__rangee {
   display: flex;
-  gap: var(--sp-5);
+  align-items: center;
+  gap: var(--sp-8);
   width: max-content;
-  animation: cs-logos-marquee var(--vitesse, 60s) linear infinite;
+  animation: cs-logos-marquee var(--vitesse, 20s) linear infinite;
 }
 @media (hover: hover) {
   .cs-logos:hover .cs-logos__rangee { animation-play-state: paused; }
 }
 @keyframes cs-logos-marquee {
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-25%); }
 }
-.cs-logos__bulle {
+.cs-logos__item {
   flex: 0 0 auto;
-  width: 72px; height: 72px;
-  border-radius: var(--r-pill);
   display: grid;
   place-items: center;
-  padding: var(--sp-3);
-  transition: transform var(--d-2) var(--e-spring);
+  height: 60px;
 }
-.cs-logos__bulle:hover { transform: scale(1.06); }
-.cs-logos__bulle img {
-  width: 100%; height: 100%;
+.cs-logos__img {
+  height: 48px;
+  width: auto;
+  max-width: 220px;
   object-fit: contain;
-  filter: grayscale(1) opacity(.65);
-  transition: filter var(--d-2) var(--e-out);
+  opacity: .9;
+  transition: opacity var(--d-2) var(--e-out);
 }
-.cs-logos__bulle:hover img { filter: none; }
+.cs-logos__item:hover .cs-logos__img { opacity: 1; }
 @media (max-width: 639px) {
-  .cs-logos__rangee { gap: var(--sp-4); }
-  .cs-logos__bulle { width: 56px; height: 56px; padding: var(--sp-2); }
+  .cs-logos__rangee { gap: var(--sp-6); }
+  .cs-logos__img { height: 34px; max-width: 150px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cs-logos__rangee { animation: none; }
@@ -53,4 +55,4 @@
 }
 [data-motion="off"] .cs-logos__rangee { animation: none; }
 [data-motion="off"] .cs-logos__viewport { overflow-x: auto; mask-image: none; -webkit-mask-image: none; }
-[data-motion="soft"] .cs-logos__rangee { animation-duration: calc(var(--vitesse, 60s) * 2); }
+[data-motion="soft"] .cs-logos__rangee { animation-duration: calc(var(--vitesse, 20s) * 1.5); }

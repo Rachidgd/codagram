@@ -110,28 +110,28 @@
           "type": "etape",
           "settings": {
             "titre": "Audit gratuit",
-            "texte": "Votre positionnement actuel, vos concurrents, ce qui vous dessert en ligne."
+            "texte": "On analyse ce que renvoie votre présence actuelle et pourquoi certains prospects vous jugent trop cher avant même de vous parler."
           }
         },
         "etape_2": {
           "type": "etape",
           "settings": {
             "titre": "Proposition",
-            "texte": "Périmètre, planning, budget : cadre clair avant de commencer."
+            "texte": "Un cadre net : livrables, délai, tarif. De quoi engager le projet l'esprit tranquille."
           }
         },
         "etape_3": {
           "type": "etape",
           "settings": {
             "titre": "Production",
-            "texte": "Un interlocuteur unique, des validations sur maquette réelle."
+            "texte": "Un seul interlocuteur, des allers-retours rapides sur maquette réelle, sans réunions qui grignotent votre temps facturable."
           }
         },
         "etape_4": {
           "type": "etape",
           "settings": {
             "titre": "Lancement",
-            "texte": "Mise en ligne contrôlée et passation complète des accès."
+            "texte": "Site en ligne, formulaire de prise de contact branché, et l'ensemble des accès transférés à votre nom."
           }
         }
       },
@@ -143,7 +143,7 @@
       ],
       "settings": {
         "eyebrow": "Le démarrage",
-        "titre": "Comment démarre votre projet",
+        "titre": "De l'appel à la mise en ligne",
         "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
@@ -231,7 +231,7 @@
           "settings": {
             "icone": "bouclier",
             "titre": "Propriété totale",
-            "texte": "Nom de domaine, contenus et accès à votre nom, avec un document de passation à la livraison."
+            "texte": "Domaine, textes et accès sont à votre nom. Votre vitrine ne dépend d'aucune plateforme, elle vous appartient."
           }
         },
         "g2": {
@@ -239,7 +239,7 @@
           "settings": {
             "icone": "eclair",
             "titre": "Délai annoncé tenu",
-            "texte": "Un planning fixé dès la proposition, des jalons de validation, une mise en ligne à la date prévue."
+            "texte": "Un calendrier fixé dès la proposition et tenu, pour que votre site soit prêt quand vous en avez besoin."
           }
         },
         "g3": {
@@ -247,7 +247,7 @@
           "settings": {
             "icone": "maintenance",
             "titre": "Éditable sans code",
-            "texte": "Vous mettez à jour textes, photos et offres depuis une interface simple. Prise en main incluse."
+            "texte": "Vous ajoutez une étude de cas ou un article quand vous voulez, sans facture à chaque modification."
           }
         },
         "g4": {
@@ -255,7 +255,7 @@
           "settings": {
             "icone": "cible",
             "titre": "Résultats mesurés",
-            "texte": "Trafic et contacts branchés dès le lancement, premier bilan chiffré partagé avec vous."
+            "texte": "Prises de contact suivies dès le lancement, premier bilan partagé pour voir ce que la vitrine rapporte."
           }
         }
       },

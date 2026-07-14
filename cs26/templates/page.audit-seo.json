@@ -104,7 +104,7 @@
       ],
       "settings": {
         "eyebrow": "Comment ça marche",
-        "titre": "De la demande à votre plan d'action",
+        "titre": "De votre demande à votre feuille de route SEO",
         "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
@@ -168,32 +168,32 @@
           "type": "engagement",
           "settings": {
             "icone": "euro",
-            "titre": "100 % gratuit",
-            "texte": "Aucune carte, aucun engagement. L'audit est offert, que vous travailliez ensuite avec nous ou non."
+            "titre": "Offert, pour de vrai",
+            "texte": "Pas de carte bancaire, pas de relance commerciale forcée. L'audit vous reste, même si vous ne travaillez pas ensuite avec nous."
           }
         },
         "g2": {
           "type": "engagement",
           "settings": {
             "icone": "eclair",
-            "titre": "Livré sous 48 h",
-            "texte": "Un document clair sous 48 heures ouvrées, pas un PDF automatique de quarante pages illisibles."
+            "titre": "Livré sous 48 h ouvrées",
+            "texte": "Un rapport lisible et commenté, pas un export automatique de quarante pages que personne n'ouvre jamais."
           }
         },
         "g3": {
           "type": "engagement",
           "settings": {
             "icone": "cible",
-            "titre": "Priorisé et actionnable",
-            "texte": "Les actions classées par impact et par effort. Vous pouvez commencer seul si vous le souhaitez."
+            "titre": "Classé par priorité",
+            "texte": "Chaque action est notée par gain attendu et par effort. Vous savez par quoi commencer dès la première lecture."
           }
         },
         "g4": {
           "type": "engagement",
           "settings": {
             "icone": "bouclier",
-            "titre": "Sans blabla ni jargon",
-            "texte": "Un interlocuteur qui vous explique en clair, et qui vous dit franchement si un levier n'est pas pour vous."
+            "titre": "Expliqué sans jargon",
+            "texte": "Un consultant vous décrypte les constats, et vous dit honnêtement si le SEO n'est pas votre levier le plus rentable."
           }
         }
       },
@@ -204,8 +204,8 @@
         "g4"
       ],
       "settings": {
-        "eyebrow": "Ce qu'on vous promet",
-        "titre": "Un audit sans piège",
+        "eyebrow": "Nos engagements",
+        "titre": "Un audit SEO sans piège",
         "bg_style": "base",
         "padding_haut": 96,
         "padding_bas": 96

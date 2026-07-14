@@ -104,7 +104,7 @@
       ],
       "settings": {
         "eyebrow": "Comment ça marche",
-        "titre": "De la demande à votre plan d'action",
+        "titre": "De la demande à un flux remis en règle",
         "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
@@ -117,32 +117,32 @@
           "type": "engagement",
           "settings": {
             "icone": "euro",
-            "titre": "100 % gratuit",
-            "texte": "Aucune carte, aucun engagement. L'audit est offert, que vous travailliez ensuite avec nous ou non."
+            "titre": "Zéro coût, zéro carte",
+            "texte": "Aucun paiement pour repérer vos rejets. L'analyse est à vous, que vous corrigiez seul ou avec nous ensuite."
           }
         },
         "g2": {
           "type": "engagement",
           "settings": {
             "icone": "eclair",
-            "titre": "Livré sous 48 h",
-            "texte": "Un document clair sous 48 heures ouvrées, pas un PDF automatique de quarante pages illisibles."
+            "titre": "Rendu sous 48 h ouvrées",
+            "texte": "La liste de vos erreurs de flux et leurs causes réelles, pas un export brut de la console Merchant Center."
           }
         },
         "g3": {
           "type": "engagement",
           "settings": {
             "icone": "cible",
-            "titre": "Priorisé et actionnable",
-            "texte": "Les actions classées par impact et par effort. Vous pouvez commencer seul si vous le souhaitez."
+            "titre": "Rejets classés par gravité",
+            "texte": "Des produits bloqués aux avertissements mineurs : vous voyez quoi corriger en premier pour rediffuser vite."
           }
         },
         "g4": {
           "type": "engagement",
           "settings": {
             "icone": "bouclier",
-            "titre": "Sans blabla ni jargon",
-            "texte": "Un interlocuteur qui vous explique en clair, et qui vous dit franchement si un levier n'est pas pour vous."
+            "titre": "Montré produit par produit",
+            "texte": "Un spécialiste Shopping vous indique où ça coince, sans vous noyer sous les codes d'erreur de Google."
           }
         }
       },
@@ -153,8 +153,8 @@
         "g4"
       ],
       "settings": {
-        "eyebrow": "Ce qu'on vous promet",
-        "titre": "Un audit sans piège",
+        "eyebrow": "Nos engagements",
+        "titre": "Un audit de flux transparent",
         "bg_style": "base",
         "padding_haut": 96,
         "padding_bas": 96

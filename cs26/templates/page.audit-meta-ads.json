@@ -104,7 +104,7 @@
       ],
       "settings": {
         "eyebrow": "Comment ça marche",
-        "titre": "De la demande à votre plan d'action",
+        "titre": "De la demande à votre plan d'optimisation",
         "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
@@ -117,32 +117,32 @@
           "type": "engagement",
           "settings": {
             "icone": "euro",
-            "titre": "100 % gratuit",
-            "texte": "Aucune carte, aucun engagement. L'audit est offert, que vous travailliez ensuite avec nous ou non."
+            "titre": "Offert intégralement",
+            "texte": "Aucune carte, aucune obligation de lancer une campagne avec nous ensuite. L'analyse reste la vôtre."
           }
         },
         "g2": {
           "type": "engagement",
           "settings": {
             "icone": "eclair",
-            "titre": "Livré sous 48 h",
-            "texte": "Un document clair sous 48 heures ouvrées, pas un PDF automatique de quarante pages illisibles."
+            "titre": "Livré sous 48 h ouvrées",
+            "texte": "Un rapport que vous lisez d'une traite, pas un tableau de bord Business Manager exporté tel quel."
           }
         },
         "g3": {
           "type": "engagement",
           "settings": {
             "icone": "cible",
-            "titre": "Priorisé et actionnable",
-            "texte": "Les actions classées par impact et par effort. Vous pouvez commencer seul si vous le souhaitez."
+            "titre": "Fuites chiffrées, correctifs triés",
+            "texte": "Chaque euro mal dépensé est identifié, chaque correctif classé par gain attendu sur vos ventes."
           }
         },
         "g4": {
           "type": "engagement",
           "settings": {
             "icone": "bouclier",
-            "titre": "Sans blabla ni jargon",
-            "texte": "Un interlocuteur qui vous explique en clair, et qui vous dit franchement si un levier n'est pas pour vous."
+            "titre": "Dit sans détour",
+            "texte": "Un média-buyer vous montre où part le budget, et si le problème vient de vos audiences ou de vos créas."
           }
         }
       },
@@ -153,8 +153,8 @@
         "g4"
       ],
       "settings": {
-        "eyebrow": "Ce qu'on vous promet",
-        "titre": "Un audit sans piège",
+        "eyebrow": "Nos engagements",
+        "titre": "Un audit pub sans engagement",
         "bg_style": "base",
         "padding_haut": 96,
         "padding_bas": 96

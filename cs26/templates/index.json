@@ -19,7 +19,7 @@
       "type": "cs-logos",
       "settings": {
         "titre": "Ils nous confient leur croissance",
-        "vitesse": 60,
+        "vitesse": 20,
         "padding_haut": 48,
         "padding_bas": 48
       },

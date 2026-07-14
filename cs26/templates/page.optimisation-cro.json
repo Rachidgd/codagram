@@ -104,7 +104,7 @@
       ],
       "settings": {
         "eyebrow": "Comment ça marche",
-        "titre": "De la demande à votre plan d'action",
+        "titre": "De la demande à vos premiers tests",
         "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
@@ -117,32 +117,32 @@
           "type": "engagement",
           "settings": {
             "icone": "euro",
-            "titre": "100 % gratuit",
-            "texte": "Aucune carte, aucun engagement. L'audit est offert, que vous travailliez ensuite avec nous ou non."
+            "titre": "Premier diagnostic offert",
+            "texte": "On repère vos frictions les plus coûteuses sans carte ni engagement. Le constat vous reste."
           }
         },
         "g2": {
           "type": "engagement",
           "settings": {
             "icone": "eclair",
-            "titre": "Livré sous 48 h",
-            "texte": "Un document clair sous 48 heures ouvrées, pas un PDF automatique de quarante pages illisibles."
+            "titre": "Remis sous 48 h ouvrées",
+            "texte": "Les points de fuite de votre parcours, chiffrés, pas un audit d'ergonomie théorique de cinquante slides."
           }
         },
         "g3": {
           "type": "engagement",
           "settings": {
             "icone": "cible",
-            "titre": "Priorisé et actionnable",
-            "texte": "Les actions classées par impact et par effort. Vous pouvez commencer seul si vous le souhaitez."
+            "titre": "Tests classés par gain",
+            "texte": "Chaque hypothèse est priorisée par impact attendu sur vos conversions et par facilité de mise en place."
           }
         },
         "g4": {
           "type": "engagement",
           "settings": {
             "icone": "bouclier",
-            "titre": "Sans blabla ni jargon",
-            "texte": "Un interlocuteur qui vous explique en clair, et qui vous dit franchement si un levier n'est pas pour vous."
+            "titre": "Fondé sur vos données",
+            "texte": "Un spécialiste conversion s'appuie sur vos vrais chiffres, pas sur des bonnes pratiques génériques."
           }
         }
       },
@@ -153,8 +153,8 @@
         "g4"
       ],
       "settings": {
-        "eyebrow": "Ce qu'on vous promet",
-        "titre": "Un audit sans piège",
+        "eyebrow": "Nos engagements",
+        "titre": "Un diagnostic CRO sans blabla",
         "bg_style": "base",
         "padding_haut": 96,
         "padding_bas": 96

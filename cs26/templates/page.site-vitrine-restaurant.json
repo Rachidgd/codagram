@@ -110,28 +110,28 @@
           "type": "etape",
           "settings": {
             "titre": "Audit gratuit",
-            "texte": "Votre visibilité actuelle, vos avis, ce qui fait fuir sur mobile."
+            "texte": "On regarde votre visibilité, vos avis et ce qui fait fuir un client affamé sur son téléphone à 20 h."
           }
         },
         "etape_2": {
           "type": "etape",
           "settings": {
             "titre": "Proposition",
-            "texte": "Périmètre, planning, budget : cadre clair avant de commencer."
+            "texte": "Périmètre, planning, budget : un cadre clair, calé pour ne jamais empiéter sur votre rythme de service."
           }
         },
         "etape_3": {
           "type": "etape",
           "settings": {
             "titre": "Production",
-            "texte": "Mise en scène de la carte et du lieu, validations sur maquette réelle."
+            "texte": "On met en scène votre carte et votre salle, vous validez visuels et textes sur maquette réelle."
           }
         },
         "etape_4": {
           "type": "etape",
           "settings": {
             "titre": "Lancement",
-            "texte": "Mise en ligne, réservation branchée, passation des accès."
+            "texte": "Site en ligne, réservation directe active, fiche Google reliée, et vos accès entre vos mains."
           }
         }
       },
@@ -143,7 +143,7 @@
       ],
       "settings": {
         "eyebrow": "Le démarrage",
-        "titre": "Comment démarre votre projet",
+        "titre": "Du premier contact au premier couvert",
         "bg_style": "alt",
         "padding_haut": 96,
         "padding_bas": 96
@@ -231,7 +231,7 @@
           "settings": {
             "icone": "bouclier",
             "titre": "Propriété totale",
-            "texte": "Nom de domaine, contenus et accès à votre nom, avec un document de passation à la livraison."
+            "texte": "Domaine, photos et accès à votre nom. Aucune plateforme ne vous prend en otage ni ne prélève sur vos réservations."
           }
         },
         "g2": {
@@ -239,7 +239,7 @@
           "settings": {
             "icone": "eclair",
             "titre": "Délai annoncé tenu",
-            "texte": "Un planning fixé dès la proposition, des jalons de validation, une mise en ligne à la date prévue."
+            "texte": "Un planning calé sur votre saison et tenu, pour être en ligne avant votre prochain coup de feu."
           }
         },
         "g3": {
@@ -247,7 +247,7 @@
           "settings": {
             "icone": "maintenance",
             "titre": "Éditable sans code",
-            "texte": "Vous mettez à jour textes, photos et offres depuis une interface simple. Prise en main incluse."
+            "texte": "Vous changez la carte, les prix et les horaires en deux minutes, depuis votre téléphone au besoin."
           }
         },
         "g4": {
@@ -255,7 +255,7 @@
           "settings": {
             "icone": "cible",
             "titre": "Résultats mesurés",
-            "texte": "Trafic et contacts branchés dès le lancement, premier bilan chiffré partagé avec vous."
+            "texte": "Réservations et clics vers l'itinéraire suivis dès l'ouverture, premier bilan partagé avec vous."
           }
         }
       },
