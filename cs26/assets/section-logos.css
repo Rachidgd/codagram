@@ -34,20 +34,21 @@
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  height: 60px;
+  height: 64px;
 }
 .cs-logos__img {
-  height: 48px;
+  height: 52px;
   width: auto;
-  max-width: 220px;
+  max-width: 240px;
   object-fit: contain;
   opacity: .9;
   transition: opacity var(--d-2) var(--e-out);
 }
 .cs-logos__item:hover .cs-logos__img { opacity: 1; }
 @media (max-width: 639px) {
-  .cs-logos__rangee { gap: var(--sp-6); }
-  .cs-logos__img { height: 34px; max-width: 150px; }
+  .cs-logos__rangee { gap: var(--sp-7); }
+  .cs-logos__item { height: 52px; }
+  .cs-logos__img { height: 46px; max-width: 190px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cs-logos__rangee { animation: none; }

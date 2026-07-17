@@ -51,14 +51,20 @@
 {% render 'schema-faq', faq_blocks: section.blocks %}
 
 <script>
-  /* Accordéon : bascule aria-expanded, la hauteur est animée en CSS
-     (grid-template-rows 0fr→1fr, §4.10). Contenu déjà dans le DOM. */
+  /* Accordéon : bascule aria-expanded + classe .is-ouvert sur l'item.
+     La hauteur est animée en CSS (grid-template-rows 0fr→1fr, §4.10).
+     Le bouton étant dans un <h3>, on pilote l'ouverture par la classe de
+     l'item plutôt que par le sélecteur frère. Contenu déjà dans le DOM. */
   (function () {
     var racine = document.getElementById('{{ section.id }}');
     if (!racine) return;
     racine.querySelectorAll('[data-cs-accordeon]').forEach(function (btn) {
+      var item = btn.closest('.cs-accordeon__item');
+      if (item && btn.getAttribute('aria-expanded') === 'true') item.classList.add('is-ouvert');
       btn.addEventListener('click', function () {
-        btn.setAttribute('aria-expanded', String(btn.getAttribute('aria-expanded') !== 'true'));
+        var ouvert = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!ouvert));
+        if (item) item.classList.toggle('is-ouvert', !ouvert);
       });
     });
   })();

@@ -16,6 +16,7 @@
   var ouvertA = 0;
   var etape = 1;
   var TOTAL = 3;
+  var resetStepper = null;
 
   /* Résolution paresseuse : le popup vit dans le groupe « superpositions », que
      l'éditeur de thème peut re-rendre. On relit toujours les nœuds courants au
@@ -42,7 +43,6 @@
 
   function ouvrirPopup(source) {
     if (!resoudre() || !modal || !overlay) return;
-    if (form && !form.dataset.csInit) initForm(form);
     declencheur = document.activeElement;
     ouvertA = Date.now();
     modal.hidden = false;
@@ -54,6 +54,10 @@
     document.body.classList.add('no-scroll');
     html.setAttribute('data-overlay-ouvert', 'popup');
     if (window.csEmit) window.csEmit('cs:overlay', { ouvert: true });
+    /* Init du formulaire APRÈS l'affichage : une erreur d'init ne doit jamais
+       empêcher le popup de s'ouvrir. On repart toujours de l'étape 1. */
+    try { if (form && !form.dataset.csInit) initForm(form); } catch (err) { /* popup ouvert quand même */ }
+    if (resetStepper) { try { resetStepper(); } catch (err) { /* rien */ } }
     modal.addEventListener('keydown', piegerFocus);
     var focus = modal.querySelector('input:checked, input, button');
     if (focus) focus.focus();
@@ -146,6 +150,7 @@
         if (courante > 1) afficher(courante - 1);
       });
     });
+    if (conteneur === form || conteneur.contains(form)) resetStepper = function () { afficher(1); };
     afficher(1);
   }
 

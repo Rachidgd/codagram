@@ -2,5 +2,9 @@
 
 .cs-faq__interieur { max-width: 720px; }
 .cs-faq__question { margin: 0; }
+/* Le bouton FAQ est dans un <h3> : le panneau n'est pas son frère direct, donc
+   le sélecteur « bouton + panneau » ne s'applique pas. On ouvre via la classe
+   .is-ouvert posée sur l'item par le script de la section (fiable partout). */
+.cs-accordeon__item.is-ouvert > .cs-accordeon__panneau { grid-template-rows: 1fr; }
 .cs-faq__reponse { color: var(--c-text-2); }
 .cs-faq__reponse p { max-width: 62ch; }

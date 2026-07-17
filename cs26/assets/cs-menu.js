@@ -128,7 +128,7 @@
     if (premier) premier.focus();
   }
 
-  function fermerDrawer(drawer) {
+  function fermerDrawer(drawer, garderFocus) {
     if (!drawer) drawer = document.querySelector('.cs-drawer.is-ouvert');
     if (!drawer) return;
     var header = leHeader(drawer);
@@ -143,7 +143,9 @@
     setTimeout(function () {
       if (!drawer.classList.contains('is-ouvert')) { drawer.hidden = true; if (overlay) overlay.hidden = true; }
     }, 320);
-    if (declencheurDrawer && declencheurDrawer.focus) declencheurDrawer.focus();
+    /* Sur un clic de lien, la navigation est en cours : ne pas voler le focus
+       (certains navigateurs mobiles annulent la navigation si focus() intervient). */
+    if (!garderFocus && declencheurDrawer && declencheurDrawer.focus) declencheurDrawer.focus();
   }
 
   /* Ouverture / fermeture / accordéons / liens : tout délégué. */
@@ -164,9 +166,13 @@
       if (cible) cible.hidden = ouvert;
       return;
     }
-    /* Un lien réel dans le drawer : on referme puis la navigation suit. */
+    /* Un lien réel dans le drawer : on referme (sans voler le focus) puis la
+       navigation suit. Les ancres pures (#) ne referment pas le drawer. */
     var lien = e.target.closest('.cs-drawer a[href]');
-    if (lien) fermerDrawer(null);
+    if (lien) {
+      var href = lien.getAttribute('href') || '';
+      if (href && href.charAt(0) !== '#') fermerDrawer(null, true);
+    }
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
@@ -196,7 +202,7 @@
       try { sessionStorage.setItem(cle, '1'); } catch (err) { /* rien */ }
     });
   }
-  initAnnonce();
+  try { initAnnonce(); } catch (err) { /* ne jamais bloquer les gestionnaires suivants */ }
 
   /* =====================  FOOTER : colonnes en accordéons mobiles  ===================== */
   document.addEventListener('click', function (e) {
