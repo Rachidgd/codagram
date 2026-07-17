@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fr" data-theme="{{ settings.theme_mode }}" data-motion="{{ settings.motion_level }}">
+<head>
+  {%- comment -%} 1 · charset + viewport (§5.3) {%- endcomment -%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {%- comment -%} 2 · anti-flash thème (§3.7) + classe js + Consent Mode v2 par défaut (§11.2) {%- endcomment -%}
+  <script>
+    (function(){var t=localStorage.getItem('cs_theme');
+    if(t){document.documentElement.setAttribute('data-theme',t);}})();
+    document.documentElement.classList.add('js');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  </script>
+
+  {%- comment -%} 3 · title + meta description (§10.1) {%- endcomment -%}
+  <title>
+    {{- page_title -}}
+    {%- unless page_title contains shop.name %} · {{ shop.name }}{% endunless -%}
+  </title>
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {%- comment -%} 4 · canonical + robots conditionnel (§10.5) : stubs e-commerce en noindex {%- endcomment -%}
+  <link rel="canonical" href="{{ canonical_url }}">
+  {%- liquid
+    assign stub = false
+    if template.directory == 'customers'
+      assign stub = true
+    endif
+    case template.name
+      when 'product' or 'collection' or 'list-collections' or 'cart' or 'search' or 'gift_card' or 'password'
+        assign stub = true
+    endcase
+  -%}
+  {%- if stub -%}
+    <meta name="robots" content="noindex, nofollow">
+  {%- endif -%}
+
+  {%- comment -%} 5 · OpenGraph / Twitter (§10.3) {%- endcomment -%}
+  {% render 'social-meta' %}
+
+  {%- comment -%} favicon {%- endcomment -%}
+  {%- if settings.favicon -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 96 }}">
+  {%- else -%}
+    <link rel="icon" type="image/svg+xml" href="{{ 'favicon.svg' | asset_url }}">
+  {%- endif -%}
+
+  {%- comment -%} 6 · preload des 2 fontes woff2 (§3.2) {%- endcomment -%}
+  {%- if settings.use_custom_fonts -%}
+    <link rel="preload" href="{{ 'bricolage.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ 'instrument.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+  {%- endif -%}
+
+  {%- comment -%} 7 · injection des tokens depuis les settings (§3) {%- endcomment -%}
+  {% style %}
+    {% if settings.use_custom_fonts %}
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("{{ 'bricolage.woff2' | asset_url }}") format("woff2");
+      font-weight: 200 800;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Instrument Sans";
+      src: url("{{ 'instrument.woff2' | asset_url }}") format("woff2");
+      font-weight: 400 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Bricolage fallback";
+      src: local("Arial");
+      size-adjust: 103%;
+      ascent-override: 94%;
+    }
+    @font-face {
+      font-family: "Instrument fallback";
+      src: local("Arial");
+      size-adjust: 99%;
+    }
+    {% else %}
+    {{ settings.font_titre | font_face: font_display: 'swap' }}
+    {{ settings.font_texte | font_face: font_display: 'swap' }}
+    {% endif %}
+
+    :root {
+      {% if settings.use_custom_fonts %}
+      --font-display: "Bricolage Grotesque", "Bricolage fallback", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --font-texte: "Instrument Sans", "Instrument fallback", system-ui, -apple-system, "Segoe UI", sans-serif;
+      {% else %}
+      --font-display: {{ settings.font_titre.family }}, {{ settings.font_titre.fallback_families }};
+      --font-texte: {{ settings.font_texte.family }}, {{ settings.font_texte.fallback_families }};
+      {% endif %}
+
+      --c-bg: {{ settings.sombre_bg }};
+      --c-bg-2: {{ settings.sombre_bg_2 }};
+      --c-surface: {{ settings.sombre_surface }};
+      --c-surface-2: {{ settings.sombre_surface_2 }};
+      --c-text: {{ settings.sombre_text }};
+      --c-text-2: {{ settings.sombre_text_2 }};
+      --c-text-3: {{ settings.sombre_text_3 }};
+      --c-accent: {{ settings.sombre_accent }};
+      --c-accent-2: {{ settings.sombre_accent_2 }};
+      --c-accent-ink: {{ settings.sombre_accent_ink }};
+      --c-ok: {{ settings.sombre_ok }};
+      --c-err: {{ settings.sombre_err }};
+      --c-line: {{ settings.sombre_text | color_modify: 'alpha', 0.08 }};
+      --c-glow: {{ settings.sombre_accent_2 | color_modify: 'alpha', 0.30 }};
+      --g-braise: linear-gradient(120deg, {{ settings.sombre_accent }} 0%, {{ settings.sombre_accent_2 }} 100%);
+      --glass-bg: {{ settings.sombre_surface | color_modify: 'alpha', 0.55 }};
+      --glass-line: {{ settings.sombre_text | color_modify: 'alpha', 0.12 }};
+    }
+    [data-theme="light"] {
+      --c-bg: {{ settings.clair_bg }};
+      --c-bg-2: {{ settings.clair_bg_2 }};
+      --c-surface: {{ settings.clair_surface }};
+      --c-surface-2: {{ settings.clair_surface_2 }};
+      --c-text: {{ settings.clair_text }};
+      --c-text-2: {{ settings.clair_text_2 }};
+      --c-text-3: {{ settings.clair_text_3 }};
+      --c-accent: {{ settings.clair_accent }};
+      --c-accent-2: {{ settings.clair_accent_2 }};
+      --c-accent-ink: {{ settings.clair_accent_ink }};
+      --c-ok: {{ settings.clair_ok }};
+      --c-err: {{ settings.clair_err }};
+      --c-line: {{ settings.clair_text | color_modify: 'alpha', 0.10 }};
+      --c-glow: {{ settings.clair_accent | color_modify: 'alpha', 0.18 }};
+      --g-braise: linear-gradient(120deg, {{ settings.clair_accent | color_lighten: 8 }}, {{ settings.clair_accent_2 }});
+      --glass-bg: {{ settings.clair_surface | color_modify: 'alpha', 0.65 }};
+      --glass-line: {{ settings.clair_text | color_modify: 'alpha', 0.08 }};
+    }
+  {% endstyle %}
+
+  {%- comment -%} 8 · feuille de base (seule feuille chargée par le layout, §5.2) {%- endcomment -%}
+  {{ 'cs-base.css' | asset_url | stylesheet_tag }}
+
+  {%- comment -%} 9 · Organization + WebSite, une fois (§10.2) {%- endcomment -%}
+  {% render 'schema-org' %}
+
+  {%- comment -%} 10 · Shopify, en dernier dans le head {%- endcomment -%}
+  {{ content_for_header }}
+</head>
+<body class="template-{{ template.name | handle }}{% if template.suffix %} template-suffix-{{ template.suffix | handle }}{% endif %}">
+
+  <a href="#contenu" class="cs-skip">Aller au contenu</a>
+
+  {% sections 'header-group' %}
+
+  <main id="contenu" role="main">
+    {{ content_for_layout }}
+  </main>
+
+  {% sections 'footer-group' %}
+  {% sections 'overlay-group' %}
+
+  {%- comment -%} JS : chargement statique en defer. Chaque module se garde
+    lui-même (return si sa cible DOM n'existe pas), donc zéro coût inutile. {%- endcomment -%}
+  <script src="{{ 'cs-core.js' | asset_url }}" defer></script>
+  <script src="{{ 'cs-menu.js' | asset_url }}" defer></script>
+  <script src="{{ 'cs-popup.js' | asset_url }}" defer></script>
+  <script src="{{ 'cs-consent.js' | asset_url }}" defer></script>
+  <script src="{{ 'cs-particles.js' | asset_url }}" defer></script>
+</body>
+</html>

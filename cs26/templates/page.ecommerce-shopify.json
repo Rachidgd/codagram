@@ -1,0 +1,392 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Création e-commerce Shopify",
+        "intro": "Une boutique Shopify construite pour vendre : fiches qui convainquent, tunnel sans friction, données branchées dès le premier jour.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature_boutique": {
+      "type": "cs-media-texte",
+      "settings": {
+        "shape": "diag-1",
+        "halo": true,
+        "image_position": "gauche",
+        "ordre_mobile": "image",
+        "image_alt": "Fiche produit d'une boutique Shopify réalisée par l'agence",
+        "eyebrow": "La boutique",
+        "titre": "Des fiches produit qui font ajouter au panier.",
+        "corps": "<p>Structure, photos, preuves, objections : chaque fiche est construite comme une page de vente, pas comme un catalogue.</p>",
+        "bg_style": "base",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "signature_tunnel": {
+      "type": "cs-media-texte",
+      "settings": {
+        "shape": "diag-2",
+        "halo": false,
+        "image_position": "droite",
+        "ordre_mobile": "texte",
+        "image_alt": "Tunnel d'achat optimisé d'une boutique Shopify",
+        "eyebrow": "Le tunnel",
+        "titre": "Un parcours d'achat sans fuite.",
+        "corps": "<p>Panier, livraison, paiement : on mesure chaque étape et on supprime ce qui fait abandonner. La vitesse mobile est traitée comme une fonctionnalité.</p>",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96,
+        "lien_label": "Voir les boutiques livrées",
+        "lien": "/pages/resultats"
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Cadrage e-commerce",
+            "texte": "Catalogue, marges, logistique : la boutique se conçoit autour de votre réalité."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Design et fiches",
+            "texte": "Maquettes orientées conversion, fiches produit rédigées pour vendre."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Construction Shopify",
+            "texte": "Thème propre, apps limitées au nécessaire, vitesse préservée."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Lancement et mesure",
+            "texte": "Tracking fiable, premiers tests, plan d'amélioration continue."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Comment on construit votre boutique",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Boutiques livrées",
+        "lien_hub": "/pages/resultats",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Pourquoi Shopify plutôt qu'une autre plateforme ?",
+            "reponse": "<p>Pour une PME, Shopify offre le meilleur rapport fiabilité, vitesse d'exécution et coût de maintenance. Si votre besoin sort de ce cadre, l'audit le dira honnêtement.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Puis-je gérer la boutique moi-même ensuite ?",
+            "reponse": "<p>Oui, c'est le principe : produits, prix, stocks, promotions et contenus se gèrent sans développeur. Une formation à la prise en main est incluse.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Migrez-vous une boutique existante ?",
+            "reponse": "<p>Oui : produits, clients et commandes sont migrés, et les anciennes URL sont redirigées une par une pour préserver votre référencement.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Les applications ne sont-elles pas indispensables ?",
+            "reponse": "<p>Chaque application ajoute un coût mensuel et ralentit la boutique. On ne garde que le strict nécessaire et on privilégie le natif Shopify quand il existe. Moins d'apps, plus de vitesse, plus de ventes.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "settings": {
+        "titre": "Vos questions sur Shopify",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Construisons la boutique qui vend pendant que vous dormez.",
+        "texte": "Fiches, tunnel d'achat et vitesse pensés ensemble pour un seul objectif : transformer plus de visiteurs en commandes.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une boutique Shopify qui vend traite trois choses ensemble : des fiches produits qui convainquent, un tunnel d'achat sans fuite et une vitesse mobile irréprochable. Nous construisons chaque fiche comme une page de vente, avec structure, photos, preuves et objections levées, puis nous mesurons chaque étape du panier au paiement pour supprimer ce qui fait abandonner.</p><p>Le référencement est intégré dès le départ : collections qui répondent aux recherches, données structurées propres, contenus uniques. Nous limitons les applications au strict nécessaire, car chaque app ralentit la boutique. Vous gardez la propriété du compte Shopify, du thème et de vos données, et une migration éventuelle préserve vos anciennes URL une par une.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> pour vendre grâce à Google, les <a href=\"/pages/expert-meta-ads\">campagnes Meta Ads</a> pour accélérer les ventes, et l'<a href=\"/pages/optimisation-cro\">optimisation CRO</a> pour un meilleur taux de conversion.</p><p>Un audit e-commerce dresse l'état des lieux de votre boutique. Voyez d'abord nos <a href=\"/pages/resultats\">résultats clients</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Boutique qui vend",
+        "titre": "Une boutique Shopify pensée pour vendre et se référencer",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "prestations": {
+      "type": "cs-services",
+      "blocks": {
+        "s1": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/audit-ecommerce",
+            "icone": "euro",
+            "titre": "Audit e-commerce",
+            "texte": "Fiches, tunnel, vitesse : les fuites de votre boutique classées par impact. Sous 48 h.",
+            "phare": true
+          }
+        },
+        "s2": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/optimisation-cro",
+            "icone": "conversion",
+            "titre": "Optimisation CRO",
+            "texte": "Plus de ventes à trafic égal, par des tests structurés sur le tunnel.",
+            "phare": false
+          }
+        },
+        "s3": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/audit-merchant-center",
+            "icone": "cible",
+            "titre": "Audit Merchant Center",
+            "texte": "Des flux produits propres pour Google Shopping, sans rejets.",
+            "phare": false
+          }
+        },
+        "s4": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/seo-ecommerce",
+            "icone": "seo",
+            "titre": "SEO e-commerce",
+            "texte": "Collections et fiches qui rankent et vendent sur Google.",
+            "phare": false
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "eyebrow": "Nos prestations",
+        "titre": "Tout ce qui fait vendre une boutique",
+        "intro": "De la création à l'optimisation : chaque levier vise le chiffre d'affaires, pas la vanité.",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "comparatif": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Vitesse mobile",
+            "nous": "Traitée comme une feature",
+            "alt_1": "Plombée par les apps",
+            "alt_2": "Variable",
+            "alt_3": "Lente"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Fiches produit",
+            "nous": "Vraies pages de vente",
+            "alt_1": "Catalogue brut",
+            "alt_2": "Standard",
+            "alt_3": "Statiques"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Tunnel d'achat",
+            "nous": "Mesuré, sans fuite",
+            "alt_1": "Par défaut",
+            "alt_2": "Peu optimisé",
+            "alt_3": "Plein d'abandons"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Applications",
+            "nous": "Limitées au nécessaire",
+            "alt_1": "Empilées, coûteuses",
+            "alt_2": "Variable",
+            "alt_3": "Subies"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Référencement",
+            "nous": "Intégré dès la conception",
+            "alt_1": "En option",
+            "alt_2": "Après coup",
+            "alt_3": "Absent"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Le bon choix",
+        "titre": "Une boutique qui vend, ou un catalogue en ligne ?",
+        "intro": "",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Template + apps",
+        "col_3_titre": "Agence générique",
+        "col_4_titre": "Ne rien changer",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Propriété totale",
+            "texte": "Compte Shopify, thème et données à votre nom. Migration incluse, anciennes URL redirigées."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Vitesse préservée",
+            "texte": "La vitesse mobile est traitée comme une fonctionnalité. Applications limitées au strict nécessaire."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "maintenance",
+            "titre": "Autonomie complète",
+            "texte": "Produits, prix, stocks et promotions se gèrent sans développeur. Formation incluse."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Piloté aux ventes",
+            "texte": "Tracking fiable dès le lancement et plan d'amélioration classé par impact sur le chiffre d'affaires."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Zéro risque",
+        "titre": "Nos engagements",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature_boutique",
+    "signature_tunnel",
+    "prestations",
+    "process",
+    "comparatif",
+    "garantie",
+    "projets",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

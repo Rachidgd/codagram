@@ -1,0 +1,31 @@
+/* CS-26 · section-projets.css · Grille de réalisations (§8.13) */
+
+.cs-projets__filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-6);
+}
+.cs-projets__grille { display: grid; gap: var(--sp-5); }
+@media (min-width: 900px) { .cs-projets__grille { grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); } }
+
+.cs-projets__lien {
+  display: grid;
+  gap: var(--sp-4);
+  text-decoration: none;
+  color: inherit;
+}
+.cs-projets__cover {
+  transition: transform var(--d-2) var(--e-out);
+}
+.cs-projets__carte:hover .cs-projets__cover { transform: translateY(-4px); }
+.cs-projets__cover img { transition: transform var(--d-3) var(--e-out); }
+.cs-projets__carte:hover .cs-projets__cover img { transform: scale(1.03); }
+.cs-projets__infos { display: grid; gap: var(--sp-3); justify-items: start; }
+.cs-projets__logo { width: 48px; height: 48px; object-fit: contain; border-radius: var(--r-s); }
+.cs-projets__client { color: var(--c-text-3); font-size: var(--fs-small); font-weight: 600; }
+.cs-projets__extrait { color: var(--c-text-2); font-size: var(--fs-small); }
+.cs-projets__tags { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.cs-projets__tags .cs-chip { min-height: 32px; font-size: .8125rem; }
+.cs-projets__vide { color: var(--c-text-3); text-align: center; margin-inline: auto; padding-block: var(--sp-6); }
+.cs-projets__pied { margin-top: var(--sp-6); }

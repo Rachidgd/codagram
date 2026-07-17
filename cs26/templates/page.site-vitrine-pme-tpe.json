@@ -1,0 +1,366 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Site vitrine PME / TPE",
+        "titre": "Un site à la hauteur de votre entreprise",
+        "intro": "Vos clients vous jugent en cinq secondes. On donne à votre petite entreprise l'image d'une structure solide, et un site qui transforme les visiteurs en appels et en demandes de devis.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "pain": {
+      "type": "cs-media-texte",
+      "blocks": {
+        "p1": {
+          "type": "puce",
+          "settings": {
+            "texte": "Un message compris en cinq secondes"
+          }
+        },
+        "p2": {
+          "type": "puce",
+          "settings": {
+            "texte": "La preuve avant l'argumentaire"
+          }
+        },
+        "p3": {
+          "type": "puce",
+          "settings": {
+            "texte": "Le contact accessible sur chaque écran"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "image_position": "droite",
+        "shape": "organique",
+        "halo": true,
+        "eyebrow": "Le vrai problème",
+        "titre": "Une fiche Google ne suffit pas à convaincre",
+        "corps": "<p>Quand un prospect cherche votre entreprise, il tombe sur une fiche incomplète, un profil qui date, ou trois avis sans réponse. Le doute s'installe, et il appelle le concurrent d'à côté. Un site clair lève ce doute en quelques secondes : qui vous êtes, ce que vous faites, pourquoi vous, et comment vous joindre tout de suite.</p>",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "signature": {
+      "type": "cs-stack",
+      "blocks": {
+        "e1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Crédibilité",
+            "texte": "Un design soigné qui vous place au niveau d'entreprises bien plus grandes que la vôtre."
+          }
+        },
+        "e2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Visibilité locale",
+            "texte": "Structuré pour les recherches de votre ville et de votre métier, pour être trouvé quand on vous cherche."
+          }
+        },
+        "e3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "Contact sans friction",
+            "texte": "Appel, formulaire, itinéraire : chaque écran ramène vers l'action, sur mobile en priorité."
+          }
+        },
+        "e4": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Autonomie",
+            "texte": "Vous modifiez horaires, offres et photos vous-même, sans dépendre de personne."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "settings": {
+        "eyebrow": "Ce que fait votre site",
+        "titre": "Un site qui travaille pour votre PME",
+        "numerotation": false,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Audit gratuit",
+            "texte": "On regarde comment votre PME apparaît aujourd'hui face à vos concurrents de proximité, et le nombre de contacts que vous laissez filer."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Proposition",
+            "texte": "Un devis lisible : ce qui est inclus, le planning, le prix ferme. Vous décidez sans aucune zone d'ombre."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Production",
+            "texte": "Vous suivez l'avancée avec une seule personne et validez chaque étape sur des écrans réels, jamais sur des promesses."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Lancement",
+            "texte": "On met en ligne, on branche le suivi des appels et des formulaires, et vous récupérez l'intégralité de vos accès."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "Le démarrage",
+        "titre": "Votre projet, étape par étape",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "comparatif": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Image renvoyée",
+            "nous": "Sur-mesure et cohérente",
+            "alt_1": "Template reconnaissable",
+            "alt_2": "Variable selon le profil",
+            "alt_3": "Celle d'hier"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Trouvé sur Google",
+            "nous": "Structuré pour le local",
+            "alt_1": "Rarement optimisé",
+            "alt_2": "Selon les compétences",
+            "alt_3": "Invisible"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Temps que ça vous coûte",
+            "nous": "Quelques validations",
+            "alt_1": "Vos soirées et week-ends",
+            "alt_2": "Suivi à assurer",
+            "alt_3": "Zéro, et zéro client"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Génère des contacts",
+            "nous": "Parcours pensé pour ça",
+            "alt_1": "Si vous savez faire",
+            "alt_2": "Variable",
+            "alt_3": "Non"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Propriété et évolution",
+            "nous": "Tout à votre nom",
+            "alt_1": "Abonnement sans fin",
+            "alt_2": "Dépend du prestataire",
+            "alt_3": "Aucune"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Le bon choix",
+        "titre": "Site professionnel, ou bricolage du dimanche ?",
+        "intro": "",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Site fait maison",
+        "col_3_titre": "Freelance seul",
+        "col_4_titre": "Ne rien changer",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Propriété totale",
+            "texte": "Domaine, contenus et hébergement restent au nom de votre entreprise. Vous repartez avec tout, document de passation à l'appui."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Délai annoncé tenu",
+            "texte": "Un planning arrêté dès le devis, des points de validation clairs, une mise en ligne à la date promise."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "maintenance",
+            "titre": "Éditable sans code",
+            "texte": "Vous changez horaires, offres et photos depuis une interface simple, sans rappeler personne. Prise en main incluse."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Résultats mesurés",
+            "texte": "Suivi des appels et des formulaires branché dès l'ouverture, premier bilan de contacts partagé avec vous."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Zéro risque",
+        "titre": "Nos engagements",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une petite entreprise n'a ni le temps ni le budget d'un site gadget. Elle a besoin d'un outil simple qui inspire confiance et fait sonner le téléphone. Nous concevons chaque page autour d'une action attendue : appeler, demander un devis, se déplacer. Le message d'abord, la preuve ensuite, le passage à l'acte sans obstacle.</p><p>Votre site reste rapide sur mobile, éditable sans compétence technique et structuré pour vos recherches locales. Vous gardez la propriété du nom de domaine, des contenus et des accès, et vous mesurez ce que le site rapporte réellement en contacts.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent utile avec :</strong> le <a href=\"/pages/agence-seo\">référencement naturel</a> pour être trouvé sur Google et le <a href=\"/pages/seo-local\">SEO local</a> pour dominer votre zone.</p><p>Un autre profil ? Voyez le site pour <a href=\"/pages/site-vitrine-freelance\">indépendants et freelances</a>, <a href=\"/pages/site-vitrine-restaurant\">restaurants</a> ou <a href=\"/pages/site-vitrine-artisan\">artisans et BTP</a>. Vue d'ensemble sur la <a href=\"/pages/creation-site-vitrine\">création de site vitrine</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Site vitrine PME",
+        "titre": "Un site vitrine pensé pour les PME et TPE",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Ai-je vraiment besoin d'un site si j'ai déjà une fiche Google ?",
+            "reponse": "<p>La fiche Google vous rend visible, le site vous rend crédible et convertit. La fiche amène le clic, le site transforme le clic en contact. Les deux se renforcent.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de temps avant d'être en ligne ?",
+            "reponse": "<p>Selon le nombre de pages, comptez généralement deux à quatre semaines après l'audit. Le planning est fixé dès la proposition.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Je n'ai ni textes ni belles photos, c'est bloquant ?",
+            "reponse": "<p>Non. On part de ce que vous avez et on vous guide : structure des textes, conseils de prise de vue, rédaction orientée client si besoin.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Votre PME mérite un site qui inspire confiance.",
+        "texte": "Un audit gratuit de votre présence en ligne : ce qui manque, ce qui freine, et le plan concret pour générer plus de contacts.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "pain",
+    "signature",
+    "process",
+    "comparatif",
+    "garantie",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

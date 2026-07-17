@@ -1,0 +1,34 @@
+{%- comment -%}
+  image.liquid · UNIQUE point de rendu d'images du thème (§10.7).
+  Params :
+    img       : objet image Shopify (requis : sans img, rien n'est rendu)
+    sizes     : attribut sizes fourni par la section appelante (défaut 100vw)
+    ratio     : rapport d'aspect CSS, ex. '4/5' ou '3/2' (CLS nul)
+    lazy      : bool, défaut true
+    priorite  : bool, image au-dessus de la ligne de flottaison
+                (loading eager + fetchpriority high)
+    alt       : texte alternatif (défaut : alt de l'image)
+    classe    : classes CSS additionnelles
+{%- endcomment -%}
+{%- if img -%}
+  {%- liquid
+    assign charge = 'lazy'
+    if priorite == true or lazy == false
+      assign charge = 'eager'
+    endif
+    assign texte_alt = alt | default: img.alt | escape
+  -%}
+  <img
+    src="{{ img | image_url: width: 900 }}"
+    srcset="{{ img | image_url: width: 360 }} 360w, {{ img | image_url: width: 640 }} 640w, {{ img | image_url: width: 900 }} 900w, {{ img | image_url: width: 1240 }} 1240w, {{ img | image_url: width: 1800 }} 1800w"
+    sizes="{{ sizes | default: '100vw' }}"
+    width="{{ img.width }}"
+    height="{{ img.height }}"
+    alt="{{ texte_alt }}"
+    loading="{{ charge }}"
+    decoding="async"
+    {% if priorite %}fetchpriority="high"{% endif %}
+    {% if classe %}class="{{ classe }}"{% endif %}
+    {% if ratio %}style="aspect-ratio: {{ ratio }}; object-fit: cover;"{% endif %}
+  >
+{%- endif -%}

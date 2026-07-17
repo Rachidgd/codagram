@@ -1,0 +1,251 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Audit Meta Ads",
+        "titre": "Ce que votre budget pub laisse filer",
+        "intro": "Structure du compte, créas, audiences, tracking : on repère où vos euros se perdent sur Facebook et Instagram, et comment les récupérer.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "livrables": {
+      "type": "cs-stack",
+      "blocks": {
+        "e1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Structure du compte",
+            "texte": "Campagnes, ensembles, budgets : ce qui disperse vos euros au lieu de les concentrer."
+          }
+        },
+        "e2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Qualité des créas",
+            "texte": "Vos visuels et vidéos face aux codes qui arrêtent le scroll et font vendre."
+          }
+        },
+        "e3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "Ciblage et audiences",
+            "texte": "Qui vous touchez vraiment, les recoupements inutiles et les audiences oubliées."
+          }
+        },
+        "e4": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Tracking et attribution",
+            "texte": "La fiabilité de votre suivi de conversions : sans lui, tout pilotage est aveugle."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "settings": {
+        "eyebrow": "Dans votre audit",
+        "titre": "Les quatre points qu'on inspecte",
+        "numerotation": false,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous demandez",
+            "texte": "Votre activité et votre compte publicitaire. Deux minutes."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "On analyse",
+            "texte": "Un expert audite votre compte, vos créas et votre tracking."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous recevez",
+            "texte": "Sous 48 h : vos fuites chiffrées et les corrections classées par impact."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "On en parle",
+            "texte": "Un échange pour décider par quoi commencer, avec ou sans nous."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "Comment ça marche",
+        "titre": "De la demande à votre plan d'optimisation",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "euro",
+            "titre": "Offert intégralement",
+            "texte": "Aucune carte, aucune obligation de lancer une campagne avec nous ensuite. L'analyse reste la vôtre."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Livré sous 48 h ouvrées",
+            "texte": "Un rapport que vous lisez d'une traite, pas un tableau de bord Business Manager exporté tel quel."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Fuites chiffrées, correctifs triés",
+            "texte": "Chaque euro mal dépensé est identifié, chaque correctif classé par gain attendu sur vos ventes."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Dit sans détour",
+            "texte": "Un média-buyer vous montre où part le budget, et si le problème vient de vos audiences ou de vos créas."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Nos engagements",
+        "titre": "Un audit pub sans engagement",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Sur Meta, l'argent se perd vite : compte mal structuré, créas fatiguées, audiences qui se chevauchent, tracking défaillant. Notre audit passe ces quatre points au crible et vous dit précisément où votre budget fuit et comment le réorienter vers ce qui convertit.</p><p>Vous recevez des constats chiffrés et un plan d'action priorisé, en langage clair. Objectif : que chaque euro dépensé travaille pour une vente ou un lead, pas pour de la portée.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Ensuite :</strong> le pilotage <a href=\"/pages/expert-meta-ads\">Meta Ads</a>, l'<a href=\"/pages/optimisation-cro\">optimisation CRO</a> pour convertir le trafic, et une <a href=\"/pages/creation-site-ecommerce-shopify\">boutique</a> qui reçoit les clics. Voyez nos <a href=\"/pages/resultats\">résultats</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Audit Meta Ads",
+        "titre": "Un audit publicitaire qui parle rentabilité",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Faut-il me donner accès à mon compte pub ?",
+            "reponse": "<p>Un accès en lecture au Business Manager permet l'analyse la plus précise. On peut aussi partir de vos captures et exports.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Et si je n'ai jamais lancé de pub ?",
+            "reponse": "<p>On audite alors votre potentiel : marché, concurrence, angles et budget de test réaliste, avant que vous n'engagiez un euro.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "L'audit engage-t-il à travailler avec vous ?",
+            "reponse": "<p>Non. Il est gratuit et sans suite obligatoire. Vous l'utilisez comme bon vous semble.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions sur l'audit",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Voyons ce que vos pubs laissent filer.",
+        "texte": "Votre audit Meta Ads offert, chiffré et priorisé, livré sous 48 h ouvrées. Sans engagement.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "livrables",
+    "process",
+    "garantie",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

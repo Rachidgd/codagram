@@ -1,0 +1,366 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Site vitrine Restaurant / CHR",
+        "titre": "Le site qui remplit vos couverts",
+        "intro": "Carte toujours à jour, réservation directe sans commission, ambiance qui donne faim : un site qui donne envie de pousser votre porte plutôt que celle d'en face.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "pain": {
+      "type": "cs-media-texte",
+      "blocks": {
+        "p1": {
+          "type": "puce",
+          "settings": {
+            "texte": "Carte lisible et à jour en un geste"
+          }
+        },
+        "p2": {
+          "type": "puce",
+          "settings": {
+            "texte": "Réservation directe, sans commission de plateforme"
+          }
+        },
+        "p3": {
+          "type": "puce",
+          "settings": {
+            "texte": "Photos et avis qui donnent envie"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "image_position": "droite",
+        "shape": "organique",
+        "halo": true,
+        "eyebrow": "Le vrai problème",
+        "titre": "Vos clients décident sur leur téléphone, pressés",
+        "corps": "<p>Avant de choisir où manger, on regarde le menu, les photos, les horaires et les avis, en trois minutes, sur mobile. Si votre carte est une photo illisible et vos horaires introuvables, le client suivant clique sur le restaurant d'à côté. Un site clair et rapide capte cette décision au bon moment.</p>",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "signature": {
+      "type": "cs-stack",
+      "blocks": {
+        "e1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Carte vivante",
+            "texte": "Vous changez plats et prix vous-même, sans rappeler qui que ce soit."
+          }
+        },
+        "e2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Réservation directe",
+            "texte": "Le client réserve chez vous, sans commission prélevée à chaque couvert."
+          }
+        },
+        "e3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "Ambiance",
+            "texte": "Photos, cadre et signature de la maison mis en scène pour déclencher l'envie."
+          }
+        },
+        "e4": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Trouvé au bon moment",
+            "texte": "Structuré pour « restaurant + votre ville » et relié à votre fiche Google."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "settings": {
+        "eyebrow": "Ce que fait votre site",
+        "titre": "Un site qui donne faim et remplit la salle",
+        "numerotation": false,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Audit gratuit",
+            "texte": "On regarde votre visibilité, vos avis et ce qui fait fuir un client affamé sur son téléphone à 20 h."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Proposition",
+            "texte": "Périmètre, planning, budget : un cadre clair, calé pour ne jamais empiéter sur votre rythme de service."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Production",
+            "texte": "On met en scène votre carte et votre salle, vous validez visuels et textes sur maquette réelle."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Lancement",
+            "texte": "Site en ligne, réservation directe active, fiche Google reliée, et vos accès entre vos mains."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "Le démarrage",
+        "titre": "Du premier contact au premier couvert",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "comparatif": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Commission par couvert",
+            "nous": "Aucune",
+            "alt_1": "Prélevée à chaque résa",
+            "alt_2": "Aucune",
+            "alt_3": "Aucune"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Relation client",
+            "nous": "Vous la possédez",
+            "alt_1": "Détenue par la plateforme",
+            "alt_2": "Limitée",
+            "alt_3": "Aucune"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Carte et photos",
+            "nous": "À jour en un geste",
+            "alt_1": "Cadre imposé",
+            "alt_2": "Vite datées",
+            "alt_3": "Datées"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Trouvé sur Google",
+            "nous": "Structuré pour le local",
+            "alt_1": "Via la plateforme",
+            "alt_2": "Basique",
+            "alt_3": "Faible"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Propriété des données",
+            "nous": "À vous",
+            "alt_1": "À la plateforme",
+            "alt_2": "Partielle",
+            "alt_3": "Aucune"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Le bon choix",
+        "titre": "Votre site, ou la plateforme qui prend sa commission ?",
+        "intro": "",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Plateformes de résa",
+        "col_3_titre": "Page Google seule",
+        "col_4_titre": "Ne rien changer",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Propriété totale",
+            "texte": "Domaine, photos et accès à votre nom. Aucune plateforme ne vous prend en otage ni ne prélève sur vos réservations."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Délai annoncé tenu",
+            "texte": "Un planning calé sur votre saison et tenu, pour être en ligne avant votre prochain coup de feu."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "maintenance",
+            "titre": "Éditable sans code",
+            "texte": "Vous changez la carte, les prix et les horaires en deux minutes, depuis votre téléphone au besoin."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Résultats mesurés",
+            "texte": "Réservations et clics vers l'itinéraire suivis dès l'ouverture, premier bilan partagé avec vous."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Zéro risque",
+        "titre": "Nos engagements",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Un site de restaurant a un seul juge : le client affamé sur son téléphone. Il doit voir la carte, l'ambiance, les horaires et réserver en quelques secondes. Nous construisons ce parcours et le relions à votre fiche Google, pour capter la décision au moment où elle se prend.</p><p>La réservation se fait chez vous, sans commission prélevée sur chaque couvert, et vous gardez la relation avec vos clients. Carte, photos et horaires s'éditent en un geste, pour un site qui reste vivant au rythme de votre maison.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Pour remplir plus :</strong> le <a href=\"/pages/seo-local\">SEO local</a> pour sortir sur « restaurant + votre ville » et le <a href=\"/pages/agence-seo\">référencement naturel</a> pour durer.</p><p>Un autre profil ? Voyez le site pour <a href=\"/pages/site-vitrine-pme-tpe\">PME et TPE</a>, <a href=\"/pages/site-vitrine-freelance\">indépendants</a> ou <a href=\"/pages/site-vitrine-artisan\">artisans et BTP</a>. Vue d'ensemble sur la <a href=\"/pages/creation-site-vitrine\">création de site vitrine</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Site restaurant",
+        "titre": "Un site vitrine pour restaurants et métiers de bouche",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Les gens ne réservent-ils pas déjà via Google ou les plateformes ?",
+            "reponse": "<p>Certains oui, mais chaque réservation via une plateforme vous coûte une commission et vous prive de la relation client. Un site vous rend la main et la marge.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Je change ma carte souvent, c'est compliqué ?",
+            "reponse": "<p>Non. La carte s'édite en quelques clics, plats et prix compris, sans passer par nous.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Et mes avis Google ?",
+            "reponse": "<p>On les met en avant au bon endroit et on relie le site à votre fiche, pour que la preuve sociale travaille pour vous.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Reprenez la main sur vos réservations.",
+        "texte": "Un audit gratuit de votre présence en ligne : ce qui fait fuir vos clients sur mobile, et le plan pour remplir la salle.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "pain",
+    "signature",
+    "process",
+    "comparatif",
+    "garantie",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

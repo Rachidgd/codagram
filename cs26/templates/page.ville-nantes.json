@@ -1,0 +1,168 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "ville",
+        "eyebrow": "Agence web locale",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement."
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Nos projets ici",
+        "lien_hub": "/pages/resultats",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "titre": "Les résultats locaux",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "services": {
+      "type": "cs-services",
+      "blocks": {
+        "s1": {
+          "type": "service",
+          "settings": {
+            "icone": "seo",
+            "titre": "Référencement SEO",
+            "page": "/pages/agence-seo"
+          }
+        },
+        "s2": {
+          "type": "service",
+          "settings": {
+            "icone": "pin",
+            "titre": "SEO local",
+            "page": "/pages/seo-local"
+          }
+        },
+        "s3": {
+          "type": "service",
+          "settings": {
+            "icone": "site",
+            "titre": "Création site vitrine",
+            "page": "/pages/creation-site-vitrine"
+          }
+        },
+        "s4": {
+          "type": "service",
+          "settings": {
+            "icone": "social",
+            "titre": "Meta Ads",
+            "page": "/pages/expert-meta-ads"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "eyebrow": "Nos services ici",
+        "titre": "Ce que nous faisons pour les entreprises locales",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "zones": {
+      "type": "cs-zones",
+      "settings": {
+        "eyebrow": "Zones couvertes",
+        "titre": "Nous intervenons dans ces quartiers et communes",
+        "shape": "organique",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "settings": {
+        "titre": "Questions locales",
+        "premier_ouvert": true,
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Votre marché local, chiffré.",
+        "texte": "Un audit gratuit de votre visibilité sur votre zone : qui vous double, où, et comment reprendre la place.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "projets",
+    "stats",
+    "services",
+    "avis",
+    "zones",
+    "faq",
+    "cta"
+  ]
+}

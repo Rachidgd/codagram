@@ -1,0 +1,217 @@
+{%- comment -%}
+  cs-contact.liquid · Formulaire pleine page (§8.18).
+  Mode « simple » : une vue (page contact). Mode « etapes » : les mêmes 3
+  étapes que le popup, inline (landing audit §9.8). NAP + promesse de délai.
+{%- endcomment -%}
+{{ 'section-contact.css' | asset_url | stylesheet_tag }}
+{{ 'section-popup.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign mode = section.settings.mode
+  assign service_slug = page.metafields.cs.service_slug | default: ''
+-%}
+
+<section id="{{ section.id }}" class="cs-section cs-contact"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;"
+  {% if mode == 'etapes' %}data-cs="lead-inline"{% endif %}>
+  <div class="cs-container cs-contact__grille">
+
+    <div class="cs-contact__form cs-glass" data-reveal="up">
+      {%- form 'contact', class: 'cs-contact__form-interieur' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="cs-popup__succes">
+            <span class="cs-popup__coche" aria-hidden="true">{% render 'icone', nom: 'check', taille: 32 %}</span>
+            <h2 class="cs-h3">C'est bien envoyé.</h2>
+            <p>{{ section.settings.succes_texte | escape }}</p>
+          </div>
+        {%- else -%}
+          {%- if form.errors -%}
+            <p class="cs-popup__erreur-serveur" role="alert">Un détail bloque l'envoi. Vérifiez votre email puis réessayez.</p>
+          {%- endif -%}
+
+          {%- capture champs_identite -%}
+            <div class="cs-field">
+              <input class="cs-field__input" type="text" name="contact[first_name]" id="contact-prenom-{{ section.id }}"
+                placeholder=" " autocomplete="given-name" required data-cs-prenom>
+              <label class="cs-field__label" for="contact-prenom-{{ section.id }}">Prénom</label>
+              <span class="cs-field__erreur" aria-live="polite"></span>
+            </div>
+            <div class="cs-field">
+              <input class="cs-field__input" type="email" name="contact[email]" id="contact-email-{{ section.id }}"
+                placeholder=" " autocomplete="email" required data-cs-email>
+              <label class="cs-field__label" for="contact-email-{{ section.id }}">Email</label>
+              <span class="cs-field__erreur" aria-live="polite"></span>
+            </div>
+            <div class="cs-field">
+              <input class="cs-field__input" type="tel" name="contact[phone]" id="contact-tel-{{ section.id }}"
+                placeholder=" " autocomplete="tel">
+              <label class="cs-field__label" for="contact-tel-{{ section.id }}">Téléphone (optionnel)</label>
+              <span class="cs-meta">Uniquement si vous préférez qu'on vous appelle.</span>
+            </div>
+            <label class="cs-popup__rgpd">
+              <input type="checkbox" required data-cs-rgpd>
+              <span>J'accepte que mes réponses servent à préparer et m'envoyer la réponse.
+                {%- if settings.consent_politique_url != blank %} <a href="{{ settings.consent_politique_url }}">Politique de confidentialité</a>{% endif -%}</span>
+            </label>
+            <span class="cs-field__erreur" aria-live="polite" data-cs-rgpd-erreur></span>
+            <input type="hidden" name="contact[tags]" value="lead-audit" data-cs-tags>
+            <input type="hidden" name="service_contexte" value="{{ service_slug | escape }}">
+            <input type="hidden" name="page_source" value="{{ canonical_url | escape }}">
+            <input type="hidden" name="utm" value="" data-cs-utm>
+            <div class="cs-popup__hp" aria-hidden="true">
+              <label>Ne pas remplir <input type="text" name="site_web_confirmation" tabindex="-1" autocomplete="off" data-cs-hp></label>
+            </div>
+          {%- endcapture -%}
+
+          {%- if mode == 'etapes' -%}
+            <div class="cs-popup__progression" aria-hidden="true">
+              <span class="cs-popup__progression-barre" data-cs-progression></span>
+            </div>
+            <p class="cs-meta cs-popup__etape-label"><span aria-live="polite" data-cs-etape-label>Étape 1 sur 3</span></p>
+            <div class="cs-popup__piste" data-cs-piste>
+              <fieldset class="cs-popup__etape" data-cs-etape="1">
+                <legend class="cs-h3">{{ settings.popup_etape1_titre | escape }}</legend>
+                <div class="cs-popup__objectifs">
+                  {%- for block in section.blocks -%}
+                    {%- if block.type == 'objectif' and block.settings.label != blank -%}
+                      <label class="cs-radio-carte" {{ block.shopify_attributes }}>
+                        <input type="radio" name="objectif" value="{{ block.settings.label | escape }}"
+                          {% if block.settings.devis %}data-devis="true"{% endif %}
+                          {% if forloop.first %}checked{% endif %}>
+                        <span>{{ block.settings.label | escape }}</span>
+                      </label>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+                <div class="cs-popup__nav">
+                  <button type="button" class="cs-btn cs-btn--primaire" data-cs-suivant>Continuer {% render 'icone', nom: 'fleche', taille: 18 %}</button>
+                </div>
+              </fieldset>
+              <fieldset class="cs-popup__etape" data-cs-etape="2">
+                <legend class="cs-h3">{{ settings.popup_etape2_titre | escape }}</legend>
+                <div class="cs-field">
+                  <input class="cs-field__input" type="url" name="site_url" id="contact-url-{{ section.id }}" placeholder=" " inputmode="url" autocomplete="url">
+                  <label class="cs-field__label" for="contact-url-{{ section.id }}">URL de votre site</label>
+                </div>
+                <label class="cs-popup__sans-site">
+                  <input type="checkbox" name="pas_de_site" value="Pas encore de site"> Pas encore de site
+                </label>
+                <div class="cs-field">
+                  <input class="cs-field__input" type="text" name="zone" id="contact-ville-{{ section.id }}" placeholder=" " autocomplete="address-level2">
+                  <label class="cs-field__label" for="contact-ville-{{ section.id }}">Ville ou zone</label>
+                </div>
+                <div class="cs-field cs-field--select">
+                  <select class="cs-field__input" name="budget" id="contact-budget-{{ section.id }}">
+                    <option value="Je ne sais pas encore" selected>Je ne sais pas encore</option>
+                    <option value="Moins de 1 000 €">Moins de 1 000 € / mois</option>
+                    <option value="1 000 à 3 000 €">1 000 à 3 000 € / mois</option>
+                    <option value="Plus de 3 000 €">Plus de 3 000 € / mois</option>
+                  </select>
+                  <label class="cs-field__label cs-field__label--haut" for="contact-budget-{{ section.id }}">Budget mensuel envisagé</label>
+                </div>
+                <div class="cs-popup__nav">
+                  <button type="button" class="cs-btn cs-btn--secondaire" data-cs-retour>Retour</button>
+                  <button type="button" class="cs-btn cs-btn--primaire" data-cs-suivant>Continuer {% render 'icone', nom: 'fleche', taille: 18 %}</button>
+                  <button type="button" class="cs-popup__passer" data-cs-suivant data-cs-passer>Passer cette étape</button>
+                </div>
+              </fieldset>
+              <fieldset class="cs-popup__etape" data-cs-etape="3">
+                <legend class="cs-h3">{{ settings.popup_etape3_titre | escape }}</legend>
+                {{ champs_identite }}
+                <input type="hidden" name="contact[body]" value="" data-cs-corps>
+                <div class="cs-popup__nav">
+                  <button type="button" class="cs-btn cs-btn--secondaire" data-cs-retour>Retour</button>
+                  <div class="cs-bouton-groupe">
+                    <button type="submit" class="cs-btn cs-btn--primaire" data-cs-envoyer
+                      data-label-audit="Recevoir mon audit gratuit" data-label-devis="Recevoir mon devis">
+                      Recevoir mon audit gratuit
+                    </button>
+                    <span class="cs-btn__reassurance">Réponse sous 48 h ouvrées. Sans engagement, sans relance agressive.</span>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          {%- else -%}
+            <h2 class="cs-h3">{{ section.settings.form_titre | escape }}</h2>
+            <div class="cs-contact__champs">
+              {{ champs_identite }}
+              <div class="cs-field cs-field--textarea">
+                <textarea class="cs-field__input" name="contact[body]" id="contact-message-{{ section.id }}"
+                  placeholder=" " rows="5" required></textarea>
+                <label class="cs-field__label" for="contact-message-{{ section.id }}">Votre projet, en quelques lignes</label>
+              </div>
+              <div class="cs-bouton-groupe">
+                <button type="submit" class="cs-btn cs-btn--primaire">Discuter de mon projet</button>
+                <span class="cs-btn__reassurance">Réponse sous 48 h ouvrées. Sans engagement.</span>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+
+    <aside class="cs-contact__infos" data-reveal="fade">
+      {%- if section.settings.infos_titre != blank -%}
+        <h2 class="cs-h2">{{ section.settings.infos_titre | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.promesse != blank -%}
+        <p class="cs-contact__promesse">{% render 'icone', nom: 'horloge', taille: 20 %} {{ section.settings.promesse | escape }}</p>
+      {%- endif -%}
+      <ul class="cs-contact__nap" role="list">
+        {%- if settings.nap_telephone != blank -%}
+          <li><a href="tel:{{ settings.nap_telephone | replace: ' ', '' }}">{% render 'icone', nom: 'tel', taille: 18 %} {{ settings.nap_telephone | escape }}</a></li>
+        {%- endif -%}
+        {%- if settings.nap_email != blank -%}
+          <li><a href="mailto:{{ settings.nap_email }}">{% render 'icone', nom: 'mail', taille: 18 %} {{ settings.nap_email | escape }}</a></li>
+        {%- endif -%}
+        {%- if settings.nap_adresse != blank -%}
+          <li><span>{% render 'icone', nom: 'pin', taille: 18 %} {{ settings.nap_adresse | escape }}{% if settings.nap_ville != blank %}, {{ settings.nap_code_postal | escape }} {{ settings.nap_ville | escape }}{% endif %}</span></li>
+        {%- endif -%}
+      </ul>
+      {%- if section.settings.carte_image != blank -%}
+        <div class="cs-contact__carte" data-shape="soft">
+          {% render 'image', img: section.settings.carte_image, sizes: '(min-width: 900px) 40vw, 92vw', ratio: '4/3', alt: "Zone d'intervention de l'agence" %}
+        </div>
+        {%- if settings.gbp_url != blank -%}
+          <a class="cs-lien" href="{{ settings.gbp_url }}?utm_source=site&utm_medium=contact&utm_campaign=gbp" rel="noopener" target="_blank">
+            Itinéraire via notre fiche Google {% render 'icone', nom: 'fleche-45', taille: 16 %}
+          </a>
+        {%- endif -%}
+      {%- endif -%}
+    </aside>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CS · Contact",
+  "settings": [
+    { "type": "select", "id": "mode", "label": "Mode du formulaire",
+      "options": [
+        { "value": "simple", "label": "Une vue (page contact)" },
+        { "value": "etapes", "label": "3 étapes inline (landing audit)" }
+      ],
+      "default": "simple" },
+    { "type": "text", "id": "form_titre", "label": "Titre du formulaire (mode simple)", "info": "60 caractères max", "default": "Parlez-nous de votre projet" },
+    { "type": "textarea", "id": "succes_texte", "label": "Texte de succès", "default": "Un membre de l'équipe vous répond sous 48 h ouvrées." },
+    { "type": "header", "content": "Colonne informations" },
+    { "type": "text", "id": "infos_titre", "label": "Titre", "info": "60 caractères max", "default": "Parler à un humain" },
+    { "type": "text", "id": "promesse", "label": "Promesse de délai", "info": "70 caractères max", "default": "Réponse sous 48 h ouvrées, par une personne, pas un robot." },
+    { "type": "image_picker", "id": "carte_image", "label": "Carte statique stylisée", "info": "Jamais d'embed Google Maps : poids (§8.18)." },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "objectif",
+      "name": "Objectif (mode étapes)",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Libellé" },
+        { "type": "checkbox", "id": "devis", "label": "Branche devis", "default": false }
+      ]
+    }
+  ],
+  "presets": [ { "name": "CS · Contact" } ]
+}
+{% endschema %}

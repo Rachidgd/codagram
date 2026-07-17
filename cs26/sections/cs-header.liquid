@@ -1,0 +1,277 @@
+{%- comment -%}
+  cs-header.liquid · Header sticky + mega menu desktop + drawer mobile (§6).
+  JS : cs-menu.js (chargé par cs-core quand [data-cs="menu"] existe).
+{%- endcomment -%}
+{{ 'section-header.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign menu = section.settings.menu
+  assign menu_villes = section.settings.menu_villes
+  assign transparent = false
+  if section.settings.transparent_home and template.name == 'index'
+    assign transparent = true
+  endif
+-%}
+
+<header id="{{ section.id }}" class="cs-header{% if transparent %} cs-header--transparent{% endif %}" data-cs="menu">
+  <div class="cs-container cs-header__barre">
+
+    <a href="{{ routes.root_url }}" class="cs-header__logo" aria-label="{{ shop.name | escape }} · accueil">
+      {%- if settings.logo_theme -%}
+        <img src="{{ settings.logo_theme | image_url: width: 480 }}"
+          width="{{ settings.logo_largeur }}"
+          height="{{ settings.logo_largeur | divided_by: settings.logo_theme.aspect_ratio | round }}"
+          style="width: {{ settings.logo_largeur }}px; height: auto;"
+          alt="{{ shop.name | escape }}" loading="eager">
+      {%- else -%}
+        <span class="cs-header__logo-texte">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    {%- if menu != blank -%}
+    <nav class="cs-header__nav" aria-label="Navigation principale">
+      <ul class="cs-header__liste" role="list">
+        {%- for link in menu.links -%}
+          {%- if link.links.size > 0 -%}
+            <li class="cs-header__item cs-header__item--mega">
+              <button type="button" class="cs-header__lien cs-header__lien--mega"
+                aria-expanded="false" aria-controls="cs-mega-{{ section.id }}-{{ forloop.index }}"
+                data-cs-mega-toggle>
+                {{ link.title | escape }}
+                {% render 'icone', nom: 'chevron', taille: 16 %}
+              </button>
+              <div class="cs-mega" id="cs-mega-{{ section.id }}-{{ forloop.index }}" hidden>
+                <div class="cs-container cs-mega__interieur">
+                  <div class="cs-mega__grille">
+                    <ul class="cs-mega__colonnes" role="list">
+                      {%- for child in link.links -%}
+                        {%- liquid
+                          assign icone_service = 'etincelle'
+                          assign baseline_service = ''
+                          for block in section.blocks
+                            if block.type == 'service' and block.settings.lien == child.url
+                              assign icone_service = block.settings.icone
+                              assign baseline_service = block.settings.baseline
+                            endif
+                          endfor
+                        -%}
+                        <li class="cs-mega__col" style="--i: {{ forloop.index0 }};">
+                          <a href="{{ child.url }}" class="cs-mega__col-tete">
+                            <span class="cs-pastille-icone cs-mega__col-icone">{% render 'icone', nom: icone_service %}</span>
+                            <span class="cs-mega__col-textes">
+                              <span class="cs-mega__col-titre">{{ child.title | escape }}</span>
+                              {%- if baseline_service != blank -%}
+                                <span class="cs-mega__col-baseline">{{ baseline_service | escape }}</span>
+                              {%- endif -%}
+                            </span>
+                            {% render 'icone', nom: 'fleche-45', taille: 14, classe: 'cs-mega__col-fleche' %}
+                          </a>
+                          {%- if child.links.size > 0 -%}
+                            <ul class="cs-mega__sous" role="list">
+                              {%- for sous in child.links -%}
+                                <li><a href="{{ sous.url }}" class="cs-mega__sous-lien">{{ sous.title | escape }}</a></li>
+                              {%- endfor -%}
+                            </ul>
+                          {%- endif -%}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                    {%- if section.settings.featured_titre != blank -%}
+                      <div class="cs-mega__featured">
+                        <p class="cs-mega__featured-titre">{{ section.settings.featured_titre | escape }}</p>
+                        {%- if section.settings.featured_texte != blank -%}
+                          <p class="cs-mega__featured-texte">{{ section.settings.featured_texte | escape }}</p>
+                        {%- endif -%}
+                        {% render 'bouton', label: section.settings.featured_bouton, popup: true, style: 'primaire' %}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                  {%- if menu_villes != blank and menu_villes.links.size > 0 -%}
+                    <div class="cs-mega__villes">
+                      <span class="cs-meta">Nous intervenons à :</span>
+                      {%- for ville in menu_villes.links -%}
+                        <a href="{{ ville.url }}" class="cs-chip">{{ ville.title | escape }}</a>
+                      {%- endfor -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            </li>
+          {%- else -%}
+            <li class="cs-header__item">
+              <a href="{{ link.url }}" class="cs-header__lien cs-lien{% if link.current %} is-actif{% endif %}"
+                {% if link.current %}aria-current="page"{% endif %}>{{ link.title | escape }}</a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </nav>
+    {%- endif -%}
+
+    <div class="cs-header__actions">
+      {%- if settings.visitor_toggle -%}
+        <button type="button" class="cs-header__toggle-theme" data-cs-theme-toggle
+          aria-label="Changer de thème (sombre ou clair)">
+          {% render 'icone', nom: 'soleil', taille: 20, classe: 'cs-header__icone-soleil' %}
+          {% render 'icone', nom: 'lune', taille: 20, classe: 'cs-header__icone-lune' %}
+        </button>
+      {%- endif -%}
+
+      {%- if settings.nap_telephone != blank -%}
+        <a class="cs-header__tel" href="tel:{{ settings.nap_telephone | replace: ' ', '' }}"
+          aria-label="Appeler {{ shop.name | escape }}">
+          {% render 'icone', nom: 'tel', taille: 22 %}
+        </a>
+      {%- endif -%}
+
+      <div class="cs-header__cta">
+        {%- if section.settings.cta_popup -%}
+          {% render 'bouton', label: section.settings.cta_texte, popup: true, style: 'primaire' %}
+        {%- else -%}
+          {% render 'bouton', label: section.settings.cta_texte, url: section.settings.cta_url, style: 'primaire' %}
+        {%- endif -%}
+      </div>
+
+      <button type="button" class="cs-header__burger" data-cs-drawer-open
+        aria-expanded="false" aria-controls="cs-drawer-{{ section.id }}"
+        aria-label="Ouvrir le menu">
+        {% render 'icone', nom: 'burger' %}
+      </button>
+    </div>
+  </div>
+
+  {%- comment -%} Drawer mobile §6.3 {%- endcomment -%}
+  <div class="cs-drawer" id="cs-drawer-{{ section.id }}" role="dialog" aria-modal="true"
+    aria-label="Menu" hidden>
+    <div class="cs-drawer__tete">
+      <span class="cs-drawer__logo">{{ shop.name }}</span>
+      <button type="button" class="cs-drawer__fermer" data-cs-drawer-close aria-label="Fermer le menu">
+        {% render 'icone', nom: 'croix' %}
+      </button>
+    </div>
+    <div class="cs-drawer__corps">
+      {%- if menu != blank -%}
+        <nav aria-label="Navigation mobile">
+          <ul class="cs-drawer__liste" role="list">
+            {%- for link in menu.links -%}
+              {%- if link.links.size > 0 -%}
+                <li class="cs-drawer__groupe">
+                  <button type="button" class="cs-drawer__accordeon" aria-expanded="false"
+                    aria-controls="cs-drawer-groupe-{{ forloop.index }}" data-cs-drawer-accordeon>
+                    {{ link.title | escape }}
+                    {% render 'icone', nom: 'chevron', taille: 18, classe: 'cs-accordeon__chevron' %}
+                  </button>
+                  <ul class="cs-drawer__sous-liste" id="cs-drawer-groupe-{{ forloop.index }}" role="list" hidden>
+                    {%- for child in link.links -%}
+                      {%- liquid
+                        assign icone_service = 'etincelle'
+                        for block in section.blocks
+                          if block.type == 'service' and block.settings.lien == child.url
+                            assign icone_service = block.settings.icone
+                          endif
+                        endfor
+                      -%}
+                      <li style="--i: {{ forloop.index0 }};">
+                        <a href="{{ child.url }}" class="cs-drawer__sous-lien">
+                          {% render 'icone', nom: icone_service, taille: 20 %}
+                          {{ child.title | escape }}
+                        </a>
+                        {%- if child.links.size > 0 -%}
+                          <ul class="cs-drawer__sous2" role="list">
+                            {%- for sous in child.links -%}
+                              <li><a href="{{ sous.url }}" class="cs-drawer__sous2-lien">{{ sous.title | escape }}</a></li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </li>
+              {%- else -%}
+                <li><a href="{{ link.url }}" class="cs-drawer__lien">{{ link.title | escape }}</a></li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </nav>
+      {%- endif -%}
+
+      {%- if menu_villes != blank and menu_villes.links.size > 0 -%}
+        <div class="cs-drawer__villes">
+          <p class="cs-meta">Nous intervenons à :</p>
+          <div class="cs-drawer__chips">
+            {%- for ville in menu_villes.links -%}
+              <a href="{{ ville.url }}" class="cs-chip">{{ ville.title | escape }}</a>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if settings.visitor_toggle -%}
+        <button type="button" class="cs-drawer__toggle-theme" data-cs-theme-toggle>
+          {% render 'icone', nom: 'soleil', taille: 20, classe: 'cs-header__icone-soleil' %}
+          {% render 'icone', nom: 'lune', taille: 20, classe: 'cs-header__icone-lune' %}
+          Changer de thème
+        </button>
+      {%- endif -%}
+    </div>
+    <div class="cs-drawer__pied">
+      {%- if section.settings.cta_popup -%}
+        {% render 'bouton', label: section.settings.cta_texte, popup: true, style: 'primaire' %}
+      {%- else -%}
+        {% render 'bouton', label: section.settings.cta_texte, url: section.settings.cta_url, style: 'primaire' %}
+      {%- endif -%}
+      {%- if settings.nap_telephone != blank -%}
+        <a class="cs-lien" href="tel:{{ settings.nap_telephone | replace: ' ', '' }}">
+          {% render 'icone', nom: 'tel', taille: 18 %} {{ settings.nap_telephone }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+  <div class="cs-drawer-overlay" data-cs-drawer-close hidden></div>
+</header>
+
+{% schema %}
+{
+  "name": "CS · Header",
+  "class": "cs-header-wrapper",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Menu principal", "default": "main-menu", "info": "L'entrée « Services » et ses 6 pages enfants alimentent le mega menu." },
+    { "type": "link_list", "id": "menu_villes", "label": "Menu des villes", "info": "Rangée « Nous intervenons à » du mega menu." },
+    { "type": "checkbox", "id": "transparent_home", "label": "Transparent en haut de la home", "default": true },
+    { "type": "header", "content": "Bouton d'action" },
+    { "type": "text", "id": "cta_texte", "label": "Texte du bouton", "info": "24 caractères max", "default": "Audit gratuit" },
+    { "type": "checkbox", "id": "cta_popup", "label": "Le bouton ouvre le popup", "default": true },
+    { "type": "url", "id": "cta_url", "label": "Sinon, lien du bouton" },
+    { "type": "header", "content": "Carte mise en avant (mega menu)" },
+    { "type": "text", "id": "featured_titre", "label": "Titre", "default": "Audit gratuit" },
+    { "type": "textarea", "id": "featured_texte", "label": "Texte", "info": "90 caractères max", "default": "Ce que votre site laisse filer, chiffré sous 48 h. Sans engagement." },
+    { "type": "text", "id": "featured_bouton", "label": "Bouton", "info": "24 caractères max", "default": "Commencer l'audit" },
+    { "type": "paragraph", "content": "La carte « Dernier projet » du mega menu affiche automatiquement le metaobject « projet » le plus récent, dès que la définition existe." }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Enrichissement service",
+      "limit": 8,
+      "settings": [
+        { "type": "url", "id": "lien", "label": "Lien de la page service", "info": "Doit être identique à l'URL du menu : c'est la clé d'appariement." },
+        { "type": "select", "id": "icone", "label": "Icône",
+          "options": [
+            { "value": "site", "label": "Site" },
+            { "value": "seo", "label": "SEO" },
+            { "value": "cible", "label": "Google Ads" },
+            { "value": "social", "label": "Social Ads" },
+            { "value": "conversion", "label": "CRO / Conversion" },
+            { "value": "pin", "label": "Local" },
+            { "value": "euro", "label": "E-commerce" },
+            { "value": "maintenance", "label": "Maintenance" },
+            { "value": "etincelle", "label": "Étincelle" },
+            { "value": "eclair", "label": "Éclair" }
+          ],
+          "default": "etincelle" },
+        { "type": "text", "id": "baseline", "label": "Baseline", "info": "45 caractères max" }
+      ]
+    }
+  ]
+}
+{% endschema %}

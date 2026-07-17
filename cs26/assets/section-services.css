@@ -1,0 +1,31 @@
+/* CS-26 · section-services.css · Grille de services (§8.5) */
+
+.cs-services__grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+}
+@media (min-width: 640px) { .cs-services__grille { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .cs-services__grille { grid-template-columns: repeat(3, 1fr); gap: var(--sp-5); } }
+
+.cs-services__carte {
+  display: grid;
+  gap: var(--sp-4);
+  align-content: start;
+  justify-items: start;
+}
+.cs-services__carte--phare {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--c-surface), var(--c-surface)) padding-box,
+    var(--g-braise) border-box;
+}
+.cs-services__tag { position: absolute; top: calc(-1 * var(--sp-3)); right: var(--sp-5); }
+
+/* Zone cliquable = toute la carte */
+.cs-services__lien-carte { color: inherit; text-decoration: none; }
+.cs-services__lien-carte::after { content: ""; position: absolute; inset: 0; }
+.cs-services__texte { color: var(--c-text-2); font-size: var(--fs-small); }
+.cs-services__decouvrir { font-size: var(--fs-small); }
+.cs-services__carte:hover .cs-services__decouvrir { background-size: 100% 2px; }
+.cs-services__carte:hover .cs-services__decouvrir .cs-icone { transform: translateX(3px); }

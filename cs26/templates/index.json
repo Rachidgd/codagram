@@ -1,0 +1,477 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-particles",
+      "settings": {
+        "eyebrow": "Agence web & acquisition",
+        "titre": "Des sites qui transforment les clics en clients.",
+        "mot_souligne": "clients",
+        "sous_titre": "Création, SEO et conversion pour PME et e-commerçants : des résultats mesurés, pas des promesses.",
+        "cta_primaire": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "cta_secondaire": "Voir nos résultats",
+        "cta_secondaire_url": "/pages/resultats",
+        "particules": true,
+        "souris": true
+      }
+    },
+    "logos": {
+      "type": "cs-logos",
+      "settings": {
+        "titre": "Ils nous confient leur croissance",
+        "vitesse": 20,
+        "padding_haut": 48,
+        "padding_bas": 48
+      },
+      "blocks": {
+        "l1": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo_noza.svg",
+            "nom": "Noza & Co",
+            "autorisation": true
+          }
+        },
+        "l2": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo_maison_ayla.svg",
+            "nom": "Maison Ayla",
+            "autorisation": true
+          }
+        },
+        "l3": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo_saccabines.svg",
+            "nom": "Saccabines",
+            "autorisation": true
+          }
+        },
+        "l4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo_mbe.svg",
+            "nom": "MBE France",
+            "autorisation": true
+          }
+        },
+        "l5": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo_oshira_2.svg",
+            "nom": "Oshira",
+            "autorisation": true
+          }
+        },
+        "l6": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/logo_stellar_2.svg",
+            "nom": "Cabinet Stellar",
+            "autorisation": true
+          }
+        }
+      },
+      "block_order": [
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6"
+      ]
+    },
+    "stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "350",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "de clics",
+            "contexte": "Maison Ayla · avril → juin 2026",
+            "source_interne": "Search Console"
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "169",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "d'impressions / mois",
+            "contexte": "Noza & Co · mai → juin 2026",
+            "source_interne": "Search Console"
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "20",
+            "prefixe": "",
+            "suffixe": " K",
+            "label": "impressions en 2 mois",
+            "contexte": "Saccabines · boutique lancée de zéro",
+            "source_interne": "Search Console"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "eyebrow": "La preuve d'abord",
+        "titre": "Des résultats datés, pas des promesses",
+        "bg_style": "halo",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96,
+        "intro": "Trajectoires réelles observées sur des projets accompagnés (source : Search Console). Chaque marché est différent : ces chiffres ne constituent pas une garantie de résultat."
+      }
+    },
+    "services": {
+      "type": "cs-services",
+      "blocks": {
+        "service_site": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/creation-site-vitrine",
+            "icone": "site",
+            "titre": "Création site vitrine",
+            "texte": "Un site clair, rapide et trouvé sur Google, pensé pour déclencher le contact.",
+            "phare": false
+          }
+        },
+        "service_shopify": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/creation-site-ecommerce-shopify",
+            "icone": "euro",
+            "titre": "E-commerce Shopify",
+            "texte": "Une boutique construite pour vendre : fiches, tunnel et vitesse traités ensemble.",
+            "phare": false
+          }
+        },
+        "service_seo": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/agence-seo",
+            "icone": "seo",
+            "titre": "Référencement SEO",
+            "texte": "Une visibilité durable sur les requêtes qui rapportent, mesurée mois après mois.",
+            "phare": true
+          }
+        },
+        "service_seo_local": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/seo-local",
+            "icone": "pin",
+            "titre": "SEO local",
+            "texte": "Fiche Google, pages locales et avis : être choisi par les clients près de chez vous.",
+            "phare": false
+          }
+        },
+        "service_meta": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/expert-meta-ads",
+            "icone": "social",
+            "titre": "Meta Ads",
+            "texte": "Des créas qui arrêtent le scroll et des campagnes pilotées aux ventes, pas aux likes.",
+            "phare": false
+          }
+        },
+        "service_cro": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/optimisation-cro",
+            "icone": "conversion",
+            "titre": "CRO / Conversion",
+            "texte": "Même trafic, plus de clients : on lève les frictions qui font fuir vos visiteurs.",
+            "phare": false
+          }
+        }
+      },
+      "block_order": [
+        "service_site",
+        "service_shopify",
+        "service_seo",
+        "service_seo_local",
+        "service_meta",
+        "service_cro"
+      ],
+      "settings": {
+        "eyebrow": "Nos services",
+        "titre": "Quel est votre problème à résoudre ?",
+        "intro": "Chaque mission commence par la même question : où perdez-vous des clients aujourd'hui ?",
+        "bg_style": "base",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "media_texte": {
+      "type": "cs-media-texte",
+      "blocks": {
+        "puce_1": {
+          "type": "puce",
+          "settings": {
+            "texte": "Un interlocuteur unique, pas un ticket"
+          }
+        },
+        "puce_2": {
+          "type": "puce",
+          "settings": {
+            "texte": "Des comptes rendus chiffrés chaque mois"
+          }
+        },
+        "puce_3": {
+          "type": "puce",
+          "settings": {
+            "texte": "Vos accès restent les vôtres"
+          }
+        }
+      },
+      "block_order": [
+        "puce_1",
+        "puce_2",
+        "puce_3"
+      ],
+      "settings": {
+        "image_alt": "L'équipe Clickscreation au travail sur un projet client",
+        "shape": "diag-1",
+        "halo": true,
+        "image_position": "gauche",
+        "ordre_mobile": "texte",
+        "eyebrow": "Notre façon de travailler",
+        "titre": "Une petite équipe, des comptes à rendre.",
+        "corps": "<p>Pas de couches d'intermédiaires : les personnes qui signent votre projet sont celles qui le construisent. Chaque décision se prend sur une donnée, jamais sur une intuition.</p>",
+        "lien_label": "Voir la méthode",
+        "lien": "/pages/creation-site-vitrine",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "eyebrow": "Preuve sociale",
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "vitesse_1": 42,
+        "vitesse_2": 50,
+        "bg_style": "base",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "stack": {
+      "type": "cs-stack",
+      "blocks": {
+        "pilier_1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Comprendre avant de produire",
+            "texte": "Chaque mission démarre par un audit : votre marché, vos concurrents, vos données. On ne dessine rien tant qu'on n'a pas compris d'où viennent vos clients."
+          }
+        },
+        "pilier_2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Construire pour convertir",
+            "texte": "Design, contenu et technique servent un seul objectif : que le visiteur agisse. Chaque page a un rôle précis dans votre funnel, aucune n'est décorative."
+          }
+        },
+        "pilier_3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "Mesurer, puis recommencer",
+            "texte": "Un site livré n'est pas un site fini. On suit vos chiffres, on teste, on améliore. Vous voyez la progression dans un compte rendu clair chaque mois."
+          }
+        }
+      },
+      "block_order": [
+        "pilier_1",
+        "pilier_2",
+        "pilier_3"
+      ],
+      "settings": {
+        "eyebrow": "Les 3 piliers",
+        "titre": "Comment on travaille, couche par couche.",
+        "numerotation": false,
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "eyebrow": "Résultats",
+        "titre": "La preuve en rayon",
+        "nombre": 4,
+        "filtres": false,
+        "lien_hub": "/pages/resultats",
+        "bg_style": "base",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "bulles": {
+      "type": "cs-bulles",
+      "blocks": {
+        "bulle_1": {
+          "type": "pastille",
+          "settings": {
+            "texte": "Réponse sous 48 h ouvrées"
+          }
+        },
+        "bulle_2": {
+          "type": "icone",
+          "settings": {
+            "icone": "bouclier",
+            "label": "Sans engagement"
+          }
+        },
+        "bulle_3": {
+          "type": "pastille",
+          "settings": {
+            "texte": "Vos accès restent les vôtres"
+          }
+        },
+        "bulle_4": {
+          "type": "icone",
+          "settings": {
+            "icone": "message",
+            "label": "Un interlocuteur unique"
+          }
+        },
+        "bulle_5": {
+          "type": "pastille",
+          "settings": {
+            "texte": "Compte rendu chiffré mensuel"
+          }
+        },
+        "bulle_6": {
+          "type": "icone",
+          "settings": {
+            "icone": "conversion",
+            "label": "Piloté aux résultats"
+          }
+        }
+      },
+      "block_order": [
+        "bulle_1",
+        "bulle_2",
+        "bulle_3",
+        "bulle_4",
+        "bulle_5",
+        "bulle_6"
+      ],
+      "settings": {
+        "eyebrow": "Vos questions, nos engagements",
+        "titre": "Ce qui vous retient, on l'a déjà levé.",
+        "texte": "Travailler avec une agence ne devrait ni vous enfermer, ni vous échapper. Voici nos règles du jeu.",
+        "cta_label": "Discuter de mon projet",
+        "bg_style": "halo",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Combien coûte un projet avec Clickscreation ?",
+            "reponse": "<p>Cela dépend du périmètre : un site vitrine, une refonte e-commerce et un accompagnement SEO n'ont pas le même budget. L'audit gratuit sert exactement à ça : vous repartez avec une fourchette claire et un plan d'action, avant tout engagement.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Que contient l'audit gratuit ?",
+            "reponse": "<p>Une analyse de votre visibilité Google, de la vitesse de votre site et des points de friction qui bloquent vos conversions, avec des recommandations classées par impact. Livré sous 48 h ouvrées, sans engagement.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "En combien de temps voit-on des résultats ?",
+            "reponse": "<p>Selon votre marché et le levier choisi : la publicité produit des données en quelques jours, le SEO construit sur plusieurs mois. On vous donne un calendrier réaliste dès l'audit, puis on mesure chaque mois par rapport à ce plan.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Travaillez-vous avec des entreprises de ma taille ?",
+            "reponse": "<p>Nos clients sont des PME et des e-commerçants qui veulent des comptes clairs plutôt que des slides. Si votre enjeu est de gagner des clients en ligne avec un budget maîtrisé, vous êtes au bon endroit.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Que se passe-t-il si j'arrête la collaboration ?",
+            "reponse": "<p>Tout vous appartient : le site, les comptes publicitaires, les données. Vous partez avec l'ensemble de vos accès et un document de passation. C'est écrit dans nos contrats.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "eyebrow": "FAQ",
+        "titre": "Les questions qu'on nous pose vraiment",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Voyons ce que votre site laisse filer.",
+        "texte": "Un audit concret de votre visibilité et de vos conversions, livré sous 48 h ouvrées.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "logos",
+    "stats",
+    "services",
+    "media_texte",
+    "avis",
+    "stack",
+    "projets",
+    "bulles",
+    "faq",
+    "cta"
+  ]
+}

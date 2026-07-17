@@ -1,0 +1,142 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "CS-26",
+    "theme_version": "1.4.1",
+    "theme_author": "Clickscreation · LE STUDIO",
+    "theme_documentation_url": "https://clickscreation.fr",
+    "theme_support_url": "https://clickscreation.fr/pages/contact"
+  },
+  {
+    "name": "Identité",
+    "settings": [
+      { "type": "image_picker", "id": "logo_theme", "label": "Logo (SVG accepté)" },
+      { "type": "range", "id": "logo_largeur", "label": "Largeur du logo", "min": 80, "max": 240, "step": 10, "default": 140, "unit": "px" },
+      { "type": "image_picker", "id": "favicon", "label": "Favicon", "info": "Carré, 96 × 96 px minimum. À défaut, le favicon du thème est utilisé." },
+      { "type": "image_picker", "id": "og_image_defaut", "label": "Image de partage par défaut", "info": "1200 × 630 px, utilisée quand la page n'a pas d'image propre." },
+      { "type": "text", "id": "nom_legal", "label": "Nom légal de l'entreprise" },
+      { "type": "textarea", "id": "promesse_footer", "label": "Promesse de marque", "info": "120 caractères max. Affichée dans le footer et en description de partage par défaut." },
+      { "type": "header", "content": "NAP (nom, adresse, téléphone)" },
+      { "type": "text", "id": "nap_adresse", "label": "Adresse (rue)" },
+      { "type": "text", "id": "nap_code_postal", "label": "Code postal" },
+      { "type": "text", "id": "nap_ville", "label": "Ville" },
+      { "type": "text", "id": "nap_telephone", "label": "Téléphone", "info": "Format international recommandé : +33…" },
+      { "type": "text", "id": "nap_email", "label": "Email de contact" },
+      { "type": "text", "id": "nap_horaires", "label": "Horaires", "info": "Ex. : Mo-Fr 09:00-18:00 (format schema.org)" },
+      { "type": "text", "id": "zones_servies", "label": "Zones servies", "info": "Villes séparées par des virgules. Nourrit le JSON-LD areaServed." },
+      { "type": "header", "content": "Liens externes" },
+      { "type": "url", "id": "gbp_url", "label": "Fiche Google Business Profile" },
+      { "type": "url", "id": "lien_instagram", "label": "Instagram" },
+      { "type": "url", "id": "lien_facebook", "label": "Facebook" },
+      { "type": "url", "id": "lien_linkedin", "label": "LinkedIn" },
+      { "type": "url", "id": "lien_tiktok", "label": "TikTok" },
+      { "type": "url", "id": "lien_youtube", "label": "YouTube" }
+    ]
+  },
+  {
+    "name": "Palette sombre",
+    "settings": [
+      { "type": "paragraph", "content": "Direction « L'Étincelle » : encre profonde, accents braise. Les valeurs livrées sont les défauts de la spec CS-26." },
+      { "type": "color", "id": "sombre_bg", "label": "Fond de page", "default": "#0B0E14" },
+      { "type": "color", "id": "sombre_bg_2", "label": "Fond alterné de section", "default": "#0F131B" },
+      { "type": "color", "id": "sombre_surface", "label": "Cartes, panneaux", "default": "#151A24" },
+      { "type": "color", "id": "sombre_surface_2", "label": "Cartes surélevées, hover", "default": "#1B2130" },
+      { "type": "color", "id": "sombre_text", "label": "Titres, texte fort", "default": "#F4F6FB" },
+      { "type": "color", "id": "sombre_text_2", "label": "Texte courant", "default": "#A8B1C2" },
+      { "type": "color", "id": "sombre_text_3", "label": "Légendes, metas", "default": "#6E7889" },
+      { "type": "color", "id": "sombre_accent", "label": "Accent ambre", "default": "#FFB454" },
+      { "type": "color", "id": "sombre_accent_2", "label": "Accent corail", "default": "#FF6B4A" },
+      { "type": "color", "id": "sombre_accent_ink", "label": "Texte sur accent", "default": "#14161C" },
+      { "type": "color", "id": "sombre_ok", "label": "Validation formulaires", "default": "#3DDC97" },
+      { "type": "color", "id": "sombre_err", "label": "Erreur formulaires", "default": "#FF6B6B" }
+    ]
+  },
+  {
+    "name": "Palette claire",
+    "settings": [
+      { "type": "paragraph", "content": "Palette travaillée, pas une inversion : papier chaud, accents assombris pour la lisibilité AA." },
+      { "type": "color", "id": "clair_bg", "label": "Fond de page", "default": "#F8F7F4" },
+      { "type": "color", "id": "clair_bg_2", "label": "Fond alterné de section", "default": "#FFFFFF" },
+      { "type": "color", "id": "clair_surface", "label": "Cartes, panneaux", "default": "#FFFFFF" },
+      { "type": "color", "id": "clair_surface_2", "label": "Cartes surélevées, hover", "default": "#F1EFEA" },
+      { "type": "color", "id": "clair_text", "label": "Titres, texte fort", "default": "#14161C" },
+      { "type": "color", "id": "clair_text_2", "label": "Texte courant", "default": "#4A5162" },
+      { "type": "color", "id": "clair_text_3", "label": "Légendes, metas", "default": "#8A90A0" },
+      { "type": "color", "id": "clair_accent", "label": "Accent ambre foncé", "default": "#E07B1F" },
+      { "type": "color", "id": "clair_accent_2", "label": "Accent corail foncé", "default": "#E24E2B" },
+      { "type": "color", "id": "clair_accent_ink", "label": "Texte sur accent", "default": "#FFFFFF" },
+      { "type": "color", "id": "clair_ok", "label": "Validation formulaires", "default": "#1E9E6A" },
+      { "type": "color", "id": "clair_err", "label": "Erreur formulaires", "default": "#D64545" }
+    ]
+  },
+  {
+    "name": "Thème et motion",
+    "settings": [
+      { "type": "select", "id": "theme_mode", "label": "Thème par défaut",
+        "options": [ { "value": "dark", "label": "Sombre" }, { "value": "light", "label": "Clair" } ],
+        "default": "dark" },
+      { "type": "checkbox", "id": "visitor_toggle", "label": "Toggle sombre/clair visible par le visiteur", "default": false },
+      { "type": "select", "id": "motion_level", "label": "Intensité des animations",
+        "options": [ { "value": "full", "label": "Complète" }, { "value": "soft", "label": "Réduite" }, { "value": "off", "label": "Désactivée" } ],
+        "default": "full" },
+      { "type": "select", "id": "shape_defaut", "label": "Forme d'image par défaut",
+        "options": [
+          { "value": "soft", "label": "Douce" },
+          { "value": "diag-1", "label": "Diagonale 1" },
+          { "value": "diag-2", "label": "Diagonale 2" },
+          { "value": "arche", "label": "Arche" },
+          { "value": "organique", "label": "Organique" }
+        ],
+        "default": "soft" }
+    ]
+  },
+  {
+    "name": "Typographie",
+    "settings": [
+      { "type": "checkbox", "id": "use_custom_fonts", "label": "Fontes personnalisées", "info": "Bricolage Grotesque + Instrument Sans, auto-hébergées (recommandé).", "default": true },
+      { "type": "font_picker", "id": "font_titre", "label": "Fonte titres (secours)", "default": "assistant_n6" },
+      { "type": "font_picker", "id": "font_texte", "label": "Fonte texte (secours)", "default": "assistant_n4" }
+    ]
+  },
+  {
+    "name": "Conversion",
+    "settings": [
+      { "type": "select", "id": "popup_mode", "label": "Mode du popup",
+        "options": [
+          { "value": "audit", "label": "Audit gratuit seul" },
+          { "value": "devis", "label": "Devis seul" },
+          { "value": "les_deux", "label": "Audit + branche devis (recommandé)" }
+        ],
+        "default": "les_deux" },
+      { "type": "text", "id": "popup_etape1_titre", "label": "Titre étape 1", "default": "Qu'est-ce qui vous amène ?" },
+      { "type": "text", "id": "popup_etape2_titre", "label": "Titre étape 2", "default": "Deux détails pour un audit utile" },
+      { "type": "text", "id": "popup_etape3_titre", "label": "Titre étape 3", "default": "Où envoyons-nous l'audit ?" },
+      { "type": "text", "id": "email_reception", "label": "Email de réception des leads", "info": "Information interne : Shopify envoie les soumissions du formulaire contact à l'email de l'expéditeur de la boutique (Réglages > Notifications)." },
+      { "type": "checkbox", "id": "popup_exit_intent", "label": "Exit intent desktop", "info": "Désactivé par défaut (décision A1/§11.1).", "default": false },
+      { "type": "checkbox", "id": "popup_scroll", "label": "Ouverture à 70 % de scroll (pages services)", "info": "Désactivé par défaut.", "default": false },
+      { "type": "header", "content": "Barre sticky mobile" },
+      { "type": "checkbox", "id": "sticky_active", "label": "Activer la barre sticky mobile", "default": true },
+      { "type": "checkbox", "id": "sticky_home", "label": "Sur la home", "default": true },
+      { "type": "checkbox", "id": "sticky_services", "label": "Sur les pages services", "default": true },
+      { "type": "checkbox", "id": "sticky_villes", "label": "Sur les pages villes", "default": true },
+      { "type": "checkbox", "id": "sticky_audit", "label": "Sur la landing audit", "default": true },
+      { "type": "checkbox", "id": "sticky_articles", "label": "Sur les articles (après 60 % de lecture)", "default": true }
+    ]
+  },
+  {
+    "name": "Cookies",
+    "settings": [
+      { "type": "text", "id": "consent_titre", "label": "Titre de la bannière", "default": "Vos données, vos règles" },
+      { "type": "textarea", "id": "consent_texte", "label": "Texte", "info": "140 caractères max", "default": "Nous utilisons des cookies pour mesurer l'audience et améliorer le site. Vous choisissez, promis sans piège." },
+      { "type": "url", "id": "consent_politique_url", "label": "Lien politique de confidentialité" },
+      { "type": "text", "id": "ga4_id", "label": "ID de mesure GA4", "info": "Ex. G-XXXXXXXXXX. Chargé uniquement après consentement (Consent Mode v2)." },
+      { "type": "range", "id": "consent_duree", "label": "Durée du consentement", "min": 30, "max": 365, "step": 5, "default": 180, "unit": "j" }
+    ]
+  },
+  {
+    "name": "Réseaux et preuve",
+    "settings": [
+      { "type": "checkbox", "id": "avis_afficher_source", "label": "Afficher la source des avis (Google, Trustpilot)", "default": true }
+    ]
+  }
+]

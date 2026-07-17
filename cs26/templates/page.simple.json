@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "simple",
+        "cta_active": false
+      }
+    },
+    "contenu": {
+      "type": "cs-richtext",
+      "blocks": {
+        "corps": {
+          "type": "page",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "corps"
+      ],
+      "settings": {
+        "padding_haut": 48,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Et si on regardait votre cas de plus près ?",
+        "texte": "Un audit gratuit de votre visibilité et de vos conversions, livré sous 48 h ouvrées.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "contenu",
+    "cta"
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Agence Shopify",
+        "intro": "Création, refonte, optimisation et suivi de boutiques Shopify : une seule équipe, responsable de vos résultats de vente.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature": {
+      "type": "cs-stack",
+      "blocks": {
+        "e1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Créer ou refondre",
+            "texte": "Une boutique construite pour vendre, migrée sans perdre votre référencement ni vos données."
+          }
+        },
+        "e2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Optimiser",
+            "texte": "Vitesse, fiches, tunnel : on mesure, on corrige, on retest. La boutique progresse chaque mois."
+          }
+        },
+        "e3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "Faire croître",
+            "texte": "SEO, publicité et CRO branchés sur la même donnée : votre coût d'acquisition et votre marge."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "settings": {
+        "eyebrow": "Trois terrains",
+        "titre": "Ce qu'une agence Shopify doit couvrir.",
+        "numerotation": false,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garanties": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "document",
+            "titre": "Boutique à votre nom",
+            "texte": "Compte Shopify, thème, apps et données : tout vous appartient, contractuellement."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "horloge",
+            "titre": "Réponse sous 48 h",
+            "texte": "Chaque demande reçoit une réponse d'un humain sous 48 h ouvrées."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "conversion",
+            "titre": "Piloté aux résultats",
+            "texte": "Un compte rendu mensuel chiffré : ventes, coût d'acquisition, prochaines actions."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "settings": {
+        "bg_style": "alt",
+        "padding_haut": 64,
+        "padding_bas": 64
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Boutiques accompagnées",
+        "lien_hub": "/pages/resultats",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Travaillez-vous avec des boutiques déjà en ligne ?",
+            "reponse": "<p>Oui, c'est la majorité des cas : l'audit fait l'état des lieux de votre boutique, puis on priorise entre corrections rapides et chantiers de fond.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Combien d'apps installez-vous ?",
+            "reponse": "<p>Le strict nécessaire : chaque app ajoutée ralentit la boutique et crée une dépendance. Quand une fonction peut vivre dans le thème, elle vit dans le thème.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Assurez-vous aussi la maintenance ?",
+            "reponse": "<p>Oui : surveillance, mises à jour et un volume mensuel d'améliorations, avec des délais d'intervention écrits au contrat.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions à l'agence Shopify",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Votre boutique peut faire mieux.",
+        "texte": "Un audit gratuit de votre Shopify : vitesse, fiches, tunnel, et les corrections classées par impact.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une agence Shopify couvre trois terrains sous la même responsabilité : créer ou refondre votre boutique, l'optimiser dans la durée, et la faire croître. Nous construisons des boutiques pensées pour vendre, migrées sans perdre votre référencement ni vos données, puis nous mesurons vitesse, fiches et tunnel pour corriger ce qui freine.</p><p>La croissance branche SEO, publicité et CRO sur la même donnée : votre coût d'acquisition et votre marge. Nous limitons les applications au nécessaire, car chacune ralentit la boutique et crée une dépendance. Vous gardez la propriété du compte, du thème et des données, avec des délais d'intervention écrits au contrat.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> la <a href=\"/pages/creation-site-ecommerce-shopify\">création de boutique Shopify</a>, le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> pour vendre grâce à Google, et les <a href=\"/pages/expert-meta-ads\">Meta Ads</a> pour accélérer.</p><p>Nos <a href=\"/pages/resultats\">réalisations</a> montrent des boutiques accompagnées sur la durée.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Croissance e-commerce",
+        "titre": "Une agence Shopify responsable de vos ventes",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature",
+    "garanties",
+    "projets",
+    "avis",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

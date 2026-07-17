@@ -1,0 +1,84 @@
+{%- comment -%}
+  cs-resultats.liquid · Les chiffres d'un cas, fiche projet (§8.14).
+  Données lues du metaobject `projet` courant : AUCUN setting de contenu,
+  source unique de vérité. Contexte → action → résultat daté + témoignage.
+{%- endcomment -%}
+{%- if template.name == 'metaobject' and metaobject -%}
+{%- assign p = metaobject -%}
+{{ 'section-resultats.css' | asset_url | stylesheet_tag }}
+
+<section id="{{ section.id }}"
+  class="cs-section cs-resultats{% if section.settings.bg_style == 'alt' %} cs-section--alt{% elsif section.settings.bg_style == 'halo' %} cs-section--halo{% endif %}"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container cs-resultats__interieur">
+
+    {%- liquid
+      assign a_chiffres = false
+      if p.chiffre_1_valeur.value != blank or p.chiffre_2_valeur.value != blank or p.chiffre_3_valeur.value != blank
+        assign a_chiffres = true
+      endif
+    -%}
+    {%- if a_chiffres -%}
+      <div class="cs-resultats__chiffres" data-reveal-group>
+        {%- for i in (1..3) -%}
+          {%- assign cle_v = 'chiffre_' | append: i | append: '_valeur' -%}
+          {%- assign cle_l = 'chiffre_' | append: i | append: '_label' -%}
+          {%- if p[cle_v].value != blank and p[cle_l].value != blank -%}
+            <div class="cs-stat" data-reveal="up">
+              <span class="cs-stat__value">{{ p[cle_v].value | escape }}</span>
+              <span class="cs-stat__label">{{ p[cle_l].value | escape }}</span>
+              {%- if p.date.value != blank and forloop.first -%}
+                <span class="cs-stat__contexte">Mesuré : {{ p.date.value | date: '%B %Y' }}</span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <div class="cs-resultats__colonnes">
+      {%- if p.contexte.value != blank -%}
+        <div class="cs-resultats__colonne" data-reveal="up">
+          <h2 class="cs-h3">Le point de départ</h2>
+          <div class="cs-prose">{{ p.contexte | metafield_tag }}</div>
+        </div>
+      {%- endif -%}
+      {%- if p.realisation.value != blank -%}
+        <div class="cs-resultats__colonne" data-reveal="up" style="--i: 1;">
+          <h2 class="cs-h3">Ce que nous avons fait</h2>
+          <div class="cs-prose">{{ p.realisation | metafield_tag }}</div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if p.resultats.value != blank -%}
+      <div class="cs-resultats__bilan" data-reveal="fade">
+        <h2 class="cs-h3">Les résultats</h2>
+        <div class="cs-prose">{{ p.resultats | metafield_tag }}</div>
+      </div>
+    {%- endif -%}
+
+    {%- if p.temoignage.value != blank -%}
+      <figure class="cs-resultats__temoignage cs-glass" data-reveal="scale">
+        <blockquote>{{ p.temoignage.value | escape | truncate: 220 }}</blockquote>
+        {%- if p.temoignage_auteur.value != blank -%}
+          <figcaption>{{ p.temoignage_auteur.value | escape }}{% if p.client.value != blank %} · {{ p.client.value | escape }}{% endif %}</figcaption>
+        {%- endif -%}
+      </figure>
+    {%- endif -%}
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CS · Résultats du cas",
+  "settings": [
+    { "type": "paragraph", "content": "Cette section lit le metaobject « projet » de la page : aucun contenu à saisir ici (source unique de vérité, §8.14)." },
+    { "type": "select", "id": "bg_style", "label": "Fond",
+      "options": [ { "value": "base", "label": "Base" }, { "value": "alt", "label": "Alterné" }, { "value": "halo", "label": "Halo braise" } ], "default": "alt" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ]
+}
+{% endschema %}

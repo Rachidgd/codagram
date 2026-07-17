@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "simple",
+        "cta_active": false,
+        "eyebrow": "Contact",
+        "intro": "Une question, un projet, un doute ? Écrivez-nous ou appelez : une personne vous répond sous 48 h ouvrées."
+      }
+    },
+    "contact": {
+      "type": "cs-contact",
+      "settings": {
+        "mode": "simple",
+        "padding_haut": 48,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "contact"
+  ]
+}

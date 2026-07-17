@@ -1,0 +1,47 @@
+{%- comment -%}
+  cs-404.liquid · Page introuvable (§8.18) : 4 liens utiles + mini-CTA audit,
+  particules légères en fond (clin d'œil signature).
+{%- endcomment -%}
+{{ 'section-404.css' | asset_url | stylesheet_tag }}
+
+<section id="{{ section.id }}" class="cs-section cs-404">
+  {%- if settings.motion_level != 'off' -%}
+    <canvas class="cs-404__particules" data-particles="footer" aria-hidden="true"></canvas>
+  {%- endif -%}
+  <div class="cs-container cs-404__interieur">
+    <p class="cs-404__code" aria-hidden="true">404</p>
+    <h1 class="cs-h1">{{ section.settings.titre | escape }}</h1>
+    {%- if section.settings.texte != blank -%}
+      <p class="cs-404__texte">{{ section.settings.texte | escape }}</p>
+    {%- endif -%}
+    <nav class="cs-404__liens" aria-label="Liens utiles">
+      <a href="{{ routes.root_url }}" class="cs-chip">Accueil</a>
+      {%- if section.settings.lien_services != blank -%}
+        <a href="{{ section.settings.lien_services }}" class="cs-chip">Nos services</a>
+      {%- endif -%}
+      {%- if section.settings.lien_realisations != blank -%}
+        <a href="{{ section.settings.lien_realisations }}" class="cs-chip">Réalisations</a>
+      {%- endif -%}
+      {%- if section.settings.lien_contact != blank -%}
+        <a href="{{ section.settings.lien_contact }}" class="cs-chip">Contact</a>
+      {%- endif -%}
+    </nav>
+    {% render 'bouton', label: section.settings.cta_label, popup: true, style: 'primaire', reassurance: section.settings.cta_reassurance %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CS · Page 404",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre (H1)", "info": "60 caractères max", "default": "Cette page n'existe pas (ou plus)." },
+    { "type": "textarea", "id": "texte", "label": "Texte", "info": "180 caractères max", "default": "Le lien qui vous a mené ici est cassé ou la page a déménagé. Voici les chemins qui mènent quelque part." },
+    { "type": "url", "id": "lien_services", "label": "Lien services" },
+    { "type": "url", "id": "lien_realisations", "label": "Lien réalisations" },
+    { "type": "url", "id": "lien_contact", "label": "Lien contact" },
+    { "type": "text", "id": "cta_label", "label": "Bouton audit", "info": "24 caractères max", "default": "Commencer l'audit" },
+    { "type": "text", "id": "cta_reassurance", "label": "Réassurance", "info": "70 caractères max", "default": "Réponse sous 48 h ouvrées. Sans engagement." }
+  ],
+  "presets": [ { "name": "CS · Page 404" } ]
+}
+{% endschema %}

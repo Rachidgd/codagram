@@ -1,0 +1,36 @@
+{%- comment -%}
+  breadcrumb.liquid · Fil d'Ariane visuel + JSON-LD BreadcrumbList (§10.2).
+  Rendu sur toutes les pages sauf la home. Params : aucun (lit template/page/article).
+{%- endcomment -%}
+{%- unless template.name == 'index' -%}
+  {%- liquid
+    assign niveau_2_titre = ''
+    assign niveau_2_url = ''
+    assign courant = ''
+    if template.name == 'page'
+      assign courant = page.title
+    elsif template.name == 'article'
+      assign niveau_2_titre = blog.title
+      assign niveau_2_url = blog.url
+      assign courant = article.title
+    elsif template.name == 'blog'
+      assign courant = blog.title
+    elsif template.name == 'metaobject'
+      assign courant = metaobject.titre.value | default: metaobject.system.handle
+    elsif template.name == '404'
+      assign courant = 'Page introuvable'
+    else
+      assign courant = page_title
+    endif
+  -%}
+  <nav class="cs-breadcrumb" aria-label="Fil d'Ariane">
+    <ol>
+      <li><a href="{{ routes.root_url }}">Accueil</a></li>
+      {%- if niveau_2_titre != blank -%}
+        <li><a href="{{ niveau_2_url }}">{{ niveau_2_titre | escape }}</a></li>
+      {%- endif -%}
+      <li><span aria-current="page">{{ courant | escape }}</span></li>
+    </ol>
+  </nav>
+  {% render 'schema-breadcrumb', niveau_2_titre: niveau_2_titre, niveau_2_url: niveau_2_url, courant: courant %}
+{%- endunless -%}

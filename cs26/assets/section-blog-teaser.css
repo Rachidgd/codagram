@@ -1,0 +1,20 @@
+/* CS-26 · section-blog-teaser.css · Articles (§8.18) */
+
+.cs-blog-teaser__grille { display: grid; gap: var(--sp-6); }
+@media (min-width: 640px) { .cs-blog-teaser__grille { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .cs-blog-teaser__grille { grid-template-columns: repeat(3, 1fr); } }
+
+.cs-blog-teaser__lien { display: grid; gap: var(--sp-4); text-decoration: none; color: inherit; }
+.cs-blog-teaser__cover img { transition: transform var(--d-3) var(--e-out); }
+.cs-blog-teaser__carte:hover .cs-blog-teaser__cover img { transform: scale(1.03); }
+.cs-blog-teaser__infos { display: grid; gap: var(--sp-2); justify-items: start; }
+.cs-blog-teaser__infos .cs-chip { min-height: 28px; font-size: .8125rem; color: var(--c-accent); border-color: color-mix(in srgb, var(--c-accent) 30%, transparent); }
+.cs-blog-teaser__extrait { color: var(--c-text-2); font-size: var(--fs-small); }
+.cs-blog-teaser__pied { margin-top: var(--sp-6); }
+.cs-blog-teaser__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-7);
+}

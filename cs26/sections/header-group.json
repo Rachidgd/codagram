@@ -1,0 +1,37 @@
+{
+  "type": "header",
+  "name": "Groupe d'en-tête",
+  "sections": {
+    "annonce": {
+      "type": "cs-annonce",
+      "settings": {
+        "texte": "",
+        "version": "1"
+      }
+    },
+    "header": {
+      "type": "cs-header",
+      "settings": {
+        "menu": "menu-principal-cs26",
+        "transparent_home": true,
+        "cta_texte": "Audit gratuit",
+        "cta_popup": true,
+        "featured_titre": "Audit gratuit",
+        "featured_texte": "Ce que votre site laisse filer, chiffré sous 48 h. Sans engagement.",
+        "featured_bouton": "Commencer l'audit",
+        "menu_villes": "menu-villes-cs26"
+      },
+      "blocks": {
+        "svc_seo": { "type": "service", "settings": { "lien": "/pages/agence-seo", "icone": "seo", "baseline": "Être trouvé sur Google" } },
+        "svc_vitrine": { "type": "service", "settings": { "lien": "/pages/creation-site-vitrine", "icone": "site", "baseline": "Un site qui convertit" } },
+        "svc_ecom": { "type": "service", "settings": { "lien": "/pages/creation-site-ecommerce-shopify", "icone": "euro", "baseline": "Vendre plus sur Shopify" } },
+        "svc_meta": { "type": "service", "settings": { "lien": "/pages/expert-meta-ads", "icone": "social", "baseline": "Des campagnes rentables" } }
+      },
+      "block_order": [ "svc_seo", "svc_vitrine", "svc_ecom", "svc_meta" ]
+    }
+  },
+  "order": [
+    "annonce",
+    "header"
+  ]
+}

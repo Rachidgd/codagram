@@ -1,0 +1,106 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "ville",
+        "eyebrow": "Consultant SEO local",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement."
+      }
+    },
+    "local": {
+      "type": "cs-ville-seo",
+      "settings": {
+        "titre_contexte": "Votre marché local, tel qu'il se joue sur Google",
+        "titre_faq": "Vos questions SEO à",
+        "bg_style": "base",
+        "padding_haut": 64,
+        "padding_bas": 96
+      }
+    },
+    "services": {
+      "type": "cs-services",
+      "blocks": {
+        "s1": {
+          "type": "service",
+          "settings": {
+            "icone": "seo",
+            "titre": "Audit SEO",
+            "page": "/pages/audit-seo",
+            "texte": "Savoir exactement pourquoi vous n'êtes pas assez visible, et quoi corriger d'abord."
+          }
+        },
+        "s2": {
+          "type": "service",
+          "settings": {
+            "icone": "pin",
+            "titre": "SEO local",
+            "page": "/pages/seo-local",
+            "texte": "Fiche Google, pages locales et avis : être choisi près de chez vous."
+          }
+        },
+        "s3": {
+          "type": "service",
+          "settings": {
+            "icone": "site",
+            "titre": "Création site vitrine",
+            "page": "/pages/creation-site-vitrine",
+            "texte": "Un site clair, rapide et trouvé sur Google, pensé pour déclencher le contact."
+          }
+        },
+        "s4": {
+          "type": "service",
+          "settings": {
+            "icone": "conversion",
+            "titre": "SEO e-commerce",
+            "page": "/pages/seo-ecommerce",
+            "texte": "Collections et fiches produit qui captent du trafic qui achète."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "eyebrow": "Comment on peut aider",
+        "titre": "Les leviers qu'on active pour vous",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Votre marché local, chiffré.",
+        "texte": "Un audit gratuit de votre visibilité sur votre zone : qui vous double, où, et comment reprendre la place.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "local",
+    "services",
+    "avis",
+    "cta"
+  ]
+}

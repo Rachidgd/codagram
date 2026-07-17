@@ -1,0 +1,243 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Création de site",
+        "intro": "Un site qui vend, pas une carte de visite. Pensé conversion dès la première maquette, mesuré après la mise en ligne.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature": {
+      "type": "cs-stack",
+      "blocks": {
+        "e1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Cadrage",
+            "texte": "Votre marché, vos clients, vos objectifs chiffrés. On définit ce que le site doit produire avant de dessiner quoi que ce soit."
+          }
+        },
+        "e2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Maquette",
+            "texte": "Chaque écran est conçu autour d'une action attendue du visiteur. Vous validez sur maquette réelle, pas sur un discours."
+          }
+        },
+        "e3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "Construction",
+            "texte": "Un site rapide, propre et éditable par vos soins. Testé sur mobile d'abord, parce que vos clients y sont."
+          }
+        },
+        "e4": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Contenus et SEO",
+            "texte": "Textes travaillés pour vos requêtes cibles, pages structurées pour Google. Le site naît visible, pas invisible."
+          }
+        },
+        "e5": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Mise en ligne et suivi",
+            "texte": "Lancement contrôlé, mesures branchées, premier bilan chiffré. Puis on améliore ce que les données montrent."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Votre projet, en cinq couches.",
+        "numerotation": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Audit gratuit",
+            "texte": "Votre existant, vos concurrents, votre potentiel : la base factuelle du projet."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Proposition",
+            "texte": "Périmètre, planning, budget : une proposition précise, sans ligne floue."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Lancement",
+            "texte": "Un interlocuteur dédié, un planning partagé, des jalons de validation clairs."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Production",
+            "texte": "Vous suivez l'avancement à chaque étape et validez sur du concret."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "Le démarrage",
+        "titre": "Comment démarre votre projet",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "titre": "Les chiffres de nos sites",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Sites livrés récemment",
+        "lien_hub": "/pages/resultats",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Le site m'appartient-il vraiment ?",
+            "reponse": "<p>Oui, entièrement : le code, les contenus, le nom de domaine et tous les accès sont à votre nom. Si nos chemins se séparent, vous partez avec tout et un document de passation.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Puis-je modifier le site moi-même ?",
+            "reponse": "<p>Oui. Tout le contenu est éditable depuis une interface simple : textes, images, sections, couleurs. Une session de prise en main est incluse à la livraison.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Refonte ou nouveau site : comment trancher ?",
+            "reponse": "<p>C'est le rôle de l'audit : si votre site a un acquis (référencement, contenus, historique), on le préserve. Si la base freine plus qu'elle ne porte, on repart proprement et on migre ce qui a de la valeur.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions sur la création de site",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Voyons ce que votre site laisse filer.",
+        "texte": "Un audit concret de votre présence en ligne, livré sous 48 h ouvrées, avec ou sans refonte à la clé.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature",
+    "process",
+    "stats",
+    "projets",
+    "avis",
+    "faq",
+    "cta"
+  ]
+}

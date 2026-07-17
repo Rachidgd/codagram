@@ -1,0 +1,62 @@
+{%- comment -%}
+  cs-consent.liquid · Bannière cookies glassmorphe (§11.2).
+  Consent Mode v2 : défauts denied posés inline dans le head (theme.liquid),
+  GA4 chargé UNIQUEMENT après consentement analytics (cs-consent.js).
+  3 actions au même poids visuel (RGPD). Ne bloque jamais la lecture.
+{%- endcomment -%}
+{{ 'section-consent.css' | asset_url | stylesheet_tag }}
+
+<div id="{{ section.id }}" data-cs="consent"
+  data-ga4="{{ settings.ga4_id | escape }}"
+  data-duree="{{ settings.consent_duree | default: 180 }}">
+  <div class="cs-consent cs-glass" role="dialog" aria-modal="false"
+    aria-labelledby="cs-consent-titre-{{ section.id }}" hidden>
+    <div class="cs-consent__tete">
+      <span class="cs-consent__icone" aria-hidden="true">{% render 'icone', nom: 'cookie' %}</span>
+      <p class="cs-consent__titre" id="cs-consent-titre-{{ section.id }}">{{ settings.consent_titre | escape }}</p>
+    </div>
+    <p class="cs-consent__texte">{{ settings.consent_texte | escape }}</p>
+
+    <div class="cs-consent__panneau" data-cs-consent-panneau hidden>
+      <div class="cs-consent__choix">
+        <label class="cs-consent__switch cs-consent__switch--verrouille">
+          <input type="checkbox" checked disabled>
+          <span>Essentiels <em>toujours actifs</em></span>
+        </label>
+        <label class="cs-consent__switch">
+          <input type="checkbox" data-cs-consent-analytics>
+          <span>Mesure d'audience (GA4)</span>
+        </label>
+        {%- if section.settings.afficher_marketing -%}
+          <label class="cs-consent__switch">
+            <input type="checkbox" data-cs-consent-ads>
+            <span>Marketing (pixels publicitaires)</span>
+          </label>
+        {%- endif -%}
+      </div>
+      <button type="button" class="cs-btn cs-btn--primaire cs-consent__enregistrer" data-cs-consent-enregistrer>
+        Enregistrer mes choix
+      </button>
+    </div>
+
+    <div class="cs-consent__actions" data-cs-consent-actions>
+      <button type="button" class="cs-btn cs-btn--secondaire" data-cs-consent-tout>Tout accepter</button>
+      <button type="button" class="cs-btn cs-btn--secondaire" data-cs-consent-rien>Continuer sans accepter</button>
+      <button type="button" class="cs-btn cs-btn--secondaire" data-cs-consent-perso aria-expanded="false">Personnaliser</button>
+    </div>
+
+    {%- if settings.consent_politique_url != blank -%}
+      <a class="cs-consent__politique" href="{{ settings.consent_politique_url }}">Politique de confidentialité</a>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CS · Cookies",
+  "settings": [
+    { "type": "paragraph", "content": "Textes, ID GA4 et durée du consentement se règlent dans Réglages du thème > Cookies." },
+    { "type": "checkbox", "id": "afficher_marketing", "label": "Proposer la catégorie Marketing", "info": "Activez uniquement si des pixels publicitaires sont réellement utilisés.", "default": false }
+  ]
+}
+{% endschema %}

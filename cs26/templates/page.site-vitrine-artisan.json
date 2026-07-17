@@ -1,0 +1,366 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Site vitrine Artisan / BTP",
+        "titre": "Des demandes de devis, pas une simple carte de visite",
+        "intro": "Vos chantiers parlent pour vous. On les met en avant, on vous rend visible sur vos villes d'intervention, et on transforme les visiteurs en demandes de devis qualifiées.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "pain": {
+      "type": "cs-media-texte",
+      "blocks": {
+        "p1": {
+          "type": "puce",
+          "settings": {
+            "texte": "Vos réalisations qui rassurent avant l'appel"
+          }
+        },
+        "p2": {
+          "type": "puce",
+          "settings": {
+            "texte": "Visible sur chaque ville que vous couvrez"
+          }
+        },
+        "p3": {
+          "type": "puce",
+          "settings": {
+            "texte": "Des demandes de devis déjà qualifiées"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "image_position": "droite",
+        "shape": "organique",
+        "halo": true,
+        "eyebrow": "Le vrai problème",
+        "titre": "Le bouche-à-oreille a une limite",
+        "corps": "<p>Le bouche-à-oreille remplit l'agenda, jusqu'au creux de saison où le téléphone se tait. Pendant ce temps, le client qui cherche « votre métier + votre ville » sur Google ne vous trouve pas, ou tombe sur un concurrent avec des photos de chantiers et des avis. Un site prend le relais et lisse votre activité toute l'année.</p>",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "signature": {
+      "type": "cs-stack",
+      "blocks": {
+        "e1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Réalisations",
+            "texte": "Vos chantiers, avant et après, mis en scène pour prouver votre savoir-faire."
+          }
+        },
+        "e2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Zones d'intervention",
+            "texte": "Une présence pensée pour chaque ville et chaque spécialité que vous couvrez."
+          }
+        },
+        "e3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "Confiance",
+            "texte": "Assurances, certifications et avis réunis là où le client hésite encore."
+          }
+        },
+        "e4": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Devis facile",
+            "texte": "Un formulaire clair qui filtre et qualifie les demandes avant même l'appel."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "settings": {
+        "eyebrow": "Ce que fait votre site",
+        "titre": "Un site qui fait entrer les devis",
+        "numerotation": false,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Audit gratuit",
+            "texte": "On mesure votre visibilité sur vos villes d'intervention et le volume de devis que vous abandonnez à la concurrence."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Proposition",
+            "texte": "Ce qui est inclus, le planning, le budget : un cadre clair posé avant le premier coup de pioche."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Production",
+            "texte": "On met vos chantiers en valeur, vous validez chaque écran sur maquette réelle, entre deux rendez-vous."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Lancement",
+            "texte": "Site en ligne, formulaire de devis qualifiant branché, et passation complète de vos accès."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "Le démarrage",
+        "titre": "Du premier échange au premier devis",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "comparatif": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Flux de demandes",
+            "nous": "Régulier toute l'année",
+            "alt_1": "En dents de scie",
+            "alt_2": "Partagé avec des concurrents",
+            "alt_3": "Subi"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Preuve du savoir-faire",
+            "nous": "Chantiers mis en scène",
+            "alt_1": "Invisible en ligne",
+            "alt_2": "Fiche standardisée",
+            "alt_3": "Aucune"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Visibilité locale",
+            "nous": "Chaque ville couverte",
+            "alt_1": "Aléatoire",
+            "alt_2": "Louée à l'annuaire",
+            "alt_3": "Faible"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Qualité des demandes",
+            "nous": "Qualifiées en amont",
+            "alt_1": "Variables",
+            "alt_2": "Souvent au moins-disant",
+            "alt_3": "Variables"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Propriété",
+            "nous": "Tout à votre nom",
+            "alt_1": "Rien à posséder",
+            "alt_2": "Vous ne possédez rien",
+            "alt_3": "Aucune"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Le bon choix",
+        "titre": "Un site à vous, ou l'annuaire qui vend vos concurrents ?",
+        "intro": "",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Bouche-à-oreille seul",
+        "col_3_titre": "Annuaire payant",
+        "col_4_titre": "Ne rien changer",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Propriété totale",
+            "texte": "Domaine, photos de chantiers et accès restent à votre nom, avec un document de passation à la livraison."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Délai annoncé tenu",
+            "texte": "Un planning fixé dès le devis et respecté, sans vous mobiliser plus que nécessaire entre deux chantiers."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "maintenance",
+            "titre": "Éditable sans code",
+            "texte": "Vous ajoutez un nouveau chantier ou une zone d'intervention vous-même, sans repayer un prestataire."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Résultats mesurés",
+            "texte": "Demandes de devis suivies dès le lancement, premier bilan partagé pour mesurer ce que le site rapporte."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Zéro risque",
+        "titre": "Nos engagements",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Un artisan se choisit sur la preuve et la proximité. Votre site doit montrer des chantiers réels, dire où vous intervenez et rendre la demande de devis évidente. Nous construisons ce parcours et le structurons pour vos recherches locales, métier par métier et ville par ville.</p><p>Les réalisations rassurent, les assurances et avis lèvent le dernier doute, et le formulaire qualifie la demande avant l'appel. Vous recevez moins de curieux et plus de projets sérieux, avec un site qui vous appartient entièrement.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Pour capter le local :</strong> le <a href=\"/pages/seo-local\">SEO local</a> pour sortir sur « votre métier + votre ville » et le <a href=\"/pages/agence-seo\">référencement naturel</a> pour installer votre visibilité.</p><p>Un autre profil ? Voyez le site pour <a href=\"/pages/site-vitrine-pme-tpe\">PME et TPE</a>, <a href=\"/pages/site-vitrine-freelance\">indépendants</a> ou <a href=\"/pages/site-vitrine-restaurant\">restaurants</a>. Vue d'ensemble sur la <a href=\"/pages/creation-site-vitrine\">création de site vitrine</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Site artisan BTP",
+        "titre": "Un site vitrine pour artisans et professionnels du BTP",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Le bouche-à-oreille me suffit, pourquoi un site ?",
+            "reponse": "<p>Il vous porte tant que le carnet est plein. Un site prend le relais dans les creux et capte les clients qui vous cherchent sur Google sans vous connaître.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Je n'ai pas le temps de gérer un site.",
+            "reponse": "<p>C'est prévu pour ça : une fois en ligne, il tourne seul. Ajouter un chantier prend deux minutes, quand vous voulez.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Comment montrer mes chantiers sans y passer des heures ?",
+            "reponse": "<p>Quelques photos avant/après suffisent. On met en place le cadre, vous n'avez qu'à déposer les images.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Transformez vos chantiers en demandes de devis.",
+        "texte": "Un audit gratuit de votre visibilité locale : où vous perdez des clients, et le plan pour faire entrer des devis qualifiés.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "pain",
+    "signature",
+    "process",
+    "comparatif",
+    "garantie",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

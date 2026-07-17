@@ -1,0 +1,134 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "ville",
+        "eyebrow": "Agence web locale",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement."
+      }
+    },
+    "comparatif": {
+      "type": "cs-comparatif",
+      "settings": {
+        "eyebrow": "Choisir son partenaire local",
+        "titre": "Ce qui nous distingue ici",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Agence low-cost",
+        "col_3_titre": "Freelance seul",
+        "col_4_titre": "",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "media": {
+      "type": "cs-media-texte",
+      "settings": {
+        "shape": "diag-1",
+        "halo": true,
+        "image_position": "gauche",
+        "ordre_mobile": "image",
+        "eyebrow": "Ancrage local",
+        "bg_style": "base",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "titre": "Les résultats locaux",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "zones": {
+      "type": "cs-zones",
+      "settings": {
+        "eyebrow": "Zones couvertes",
+        "titre": "Nous intervenons dans ces quartiers et communes",
+        "shape": "organique",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "settings": {
+        "titre": "Questions locales",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Votre marché local, chiffré.",
+        "texte": "Un audit gratuit de votre visibilité sur votre zone : qui vous double, où, et comment reprendre la place.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "comparatif",
+    "media",
+    "stats",
+    "avis",
+    "zones",
+    "faq",
+    "cta"
+  ]
+}

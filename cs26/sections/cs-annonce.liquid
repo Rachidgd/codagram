@@ -1,0 +1,31 @@
+{%- comment -%}
+  cs-annonce.liquid · Bandeau d'annonce 40 px (§8.18) : texte ≤ 80 + lien,
+  fermable, mémorisé en session (géré par cs-menu.js).
+{%- endcomment -%}
+{%- if section.settings.texte != blank -%}
+{{ 'section-annonce.css' | asset_url | stylesheet_tag }}
+<div id="{{ section.id }}" class="cs-annonce" data-cs="annonce" data-version="{{ section.settings.version }}" role="region" aria-label="Annonce">
+  <div class="cs-container cs-annonce__interieur">
+    {%- if section.settings.lien != blank -%}
+      <a href="{{ section.settings.lien }}" class="cs-annonce__texte">{{ section.settings.texte | escape }}
+        {%- render 'icone', nom: 'fleche', taille: 14 -%}</a>
+    {%- else -%}
+      <p class="cs-annonce__texte">{{ section.settings.texte | escape }}</p>
+    {%- endif -%}
+    <button type="button" class="cs-annonce__fermer" data-cs-annonce-fermer aria-label="Fermer l'annonce">
+      {% render 'icone', nom: 'croix', taille: 16 %}
+    </button>
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CS · Annonce",
+  "settings": [
+    { "type": "text", "id": "texte", "label": "Texte", "info": "80 caractères max" },
+    { "type": "url", "id": "lien", "label": "Lien" },
+    { "type": "text", "id": "version", "label": "Version", "info": "Changez cette valeur pour réafficher l'annonce aux visiteurs qui l'ont fermée.", "default": "1" }
+  ]
+}
+{% endschema %}

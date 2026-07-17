@@ -1,0 +1,22 @@
+{%- comment -%}
+  schema-service.liquid · JSON-LD Service pour les pages services (§10.2).
+  Params : nom (nom du service), description (≤ 155)
+{%- endcomment -%}
+{%- if nom != blank -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ nom | strip_html | json }},
+  "serviceType": {{ nom | strip_html | json }},
+  {%- if description != blank %}
+  "description": {{ description | strip_html | json }},
+  {%- endif %}
+  {%- if settings.zones_servies != blank %}
+  "areaServed": {{ settings.zones_servies | split: ',' | json }},
+  {%- endif %}
+  "url": {{ canonical_url | json }},
+  "provider": { "@id": "{{ shop.url }}#organisation" }
+}
+</script>
+{%- endif -%}

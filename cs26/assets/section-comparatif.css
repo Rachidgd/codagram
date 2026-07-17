@@ -1,0 +1,37 @@
+/* CS-26 · section-comparatif.css · Nous vs alternatives (§8.15) */
+
+.cs-comparatif__scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.cs-comparatif__table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+}
+.cs-comparatif__table th, .cs-comparatif__table td {
+  padding: var(--sp-4);
+  text-align: left;
+  border-bottom: 1px solid var(--c-line);
+  color: var(--c-text-2);
+  max-width: 24ch;
+}
+.cs-comparatif__table thead th {
+  font-family: var(--font-display);
+  color: var(--c-text);
+  font-size: var(--fs-body);
+}
+.cs-comparatif__table tbody th { color: var(--c-text); font-weight: 500; }
+.cs-comparatif__nous {
+  background: color-mix(in srgb, var(--c-accent) 8%, transparent);
+  color: var(--c-text) !important;
+}
+thead .cs-comparatif__nous { border-radius: var(--r-m) var(--r-m) 0 0; }
+.cs-comparatif__oui { color: var(--c-ok); }
+.cs-comparatif__non { color: var(--c-err); }
+.cs-comparatif__tilde { color: var(--c-text-3); }
+
+/* Mobile : cartes empilées, la nôtre en premier — la table défile
+   horizontalement en secours sous 640 px, colonne braise contrastée */
+@media (max-width: 639px) {
+  .cs-comparatif__table { min-width: 480px; }
+  .cs-comparatif__table th, .cs-comparatif__table td { padding: var(--sp-3); }
+}

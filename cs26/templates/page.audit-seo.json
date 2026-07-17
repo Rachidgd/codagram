@@ -1,0 +1,303 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Audit SEO gratuit",
+        "titre": "Votre audit SEO, chiffré et sous 48 h",
+        "intro": "Vos positions, celles de vos concurrents, et les actions qui rapporteront le plus. Un document clair et priorisé, pas un rapport automatique que personne ne lit.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "livrables": {
+      "type": "cs-stack",
+      "blocks": {
+        "e1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Où vous en êtes",
+            "texte": "Vos positions actuelles sur les requêtes qui comptent, et votre visibilité réelle face au marché."
+          }
+        },
+        "e2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Ce qui vous freine",
+            "texte": "Les blocages techniques et éditoriaux qui plombent votre référencement, du plus grave au plus léger."
+          }
+        },
+        "e3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "Vos concurrents",
+            "texte": "Qui capte le trafic que vous visez, sur quelles requêtes, et par où les rattraper."
+          }
+        },
+        "e4": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Le plan priorisé",
+            "texte": "Les trois à cinq actions à plus fort impact, classées par effort et par gain attendu."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "settings": {
+        "eyebrow": "Dans votre audit",
+        "titre": "Ce que vous recevez, noir sur blanc",
+        "numerotation": false,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous demandez",
+            "texte": "Deux minutes : votre site, votre activité, votre zone. Rien de plus."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "On analyse",
+            "texte": "Un expert examine votre site à la main, pas un robot. Positions, technique, concurrence."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous recevez",
+            "texte": "Votre audit sous 48 h ouvrées : constats chiffrés et plan d'action priorisé."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "On en parle",
+            "texte": "Un échange pour répondre à vos questions et décider par quoi commencer."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "Comment ça marche",
+        "titre": "De votre demande à votre feuille de route SEO",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "preuve": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "236",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "d'impressions",
+            "contexte": "Maison Ayla · avril → juin 2026",
+            "source_interne": "Search Console"
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "350",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "de clics",
+            "contexte": "Maison Ayla · avril → juin 2026",
+            "source_interne": "Search Console"
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "169",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "d'impressions / mois",
+            "contexte": "Noza & Co · mai → juin 2026",
+            "source_interne": "Search Console"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "eyebrow": "Résultats",
+        "titre": "Ce que ça donne, en vrai",
+        "intro": "Trajectoires réelles observées sur des projets accompagnés (source : Search Console). Chaque marché, historique et niveau de concurrence est différent : ces chiffres ne constituent pas une garantie de résultat.",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "euro",
+            "titre": "Offert, pour de vrai",
+            "texte": "Pas de carte bancaire, pas de relance commerciale forcée. L'audit vous reste, même si vous ne travaillez pas ensuite avec nous."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Livré sous 48 h ouvrées",
+            "texte": "Un rapport lisible et commenté, pas un export automatique de quarante pages que personne n'ouvre jamais."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Classé par priorité",
+            "texte": "Chaque action est notée par gain attendu et par effort. Vous savez par quoi commencer dès la première lecture."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Expliqué sans jargon",
+            "texte": "Un consultant vous décrypte les constats, et vous dit honnêtement si le SEO n'est pas votre levier le plus rentable."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Nos engagements",
+        "titre": "Un audit SEO sans piège",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Un bon audit SEO ne se contente pas de lister des erreurs : il dit ce qui rapporte, dans quel ordre agir, et pourquoi. Nous regardons vos positions réelles, l'état technique de votre site et les requêtes sur lesquelles vos concurrents vous devancent, puis nous en tirons un plan clair, hiérarchisé par impact.</p><p>Tout est fait à la main par un consultant, pas généré par un outil. Vous repartez avec un document que vous comprenez et que vous pouvez mettre en œuvre vous-même ou avec nous, sans aucun engagement.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Après l'audit :</strong> notre <a href=\"/pages/agence-seo\">accompagnement SEO</a>, le <a href=\"/pages/seo-local\">SEO local</a> ou le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> selon vos priorités. Voyez d'abord nos <a href=\"/pages/resultats\">résultats clients</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Audit SEO",
+        "titre": "Un audit SEO gratuit, humain et actionnable",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "C'est vraiment gratuit, où est le piège ?",
+            "reponse": "<p>Il n'y en a pas. L'audit est notre façon de vous montrer ce qu'on vaut. Vous êtes libre de l'utiliser seul, avec un autre prestataire, ou avec nous.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "En quoi c'est différent d'un audit automatique en ligne ?",
+            "reponse": "<p>Les outils crachent des centaines d'alertes sans priorité ni contexte. Ici, un humain trie, chiffre l'impact et vous dit par quoi commencer.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Dois-je vous donner mes accès ?",
+            "reponse": "<p>Pas pour l'audit initial : on travaille sur les données publiques et nos outils. Un accès en lecture n'est demandé que si vous décidez d'aller plus loin.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions sur l'audit",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Voyons ce que Google vous laisse filer.",
+        "texte": "Votre audit SEO offert, chiffré et priorisé, livré sous 48 h ouvrées. Sans carte, sans engagement.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "livrables",
+    "process",
+    "preuve",
+    "garantie",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

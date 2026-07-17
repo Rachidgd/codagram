@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "hub",
+        "cta_active": false,
+        "shape": "diag-2",
+        "halo": true
+      }
+    },
+    "resultats": {
+      "type": "cs-resultats",
+      "settings": {
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "visuels": {
+      "type": "cs-media-texte",
+      "settings": {
+        "shape": "diag-1",
+        "image_position": "gauche",
+        "ordre_mobile": "image",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Votre secteur ? Parlons-en.",
+        "texte": "Un audit gratuit pour voir ce qui est transposable à votre activité, chiffres à l'appui.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "similaires": {
+      "type": "cs-projets",
+      "settings": {
+        "nombre": 3,
+        "filtres": false,
+        "titre": "Projets similaires",
+        "lien_hub": "/pages/resultats",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "resultats",
+    "visuels",
+    "cta",
+    "similaires"
+  ]
+}

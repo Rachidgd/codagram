@@ -1,0 +1,115 @@
+{%- comment -%}
+  cs-comparatif.liquid · Nous vs alternatives (§8.15).
+  Valeurs de cellule : « oui » → check, « non » → croix, « ~ » → tilde,
+  sinon texte ≤ 40. Mobile : colonnes en cartes empilées, la nôtre en premier.
+  Comparaisons factuelles, pas de dénigrement nominatif.
+{%- endcomment -%}
+{%- if section.blocks.size > 0 -%}
+{{ 'section-comparatif.css' | asset_url | stylesheet_tag }}
+
+{%- capture rendu_cellule -%}{%- endcapture -%}
+<section id="{{ section.id }}"
+  class="cs-section cs-comparatif{% if section.settings.bg_style == 'alt' %} cs-section--alt{% elsif section.settings.bg_style == 'halo' %} cs-section--halo{% endif %}"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container">
+    {%- if section.settings.titre != blank -%}
+      <header class="cs-section__tete" data-reveal="fade">
+        {% render 'eyebrow', texte: section.settings.eyebrow %}
+        <h2 class="cs-h2">{{ section.settings.titre | escape }}</h2>
+        {%- if section.settings.intro != blank -%}
+          <p>{{ section.settings.intro | escape }}</p>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    {%- liquid
+      assign colonnes = 2
+      if section.settings.col_3_titre != blank
+        assign colonnes = 3
+      endif
+      if section.settings.col_4_titre != blank
+        assign colonnes = 4
+      endif
+    -%}
+
+    <div class="cs-comparatif__scroll">
+      <table class="cs-comparatif__table cs-comparatif__table--{{ colonnes }}">
+        <thead>
+          <tr data-reveal="fade">
+            <th scope="col"><span class="visually-hidden">Critère</span></th>
+            <th scope="col" class="cs-comparatif__nous">{{ section.settings.col_nous_titre | escape }}</th>
+            <th scope="col">{{ section.settings.col_2_titre | escape }}</th>
+            {%- if colonnes >= 3 -%}<th scope="col">{{ section.settings.col_3_titre | escape }}</th>{%- endif -%}
+            {%- if colonnes >= 4 -%}<th scope="col">{{ section.settings.col_4_titre | escape }}</th>{%- endif -%}
+          </tr>
+        </thead>
+        <tbody data-reveal-group>
+          {%- for block in section.blocks -%}
+            {%- if block.settings.label != blank -%}
+              <tr data-reveal="fade" {{ block.shopify_attributes }}>
+                <th scope="row">{{ block.settings.label | escape }}</th>
+                {%- assign valeurs = 'nous,alt_1,alt_2,alt_3' | split: ',' -%}
+                {%- for cle in valeurs limit: colonnes -%}
+                  {%- assign v = block.settings[cle] | strip -%}
+                  <td {% if cle == 'nous' %}class="cs-comparatif__nous"{% endif %}>
+                    {%- case v | downcase -%}
+                      {%- when 'oui' -%}
+                        {% render 'icone', nom: 'check', taille: 20, classe: 'cs-comparatif__oui' %}
+                        <span class="visually-hidden">Oui</span>
+                      {%- when 'non' -%}
+                        {% render 'icone', nom: 'croix', taille: 20, classe: 'cs-comparatif__non' %}
+                        <span class="visually-hidden">Non</span>
+                      {%- when '~' -%}
+                        {% render 'icone', nom: 'tilde', taille: 20, classe: 'cs-comparatif__tilde' %}
+                        <span class="visually-hidden">Partiellement</span>
+                      {%- else -%}
+                        {{ v | escape }}
+                    {%- endcase -%}
+                  </td>
+                {%- endfor -%}
+              </tr>
+            {%- endif -%}
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CS · Comparatif",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "info": "28 caractères max" },
+    { "type": "text", "id": "titre", "label": "Titre (H2)", "info": "60 caractères max" },
+    { "type": "textarea", "id": "intro", "label": "Introduction", "info": "180 caractères max" },
+    { "type": "header", "content": "Colonnes (2 minimum, 4 maximum)" },
+    { "type": "text", "id": "col_nous_titre", "label": "Notre colonne", "default": "Clickscreation" },
+    { "type": "text", "id": "col_2_titre", "label": "Alternative 1", "default": "Agence low-cost" },
+    { "type": "text", "id": "col_3_titre", "label": "Alternative 2 (optionnelle)", "default": "Freelance seul" },
+    { "type": "text", "id": "col_4_titre", "label": "Alternative 3 (optionnelle)", "default": "Ne rien faire" },
+    { "type": "select", "id": "bg_style", "label": "Fond",
+      "options": [ { "value": "base", "label": "Base" }, { "value": "alt", "label": "Alterné" }, { "value": "halo", "label": "Halo braise" } ], "default": "base" },
+    { "type": "select", "id": "animation", "label": "Animation d'apparition",
+      "options": [ { "value": "auto", "label": "Automatique (fondu par ligne)" }, { "value": "none", "label": "Aucune" } ], "default": "auto" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "critere",
+      "name": "Critère",
+      "limit": 7,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Critère", "info": "40 caractères max. Les critères du persona (validation MALO)." },
+        { "type": "text", "id": "nous", "label": "Notre valeur", "info": "« oui », « non », « ~ » ou texte ≤ 40" },
+        { "type": "text", "id": "alt_1", "label": "Alternative 1" },
+        { "type": "text", "id": "alt_2", "label": "Alternative 2" },
+        { "type": "text", "id": "alt_3", "label": "Alternative 3" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "CS · Comparatif" } ]
+}
+{% endschema %}

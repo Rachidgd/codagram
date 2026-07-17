@@ -1,0 +1,65 @@
+{%- comment -%}
+  cs-logos.liquid · Bulles logos clients en marquee lent (§8.3).
+  MUST §2.3 : seuls les logos avec autorisation cochée sont rendus.
+  Sans aucun logo autorisé, la section ne rend rien.
+{%- endcomment -%}
+{%- liquid
+  assign logos_valides = ''
+  for block in section.blocks
+    if block.settings.image != blank and block.settings.autorisation
+      assign logos_valides = 'oui'
+    endif
+  endfor
+-%}
+{%- if logos_valides == 'oui' -%}
+{{ 'section-logos.css' | asset_url | stylesheet_tag }}
+
+<section id="{{ section.id }}" class="cs-section cs-logos"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px; --vitesse: {{ section.settings.vitesse }}s;">
+  <div class="cs-container">
+    {%- if section.settings.titre != blank -%}
+      <p class="cs-logos__titre" data-reveal="fade">{{ section.settings.titre | escape }}</p>
+    {%- endif -%}
+  </div>
+  <div class="cs-logos__viewport">
+    <ul class="cs-logos__rangee" role="list">
+      {%- for copie in (1..4) -%}
+        {%- for block in section.blocks -%}
+          {%- if block.settings.image != blank and block.settings.autorisation -%}
+            <li class="cs-logos__item" {% if copie != 1 %}aria-hidden="true"{% else %}{{ block.shopify_attributes }}{% endif %}>
+              <img class="cs-logos__img" src="{{ block.settings.image | image_url: width: 320 }}"
+                alt="{% if copie == 1 %}{{ block.settings.nom | escape }}{% endif %}"
+                loading="lazy" decoding="async">
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CS · Logos clients",
+  "settings": [
+    { "type": "text", "id": "titre", "label": "Titre", "info": "60 caractères max", "default": "Ils nous confient leurs clics" },
+    { "type": "range", "id": "vitesse", "label": "Vitesse du défilement", "min": 20, "max": 80, "step": 5, "default": 60, "unit": "s" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 48, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 48, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo client",
+      "limit": 12,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Logo (SVG ou PNG)" },
+        { "type": "text", "id": "nom", "label": "Nom du client (alt)" },
+        { "type": "checkbox", "id": "autorisation", "label": "Autorisation écrite du client obtenue", "info": "MUST §2.3 : sans autorisation cochée, le logo n'est pas rendu.", "default": false }
+      ]
+    }
+  ],
+  "presets": [ { "name": "CS · Logos clients" } ]
+}
+{% endschema %}

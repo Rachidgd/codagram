@@ -1,0 +1,40 @@
+/* CS-26 · section-hero-page.css · Héros des pages internes (§8.2) */
+
+.cs-hero-page {
+  padding-block: calc(var(--header-h) + var(--sp-6)) var(--sp-8);
+  background:
+    radial-gradient(ellipse 60% 40% at 80% 0%, var(--c-glow), transparent 65%),
+    var(--c-bg);
+}
+.cs-hero-page__interieur { display: grid; gap: var(--sp-6); }
+.cs-hero-page__grille { display: grid; gap: var(--sp-6); align-items: center; }
+@media (min-width: 900px) {
+  .cs-hero-page--service .cs-hero-page__grille,
+  .template-metaobject .cs-hero-page__grille { grid-template-columns: 1.2fr 1fr; gap: var(--sp-8); }
+}
+.cs-hero-page__contenu { display: grid; gap: var(--sp-4); justify-items: start; }
+.cs-hero-page__intro { color: var(--c-text-2); font-size: var(--fs-h3); font-weight: 400; max-width: 52ch; }
+.cs-hero-page__chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.cs-hero-page__chips .cs-chip .cs-icone { color: var(--c-accent); }
+.cs-hero-page__note {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  color: var(--c-text-2);
+  max-width: none;
+}
+.cs-hero-page__note strong { color: var(--c-text); font-variant-numeric: tabular-nums; }
+
+.cs-hero-page__droite { display: grid; }
+@media (max-width: 899px) {
+  /* Mobile : le message d'abord, le visuel après (§8.2) */
+  .cs-hero-page__droite { order: 2; }
+}
+.cs-hero-page__chiffres {
+  display: grid;
+  gap: var(--sp-5);
+  padding: var(--sp-6);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-l);
+}
+.cs-stat__value--h2 { font-size: var(--fs-h1); }

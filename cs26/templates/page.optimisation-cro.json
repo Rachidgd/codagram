@@ -1,0 +1,251 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Optimisation CRO",
+        "titre": "Plus de ventes, à trafic égal",
+        "intro": "On ne va pas chercher plus de visiteurs : on transforme mieux ceux que vous avez déjà. Par des tests structurés, pas des avis au doigt mouillé.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "livrables": {
+      "type": "cs-stack",
+      "blocks": {
+        "e1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "On observe",
+            "texte": "Analyse du comportement réel : où les visiteurs hésitent, cliquent, abandonnent."
+          }
+        },
+        "e2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "On priorise",
+            "texte": "Des hypothèses classées par impact attendu et par facilité de mise en œuvre."
+          }
+        },
+        "e3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "On teste",
+            "texte": "Des tests A/B propres : on compare, on mesure, on décide sur les données."
+          }
+        },
+        "e4": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "On itère",
+            "texte": "Ce qui gagne est gardé et généralisé, ce qui perd est écarté. On recommence."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "settings": {
+        "eyebrow": "Notre approche",
+        "titre": "Comment on augmente votre taux de conversion",
+        "numerotation": false,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous demandez",
+            "texte": "Votre site et vos objectifs de conversion. Deux minutes."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "On analyse",
+            "texte": "Un expert repère les frictions les plus coûteuses de votre parcours."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous recevez",
+            "texte": "Sous 48 h : les points de fuite chiffrés et les tests à lancer en premier."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "On teste ensemble",
+            "texte": "On met en place les tests et on pilote sur vos vraies conversions."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "Comment ça marche",
+        "titre": "De la demande à vos premiers tests",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "euro",
+            "titre": "Premier diagnostic offert",
+            "texte": "On repère vos frictions les plus coûteuses sans carte ni engagement. Le constat vous reste."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Remis sous 48 h ouvrées",
+            "texte": "Les points de fuite de votre parcours, chiffrés, pas un audit d'ergonomie théorique de cinquante slides."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Tests classés par gain",
+            "texte": "Chaque hypothèse est priorisée par impact attendu sur vos conversions et par facilité de mise en place."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Fondé sur vos données",
+            "texte": "Un spécialiste conversion s'appuie sur vos vrais chiffres, pas sur des bonnes pratiques génériques."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Nos engagements",
+        "titre": "Un diagnostic CRO sans blabla",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Doubler votre trafic coûte cher. Convertir deux fois mieux le trafic que vous payez déjà change tout. L'optimisation de la conversion consiste à comprendre où vos visiteurs décrochent, à formuler des hypothèses, puis à les valider par des tests plutôt que par des opinions.</p><p>Nous priorisons les frictions les plus coûteuses, testons proprement, et gardons ce qui augmente réellement vos ventes. Chaque décision repose sur vos données, pas sur une tendance.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Se combine avec :</strong> les <a href=\"/pages/expert-meta-ads\">Meta Ads</a> et le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> pour que le trafic gagné convertisse, sur une <a href=\"/pages/creation-site-ecommerce-shopify\">boutique Shopify</a> saine. Voyez nos <a href=\"/pages/resultats\">résultats</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Optimisation CRO",
+        "titre": "Transformer plus de visiteurs en clients",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de trafic faut-il pour tester ?",
+            "reponse": "<p>Assez pour que les résultats soient fiables. Sous un certain volume, on privilégie les corrections évidentes et l'analyse qualitative avant les tests A/B.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "En combien de temps voit-on des effets ?",
+            "reponse": "<p>Certaines corrections paient tout de suite, les tests demandent quelques semaines pour conclure proprement. On vise l'effet durable, pas le coup de chance.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Touchez-vous à mon site directement ?",
+            "reponse": "<p>On propose et on met en place les tests avec vous. Rien n'est modifié en dur sans votre validation.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions sur le CRO",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Convertissez mieux le trafic que vous payez déjà.",
+        "texte": "Un audit gratuit de votre conversion : vos points de fuite et les tests à lancer en premier. Sous 48 h.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "livrables",
+    "process",
+    "garantie",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

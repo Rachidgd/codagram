@@ -1,0 +1,392 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Expert Meta Ads",
+        "intro": "Des campagnes Facebook et Instagram pilotées aux ventes : créas testées chaque semaine, budget réalloué vers ce qui convertit.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature_creas": {
+      "type": "cs-media-texte",
+      "settings": {
+        "shape": "arche",
+        "halo": true,
+        "image_position": "gauche",
+        "ordre_mobile": "image",
+        "image_alt": "Créations publicitaires Meta produites pour des clients",
+        "eyebrow": "Les créas",
+        "titre": "La créa fait 80 % du travail.",
+        "corps": "<p>Nous produisons les visuels et vidéos avec votre matière : produits, coulisses, avis. Les variantes gagnantes restent, les autres sortent.</p>",
+        "bg_style": "base",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "signature_resultats": {
+      "type": "cs-media-texte",
+      "settings": {
+        "shape": "diag-2",
+        "halo": false,
+        "image_position": "droite",
+        "ordre_mobile": "texte",
+        "image_alt": "Tableau de bord de campagnes Meta Ads, données sensibles floutées",
+        "eyebrow": "Les résultats",
+        "titre": "On regarde les ventes, pas les likes.",
+        "corps": "<p>Chaque campagne est reliée à vos conversions réelles. Votre reporting parle en clients acquis et en coût par acquisition, jamais en portée.</p>",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96,
+        "lien_label": "Voir les cas Meta Ads",
+        "lien": "/pages/resultats"
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Angle et promesse",
+            "texte": "Ce qui différencie votre offre, formulé pour arrêter le scroll."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Production des créas",
+            "texte": "Images et vidéos déclinées par angle, prêtes à être testées."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Tests structurés",
+            "texte": "Audiences et créas comparées proprement, décisions sur données."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Montée en puissance",
+            "texte": "On scale ce qui convertit, on coupe ce qui décore."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Comment on fait tourner vos campagnes",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Cas Meta Ads",
+        "lien_hub": "/pages/resultats",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Quel budget publicitaire pour commencer ?",
+            "reponse": "<p>Assez pour apprendre vite : le seuil dépend de votre panier moyen et de votre marché. L'audit gratuit chiffre un budget de test réaliste avant d'engager quoi que ce soit.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Qui produit les visuels et vidéos ?",
+            "reponse": "<p>Nous, à partir de votre matière. Vous validez chaque créa avant diffusion, et les droits restent les vôtres.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Le compte publicitaire m'appartient-il ?",
+            "reponse": "<p>Oui. Le Business Manager et le compte publicitaire sont à votre nom ; notre accès est révocable à tout moment, avec l'historique conservé.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Et si mes campagnes ne sont pas rentables ?",
+            "reponse": "<p>On fixe dès le départ le coût par client au-delà duquel on coupe. Si le test ne prend pas, on le dit et on arrête, sans vous enfermer dans un budget. La décision repose sur vos ventes, pas sur des promesses.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "settings": {
+        "titre": "Vos questions sur les Meta Ads",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Transformons votre budget pub en ventes, pas en likes.",
+        "texte": "On cible les bonnes audiences, on teste les bonnes créas, et on pilote vos campagnes sur ce qui remplit vraiment le panier.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une campagne Meta Ads rentable relie chaque euro dépensé à une vente ou à un lead réel, jamais à une portée. Sur Facebook et Instagram, la créa fait l'essentiel du travail : nous produisons vos visuels et vidéos à partir de votre matière, testons plusieurs angles chaque semaine, gardons ce qui convertit et coupons ce qui décore.</p><p>Avant de lancer, nous cadrons le coût par client soutenable à partir de votre marge, puis nous branchons un tracking fiable. Le pilotage se fait sur données, avec des règles d'arrêt partagées dès le départ. Votre Business Manager et votre compte publicitaire restent à votre nom, avec l'historique conservé.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> l'<a href=\"/pages/optimisation-cro\">optimisation CRO</a> pour que le trafic payant convertisse, une <a href=\"/pages/creation-site-ecommerce-shopify\">boutique Shopify</a> qui reçoit les clics, et le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> pour baisser votre coût d'acquisition dans la durée.</p><p>Un audit Meta Ads chiffre votre potentiel avant d'engager le moindre budget. Découvrez nos <a href=\"/pages/resultats\">campagnes clients</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Publicité rentable",
+        "titre": "Des Meta Ads pilotées aux ventes, pas aux likes",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "prestations": {
+      "type": "cs-services",
+      "blocks": {
+        "s1": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/audit-meta-ads",
+            "icone": "cible",
+            "titre": "Audit Meta Ads",
+            "texte": "Votre compte ou votre potentiel, chiffré avant d'engager le moindre budget.",
+            "phare": true
+          }
+        },
+        "s2": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/analyse-concurrentielle-meta-ads",
+            "icone": "social",
+            "titre": "Analyse concurrentielle",
+            "texte": "Les publicités qui tournent chez vos concurrents, décryptées pour vous.",
+            "phare": false
+          }
+        },
+        "s3": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/optimisation-cro",
+            "icone": "conversion",
+            "titre": "Optimisation CRO",
+            "texte": "Pour que le trafic payant convertisse une fois arrivé sur le site.",
+            "phare": false
+          }
+        },
+        "s4": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/creation-site-ecommerce-shopify",
+            "icone": "euro",
+            "titre": "Boutique Shopify",
+            "texte": "Une boutique qui transforme les clics payants en ventes.",
+            "phare": false
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "eyebrow": "Nos prestations",
+        "titre": "La pub qui rapporte, du clic à la vente",
+        "intro": "On ne se contente pas de diffuser : on relie chaque euro à une vente et on nettoie ce qui reçoit le clic.",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "comparatif": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Pilotage",
+            "nous": "Sur les ventes réelles",
+            "alt_1": "Sur la portée",
+            "alt_2": "Sur des KPI vanity",
+            "alt_3": "Aucun"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Créas",
+            "nous": "Testées chaque semaine",
+            "alt_1": "Une par campagne",
+            "alt_2": "Standardisées",
+            "alt_3": "Aucune"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Budget",
+            "nous": "Réalloué vers ce qui convertit",
+            "alt_1": "Figé",
+            "alt_2": "Dilué sur des comptes",
+            "alt_3": "Zéro"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Compte publicitaire",
+            "nous": "À votre nom",
+            "alt_1": "Variable",
+            "alt_2": "Souvent partagé",
+            "alt_3": "Inutilisé"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Transparence",
+            "nous": "CPA et ventes, sans jargon",
+            "alt_1": "Variable",
+            "alt_2": "Reporting de portée",
+            "alt_3": "Aucune"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Le bon choix",
+        "titre": "Des ventes, ou des likes ?",
+        "intro": "",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Freelance junior",
+        "col_3_titre": "Agence volume",
+        "col_4_titre": "Ne rien faire",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Compte à votre nom",
+            "texte": "Business Manager et compte publicitaire vous appartiennent. Notre accès est révocable, historique conservé."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "etincelle",
+            "titre": "Créas incluses",
+            "texte": "On produit vos visuels et vidéos à partir de votre matière. Vous validez, les droits sont à vous."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Piloté aux ventes",
+            "texte": "Chaque euro relié à une vente ou un lead réel. Reporting en coût par client, jamais en portée."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Règles d'arrêt claires",
+            "texte": "Le coût par client soutenable est fixé dès le départ. Si le test ne prend pas, on coupe et on le dit."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Zéro risque",
+        "titre": "Nos engagements",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature_creas",
+    "signature_resultats",
+    "prestations",
+    "process",
+    "comparatif",
+    "garantie",
+    "projets",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

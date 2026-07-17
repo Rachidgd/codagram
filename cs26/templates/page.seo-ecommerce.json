@@ -1,0 +1,221 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "SEO e-commerce",
+        "intro": "Faire de vos collections et fiches produit des portes d'entrée Google : du trafic qui achète, pas du trafic qui visite.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature": {
+      "type": "cs-bulles",
+      "blocks": {
+        "b1": {
+          "type": "pastille",
+          "settings": {
+            "texte": "Collections sans texte"
+          }
+        },
+        "b2": {
+          "type": "pastille",
+          "settings": {
+            "texte": "Fiches en doublon"
+          }
+        },
+        "b3": {
+          "type": "icone",
+          "settings": {
+            "icone": "horloge",
+            "label": "Pages lentes"
+          }
+        },
+        "b4": {
+          "type": "pastille",
+          "settings": {
+            "texte": "Filtres qui diluent"
+          }
+        },
+        "b5": {
+          "type": "icone",
+          "settings": {
+            "icone": "seo",
+            "label": "Maillage absent"
+          }
+        },
+        "b6": {
+          "type": "pastille",
+          "settings": {
+            "texte": "Avis non exploités"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "settings": {
+        "eyebrow": "Les chantiers typiques",
+        "titre": "Le SEO e-commerce a ses propres pièges.",
+        "texte": "Chacun de ces chantiers se diagnostique et se corrige. L'audit vous dit lesquels comptent pour votre boutique.",
+        "cta_label": "Diagnostiquer ma boutique",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Audit et priorités",
+            "texte": "Collections, fiches, technique : les gains classés par impact."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Architecture",
+            "texte": "Des collections qui répondent aux recherches, un maillage qui porte."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Contenus produits",
+            "texte": "Fiches uniques et convaincantes, données structurées propres."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Mesure",
+            "texte": "Positions, trafic et ventes organiques suivis chaque mois."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Comment on référence une boutique",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Cas SEO e-commerce",
+        "lien_hub": "/pages/resultats",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Par quoi commencer : collections ou fiches produit ?",
+            "reponse": "<p>Les collections dans la plupart des cas : elles captent les recherches à volume. Les fiches prennent le relais sur la longue traîne. L'audit tranche selon votre catalogue.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Le SEO peut-il rivaliser avec la publicité ?",
+            "reponse": "<p>Ils se complètent : la publicité produit tout de suite, le SEO construit un actif qui baisse votre coût d'acquisition dans la durée.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Gérez-vous les migrations sans perte SEO ?",
+            "reponse": "<p>Oui : cartographie des URL, redirections une par une, surveillance des positions après bascule. C'est le point le plus critique d'une refonte e-commerce.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions sur le SEO e-commerce",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Vos produits méritent d'être trouvés.",
+        "texte": "Un audit gratuit du SEO de votre boutique : collections, fiches, technique, et le plan par impact.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Le SEO e-commerce transforme vos collections et vos fiches produits en portes d'entrée sur Google, avec du trafic qui achète plutôt que du trafic qui visite. Nous commençons par les collections, qui captent les recherches à fort volume, puis les fiches prennent le relais sur la longue traîne. Chaque page reçoit un contenu unique, jamais dupliqué.</p><p>Sur Shopify, les pièges sont connus : collections sans texte, fiches en doublon, filtres qui diluent, pages lentes, avis non exploités. Nous les diagnostiquons, les corrigeons par ordre d'impact, et nous surveillons positions, trafic et ventes organiques chaque mois. Une refonte se gère sans perte de référencement, avec redirections une par une.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> une <a href=\"/pages/creation-site-ecommerce-shopify\">boutique Shopify optimisée</a>, le <a href=\"/pages/agence-seo\">référencement naturel</a> global de votre marque, et les <a href=\"/pages/expert-meta-ads\">Meta Ads</a> pour un mix acquisition équilibré.</p><p>Nos <a href=\"/pages/resultats\">cas clients</a> montrent des boutiques qui vendent grâce à Google.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Ventes organiques",
+        "titre": "Le SEO e-commerce pour vendre sans acheter de trafic",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature",
+    "process",
+    "projets",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

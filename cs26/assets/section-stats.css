@@ -1,0 +1,17 @@
+/* CS-26 · section-stats.css · Chiffres interactifs (§8.4) */
+
+.cs-stats__rangee {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-6) var(--sp-5);
+}
+@media (min-width: 900px) {
+  .cs-stats__rangee { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
+  .cs-stats__item:not(:first-child) {
+    border-left: 1px solid var(--c-line);
+    padding-left: var(--sp-6);
+  }
+}
+@media (max-width: 899px) {
+  .cs-stats__item .cs-stat__value { font-size: var(--fs-h1); }
+}

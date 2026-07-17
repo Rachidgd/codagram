@@ -1,0 +1,7 @@
+/* CS-26 · section-zones.css · Zones couvertes (§8.18) */
+
+.cs-zones__grille { display: grid; gap: var(--sp-6); align-items: center; }
+@media (min-width: 900px) { .cs-zones__grille { grid-template-columns: 1.1fr 1fr; gap: var(--sp-8); } }
+.cs-zones__contenu { display: grid; gap: var(--sp-5); justify-items: start; }
+.cs-zones__contenu .cs-section__tete { margin-bottom: 0; }
+.cs-zones__chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); }

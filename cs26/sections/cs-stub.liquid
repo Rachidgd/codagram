@@ -1,0 +1,187 @@
+{%- comment -%}
+  cs-stub.liquid · Stubs plateforme (§5.1) : product, collection,
+  list-collections, cart, search, customers/*. Minimaux, noindex (posé par
+  theme.liquid), jamais maillés depuis les menus. Fonctionnels sans style
+  dédié : uniquement les composants du socle.
+
+  Écart §5.1 documenté : les templates JSON de la plateforme doivent
+  référencer une section ; ce fichier unique les porte tous.
+{%- endcomment -%}
+<section id="{{ section.id }}" class="cs-section cs-stub">
+  <div class="cs-container" style="display: grid; gap: var(--sp-5); max-width: 720px;">
+
+    {%- case template.name -%}
+
+    {%- when 'product' -%}
+      <h1 class="cs-h1">{{ product.title | escape }}</h1>
+      <p class="cs-h3">{{ product.selected_or_first_available_variant.price | money }}</p>
+      <div class="cs-prose">{{ product.description }}</div>
+      {%- form 'product', product -%}
+        {%- unless product.has_only_default_variant -%}
+          <div class="cs-field cs-field--select">
+            <select class="cs-field__input" name="id">
+              {%- for variant in product.variants -%}
+                <option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %}>{{ variant.title | escape }}</option>
+              {%- endfor -%}
+            </select>
+          </div>
+        {%- else -%}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        {%- endunless -%}
+        <button type="submit" class="cs-btn cs-btn--primaire" {% unless product.available %}disabled{% endunless %}>
+          {% if product.available %}Ajouter au panier{% else %}Indisponible{% endif %}
+        </button>
+      {%- endform -%}
+
+    {%- when 'collection' -%}
+      <h1 class="cs-h1">{{ collection.title | escape }}</h1>
+      {%- paginate collection.products by 12 -%}
+        <ul role="list" style="display: grid; gap: var(--sp-3);">
+          {%- for product in collection.products -%}
+            <li><a class="cs-lien" href="{{ product.url }}">{{ product.title | escape }}</a></li>
+          {%- else -%}
+            <li>Aucun produit dans cette collection.</li>
+          {%- endfor -%}
+        </ul>
+        {%- if paginate.pages > 1 -%}
+          <nav aria-label="Pagination" style="display: flex; gap: var(--sp-4);">
+            {%- if paginate.previous %}<a class="cs-chip" href="{{ paginate.previous.url }}">Page précédente</a>{% endif -%}
+            {%- if paginate.next %}<a class="cs-chip" href="{{ paginate.next.url }}">Page suivante</a>{% endif -%}
+          </nav>
+        {%- endif -%}
+      {%- endpaginate -%}
+
+    {%- when 'list-collections' -%}
+      <h1 class="cs-h1">Collections</h1>
+      <ul role="list" style="display: grid; gap: var(--sp-3);">
+        {%- for collection in collections -%}
+          <li><a class="cs-lien" href="{{ collection.url }}">{{ collection.title | escape }}</a></li>
+        {%- endfor -%}
+      </ul>
+
+    {%- when 'cart' -%}
+      <h1 class="cs-h1">Panier</h1>
+      {%- if cart.item_count > 0 -%}
+        {%- form 'cart', cart -%}
+          <ul role="list" style="display: grid; gap: var(--sp-3);">
+            {%- for item in cart.items -%}
+              <li style="display: flex; justify-content: space-between; gap: var(--sp-4);">
+                <a class="cs-lien" href="{{ item.url }}">{{ item.product.title | escape }} × {{ item.quantity }}</a>
+                <span>{{ item.final_line_price | money }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+          <p class="cs-h3">Total : {{ cart.total_price | money }}</p>
+          <button type="submit" name="checkout" class="cs-btn cs-btn--primaire">Passer commande</button>
+        {%- endform -%}
+      {%- else -%}
+        <p>Votre panier est vide.</p>
+        <a class="cs-lien" href="{{ routes.root_url }}">Retour à l'accueil</a>
+      {%- endif -%}
+
+    {%- when 'search' -%}
+      <h1 class="cs-h1">Recherche</h1>
+      <form action="{{ routes.search_url }}" method="get" role="search" style="display: flex; gap: var(--sp-3);">
+        <div class="cs-field" style="flex: 1;">
+          <input class="cs-field__input" type="search" name="q" id="stub-recherche" placeholder=" " value="{{ search.terms | escape }}">
+          <label class="cs-field__label" for="stub-recherche">Votre recherche</label>
+        </div>
+        <button type="submit" class="cs-btn cs-btn--primaire">Chercher</button>
+      </form>
+      {%- if search.performed -%}
+        {%- paginate search.results by 12 -%}
+          <p>{{ search.results_count }} résultat(s) pour « {{ search.terms | escape }} »</p>
+          <ul role="list" style="display: grid; gap: var(--sp-3);">
+            {%- for item in search.results -%}
+              <li><a class="cs-lien" href="{{ item.url }}">{{ item.title | escape }}</a></li>
+            {%- endfor -%}
+          </ul>
+        {%- endpaginate -%}
+      {%- endif -%}
+
+    {%- when 'login' -%}
+      <h1 class="cs-h1">Connexion</h1>
+      {%- form 'customer_login' -%}
+        <div class="cs-field">
+          <input class="cs-field__input" type="email" name="customer[email]" id="stub-login-email" placeholder=" " autocomplete="email" required>
+          <label class="cs-field__label" for="stub-login-email">Email</label>
+        </div>
+        <div class="cs-field">
+          <input class="cs-field__input" type="password" name="customer[password]" id="stub-login-mdp" placeholder=" " autocomplete="current-password" required>
+          <label class="cs-field__label" for="stub-login-mdp">Mot de passe</label>
+        </div>
+        <button type="submit" class="cs-btn cs-btn--primaire">Se connecter</button>
+        <a class="cs-lien" href="#recover">Mot de passe oublié</a>
+      {%- endform -%}
+
+    {%- when 'register' -%}
+      <h1 class="cs-h1">Créer un compte</h1>
+      {%- form 'create_customer' -%}
+        <div class="cs-field">
+          <input class="cs-field__input" type="email" name="customer[email]" id="stub-reg-email" placeholder=" " autocomplete="email" required>
+          <label class="cs-field__label" for="stub-reg-email">Email</label>
+        </div>
+        <div class="cs-field">
+          <input class="cs-field__input" type="password" name="customer[password]" id="stub-reg-mdp" placeholder=" " autocomplete="new-password" required>
+          <label class="cs-field__label" for="stub-reg-mdp">Mot de passe</label>
+        </div>
+        <button type="submit" class="cs-btn cs-btn--primaire">Créer mon compte</button>
+      {%- endform -%}
+
+    {%- when 'account' -%}
+      <h1 class="cs-h1">Mon compte</h1>
+      <p>{{ customer.email }}</p>
+      <a class="cs-lien" href="{{ routes.account_logout_url }}">Se déconnecter</a>
+
+    {%- when 'order' -%}
+      <h1 class="cs-h1">Commande {{ order.name }}</h1>
+      <p>{{ order.created_at | date: '%d %B %Y' }} · {{ order.total_price | money }}</p>
+      <a class="cs-lien" href="{{ routes.account_url }}">Retour au compte</a>
+
+    {%- when 'addresses' -%}
+      <h1 class="cs-h1">Mes adresses</h1>
+      <a class="cs-lien" href="{{ routes.account_url }}">Retour au compte</a>
+
+    {%- when 'reset_password' -%}
+      <h1 class="cs-h1">Nouveau mot de passe</h1>
+      {%- form 'reset_customer_password' -%}
+        <div class="cs-field">
+          <input class="cs-field__input" type="password" name="customer[password]" id="stub-reset-mdp" placeholder=" " autocomplete="new-password" required>
+          <label class="cs-field__label" for="stub-reset-mdp">Nouveau mot de passe</label>
+        </div>
+        <div class="cs-field">
+          <input class="cs-field__input" type="password" name="customer[password_confirmation]" id="stub-reset-conf" placeholder=" " autocomplete="new-password" required>
+          <label class="cs-field__label" for="stub-reset-conf">Confirmation</label>
+        </div>
+        <button type="submit" class="cs-btn cs-btn--primaire">Enregistrer</button>
+      {%- endform -%}
+
+    {%- when 'activate_account' -%}
+      <h1 class="cs-h1">Activer mon compte</h1>
+      {%- form 'activate_customer_password' -%}
+        <div class="cs-field">
+          <input class="cs-field__input" type="password" name="customer[password]" id="stub-act-mdp" placeholder=" " autocomplete="new-password" required>
+          <label class="cs-field__label" for="stub-act-mdp">Mot de passe</label>
+        </div>
+        <div class="cs-field">
+          <input class="cs-field__input" type="password" name="customer[password_confirmation]" id="stub-act-conf" placeholder=" " autocomplete="new-password" required>
+          <label class="cs-field__label" for="stub-act-conf">Confirmation</label>
+        </div>
+        <button type="submit" class="cs-btn cs-btn--primaire">Activer</button>
+      {%- endform -%}
+
+    {%- else -%}
+      <h1 class="cs-h1">{{ page_title | escape }}</h1>
+      <a class="cs-lien" href="{{ routes.root_url }}">Retour à l'accueil</a>
+    {%- endcase -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CS · Stub plateforme",
+  "settings": [
+    { "type": "paragraph", "content": "Gabarit minimal pour les pages e-commerce de la plateforme (noindex, jamais maillées). Le site Clickscreation n'utilise pas ces pages." }
+  ]
+}
+{% endschema %}

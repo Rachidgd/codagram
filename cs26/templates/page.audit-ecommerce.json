@@ -1,0 +1,251 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Audit e-commerce gratuit",
+        "titre": "Ce que votre boutique laisse filer, chiffré",
+        "intro": "Fiches, tunnel d'achat, vitesse, acquisition : on repère les fuites qui vous coûtent des ventes et on les classe par impact sur le chiffre d'affaires.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "livrables": {
+      "type": "cs-stack",
+      "blocks": {
+        "e1": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Fiches produit",
+            "texte": "Structure, preuves, objections, photos : ce qui empêche vos visiteurs d'ajouter au panier."
+          }
+        },
+        "e2": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface-2",
+            "titre": "Tunnel d'achat",
+            "texte": "Panier, livraison, paiement : à quelle étape vos acheteurs abandonnent, et pourquoi."
+          }
+        },
+        "e3": {
+          "type": "carte",
+          "settings": {
+            "fond": "verre",
+            "titre": "Vitesse mobile",
+            "texte": "Le temps de chargement réel de votre boutique, et ce qui le plombe (souvent les apps)."
+          }
+        },
+        "e4": {
+          "type": "carte",
+          "settings": {
+            "fond": "surface",
+            "titre": "Acquisition",
+            "texte": "Vos sources de trafic, votre visibilité Google Shopping et vos angles publicitaires."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "settings": {
+        "eyebrow": "Dans votre audit",
+        "titre": "Les quatre fronts qu'on inspecte",
+        "numerotation": false,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous demandez",
+            "texte": "Votre boutique et votre activité. Deux minutes suffisent."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "On analyse",
+            "texte": "Un expert parcourt votre boutique comme un acheteur, puis comme un technicien."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Vous recevez",
+            "texte": "Votre audit sous 48 h : fuites chiffrées et corrections classées par impact sur les ventes."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "On en parle",
+            "texte": "Un échange pour prioriser et décider des premières actions."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "Comment ça marche",
+        "titre": "De la demande au plan de corrections",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "euro",
+            "titre": "Gratuit, sans carte",
+            "texte": "Aucun moyen de paiement demandé. Le diagnostic vous appartient, que vous confiiez ou non les corrections à notre équipe."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Sous 48 heures ouvrées",
+            "texte": "Un document que vous comprenez, pas un audit robot illisible bourré de scores techniques hors sol."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Trié par impact sur les ventes",
+            "texte": "Chaque fuite est chiffrée en chiffre d'affaires potentiel et classée par effort. Les corrections rentables passent en premier."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "En français, pas en jargon",
+            "texte": "Un spécialiste e-commerce vous explique chaque point, et vous dit franchement ce qui peut attendre."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Nos engagements",
+        "titre": "Un diagnostic sans mauvaise surprise",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une boutique perd des ventes à trois endroits : des fiches qui ne convainquent pas, un tunnel qui fait fuir, et une vitesse qui décourage. Notre audit passe ces trois fronts au crible, y ajoute votre acquisition, et transforme le tout en une liste d'actions classées par impact sur vos ventes.</p><p>Pas de jargon ni de rapport interminable : des constats concrets, chiffrés quand c'est possible, et un ordre de priorité clair. Vous repartez avec de quoi agir, seul ou avec nous.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Ensuite :</strong> la <a href=\"/pages/creation-site-ecommerce-shopify\">création ou refonte Shopify</a>, l'<a href=\"/pages/optimisation-cro\">optimisation CRO</a> et le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a>. Voyez nos <a href=\"/pages/resultats\">résultats clients</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Audit e-commerce",
+        "titre": "Un audit e-commerce qui parle chiffre d'affaires",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Sur quoi porte exactement l'audit ?",
+            "reponse": "<p>Fiches produit, tunnel d'achat, vitesse mobile et acquisition. On vise ce qui pèse sur vos ventes, pas les détails cosmétiques.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Faut-il me donner un accès Shopify ?",
+            "reponse": "<p>Pas pour l'audit : on travaille sur la partie visible et nos outils. Un accès en lecture n'est utile que si vous décidez d'agir avec nous.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Et si ma boutique n'est pas sur Shopify ?",
+            "reponse": "<p>On audite quand même : les principes de conversion sont les mêmes. On vous dira aussi si une migration a du sens.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions sur l'audit",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Voyons ce que votre boutique laisse filer.",
+        "texte": "Votre audit e-commerce offert, chiffré et priorisé, livré sous 48 h ouvrées. Sans engagement.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "livrables",
+    "process",
+    "garantie",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

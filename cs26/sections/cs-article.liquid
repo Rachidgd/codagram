@@ -1,0 +1,85 @@
+{%- comment -%}
+  cs-article.liquid · Rendu d'article (§8.18, §9.7) : barre de progression
+  de lecture (2 px braise), sommaire sticky desktop (H2 auto), prose 62ch,
+  schema Article. Le lien vers la page mère du silo vit dans le corps
+  (règle §10.4, responsabilité éditoriale).
+{%- endcomment -%}
+{{ 'section-article.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.progression -%}
+  <div class="cs-article__progression" aria-hidden="true">
+    <span class="cs-article__progression-barre" data-cs="progression"></span>
+  </div>
+{%- endif -%}
+
+<article id="{{ section.id }}" class="cs-article">
+  <header class="cs-article__tete">
+    <div class="cs-container cs-article__tete-interieur">
+      {% render 'breadcrumb' %}
+      {%- if article.tags.first -%}
+        <span class="cs-chip">{{ article.tags.first | escape }}</span>
+      {%- endif -%}
+      <h1 class="cs-h1">{{ article.title | escape }}</h1>
+      <p class="cs-meta">
+        {{ article.author | escape }} ·
+        <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%d %B %Y' }}</time>
+        {%- assign mots = article.content | strip_html | split: ' ' %} ·
+        {{ mots.size | divided_by: 200 | at_least: 1 }} min de lecture
+      </p>
+    </div>
+  </header>
+
+  {%- if article.image -%}
+    <div class="cs-container cs-article__cover" data-shape="soft">
+      {% render 'image', img: article.image, sizes: '(min-width: 900px) 60vw, 100vw', ratio: '2/1', priorite: true, alt: article.title %}
+    </div>
+  {%- endif -%}
+
+  <div class="cs-container cs-article__grille">
+    {%- if section.settings.sommaire -%}
+      <nav class="cs-article__sommaire" aria-label="Sommaire" data-cs-sommaire hidden>
+        <p class="cs-eyebrow">Sommaire</p>
+        <ol data-cs-sommaire-liste role="list"></ol>
+      </nav>
+    {%- endif -%}
+    <div class="cs-prose cs-article__corps" data-cs="article-corps">
+      {{ article.content }}
+    </div>
+  </div>
+</article>
+
+{% render 'schema-article' %}
+
+{%- if section.settings.sommaire -%}
+<script>
+  /* Sommaire auto : liste des H2 du corps (desktop, sticky). */
+  (function () {
+    var corps = document.querySelector('#{{ section.id }} [data-cs="article-corps"]');
+    var nav = document.querySelector('#{{ section.id }} [data-cs-sommaire]');
+    if (!corps || !nav) return;
+    var titres = corps.querySelectorAll('h2');
+    if (titres.length < 2) return;
+    var liste = nav.querySelector('[data-cs-sommaire-liste]');
+    titres.forEach(function (h2, i) {
+      if (!h2.id) h2.id = 'section-' + (i + 1);
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h2.id;
+      a.textContent = h2.textContent;
+      li.appendChild(a);
+      liste.appendChild(li);
+    });
+    nav.hidden = false;
+  })();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CS · Article",
+  "settings": [
+    { "type": "checkbox", "id": "progression", "label": "Barre de progression de lecture", "default": true },
+    { "type": "checkbox", "id": "sommaire", "label": "Sommaire sticky (desktop)", "default": true }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+/* CS-26 · section-contact.css · Formulaire pleine page + NAP (§8.18) */
+
+.cs-contact__grille { display: grid; gap: var(--sp-6); align-items: start; }
+@media (min-width: 900px) {
+  .cs-contact__grille { grid-template-columns: 1.2fr 1fr; gap: var(--sp-8); }
+}
+.cs-contact__form { padding: var(--sp-5); }
+@media (min-width: 640px) { .cs-contact__form { padding: var(--sp-7); } }
+.cs-contact__form-interieur { display: grid; gap: var(--sp-4); }
+.cs-contact__champs { display: grid; gap: var(--sp-4); }
+
+.cs-contact__infos { display: grid; gap: var(--sp-5); align-content: start; justify-items: start; }
+.cs-contact__promesse {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  color: var(--c-text);
+  font-weight: 500;
+  max-width: none;
+}
+.cs-contact__promesse .cs-icone { color: var(--c-accent); }
+.cs-contact__nap { display: grid; gap: var(--sp-3); }
+.cs-contact__nap a, .cs-contact__nap span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  color: var(--c-text-2);
+  text-decoration: none;
+  min-height: 44px;
+}
+.cs-contact__nap a:hover { color: var(--c-text); }
+.cs-contact__nap .cs-icone { color: var(--c-accent); }
+.cs-contact__carte { width: 100%; }

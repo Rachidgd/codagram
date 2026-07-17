@@ -1,0 +1,22 @@
+{%- comment -%}
+  schema-article.liquid · JSON-LD Article (§10.2). Rendu par cs-article.
+{%- endcomment -%}
+{%- if article -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ article.title | json }},
+  "description": {{ article.excerpt_or_content | strip_html | truncate: 155 | json }},
+  {%- if article.image %}
+  "image": {{ article.image | image_url: width: 1200 | prepend: 'https:' | json }},
+  {%- endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
+  "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
+  "author": { "@type": "Person", "name": {{ article.author | json }} },
+  "publisher": { "@id": "{{ shop.url }}#organisation" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ canonical_url | json }} },
+  "inLanguage": "fr-FR"
+}
+</script>
+{%- endif -%}

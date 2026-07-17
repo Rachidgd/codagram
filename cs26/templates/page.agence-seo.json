@@ -1,0 +1,442 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Référencement SEO",
+        "intro": "Une visibilité durable sur les requêtes qui rapportent. Des résultats datés, mesurés dans un reporting que vous comprenez.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature_media": {
+      "type": "cs-media-texte",
+      "settings": {
+        "shape": "diag-1",
+        "halo": true,
+        "image_position": "droite",
+        "ordre_mobile": "image",
+        "image_alt": "Courbe de progression Search Console d'un client, données sensibles floutées",
+        "eyebrow": "La preuve, pas la promesse",
+        "titre": "Des courbes réelles, pas des captures de vente.",
+        "corps": "<p>Chaque client accède à son tableau de bord : positions, clics, conversions. Les captures présentées ici viennent de comptes réels, anonymisées côté données sensibles.</p>",
+        "lien_label": "Voir les cas SEO",
+        "lien": "/pages/resultats",
+        "bg_style": "base",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Audit et requêtes",
+            "texte": "On identifie les requêtes qui amènent des clients, pas seulement du trafic."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Socle technique",
+            "texte": "Vitesse, structure, indexation : le site devient lisible pour Google."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Contenus",
+            "texte": "Une page par intention de recherche, écrite pour convaincre humains et moteurs."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Autorité",
+            "texte": "Maillage interne et liens entrants qui pèsent, gagnés proprement."
+          }
+        },
+        "etape_5": {
+          "type": "etape",
+          "settings": {
+            "titre": "Mesure",
+            "texte": "Positions, trafic, conversions : un reporting mensuel daté et commenté."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4",
+        "etape_5"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Comment on construit votre visibilité",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Cas SEO",
+        "lien_hub": "/pages/resultats",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "En combien de temps le SEO produit-il des effets ?",
+            "reponse": "<p>Plusieurs mois, selon la concurrence de votre marché et l'état de départ de votre site. On pose un calendrier réaliste dès l'audit, avec des jalons mesurés : vous voyez la progression avant les premières places.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Garantissez-vous la première position ?",
+            "reponse": "<p>Non, et personne ne le peut sérieusement : Google décide seul. Ce qu'on garantit : une méthode éprouvée, des actions documentées chaque mois, et l'arrêt du budget si les données montrent que ça ne prend pas.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Que contient le reporting mensuel ?",
+            "reponse": "<p>Vos positions sur les requêtes cibles, le trafic organique, les conversions attribuées, et la liste datée des actions menées. Un chiffre sans contexte n'y a pas sa place.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Faut-il produire du contenu tous les mois ?",
+            "reponse": "<p>Pas mécaniquement. On produit quand une intention de recherche le justifie, on améliore l'existant quand c'est plus rentable. Le volume suit la stratégie, jamais l'inverse.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Le SEO est-il rentable pour une petite structure ?",
+            "reponse": "<p>Souvent oui : contrairement à la publicité, le trafic gagné ne s'arrête pas quand le budget s'arrête. On chiffre votre potentiel dans l'audit, avant tout engagement, pour que la décision repose sur des données.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "titre": "Vos questions sur le SEO",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Prenez les positions qui vous rapportent des clients.",
+        "texte": "On part de vos données pour cibler les requêtes qui convertissent, puis on construit votre visibilité mois après mois. Ça commence par un audit gratuit.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une agence SEO fait venir sur votre site les personnes qui cherchent déjà ce que vous vendez, puis les transforme en demandes. Chez Clickscreation, le référencement naturel commence par un audit : nous regardons vos positions actuelles, celles de vos concurrents et les requêtes qui rapportent vraiment, avant d'écrire la moindre ligne.</p><p>Ensuite, trois leviers avancent ensemble. Le socle technique rend votre site lisible pour Google. Les contenus répondent à une intention de recherche par page, écrite pour convaincre autant que pour se positionner. Le maillage et les liens gagnés installent votre autorité. Chaque mois, un rapport daté montre vos positions, votre trafic et les demandes générées.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> le <a href=\"/pages/seo-local\">SEO local</a> pour capter les recherches près de chez vous, le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> pour vos collections et fiches produits, ou une <a href=\"/pages/creation-site-vitrine\">création de site</a> pensée pour le référencement dès le départ.</p><p>Nous intervenons à <a href=\"/pages/consultant-seo-paris\">Paris</a>, <a href=\"/pages/consultant-seo-lyon\">Lyon</a>, <a href=\"/pages/consultant-seo-marseille\">Marseille</a> et <a href=\"/pages/consultant-seo-france\">partout en France</a>. Découvrez nos <a href=\"/pages/resultats\">résultats clients</a> ou demandez votre <a href=\"/pages/audit-seo\">audit SEO gratuit</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Référencement naturel",
+        "titre": "Une agence SEO qui vise les demandes, pas les positions",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "prestations": {
+      "type": "cs-services",
+      "blocks": {
+        "s1": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/audit-seo",
+            "icone": "seo",
+            "titre": "Audit SEO gratuit",
+            "texte": "Vos positions, celles des concurrents, et le plan chiffré. Livré sous 48 h.",
+            "phare": true
+          }
+        },
+        "s2": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/seo-local",
+            "icone": "pin",
+            "titre": "SEO local",
+            "texte": "Sortir dans le pack local et sur « métier + ville », là où l'intention d'achat est forte.",
+            "phare": false
+          }
+        },
+        "s3": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/seo-ecommerce",
+            "icone": "euro",
+            "titre": "SEO e-commerce",
+            "texte": "Collections et fiches produits structurées pour ranker et vendre.",
+            "phare": false
+          }
+        },
+        "s4": {
+          "type": "service",
+          "settings": {
+            "page": "/pages/consultant-seo-france",
+            "icone": "cible",
+            "titre": "Consultant SEO France",
+            "texte": "Un interlocuteur unique, une stratégie sur mesure, partout en France.",
+            "phare": false
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "eyebrow": "Nos prestations",
+        "titre": "Le SEO qui vous ressemble",
+        "intro": "Local, e-commerce, national : on cible d'abord les requêtes qui amènent des clients, pas seulement du trafic.",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "comparatif": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Méthode",
+            "nous": "Audit, technique, contenu, liens",
+            "alt_1": "Recette générique",
+            "alt_2": "Selon le profil",
+            "alt_3": "Aucune"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Liens entrants",
+            "nous": "Gagnés proprement",
+            "alt_1": "Achetés en masse, risqué",
+            "alt_2": "Variable",
+            "alt_3": "Aucun"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Reporting",
+            "nous": "Mensuel, daté, commenté",
+            "alt_1": "Chiffres hors contexte",
+            "alt_2": "Rare",
+            "alt_3": "Aucun"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Engagement",
+            "nous": "Sans piège, arrêt possible",
+            "alt_1": "Contrat long imposé",
+            "alt_2": "Variable",
+            "alt_3": "Aucun"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Objectif visé",
+            "nous": "Des demandes, pas du vent",
+            "alt_1": "Trafic vanity",
+            "alt_2": "Variable",
+            "alt_3": "Rester invisible"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Le bon choix",
+        "titre": "Un vrai SEO, ou des positions pour la galerie ?",
+        "intro": "",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Agence low-cost",
+        "col_3_titre": "Freelance seul",
+        "col_4_titre": "Ne rien faire",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "garantie": {
+      "type": "cs-garantie",
+      "blocks": {
+        "g1": {
+          "type": "engagement",
+          "settings": {
+            "icone": "cible",
+            "titre": "Transparence totale",
+            "texte": "Accès direct à votre reporting : positions, trafic, conversions, actions datées. Rien d'opaque."
+          }
+        },
+        "g2": {
+          "type": "engagement",
+          "settings": {
+            "icone": "bouclier",
+            "titre": "Sans engagement piège",
+            "texte": "Pas de contrat qui vous enferme. Si les données montrent que ça ne prend pas, on arrête."
+          }
+        },
+        "g3": {
+          "type": "engagement",
+          "settings": {
+            "icone": "maintenance",
+            "titre": "Vous gardez tout",
+            "texte": "Contenus, optimisations et accès restent à votre nom. Vous ne perdez rien en partant."
+          }
+        },
+        "g4": {
+          "type": "engagement",
+          "settings": {
+            "icone": "eclair",
+            "titre": "Mesuré, pas promis",
+            "texte": "On vise les demandes générées, pas les positions pour la galerie. Chiffré chaque mois."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "Zéro risque",
+        "titre": "Nos engagements",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "resultats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "236",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "d'impressions",
+            "contexte": "Maison Ayla · avril → juin 2026",
+            "source_interne": "Search Console"
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "350",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "de clics",
+            "contexte": "Maison Ayla · avril → juin 2026",
+            "source_interne": "Search Console"
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "169",
+            "prefixe": "+",
+            "suffixe": " %",
+            "label": "d'impressions / mois",
+            "contexte": "Noza & Co · mai → juin 2026",
+            "source_interne": "Search Console"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "eyebrow": "Résultats",
+        "titre": "Ce que le SEO a produit, chiffré et daté",
+        "intro": "Des trajectoires réelles relevées sur des projets accompagnés en SEO (source : Search Console). Chaque secteur et chaque niveau de concurrence diffèrent : ces chiffres illustrent un travail, ils ne valent pas garantie de résultat.",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "prestations",
+    "signature_media",
+    "resultats",
+    "process",
+    "comparatif",
+    "garantie",
+    "projets",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}

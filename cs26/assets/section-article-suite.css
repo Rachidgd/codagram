@@ -1,0 +1,36 @@
+/* CS-26 · section-article-suite.css · Auteur + à lire ensuite + CTA (§8.18) */
+
+.cs-article-suite__interieur { display: grid; gap: var(--sp-7); max-width: 980px; }
+
+.cs-article-suite__auteur {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  padding: var(--sp-5);
+}
+.cs-article-suite__photo { width: 72px; height: 72px; flex: 0 0 auto; }
+.cs-article-suite__auteur-textes { display: grid; gap: var(--sp-1); justify-items: start; }
+.cs-article-suite__auteur-nom { font-family: var(--font-display); font-weight: 700; color: var(--c-text); }
+.cs-article-suite__auteur-bio { color: var(--c-text-2); font-size: var(--fs-small); }
+
+.cs-article-suite__lire { display: grid; gap: var(--sp-5); }
+.cs-article-suite__grille { display: grid; gap: var(--sp-4); }
+@media (min-width: 900px) { .cs-article-suite__grille { grid-template-columns: repeat(3, 1fr); } }
+.cs-article-suite__carte {
+  display: grid;
+  gap: var(--sp-3);
+  align-content: start;
+  justify-items: start;
+  text-decoration: none;
+}
+.cs-article-suite__carte .cs-chip { min-height: 28px; font-size: .8125rem; color: var(--c-accent); }
+
+.cs-article-suite__cta {
+  display: grid;
+  gap: var(--sp-4);
+  justify-items: center;
+  text-align: center;
+  padding: var(--sp-6);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-xl);
+}

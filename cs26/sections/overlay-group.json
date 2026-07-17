@@ -1,0 +1,72 @@
+{
+  "type": "aside",
+  "name": "Groupe superpositions",
+  "sections": {
+    "popup": {
+      "type": "cs-popup-lead",
+      "blocks": {
+        "obj_1": {
+          "type": "objectif",
+          "settings": {
+            "label": "Être trouvé sur Google"
+          }
+        },
+        "obj_2": {
+          "type": "objectif",
+          "settings": {
+            "label": "Créer ou refondre mon site"
+          }
+        },
+        "obj_3": {
+          "type": "objectif",
+          "settings": {
+            "label": "Booster mes ventes avec la pub"
+          }
+        },
+        "obj_4": {
+          "type": "objectif",
+          "settings": {
+            "label": "Convertir plus de visiteurs"
+          }
+        },
+        "obj_5": {
+          "type": "objectif",
+          "settings": {
+            "label": "J'ai déjà un projet précis (devis)",
+            "devis": true
+          }
+        },
+        "obj_6": {
+          "type": "objectif",
+          "settings": {
+            "label": "Autre"
+          }
+        }
+      },
+      "block_order": [
+        "obj_1",
+        "obj_2",
+        "obj_3",
+        "obj_4",
+        "obj_5",
+        "obj_6"
+      ],
+      "settings": {
+        "succes_texte": "Votre demande est bien arrivée. Voici la suite :",
+        "succes_etape_1": "Un membre de l'équipe analyse votre site.",
+        "succes_etape_2": "Vous recevez l'audit sous 48 h ouvrées.",
+        "succes_lien_label": "Nos résultats en attendant",
+        "sticky_label": "Audit gratuit",
+        "succes_lien_url": "/pages/resultats"
+      }
+    },
+    "consent": {
+      "type": "cs-consent",
+      "settings": {}
+    }
+  },
+  "order": [
+    "popup",
+    "consent"
+  ]
+}

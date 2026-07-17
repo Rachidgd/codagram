@@ -1,0 +1,221 @@
+/* CS-26 · section-popup.css · Popup lead 3 étapes (§11.1) + sticky CTA (§8.17) */
+
+.cs-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(4, 6, 10, .6);
+}
+html.js .cs-popup-overlay { opacity: 0; pointer-events: none; transition: opacity var(--d-2) var(--e-inout); }
+html.js .cs-popup-overlay.is-ouvert { opacity: 1; pointer-events: auto; }
+
+.cs-popup {
+  position: fixed;
+  z-index: 160;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-line);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  box-shadow: var(--sh-2), var(--sh-accent);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .cs-popup { background: var(--c-surface); }
+}
+
+/* Mobile : bottom sheet plein écran à poignée */
+.cs-popup {
+  left: 0; right: 0; bottom: 0;
+  max-height: 92svh;
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  padding: var(--sp-5) var(--sp-5) calc(var(--sp-6) + env(safe-area-inset-bottom));
+}
+html.js .cs-popup { transform: translateY(100%); pointer-events: none; transition: transform var(--d-2) var(--e-inout); }
+html.js .cs-popup.is-ouvert { transform: translateY(0); pointer-events: auto; }
+.cs-popup__poignee {
+  width: 48px; height: 4px;
+  border-radius: var(--r-pill);
+  background: var(--c-line);
+  margin: 0 auto var(--sp-4);
+}
+
+/* Desktop : modale centrée 560 px */
+@media (min-width: 640px) {
+  .cs-popup {
+    left: 50%; top: 50%; right: auto; bottom: auto;
+    width: min(560px, calc(100vw - 40px));
+    max-height: min(86vh, 720px);
+    border-radius: var(--r-xl);
+    padding: var(--sp-7);
+  }
+  html.js .cs-popup { transform: translate(-50%, -50%) scale(.96); opacity: 0; transition: transform var(--d-2) var(--e-inout), opacity var(--d-2) var(--e-inout); }
+  html.js .cs-popup.is-ouvert { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  .cs-popup__poignee { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .cs-popup, html.js .cs-popup-overlay { transition: none; }
+}
+
+.cs-popup__fermer {
+  position: absolute;
+  top: var(--sp-3); right: var(--sp-3);
+  width: 44px; height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--c-text-2);
+  z-index: 2;
+}
+.cs-popup__fermer:hover { color: var(--c-text); }
+
+.cs-popup__progression {
+  height: 4px;
+  border-radius: var(--r-pill);
+  background: var(--c-line);
+  overflow: hidden;
+  margin-bottom: var(--sp-2);
+}
+.cs-popup__progression-barre {
+  display: block;
+  height: 100%;
+  width: 33.33%;
+  background: var(--g-braise);
+  border-radius: var(--r-pill);
+  transition: width var(--d-2) var(--e-out);
+}
+.cs-popup__etape-label { margin-bottom: var(--sp-4); }
+
+.cs-popup__piste { display: grid; }
+.cs-popup__etape {
+  grid-area: 1 / 1;
+  display: grid;
+  gap: var(--sp-4);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(24px);
+}
+html.js .cs-popup__etape { transition: opacity var(--d-2) var(--e-inout), transform var(--d-2) var(--e-inout), visibility 0s var(--d-2); }
+.cs-popup__etape.is-active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity var(--d-2) var(--e-inout), transform var(--d-2) var(--e-inout);
+}
+.cs-popup__etape.is-avant { transform: translateX(-24px); }
+html:not(.js) .cs-popup__etape { visibility: visible; opacity: 1; transform: none; }
+
+.cs-popup__etape legend { margin-bottom: var(--sp-2); float: left; width: 100%; }
+.cs-popup__objectifs { display: grid; gap: var(--sp-2); clear: both; }
+.cs-popup__sans-site, .cs-popup__rgpd {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  font-size: var(--fs-small);
+  color: var(--c-text-2);
+  cursor: pointer;
+  min-height: 44px;
+}
+.cs-popup__sans-site input, .cs-popup__rgpd input {
+  width: 18px; height: 18px;
+  margin-top: 2px;
+  accent-color: var(--c-accent);
+  flex: 0 0 auto;
+}
+.cs-popup__rgpd a { color: var(--c-text); }
+
+.cs-field--select .cs-field__input { padding-top: var(--sp-5); }
+.cs-field__label--haut { top: 14px; font-size: .75rem; transform: none; }
+
+.cs-popup__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-2);
+}
+.cs-popup__nav .cs-bouton-groupe { flex: 1; }
+.cs-popup__nav [data-cs-envoyer] { width: 100%; }
+.cs-popup__passer {
+  color: var(--c-text-3);
+  font-size: var(--fs-small);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  min-height: 44px;
+}
+.cs-popup__passer:hover { color: var(--c-text); }
+
+.cs-popup__hp { position: absolute; left: -9999px; top: -9999px; }
+.cs-popup__erreur-serveur {
+  color: var(--c-err);
+  font-size: var(--fs-small);
+  margin-bottom: var(--sp-3);
+  max-width: none;
+}
+
+/* Écran de succès */
+.cs-popup__succes { display: grid; gap: var(--sp-4); justify-items: start; }
+.cs-popup__coche {
+  width: 64px; height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-pill);
+  background: var(--g-braise);
+  color: var(--c-accent-ink);
+}
+html.js .cs-popup__coche { animation: cs-coche var(--d-2) var(--e-spring) both; }
+@keyframes cs-coche {
+  from { transform: scale(.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { html.js .cs-popup__coche { animation: none; } }
+.cs-popup__suite { display: grid; gap: var(--sp-2); counter-reset: suite; }
+.cs-popup__suite li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  color: var(--c-text-2);
+  counter-increment: suite;
+}
+.cs-popup__suite li::before {
+  content: counter(suite);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--c-accent);
+}
+
+/* Barre sticky mobile §8.17 */
+.cs-sticky-cta {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 120;
+  display: none;
+  gap: var(--sp-3);
+  align-items: center;
+  height: calc(64px + env(safe-area-inset-bottom));
+  padding: var(--sp-2) var(--sp-4) calc(var(--sp-2) + env(safe-area-inset-bottom));
+  background: var(--glass-bg);
+  border-top: 1px solid var(--glass-line);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+}
+@supports not (backdrop-filter: blur(1px)) { .cs-sticky-cta { background: var(--c-surface); } }
+@media (max-width: 899px) {
+  html.js .cs-sticky-cta { display: flex; transform: translateY(100%); transition: transform var(--d-2) var(--e-inout); }
+  html.js .cs-sticky-cta.is-visible { transform: translateY(0); }
+}
+.cs-sticky-cta__bouton { flex: 1 1 70%; min-height: 48px; }
+.cs-sticky-cta__tel {
+  flex: 0 0 auto;
+  width: 48px; height: 48px;
+  display: grid;
+  place-items: center;
+  color: var(--c-text);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-pill);
+}
+
+/* Le focus d'un champ ne doit jamais être recouvert par la barre */
+input, select, textarea { scroll-margin-bottom: 96px; }

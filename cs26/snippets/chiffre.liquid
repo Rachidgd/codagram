@@ -1,0 +1,19 @@
+{%- comment -%}
+  chiffre.liquid · Chiffre clé atomique (§8.4, mécanique compteur §4.7).
+  La valeur finale est DANS le HTML : sans JS ou pour les bots, le chiffre est là.
+  Params :
+    valeur   : nombre (texte, ex. '243') · rien n'est rendu si vide (§0.2)
+    prefixe  : ex. '+' · suffixe : ex. ' %'
+    label    : ≤ 30 caractères · contexte : ≤ 60 caractères
+{%- endcomment -%}
+{%- if valeur != blank and label != blank -%}
+  <div class="cs-stat">
+    <span class="cs-stat__value" data-count-to="{{ valeur | escape }}"
+      {% if prefixe != blank %}data-prefix="{{ prefixe | escape }}"{% endif %}
+      {% if suffixe != blank %}data-suffix="{{ suffixe | escape }}"{% endif %}>{{ prefixe }}{{ valeur }}{{ suffixe }}</span>
+    <span class="cs-stat__label">{{ label | escape }}</span>
+    {%- if contexte != blank -%}
+      <span class="cs-stat__contexte">{{ contexte | escape }}</span>
+    {%- endif -%}
+  </div>
+{%- endif -%}

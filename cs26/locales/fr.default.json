@@ -1,0 +1,32 @@
+{
+  "general": {
+    "skip": "Aller au contenu",
+    "accueil": "Accueil",
+    "fermer": "Fermer",
+    "ouvrir_menu": "Ouvrir le menu",
+    "fermer_menu": "Fermer le menu",
+    "precedent": "Précédent",
+    "suivant": "Suivant",
+    "rechercher": "Rechercher",
+    "page_introuvable": "Page introuvable"
+  },
+  "a11y": {
+    "fil_ariane": "Fil d'Ariane",
+    "note_sur_5": "Note : {{ note }} sur 5",
+    "etape_sur": "Étape {{ etape }} sur 3",
+    "changer_theme": "Changer de thème (sombre ou clair)",
+    "pause_defilement": "Suspendre le défilement"
+  },
+  "erreurs": {
+    "email": "Cet email semble incomplet.",
+    "prenom": "Il nous faut au moins votre prénom.",
+    "requis": "Ce champ est nécessaire pour vous répondre.",
+    "rgpd": "Votre accord est nécessaire pour vous envoyer l'audit.",
+    "generique": "Un détail bloque l'envoi. Vérifiez les champs signalés."
+  },
+  "formulaire": {
+    "succes_titre": "C'est parti, {{ prenom }}.",
+    "succes_texte": "Votre demande est bien arrivée. Un membre de l'équipe analyse votre site et vous répond sous 48 h ouvrées.",
+    "passer_etape": "Passer cette étape"
+  }
+}

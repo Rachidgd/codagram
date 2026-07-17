@@ -1,0 +1,28 @@
+{%- comment -%}
+  avis-carte.liquid · Carte d'avis atomique (§8.8), une seule implémentation.
+  Params :
+    auteur, ville, texte (≤ 220), note (1-5), source ('google'|'trustpilot'|'autre'), cachee (bool aria-hidden)
+{%- endcomment -%}
+{%- if texte != blank -%}
+  {%- assign note_int = note | default: 5 | round -%}
+  <figure class="cs-avis-carte cs-glass"{% if cachee %} aria-hidden="true"{% endif %}>
+    <div class="cs-etoiles" role="img" aria-label="Note : {{ note_int }} sur 5">
+      {%- for i in (1..5) -%}
+        <svg viewBox="0 0 24 24" fill="{% if i <= note_int %}currentColor{% else %}none{% endif %}" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.3 1.1 6-5.4-2.9-5.4 2.9 1.1-6L3.2 9.4l6.1-.8z"/></svg>
+      {%- endfor -%}
+    </div>
+    <blockquote class="cs-avis-carte__texte">{{ texte | strip_html | truncate: 220 }}</blockquote>
+    <figcaption class="cs-avis-carte__pied">
+      <span class="cs-avis-carte__auteur">{{ auteur | escape }}{% if ville != blank %} · {{ ville | escape }}{% endif %}</span>
+      {%- if settings.avis_afficher_source and source != blank and source != 'autre' -%}
+        <span class="cs-avis-carte__source">
+          {%- if source == 'google' -%}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4h4"/></svg> Google
+          {%- else -%}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.3 1.1 6-5.4-2.9-5.4 2.9 1.1-6L3.2 9.4l6.1-.8z"/></svg> Trustpilot
+          {%- endif -%}
+        </span>
+      {%- endif -%}
+    </figcaption>
+  </figure>
+{%- endif -%}

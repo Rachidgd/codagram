@@ -1,0 +1,170 @@
+{%- comment -%}
+  cs-projets.liquid · Grille de réalisations + filtres (§8.13).
+  Source : metaobjects `projet` (tous) ou sélection manuelle.
+  Chaque carte lie vers la page du metaobject. Filtres accessibles
+  (boutons aria-pressed), état « aucun résultat » écrit.
+{%- endcomment -%}
+{%- liquid
+  assign entrees = shop.metaobjects['projet'].values
+
+  assign courant_id = ''
+  if template.name == 'metaobject'
+    assign courant_id = metaobject.system.id
+  endif
+
+  assign nb = 0
+  for p in entrees
+    if p.titre.value != blank and p.system.id != courant_id
+      assign nb = nb | plus: 1
+    endif
+  endfor
+-%}
+{%- if nb > 0 -%}
+{{ 'section-projets.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign anim = section.settings.animation
+  if anim == 'auto'
+    assign anim = 'up'
+  endif
+-%}
+<section id="{{ section.id }}"
+  class="cs-section cs-projets{% if section.settings.bg_style == 'alt' %} cs-section--alt{% elsif section.settings.bg_style == 'halo' %} cs-section--halo{% endif %}"
+  style="--pt: {{ section.settings.padding_haut }}px; --pb: {{ section.settings.padding_bas }}px;">
+  <div class="cs-container">
+    {%- if section.settings.titre != blank -%}
+      <header class="cs-section__tete" {% unless anim == 'none' %}data-reveal="{{ anim }}"{% endunless %}>
+        {% render 'eyebrow', texte: section.settings.eyebrow %}
+        <h2 class="cs-h2">{{ section.settings.titre | escape }}</h2>
+        {%- if section.settings.intro != blank -%}
+          <p>{{ section.settings.intro | escape }}</p>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    {%- if section.settings.filtres -%}
+      {%- liquid
+        assign tous_services = ''
+        assign toutes_villes = ''
+        for p in entrees
+          if p.titre.value == blank or p.system.id == courant_id
+            continue
+          endif
+          for s in p.services.value
+            assign cle = s | handleize
+            unless tous_services contains cle
+              assign tous_services = tous_services | append: cle | append: '§' | append: s | append: ','
+            endunless
+          endfor
+          if p.ville.value != blank
+            assign cle = p.ville.value | handleize
+            unless toutes_villes contains cle
+              assign toutes_villes = toutes_villes | append: cle | append: '§' | append: p.ville.value | append: ','
+            endunless
+          endif
+        endfor
+      -%}
+      <div class="cs-projets__filtres" data-cs="filtres" data-cible="grille-{{ section.id }}" role="group" aria-label="Filtrer les réalisations">
+        <button type="button" class="cs-chip" data-filtre="*" aria-pressed="true">Tous</button>
+        {%- assign paires = tous_services | split: ',' -%}
+        {%- for paire in paires -%}
+          {%- assign parts = paire | split: '§' -%}
+          {%- if parts[0] != blank -%}
+            <button type="button" class="cs-chip" data-filtre="{{ parts[0] }}" aria-pressed="false">{{ parts[1] }}</button>
+          {%- endif -%}
+        {%- endfor -%}
+        {%- assign paires = toutes_villes | split: ',' -%}
+        {%- for paire in paires -%}
+          {%- assign parts = paire | split: '§' -%}
+          {%- if parts[0] != blank -%}
+            <button type="button" class="cs-chip" data-filtre="{{ parts[0] }}" aria-pressed="false">{{ parts[1] }}</button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <div class="cs-projets__grille" id="grille-{{ section.id }}" data-reveal-group>
+      {%- assign rendu = 0 -%}
+      {%- for p in entrees -%}
+        {%- if p.titre.value == blank or p.system.id == courant_id %}{% continue %}{% endif -%}
+        {%- if rendu >= section.settings.nombre %}{% break %}{% endif -%}
+        {%- assign rendu = rendu | plus: 1 -%}
+        {%- liquid
+          assign tags = ''
+          for s in p.services.value
+            assign tags = tags | append: s | handleize | append: ' '
+          endfor
+          if p.ville.value != blank
+            assign tags = tags | append: p.ville.value | handleize
+          endif
+          assign shape_carte = 'diag-1'
+          assign pair = rendu | modulo: 2
+          if pair == 0
+            assign shape_carte = 'diag-2'
+          endif
+        -%}
+        <article class="cs-projets__carte" data-tags="{{ tags | strip }}" {% unless anim == 'none' %}data-reveal="{{ anim }}"{% endunless %}>
+          <a href="{{ p.system.url }}" class="cs-projets__lien">
+            {%- if p.cover.value -%}
+              <div class="cs-projets__cover" data-shape="{{ shape_carte }}">
+                {% render 'image', img: p.cover.value, sizes: '(min-width: 900px) 46vw, 92vw', ratio: '3/2', alt: p.titre.value %}
+              </div>
+            {%- endif -%}
+            <div class="cs-projets__infos">
+              {%- if p.logo_client.value and p.autorisation_logo.value -%}
+                <img class="cs-projets__logo" src="{{ p.logo_client.value | image_url: width: 96 }}" width="48" height="48" alt="{{ p.client.value | escape }}" loading="lazy">
+              {%- elsif p.client.value != blank -%}
+                <span class="cs-projets__client">{{ p.client.value | escape }}</span>
+              {%- endif -%}
+              <h3 class="cs-h3">{{ p.titre.value | escape }}</h3>
+              {%- if p.extrait.value != blank -%}
+                <p class="cs-projets__extrait">{{ p.extrait.value | escape }}</p>
+              {%- endif -%}
+              {%- if p.chiffre_1_valeur.value != blank -%}
+                <span class="cs-chip cs-chip--braise">{{ p.chiffre_1_valeur.value }} {{ p.chiffre_1_label.value }}</span>
+              {%- endif -%}
+              <div class="cs-projets__tags">
+                {%- for s in p.services.value limit: 2 -%}
+                  <span class="cs-chip">{{ s | escape }}</span>
+                {%- endfor -%}
+                {%- if p.ville.value != blank -%}
+                  <span class="cs-chip">{{ p.ville.value | escape }}</span>
+                {%- endif -%}
+              </div>
+            </div>
+          </a>
+        </article>
+      {%- endfor -%}
+    </div>
+    <p class="cs-projets__vide" data-cs="filtres-vide" hidden>Aucune réalisation ne correspond à ce filtre pour l'instant.</p>
+
+    {%- if section.settings.lien_hub != blank -%}
+      <div class="cs-projets__pied">
+        <a href="{{ section.settings.lien_hub }}" class="cs-lien">Voir toutes nos réalisations {% render 'icone', nom: 'fleche', taille: 18 %}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "CS · Réalisations",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "info": "28 caractères max" },
+    { "type": "text", "id": "titre", "label": "Titre (H2)", "info": "60 caractères max" },
+    { "type": "textarea", "id": "intro", "label": "Introduction", "info": "180 caractères max" },
+    { "type": "paragraph", "content": "Source des cartes : les metaobjects « projet » (les plus récents d'abord). Sans metaobjects, la section ne rend rien." },
+    { "type": "range", "id": "nombre", "label": "Nombre maximum", "min": 2, "max": 12, "step": 1, "default": 6 },
+    { "type": "checkbox", "id": "filtres", "label": "Filtres par service et par ville", "default": true },
+    { "type": "url", "id": "lien_hub", "label": "Lien « Voir toutes nos réalisations »" },
+    { "type": "select", "id": "bg_style", "label": "Fond",
+      "options": [ { "value": "base", "label": "Base" }, { "value": "alt", "label": "Alterné" }, { "value": "halo", "label": "Halo braise" } ], "default": "base" },
+    { "type": "select", "id": "animation", "label": "Animation d'apparition",
+      "options": [ { "value": "auto", "label": "Automatique (recommandé)" }, { "value": "up", "label": "Montée" }, { "value": "scale", "label": "Zoom" }, { "value": "fade", "label": "Fondu" }, { "value": "none", "label": "Aucune" } ], "default": "auto" },
+    { "type": "range", "id": "padding_haut", "label": "Espace haut", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" },
+    { "type": "range", "id": "padding_bas", "label": "Espace bas", "min": 0, "max": 160, "step": 8, "default": 96, "unit": "px" }
+  ],
+  "presets": [ { "name": "CS · Réalisations" } ]
+}
+{% endschema %}

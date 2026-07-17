@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "simple",
+        "cta_active": false
+      }
+    },
+    "contenu": {
+      "type": "cs-richtext",
+      "blocks": {
+        "corps": {
+          "type": "page",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "corps"
+      ],
+      "settings": {
+        "padding_haut": 48,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "contenu"
+  ]
+}

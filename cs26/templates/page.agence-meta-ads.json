@@ -1,0 +1,282 @@
+{
+  "sections": {
+    "hero": {
+      "type": "cs-hero-page",
+      "settings": {
+        "variante": "service",
+        "eyebrow": "Agence Meta Ads",
+        "intro": "Une agence qui traite vos campagnes Meta comme un compte d'exploitation : chaque euro dépensé doit se justifier en ventes.",
+        "cta_active": true,
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "shape": "diag-2"
+      }
+    },
+    "signature": {
+      "type": "cs-comparatif",
+      "blocks": {
+        "c1": {
+          "type": "critere",
+          "settings": {
+            "label": "Créas testées chaque semaine",
+            "nous": "oui",
+            "alt_1": "non",
+            "alt_2": "~"
+          }
+        },
+        "c2": {
+          "type": "critere",
+          "settings": {
+            "label": "Tracking des conversions fiable",
+            "nous": "oui",
+            "alt_1": "~",
+            "alt_2": "~"
+          }
+        },
+        "c3": {
+          "type": "critere",
+          "settings": {
+            "label": "Compte à votre nom",
+            "nous": "oui",
+            "alt_1": "oui",
+            "alt_2": "~"
+          }
+        },
+        "c4": {
+          "type": "critere",
+          "settings": {
+            "label": "Reporting en coût par client",
+            "nous": "oui",
+            "alt_1": "non",
+            "alt_2": "~"
+          }
+        },
+        "c5": {
+          "type": "critere",
+          "settings": {
+            "label": "Règles d'arrêt partagées",
+            "nous": "oui",
+            "alt_1": "non",
+            "alt_2": "non"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "eyebrow": "Choisir son pilotage",
+        "titre": "Gérer seul, boost, ou agence ?",
+        "intro": "La comparaison que vous faites déjà, posée noir sur blanc.",
+        "col_nous_titre": "Clickscreation",
+        "col_2_titre": "Gestion en interne",
+        "col_3_titre": "Bouton booster",
+        "col_4_titre": "",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "process": {
+      "type": "cs-process",
+      "blocks": {
+        "etape_1": {
+          "type": "etape",
+          "settings": {
+            "titre": "Audit du compte",
+            "texte": "Structure, tracking, historique : ce qui marche, ce qui fuit."
+          }
+        },
+        "etape_2": {
+          "type": "etape",
+          "settings": {
+            "titre": "Plan de tests",
+            "texte": "Angles, audiences et créas priorisés par potentiel."
+          }
+        },
+        "etape_3": {
+          "type": "etape",
+          "settings": {
+            "titre": "Pilotage hebdo",
+            "texte": "Budgets réalloués chaque semaine sur les données."
+          }
+        },
+        "etape_4": {
+          "type": "etape",
+          "settings": {
+            "titre": "Bilan mensuel",
+            "texte": "Coût par client, enseignements, prochaines étapes."
+          }
+        }
+      },
+      "block_order": [
+        "etape_1",
+        "etape_2",
+        "etape_3",
+        "etape_4"
+      ],
+      "settings": {
+        "eyebrow": "La méthode",
+        "titre": "Comment on reprend un compte en main",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "stats": {
+      "type": "cs-stats",
+      "blocks": {
+        "c1": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c2": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        },
+        "c3": {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "",
+            "label": "",
+            "contexte": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "titre": "Les chiffres de l'agence",
+        "bg_style": "halo",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "projets": {
+      "type": "cs-projets",
+      "settings": {
+        "nombre": 4,
+        "filtres": true,
+        "titre": "Comptes pilotés",
+        "lien_hub": "/pages/resultats",
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "avis": {
+      "type": "cs-avis",
+      "settings": {
+        "titre": "Ce que disent nos clients",
+        "source_donnees": "blocks",
+        "bg_style": "alt",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "faq": {
+      "type": "cs-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Reprenez-vous un compte déjà actif ?",
+            "reponse": "<p>Oui, sans repartir de zéro : l'historique a de la valeur. L'audit identifie ce qui doit être conservé, corrigé ou arrêté, puis le plan de tests s'appuie dessus.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Comment sont facturés vos honoraires ?",
+            "reponse": "<p>Un forfait de pilotage clair, séparé du budget publicitaire qui reste dans votre compte. Le détail est posé dans la proposition, après l'audit.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Que se passe-t-il si les résultats ne suivent pas ?",
+            "reponse": "<p>Des règles d'arrêt sont posées avant le lancement : si les seuils ne sont pas atteints après la phase de test, on arrête ou on réoriente, sur données partagées.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "titre": "Vos questions à l'agence",
+        "premier_ouvert": true,
+        "bg_style": "base",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    },
+    "cta": {
+      "type": "cs-cta",
+      "settings": {
+        "titre": "Vos campagnes méritent un vrai pilote.",
+        "texte": "Un audit gratuit de votre compte Meta : structure, tracking, créas, et le plan pour faire mieux.",
+        "cta_label": "Mon audit gratuit",
+        "reassurance": "Réponse sous 48 h ouvrées. Sans engagement.",
+        "padding_haut": 96,
+        "padding_bas": 120
+      }
+    },
+    "seo": {
+      "type": "cs-richtext",
+      "blocks": {
+        "intro": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p>Une agence Meta Ads sérieuse traite vos campagnes Facebook et Instagram comme un compte d'exploitation : chaque euro dépensé doit se justifier en clients acquis. Nous reprenons un compte existant sans repartir de zéro, car l'historique a de la valeur, puis nous corrigeons la structure, le tracking et les créas d'après un audit.</p><p>Le pilotage est hebdomadaire, avec des budgets réalloués vers ce qui produit des ventes et des règles d'arrêt fixées avant le lancement. Un forfait clair sépare nos honoraires du budget publicitaire, qui reste dans votre compte. Le reporting parle en coût par client et en panier moyen, jamais en portée ou en impressions.</p>"
+          }
+        },
+        "mesh": {
+          "type": "prose",
+          "settings": {
+            "contenu": "<p><strong>Souvent combiné avec :</strong> l'<a href=\"/pages/optimisation-cro\">optimisation CRO</a> pour convertir le trafic payant, une <a href=\"/pages/creation-site-ecommerce-shopify\">boutique Shopify</a> performante, et le <a href=\"/pages/seo-ecommerce\">SEO e-commerce</a> pour un acquisition durable.</p><p>Voyez nos <a href=\"/pages/resultats\">campagnes clients</a> et leurs chiffres.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "mesh"
+      ],
+      "settings": {
+        "eyebrow": "Pilotage publicitaire",
+        "titre": "Une agence Meta Ads qui rend des comptes en ventes",
+        "bg_style": "alt",
+        "animation": "auto",
+        "padding_haut": 96,
+        "padding_bas": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "signature",
+    "process",
+    "stats",
+    "projets",
+    "avis",
+    "seo",
+    "faq",
+    "cta"
+  ]
+}
