@@ -1,38 +1,22 @@
 {%- comment -%}
-  MAISON AYLA — Intégration Trustpilot officielle (cart drawer)
-  Fichier : snippets/ma-cro-trustpilot.liquid
+  Trustpilot — cart drawer Maison Ayla.
 
-  Ce snippet est l'UNIQUE source de configuration Trustpilot du thème.
-  Il ne dessine ni logo, ni étoile, ni wordmark : tout le rendu de marque
-  provient de la TrustBox officielle servie par Trustpilot.
-
-  ── Règle de publication ─────────────────────────────────────────────
-  Tant que trustpilot_businessunit_id ou trustpilot_template_id est vide,
-  AUCUN composant Trustpilot n'est rendu en production. Le mode maquette
-  est en outre neutralisé côté navigateur dès que le thème est publié
-  (voir assets/ma-cro-trustpilot.js, garde sur Shopify.theme.role).
+  Pour activer le widget officiel, renseigner les trois valeurs ci-dessous
+  depuis le compte Trustpilot Business (Integrations > TrustBox).
+  Passer trustpilot_test_mode à false avant la mise en production.
 {%- endcomment -%}
 
 {%- liquid
-  # ─── CONFIGURATION ────────────────────────────────────────────────
-  # Mode maquette de staging. Repasser à false avant validation production.
   assign trustpilot_test_mode = true
 
-  # Identifiants OFFICIELS à récupérer dans le compte Trustpilot Business
-  # de Maison Ayla (Integrations > TrustBox). Ne jamais deviner ces valeurs.
   assign trustpilot_businessunit_id = ''
   assign trustpilot_template_id = ''
-
-  # URL du profil public Maison Ayla, utilisée par le lien de repli officiel.
   assign trustpilot_profile_url = ''
 
-  # Réglages d'affichage recommandés par Trustpilot pour un format compact.
   assign trustpilot_locale = 'fr-FR'
   assign trustpilot_theme = 'light'
   assign trustpilot_height = '52px'
   assign trustpilot_width = '100%'
-
-  # Valeur de test autorisée uniquement sur le thème non publié (brief §5).
   assign trustpilot_test_score = '4,6/5'
 
   assign trustpilot_configured = false
@@ -41,7 +25,6 @@
   endif
 -%}
 
-{%- comment -%} Configuration lue par assets/ma-cro-trustpilot.js {%- endcomment -%}
 <script id="ma-cro-trustpilot-config" type="application/json">
   {
     "configured": {{ trustpilot_configured | json }},
@@ -52,10 +35,6 @@
 </script>
 
 {%- if trustpilot_configured -%}
-  {%- comment -%}
-    Script officiel Trustpilot — chargé UNE SEULE FOIS pour tout le thème.
-    Aucun autre fichier du thème ne doit référencer ce script.
-  {%- endcomment -%}
   {% # theme-check-disable RemoteAsset %}
   <script
     id="ma-cro-trustpilot-bootstrap"
@@ -64,12 +43,6 @@
   ></script>
   {% # theme-check-enable RemoteAsset %}
 
-  {%- comment -%}
-    Code HTML officiel de la TrustBox, conservé tel quel.
-    Il est cloné par le JS au moment où le cart drawer est disponible :
-    le drawer étant injecté dynamiquement, la TrustBox ne peut pas être
-    rendue statiquement ici.
-  {%- endcomment -%}
   <template id="maCroTrustpilotTemplate">
     <div
       class="trustpilot-widget"

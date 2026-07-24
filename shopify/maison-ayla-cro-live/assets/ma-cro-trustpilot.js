@@ -1,15 +1,6 @@
 (function () {
   'use strict';
 
-  /* ============================================================
-     MAISON AYLA — Trustpilot officiel dans le cart drawer
-     Fichier : assets/ma-cro-trustpilot.js
-
-     Ce module n'affiche jamais de logo, d'étoile ou de wordmark
-     reconstruit. Le rendu de marque vient exclusivement de la
-     TrustBox officielle chargée par le script Trustpilot.
-     ============================================================ */
-
   var CONFIG_ID = 'ma-cro-trustpilot-config';
   var TEMPLATE_ID = 'maCroTrustpilotTemplate';
   var BOOTSTRAP_ID = 'ma-cro-trustpilot-bootstrap';
@@ -22,21 +13,17 @@
   try {
     config = JSON.parse(configNode.textContent);
   } catch (error) {
-    return; /* Repli silencieux : le panier reste entièrement utilisable. */
+    return;
   }
 
-  /* ── Garde de publication ──────────────────────────────────────
-     Le mode maquette est neutralisé dès que le thème est publié,
-     même si le drapeau Liquid a été laissé à true par erreur. */
   var themeRole = (window.Shopify && window.Shopify.theme && window.Shopify.theme.role) || '';
   var isPublishedTheme = String(themeRole).toLowerCase() === 'main';
   var testMode = config.testMode === true && !isPublishedTheme;
   var isOfficial = config.configured === true;
 
-  /* Ni identifiants officiels, ni maquette autorisée : on ne rend rien. */
   if (!isOfficial && !testMode) return;
 
-  var state = { itemCount: null, mounted: false };
+  var state = { itemCount: null };
 
   function panelEl() {
     return document.getElementById('cdPanel');
@@ -46,7 +33,6 @@
     return document.getElementById('cdFooter');
   }
 
-  /* ── Construction du bloc ─────────────────────────────────────── */
   function buildBlock() {
     var block = document.createElement('aside');
     block.id = BLOCK_ID;
@@ -73,10 +59,6 @@
       return block;
     }
 
-    /* Maquette de staging : bloc de réassurance à l'identité Maison Ayla.
-       Aucun logo, aucun wordmark, aucune étoile, aucune couleur de marque
-       Trustpilot ne sont reconstruits — cette maquette valide le gabarit
-       et la hiérarchie, pas le rendu de marque. */
     block.dataset.maTpMode = 'mock';
     block.classList.add('ma-cro-tp--mock');
     block.setAttribute('aria-label', 'Aperçu de maquette non publié, note de test non vérifiée');
@@ -108,19 +90,17 @@
     return block;
   }
 
-  /* ── Insertion : immédiatement sous le bouton de paiement ─────── */
   function mount() {
     var footer = footerEl();
     if (!footer) return false;
 
-    /* Purge d'un éventuel bloc hérité de l'ancienne intégration maison. */
     var legacy = document.getElementById('maCroTrust');
     if (legacy) legacy.remove();
 
     var existing = document.getElementById(BLOCK_ID);
     if (existing) {
       if (footer.contains(existing)) return true;
-      existing.remove(); /* Anti-doublon après remplacement du drawer. */
+      existing.remove();
     }
 
     var block = buildBlock();
@@ -133,12 +113,9 @@
       if (legal) footer.insertBefore(block, legal);
       else footer.appendChild(block);
     }
-
-    state.mounted = true;
     return true;
   }
 
-  /* ── Rendu de la TrustBox officielle ──────────────────────────── */
   function renderWidget() {
     if (!isOfficial) return;
 
@@ -148,7 +125,6 @@
     var widget = block.querySelector('.trustpilot-widget');
     if (!widget) return;
 
-    /* Widget déjà rendu : ne pas relancer, pas de requête inutile. */
     if (widget.querySelector('iframe')) {
       block.dataset.trustpilotReady = 'true';
       return;
@@ -160,15 +136,12 @@
       window.Trustpilot.loadFromElement(widget, true);
       block.dataset.trustpilotReady = 'true';
     } catch (error) {
-      /* Repli silencieux : Trustpilot n'est jamais bloquant pour le checkout. */
+      return;
     }
   }
 
-  /* ── Visibilité : masqué dès que le panier est vide ───────────── */
   function hasItems() {
     if (typeof state.itemCount === 'number') return state.itemCount > 0;
-
-    /* Repli sans requête : le drawer masque #cdFooter tant que le panier est vide. */
     var footer = footerEl();
     return !!footer && footer.style.display !== 'none';
   }
@@ -189,9 +162,6 @@
     renderWidget();
   }
 
-  /* ── Observateurs : attributs uniquement, sur deux nœuds ───────
-     Aucun childList, aucun subtree : le module ne peut pas
-     déclencher ses propres observateurs, donc aucune boucle. */
   function watch() {
     var footer = footerEl();
     if (footer) {
@@ -219,8 +189,6 @@
     return false;
   }
 
-  /* Filet de sécurité si la section du drawer arrive après ce script :
-     cet observateur se déconnecte dès la première initialisation réussie. */
   function bootstrap() {
     if (start()) return;
 
@@ -234,10 +202,6 @@
     }, 10000);
   }
 
-  /* ── Événements ───────────────────────────────────────────────── */
-
-  /* Source autoritaire du nombre d'articles : émise par ma-cro-cart-ui.js,
-     qui lit déjà /cart.js. Aucune requête réseau supplémentaire ici. */
   document.addEventListener('ma:cart-state', function (event) {
     var detail = event.detail || {};
     if (typeof detail.itemCount === 'number') state.itemCount = detail.itemCount;

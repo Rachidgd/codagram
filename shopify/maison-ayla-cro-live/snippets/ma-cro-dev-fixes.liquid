@@ -1,9 +1,3 @@
-{%- comment -%}
-  MAISON AYLA — Correctifs CRO de staging.
-  L'intégration Trustpilot est entièrement déportée dans
-  snippets/ma-cro-trustpilot.liquid (source unique de configuration).
-{%- endcomment -%}
-
 <template id="maCroPaymentTemplate">
   {%- for type in shop.enabled_payment_types -%}
     <span class="ma-cro-payment-icon">{{ type | payment_type_svg_tag }}</span>

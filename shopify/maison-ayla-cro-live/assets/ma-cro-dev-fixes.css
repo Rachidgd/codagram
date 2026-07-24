@@ -65,13 +65,6 @@
   line-height: 1.45;
 }
 
-/* ============================================================
-   TRUSTPILOT — habillage Maison Ayla uniquement.
-   Aucune règle ne dessine, ne recolore ni ne redimensionne le
-   logo, les étoiles ou le wordmark : tout le rendu de marque
-   appartient à la TrustBox officielle.
-   ============================================================ */
-
 .ma-cro-tp {
   display: block;
   width: 100%;
@@ -87,7 +80,6 @@
   min-height: 52px;
 }
 
-/* L'iframe officielle reste responsive et ne provoque pas de scroll horizontal. */
 .ma-cro-tp__widget iframe {
   max-width: 100%;
   border: 0;
@@ -102,9 +94,6 @@
   letter-spacing: .02em;
 }
 
-/* Maquette de staging (identifiants officiels non encore fournis).
-   Habillage Maison Ayla strict : pas de vert, pas d'étoile, pas de
-   wordmark, pas d'arrondi décoratif, pas d'ombre. */
 .ma-cro-tp__mock {
   display: flex;
   flex-direction: column;

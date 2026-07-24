@@ -35,13 +35,11 @@
         const shipping = document.getElementById('maCroShipping');
         if (shipping) shipping.hidden = itemCount === 0;
 
-        /* Source autoritaire du nombre d'articles pour les autres modules
-           (Trustpilot notamment) : évite toute requête /cart.js dupliquée. */
         document.dispatchEvent(
           new CustomEvent('ma:cart-state', { detail: { itemCount: itemCount } })
         );
       } catch (error) {
-        /* Le panier natif reste utilisable si ce contrôle non bloquant échoue. */
+        return;
       }
     }, 120);
   }
