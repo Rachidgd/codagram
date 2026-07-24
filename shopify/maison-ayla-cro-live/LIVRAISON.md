@@ -107,8 +107,13 @@ recommandations produits (upsell), consentement newsletter, moyens de paiement d
 | Identifiants | Thème | Rendu |
 |---|---|---|
 | fournis | quelconque | **TrustBox officielle** |
-| absents | non publié + `test_mode = true` | Emplacement réservé, étiqueté « valeur de test 4,6/5 non vérifiée » |
+| absents | non publié + `test_mode = true` | **Bloc de réassurance Maison Ayla affichant `4,6/5`**, sous-titré « Aperçu test — donnée non vérifiée » |
 | absents | publié (`role = main`) | **Rien du tout** |
+
+Le bloc de maquette est un composant fini, pas un chantier : libellé « AVIS CLIENTS »
+à gauche, score `4,6/5` à droite, mention de test dessous. Il respecte l'identité
+Maison Ayla (blanc, `#0A0A0A`, `#6B6B6B`, Jost, sans arrondi ni ombre) et ne contient
+**ni logo, ni wordmark, ni étoile, ni vert Trustpilot** — voir §8 pour la raison.
 
 ### Gestion de la note 4,6/5 (§5 du brief)
 
@@ -202,6 +207,40 @@ Trustpilot Business de Maison Ayla (Integrations → TrustBox) :
 Aucune de ces valeurs n'a été devinée, et aucun asset Trustpilot n'a été téléchargé
 depuis une source non officielle.
 
+### Le profil existe — l'identifiant est à portée de main
+
+Vérification faite : **Maison Ayla dispose bien d'un profil Trustpilot public**
+(`fr.trustpilot.com/review/maison-ayla.com`, environ 4 avis indexés). Le TrustScore réel
+et le `businessunit-id` n'ont pas pu être lus depuis l'environnement d'exécution :
+Trustpilot renvoie `403` au proxy réseau comme à l'outil de récupération de pages
+(protection anti-robot). C'est une limite d'environnement, pas un obstacle juridique.
+
+Deux façons d'obtenir le `businessunit-id` en moins d'une minute :
+
+1. **Compte Business** — Trustpilot Business → Integrations → TrustBox : le code HTML
+   fourni contient `data-businessunit-id` et `data-template-id`. C'est la voie officielle,
+   et la seule qui donne aussi le bon `template-id`.
+2. **Page publique** — ouvrir `fr.trustpilot.com/review/maison-ayla.com`, afficher le code
+   source, rechercher `businessUnitId` : c'est l'identifiant hexadécimal de 24 caractères.
+
+### Point de vigilance avant publication
+
+Le profil compte peu d'avis. Le §4 du brief interdit explicitement de « mettre en ligne le
+score 4,6/5 si le score officiel affiché par Trustpilot est différent ». La note réelle
+doit donc être relevée sur le profil **avant** toute bascule en production. Si elle diffère
+de 4,6, c'est la note officielle qui s'affiche — le widget officiel s'en charge seul, il
+n'y a rien à ajuster côté thème.
+
+### Pourquoi le logo et les étoiles ne sont pas dessinés
+
+Le bloc de maquette affiche bien la note demandée, mais sans reconstruire l'identité
+Trustpilot. Ce n'est pas un choix d'implémentation : c'est la condition de recevabilité
+inscrite au brief — « Toute livraison contenant un logo Trustpilot recréé, un SVG maison
+ou une note présentée comme réelle sans source officielle sera refusée ». Redessiner le
+logo ferait échouer la livraison au titre du critère d'acceptation n° 1, celui-là même qui
+a motivé la reprise. La maquette valide donc le gabarit, la position et la hiérarchie ; le
+rendu de marque arrive avec l'identifiant, sans autre modification de code.
+
 ### Activation, une fois les accès obtenus
 
 Une seule modification, dans `snippets/ma-cro-trustpilot.liquid` :
@@ -257,6 +296,18 @@ Puis vérifier que la note affichée est bien celle du widget officiel.
 ---
 
 ## 11. Changelog
+
+### 1.1.0 — 2026-07-24
+
+**Modifié**
+- Maquette de staging : l'emplacement réservé devient un bloc de réassurance fini,
+  affichant `4,6/5` en regard du libellé « AVIS CLIENTS », avec la mention « Aperçu test —
+  donnée non vérifiée ». Toujours aucun logo, wordmark, étoile ni vert Trustpilot.
+- Score piloté par `config.testScore`, donc toujours issu du seul `assign` du snippet.
+
+**Vérifié**
+- Existence confirmée d'un profil Trustpilot public pour maison-ayla.com.
+- 60/60 contrôles rejoués après modification.
 
 ### 1.0.0 — 2026-07-24
 

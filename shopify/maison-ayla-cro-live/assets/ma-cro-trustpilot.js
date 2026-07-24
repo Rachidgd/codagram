@@ -73,26 +73,35 @@
       return block;
     }
 
-    /* Emplacement réservé de maquette : aucun logo, aucune étoile,
-       aucune couleur de marque, aucune note présentée comme réelle. */
-    block.dataset.maTpMode = 'placeholder';
-    block.classList.add('ma-cro-tp--placeholder');
-    block.setAttribute('aria-label', 'Emplacement réservé au widget Trustpilot officiel, maquette non publiée');
+    /* Maquette de staging : bloc de réassurance à l'identité Maison Ayla.
+       Aucun logo, aucun wordmark, aucune étoile, aucune couleur de marque
+       Trustpilot ne sont reconstruits — cette maquette valide le gabarit
+       et la hiérarchie, pas le rendu de marque. */
+    block.dataset.maTpMode = 'mock';
+    block.classList.add('ma-cro-tp--mock');
+    block.setAttribute('aria-label', 'Aperçu de maquette non publié, note de test non vérifiée');
 
     var slot = document.createElement('div');
-    slot.className = 'ma-cro-tp__widget ma-cro-tp__slot';
+    slot.className = 'ma-cro-tp__widget ma-cro-tp__mock';
 
-    var title = document.createElement('p');
-    title.className = 'ma-cro-tp__slot-title';
-    title.textContent = 'Emplacement du widget Trustpilot officiel';
-    slot.appendChild(title);
+    var row = document.createElement('div');
+    row.className = 'ma-cro-tp__mock-row';
+
+    var label = document.createElement('span');
+    label.className = 'ma-cro-tp__mock-label';
+    label.textContent = 'Avis clients';
+    row.appendChild(label);
+
+    var score = document.createElement('span');
+    score.className = 'ma-cro-tp__mock-score';
+    score.textContent = config.testScore || '';
+    row.appendChild(score);
+
+    slot.appendChild(row);
 
     var note = document.createElement('p');
     note.className = 'ma-cro-tp__note';
-    note.textContent =
-      'Maquette de staging — valeur de test ' +
-      (config.testScore || '') +
-      ' non vérifiée. En attente des identifiants du compte Trustpilot Business.';
+    note.textContent = 'Aperçu test — donnée non vérifiée, en attente du widget Trustpilot officiel.';
     slot.appendChild(note);
 
     block.appendChild(slot);

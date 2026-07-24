@@ -102,8 +102,10 @@
   letter-spacing: .02em;
 }
 
-/* Emplacement réservé de maquette (staging, identifiants non fournis). */
-.ma-cro-tp__slot {
+/* Maquette de staging (identifiants officiels non encore fournis).
+   Habillage Maison Ayla strict : pas de vert, pas d'étoile, pas de
+   wordmark, pas d'arrondi décoratif, pas d'ombre. */
+.ma-cro-tp__mock {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,14 +113,29 @@
   padding: 0;
 }
 
-.ma-cro-tp__slot-title {
-  margin: 0;
+.ma-cro-tp__mock-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.ma-cro-tp__mock-label {
   color: #0A0A0A;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.35;
-  letter-spacing: .06em;
+  letter-spacing: .12em;
   text-transform: uppercase;
+}
+
+.ma-cro-tp__mock-score {
+  flex: 0 0 auto;
+  color: #0A0A0A;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.01em;
 }
 
 .ma-cro-payment-icon {
