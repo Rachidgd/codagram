@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banc QA — cart drawer Maison Ayla</title>
+<style>
+/* Extrait fidèle de sections/cart-drawer.liquid (structure + réglages utiles au test) */
+:root{--cd-font:'Jost',system-ui,sans-serif;--cd-text:#0A0A0A;--cd-muted:#6B6B6B;--cd-border:#E8E8E8;--cd-bg:#FFFFFF;--cd-width:520px}
+body{margin:0}
+.cd-panel{position:fixed;top:0;right:0;bottom:0;z-index:1999;width:min(var(--cd-width),100vw);background:var(--cd-bg);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .45s;overflow:hidden}
+.cd-panel.is-open{transform:translateX(0)}
+.cd-panel *,.cd-panel *::before,.cd-panel *::after{box-sizing:border-box;margin:0;padding:0}
+.cd-header{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 1.5rem 1.25rem;border-bottom:1px solid var(--cd-border);flex-shrink:0}
+.cd-body{flex:1;overflow-y:auto}
+.cd-items{padding:0 1.5rem}
+.cd-footer{flex-shrink:0;border-top:1px solid var(--cd-border);background:var(--cd-bg)}
+.cd-total{display:flex;align-items:baseline;justify-content:space-between;padding:1rem 1.5rem .25rem}
+.cd-total__price{font-family:var(--cd-font);font-size:clamp(1.2rem,3vw,1.6rem);font-weight:300}
+.cd-cta{padding:.75rem 1.5rem .5rem;display:flex;flex-direction:column;gap:.5rem}
+.cd-btn-checkout{display:flex;align-items:center;justify-content:center;width:100%;height:52px;background:var(--cd-text);color:#FFF;border:none;font-family:var(--cd-font);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.cd-legal{padding:.5rem 1.5rem 1rem;font-family:var(--cd-font);font-size:.62rem;font-weight:300;line-height:1.6;color:var(--cd-muted);text-align:center}
+</style>
+<link rel="stylesheet" href="./ma-cro-dev-fixes.css">
+</head>
+<body>
+
+<div class="cd-overlay" id="cdOverlay" aria-hidden="true"></div>
+
+<div class="cd-panel" id="cdPanel" role="dialog" aria-modal="true" aria-label="Votre panier" aria-hidden="true">
+  <div class="cd-header">
+    <p class="cd-header__title">Panier <span class="cd-header__count" id="cdCount"></span></p>
+    <button class="cd-header__close" id="cdClose" aria-label="Fermer le panier">×</button>
+  </div>
+
+  <div class="cd-body" id="cdBody">
+    <div class="cd-items" id="cdItems" style="display:none;"></div>
+    <div class="cd-upsell" id="cdUpsell" style="display:none;"></div>
+    <div class="cd-promo" id="cdPromo" style="display:none;"></div>
+    <div class="cd-acc" id="cdAcc" style="display:none;"></div>
+  </div>
+
+  <div class="cd-footer" id="cdFooter" style="display:none;">
+    <div class="cd-discount-line" id="cdDiscountLine"></div>
+    <div class="cd-total">
+      <div class="cd-total__label"><span class="cd-total__text">Total</span></div>
+      <span class="cd-total__price" id="cdTotal">—</span>
+    </div>
+    <div class="cd-cta">
+      <button type="button" class="cd-btn-checkout" id="cdCheckoutBtn">Finaliser la commande</button>
+    </div>
+    <p class="cd-legal">En finalisant votre commande, vous acceptez nos CGV.</p>
+  </div>
+</div>
+
+<script>
+  /* Rôle du thème injecté par le test (content_for_header le fournit en réel). */
+  var params = new URLSearchParams(location.search);
+  window.Shopify = { theme: { role: params.get('role') || 'unpublished' } };
+</script>
+
+<script id="ma-cro-trustpilot-config" type="application/json">
+  { "configured": false, "testMode": true, "testScore": "4,6/5", "profileUrl": "" }
+</script>
+
+<script>
+  /* Simulation fidèle du drawer réel : showEl/hideEl sur #cdFooter + #cdTotal. */
+  window.MA_TEST = {
+    setCart: function (count) {
+      var footer = document.getElementById('cdFooter');
+      var items = document.getElementById('cdItems');
+      footer.style.display = count > 0 ? '' : 'none';
+      items.style.display = count > 0 ? '' : 'none';
+      document.getElementById('cdTotal').textContent = (count * 89) + ' €';
+      items.innerHTML = '';
+      for (var i = 0; i < count; i++) {
+        var d = document.createElement('div');
+        d.className = 'cd-item';
+        d.textContent = 'Abaya ' + (i + 1);
+        items.appendChild(d);
+      }
+      document.dispatchEvent(new CustomEvent('ma:cart-state', { detail: { itemCount: count } }));
+    },
+    openDrawer: function () { document.getElementById('cdPanel').classList.add('is-open'); },
+    closeDrawer: function () { document.getElementById('cdPanel').classList.remove('is-open'); }
+  };
+</script>
+
+<script src="./ma-cro-trustpilot.js" defer></script>
+</body>
+</html>
