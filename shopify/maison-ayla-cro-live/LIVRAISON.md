@@ -360,7 +360,73 @@ références correspondantes ont été retirées pour éviter des requêtes 404 
 `patchFooterLinks()` a également été retiré : il réécrivait les liens du pied de page de
 tout le site, hors périmètre de cette mission et non audité sur ce thème.
 
+## 10 ter. Mise en avant du soutien à MATW Project
+
+### Où le message apparaît
+
+| Emplacement | Forme | Fichier |
+|---|---|---|
+| Barre d'annonce | Message rotatif n° 2 | `sections/header-group.json` |
+| Cart drawer | Bulle sous la barre de livraison offerte | `assets/ma-matw.js` |
+| Fiche produit | Bloc sous le formulaire d'ajout au panier | `assets/ma-matw.js` |
+| Fiche produit + accueil | Bannière image / texte | `sections/ma-matw-banner.liquid` |
+
+La bulle du drawer est placée **sous la barre de livraison offerte**, en haut du panneau :
+elle est vue dès l'ouverture, et n'entre jamais en concurrence avec le bouton de paiement,
+qui reste l'élément visuel prioritaire. Elle est masquée quand le panier est vide.
+
+La bannière est rendue depuis `layout/theme.liquid` sur les gabarits produit et accueil.
+Elle est aussi disponible comme section ajoutable dans l'éditeur de thème (preset
+« MATW — Bannière soutien »), donc positionnable ailleurs sans intervention technique.
+Tous ses contenus — image, position de l'image, surtitre, titre, texte, lien, marges —
+sont réglables par le marchand.
+
+### Textes livrés
+
+- **Barre d'annonce** : « 1 achat = 1 don — Maison Ayla soutient MATW Project »
+  (remplace « 1 Achat = 1 don pour la Palestine », qui ne nommait pas l'association).
+- **Cart drawer** : « Chaque commande prolonge notre soutien à MATW Project. Nous reversons
+  une part de nos bénéfices. »
+- **Fiche produit** : « En choisissant cette pièce, vous soutenez MATW Project : eau potable,
+  orphelins, aide d'urgence. »
+- **Bannière** : surtitre « Engagement solidaire », titre « Ce que votre commande rend
+  possible », puis le rappel factuel de l'action de MATW et un lien vers matwproject.org.
+
+Ton retenu, conforme au positionnement premium : le message informe, il ne culpabilise pas
+et ne transforme pas le don en argument de pression à l'achat.
+
+### Faits vérifiés utilisés dans les textes
+
+MATW Project (Muslims Around The World) : association humanitaire fondée en 2015 par
+Ali Banat, active dans 24 pays, politique de reversement intégral affichée. Actions citées :
+puits d'eau, prise en charge d'orphelins au Togo et au Liban, aide d'urgence en Palestine.
+Aucun autre fait n'est avancé.
+
+### Point à valider avant publication
+
+**Le pourcentage reversé n'est pas écrit**, parce qu'il n'a pas été fourni. Les textes disent
+« une part de nos bénéfices ». Le réglage `matw_share` de `snippets/ma-matw.liquid` attend la
+valeur exacte : dès qu'elle est renseignée (« 10 % » par exemple), tous les textes basculent
+automatiquement dessus. Un pourcentage annoncé engage juridiquement Maison Ayla — il doit
+être exact et démontrable, et l'usage du nom « MATW Project » doit être couvert par un
+accord avec l'association.
+
 ## 11. Changelog
+
+### 1.3.0 — 2026-07-25
+
+**Ajouté**
+- Soutien à MATW Project mis en avant sur quatre emplacements : barre d'annonce, bulle du
+  cart drawer, bloc de fiche produit, bannière image/texte (produit + accueil).
+- `sections/ma-matw-banner.liquid` : section entièrement réglable dans l'éditeur, image à
+  gauche ou à droite, empilée sur mobile, image `lazy` avec dimensions pour éviter tout saut
+  de mise en page.
+- 12 contrôles automatisés supplémentaires (placement, masquage panier vide, absence de
+  doublon, lien officiel, absence de pourcentage inventé).
+
+**Supprimé**
+- Mention visible « Aperçu test — donnée non vérifiée… » du bloc de notation. Le nom
+  accessible reste explicite et les deux verrous de publication sont inchangés.
 
 ### 1.2.0 — 2026-07-25
 

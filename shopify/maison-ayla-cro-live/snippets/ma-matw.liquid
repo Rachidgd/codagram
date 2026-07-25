@@ -1,0 +1,38 @@
+{%- comment -%}
+  Soutien MATW Project — configuration commune.
+
+  matw_share : part des bénéfices reversée, telle qu'elle peut être prouvée
+  (ex. « 10 % »). Laisser vide tant que le chiffre n'est pas validé :
+  les textes basculent alors sur « une part de nos bénéfices ».
+{%- endcomment -%}
+
+{%- liquid
+  assign matw_enabled = true
+  assign matw_name = 'MATW Project'
+  assign matw_url = 'https://matwproject.org'
+  assign matw_share = ''
+
+  if matw_share != blank
+    assign matw_share_label = matw_share | append: ' de nos bénéfices'
+  else
+    assign matw_share_label = 'une part de nos bénéfices'
+  endif
+-%}
+
+{%- if matw_enabled -%}
+  <script id="ma-matw-config" type="application/json">
+    {
+      "name": {{ matw_name | json }},
+      "url": {{ matw_url | json }},
+      "shareLabel": {{ matw_share_label | json }},
+      "cartOverline": "Engagement",
+      "cartText": {{ 'Chaque commande prolonge notre soutien à ' | append: matw_name | append: '. Nous reversons ' | append: matw_share_label | append: '.' | json }},
+      "productOverline": "Engagement solidaire",
+      "productText": {{ 'En choisissant cette pièce, vous soutenez ' | append: matw_name | append: ' : eau potable, orphelins, aide d’urgence.' | json }},
+      "linkLabel": {{ 'Découvrir ' | append: matw_name | json }}
+    }
+  </script>
+
+  {{ 'ma-matw.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'ma-matw.js' | asset_url }}" defer></script>
+{%- endif -%}

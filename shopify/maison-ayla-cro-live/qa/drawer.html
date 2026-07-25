@@ -22,6 +22,7 @@ body{margin:0}
 .cd-legal{padding:.5rem 1.5rem 1rem;font-family:var(--cd-font);font-size:.62rem;font-weight:300;line-height:1.6;color:var(--cd-muted);text-align:center}
 </style>
 <link rel="stylesheet" href="./ma-cro-dev-fixes.css">
+<link rel="stylesheet" href="./ma-matw.css">
 </head>
 <body>
 
@@ -53,10 +54,25 @@ body{margin:0}
   </div>
 </div>
 
+<form action="/cart/add" method="post"><button type="submit" name="add">Ajouter</button></form>
+
 <script>
   /* Rôle du thème injecté par le test (content_for_header le fournit en réel). */
   var params = new URLSearchParams(location.search);
   window.Shopify = { theme: { role: params.get('role') || 'unpublished' } };
+</script>
+
+<script id="ma-matw-config" type="application/json">
+  {
+    "name": "MATW Project",
+    "url": "https://matwproject.org",
+    "shareLabel": "une part de nos bénéfices",
+    "cartOverline": "Engagement",
+    "cartText": "Chaque commande prolonge notre soutien à MATW Project. Nous reversons une part de nos bénéfices.",
+    "productOverline": "Engagement solidaire",
+    "productText": "En choisissant cette pièce, vous soutenez MATW Project : eau potable, orphelins, aide d’urgence.",
+    "linkLabel": "Découvrir MATW Project"
+  }
 </script>
 
 <script id="ma-cro-trustpilot-config" type="application/json">
@@ -88,5 +104,6 @@ body{margin:0}
 
 <script src="./ma-cro-cart-ui.js" defer></script>
 <script src="./ma-cro-trustpilot.js" defer></script>
+<script src="./ma-matw.js" defer></script>
 </body>
 </html>

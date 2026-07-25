@@ -179,8 +179,10 @@ async function newPage(role = 'unpublished', viewport = { width: 1440, height: 9
   }));
   check('Aucun noeud hérité du faux Trustpilot', legacy.node === 0, `noeuds=${legacy.node}`);
   check('Aucun SVG maison dans le bloc', legacy.svg === 0, `svg=${legacy.svg}`);
-  check('Valeur de test explicitement étiquetée non vérifiée',
-    /non v[eé]rifi[eé]e/i.test(legacy.text) && /4,6\/5/.test(legacy.text), legacy.text.trim().slice(0, 120));
+  const label = await page.evaluate(() =>
+    document.getElementById('maCroTrustpilot')?.getAttribute('aria-label') || '');
+  check('Nom accessible signale une maquette non publiée et non vérifiée',
+    /non publi/i.test(label) && /non v[eé]rifi[eé]e/i.test(label), label);
   await ctx.close();
 }
 
@@ -251,6 +253,62 @@ async function newPage(role = 'unpublished', viewport = { width: 1440, height: 9
     return reached;
   });
   check('Le gestionnaire natif du code promo reçoit bien le clic', intercepted === true);
+  await ctx.close();
+}
+
+/* ── 6 quater. Soutien MATW ────────────────────────────────────────── */
+{
+  const { ctx, page, errors, setCart } = await newPage();
+  await page.evaluate(() => window.MA_TEST.openDrawer());
+  await setCart(0);
+
+  check('Panier vide : bulle MATW masquée', (await page.isVisible('#maMatwCart')) === false);
+
+  await setCart(2);
+  const matw = await page.evaluate(() => {
+    const b = document.getElementById('maMatwCart');
+    const prev = b?.previousElementSibling;
+    const p = document.getElementById('maMatwProduct');
+    return {
+      cartVisible: !!b && !b.hidden,
+      afterShipping: prev?.id === 'maCroShipping' || prev?.className?.includes('cd-header'),
+      insidePanel: !!b && document.getElementById('cdPanel').contains(b),
+      beforeCta: !!b && (b.compareDocumentPosition(document.getElementById('cdCheckoutBtn')) & Node.DOCUMENT_POSITION_FOLLOWING) !== 0,
+      cartText: b?.textContent || '',
+      productExists: !!p,
+      productText: p?.textContent || '',
+      productLink: p?.querySelector('a')?.getAttribute('href'),
+      linkTarget: p?.querySelector('a')?.getAttribute('rel'),
+      instances: document.querySelectorAll('.ma-matw').length
+    };
+  });
+
+  check('Panier rempli : bulle MATW visible', matw.cartVisible);
+  check('Bulle MATW dans le drawer', matw.insidePanel);
+  check('Bulle MATW placée sous la barre de livraison', matw.afterShipping);
+  check('Bulle MATW n\'entre pas en concurrence avec le CTA', matw.beforeCta);
+  check('Bulle MATW nomme MATW Project', /MATW Project/.test(matw.cartText), matw.cartText.trim().slice(0, 90));
+  check('Aucun chiffre de reversement inventé', !/\d+\s*%/.test(matw.cartText) && /une part/.test(matw.cartText));
+  check('Bloc MATW fiche produit injecté après le formulaire', matw.productExists);
+  check('Bloc produit nomme MATW Project', /MATW Project/.test(matw.productText));
+  check('Lien MATW officiel et sécurisé', matw.productLink === 'https://matwproject.org' && /noopener/.test(matw.linkTarget || ''));
+  check('Exactement 2 blocs MATW (panier + produit)', matw.instances === 2, `n=${matw.instances}`);
+
+  await setCart(0);
+  check('Retrait du dernier produit : bulle MATW masquée', (await page.isVisible('#maMatwCart')) === false);
+
+  check('MATW : zéro erreur console', errors.length === 0, errors.join(' | '));
+  await ctx.close();
+}
+
+/* ── 6 quinquies. La mention de test a disparu du bloc de notation ─── */
+{
+  const { ctx, page, setCart } = await newPage();
+  await page.evaluate(() => window.MA_TEST.openDrawer());
+  await setCart(1);
+  const text = await page.evaluate(() => document.getElementById('maCroTrustpilot')?.textContent || '');
+  check('Mention « Aperçu test » retirée du bloc de notation', !/Aper[çc]u test/i.test(text), text.trim().slice(0, 80));
+  check('Score 4,6/5 toujours affiché', /4,6\/5/.test(text));
   await ctx.close();
 }
 

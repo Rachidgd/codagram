@@ -108,11 +108,6 @@
     row.appendChild(rating);
     slot.appendChild(row);
 
-    var note = document.createElement('p');
-    note.className = 'ma-cro-tp__note';
-    note.textContent = 'Aperçu test — donnée non vérifiée, en attente du widget Trustpilot officiel.';
-    slot.appendChild(note);
-
     block.appendChild(slot);
     return block;
   }

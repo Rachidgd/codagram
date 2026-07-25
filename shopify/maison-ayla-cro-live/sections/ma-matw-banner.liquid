@@ -1,0 +1,142 @@
+{%- liquid
+  assign img = section.settings.image
+  assign has_media = false
+  if img != blank
+    assign has_media = true
+  endif
+
+  assign cta_url = section.settings.cta_url
+  if cta_url == blank
+    assign cta_url = 'https://matwproject.org'
+  endif
+-%}
+
+<section
+  class="ma-matw-banner ma-matw-banner--image-{{ section.settings.image_position }}"
+  style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;"
+  aria-labelledby="maMatwBannerTitle-{{ section.id }}"
+>
+  <div
+    class="ma-matw-banner__inner"
+    {% unless has_media %}style="grid-template-columns: minmax(0, 1fr); max-width: 760px;"{% endunless %}
+  >
+    {%- if has_media -%}
+      <div class="ma-matw-banner__media">
+        <img
+          src="{{ img | image_url: width: 1200 }}"
+          srcset="{{ img | image_url: width: 600 }} 600w, {{ img | image_url: width: 900 }} 900w, {{ img | image_url: width: 1200 }} 1200w"
+          sizes="(min-width: 750px) 45vw, 100vw"
+          alt="{{ img.alt | escape }}"
+          width="{{ img.width }}"
+          height="{{ img.height }}"
+          loading="lazy"
+        >
+      </div>
+    {%- endif -%}
+
+    <div class="ma-matw-banner__content">
+      {%- if section.settings.overline != blank -%}
+        <p class="ma-matw-banner__overline">{{ section.settings.overline }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 class="ma-matw-banner__title" id="maMatwBannerTitle-{{ section.id }}">
+          {{ section.settings.title }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.body != blank -%}
+        <div class="ma-matw-banner__body">{{ section.settings.body }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.cta_label != blank -%}
+        <a
+          class="ma-matw-banner__cta"
+          href="{{ cta_url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MATW — Bannière soutien",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Visuel du terrain fourni ou autorisé par MATW Project. Sans image, le bloc s'affiche sur une seule colonne."
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Position de l'image",
+      "options": [
+        { "value": "left", "label": "À gauche" },
+        { "value": "right", "label": "À droite" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "overline",
+      "label": "Surtitre",
+      "default": "Engagement solidaire"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Ce que votre commande rend possible"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Texte",
+      "default": "<p>Maison Ayla reverse une part de ses bénéfices à MATW Project, association humanitaire fondée en 2015 et active dans 24 pays.</p><p>Puits d'eau potable, prise en charge d'orphelins au Togo et au Liban, aide d'urgence en Palestine : votre commande prolonge un travail de terrain mené toute l'année.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Libellé du lien",
+      "default": "Découvrir MATW Project"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Lien",
+      "info": "Vide = https://matwproject.org"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haute",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge basse",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "MATW — Bannière soutien"
+    }
+  ]
+}
+{% endschema %}
