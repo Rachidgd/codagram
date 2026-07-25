@@ -18,6 +18,7 @@
   assign trustpilot_height = '52px'
   assign trustpilot_width = '100%'
   assign trustpilot_test_score = '4,6/5'
+  assign trustpilot_test_value = 4.6
 
   assign trustpilot_configured = false
   if trustpilot_businessunit_id != blank and trustpilot_template_id != blank
@@ -30,6 +31,7 @@
     "configured": {{ trustpilot_configured | json }},
     "testMode": {{ trustpilot_test_mode | json }},
     "testScore": {{ trustpilot_test_score | json }},
+    "testValue": {{ trustpilot_test_value | json }},
     "profileUrl": {{ trustpilot_profile_url | json }}
   }
 </script>

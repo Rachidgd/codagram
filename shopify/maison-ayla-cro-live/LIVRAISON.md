@@ -22,14 +22,29 @@ fournis — conformément au §4 du brief, aucune approximation n'a été fabriq
 
 | | Thème | ID | Rôle | État après intervention |
 |---|---|---|---|---|
-| Cible | Maison Ayla - CRO LIVE 2026-07-24 | `202893754705` | UNPUBLISHED | modifié ✅ |
-| Interdit | Maison Ayla - SEO Fix | `201404973393` | **MAIN** | **non modifié** ✅ |
-| Sauvegarde | BACKUP CRO LIVE avant Trustpilot 2026-07-24 | `202934714705` | UNPUBLISHED | créée avant écriture ✅ |
+| Cible | CRO Maison Ayla — 2026-07-24 | `202938614097` | UNPUBLISHED | modifié ✅ |
+| Interdit | Maison Ayla - SEO Fix | `201404973393` | **MAIN** | **non modifié par cette mission** ✅ |
 
-Preuve de non-modification du thème principal : `updatedAt` du thème `201404973393`
-inchangé à `2026-06-24T00:13:32Z`, relevé avant et après l'intervention. Aucune
-mutation de publication n'a été émise ; le connecteur Shopify utilisé bloque par
-conception toute écriture sur un thème publié.
+### Changement d'inventaire des thèmes survenu en cours de mission
+
+Les thèmes désignés par le brief n'existent plus. Constaté le 2026-07-25 à 09:15 UTC :
+
+| Thème | ID | État |
+|---|---|---|
+| Maison Ayla - CRO LIVE 2026-07-24 | `202893754705` | **supprimé** |
+| BACKUP CRO LIVE avant Trustpilot | `202934714705` | **supprimé** |
+| Maison Ayla - CRO DEV 2026-07-23 | `202889232721` | **supprimé** |
+| CRO Maison Ayla — 2026-07-24 | `202938614097` | **créé** (copie du thème principal) |
+
+Ces suppressions et cette création ont eu lieu hors de cette mission. Le travail a
+donc été redéployé sur le seul thème CRO non publié existant, `202938614097`.
+
+**Le thème principal a été modifié le 2026-07-24 à 19:41:08 UTC**, hors de cette
+mission également (son `updatedAt` était `2026-06-24T00:13:32Z` au démarrage).
+Vérification faite : **aucun fichier de cette mission ne s'y trouve** — les cinq
+fichiers `ma-cro-*` sont absents du thème principal. Rien de la maquette Trustpilot
+n'a atteint la production. Aucune mutation de publication n'a été émise ; le
+connecteur Shopify utilisé bloque par conception toute écriture sur un thème publié.
 
 ---
 
@@ -295,7 +310,75 @@ Puis vérifier que la note affichée est bien celle du widget officiel.
 
 ---
 
+## 10 bis. Optimisations CRO du cart drawer
+
+### Correction majeure — le code promotionnel était totalement inopérant
+
+Diagnostic, vérifié dans le code :
+
+1. `ma-cro-cart-ui.js` interceptait `#cdPromoBtn` en phase de **capture** sur `document`
+   avec `stopImmediatePropagation()`. Le gestionnaire natif de `sections/cart-drawer.liquid`,
+   attaché au bouton lui-même, n'était donc **jamais** exécuté.
+2. Le gestionnaire de remplacement écrivait ses messages dans `#cdPromoMsg` — un
+   identifiant **qui n'existe nulle part** dans le thème. Le vrai élément est
+   `#cdPromoFeedback`. Tout retour utilisateur était donc silencieusement perdu.
+3. Il appelait `/cart/update.js` avec `{ discount: code }`. Ce champ n'existe pas dans
+   l'API Cart de Shopify : la requête renvoyait 200 sans rien appliquer.
+4. Le code était stocké dans `localStorage['maison_ayla_discount']`, alors que le bouton
+   de paiement lit `sessionStorage['ma_discount']`. Le code ne parvenait donc pas non
+   plus au checkout.
+
+**Résultat pour le client : il saisissait un code, cliquait, et rien ne se passait —
+aucun message, aucune remise, ni dans le panier ni au paiement.**
+
+Correction : suppression complète de l'interception. Le flux natif du drawer reprend la
+main — il pose le cookie via `/discount/CODE`, affiche un retour visible dans
+`#cdPromoFeedback`, mémorise le code dans `sessionStorage` et l'ajoute à l'URL de
+checkout. Un contrôle automatisé vérifie désormais que le clic atteint bien le
+gestionnaire natif.
+
+### Ajout — date de livraison estimée
+
+Affichée sous la barre de livraison offerte : « Livraison estimée entre le X et le Y »,
+calculée depuis le délai annoncé par la boutique (8 à 12 jours ouvrés), week-ends exclus,
+formatée en français. C'est un des leviers de réassurance les plus rentables et les plus
+négligés, et il repose ici sur une donnée déjà publiée par Maison Ayla — aucune promesse
+nouvelle n'est créée.
+
+### Correction — bloc « paiement sécurisé » des accordéons
+
+`patchPaymentDisplay()` ciblait `.cd-acc-body`, alors que la classe réelle du drawer est
+`.cd-acc__body`. Le sélecteur ne correspondait à rien : code mort. Corrigé, et le
+remplacement écrit maintenant dans `.cd-acc__content` sans détruire la structure de
+l'accordéon.
+
+### Ajusté au périmètre du nouveau thème
+
+Le thème `202938614097` étant une copie du thème principal, il ne contient pas
+`ma-cro-atc-safe.js`, `ma-cro-size-guard.js` ni `ma-matw-product-bubble.liquid`. Les
+références correspondantes ont été retirées pour éviter des requêtes 404 et du CSS mort.
+`patchFooterLinks()` a également été retiré : il réécrivait les liens du pied de page de
+tout le site, hors périmètre de cette mission et non audité sur ce thème.
+
 ## 11. Changelog
+
+### 1.2.0 — 2026-07-25
+
+**Ajouté**
+- Bloc de notation dans le bas du cart drawer : libellé « AVIS CLIENTS », cinq étoiles à
+  remplissage proportionnel (92 % pour 4,6/5) et score `4,6/5`. Étoiles typographiques
+  `★` en `#0A0A0A` sur fond `#D8D8D8` — identité Maison Ayla, aucun vert, aucun logo ni
+  wordmark Trustpilot.
+- Date de livraison estimée dans la barre de livraison offerte.
+- 11 contrôles automatisés supplémentaires (étoiles, ETA, non-interception du code promo).
+
+**Corrigé**
+- Code promotionnel rendu de nouveau fonctionnel (voir § 10 bis).
+- Sélecteur `.cd-acc-body` → `.cd-acc__body`.
+
+**Modifié**
+- Redéploiement complet sur `202938614097`, y compris `layout/theme.liquid` pour y
+  brancher `{% render 'ma-cro-dev-fixes' %}`.
 
 ### 1.1.0 — 2026-07-24
 

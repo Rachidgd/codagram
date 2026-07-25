@@ -2,6 +2,8 @@
   'use strict';
 
   const ROOT = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+  const DELIVERY_MIN_DAYS = 8;
+  const DELIVERY_MAX_DAYS = 12;
   const state = { cartTimer: null, enhanceTimer: null, previousFocus: null };
 
   function track(name, detail) {
@@ -13,6 +15,32 @@
     return document.querySelector('.cd-panel, [data-cart-drawer-panel], cart-drawer .drawer__inner');
   }
 
+  function addBusinessDays(count) {
+    const date = new Date();
+    let added = 0;
+    while (added < count) {
+      date.setDate(date.getDate() + 1);
+      const day = date.getDay();
+      if (day !== 0 && day !== 6) added += 1;
+    }
+    return date;
+  }
+
+  function formatDay(date) {
+    try {
+      return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
+    } catch (error) {
+      return date.getDate() + '/' + (date.getMonth() + 1);
+    }
+  }
+
+  function deliveryEstimate() {
+    return 'Livraison estimée entre le ' +
+      formatDay(addBusinessDays(DELIVERY_MIN_DAYS)) +
+      ' et le ' +
+      formatDay(addBusinessDays(DELIVERY_MAX_DAYS)) + '.';
+  }
+
   function createShippingBlock() {
     const block = document.createElement('section');
     block.id = 'maCroShipping';
@@ -20,7 +48,9 @@
     block.hidden = true;
     block.setAttribute('role', 'status');
     block.setAttribute('aria-live', 'polite');
-    block.innerHTML = '<div class="ma-cro-shipping__top"><p class="ma-cro-shipping__title">Livraison offerte débloquée</p><span class="ma-cro-shipping__status">100 %</span></div><div class="ma-cro-shipping__track" role="progressbar" aria-label="Livraison offerte" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><span class="ma-cro-shipping__fill"></span></div><p class="ma-cro-shipping__message">Félicitations — la livraison est offerte. Votre abaya vous attend.</p>';
+    block.innerHTML = '<div class="ma-cro-shipping__top"><p class="ma-cro-shipping__title">Livraison offerte débloquée</p><span class="ma-cro-shipping__status">100 %</span></div><div class="ma-cro-shipping__track" role="progressbar" aria-label="Livraison offerte" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><span class="ma-cro-shipping__fill"></span></div><p class="ma-cro-shipping__message">Félicitations — la livraison est offerte. Votre abaya vous attend.</p><p class="ma-cro-shipping__eta"></p>';
+    const eta = block.querySelector('.ma-cro-shipping__eta');
+    if (eta) eta.textContent = deliveryEstimate();
     return block;
   }
 
@@ -68,24 +98,6 @@
     });
   }
 
-  function patchFooterLinks() {
-    document.querySelectorAll('footer a[href="#"], .footer-wrapper a[href="#"]').forEach(function (link) {
-      const text = (link.textContent || '').trim();
-      if (text.indexOf('@') > -1) {
-        link.href = 'mailto:' + text.replace(/\s/g, '');
-        return;
-      }
-      const digits = text.replace(/[^0-9+]/g, '');
-      if (digits.replace(/\D/g, '').length >= 9) {
-        link.href = 'tel:' + digits;
-        return;
-      }
-      link.removeAttribute('href');
-      link.setAttribute('aria-disabled', 'true');
-      link.style.cursor = 'default';
-    });
-  }
-
   function patchNewsletterConsent() {
     document.querySelectorAll('form input[type="checkbox"]').forEach(function (checkbox) {
       const key = ((checkbox.name || '') + ' ' + (checkbox.id || '')).toLowerCase();
@@ -112,18 +124,18 @@
       else container.hidden = true;
     });
 
-    document.querySelectorAll('.cd-acc-body').forEach(function (container) {
+    document.querySelectorAll('.cd-acc__body').forEach(function (container) {
       if (container.dataset.maCroPayments === 'true') return;
       if (!/visa|mastercard|paypal|apple pay/i.test(container.textContent || '')) return;
       container.dataset.maCroPayments = 'true';
-      container.innerHTML = '<p>Les moyens disponibles seront confirmés au paiement sécurisé.</p>';
+      const content = container.querySelector('.cd-acc__content') || container;
+      content.innerHTML = '<p>Paiement sécurisé. Les moyens disponibles sont confirmés au moment du paiement.</p>';
     });
   }
 
   function ensureAll() {
     ensureDrawer();
     patchShippingCopy();
-    patchFooterLinks();
     patchNewsletterConsent();
     patchPaymentDisplay();
   }
@@ -133,48 +145,7 @@
     state.enhanceTimer = window.setTimeout(ensureAll, 60);
   }
 
-  function setPromoMessage(message, isError) {
-    const node = document.getElementById('cdPromoMsg');
-    if (!node) return;
-    node.textContent = message;
-    node.setAttribute('role', isError ? 'alert' : 'status');
-    node.setAttribute('aria-live', 'polite');
-  }
-
-  document.addEventListener('click', async function (event) {
-    const promoButton = event.target.closest('#cdPromoBtn');
-    if (promoButton) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      const input = document.getElementById('cdPromoInput');
-      const code = input ? input.value.trim() : '';
-      if (!code) {
-        setPromoMessage('Saisissez un code promotionnel.', true);
-        return;
-      }
-      promoButton.disabled = true;
-      setPromoMessage('Vérification du code…', false);
-      try {
-        const response = await fetch(ROOT + 'cart/update.js', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ discount: code })
-        });
-        const payload = await response.json().catch(function () { return {}; });
-        if (!response.ok) throw new Error(payload.description || payload.message || 'Code non enregistré.');
-        window.localStorage.setItem('maison_ayla_discount', code);
-        setPromoMessage('Code enregistré — son éligibilité sera confirmée au paiement.', false);
-        track('ma_discount_code_saved', { discount_code: code });
-      } catch (error) {
-        window.localStorage.removeItem('maison_ayla_discount');
-        setPromoMessage(error.message || 'Impossible de vérifier ce code pour le moment.', true);
-        track('ma_discount_code_error', { error_message: error.message || 'unknown' });
-      } finally {
-        promoButton.disabled = false;
-      }
-      return;
-    }
-
+  document.addEventListener('click', function (event) {
     const upsellButton = event.target.closest('.cd-up-card__add');
     if (upsellButton) {
       event.preventDefault();
@@ -194,13 +165,13 @@
       window.setTimeout(function () {
         ensureDrawer();
         const panel = drawerPanel();
-        const close = panel && panel.querySelector('.cd-close, [data-cart-drawer-close], button[aria-label*="Fermer"]');
+        const close = panel && panel.querySelector('.cd-close, .cd-header__close, [data-cart-drawer-close], button[aria-label*="Fermer"]');
         if (close) close.focus({ preventScroll: true });
         track('ma_cart_drawer_open');
       }, 120);
     }
 
-    const closeButton = event.target.closest('.cd-close, [data-cart-drawer-close], button[aria-label*="Fermer le panier"]');
+    const closeButton = event.target.closest('.cd-close, .cd-header__close, [data-cart-drawer-close], button[aria-label*="Fermer le panier"]');
     if (closeButton && state.previousFocus && typeof state.previousFocus.focus === 'function') {
       window.setTimeout(function () { state.previousFocus.focus({ preventScroll: true }); }, 50);
     }

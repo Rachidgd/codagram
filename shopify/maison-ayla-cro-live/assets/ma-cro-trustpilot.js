@@ -25,6 +25,12 @@
 
   var state = { itemCount: null };
 
+  function clampPercent(value) {
+    var n = Number(value);
+    if (!isFinite(n) || n <= 0) return 0;
+    return Math.min(100, (n / 5) * 100);
+  }
+
   function panelEl() {
     return document.getElementById('cdPanel');
   }
@@ -74,11 +80,32 @@
     label.textContent = 'Avis clients';
     row.appendChild(label);
 
+    var rating = document.createElement('span');
+    rating.className = 'ma-cro-tp__rating';
+
+    var stars = document.createElement('span');
+    stars.className = 'ma-cro-tp__stars';
+    stars.setAttribute('aria-hidden', 'true');
+
+    var base = document.createElement('span');
+    base.className = 'ma-cro-tp__stars-base';
+    base.textContent = '★★★★★';
+    stars.appendChild(base);
+
+    var fill = document.createElement('span');
+    fill.className = 'ma-cro-tp__stars-fill';
+    fill.textContent = '★★★★★';
+    fill.style.width = clampPercent(config.testValue) + '%';
+    stars.appendChild(fill);
+
+    rating.appendChild(stars);
+
     var score = document.createElement('span');
     score.className = 'ma-cro-tp__mock-score';
     score.textContent = config.testScore || '';
-    row.appendChild(score);
+    rating.appendChild(score);
 
+    row.appendChild(rating);
     slot.appendChild(row);
 
     var note = document.createElement('p');

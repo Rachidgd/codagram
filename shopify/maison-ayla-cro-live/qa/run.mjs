@@ -1,9 +1,18 @@
 import { chromium } from 'playwright';
-import { pathToFileURL } from 'node:url';
 import path from 'node:path';
+import http from 'node:http';
+import fs from 'node:fs';
 
 const HERE = path.resolve('.');
-const PAGE = pathToFileURL(path.join(HERE, 'drawer.html')).href;
+const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css' };
+const server = http.createServer((req, res) => {
+  const file = path.join(HERE, decodeURIComponent(req.url.split('?')[0]));
+  if (!fs.existsSync(file) || !fs.statSync(file).isFile()) { res.writeHead(404); return res.end(); }
+  res.writeHead(200, { 'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream' });
+  fs.createReadStream(file).pipe(res);
+});
+await new Promise((r) => server.listen(0, '127.0.0.1', r));
+const PAGE = `http://127.0.0.1:${server.address().port}/drawer.html`;
 
 const results = [];
 function check(name, ok, detail = '') {
@@ -28,19 +37,32 @@ async function newPage(role = 'unpublished', viewport = { width: 1440, height: 9
   const errors = [];
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('pageerror', (e) => errors.push(String(e)));
+
+  const cart = { count: 0 };
+  await page.route('**/cart.js', (route) => route.fulfill({
+    status: 200,
+    contentType: 'application/json',
+    body: JSON.stringify({ item_count: cart.count, items: [], total_price: cart.count * 8900 })
+  }));
+  const setCart = async (n) => {
+    cart.count = n;
+    await page.evaluate((c) => window.MA_TEST.setCart(c), n);
+    await page.waitForTimeout(200);
+  };
+
   await page.goto(`${PAGE}?role=${role}`);
   await page.waitForFunction(() => document.readyState === 'complete');
   /* Neutralise l'animation d'ouverture du drawer : les mesures et les
      captures portent sur l'état stabilisé, pas sur une frame de transition. */
   await page.addStyleTag({ content: '.cd-panel{transition:none !important}' });
   await page.waitForTimeout(150);
-  return { ctx, page, errors };
+  return { ctx, page, errors, setCart };
 }
 
 /* ── 1. Panier vide : aucun widget visible ─────────────────────────── */
 {
-  const { ctx, page, errors } = await newPage();
-  await page.evaluate(() => window.MA_TEST.setCart(0));
+  const { ctx, page, errors, setCart } = await newPage();
+  await setCart(0);
   await page.evaluate(() => window.MA_TEST.openDrawer());
   await page.waitForTimeout(120);
   const visible = await page.isVisible('#maCroTrustpilot');
@@ -51,9 +73,9 @@ async function newPage(role = 'unpublished', viewport = { width: 1440, height: 9
 
 /* ── 2. Un produit : widget visible et bien placé ──────────────────── */
 {
-  const { ctx, page, errors } = await newPage();
+  const { ctx, page, errors, setCart } = await newPage();
   await page.evaluate(() => window.MA_TEST.openDrawer());
-  await page.evaluate(() => window.MA_TEST.setCart(1));
+  await setCart(1);
   await page.waitForTimeout(150);
 
   check('1 produit : widget visible', await page.isVisible('#maCroTrustpilot'));
@@ -86,10 +108,10 @@ async function newPage(role = 'unpublished', viewport = { width: 1440, height: 9
 
 /* ── 3. Plusieurs produits, mutations, réouverture : un seul widget ── */
 {
-  const { ctx, page, errors } = await newPage();
+  const { ctx, page, errors, setCart } = await newPage();
   await page.evaluate(() => window.MA_TEST.openDrawer());
   for (const n of [1, 2, 3, 2, 1, 3]) {
-    await page.evaluate((c) => window.MA_TEST.setCart(c), n);
+    await setCart(n);
     await page.waitForTimeout(40);
   }
   await page.evaluate(() => window.MA_TEST.closeDrawer());
@@ -102,7 +124,7 @@ async function newPage(role = 'unpublished', viewport = { width: 1440, height: 9
   check('Widget toujours rendu après réouverture', await page.isVisible('#maCroTrustpilot'));
 
   /* Suppression du dernier produit */
-  await page.evaluate(() => window.MA_TEST.setCart(0));
+  await setCart(0);
   await page.waitForTimeout(120);
   check('Suppression du dernier produit : widget masqué', (await page.isVisible('#maCroTrustpilot')) === false);
 
@@ -112,9 +134,9 @@ async function newPage(role = 'unpublished', viewport = { width: 1440, height: 9
 
 /* ── 4. Absence de boucle MutationObserver ─────────────────────────── */
 {
-  const { ctx, page, errors } = await newPage();
+  const { ctx, page, errors, setCart } = await newPage();
   await page.evaluate(() => window.MA_TEST.openDrawer());
-  await page.evaluate(() => window.MA_TEST.setCart(2));
+  await setCart(2);
   await page.waitForTimeout(200);
 
   const loop = await page.evaluate(async () => {
@@ -134,9 +156,9 @@ async function newPage(role = 'unpublished', viewport = { width: 1440, height: 9
 
 /* ── 5. Garde de publication : thème publié => aucun rendu maquette ── */
 {
-  const { ctx, page, errors } = await newPage('main');
+  const { ctx, page, errors, setCart } = await newPage('main');
   await page.evaluate(() => window.MA_TEST.openDrawer());
-  await page.evaluate(() => window.MA_TEST.setCart(2));
+  await setCart(2);
   await page.waitForTimeout(200);
   const present = await page.evaluate(() => document.querySelectorAll('.ma-cro-tp').length);
   check('Thème publié (role=main) : maquette de test NON rendue', present === 0, `instances=${present}`);
@@ -146,9 +168,9 @@ async function newPage(role = 'unpublished', viewport = { width: 1440, height: 9
 
 /* ── 6. Aucun vestige du faux Trustpilot ───────────────────────────── */
 {
-  const { ctx, page } = await newPage();
+  const { ctx, page, setCart } = await newPage();
   await page.evaluate(() => window.MA_TEST.openDrawer());
-  await page.evaluate(() => window.MA_TEST.setCart(2));
+  await setCart(2);
   await page.waitForTimeout(150);
   const legacy = await page.evaluate(() => ({
     node: document.querySelectorAll('#maCroTrust, .ma-cro-trust, .ma-cro-trust__mark, .ma-cro-trust__stars').length,
@@ -162,11 +184,81 @@ async function newPage(role = 'unpublished', viewport = { width: 1440, height: 9
   await ctx.close();
 }
 
+/* ── 6 bis. Étoiles de notation et date de livraison estimée ───────── */
+{
+  const { ctx, page, errors, setCart } = await newPage();
+  await page.evaluate(() => window.MA_TEST.openDrawer());
+  await setCart(2);
+  await page.waitForTimeout(200);
+
+  const stars = await page.evaluate(() => {
+    const base = document.querySelector('.ma-cro-tp__stars-base');
+    const fill = document.querySelector('.ma-cro-tp__stars-fill');
+    const cs = fill ? getComputedStyle(fill) : null;
+    const csBase = base ? getComputedStyle(base) : null;
+    const wrap = document.querySelector('.ma-cro-tp__stars');
+    return {
+      baseCount: (base?.textContent || '').length,
+      fillCount: (fill?.textContent || '').length,
+      widthPct: fill ? fill.style.width : null,
+      fillColor: cs?.color,
+      baseColor: csBase?.color,
+      overflow: cs?.overflow,
+      ariaHidden: wrap?.getAttribute('aria-hidden'),
+      scoreText: document.querySelector('.ma-cro-tp__mock-score')?.textContent
+    };
+  });
+  check('5 étoiles rendues (fond + remplissage)', stars.baseCount === 5 && stars.fillCount === 5);
+  check('Remplissage proportionnel à 4,6/5 (92 %)', stars.widthPct === '92%', `width=${stars.widthPct}`);
+  check('Étoiles à l\'identité Maison Ayla, aucun vert', stars.fillColor === 'rgb(10, 10, 10)' && stars.baseColor === 'rgb(216, 216, 216)', `${stars.fillColor} / ${stars.baseColor}`);
+  check('Remplissage écrêté (overflow hidden)', stars.overflow === 'hidden');
+  check('Étoiles masquées aux lecteurs d\'écran (score déjà en texte)', stars.ariaHidden === 'true');
+  check('Score 4,6/5 affiché en clair', stars.scoreText === '4,6/5', stars.scoreText);
+
+  const eta = await page.evaluate(() => {
+    const node = document.querySelector('.ma-cro-shipping__eta');
+    return { text: node?.textContent || '', hasBlock: !!document.getElementById('maCroShipping') };
+  });
+  check('Barre de livraison toujours présente', eta.hasBlock);
+  check('Date de livraison estimée calculée', /^Livraison estimée entre le .+ et le .+\.$/.test(eta.text), eta.text);
+
+  const noWeekend = await page.evaluate(() => {
+    function add(count) {
+      const d = new Date();
+      let a = 0;
+      while (a < count) { d.setDate(d.getDate() + 1); const w = d.getDay(); if (w !== 0 && w !== 6) a++; }
+      return d.getDay();
+    }
+    return { min: add(8), max: add(12) };
+  });
+  check('Bornes de livraison hors week-end', ![0, 6].includes(noWeekend.min) && ![0, 6].includes(noWeekend.max),
+    `j${noWeekend.min}/j${noWeekend.max}`);
+
+  check('Étoiles + ETA : zéro erreur console', errors.length === 0, errors.join(' | '));
+  await ctx.close();
+}
+
+/* ── 6 ter. Le code promotionnel n'est plus intercepté ─────────────── */
+{
+  const { ctx, page, setCart } = await newPage();
+  const intercepted = await page.evaluate(() => {
+    let reached = false;
+    const btn = document.createElement('button');
+    btn.id = 'cdPromoBtn';
+    btn.addEventListener('click', () => { reached = true; });
+    document.getElementById('cdPromo').appendChild(btn);
+    btn.click();
+    return reached;
+  });
+  check('Le gestionnaire natif du code promo reçoit bien le clic', intercepted === true);
+  await ctx.close();
+}
+
 /* ── 7. Responsive : pas de scroll horizontal, CTA préservé ────────── */
 for (const vp of VIEWPORTS) {
-  const { ctx, page, errors } = await newPage('unpublished', { width: vp.w, height: vp.h });
+  const { ctx, page, errors, setCart } = await newPage('unpublished', { width: vp.w, height: vp.h });
   await page.evaluate(() => window.MA_TEST.openDrawer());
-  await page.evaluate(() => window.MA_TEST.setCart(2));
+  await setCart(2);
   await page.waitForTimeout(150);
 
   const m = await page.evaluate(() => {
@@ -206,9 +298,11 @@ for (const vp of VIEWPORTS) {
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('pageerror', (e) => errors.push(String(e)));
 
-  await page.addInitScript(() => {
-    window.__forceOfficial = true;
-  });
+  await page.route('**/cart.js', (route) => route.fulfill({
+    status: 200,
+    contentType: 'application/json',
+    body: JSON.stringify({ item_count: 1, items: [], total_price: 8900 })
+  }));
   await page.goto(`${PAGE}?role=unpublished`);
   /* Reconfiguration en mode "identifiants fournis" puis rechargement du module. */
   await page.evaluate(() => {
@@ -223,7 +317,7 @@ for (const vp of VIEWPORTS) {
   await page.addScriptTag({ path: path.join(HERE, 'ma-cro-trustpilot.js') });
   await page.evaluate(() => window.MA_TEST.openDrawer());
   await page.evaluate(() => window.MA_TEST.setCart(1));
-  await page.waitForTimeout(200);
+  await page.waitForTimeout(250);
 
   const official = await page.evaluate(() => {
     const b = document.getElementById('maCroTrustpilot');
@@ -246,6 +340,7 @@ for (const vp of VIEWPORTS) {
 }
 
 await browser.close();
+server.close();
 
 const failed = results.filter((r) => !r.ok);
 console.log(`\n──────────────────────────────────────────`);
