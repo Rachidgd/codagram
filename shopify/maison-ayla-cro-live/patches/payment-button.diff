@@ -1,0 +1,10 @@
+--- sections/product-main-3.liquid
+@@ ligne 1117-1118 @@  (thème « CRO Maison Ayla », section active de la fiche produit)
+
+           </button>
++
++          {%- comment -%} Paiement accéléré natif Shopify : n'affiche que les
++          fournisseurs réellement activés sur la boutique (PayPal, Shop Pay,
++          Apple Pay…). Rend une chaîne vide si aucun n'est actif. {%- endcomment -%}
++          <div class="pdp__accelerated">{{ form | payment_button }}</div>
+         {%- endform -%}
