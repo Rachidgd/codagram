@@ -6,6 +6,9 @@
 
 {{ 'ma-cro-dev-fixes.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'ma-cro-cart-ui.js' | asset_url }}" defer></script>
+{%- if request.page_type == 'product' -%}
+  <script src="{{ 'ma-size-guide.js' | asset_url }}" defer></script>
+{%- endif -%}
 
 {%- render 'ma-cro-trustpilot' -%}
 {%- render 'ma-matw' -%}

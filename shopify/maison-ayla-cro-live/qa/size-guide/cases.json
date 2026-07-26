@@ -1,0 +1,10 @@
+{
+  "legend-fieldset": "<form action=\"/cart/add\" method=\"post\"><fieldset class=\"variant-option\"><legend class=\"form__label\">Taille</legend><div class=\"swatches\"><input type=\"radio\" name=\"Taille\" value=\"S\"><label>S</label><input type=\"radio\" name=\"Taille\" value=\"M\"><label>M</label></div></fieldset><button type=\"submit\" name=\"add\">Ajouter au panier</button></form>",
+  "label-block": "<form action=\"/cart/add\"><div class=\"product-form__input\"><label class=\"form__label\">Taille</label><select name=\"id\"><option>S</option><option>M</option></select></div><button type=\"submit\">Ajouter</button></form>",
+  "flex-parent": "<form action=\"/cart/add\"><div class=\"opt\" style=\"display:flex;align-items:baseline\"><label class=\"form__label\">Taille</label></div><select name=\"id\"><option>S</option></select><button type=\"submit\">Ajouter</button></form>",
+  "no-size-label": "<form action=\"/cart/add\"><div>Couleur</div><button type=\"submit\" name=\"add\">Ajouter au panier</button></form>",
+  "already-linked": "<form action=\"/cart/add\"><legend class=\"form__label\">Taille</legend><a href=\"/pages/guide-des-tailles\">Guide</a><button type=\"submit\">Ajouter</button></form>",
+  "not-a-product": "<main><h1>Accueil</h1><a href=\"/collections/abaya\">Voir</a></main>",
+  "uppercase-size": "<form action=\"/cart/add\"><legend>TAILLE :</legend><button type=\"submit\">Ajouter</button></form>",
+  "late-render": "<form action=\"/cart/add\"><div id=\"slot\"></div><button type=\"submit\">Ajouter</button></form>"
+}
