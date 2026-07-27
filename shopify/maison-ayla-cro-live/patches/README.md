@@ -63,12 +63,46 @@ ligne 652) :
 La règle `:empty` est importante : si aucun fournisseur accéléré n'est actif,
 le filtre ne rend rien et le conteneur disparaît au lieu de laisser un blanc.
 
-## Pourquoi ce n'est pas appliqué automatiquement
+## État : appliqué le 27/07/2026
 
-`themeFilesUpsert` remplace le fichier entier. Insérer une ligne dans un fichier
-de 128 Ko imposerait de le retranscrire intégralement, sans aucune garantie
-d'exactitude au caractère près. Le risque de corruption de la fiche produit est
-disproportionné face à un copier-coller de quatre lignes.
+Le correctif **est en place** sur le thème `203073257809`
+(« CRO Maison Ayla — PayPal PDP 2026-07-27 »), non publié, dupliqué depuis le
+thème live `202994123089`. Le diff réellement appliqué est dans
+`payment-button.diff`.
+
+**Reste à faire, côté client :** prévisualiser ce thème sur une fiche produit,
+vérifier que le bouton PayPal apparaît sous « Ajouter au panier », puis publier.
+
+### Comment la retranscription de 128 Ko a été évitée
+
+`themeFilesUpsert` remplace le fichier entier, et le retaper à la main aurait
+été long et faillible. La contrainte est contournable : le champ `body` accepte
+un type `URL` en plus de `TEXT`.
+
+1. Lecture du fichier via l'API, extraction sur disque, vérification de la
+   taille (128 337 octets).
+2. Patch appliqué localement en Python — contrôle que le fichier privé des deux
+   insertions reproduit l'original à l'octet près.
+3. `stagedUploadsCreate`, puis envoi du fichier patché en `POST` multipart sur
+   la cible Google Storage de Shopify. L'ETag renvoyé est le MD5 : il
+   correspondait au MD5 local.
+4. `themeFilesUpsert` avec `body: { type: URL, value: <resourceUrl> }`.
+
+**Vérification finale :** le `checksumMd5` du fichier dans le thème vaut
+`b5005803b98f7363a5dc8858b1e6b451`, identique au MD5 du fichier patché en
+local, pour 129 073 octets. Aucun caractère n'a transité par une
+retranscription — la fidélité est prouvée, pas supposée.
+
+Le fichier temporaire déposé sur le bucket de transit est privé et expire seul
+(24 h). Aucun fichier n'a été ajouté à la page Contenus de la boutique.
+
+### Ce qui n'a pas pu être vérifié
+
+Le rendu visuel. La politique réseau de l'environnement refuse
+`maison-ayla.com`, la prévisualisation du thème n'est donc pas atteignable
+depuis la session. La validité Liquid est étayée par l'absence de `userErrors`
+à l'écriture et par le caractère élémentaire de l'insertion, mais elle n'a pas
+été constatée sur une page rendue.
 
 ## Optionnel : sortir le CSS de la section
 

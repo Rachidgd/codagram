@@ -1,10 +1,26 @@
---- sections/product-main-3.liquid
-@@ ligne 1117-1118 @@  (thème « CRO Maison Ayla », section active de la fiche produit)
-
-           </button>
+--- a/sections/product-main-3.liquid	2026-07-27 16:43:35.623451126 +0000
++++ b/sections/product-main-3.liquid	2026-07-27 16:44:13.077785868 +0000
+@@ -649,6 +649,12 @@
+ .pdp__rev-verified { display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--pdp-font); font-size: 0.6rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pdp-muted); margin-top: 2px; }
+ .pdp__rev-verified svg { width: 10px; height: 10px; stroke: var(--pdp-muted); fill: none; stroke-width: 1.5; }
+ .pdp__rev-text { font-family: var(--pdp-font); font-size: 0.85rem; font-weight: 300; line-height: 1.7; color: var(--pdp-muted); }
 +
++/* Paiement accéléré natif (PayPal, Shop Pay, Apple Pay…) */
++.pdp__accelerated { margin: 0 0 0.65rem; }
++.pdp__accelerated:empty { display: none; margin: 0; }
++.pdp__accelerated .shopify-payment-button__button { border-radius: 0; min-height: 56px; }
++.pdp__accelerated .shopify-payment-button__more-options { font-family: var(--pdp-font); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; }
+ </style>
+ 
+ {%- liquid
+@@ -1115,6 +1121,10 @@
+               {{ atc_label }}
+             </span>
+           </button>
 +          {%- comment -%} Paiement accéléré natif Shopify : n'affiche que les
 +          fournisseurs réellement activés sur la boutique (PayPal, Shop Pay,
 +          Apple Pay…). Rend une chaîne vide si aucun n'est actif. {%- endcomment -%}
 +          <div class="pdp__accelerated">{{ form | payment_button }}</div>
          {%- endform -%}
+ 
+         {%- if section.settings.show_wishlist -%}

@@ -23,10 +23,16 @@ demandé.
 
 ## 2. Règles absolues
 
-- **Ne jamais modifier ni publier le thème principal.** Le thème publié est
-  `202938614097` (« CRO Maison Ayla — 2026-07-24 »). Le thème de travail est
-  `202994123089` (non publié). L'API Shopify refuse déjà les écritures sur le
-  thème principal.
+- **Ne jamais modifier ni publier le thème principal.** L'API Shopify refuse
+  déjà les écritures sur le thème principal. **Attention, les rôles ont changé
+  le 27/07/2026** — vérifier systématiquement avec une requête `themes` avant
+  d'écrire, ne pas se fier à ce document :
+
+  | Thème | ID | Rôle au 27/07/2026 |
+  |---|---|---|
+  | CRO Maison Ayla — guide des tailles 2026-07-26 | `202994123089` | **MAIN, publié** |
+  | CRO Maison Ayla — PayPal PDP 2026-07-27 | `203073257809` | non publié, porte le correctif PayPal |
+  | CRO Maison Ayla — 2026-07-24 | `202938614097` | non publié, ancien thème live |
 - **Jamais de faux avis, de faux stock, de compte à rebours ni d'urgence
   fabriquée.** Le client a confirmé que les avis présents sur les fiches produits
   sont **réels, récoltés manuellement** — ne pas y toucher.
@@ -157,7 +163,19 @@ La méthode complète est encodée dans l'agent `expert-seo-editorial`
 
 ---
 
-## 6. Le chantier bloquant — le bouton PayPal
+## 6. Le bouton PayPal — correctif appliqué, à prévisualiser puis publier
+
+**Fait le 27/07/2026.** Le correctif est en place sur le thème `203073257809`
+(non publié), dupliqué depuis le thème live. Il reste à le prévisualiser sur une
+fiche produit et à le publier — le rendu n'a pas pu être constaté depuis la
+session, `maison-ayla.com` étant refusé par la politique réseau.
+
+La retranscription des 128 Ko a été évitée en passant par `stagedUploadsCreate`
+puis `themeFilesUpsert` avec `body: { type: URL }`. Le `checksumMd5` du fichier
+dans le thème est identique au MD5 du fichier patché localement : la fidélité
+est prouvée. Méthode complète et diff appliqué dans `patches/`.
+
+Le diagnostic d'origine, conservé pour mémoire :
 
 PayPal est activé côté Shopify mais **n'apparaît pas** sur la fiche produit.
 
@@ -176,11 +194,11 @@ personnalisée de 128 Ko qui n'appelle jamais `payment_button`.
 Le formulaire est ouvert ligne 915 par `{%- form 'product', prod, id: 'pdpForm' -%}`,
 donc la variable `form` est disponible au point d'insertion.
 
-**Ce correctif n'a pas été appliqué automatiquement, volontairement** :
-`themeFilesUpsert` remplace le fichier entier, ce qui imposerait de retranscrire
-128 Ko sans garantie d'exactitude au caractère près. Le détail complet, les
-règles CSS associées et le diff sont dans `patches/README.md`. **C'est au client
-de coller ces quatre lignes.**
+Les règles CSS associées et le diff appliqué sont dans `patches/`.
+
+À noter : la ligne 1135 contient un logo PayPal en SVG, purement décoratif. Ce
+n'est pas un bouton, seulement une icône de réassurance — elle ne remplace pas
+le paiement accéléré et n'a pas été touchée.
 
 ---
 
@@ -188,7 +206,8 @@ de coller ces quatre lignes.**
 
 | Sujet | État |
 |---|---|
-| Thème `202994123089` à publier | Contient le lien guide des tailles sur la fiche produit, la bulle MATW, le délai de livraison. Prévisualiser puis publier. |
+| Thème `203073257809` à publier | Porte le correctif PayPal. Dupliqué du live, donc il contient déjà le guide des tailles, la bulle MATW et le délai de livraison. Prévisualiser une fiche produit puis publier. |
+| Thème `202994123089` | **Publié** depuis le 26/07. Ligne close. |
 | `delivery_days: 6` | À passer à **12** dans l'éditeur de thème (contredit les 8 à 12 jours ouvrés annoncés ailleurs). `trust1_line2` à passer de « 48-72H » à « 24 à 72 h ». |
 | Relance panier abandonné | Séquence rédigée dans `mailing/relance-panier-abandonne.md`. À configurer dans Marketing → Automatisations. Non faisable par l'API. |
 | Trustpilot | Le connecteur attend l'identifiant Business Unit. **Note réelle : 4,0/5 sur 4 avis**, pas 4,6. |
@@ -230,5 +249,9 @@ vides de la section 5 (abaya-khaleeji et abaya-aid).
 ```
 
 Cette tâche exige les données SERP de Thruu en entrée : sans elles, ne pas
-rédiger. Le correctif PayPal de la section 6 reste le chantier le plus
-rentable du lot, mais il est à la main du client.
+rédiger.
+
+**Plus urgent que le SEO :** le thème `203073257809` porte le correctif PayPal
+et attend d'être prévisualisé puis publié. Tant qu'il ne l'est pas, l'entonnoir
+reste bouché — 0 commande sur 26 arrivées au checkout. Aucun contenu publié ne
+compensera cela.
