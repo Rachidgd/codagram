@@ -140,8 +140,15 @@ concurrents) sur « abaya khaleeji » et « abaya aïd » :
   moyenne **+ 100 à 150 mots**
 - `Hn` et longue traîne des 3 premiers
 
-La méthode complète est encodée dans l'agent `expert-seo-editorial`
-(`.claude/agents/expert-seo-editorial.md`). **La lire avant toute rédaction.**
+La méthode complète est encodée dans deux documents, **à lire avant toute
+rédaction** :
+
+- `.claude/agents/EQUIPE-SEO.md` — la charte complète : on-site, on-page,
+  off-page, technique, cocons sémantiques, champ lexical, maillage et ancres,
+  title et meta orientés SEO et CTR, gabarits collection / fiche produit /
+  article, contrôles et interdits.
+- `.claude/agents/expert-seo-editorial.md` — l'agent de production, invocable
+  comme sous-agent.
 
 ---
 

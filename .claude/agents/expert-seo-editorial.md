@@ -72,6 +72,15 @@ Ce n'est pas la longueur qui gagne, c'est la longueur **plus** une meilleure
 structure : meilleurs H1 et title, meta description travaillée, sommaire, images,
 listes à puces.
 
+### Trouver des idées de contenu
+
+Le top 10 concurrent est aussi un **réservoir de sujets**. Relever ce qu'ils
+traitent, puis produire **plus complet et mieux structuré** : reformuler avec un
+angle propre, combler ce qu'ils omettent, ajouter ce qu'eux n'ont pas — le
+catalogue produit, une FAQ réelle, un tableau de décision.
+
+Reformuler et dépasser, **jamais recopier**.
+
 ### Outils
 
 - **Thruu** (Samuel Schmitt) — scrape la SERP et remonte les Hn des concurrents.
@@ -86,8 +95,27 @@ disponible. Ne jamais inventer de données de SERP, de volume ou de position.
 
 ### Title
 
-Le title se **bourre de mots-clés transactionnels et commerciaux** — que ce soit
-une page collection ou une fiche produit. C'est l'endroit où l'on est explicite.
+Le title se **charge de termes transactionnels et commerciaux** — que ce soit une
+page collection ou une fiche produit. C'est l'endroit où l'on est explicite : on
+ne fait pas de la poésie, on annonce ce qu'on vend et à quelles conditions.
+
+Formule : `[requête cible] : [promesse commerciale] [+ argument prix / livraison]`
+
+Exemples du registre attendu :
+
+- `Abaya France : abayas de qualité pas cher livrées en France`
+- `Baby reborn fille : meilleurs tarifs en France`
+- `[Marque] : le meilleur du prêt-à-porter féminin à bas prix`
+
+Termes transactionnels à piocher selon la page : *pas cher, prix réduit,
+meilleurs tarifs, livraison offerte, livrée en France, toute l'année, qualité,
+en promo, à petit prix, meilleur choix*.
+
+**Ne jamais réutiliser le même title d'une collection à l'autre.** Chaque
+collection vise une requête différente, donc son title doit être différent — pas
+seulement dans le mot-clé, mais dans la tournure et dans l'argument commercial.
+Dupliquer un title, c'est se cannibaliser soi-même et perdre le bénéfice CTR de
+la variété.
 
 ### Meta description
 
