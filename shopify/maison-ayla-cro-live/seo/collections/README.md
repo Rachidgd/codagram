@@ -76,11 +76,20 @@ Généré le 27/07/2026, **sans filtre sur le stock** (demande explicite : les
 ruptures seront corrigées séparément). Les trois produits liés par collection
 sont donc les meilleures ventes brutes remontées par l'API.
 
-## 13 collections augmentées et prêtes
+## 13 collections augmentées
 
-abaya, abaya-pas-cher, abaya-chic, abaya-simple, abaya-ouverte, abaya-papillon,
-abaya-verte, abaya-2-pieces, abaya-bleu, abaya-rose, abaya-saoudienne,
-abaya-blanche, abaya-beige.
+**Publiées :** abaya (27/07 09:22), abaya-pas-cher (27/07 11:40).
+
+**Prêtes, non publiées :**
+
+abaya-chic, abaya-simple, abaya-ouverte, abaya-papillon, abaya-verte,
+abaya-2-pieces, abaya-bleu, abaya-rose, abaya-saoudienne, abaya-blanche,
+abaya-beige.
+
+Le HTML de chacune est dans ce dossier, son identifiant dans `ids.json`. La
+publication est un simple `collectionUpdate` : le facteur limitant est que
+l'API remplace le champ entier, ce qui impose de retranscrire environ 9 Ko par
+collection.
 
 Même traitement que le lot 1 : bloc de trois liens produits, rappel livraison et
 guide des tailles, sommaire ancré sur les Hn.
