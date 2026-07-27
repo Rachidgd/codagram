@@ -46,18 +46,12 @@ envoyé les visiteuses vers des impasses.
 
 ## État de publication
 
-| Collection | En ligne |
-|---|---|
-| abaya-mariage | **oui** — 27/07 06:31 |
-| abaya-dubai | non — interrompue par une erreur 502 de passerelle |
-| abaya-noir | non |
-| abaya-soiree | non |
-| abaya-kimono | non |
-| abaya-marocaine | non |
-| abaya-priere | non |
+Les 7 collections sont **en ligne**, publiées le 27/07/2026 entre 06:31 et 09:15 :
+abaya-mariage, abaya-dubai, abaya-noir, abaya-kimono, abaya-soiree,
+abaya-marocaine, abaya-priere.
 
-Les 7 fichiers HTML augmentés sont dans ce dossier, prêts à être publiés via
-`collectionUpdate` avec les identifiants de `ids.json`.
+Deux `seo.title` manquants ont également été ajoutés hors de ce lot :
+abaya-khaleeji et abaya-aid. Voir `../cartographie-collections.md`.
 
 ## Rollback
 
