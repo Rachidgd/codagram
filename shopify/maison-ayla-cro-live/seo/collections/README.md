@@ -76,15 +76,24 @@ Généré le 27/07/2026, **sans filtre sur le stock** (demande explicite : les
 ruptures seront corrigées séparément). Les trois produits liés par collection
 sont donc les meilleures ventes brutes remontées par l'API.
 
-## 13 collections augmentées
+## 13 collections augmentées — toutes publiées
 
-**Publiées :** abaya (27/07 09:22), abaya-pas-cher (27/07 11:40).
+**Publiées le 27/07 :** abaya (09:22), abaya-pas-cher (11:40), puis les onze
+dernières entre 16:01 et 16:11 :
 
-**Prêtes, non publiées :**
-
-abaya-chic, abaya-simple, abaya-ouverte, abaya-papillon, abaya-verte,
-abaya-2-pieces, abaya-bleu, abaya-rose, abaya-saoudienne, abaya-blanche,
-abaya-beige.
+| Collection | Publiée à | Produits |
+|---|---|---|
+| abaya-chic | 16:01 | 33 |
+| abaya-simple | 16:03 | 30 |
+| abaya-ouverte | 16:04 | 19 |
+| abaya-papillon | 16:04 | 18 |
+| abaya-verte | 16:05 | 14 |
+| abaya-2-pieces | 16:06 | 12 |
+| abaya-bleu | 16:07 | 11 |
+| abaya-rose | 16:08 | 10 |
+| abaya-saoudienne | 16:09 | 6 |
+| abaya-blanche | 16:10 | 5 |
+| abaya-beige | 16:11 | 3 |
 
 Le HTML de chacune est dans ce dossier, son identifiant dans `ids.json`. La
 publication est un simple `collectionUpdate` : le facteur limitant est que
@@ -93,6 +102,17 @@ collection.
 
 Même traitement que le lot 1 : bloc de trois liens produits, rappel livraison et
 guide des tailles, sommaire ancré sur les Hn.
+
+`abaya-saoudienne` utilise l'ancien gabarit `ma-collection` (pas de repli
+« Lire la suite ») : le bloc de liens et le sommaire y sont insérés après le
+séparateur, avant le premier `h2`.
+
+**Vérification effectuée.** `abaya-chic` a été relue intégralement après
+écriture : le `descriptionHtml` renvoyé par l'API est identique au fichier
+source, y compris l'échappement CSS `\2212`. Seule différence, imputable au
+normaliseur HTML de Shopify et sans effet visuel : le `<ol>` du sommaire est
+réécrit avec un `<li>` par ligne. Les dix autres ont été contrôlées sur
+`updatedAt` et sur un extrait de `description`.
 
 ## 2 collections écartées — elles n'ont aucun contenu
 

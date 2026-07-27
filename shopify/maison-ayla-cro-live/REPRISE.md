@@ -38,35 +38,43 @@ demandé.
 
 ---
 
-## 3. Tâche prioritaire — publier 11 pages collection
+## 3. Tâche terminée — les 11 pages collection sont publiées
 
 ### État actuel
 
-9 collections sur 22 sont déjà en ligne avec leur augmentation SEO :
-abaya-mariage, abaya-dubai, abaya-noir, abaya-kimono, abaya-soiree,
-abaya-marocaine, abaya-priere, abaya, abaya-pas-cher.
+**20 collections sur 22 sont en ligne avec leur augmentation SEO.** Les onze
+dernières ont été publiées le 27/07/2026 entre 16:01 et 16:11 :
 
-### À publier
+| Collection | Publiée à | Produits |
+|---|---|---|
+| abaya-chic | 16:01 | 33 |
+| abaya-simple | 16:03 | 30 |
+| abaya-ouverte | 16:04 | 19 |
+| abaya-papillon | 16:04 | 18 |
+| abaya-verte | 16:05 | 14 |
+| abaya-2-pieces | 16:06 | 12 |
+| abaya-bleu | 16:07 | 11 |
+| abaya-rose | 16:08 | 10 |
+| abaya-saoudienne | 16:09 | 6 |
+| abaya-blanche | 16:10 | 5 |
+| abaya-beige | 16:11 | 3 |
 
-Le HTML est **déjà généré, vérifié et versionné**. Rien à rédiger.
+Elles rejoignent les neuf déjà en ligne : abaya-mariage, abaya-dubai,
+abaya-noir, abaya-kimono, abaya-soiree, abaya-marocaine, abaya-priere, abaya,
+abaya-pas-cher.
 
-| Fichier dans `seo/collections/` | Produits |
-|---|---|
-| `abaya-chic.html` | 33 |
-| `abaya-simple.html` | 30 |
-| `abaya-ouverte.html` | 19 |
-| `abaya-papillon.html` | 18 |
-| `abaya-verte.html` | 14 |
-| `abaya-2-pieces.html` | 12 |
-| `abaya-bleu.html` | 11 |
-| `abaya-rose.html` | 10 |
-| `abaya-saoudienne.html` | 6 |
-| `abaya-blanche.html` | 5 |
-| `abaya-beige.html` | 3 |
+**Restent hors périmètre :** `abaya-khaleeji` et `abaya-aid`, sans aucun
+contenu — voir la section 5, qui devient la tâche prioritaire.
+
+Vérification : `abaya-chic` a été relue intégralement après écriture, le
+`descriptionHtml` en ligne est identique au fichier source (échappement CSS
+`\2212` compris). Shopify réécrit seulement le `<ol>` du sommaire avec un
+`<li>` par ligne, sans effet visuel. Les dix autres ont été contrôlées sur
+`updatedAt` et sur un extrait de `description`.
 
 Les identifiants Shopify sont dans `seo/collections/ids.json`.
 
-### Procédure, pour chaque collection
+### Procédure suivie, à réutiliser pour toute republication
 
 1. Afficher le fichier :
    `python3 -c "print(open('seo/collections/abaya-chic.html',encoding='utf-8').read())"`
@@ -92,8 +100,12 @@ Variables : `{"input": {"id": "<id de ids.json>", "descriptionHtml": "<contenu d
 - **Une erreur 502 de passerelle est déjà survenue** en cours d'écriture.
   Elle n'est pas idempotente côté client : **vérifier `updatedAt` avant de
   renvoyer**, une écriture peut ne pas être passée.
-- Chaque publication coûte environ 9 Ko en lecture et 9 Ko en écriture. Compter
-  **7 à 8 collections par session** avant épuisement du contexte.
+- Chaque publication coûte environ 9 Ko en lecture et 9 Ko en écriture. Les onze
+  du 27/07 sont passées en une seule session, mais compter **7 à 8 collections**
+  reste la marge prudente.
+- **Impossible de vérifier sur le site public** depuis la session : la politique
+  réseau de l'environnement refuse `maison-ayla.com` (403 au CONNECT du proxy).
+  La seule vérification disponible est la relecture par l'API.
 - Attention aux échappements JSON : le CSS contient `content: " \2212"`, qui
   doit s'écrire `\\2212` dans les variables JSON.
 
@@ -122,7 +134,7 @@ Le format qui ranke sur le commercial est donc celui qui est le plus faible ici.
 
 ---
 
-## 5. Tâche suivante — les deux collections vides
+## 5. Tâche prioritaire — les deux collections vides
 
 `abaya-khaleeji` (19 produits) et `abaya-aid` (28 produits) ont un
 `descriptionHtml` **totalement vide**. Leurs `seo.title` et `seo.description`
@@ -210,7 +222,13 @@ shopify/maison-ayla-cro-live/
 
 ## 9. Première commande à passer
 
+Les 11 collections de la section 3 sont publiées. La suite logique :
+
 ```
-Lis shopify/maison-ayla-cro-live/REPRISE.md puis publie les 11 collections
-restantes listées en section 3.
+Lis shopify/maison-ayla-cro-live/REPRISE.md puis traite les deux collections
+vides de la section 5 (abaya-khaleeji et abaya-aid).
 ```
+
+Cette tâche exige les données SERP de Thruu en entrée : sans elles, ne pas
+rédiger. Le correctif PayPal de la section 6 reste le chantier le plus
+rentable du lot, mais il est à la main du client.
