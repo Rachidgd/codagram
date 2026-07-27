@@ -67,3 +67,33 @@ pages collection e-commerce** — Asourd, Abaya.fr, Neyssa Shop, Brentiny Paris.
 
 Le format qui ranke sur le commercial est donc la collection, et c'est
 précisément le format le plus faible du site aujourd'hui.
+
+---
+
+# Lot 2 — les 15 collections restantes
+
+Généré le 27/07/2026, **sans filtre sur le stock** (demande explicite : les
+ruptures seront corrigées séparément). Les trois produits liés par collection
+sont donc les meilleures ventes brutes remontées par l'API.
+
+## 13 collections augmentées et prêtes
+
+abaya, abaya-pas-cher, abaya-chic, abaya-simple, abaya-ouverte, abaya-papillon,
+abaya-verte, abaya-2-pieces, abaya-bleu, abaya-rose, abaya-saoudienne,
+abaya-blanche, abaya-beige.
+
+Même traitement que le lot 1 : bloc de trois liens produits, rappel livraison et
+guide des tailles, sommaire ancré sur les Hn.
+
+## 2 collections écartées — elles n'ont aucun contenu
+
+`abaya-khaleeji` (19 produits) et `abaya-aid` (28 produits) ont un
+`descriptionHtml` **vide**. Ce sont les deux mêmes qui n'avaient pas de
+`seo.title` avant correction.
+
+Elles ne relèvent pas d'une augmentation mais d'une **rédaction complète**, qui
+exige au préalable l'analyse SERP de leur requête propre — « abaya khaleeji » et
+« abaya aïd » — conformément à la règle « une page, une requête ». Improviser
+leur contenu sans cette analyse contredirait la méthode.
+
+47 produits sont concernés : c'est le plus gros trou SEO restant du catalogue.
