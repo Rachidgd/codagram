@@ -16,6 +16,26 @@ qui met le bon produit devant la bonne personne.
 organiques de la SERP cible** (jamais les sponsorisés). Écrire sans cette étape,
 c'est produire au jugé.
 
+## Une page = une requête
+
+**Chaque collection vise sa propre requête, et une seule.** La collection
+« abaya » vise *abaya*, « abaya verte » vise *abaya verte*, « abaya kimono » vise
+*abaya kimono*. Elles ne visent pas toutes la même chose.
+
+Conséquences directes :
+
+- **Une SERP analysée par collection.** L'analyse de « abaya dubai » ne dit rien
+  de « abaya prière ». Généraliser d'une requête à l'autre est une faute de
+  méthode : le type de page qui ranke, le nombre de mots et les concurrents
+  changent d'une requête à l'autre.
+- **Le champ lexical suit la requête de la page**, pas celui de la collection
+  voisine.
+- **Chaque page doit avoir un `seo.title` renseigné.** Une page sans title
+  optimisé ne vise aucune requête — c'est une page perdue.
+- **Vérifier la cannibalisation** : deux collections qui viseraient la même
+  requête se pénalisent mutuellement. Il faut alors différencier, fusionner ou
+  rediriger.
+
 ---
 
 ## Étape 1 — Intention et mots-clés
