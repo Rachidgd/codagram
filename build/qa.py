@@ -154,6 +154,22 @@ for path in sorted((ROOT / "sections").glob("*.liquid")):
             errors.append(f"{path.name}: block.settings.{name} non déclaré dans le schema")
 
 
+# --- 5 bis. Longueur des libellés de schema -----------------------------------
+# Shopify plafonne name à 25 caractères (section, block et preset). Au-delà, le
+# fichier est refusé — et l'erreur est silencieuse quand on écrit via une URL.
+NAME_MAX = 25
+for stem, schema in section_schemas.items():
+    labels = [("section", schema.get("name", ""))]
+    labels += [("block", b.get("name", "")) for b in schema.get("blocks", [])]
+    labels += [("preset", p.get("name", "")) for p in schema.get("presets", [])]
+    for kind, label in labels:
+        if len(label) > NAME_MAX:
+            errors.append(
+                f"{stem}.liquid: nom de {kind} « {label} » = {len(label)} caractères "
+                f"(maximum {NAME_MAX})"
+            )
+
+
 # --- 6. Équilibre des tags Liquid ---------------------------------------------
 PAIRS = ["if", "unless", "for", "case", "form", "paginate", "capture", "tablerow"]
 for path in liquid_files():
