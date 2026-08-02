@@ -58,11 +58,16 @@
       "name": {{ shop.name | json }},
       "inLanguage": "fr-FR",
       "publisher": { "@id": {{ org_id | json }} },
+      {%- comment -%}
+        Le gabarit d'URL doit rester hors de la balise de sortie : une accolade
+        à l'intérieur d'un {{ }} referme la balise et casse le parseur Liquid
+        de Shopify. On concatène donc en texte brut.
+      {%- endcomment -%}
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": {{ shop.url | append: '/search?q={search_term_string}' | json }}
+          "urlTemplate": "{{ shop.url }}/search?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }
