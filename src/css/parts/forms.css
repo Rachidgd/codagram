@@ -1,0 +1,438 @@
+/* ============================================================================
+   COUCHES MODALES — palette de commandes & diagnostic
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   PALETTE DE COMMANDES
+   -------------------------------------------------------------------------*/
+.cc-pal { position: fixed; inset: 0; z-index: 120; }
+.cc-pal[hidden] { display: none; }
+
+.cc-pal__scrim {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background: rgb(6 8 7 / 0.66);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.24s var(--ease-out-quint);
+}
+.cc-pal.is-open .cc-pal__scrim { opacity: 1; }
+
+.cc-pal__box {
+  position: relative;
+  width: min(100% - 2rem, 40rem);
+  margin: clamp(3rem, 12vh, 7rem) auto 0;
+  display: flex;
+  flex-direction: column;
+  max-height: min(32rem, 74vh);
+  background: var(--color-ink-850);
+  border: 1px solid color-mix(in oklab, #fff 13%, transparent);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 32px 70px -30px rgb(0 0 0 / 0.8);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px) scale(0.985);
+  transition: opacity 0.24s var(--ease-out-quint), transform 0.28s var(--ease-out-quint);
+}
+.cc-pal.is-open .cc-pal__box { opacity: 1; transform: none; }
+
+.cc-pal__search {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0 0.9rem;
+  height: 52px;
+  flex: none;
+  border-bottom: 1px solid color-mix(in oklab, #fff 10%, transparent);
+  color: var(--color-light-3);
+}
+.cc-pal__input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: 0;
+  outline: none;
+  font-size: var(--text-body);
+  color: var(--color-light-1);
+}
+.cc-pal__input::placeholder { color: var(--color-light-3); }
+.cc-pal__esc { flex: none; }
+
+.cc-pal__results {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.4rem;
+  overscroll-behavior: contain;
+}
+
+.cc-pal__group {
+  padding: 0.6rem 0.65rem 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-light-3);
+}
+
+.cc-pal__item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-light-2);
+}
+.cc-pal__item.is-cursor {
+  background: color-mix(in oklab, var(--color-volt) 13%, transparent);
+  color: var(--color-light-1);
+}
+.cc-pal__label { font-size: var(--text-sm); font-weight: 500; }
+.cc-pal__desc {
+  font-size: var(--text-micro);
+  color: var(--color-light-3);
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 45%;
+}
+
+.cc-pal__empty { padding: 1.6rem 1rem; text-align: center; font-size: var(--text-sm); color: var(--color-light-3); }
+
+.cc-pal__foot {
+  flex: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0.55rem 0.9rem;
+  border-top: 1px solid color-mix(in oklab, #fff 10%, transparent);
+  font-size: 11px;
+  color: var(--color-light-3);
+}
+.cc-pal__foot > span { display: inline-flex; align-items: center; gap: 0.3rem; }
+.cc-pal .cc-kbd { --h-line: color-mix(in oklab, #fff 14%, transparent); --h-fg: var(--color-light-2); }
+
+@media (max-width: 640px) {
+  .cc-pal__foot { display: none; }
+  .cc-pal__desc { display: none; }
+}
+
+/* ---------------------------------------------------------------------------
+   DIAGNOSTIC — tiroir latéral
+   -------------------------------------------------------------------------*/
+.cc-diag { position: fixed; inset: 0; z-index: 130; }
+.cc-diag[hidden] { display: none; }
+
+.cc-diag__scrim {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background: rgb(6 8 7 / 0.66);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.34s var(--ease-out-quint);
+}
+.cc-diag.is-open .cc-diag__scrim { opacity: 1; }
+
+.cc-diag__panel {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: min(100%, 34rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-ink-850);
+  border-left: 1px solid color-mix(in oklab, #fff 11%, transparent);
+  transform: translateX(100%);
+  transition: transform 0.44s var(--ease-out-expo);
+}
+.cc-diag.is-open .cc-diag__panel { transform: none; }
+
+.cc-diag__head {
+  flex: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.05rem var(--spacing-shell) 0.9rem;
+}
+.cc-diag__title {
+  margin-top: 0.4rem;
+  font-size: var(--text-h3);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  max-width: 22ch;
+}
+.cc-diag__close {
+  display: grid; place-items: center;
+  width: 36px; height: 36px;
+  margin: -6px -8px 0 0;
+  border-radius: var(--radius-sm);
+  color: var(--color-light-2);
+  flex: none;
+}
+.cc-diag__close:hover { color: var(--color-light-1); }
+
+.cc-diag__progress {
+  flex: none;
+  height: 2px;
+  margin: 0 var(--spacing-shell);
+  background: color-mix(in oklab, #fff 10%, transparent);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.cc-diag__progress span {
+  display: block;
+  height: 100%;
+  background: var(--color-volt);
+  transform: scaleX(var(--p, 0.25));
+  transform-origin: 0 50%;
+  transition: transform 0.42s var(--ease-out-quint);
+}
+
+.cc-diag__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.1rem var(--spacing-shell) 0;
+  overscroll-behavior: contain;
+}
+.cc-diag__form { display: flex; flex-direction: column; min-height: 100%; }
+
+.cc-diag__step { border: 0; padding: 0; margin: 0; }
+.cc-diag__step[hidden] { display: none; }
+
+.cc-diag__q {
+  padding: 0;
+  font-size: var(--text-h4);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+  margin-bottom: 0.9rem;
+  outline: none;
+}
+
+.cc-diag__choices { display: grid; gap: 0.4rem; }
+
+/* Sur mobile, les cibles tactiles restent au-dessus de 44 px. */
+.cc-diag__choices .choice { min-height: 46px; align-items: center; }
+.choice__text { font-size: var(--text-sm); }
+
+.cc-diag__grid { display: grid; gap: 0.85rem; }
+@media (min-width: 480px) {
+  .cc-diag__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cc-diag__full { grid-column: 1 / -1; }
+}
+
+.cc-diag__hint, .cc-diag__legal {
+  margin-top: 0.35rem;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--color-light-3);
+}
+.cc-diag__legal { margin-top: 1rem; }
+
+.cc-diag__err {
+  margin-top: 0.35rem;
+  font-size: 11px;
+  color: var(--color-ember);
+}
+.cc-diag__err[hidden] { display: none; }
+
+.cc-diag__error {
+  margin-bottom: 1rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid color-mix(in oklab, var(--color-ember) 45%, transparent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in oklab, var(--color-ember) 10%, transparent);
+  font-size: var(--text-xs);
+  color: var(--color-light-1);
+}
+
+.cc-diag__foot {
+  position: sticky;
+  bottom: 0;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 0 calc(0.9rem + env(safe-area-inset-bottom));
+  background: linear-gradient(to top, var(--color-ink-850) 72%, transparent);
+}
+.cc-diag__foot .btn--primary { margin-left: auto; }
+.cc-diag__counter {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-light-3);
+}
+
+.cc-diag__done { padding-bottom: 2rem; display: grid; gap: 0.7rem; justify-items: start; }
+.cc-diag__done-mark {
+  display: grid; place-items: center;
+  width: 44px; height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--color-volt);
+  color: var(--color-ink-950);
+  margin-bottom: 0.3rem;
+}
+.cc-diag__done p { color: var(--color-light-2); }
+.cc-diag__done-note { font-size: var(--text-xs); color: var(--color-light-3); }
+.cc-diag__done .btn { margin-top: 0.5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-pal__box, .cc-pal__scrim, .cc-diag__panel, .cc-diag__scrim, .cc-diag__progress span {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================================
+   PAGES DE CONTENU — en-tête, fil d'Ariane, FAQ, blog
+   ========================================================================== */
+.cc-pagehead {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(var(--header-h) + clamp(1.5rem, 1.2rem + 2vw, 2.75rem));
+  padding-bottom: clamp(1.5rem, 1.2rem + 1.6vw, 2.5rem);
+}
+.cc-pagehead__title { margin-top: 0.75rem; max-width: 20ch; }
+.cc-pagehead__lead {
+  margin-top: 0.9rem;
+  font-size: var(--text-lead);
+  line-height: 1.56;
+  color: var(--color-light-2);
+  max-width: 46rem;
+}
+.cc-pagehead__actions { margin-top: 1.35rem; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.cc-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: var(--text-micro);
+  font-family: var(--font-mono);
+  color: var(--surface-fg-faint);
+}
+.cc-crumb li { display: inline-flex; align-items: center; gap: 0.35rem; }
+.cc-crumb li + li::before { content: "/"; opacity: 0.5; }
+.cc-crumb a:hover { color: var(--surface-fg); }
+
+/* ---------- FAQ ---------- */
+.cc-faq { display: grid; gap: 0.4rem; max-width: 52rem; }
+.cc-faq details {
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  transition: border-color 0.2s linear;
+}
+.cc-faq details[open] { border-color: color-mix(in oklab, var(--color-volt) 40%, transparent); }
+.cc-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  cursor: pointer;
+  list-style: none;
+}
+.cc-faq summary::-webkit-details-marker { display: none; }
+.cc-faq__sign {
+  flex: none;
+  display: grid; place-items: center;
+  width: 24px; height: 24px;
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-xs);
+  color: var(--surface-fg-muted);
+  transition: transform 0.3s var(--ease-out-quint);
+}
+.cc-faq details[open] .cc-faq__sign { transform: rotate(135deg); color: var(--color-volt-deep); }
+.cc-faq__body {
+  padding: 0 1rem 1rem;
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--surface-fg-muted);
+  max-width: 62ch;
+}
+
+/* ---------- Blog ---------- */
+.cc-posts {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+.cc-post {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1rem, 0.85rem + 0.6vw, 1.3rem);
+}
+.cc-post__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--surface-fg-faint);
+}
+.cc-post__title {
+  margin-top: 0.6rem;
+  font-size: var(--text-h4);
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  line-height: 1.32;
+}
+.cc-post__excerpt {
+  margin-top: 0.55rem;
+  font-size: var(--text-sm);
+  color: var(--surface-fg-muted);
+}
+.cc-post__go {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--surface-line);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--surface-fg);
+}
+.cc-post__go svg { transition: transform 0.24s var(--ease-out-quint); }
+.cc-post:hover .cc-post__go svg { transform: translateX(3px); }
+
+/* ---------- Pagination ---------- */
+.cc-pagi {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: center;
+}
+.cc-pagi a, .cc-pagi span {
+  display: grid;
+  place-items: center;
+  min-width: 36px;
+  height: 36px;
+  padding-inline: 0.5rem;
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-xs);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--surface-fg-muted);
+}
+.cc-pagi a:hover { border-color: color-mix(in oklab, var(--surface-fg) 34%, transparent); color: var(--surface-fg); }
+.cc-pagi .is-current { background: var(--color-volt); border-color: var(--color-volt); color: var(--color-ink-950); font-weight: 600; }
+
+/* ---------- Zone de contenu simple ---------- */
+.cc-plain { padding-top: calc(var(--header-h) + 2rem); }
+
+/* ----------------------------------------------------------------------------
+   Le pied du tiroir doit être collé au bas du panneau, pas suspendu sous la
+   dernière question. Sans cette chaîne flex, min-height:100% ne résout pas et
+   laisse une zone morte de plusieurs centaines de pixels.
+   --------------------------------------------------------------------------*/
+.cc-diag__body { display: flex; flex-direction: column; }
+.cc-diag__form { flex: 1 1 auto; }

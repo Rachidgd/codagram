@@ -1,0 +1,65 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Aller au contenu",
+      "close": "Fermer",
+      "menu": "Menu",
+      "search": "Rechercher"
+    },
+    "search": {
+      "title": "Recherche",
+      "placeholder": "Que cherchez-vous ?",
+      "submit": "Rechercher",
+      "results_with_count": {
+        "one": "{{ count }} résultat",
+        "other": "{{ count }} résultats"
+      },
+      "no_results": "Aucun résultat pour « {{ terms }} »."
+    },
+    "pagination": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "label": "Pagination"
+    },
+    "404": {
+      "title": "Cette page n'existe pas",
+      "subtext": "Le lien est peut-être obsolète ou l'adresse mal saisie.",
+      "link": "Retour à l'accueil"
+    }
+  },
+  "blogs": {
+    "article": {
+      "published": "Publié le",
+      "read_more": "Lire le guide",
+      "back": "Tous les guides"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Ajouter au panier",
+      "sold_out": "Épuisé",
+      "unavailable": "Indisponible",
+      "quantity": "Quantité"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Panier",
+      "empty": "Votre panier est vide.",
+      "continue": "Continuer",
+      "checkout": "Commander",
+      "subtotal": "Sous-total",
+      "remove": "Retirer"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Nom",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "message": "Message",
+      "send": "Envoyer",
+      "post_success": "Merci, votre message est bien arrivé."
+    }
+  }
+}

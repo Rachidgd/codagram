@@ -1,0 +1,164 @@
+{%- comment -%}
+  PAGE CONTACT
+
+  Deux entrées volontairement distinctes :
+  — le diagnostic guidé pour qui ne sait pas encore nommer son besoin ;
+  — un formulaire direct, complet et sans étape pour qui sait déjà quoi demander.
+  Forcer tout le monde dans le même tunnel fait perdre les deux profils.
+{%- endcomment -%}
+
+<section class="cc-pagehead surface-dark" data-surface="dark">
+  <span class="grid-field" aria-hidden="true"></span>
+  <div class="shell">
+    <nav aria-label="Fil d'Ariane">
+      <ol class="cc-crumb" role="list">
+        <li><a href="{{ routes.root_url }}">Accueil</a></li>
+        <li aria-current="page">{{ section.settings.title | default: page.title }}</li>
+      </ol>
+    </nav>
+
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="eyebrow" style="margin-top:1rem" data-reveal>{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    <h1 class="cc-pagehead__title" data-reveal>{{ section.settings.title | default: page.title }}</h1>
+    {%- if section.settings.lead != blank -%}
+      <p class="cc-pagehead__lead" data-reveal>{{ section.settings.lead }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+<section class="surface-paper section-y" data-surface="paper">
+  <div class="shell cc-contact">
+
+    <aside class="cc-contact__side" data-reveal>
+      <div class="cc-contact__card card">
+        <p class="eyebrow">Vous ne savez pas quoi demander ?</p>
+        <p class="cc-contact__card-text">
+          Quatre questions suffisent pour orienter le diagnostic vers le bon levier.
+          Vous recevez une réponse argumentée, même si nous ne sommes pas le bon interlocuteur.
+        </p>
+        <button type="button" class="btn btn--solid" data-diagnostic-open data-diagnostic-entry="page-contact">
+          Lancer le diagnostic guidé{%- render 'icon', name: 'arrow', size: 15 -%}
+        </button>
+      </div>
+
+      <dl class="cc-contact__facts">
+        {%- if section.settings.email != blank -%}
+          <div>
+            <dt>E-mail</dt>
+            <dd><a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></dd>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.phone != blank -%}
+          <div>
+            <dt>Téléphone</dt>
+            <dd><a href="tel:{{ section.settings.phone | remove: ' ' | remove: '.' }}">{{ section.settings.phone }}</a></dd>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.response_time != blank -%}
+          <div>
+            <dt>Délai de réponse</dt>
+            <dd>{{ section.settings.response_time }}</dd>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.zone != blank -%}
+          <div>
+            <dt>Zone d'intervention</dt>
+            <dd>{{ section.settings.zone }}</dd>
+          </div>
+        {%- endif -%}
+      </dl>
+
+      {%- if page.content != blank -%}
+        <div class="prose-cc cc-contact__extra">{{ page.content }}</div>
+      {%- endif -%}
+    </aside>
+
+    <div class="cc-contact__form card" data-reveal>
+      {%- form 'contact', id: 'ContactForm' -%}
+
+        {%- if form.posted_successfully? -%}
+          <div class="cc-contact__done" role="status">
+            <span class="cc-diag__done-mark" aria-hidden="true">{%- render 'icon', name: 'check', size: 22 -%}</span>
+            <h2>Message reçu.</h2>
+            <p>Nous revenons vers vous sous 2 jours ouvrés, à l'adresse indiquée.</p>
+          </div>
+        {%- else -%}
+
+          {%- if form.errors -%}
+            <p class="cc-diag__error" role="alert">{{ form.errors | default_errors }}</p>
+          {%- endif -%}
+
+          <h2 class="cc-contact__form-title">{{ section.settings.form_title | default: 'Écrire directement' }}</h2>
+
+          <input type="hidden" name="contact[origine]" value="page-contact">
+
+          <div class="cc-contact__grid">
+            <div>
+              <label class="flabel" for="CName">Nom et prénom <span aria-hidden="true">*</span></label>
+              <input class="field" type="text" id="CName" name="contact[name]" required autocomplete="name">
+            </div>
+
+            <div>
+              <label class="flabel" for="CEmail">E-mail <span aria-hidden="true">*</span></label>
+              <input class="field" type="email" id="CEmail" name="contact[email]" required autocomplete="email" inputmode="email">
+            </div>
+
+            <div>
+              <label class="flabel" for="CPhone">Téléphone <span class="fg-faint">(facultatif)</span></label>
+              <input class="field" type="tel" id="CPhone" name="contact[phone]" autocomplete="tel" inputmode="tel">
+            </div>
+
+            <div>
+              <label class="flabel" for="CSubject">Sujet</label>
+              <select class="field" id="CSubject" name="contact[sujet]">
+                <option value="seo">Référencement naturel</option>
+                <option value="site">Création de site</option>
+                <option value="shopify">Boutique Shopify</option>
+                <option value="cro">Conversion / CRO</option>
+                <option value="ads">Meta Ads</option>
+                <option value="autre">Autre demande</option>
+              </select>
+            </div>
+
+            <div class="cc-contact__full">
+              <label class="flabel" for="CSite">Adresse de votre site <span class="fg-faint">(facultatif)</span></label>
+              <input class="field" type="text" id="CSite" name="contact[site]" placeholder="exemple.fr" inputmode="url">
+            </div>
+
+            <div class="cc-contact__full">
+              <label class="flabel" for="CBody">Votre message <span aria-hidden="true">*</span></label>
+              <textarea class="field" id="CBody" name="contact[body]" rows="5" required placeholder="Décrivez votre situation et ce que vous cherchez à obtenir."></textarea>
+            </div>
+          </div>
+
+          <p class="cc-diag__legal">
+            Vos informations servent uniquement à traiter votre demande. Aucune revente,
+            aucune inscription automatique à une liste de diffusion.
+          </p>
+
+          <button type="submit" class="btn btn--primary btn--lg cc-contact__submit">
+            Envoyer le message{%- render 'icon', name: 'arrow', size: 15 -%}
+          </button>
+
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page — Contact",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Contact" },
+    { "type": "text", "id": "title", "label": "Titre (H1)", "default": "Parlons de votre projet." },
+    { "type": "textarea", "id": "lead", "label": "Accroche", "default": "Décrivez votre situation en quelques lignes. Nous répondons avec un avis argumenté, pas avec une plaquette commerciale." },
+    { "type": "text", "id": "form_title", "label": "Titre du formulaire", "default": "Écrire directement" },
+    { "type": "text", "id": "email", "label": "E-mail", "default": "contact@clickscreation.com" },
+    { "type": "text", "id": "phone", "label": "Téléphone" },
+    { "type": "text", "id": "response_time", "label": "Délai de réponse", "default": "Sous 2 jours ouvrés" },
+    { "type": "text", "id": "zone", "label": "Zone d'intervention", "default": "France, Belgique, Suisse, Luxembourg" }
+  ]
+}
+{% endschema %}

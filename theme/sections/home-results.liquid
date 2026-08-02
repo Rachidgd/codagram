@@ -1,0 +1,121 @@
+{%- comment -%}
+  RÉSULTATS
+
+  Chaque cas expose une période et un point de départ. Un chiffre sans date ni
+  contexte ne prouve rien et fragilise la crédibilité E-E-A-T — la mention de
+  réserve reste donc affichée, elle protège l'agence et rassure l'acheteur.
+{%- endcomment -%}
+
+<section class="cc-results surface-paper section-y" data-surface="paper">
+  <div class="shell">
+
+    <div class="cc-head-block cc-head-block--split" data-reveal>
+      <div>
+        {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        <h2>{{ section.settings.title }}</h2>
+      </div>
+      {%- if section.settings.link_label != blank -%}
+        <a class="btn btn--solid" href="{{ section.settings.link | default: routes.root_url }}">
+          {{ section.settings.link_label }}{%- render 'icon', name: 'arrow', size: 15 -%}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="cc-results__grid">
+      {%- for block in section.blocks -%}
+        <article class="cc-case card card--hover" data-reveal {{ block.shopify_attributes }}>
+          <header class="cc-case__top">
+            <span class="cc-case__client">{{ block.settings.client }}</span>
+            <span class="cc-case__tag">{{ block.settings.sector }}</span>
+          </header>
+
+          <p class="cc-case__period">
+            <span class="pulse" aria-hidden="true"></span>
+            {{ block.settings.period }}
+          </p>
+
+          {%- if block.settings.context != blank -%}
+            <p class="cc-case__context">{{ block.settings.context }}</p>
+          {%- endif -%}
+
+          <dl class="cc-case__metrics">
+            {%- if block.settings.metric_1 != blank -%}
+              <div>
+                <dt>{{ block.settings.label_1 }}</dt>
+                <dd class="metric"
+                  {% if block.settings.value_1 != blank %}
+                    data-count="{{ block.settings.value_1 }}"
+                    data-count-prefix="{{ block.settings.prefix_1 }}"
+                    data-count-suffix="{{ block.settings.suffix_1 }}"
+                  {% endif %}
+                >{{ block.settings.prefix_1 }}{{ block.settings.value_1 }}{{ block.settings.suffix_1 }}</dd>
+              </div>
+            {%- endif -%}
+            {%- if block.settings.metric_2 != blank -%}
+              <div>
+                <dt>{{ block.settings.label_2 }}</dt>
+                <dd class="metric"
+                  {% if block.settings.value_2 != blank %}
+                    data-count="{{ block.settings.value_2 }}"
+                    data-count-prefix="{{ block.settings.prefix_2 }}"
+                    data-count-suffix="{{ block.settings.suffix_2 }}"
+                  {% endif %}
+                >{{ block.settings.prefix_2 }}{{ block.settings.value_2 }}{{ block.settings.suffix_2 }}</dd>
+              </div>
+            {%- endif -%}
+          </dl>
+
+          {%- if block.settings.action != blank -%}
+            <p class="cc-case__action"><span>Travail réalisé —</span> {{ block.settings.action }}</p>
+          {%- endif -%}
+        </article>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.disclaimer != blank -%}
+      <p class="cc-results__note">{{ section.settings.disclaimer }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Accueil — Résultats",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Trajectoires observées" },
+    { "type": "text", "id": "title", "label": "Titre", "default": "Des chiffres datés, pas des promesses." },
+    { "type": "text", "id": "link_label", "label": "Libellé du lien", "default": "Tous les résultats" },
+    { "type": "url", "id": "link", "label": "Lien" },
+    { "type": "textarea", "id": "disclaimer", "label": "Mention de réserve", "default": "Les résultats dépendent du marché, de l'historique du site, de la concurrence et de la capacité d'exécution. Ils ne constituent pas une garantie de performance." }
+  ],
+  "blocks": [
+    {
+      "type": "case",
+      "name": "Cas client",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "client", "label": "Client", "default": "Noza & Co" },
+        { "type": "text", "id": "sector", "label": "Secteur / prestation", "default": "SEO" },
+        { "type": "text", "id": "period", "label": "Période", "default": "Mi-mai → juin 2026" },
+        { "type": "textarea", "id": "context", "label": "Point de départ" },
+        { "type": "text", "id": "action", "label": "Travail réalisé" },
+
+        { "type": "header", "content": "Métrique 1" },
+        { "type": "text", "id": "metric_1", "label": "Activer (laisser un texte quelconque)", "default": "on" },
+        { "type": "text", "id": "prefix_1", "label": "Préfixe", "default": "+" },
+        { "type": "text", "id": "value_1", "label": "Valeur", "default": "169" },
+        { "type": "text", "id": "suffix_1", "label": "Suffixe", "default": " %" },
+        { "type": "text", "id": "label_1", "label": "Libellé", "default": "impressions mensuelles" },
+
+        { "type": "header", "content": "Métrique 2" },
+        { "type": "text", "id": "metric_2", "label": "Activer (laisser un texte quelconque)", "default": "on" },
+        { "type": "text", "id": "prefix_2", "label": "Préfixe", "default": "+" },
+        { "type": "text", "id": "value_2", "label": "Valeur", "default": "144" },
+        { "type": "text", "id": "suffix_2", "label": "Suffixe", "default": " %" },
+        { "type": "text", "id": "label_2", "label": "Libellé", "default": "clics organiques" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Accueil — Résultats" }]
+}
+{% endschema %}

@@ -1,0 +1,46 @@
+<section class="cc-plain surface-dark section-y" data-surface="dark">
+  <div class="shell">
+    <h1 class="cc-plain__title">Recherche</h1>
+
+    <form action="{{ routes.search_url }}" method="get" role="search" class="cc-searchform">
+      <label class="visually-hidden" for="SearchInput">Rechercher sur le site</label>
+      <input class="field" type="search" id="SearchInput" name="q" value="{{ search.terms | escape }}" placeholder="Que cherchez-vous ?">
+      <button class="btn btn--primary" type="submit">Rechercher</button>
+    </form>
+
+    {%- if search.performed -%}
+      <p class="cc-searchform__count fg-muted">
+        {{ search.results_count }} résultat{% if search.results_count > 1 %}s{% endif %} pour « {{ search.terms }} »
+      </p>
+
+      {%- paginate search.results by 16 -%}
+        {%- if search.results_count > 0 -%}
+          <div class="cc-posts" style="margin-top:1.25rem">
+            {%- for item in search.results -%}
+              <a class="cc-post card card--hover" href="{{ item.url }}" data-reveal>
+                <p class="cc-post__meta"><span>{{ item.object_type }}</span></p>
+                <h2 class="cc-post__title">{{ item.title }}</h2>
+                <span class="cc-post__go">Ouvrir{%- render 'icon', name: 'arrow', size: 14 -%}</span>
+              </a>
+            {%- endfor -%}
+          </div>
+
+          {%- if paginate.pages > 1 -%}
+            <nav class="cc-pagi" aria-label="Pagination">
+              {%- for part in paginate.parts -%}
+                {%- if part.is_link -%}<a href="{{ part.url }}">{{ part.title }}</a>
+                {%- else -%}<span class="{% if part.title == paginate.current_page %}is-current{% endif %}">{{ part.title }}</span>{%- endif -%}
+              {%- endfor -%}
+            </nav>
+          {%- endif -%}
+        {%- else -%}
+          <p class="fg-muted" style="margin-top:1rem">Aucun résultat. Essayez « SEO », « Shopify » ou le nom d'une ville.</p>
+        {%- endif -%}
+      {%- endpaginate -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Recherche", "settings": [] }
+{% endschema %}

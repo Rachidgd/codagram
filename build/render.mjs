@@ -1,0 +1,323 @@
+/**
+ * Banc de rendu Liquid — vérification visuelle hors Shopify.
+ *
+ * Reproduit assez fidèlement le contexte Shopify (objets globaux, filtres,
+ * tags section/form/paginate/schema) pour produire un HTML réel à partir des
+ * gabarits JSON. Sert uniquement à la QA locale : ce fichier n'est jamais
+ * déployé sur la boutique.
+ */
+import { Liquid } from 'liquidjs';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const THEME = path.join(HERE, '..', 'theme');
+const OUT = path.join(HERE, 'preview');
+
+/* ------------------------------------------------------------------ moteur */
+const engine = new Liquid({
+  root: [path.join(THEME, 'snippets'), path.join(THEME, 'sections'), THEME],
+  extname: '.liquid',
+  jekyllInclude: false,
+  strictFilters: false,
+  strictVariables: false
+});
+
+/* ------------------------------------------------------------------ filtres */
+const money = (v) => (Number(v || 0) / 100).toFixed(2).replace('.', ',') + ' €';
+
+engine.registerFilter('asset_url', (v) => `assets/${v}`);
+engine.registerFilter('stylesheet_tag', (v) => `<link rel="stylesheet" href="${v}">`);
+engine.registerFilter('script_tag', (v) => `<script src="${v}"></script>`);
+engine.registerFilter('image_url', function (v, ...args) {
+  const width = args.length ? args[args.length - 1] : 1200;
+  const seed = encodeURIComponent(String(v || 'placeholder')).slice(0, 24);
+  return `https://placehold.co/${width}x${Math.round(width * 0.62)}/1b201e/98a39e?text=${seed}`;
+});
+engine.registerFilter('image_tag', function (src, ...rest) {
+  const opts = Object.assign({}, ...rest.filter((r) => r && typeof r === 'object'));
+  const attrs = [`src="${src}"`, 'loading="lazy"', 'width="1200"', 'height="744"'];
+  if (opts.class) attrs.push(`class="${opts.class}"`);
+  if (opts.sizes) attrs.push(`sizes="${opts.sizes}"`);
+  attrs.push(`alt="${opts.alt || ''}"`);
+  return `<img ${attrs.join(' ')}>`;
+});
+engine.registerFilter('money', money);
+engine.registerFilter('handle', (v) =>
+  String(v || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
+engine.registerFilter('handleize', (v) => engine.filters.handle.call(null, v));
+engine.registerFilter('default_errors', (v) => `<span>${v}</span>`);
+engine.registerFilter('within', (v) => v);
+engine.registerFilter('link_to', (v, url) => `<a href="${url}">${v}</a>`);
+engine.registerFilter('json', (v) => JSON.stringify(v === undefined ? null : v));
+engine.registerFilter('t', (v) => v);
+
+/* -------------------------------------------------------------------- tags */
+// {% schema %} … {% endschema %} : ignoré au rendu.
+engine.registerTag('schema', {
+  parse(token, remain) {
+    while (remain.length) { const t = remain.shift(); if (t.name === 'endschema') break; }
+  },
+  render() { return ''; }
+});
+
+// {% section 'nom' %}
+engine.registerTag('section', {
+  parse(token) { this.name = token.args.trim().replace(/^['"]|['"]$/g, ''); },
+  async render(ctx) { return renderSection(this.name, {}, ctx.environments); }
+});
+
+// {% form 'type', id: '…', class: '…' %} … {% endform %}
+// Shopify reporte id et class sur la balise <form> : sans cela, l'aperçu perd
+// la classe de mise en page et affiche une structure fausse.
+engine.registerTag('form', {
+  parse(token, remain) {
+    const args = token.args || '';
+    this.formClass = (args.match(/class:\s*'([^']*)'/) || [])[1] || '';
+    this.formId = (args.match(/id:\s*'([^']*)'/) || [])[1] || '';
+    this.tpls = [];
+    const stream = this.liquid.parser.parseStream(remain)
+      .on('template', (tpl) => this.tpls.push(tpl))
+      .on('tag:endform', function () { this.stop(); })
+      .on('end', () => { throw new Error('{% form %} non fermé'); });
+    stream.start();
+  },
+  *render(ctx, emitter) {
+    ctx.push({ form: { posted_successfully: false, errors: null } });
+    const html = yield this.liquid.renderer.renderTemplates(this.tpls, ctx);
+    ctx.pop();
+    const attrs = ['method="post"', 'action="/contact#contact_form"', 'accept-charset="UTF-8"'];
+    if (this.formId) attrs.push(`id="${this.formId}"`);
+    if (this.formClass) attrs.push(`class="${this.formClass}"`);
+    emitter.write(`<form ${attrs.join(' ')}>${html}</form>`);
+  }
+});
+
+// {% paginate collection by n %} … {% endpaginate %}
+engine.registerTag('paginate', {
+  parse(token, remain) {
+    this.tpls = [];
+    const stream = this.liquid.parser.parseStream(remain)
+      .on('template', (tpl) => this.tpls.push(tpl))
+      .on('tag:endpaginate', function () { this.stop(); })
+      .on('end', () => { throw new Error('{% paginate %} non fermé'); });
+    stream.start();
+  },
+  *render(ctx, emitter) {
+    ctx.push({ paginate: { pages: 1, current_page: 1, parts: [] } });
+    emitter.write(yield this.liquid.renderer.renderTemplates(this.tpls, ctx));
+    ctx.pop();
+  }
+});
+
+/* ---------------------------------------------------- contexte Shopify simulé */
+const link = (title, url, links = []) => ({ title, url, links, active: false, child_active: false });
+
+const MENUS = {
+  main: [
+    link('Accueil', '/'),
+    link('Services', '#', [
+      link('Consultant SEO', '/pages/agence-seo'),
+      link('Site vitrine', '/pages/creation-site-vitrine'),
+      link('Agence Shopify', '/pages/agence-shopify'),
+      link('Optimisation CRO', '/pages/optimisation-cro'),
+      link('Meta Ads', '/pages/expert-meta-ads'),
+      link('Audit SEO', '/pages/audit-seo')
+    ]),
+    link('Résultats', '/pages/resultats'),
+    link('Blog', '/blogs/ressources'),
+    link('À propos', '/pages/a-propos'),
+    link('Contact', '/pages/contact')
+  ],
+  services: [
+    link('Agence SEO', '/pages/agence-seo'), link('SEO local', '/pages/seo-local'),
+    link('SEO e-commerce', '/pages/seo-ecommerce'), link('Audit SEO', '/pages/audit-seo'),
+    link('Création site vitrine', '/pages/creation-site-vitrine'),
+    link('Agence Shopify', '/pages/agence-shopify'), link('Expert Meta Ads', '/pages/expert-meta-ads'),
+    link('Optimisation CRO', '/pages/optimisation-cro')
+  ],
+  zones: ['Paris', 'Lyon', 'Marseille', 'Bordeaux', 'Nantes', 'Lille', 'Toulouse', 'Nice', 'Rennes', 'Strasbourg']
+    .map((v) => link(`SEO ${v}`, `/pages/agence-seo-${v.toLowerCase()}`)),
+  resources: [
+    link('Résultats', '/pages/resultats'), link('Blog', '/blogs/ressources'),
+    link('À propos', '/pages/a-propos'), link('Contact', '/pages/contact'),
+    link('Plan du site', '/pages/plan-du-site')
+  ],
+  legal: [link('Mentions légales', '/pages/mentions-legales'), link('Confidentialité', '/pages/politique-de-confidentialite')]
+};
+
+function themeSettings() {
+  const groups = JSON.parse(fs.readFileSync(path.join(THEME, 'config', 'settings_schema.json'), 'utf8'));
+  const s = {};
+  groups.forEach((g) => (g.settings || []).forEach((f) => { if (f.id) s[f.id] = f.default ?? ''; }));
+  return Object.assign(s, {
+    header_menu: { links: MENUS.main },
+    footer_services_menu: { links: MENUS.services },
+    footer_zones_menu: { links: MENUS.zones },
+    footer_resources_menu: { links: MENUS.resources },
+    footer_legal_menu: { links: MENUS.legal },
+    palette_blog: { articles: [
+      { title: 'Structurer une arborescence SEO qui tient dans le temps', url: '/blogs/ressources/arborescence-seo' },
+      { title: 'Fiche produit Shopify : ce qui fait vraiment basculer l’achat', url: '/blogs/ressources/fiche-produit' }
+    ] },
+    share_image: '', logo: ''
+  });
+}
+
+const BASE = {
+  shop: { name: 'Clickscreation', url: 'https://clickscreation.com', email: 'contact@clickscreation.com' },
+  routes: { root_url: '/', search_url: '/search', cart_url: '/cart' },
+  request: { locale: { iso_code: 'fr' }, page_type: 'index' },
+  template: { name: 'index', suffix: '' },
+  canonical_url: 'https://clickscreation.com/',
+  page_title: 'Clickscreation',
+  page_description: '',
+  content_for_header: '',
+  current_tags: null,
+  current_page: 1,
+  settings: themeSettings(),
+  page: { title: 'Page', content: '', handle: 'page', metafields: {} },
+  blog: { title: 'Ressources', url: '/blogs/ressources', articles: [], all_tags: [] },
+  article: { title: '', content: '', metafields: {} },
+  cart: { item_count: 0, items: [], total_price: 0 },
+  search: { performed: false, results: [], results_count: 0, terms: '' },
+  product: { title: '', variants: [], media: [] },
+  collection: { title: '', products: [], description: '' },
+  form: { posted_successfully: false, errors: null }
+};
+
+/* ------------------------------------------------------- rendu d'une section */
+function schemaOf(file) {
+  const m = file.match(/\{%-?\s*schema\s*-?%\}([\s\S]*?)\{%-?\s*endschema\s*-?%\}/);
+  return m ? JSON.parse(m[1]) : { settings: [], blocks: [] };
+}
+
+/**
+ * Sur Shopify, un réglage de type `link_list` ou `blog` est résolu en objet
+ * (avec .links / .articles). Le défaut du schema n'est qu'un identifiant :
+ * si on le laissait tel quel, toute navigation issue d'un réglage de section
+ * rendrait à vide dans l'aperçu — et masquerait la moitié de l'interface.
+ */
+const LINKLIST_BY_DEFAULT = {
+  'main-menu': { links: MENUS.main }
+};
+
+function defaultsFrom(list = []) {
+  const out = {};
+  list.forEach((f) => {
+    if (!f.id) return;
+    if (f.type === 'link_list') {
+      out[f.id] = LINKLIST_BY_DEFAULT[f.default] || { links: MENUS.main };
+    } else if (f.type === 'blog') {
+      out[f.id] = { articles: [], title: 'Ressources', url: '/blogs/ressources' };
+    } else {
+      out[f.id] = f.default ?? '';
+    }
+  });
+  return out;
+}
+
+/**
+ * En-tête et pied de page sont insérés par le layout via {% section %}, donc
+ * sans gabarit JSON : leurs blocs viennent normalement de settings_data.json.
+ * On reproduit ici la configuration livrée, sinon l'aperçu montrerait un pied
+ * de page vide qui ne correspond à rien.
+ */
+const SECTION_BLOCKS = {
+  header: {
+    blocks: {
+      n1: { type: 'nav_note', settings: { handle: 'agence-seo', description: 'Capter la demande déjà présente sur votre marché.', icon: 'signal' } },
+      n2: { type: 'nav_note', settings: { handle: 'creation-site-vitrine', description: 'Un site développé pour votre modèle, pas pour un gabarit.', icon: 'layers' } },
+      n3: { type: 'nav_note', settings: { handle: 'agence-shopify', description: 'Boutique pensée pour la décision d’achat mobile.', icon: 'cart' } },
+      n4: { type: 'nav_note', settings: { handle: 'optimisation-cro', description: 'Retirer ce qui empêche vos visiteurs d’agir.', icon: 'gauge' } },
+      n5: { type: 'nav_note', settings: { handle: 'expert-meta-ads', description: 'Accélérer une offre qui tient déjà debout.', icon: 'megaphone' } },
+      n6: { type: 'nav_note', settings: { handle: 'audit-seo', description: 'Un état des lieux chiffré avant toute décision.', icon: 'target' } },
+      sp: { type: 'nav_spotlight', settings: {
+        parent: 'Services', eyebrow: 'Dernier résultat', title: 'Maison Ayla — refonte de l’architecture SEO.',
+        metric: '+350 %', metric_label: 'clics organiques en 3 mois',
+        text: 'Trois mois de travail sur la structure et la couverture des intentions de recherche.',
+        cta_label: 'Voir les résultats', cta_url: '/pages/resultats' } }
+    },
+    block_order: ['n1', 'n2', 'n3', 'n4', 'n5', 'n6', 'sp']
+  },
+  footer: {
+    blocks: {
+      f1: { type: 'menu', settings: { title: 'Expertises', menu: { links: MENUS.services } } },
+      f2: { type: 'menu', settings: { title: 'SEO par ville', menu: { links: MENUS.zones }, dense: true, extra_label: 'Toutes les zones', extra_url: '/pages/seo-par-ville' } },
+      f3: { type: 'menu', settings: { title: 'Ressources', menu: { links: MENUS.resources } } },
+      f4: { type: 'menu', settings: { title: 'Légal', menu: { links: MENUS.legal } } }
+    },
+    block_order: ['f1', 'f2', 'f3', 'f4']
+  }
+};
+
+async function renderSection(type, conf, env) {
+  const file = fs.readFileSync(path.join(THEME, 'sections', `${type}.liquid`), 'utf8');
+  const schema = schemaOf(file);
+
+  if (!conf.blocks && SECTION_BLOCKS[type]) conf = Object.assign({}, conf, SECTION_BLOCKS[type]);
+
+  const settings = Object.assign(defaultsFrom(schema.settings), conf.settings || {});
+  const blockDefs = Object.fromEntries((schema.blocks || []).map((b) => [b.type, defaultsFrom(b.settings)]));
+
+  const order = conf.block_order || Object.keys(conf.blocks || {});
+  const blocks = order.map((id) => {
+    const b = (conf.blocks || {})[id];
+    return {
+      id, type: b.type,
+      settings: Object.assign({}, blockDefs[b.type] || {}, b.settings || {}),
+      shopify_attributes: ''
+    };
+  });
+
+  const section = { id: conf.id || type, settings, blocks, blocks_size: blocks.length };
+  return engine.parseAndRender(file, Object.assign({}, env, { section }), { globals: env });
+}
+
+/* ------------------------------------------------------------- rendu de page */
+async function renderTemplate(templateName, overrides = {}) {
+  const tpl = JSON.parse(fs.readFileSync(path.join(THEME, 'templates', `${templateName}.json`), 'utf8'));
+  const env = Object.assign({}, BASE, overrides);
+
+  let body = '';
+  for (const key of tpl.order) {
+    const conf = Object.assign({ id: key }, tpl.sections[key]);
+    body += await renderSection(conf.type, conf, env);
+  }
+
+  const layout = fs.readFileSync(path.join(THEME, 'layout', 'theme.liquid'), 'utf8');
+  return engine.parseAndRender(layout, Object.assign({}, env, { content_for_layout: body }), { globals: env });
+}
+
+/* ---------------------------------------------------------------------- main */
+const pages = [
+  ['index', 'index', {}],
+  ['contact', 'page.contact', {
+    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
+    page: { title: 'Contact', content: '', handle: 'contact', metafields: {} }
+  }],
+  ['404', '404', { request: { locale: { iso_code: 'fr' }, page_type: '404' } }],
+  ['service', 'page.agence-shopify', {
+    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
+    page: { title: 'Agence Shopify', content: '', handle: 'agence-shopify', metafields: {} }
+  }]
+];
+
+fs.mkdirSync(OUT, { recursive: true });
+const assetLink = path.join(OUT, 'assets');
+if (!fs.existsSync(assetLink)) fs.symlinkSync(path.join(THEME, 'assets'), assetLink, 'dir');
+
+let failed = 0;
+for (const [name, template, ctx] of pages) {
+  try {
+    const html = await renderTemplate(template, ctx);
+    fs.writeFileSync(path.join(OUT, `${name}.html`), html);
+    console.log(`ok    ${name}.html  (${(html.length / 1024).toFixed(1)} Ko)`);
+  } catch (err) {
+    failed++;
+    console.error(`ÉCHEC ${name} — ${err.message}`);
+  }
+}
+process.exit(failed ? 1 : 0);

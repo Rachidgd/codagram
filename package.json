@@ -1,0 +1,16 @@
+{
+  "name": "clickscreation-signal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Theme Shopify sur mesure Clickscreation — design system Signal",
+  "scripts": {
+    "build:css": "tailwindcss -i src/css/signal.css -o theme/assets/signal.css --minify",
+    "watch:css": "tailwindcss -i src/css/signal.css -o theme/assets/signal.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "liquidjs": "^10.28.0",
+    "playwright": "^1.62.1",
+    "tailwindcss": "^4.3.3"
+  }
+}

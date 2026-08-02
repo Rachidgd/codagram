@@ -1,0 +1,160 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "parent_label": "Expertises",
+        "parent_url": "/pages/agence-seo",
+        "eyebrow": "Agence Shopify",
+        "title": "Une boutique Shopify développée, pas assemblée.",
+        "lead": "Création, refonte et optimisation de boutiques Shopify en Liquid natif. Nous écrivons le thème pour votre catalogue et votre marge, sans empiler d'applications qui ralentissent le site et grignotent votre rentabilité.",
+        "cta_primary": "Demander un diagnostic",
+        "cta_secondary": "Voir les résultats",
+        "cta_secondary_url": "/pages/resultats"
+      },
+      "blocks": {
+        "p1": { "type": "proof", "settings": { "prefix": "", "value": "0", "suffix": "", "label": "application tierce imposée" } },
+        "p2": { "type": "proof", "settings": { "prefix": "", "value": "100", "suffix": " %", "label": "code écrit pour votre projet" } },
+        "p3": { "type": "proof", "settings": { "prefix": "", "value": "48", "suffix": " h", "label": "délai de réponse" } }
+      },
+      "block_order": ["p1", "p2", "p3"]
+    },
+
+    "probleme": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Le constat",
+        "title": "La plupart des boutiques ne perdent pas des ventes faute de trafic.",
+        "text": "<p>Elles les perdent entre l'arrivée sur la fiche produit et le paiement. Un thème acheté puis rallongé d'une dizaine d'applications finit par produire exactement cela : une page lente, un message flou, une réassurance absente au moment précis où le doute apparaît.</p><p>Nous reprenons ce trajet dans l'ordre où le client le vit — et nous supprimons ce qui l'interrompt.</p>",
+        "cta_label": "Voir la méthode complète",
+        "cta_url": "/pages/a-propos"
+      },
+      "blocks": {
+        "b1": { "type": "point", "settings": { "title": "Le mobile décide", "text": "L'essentiel du trafic arrive sur mobile. Nous concevons la fiche produit d'abord pour cet écran, pas comme une réduction du desktop." } },
+        "b2": { "type": "point", "settings": { "title": "La vitesse est une marge", "text": "Chaque application ajoute du script. Nous développons la fonctionnalité nativement quand elle est simple, plutôt que de l'acheter." } },
+        "b3": { "type": "point", "settings": { "title": "La réassurance arrive au bon moment", "text": "Livraison, retours, paiement : ces informations doivent être présentes là où le doute naît, pas reléguées en pied de page." } }
+      },
+      "block_order": ["b1", "b2", "b3"]
+    },
+
+    "inclus": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "dark",
+        "density": "comfortable",
+        "eyebrow": "Ce que couvre la prestation",
+        "title": "Du cadrage à la mise en ligne.",
+        "text": "Chaque projet ne mobilise pas tous ces chantiers. Nous cadrons d'abord ce qui aura un effet mesurable sur votre chiffre."
+      },
+      "blocks": {
+        "g1": { "type": "item", "settings": { "icon": "target", "title": "Cadrage et architecture", "text": "Catalogue, collections, variantes, navigation et parcours d'achat définis avant la première ligne de code." } },
+        "g2": { "type": "item", "settings": { "icon": "layers", "title": "Thème sur mesure", "text": "Sections et blocs Liquid modifiables depuis l'éditeur Shopify, sans dépendre de nous pour changer un texte." } },
+        "g3": { "type": "item", "settings": { "icon": "cart", "title": "Fiche produit et panier", "text": "Sélecteur de variantes, disponibilité, réassurance, ventes complémentaires natives et panier en AJAX." } },
+        "g4": { "type": "item", "settings": { "icon": "gauge", "title": "Conversion", "text": "Message, preuve et friction retravaillés à partir des parcours réels, pas de bonnes pratiques génériques." } },
+        "g5": { "type": "item", "settings": { "icon": "signal", "title": "SEO e-commerce", "text": "Structure des collections, balisage, données structurées produit et maillage interne intégrés au thème." } },
+        "g6": { "type": "item", "settings": { "icon": "check", "title": "Recette et transfert", "text": "Tests multi-navigateurs, contrôle des formulaires et du tunnel, puis documentation pour votre équipe." } }
+      },
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"]
+    },
+
+    "methode": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": true,
+        "eyebrow": "Déroulé",
+        "title": "Quatre phases, des points de validation à chacune.",
+        "text": "<p>Vous voyez le travail avancer et vous validez à chaque étape. Aucun projet ne part en développement sans que la structure et les contenus soient arrêtés — c'est ce qui évite les refontes en cours de route.</p>"
+      },
+      "blocks": {
+        "s1": { "type": "point", "settings": { "title": "Diagnostic", "text": "Analyse du catalogue, des données de vente et des parcours actuels. Nous identifions où se perdent les commandes." } },
+        "s2": { "type": "point", "settings": { "title": "Conception", "text": "Architecture, contenus et maquettes des gabarits clés : accueil, collection, fiche produit, panier." } },
+        "s3": { "type": "point", "settings": { "title": "Développement", "text": "Thème Liquid écrit pour votre boutique, testé au fil de l'eau sur un thème de préproduction." } },
+        "s4": { "type": "point", "settings": { "title": "Mise en ligne et suivi", "text": "Bascule, contrôle du suivi des conversions, puis lecture des premiers résultats pour prioriser la suite." } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Ce que l'on nous demande avant de démarrer.",
+        "text": "Si votre question ne figure pas ici, posez-la : nous répondons précisément, même quand la réponse ne nous arrange pas.",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Combien coûte une boutique Shopify sur mesure ?",
+            "answer": "<p>Le budget dépend du nombre de gabarits, de la complexité du catalogue et du volume de contenus à produire. Une refonte ciblée sur la fiche produit et le tunnel n'a pas le même périmètre qu'une création complète avec rédaction. Nous chiffrons après le diagnostic, sur un périmètre écrit — jamais sur une grille tarifaire fixe qui ne correspondrait à personne.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il repartir de zéro ou peut-on garder le thème actuel ?",
+            "answer": "<p>Les deux sont possibles et le diagnostic tranche. Si votre thème est propre et que le problème vient du message ou du parcours, une optimisation coûte moins cher et va plus vite. Si le thème est saturé d'applications et de correctifs empilés, le reconstruire revient souvent moins cher que de continuer à le rafistoler.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Pourquoi limiter les applications ?",
+            "answer": "<p>Chaque application ajoute du JavaScript chargé sur toutes les pages, un abonnement mensuel et une dépendance à un éditeur tiers. Quand une fonctionnalité est simple — compte à rebours, ventes complémentaires, onglets produit — la développer nativement supprime le coût récurrent et le poids. Nous gardons les applications qui apportent une vraie valeur, comme les avis clients ou la logistique.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Puis-je modifier le site moi-même ensuite ?",
+            "answer": "<p>Oui. Chaque section est éditable depuis l'éditeur de thème Shopify : textes, images, ordre des blocs, ajout ou suppression d'éléments. Vous n'avez pas besoin de nous pour faire vivre le contenu. Nous livrons également une documentation des sections et de leurs réglages.</p>"
+          }
+        },
+        "q5": {
+          "type": "qa",
+          "settings": {
+            "question": "Combien de temps prend une refonte ?",
+            "answer": "<p>Comptez généralement de quatre à huit semaines entre le cadrage et la mise en ligne, selon la taille du catalogue et la disponibilité des contenus. Le délai dépend surtout de la vitesse de validation et de la fourniture des visuels et textes de votre côté.</p>"
+          }
+        },
+        "q6": {
+          "type": "qa",
+          "settings": {
+            "question": "Travaillez-vous hors de France ?",
+            "answer": "<p>Oui, nous intervenons en France, en Belgique, en Suisse et au Luxembourg. Les échanges se font à distance, avec des points de validation planifiés à chaque phase.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"]
+    },
+
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Un avis argumenté avant tout engagement.",
+        "text": "Décrivez votre boutique et ce qui vous bloque. Nous revenons avec les priorités que nous identifions — et si le levier n'est pas Shopify, nous vous le disons.",
+        "cta_label": "Demander un diagnostic",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir les résultats obtenus",
+        "link_url": "/pages/resultats"
+      },
+      "blocks": {
+        "r1": { "type": "point", "settings": { "text": "Sans engagement" } },
+        "r2": { "type": "point", "settings": { "text": "Vos accès restent les vôtres" } },
+        "r3": { "type": "point", "settings": { "text": "Aucune revente de données" } }
+      },
+      "block_order": ["r1", "r2", "r3"]
+    }
+  },
+  "order": ["hero", "probleme", "inclus", "methode", "faq", "cta"]
+}

@@ -1,0 +1,313 @@
+{
+  "sections": {
+    "hero": {
+      "type": "home-hero",
+      "settings": {
+        "eyebrow": "Agence d'acquisition — Paris",
+        "title": "Votre site doit générer des demandes,",
+        "title_accent": "pas des compliments.",
+        "lead": "SEO, sites sur mesure, boutiques Shopify, conversion et Meta Ads. Nous activons le levier qui débloque réellement votre croissance, dans l'ordre qui sert votre objectif — et nous le prouvons avec des chiffres datés.",
+        "cta_primary": "Lancer le diagnostic",
+        "cta_secondary": "Voir les résultats",
+        "cta_secondary_url": "/pages/resultats",
+        "console_label": "signal / acquisition",
+        "console_period": "Avril → juin 2026",
+        "console_note": "Résultats observés sur les comptes que nous suivons. Ils dépendent du marché, de l'historique du site et de la concurrence, et ne constituent pas une garantie."
+      },
+      "blocks": {
+        "t1": { "type": "trust", "settings": { "text": "Sans engagement" } },
+        "t2": { "type": "trust", "settings": { "text": "Vos accès restent les vôtres" } },
+        "t3": { "type": "trust", "settings": { "text": "Réponse sous 2 jours ouvrés" } },
+        "c1": { "type": "channel", "settings": { "label": "SEO", "icon": "signal" } },
+        "c2": { "type": "channel", "settings": { "label": "Site sur mesure", "icon": "layers" } },
+        "c3": { "type": "channel", "settings": { "label": "Shopify", "icon": "cart" } },
+        "c4": { "type": "channel", "settings": { "label": "CRO", "icon": "gauge" } },
+        "c5": { "type": "channel", "settings": { "label": "Meta Ads", "icon": "megaphone" } },
+        "r1": { "type": "readout", "settings": { "prefix": "+", "count_to": "236", "suffix": " %", "label": "impressions organiques" } },
+        "r2": { "type": "readout", "settings": { "prefix": "+", "count_to": "350", "suffix": " %", "label": "clics organiques" } },
+        "r3": { "type": "readout", "settings": { "prefix": "", "count_to": "48", "suffix": " h", "label": "délai de réponse" } }
+      },
+      "block_order": ["t1", "t2", "t3", "c1", "c2", "c3", "c4", "c5", "r1", "r2", "r3"]
+    },
+
+    "selector": {
+      "type": "home-diagnostic",
+      "settings": {
+        "eyebrow": "Partons du problème",
+        "title": "Reconnaissez-vous votre situation ?",
+        "text": "Sélectionnez le symptôme le plus proche de votre réalité. Nous affichons le levier concerné, ce qu'il implique concrètement, et un résultat déjà obtenu."
+      },
+      "blocks": {
+        "s1": {
+          "type": "case",
+          "settings": {
+            "symptom": "Personne ne me trouve sur Google",
+            "lever": "Référencement naturel",
+            "icon": "signal",
+            "title": "Capter la demande qui existe déjà sur votre marché.",
+            "text": "Vos clients cherchent votre service chaque jour. Si vos pages ne répondent pas à leur intention, la demande part chez un concurrent — sans que vous le voyiez.",
+            "point_1": "Audit technique, sémantique et concurrentiel",
+            "point_2": "Pages de service et pages locales construites par intention",
+            "point_3": "Maillage interne et suivi des positions",
+            "proof_metric": "+236 %",
+            "proof_label": "impressions en 3 mois — Maison Ayla",
+            "link_label": "Voir la prestation SEO",
+            "link": "/pages/agence-seo"
+          }
+        },
+        "s2": {
+          "type": "case",
+          "settings": {
+            "symptom": "J'ai du trafic mais très peu de demandes",
+            "lever": "Optimisation de la conversion",
+            "icon": "gauge",
+            "title": "Retirer ce qui empêche vos visiteurs de passer à l'action.",
+            "text": "Un trafic qui ne convertit pas signale presque toujours un problème de message, de preuve ou de parcours — rarement un problème de volume.",
+            "point_1": "Analyse des parcours et des points d'abandon",
+            "point_2": "Réécriture du message et des preuves",
+            "point_3": "Hypothèses priorisées, testées puis mesurées",
+            "proof_metric": "4 étapes",
+            "proof_label": "du diagnostic à la mesure",
+            "link_label": "Voir la prestation CRO",
+            "link": "/pages/optimisation-cro"
+          }
+        },
+        "s3": {
+          "type": "case",
+          "settings": {
+            "symptom": "Mon site ne représente plus mon activité",
+            "lever": "Création de site sur mesure",
+            "icon": "layers",
+            "title": "Un site développé pour votre modèle, pas pour un gabarit.",
+            "text": "Nous partons de ce que votre visiteur doit comprendre et dans quel ordre. L'architecture, le message et le design en découlent — pas l'inverse.",
+            "point_1": "Architecture et contenus construits avec vous",
+            "point_2": "Développement sur mesure, rapide et administrable",
+            "point_3": "Accessibilité, performance et SEO intégrés dès le départ",
+            "proof_metric": "100 %",
+            "proof_label": "code écrit pour votre projet",
+            "link_label": "Voir la création de site",
+            "link": "/pages/creation-site-vitrine"
+          }
+        },
+        "s4": {
+          "type": "case",
+          "settings": {
+            "symptom": "Ma boutique en ligne ne vend pas assez",
+            "lever": "Agence Shopify",
+            "icon": "cart",
+            "title": "Une boutique pensée pour la décision d'achat mobile.",
+            "text": "Création, refonte ou optimisation : nous travaillons la fiche produit, la réassurance et la vitesse, là où se joue réellement le taux de conversion.",
+            "point_1": "Thème Shopify sur mesure, sans empilement d'applications",
+            "point_2": "Fiches produit, panier et tunnel retravaillés",
+            "point_3": "Performance mobile et SEO e-commerce",
+            "proof_metric": "Shopify",
+            "proof_label": "développement natif Liquid",
+            "link_label": "Voir l'agence Shopify",
+            "link": "/pages/agence-shopify"
+          }
+        },
+        "s5": {
+          "type": "case",
+          "settings": {
+            "symptom": "Mes publicités coûtent plus qu'elles ne rapportent",
+            "lever": "Meta Ads",
+            "icon": "megaphone",
+            "title": "Accélérer une offre qui tient déjà debout.",
+            "text": "La publicité amplifie ce qui existe. Nous vérifions d'abord l'offre, la page de destination et le suivi des conversions avant d'augmenter le moindre budget.",
+            "point_1": "Audit des créations, audiences et structures de campagne",
+            "point_2": "Page de destination et suivi vérifiés avant diffusion",
+            "point_3": "Pilotage sur la marge, pas sur le coût par clic",
+            "proof_metric": "Audit",
+            "proof_label": "avant toute montée en budget",
+            "link_label": "Voir la prestation Meta Ads",
+            "link": "/pages/expert-meta-ads"
+          }
+        }
+      },
+      "block_order": ["s1", "s2", "s3", "s4", "s5"]
+    },
+
+    "levers": {
+      "type": "home-levers",
+      "settings": {
+        "eyebrow": "Cinq leviers, un ordre",
+        "title": "Nous n'activons que ce qui déplace votre chiffre.",
+        "text": "Un levier mal séquencé consomme du budget sans rien produire. Nous commençons toujours par celui qui lève la contrainte la plus haute."
+      },
+      "blocks": {
+        "l1": {
+          "type": "lever",
+          "settings": {
+            "eyebrow": "Trafic organique",
+            "title": "Référencement naturel",
+            "text": "Technique, contenus, pages locales et maillage pour capter une demande déjà qualifiée.",
+            "icon": "signal",
+            "link_label": "Découvrir",
+            "link": "/pages/agence-seo"
+          }
+        },
+        "l2": {
+          "type": "lever",
+          "settings": {
+            "eyebrow": "Site vitrine",
+            "title": "Création sur mesure",
+            "text": "Un site rapide, clair et administrable, conçu autour de votre activité et de votre parcours client.",
+            "icon": "layers",
+            "link_label": "Découvrir",
+            "link": "/pages/creation-site-vitrine"
+          }
+        },
+        "l3": {
+          "type": "lever",
+          "settings": {
+            "eyebrow": "E-commerce",
+            "title": "Agence Shopify",
+            "text": "Création, refonte et optimisation de boutiques développées en Liquid natif, sans dépendance à une pile d'applications.",
+            "icon": "cart",
+            "link_label": "Découvrir",
+            "link": "/pages/agence-shopify"
+          }
+        },
+        "l4": {
+          "type": "lever",
+          "settings": {
+            "eyebrow": "Conversion",
+            "title": "Optimisation CRO",
+            "text": "Identifier les frictions réelles, prioriser les hypothèses, améliorer les parcours qui pèsent sur le chiffre.",
+            "icon": "gauge",
+            "link_label": "Découvrir",
+            "link": "/pages/optimisation-cro"
+          }
+        },
+        "l5": {
+          "type": "lever",
+          "settings": {
+            "eyebrow": "Acquisition payante",
+            "title": "Meta Ads",
+            "text": "Créations, audiences, page de destination et suivi vérifiés avant toute montée en budget.",
+            "icon": "megaphone",
+            "link_label": "Découvrir",
+            "link": "/pages/expert-meta-ads"
+          }
+        }
+      },
+      "block_order": ["l1", "l2", "l3", "l4", "l5"]
+    },
+
+    "results": {
+      "type": "home-results",
+      "settings": {
+        "eyebrow": "Trajectoires observées",
+        "title": "Des chiffres datés, pas des promesses.",
+        "link_label": "Tous les résultats",
+        "link": "/pages/resultats",
+        "disclaimer": "Les résultats dépendent du marché, de l'historique du site, de la concurrence et de la capacité d'exécution. Ils ne constituent pas une garantie de performance."
+      },
+      "blocks": {
+        "c1": {
+          "type": "case",
+          "settings": {
+            "client": "Noza & Co",
+            "sector": "SEO",
+            "period": "Mi-mai → juin 2026",
+            "context": "Site en ligne depuis deux ans, structure de pages illisible pour les moteurs et intentions de recherche non couvertes.",
+            "action": "Restructuration de l'arborescence, reprise des signaux techniques et réécriture des pages prioritaires.",
+            "metric_1": "on", "prefix_1": "+", "value_1": "169", "suffix_1": " %", "label_1": "impressions mensuelles",
+            "metric_2": "on", "prefix_2": "+", "value_2": "144", "suffix_2": " %", "label_2": "clics organiques"
+          }
+        },
+        "c2": {
+          "type": "case",
+          "settings": {
+            "client": "Maison Ayla",
+            "sector": "SEO",
+            "period": "Avril → juin 2026",
+            "context": "Pages nombreuses mais concurrentes entre elles, aucune ne ressortant clairement sur les requêtes visées.",
+            "action": "Clarification du rôle de chaque page dans l'architecture, optimisation technique et éditoriale.",
+            "metric_1": "on", "prefix_1": "+", "value_1": "236", "suffix_1": " %", "label_1": "impressions",
+            "metric_2": "on", "prefix_2": "+", "value_2": "350", "suffix_2": " %", "label_2": "clics"
+          }
+        },
+        "c3": {
+          "type": "case",
+          "settings": {
+            "client": "Création web",
+            "sector": "Site & CRO",
+            "period": "Site vitrine ou boutique",
+            "context": "Le choix de la base technique découle du modèle économique, jamais d'une plateforme imposée par habitude.",
+            "action": "Architecture, message, preuve et performance construits à partir du parcours d'achat réel.",
+            "metric_1": "on", "prefix_1": "", "value_1": "2", "suffix_1": " formats", "label_1": "vitrine ou e-commerce",
+            "metric_2": "on", "prefix_2": "", "value_2": "1", "suffix_2": " objectif", "label_2": "générer plus d'actions"
+          }
+        }
+      },
+      "block_order": ["c1", "c2", "c3"]
+    },
+
+    "method": {
+      "type": "home-method",
+      "settings": {
+        "eyebrow": "Comment nous travaillons",
+        "title": "Une équipe unique, du diagnostic à la mesure.",
+        "text": "Pas de sous-traitance en cascade, pas de livrable qui change de mains à chaque étape. Stratégie, rédaction, design, développement et mesure avancent ensemble.",
+        "link_label": "Notre façon de travailler",
+        "link": "/pages/a-propos"
+      },
+      "blocks": {
+        "m1": {
+          "type": "step",
+          "settings": {
+            "title": "Identifier la vraie contrainte",
+            "text": "Nous analysons l'offre, la demande, le site et les données pour distinguer la cause du symptôme. C'est l'étape qui évite de payer pour le mauvais levier.",
+            "tags": "Audit|Données|Priorisation",
+            "deliverable": "un diagnostic écrit et trois priorités argumentées"
+          }
+        },
+        "m2": {
+          "type": "step",
+          "settings": {
+            "title": "Construire le message et le parcours",
+            "text": "Rédaction, architecture, hiérarchie mobile et preuves sont conçues autour de la décision du client, pas autour d'une charte graphique.",
+            "tags": "Rédaction|Architecture|Direction artistique",
+            "deliverable": "une maquette et des contenus validés avant développement"
+          }
+        },
+        "m3": {
+          "type": "step",
+          "settings": {
+            "title": "Développer sans compromis technique",
+            "text": "Code écrit pour votre projet, sans gabarit acheté ni empilement d'extensions. Performance, accessibilité et SEO sont traités pendant le développement, pas après.",
+            "tags": "Front-end|Shopify Liquid|Performance",
+            "deliverable": "un site rapide, administrable et documenté"
+          }
+        },
+        "m4": {
+          "type": "step",
+          "settings": {
+            "title": "Mesurer, puis corriger",
+            "text": "Suivi des conversions, lecture des parcours et itérations. Les décisions suivantes se prennent sur des données, pas sur des impressions.",
+            "tags": "Suivi|Analyse|Itérations",
+            "deliverable": "un point de mesure et les prochaines actions utiles"
+          }
+        }
+      },
+      "block_order": ["m1", "m2", "m3", "m4"]
+    },
+
+    "work": {
+      "type": "home-work",
+      "settings": {
+        "eyebrow": "Réalisations",
+        "title": "Des interfaces construites autour de la décision d'achat.",
+        "text": "Chaque projet part du parcours réel : ce que le visiteur doit comprendre, dans quel ordre, et ce qui l'empêche encore d'agir."
+      },
+      "blocks": {
+        "p1": { "type": "piece", "settings": { "service": "Shopify · CRO", "title": "Boutique e-commerce", "external": true } },
+        "p2": { "type": "piece", "settings": { "service": "Site vitrine · SEO", "title": "Site de services", "external": true } },
+        "p3": { "type": "piece", "settings": { "service": "SEO local", "title": "Réseau multi-villes", "external": true } }
+      },
+      "block_order": ["p1", "p2", "p3"]
+    }
+  },
+  "order": ["hero", "selector", "levers", "results", "method", "work"]
+}

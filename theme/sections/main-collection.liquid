@@ -1,0 +1,37 @@
+<section class="cc-plain surface-dark section-y" data-surface="dark">
+  <div class="shell">
+    <h1 class="cc-plain__title">{{ collection.title }}</h1>
+    {%- if collection.description != blank -%}
+      <div class="prose-cc cc-plain__body">{{ collection.description }}</div>
+    {%- endif -%}
+
+    {%- paginate collection.products by 24 -%}
+      {%- if collection.products.size > 0 -%}
+        <div class="cc-posts" style="margin-top:1.5rem">
+          {%- for product in collection.products -%}
+            <a class="cc-post card card--hover" href="{{ product.url }}" data-reveal>
+              <h2 class="cc-post__title">{{ product.title }}</h2>
+              <p class="cc-post__meta"><span>{{ product.price | money }}</span></p>
+              <span class="cc-post__go">Voir{%- render 'icon', name: 'arrow', size: 14 -%}</span>
+            </a>
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="cc-pagi" aria-label="Pagination">
+            {%- for part in paginate.parts -%}
+              {%- if part.is_link -%}<a href="{{ part.url }}">{{ part.title }}</a>
+              {%- else -%}<span class="{% if part.title == paginate.current_page %}is-current{% endif %}">{{ part.title }}</span>{%- endif -%}
+            {%- endfor -%}
+          </nav>
+        {%- endif -%}
+      {%- else -%}
+        <p class="fg-muted">Aucun élément dans cette collection.</p>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Collection", "settings": [] }
+{% endschema %}

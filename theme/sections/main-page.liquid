@@ -1,0 +1,25 @@
+{%- comment -%}
+  Page générique. Sert de repli quand une page n'a pas de gabarit dédié :
+  aucune page du site ne peut se retrouver sans mise en forme.
+{%- endcomment -%}
+
+<section class="cc-plain surface-dark section-y" data-surface="dark">
+  <div class="shell">
+    <nav aria-label="Fil d'Ariane">
+      <ol class="cc-crumb" role="list">
+        <li><a href="{{ routes.root_url }}">Accueil</a></li>
+        <li aria-current="page">{{ page.title }}</li>
+      </ol>
+    </nav>
+
+    <h1 class="cc-plain__title" data-reveal>{{ page.title }}</h1>
+
+    {%- if page.content != blank -%}
+      <div class="prose-cc cc-plain__body" data-reveal>{{ page.content }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Page — Contenu", "settings": [] }
+{% endschema %}

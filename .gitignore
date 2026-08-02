@@ -1,0 +1,5 @@
+node_modules/
+build/preview/
+build/shots/
+build/audit.json
+.DS_Store

@@ -1,0 +1,94 @@
+{%- comment -%}
+  Jeu d'icônes dessiné pour Clickscreation.
+  Grille 16, trait 1.4, extrémités carrées : cohérent avec le vocabulaire
+  « instrument » du design system. Aucune librairie externe.
+
+  Usage : {% render 'icon', name: 'arrow', size: 16 %}
+{%- endcomment -%}
+
+{%- liquid
+  assign s = size | default: 16
+  assign cls = class | default: ''
+-%}
+
+{%- case name -%}
+
+  {%- when 'arrow' -%}
+    <svg class="ico-arrow {{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+    </svg>
+
+  {%- when 'arrow-up-right' -%}
+    <svg class="ico-arrow {{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+    </svg>
+
+  {%- when 'chevron' -%}
+    <svg class="ico-chevron {{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+    </svg>
+
+  {%- when 'close' -%}
+    <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="m4 4 8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+    </svg>
+
+  {%- when 'search' -%}
+    <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <circle cx="7.2" cy="7.2" r="4.2" stroke="currentColor" stroke-width="1.4"/>
+      <path d="m10.4 10.4 3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+    </svg>
+
+  {%- when 'check' -%}
+    <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="m3.5 8.4 3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+    </svg>
+
+  {%- when 'plus' -%}
+    <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+    </svg>
+
+  {%- comment -%} Marqueurs de leviers : chacun est un pictogramme de mesure. {%- endcomment -%}
+  {%- when 'signal' -%}
+    <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M2 12h2.2l1.6-6.6L8 13.2l2.1-8.4 1.5 7.2H14" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'target' -%}
+    <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <circle cx="8" cy="8" r="5.4" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="8" cy="8" r="1.9" stroke="currentColor" stroke-width="1.4"/>
+    </svg>
+
+  {%- when 'layers' -%}
+    <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M8 2.4 14 5.6 8 8.8 2 5.6 8 2.4Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+      <path d="m2.6 9.2 5.4 2.9 5.4-2.9" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+    </svg>
+
+  {%- when 'cart' -%}
+    <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M1.8 2.6h1.9l1.5 7.1h6.6l1.4-5.1H4.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="round"/>
+      <circle cx="6.2" cy="12.6" r="1.05" stroke="currentColor" stroke-width="1.3"/>
+      <circle cx="11.2" cy="12.6" r="1.05" stroke="currentColor" stroke-width="1.3"/>
+    </svg>
+
+  {%- when 'gauge' -%}
+    <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M2.4 11.6a6.4 6.4 0 1 1 11.2 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+      <path d="M8 11 10.6 6.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+    </svg>
+
+  {%- when 'megaphone' -%}
+    <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M2.6 6.2v3.6h2.6L11 12.8V3.2L5.2 6.2H2.6Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+      <path d="M13.2 6.4a2.6 2.6 0 0 1 0 3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+    </svg>
+
+  {%- when 'command' -%}
+    <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M5.8 5.8h4.4v4.4H5.8V5.8Zm0 0V4.2a1.6 1.6 0 1 0-1.6 1.6h1.6Zm4.4 0V4.2a1.6 1.6 0 1 1 1.6 1.6h-1.6Zm0 4.4v1.6a1.6 1.6 0 1 0 1.6-1.6h-1.6Zm-4.4 0v1.6a1.6 1.6 0 1 1-1.6-1.6h1.6Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+    </svg>
+
+{%- endcase -%}

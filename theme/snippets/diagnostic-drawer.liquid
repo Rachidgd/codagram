@@ -1,0 +1,172 @@
+{%- comment -%}
+  DIAGNOSTIC — formulaire multi-étapes à logique conditionnelle
+
+  Décision CRO : on ne demande jamais les coordonnées en premier. Le visiteur
+  qualifie d'abord son besoin en 2 clics (engagement progressif), les champs
+  d'identité n'arrivent qu'en dernière étape, une fois la valeur perçue.
+
+  Base technique : le tag de formulaire contact natif de Shopify.
+  Sans JavaScript, toutes les étapes restent affichées et le formulaire part
+  normalement — aucune dépendance à une app tierce.
+{%- endcomment -%}
+
+<div class="cc-diag" data-diagnostic hidden>
+  <button type="button" class="cc-diag__scrim" data-diagnostic-close tabindex="-1" aria-hidden="true"></button>
+
+  <div class="cc-diag__panel" role="dialog" aria-modal="true" aria-labelledby="DiagTitle">
+
+    <header class="cc-diag__head">
+      <div>
+        <p class="eyebrow">Diagnostic guidé — 2 minutes</p>
+        <p class="cc-diag__title" id="DiagTitle">Identifions le levier prioritaire.</p>
+      </div>
+      <button type="button" class="cc-diag__close" data-diagnostic-close aria-label="Fermer le diagnostic">
+        {%- render 'icon', name: 'close', size: 18 -%}
+      </button>
+    </header>
+
+    <div class="cc-diag__progress" aria-hidden="true"><span data-diagnostic-bar></span></div>
+
+    <div class="cc-diag__body">
+      {%- form 'contact', id: 'DiagnosticForm', class: 'cc-diag__form' -%}
+
+        {%- if form.posted_successfully? -%}
+
+          <div class="cc-diag__done" data-diagnostic-success>
+            <span class="cc-diag__done-mark" aria-hidden="true">{%- render 'icon', name: 'check', size: 22 -%}</span>
+            <h3>Demande reçue.</h3>
+            <p>Nous analysons votre situation et revenons vers vous avec les priorités que nous identifions — sous 2 jours ouvrés.</p>
+            <p class="cc-diag__done-note">Rien à signer, rien à installer. Si nous ne sommes pas le bon interlocuteur, nous vous le dirons.</p>
+            <button type="button" class="btn btn--ghost" data-diagnostic-close>Fermer</button>
+          </div>
+
+        {%- else -%}
+
+          {%- if form.errors -%}
+            <p class="cc-diag__error" role="alert">
+              {{ form.errors | default_errors }}
+            </p>
+          {%- endif -%}
+
+          {%- comment -%} Traçabilité d'origine : quel bouton a déclenché la demande. {%- endcomment -%}
+          <input type="hidden" name="contact[origine]" value="site" data-diagnostic-entry-field>
+          <input type="hidden" name="contact[page]" value="{{ canonical_url }}">
+
+          {%- comment -%} ---------- Étape 1 ---------- {%- endcomment -%}
+          <fieldset class="cc-diag__step" data-step data-step-auto>
+            <legend class="cc-diag__q">Quel est votre objectif principal ?</legend>
+            <div class="cc-diag__choices" data-field>
+              {%- assign goals = 'Être trouvé sur Google|visibilite,Convertir plus de visiteurs|conversion,Refaire mon site vitrine|site,Créer ou refondre ma boutique|ecommerce,Rentabiliser mes publicités|publicite' | split: ',' -%}
+              {%- for goal in goals -%}
+                {%- assign parts = goal | split: '|' -%}
+                <label class="choice">
+                  <input type="radio" name="contact[objectif]" value="{{ parts[1] }}" required>
+                  <span class="choice__dot" aria-hidden="true"></span>
+                  <span class="choice__text">{{ parts[0] }}</span>
+                </label>
+              {%- endfor -%}
+              <p class="cc-diag__err" data-error hidden>Sélectionnez un objectif pour continuer.</p>
+            </div>
+          </fieldset>
+
+          {%- comment -%} ---------- Étape 2 — conditionnelle e-commerce ---------- {%- endcomment -%}
+          <fieldset class="cc-diag__step" data-step data-step-auto data-step-when="contact[objectif]=ecommerce">
+            <legend class="cc-diag__q">Où en est votre boutique ?</legend>
+            <div class="cc-diag__choices" data-field>
+              {%- assign shops = 'Je pars de zéro|creation,Boutique Shopify à refondre|refonte-shopify,Boutique sur une autre plateforme|migration,Boutique en ligne à optimiser|optimisation' | split: ',' -%}
+              {%- for shop in shops -%}
+                {%- assign parts = shop | split: '|' -%}
+                <label class="choice">
+                  <input type="radio" name="contact[contexte_boutique]" value="{{ parts[1] }}">
+                  <span class="choice__dot" aria-hidden="true"></span>
+                  <span class="choice__text">{{ parts[0] }}</span>
+                </label>
+              {%- endfor -%}
+            </div>
+          </fieldset>
+
+          {%- comment -%} ---------- Étape 3 ---------- {%- endcomment -%}
+          <fieldset class="cc-diag__step" data-step>
+            <legend class="cc-diag__q">Votre situation actuelle</legend>
+
+            <div class="cc-diag__grid">
+              <div data-field>
+                <label class="flabel" for="DiagSite">Adresse de votre site</label>
+                <input class="field" type="text" id="DiagSite" name="contact[site]" placeholder="exemple.fr" inputmode="url" autocomplete="url">
+                <p class="cc-diag__hint">Laissez vide si le site n'existe pas encore.</p>
+              </div>
+
+              <div data-field>
+                <label class="flabel" for="DiagBudget">Budget envisagé</label>
+                <select class="field" id="DiagBudget" name="contact[budget]">
+                  <option value="">Je ne sais pas encore</option>
+                  <option value="moins-3k">Moins de 3 000 €</option>
+                  <option value="3k-8k">3 000 € – 8 000 €</option>
+                  <option value="8k-20k">8 000 € – 20 000 €</option>
+                  <option value="plus-20k">Plus de 20 000 €</option>
+                  <option value="mensuel">Accompagnement mensuel</option>
+                </select>
+              </div>
+
+              <div data-field>
+                <label class="flabel" for="DiagDelai">Échéance souhaitée</label>
+                <select class="field" id="DiagDelai" name="contact[echeance]">
+                  <option value="">À définir</option>
+                  <option value="urgent">Dès que possible</option>
+                  <option value="1-3-mois">Dans 1 à 3 mois</option>
+                  <option value="plus-tard">Plus tard, je me renseigne</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          {%- comment -%} ---------- Étape 4 ---------- {%- endcomment -%}
+          <fieldset class="cc-diag__step" data-step>
+            <legend class="cc-diag__q">Où vous répondons-nous ?</legend>
+
+            <div class="cc-diag__grid">
+              <div data-field>
+                <label class="flabel" for="DiagName">Nom et prénom <span aria-hidden="true">*</span></label>
+                <input class="field" type="text" id="DiagName" name="contact[name]" required autocomplete="name">
+                <p class="cc-diag__err" data-error hidden>Indiquez votre nom.</p>
+              </div>
+
+              <div data-field>
+                <label class="flabel" for="DiagEmail">E-mail professionnel <span aria-hidden="true">*</span></label>
+                <input class="field" type="email" id="DiagEmail" name="contact[email]" required autocomplete="email" inputmode="email">
+                <p class="cc-diag__err" data-error hidden>Indiquez un e-mail valide.</p>
+              </div>
+
+              <div data-field>
+                <label class="flabel" for="DiagPhone">Téléphone <span class="fg-faint">(facultatif)</span></label>
+                <input class="field" type="tel" id="DiagPhone" name="contact[phone]" autocomplete="tel" inputmode="tel">
+              </div>
+
+              <div data-field class="cc-diag__full">
+                <label class="flabel" for="DiagBody">Ce qui vous bloque aujourd'hui <span class="fg-faint">(facultatif)</span></label>
+                <textarea class="field" id="DiagBody" name="contact[body]" rows="3" placeholder="Deux lignes suffisent."></textarea>
+              </div>
+            </div>
+
+            <p class="cc-diag__legal">
+              Vos informations servent uniquement à préparer et vous transmettre ce diagnostic.
+              Aucune revente, aucune inscription automatique à une liste de diffusion.
+            </p>
+          </fieldset>
+
+          <footer class="cc-diag__foot">
+            <button type="button" class="btn btn--ghost" data-diagnostic-back hidden>Retour</button>
+            <span class="cc-diag__counter" data-diagnostic-counter aria-live="polite"></span>
+            <button type="button" class="btn btn--primary" data-diagnostic-next>
+              Continuer{%- render 'icon', name: 'arrow', size: 15 -%}
+            </button>
+            <button type="submit" class="btn btn--primary" data-diagnostic-submit hidden>
+              Envoyer ma demande{%- render 'icon', name: 'arrow', size: 15 -%}
+            </button>
+          </footer>
+
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</div>

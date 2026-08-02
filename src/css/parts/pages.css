@@ -1,0 +1,378 @@
+/* ============================================================================
+   PAGES INTERNES
+   Services, contact, blog, guide, recherche, panier, produit.
+   ========================================================================== */
+
+/* ---------- Page générique ---------- */
+.cc-plain { position: relative; overflow: hidden; }
+.cc-plain__title { margin-top: 1rem; max-width: 22ch; }
+.cc-plain__body { margin-top: 1.25rem; }
+
+/* ---------- Bande de preuve sous l'en-tête de page ---------- */
+.cc-proofbar {
+  margin-top: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  border: 1px solid color-mix(in oklab, #fff 11%, transparent);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.cc-proofbar__cell {
+  padding: 0.85rem 0.95rem;
+  border-right: 1px solid color-mix(in oklab, #fff 11%, transparent);
+}
+.cc-proofbar__cell:last-child { border-right: 0; }
+.cc-proofbar .metric {
+  display: block;
+  font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  color: var(--color-volt);
+}
+.cc-proofbar__label {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: var(--text-micro);
+  line-height: 1.4;
+  color: var(--color-light-3);
+}
+
+/* ---------- Grille de contenu ---------- */
+.cc-cgrid__grid { display: grid; gap: 0.85rem; }
+.cc-cgrid__grid--comfortable { grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+.cc-cgrid__grid--dense { grid-template-columns: repeat(auto-fit, minmax(min(100%, 13.5rem), 1fr)); }
+
+.cc-cgrid__item { padding: clamp(0.95rem, 0.85rem + 0.5vw, 1.25rem); }
+.cc-cgrid__ico {
+  display: grid; place-items: center;
+  width: 32px; height: 32px;
+  margin-bottom: 0.7rem;
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-xs);
+  color: var(--color-volt-dim);
+}
+.surface-paper .cc-cgrid__ico { color: var(--color-dark-1); }
+.cc-cgrid__title { font-size: var(--text-h4); font-weight: 500; letter-spacing: -0.015em; }
+.cc-cgrid__text { margin-top: 0.45rem; font-size: var(--text-sm); color: var(--surface-fg-muted); }
+.cc-cgrid__link { margin-top: 0.8rem; }
+
+/* ---------- Deux colonnes ---------- */
+.cc-split__grid { display: grid; gap: clamp(1.5rem, 1.2rem + 2vw, 3rem); align-items: start; }
+@media (min-width: 900px) {
+  .cc-split__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .cc-split__grid--rev .cc-split__copy { order: 2; }
+}
+.cc-split__title { margin-top: 0.7rem; max-width: 22ch; }
+.cc-split__text { margin-top: 0.85rem; }
+.cc-split__cta { margin-top: 1.15rem; }
+
+.cc-split__media {
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.cc-split__media img { width: 100%; height: auto; }
+
+.cc-split__list { display: grid; gap: 0.15rem; }
+.cc-split__list li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--surface-line);
+}
+.cc-split__list li:last-child { border-bottom: 1px solid var(--surface-line); }
+.cc-split__num {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--color-volt-deep);
+  padding-top: 3px;
+}
+.surface-dark .cc-split__num, .surface-deep .cc-split__num { color: var(--color-volt); }
+.cc-split__list strong {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+}
+.cc-split__list strong + span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: var(--text-xs);
+  line-height: 1.55;
+  color: var(--surface-fg-muted);
+}
+
+/* ---------- FAQ ---------- */
+.cc-faqsec__grid { display: grid; gap: clamp(1.25rem, 1rem + 1.6vw, 2.5rem); align-items: start; }
+@media (min-width: 900px) {
+  .cc-faqsec__grid { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
+  .cc-faqsec__aside { position: sticky; top: calc(var(--header-h) + 1.75rem); }
+}
+.cc-faqsec__aside h2 { margin-top: 0.7rem; max-width: 20ch; }
+.cc-faqsec__text { margin-top: 0.7rem; color: var(--surface-fg-muted); max-width: 34ch; }
+.cc-faqsec__cta { margin-top: 1.1rem; }
+
+/* ---------- Bande de conversion ---------- */
+.cc-cta { position: relative; overflow: hidden; }
+.cc-cta__inner {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .cc-cta__inner { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 3rem; }
+}
+.cc-cta__title { margin-top: 0.7rem; max-width: 22ch; }
+.cc-cta__text { margin-top: 0.7rem; color: var(--color-light-2); max-width: 48ch; }
+
+.cc-cta__points { margin-top: 1.1rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.15rem; }
+.cc-cta__points li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--text-xs);
+  color: var(--color-light-3);
+}
+.cc-cta__points svg { color: var(--color-volt-dim); flex: none; }
+
+.cc-cta__side { display: grid; gap: 0.6rem; justify-items: start; }
+@media (min-width: 900px) { .cc-cta__side { justify-items: end; text-align: right; } }
+.cc-cta__note { font-family: var(--font-mono); font-size: var(--text-micro); color: var(--color-light-3); }
+
+/* ---------- Texte riche ---------- */
+.cc-prose__grid { display: grid; gap: clamp(1.25rem, 1rem + 1.5vw, 2.5rem); align-items: start; }
+@media (min-width: 900px) {
+  .cc-prose__grid { grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr); }
+  .cc-prose__aside { position: sticky; top: calc(var(--header-h) + 1.75rem); }
+}
+.cc-prose__title { margin-top: 0.6rem; max-width: 18ch; }
+.cc-prose__body > * + * { margin-top: 1.25rem; }
+.cc-prose__h {
+  font-size: var(--text-h3);
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  margin-top: 1.75rem;
+}
+
+.cc-callout {
+  padding: 1rem 1.1rem;
+  border-left: 2px solid var(--color-volt);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: color-mix(in oklab, var(--surface-fg) 4%, transparent);
+}
+.cc-callout .eyebrow { margin-bottom: 0.5rem; }
+
+.cc-inlinks {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--surface-line);
+  border-radius: var(--radius-md);
+}
+.cc-inlinks__title {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--surface-fg-faint);
+  margin-bottom: 0.6rem;
+}
+.cc-inlinks ul { display: grid; gap: 0.3rem; }
+.cc-inlinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--text-sm);
+  color: var(--surface-fg);
+}
+.cc-inlinks a:hover { color: var(--color-volt-deep); }
+.surface-dark .cc-inlinks a:hover { color: var(--color-volt); }
+
+/* ---------- Blog : filtres ---------- */
+.cc-tags { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.cc-tags__pill {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid color-mix(in oklab, #fff 13%, transparent);
+  border-radius: var(--radius-pill, 999px);
+  font-size: var(--text-xs);
+  color: var(--color-light-2);
+  transition: border-color 0.18s linear, color 0.18s linear;
+}
+.cc-tags__pill:hover { border-color: color-mix(in oklab, #fff 32%, transparent); color: var(--color-light-1); }
+.cc-tags__pill.is-active {
+  background: var(--color-volt);
+  border-color: var(--color-volt);
+  color: var(--color-ink-950);
+  font-weight: 500;
+}
+
+/* ---------- Guide ---------- */
+.cc-article__meta {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--color-light-3);
+}
+.cc-article__grid { display: grid; }
+.cc-article__body { max-width: var(--container-prose); margin-inline: auto; }
+.cc-article__body h2 { margin-top: 2em; }
+.cc-article__body h3 { margin-top: 1.6em; }
+.cc-article__body img { border-radius: var(--radius-md); margin-block: 1.4em; }
+
+/* ---------- Recherche ---------- */
+.cc-searchform {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 34rem;
+}
+.cc-searchform .field { flex: 1; min-width: 12rem; }
+.cc-searchform__count { margin-top: 1rem; font-size: var(--text-sm); }
+
+/* ---------- 404 / mot de passe ---------- */
+.cc-404 { max-width: 40rem; }
+.cc-404__title { margin-top: 0.8rem; }
+.cc-404__text { margin-top: 0.8rem; color: var(--color-light-2); }
+
+/* ---------- Panier ---------- */
+.cc-cart { margin-top: 1.5rem; }
+.cc-cart__list { border-top: 1px solid var(--surface-line); }
+.cc-cart__row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--surface-line);
+}
+.cc-cart__img { width: 56px; height: 56px; object-fit: cover; border-radius: var(--radius-xs); }
+.cc-cart__info { min-width: 0; display: grid; gap: 0.15rem; font-size: var(--text-sm); }
+.cc-cart__qty { width: 4.5rem; grid-column: 2; }
+.cc-cart__price { font-size: var(--text-body); }
+.cc-cart__foot {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.cc-cart__total { display: flex; align-items: baseline; gap: 0.6rem; font-size: var(--text-lead); }
+.cc-cart__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+/* ---------- Produit ---------- */
+.cc-product { display: grid; gap: clamp(1.5rem, 1.2rem + 2vw, 3rem); align-items: start; }
+@media (min-width: 900px) { .cc-product { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.cc-product__media { border: 1px solid var(--surface-line); border-radius: var(--radius-md); overflow: hidden; }
+.cc-product__title { max-width: 20ch; }
+.cc-product__price { margin-top: 0.7rem; font-size: var(--text-h3); display: flex; align-items: baseline; gap: 0.6rem; }
+.cc-product__add { margin-top: 1.1rem; }
+.cc-product__desc { margin-top: 1.5rem; }
+
+/* ---------- Contact ---------- */
+.cc-contact { display: grid; gap: clamp(1.25rem, 1rem + 1.6vw, 2.5rem); align-items: start; }
+@media (min-width: 900px) {
+  .cc-contact { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
+}
+
+.cc-contact__card { padding: 1.15rem; display: grid; gap: 0.6rem; justify-items: start; }
+.cc-contact__card-text { font-size: var(--text-sm); color: var(--surface-fg-muted); }
+
+.cc-contact__facts { margin-top: 1.25rem; display: grid; gap: 0.15rem; }
+.cc-contact__facts > div {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--surface-line);
+}
+.cc-contact__facts dt {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--surface-fg-faint);
+}
+.cc-contact__facts dd { font-size: var(--text-sm); }
+.cc-contact__facts a:hover { color: var(--color-volt-deep); }
+.cc-contact__extra { margin-top: 1.25rem; }
+
+.cc-contact__form { padding: clamp(1.1rem, 0.95rem + 0.8vw, 1.6rem); }
+.cc-contact__form-title { font-size: var(--text-h3); font-weight: 500; letter-spacing: -0.02em; margin-bottom: 1rem; }
+.cc-contact__grid { display: grid; gap: 0.85rem; }
+@media (min-width: 560px) {
+  .cc-contact__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cc-contact__full { grid-column: 1 / -1; }
+}
+.cc-contact__submit { margin-top: 1.15rem; }
+.cc-contact__done { display: grid; gap: 0.6rem; justify-items: start; padding: 1rem 0; }
+.cc-contact__done p { color: var(--surface-fg-muted); }
+
+/* ============================================================================
+   CIBLES TACTILES — WCAG 2.2 · 2.5.8 (minimum 24 × 24 px)
+   Les listes de liens serrées (pied de page, fiches contact, maillage) tombaient
+   à 20-23 px de hauteur : on élargit la zone cliquable sans toucher au rythme
+   visuel, via du padding et non de l'interlignage.
+   ========================================================================== */
+.cc-foot__col a,
+.cc-contact__facts a,
+.cc-inlinks a,
+.cc-crumb a {
+  display: inline-block;
+  padding-block: 3px;
+}
+.cc-foot__col ul { gap: 0.15rem; }
+.cc-foot__col--dense ul { gap: 0.05rem; }
+
+.cc-foot__contact a { display: inline-block; padding-block: 3px; }
+
+/* Le lien de marque doit rester une cible confortable dans une barre de 62 px. */
+.cc-brand { min-height: 34px; }
+
+/* ----------------------------------------------------------------------------
+   Correctifs de finition relevés en revue visuelle
+   --------------------------------------------------------------------------*/
+
+/* Le lien « toutes les zones » héritait du display:inline-block des cibles
+   tactiles : sa flèche repassait à la ligne. On restaure la mise en ligne. */
+.cc-foot__col a.cc-foot__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+/* Bandeau d'appel du pied de page : centrer verticalement supprime le vide
+   au-dessus du bouton quand le texte de gauche fait trois lignes. */
+@media (min-width: 900px) {
+  .cc-foot__cta { align-items: center; }
+}
+
+/* Raccourci clavier : Ctrl et K étaient collés. */
+.cc-kbd { gap: 3px; }
+
+/* Sous 420 px, deux boutons de largeurs différentes lisent comme un défaut
+   d'alignement. On les passe pleine largeur. */
+@media (max-width: 419px) {
+  .cc-hero__actions, .cc-pagehead__actions { display: grid; }
+  .cc-hero__actions .btn, .cc-pagehead__actions .btn { width: 100%; }
+}
+
+/* Encart de rattrapage sous les onglets du sélecteur. */
+.cc-sel__aside {
+  margin-top: 0.85rem;
+  padding: 0.9rem 0.95rem;
+  border: 1px dashed var(--surface-line);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: 0.6rem;
+  justify-items: start;
+}
+.cc-sel__aside-text {
+  font-size: var(--text-xs);
+  line-height: 1.55;
+  color: var(--surface-fg-muted);
+}

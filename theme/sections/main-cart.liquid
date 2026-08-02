@@ -1,0 +1,48 @@
+{%- comment -%}
+  Panier. La boutique ne vend pas de produits physiques aujourd'hui, mais le
+  gabarit doit rester fonctionnel : Shopify le sert quoi qu'il arrive.
+{%- endcomment -%}
+
+<section class="cc-plain surface-dark section-y" data-surface="dark">
+  <div class="shell">
+    <h1 class="cc-plain__title">Panier</h1>
+
+    {%- if cart.item_count > 0 -%}
+      <form action="{{ routes.cart_url }}" method="post" novalidate class="cc-cart">
+        <ul class="cc-cart__list" role="list">
+          {%- for item in cart.items -%}
+            <li class="cc-cart__row">
+              {%- if item.image != blank -%}
+                {{ item.image | image_url: width: 160 | image_tag: widths: '80,160', sizes: '80px', loading: 'lazy', alt: item.title, class: 'cc-cart__img' }}
+              {%- endif -%}
+              <div class="cc-cart__info">
+                <a href="{{ item.url }}"><strong>{{ item.product.title }}</strong></a>
+                {%- unless item.variant.title contains 'Default' -%}
+                  <span class="fg-muted">{{ item.variant.title }}</span>
+                {%- endunless -%}
+              </div>
+              <label class="visually-hidden" for="Qty-{{ item.index | plus: 1 }}">Quantité</label>
+              <input class="field cc-cart__qty" id="Qty-{{ item.index | plus: 1 }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" inputmode="numeric">
+              <span class="cc-cart__price metric">{{ item.final_line_price | money }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <div class="cc-cart__foot">
+          <p class="cc-cart__total"><span class="fg-muted">Sous-total</span><span class="metric">{{ cart.total_price | money }}</span></p>
+          <div class="cc-cart__actions">
+            <button type="submit" name="update" class="btn btn--ghost">Mettre à jour</button>
+            <button type="submit" name="checkout" class="btn btn--primary">Commander</button>
+          </div>
+        </div>
+      </form>
+    {%- else -%}
+      <p class="fg-muted">Votre panier est vide.</p>
+      <a class="btn btn--primary" href="{{ routes.root_url }}" style="margin-top:1rem">Retour à l'accueil</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Panier", "settings": [] }
+{% endschema %}

@@ -1,0 +1,173 @@
+{%- comment -%}
+  HERO — « console d'acquisition »
+
+  Parti pris : pas d'illustration décorative, pas de photo de bureau. Le visuel
+  de droite est un instrument. Il montre littéralement ce que vend l'agence —
+  transformer une demande brute et bruitée en un signal exploitable — et il est
+  dessiné en canvas, donc unique et impossible à retrouver sur un autre site.
+{%- endcomment -%}
+
+<section class="cc-hero surface-dark" data-surface="dark">
+  <span class="grid-field" aria-hidden="true"></span>
+
+  <div class="shell cc-hero__grid">
+
+    <div class="cc-hero__copy">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow eyebrow--bare cc-hero__eyebrow" data-reveal>
+          <span class="pulse" aria-hidden="true"></span>
+          {{ section.settings.eyebrow }}
+        </p>
+      {%- endif -%}
+
+      {%- comment -%}
+        L'espace avant <em> est significatif : sans lui, le titre est lu
+        « demandes,pas » par les lecteurs d'écran et indexé collé.
+      {%- endcomment -%}
+      <h1 class="cc-hero__title" data-reveal>
+        {{ section.settings.title }}
+        {% if section.settings.title_accent != blank %}<em>{{ section.settings.title_accent }}</em>{% endif %}
+      </h1>
+
+      {%- if section.settings.lead != blank -%}
+        <p class="cc-hero__lead" data-reveal>{{ section.settings.lead }}</p>
+      {%- endif -%}
+
+      <div class="cc-hero__actions" data-reveal>
+        <button type="button" class="btn btn--primary btn--lg" data-diagnostic-open data-diagnostic-entry="hero">
+          {{ section.settings.cta_primary | default: 'Lancer le diagnostic' }}
+        </button>
+        {%- if section.settings.cta_secondary != blank -%}
+          <a class="btn btn--ghost btn--lg" href="{{ section.settings.cta_secondary_url | default: routes.root_url }}">
+            {{ section.settings.cta_secondary }}{%- render 'icon', name: 'arrow', size: 16 -%}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- assign trust_blocks = section.blocks | where: 'type', 'trust' -%}
+      {%- if trust_blocks.size > 0 -%}
+        <ul class="cc-hero__trust" role="list" data-reveal>
+          {%- for block in trust_blocks -%}
+            <li {{ block.shopify_attributes }}>
+              {%- render 'icon', name: 'check', size: 13 -%}
+              <span>{{ block.settings.text }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ---------- Instrument ---------- {%- endcomment -%}
+    <div class="cc-console" data-reveal>
+      <div class="cc-console__bar">
+        <span class="cc-console__id">
+          <span class="pulse" aria-hidden="true"></span>
+          {{ section.settings.console_label | default: 'signal / acquisition' }}
+        </span>
+        <span class="cc-console__period">{{ section.settings.console_period }}</span>
+      </div>
+
+      <div class="cc-console__screen">
+        <canvas data-signal-canvas aria-hidden="true"></canvas>
+        <div class="cc-console__axis" aria-hidden="true">
+          <span>Demande brute</span>
+          <span>Signal exploité</span>
+        </div>
+      </div>
+
+      {%- assign channel_blocks = section.blocks | where: 'type', 'channel' -%}
+      {%- if channel_blocks.size > 0 -%}
+        <ul class="cc-console__channels" role="list">
+          {%- for block in channel_blocks -%}
+            <li {{ block.shopify_attributes }}>
+              {%- render 'icon', name: block.settings.icon, size: 14 -%}
+              <span>{{ block.settings.label }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- assign readout_blocks = section.blocks | where: 'type', 'readout' -%}
+      {%- if readout_blocks.size > 0 -%}
+        <div class="cc-console__readout">
+          {%- for block in readout_blocks -%}
+            <div {{ block.shopify_attributes }}>
+              <span class="metric"
+                {% if block.settings.count_to != blank %}
+                  data-count="{{ block.settings.count_to }}"
+                  data-count-prefix="{{ block.settings.prefix }}"
+                  data-count-suffix="{{ block.settings.suffix }}"
+                {% endif %}
+              >{{ block.settings.prefix }}{{ block.settings.count_to }}{{ block.settings.suffix }}</span>
+              <span class="cc-console__readout-label">{{ block.settings.label }}</span>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.console_note != blank -%}
+        <p class="cc-console__note">{{ section.settings.console_note }}</p>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Accueil — Hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Agence d'acquisition — Paris" },
+    { "type": "text", "id": "title", "label": "Titre", "default": "Votre site doit générer des demandes," },
+    { "type": "text", "id": "title_accent", "label": "Fin de titre (accentuée)", "default": "pas des compliments." },
+    { "type": "textarea", "id": "lead", "label": "Accroche", "default": "SEO, sites sur mesure, Shopify, conversion et Meta Ads. Nous activons le levier qui débloque réellement votre croissance, dans l'ordre qui sert votre objectif — et nous le prouvons avec des chiffres datés." },
+    { "type": "text", "id": "cta_primary", "label": "Bouton principal", "default": "Lancer le diagnostic" },
+    { "type": "text", "id": "cta_secondary", "label": "Bouton secondaire", "default": "Voir les résultats" },
+    { "type": "url", "id": "cta_secondary_url", "label": "Lien du bouton secondaire" },
+
+    { "type": "header", "content": "Instrument" },
+    { "type": "text", "id": "console_label", "label": "Libellé", "default": "signal / acquisition" },
+    { "type": "text", "id": "console_period", "label": "Période affichée", "default": "12 derniers mois" },
+    { "type": "text", "id": "console_note", "label": "Note de bas d'instrument", "default": "Moyennes observées sur les comptes que nous suivons. Les résultats dépendent du marché et de l'historique du site." }
+  ],
+  "blocks": [
+    {
+      "type": "trust",
+      "name": "Réassurance",
+      "limit": 4,
+      "settings": [{ "type": "text", "id": "text", "label": "Texte", "default": "Sans engagement" }]
+    },
+    {
+      "type": "channel",
+      "name": "Canal",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Libellé", "default": "SEO" },
+        {
+          "type": "select", "id": "icon", "label": "Pictogramme", "default": "signal",
+          "options": [
+            { "value": "signal", "label": "Signal / SEO" },
+            { "value": "layers", "label": "Site sur mesure" },
+            { "value": "cart", "label": "E-commerce" },
+            { "value": "gauge", "label": "Conversion" },
+            { "value": "megaphone", "label": "Publicité" },
+            { "value": "target", "label": "Audit" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "readout",
+      "name": "Relevé chiffré",
+      "limit": 3,
+      "settings": [
+        { "type": "text", "id": "prefix", "label": "Préfixe", "default": "+" },
+        { "type": "text", "id": "count_to", "label": "Valeur (chiffres uniquement)", "default": "236" },
+        { "type": "text", "id": "suffix", "label": "Suffixe", "default": " %" },
+        { "type": "text", "id": "label", "label": "Libellé", "default": "impressions organiques" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Accueil — Hero" }]
+}
+{% endschema %}

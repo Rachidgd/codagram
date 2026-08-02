@@ -1,0 +1,98 @@
+{%- comment -%}
+  EN-TÊTE DE PAGE
+
+  Sert toutes les pages hors accueil : services, audits, villes, à propos.
+  Fil d'Ariane rendu en HTML (l'entité BreadcrumbList est déclarée à part dans
+  structured-data), un seul H1, et une bande de preuve optionnelle.
+{%- endcomment -%}
+
+<section class="cc-pagehead surface-dark" data-surface="dark">
+  <span class="grid-field" aria-hidden="true"></span>
+
+  <div class="shell">
+    {%- if section.settings.show_breadcrumb -%}
+      <nav aria-label="Fil d'Ariane">
+        <ol class="cc-crumb" role="list">
+          <li><a href="{{ routes.root_url }}">Accueil</a></li>
+          {%- if section.settings.parent_label != blank -%}
+            <li><a href="{{ section.settings.parent_url | default: routes.root_url }}">{{ section.settings.parent_label }}</a></li>
+          {%- endif -%}
+          <li aria-current="page">{{ section.settings.title | default: page.title }}</li>
+        </ol>
+      </nav>
+    {%- endif -%}
+
+    <div class="cc-pagehead__copy">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow" data-reveal style="margin-top:1rem">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      <h1 class="cc-pagehead__title" data-reveal>{{ section.settings.title | default: page.title }}</h1>
+
+      {%- if section.settings.lead != blank -%}
+        <p class="cc-pagehead__lead" data-reveal>{{ section.settings.lead }}</p>
+      {%- endif -%}
+
+      <div class="cc-pagehead__actions" data-reveal>
+        {%- if section.settings.cta_primary != blank -%}
+          <button type="button" class="btn btn--primary btn--lg" data-diagnostic-open data-diagnostic-entry="{{ section.settings.title | handle | truncate: 40, '' }}">
+            {{ section.settings.cta_primary }}
+          </button>
+        {%- endif -%}
+        {%- if section.settings.cta_secondary != blank -%}
+          <a class="btn btn--ghost btn--lg" href="{{ section.settings.cta_secondary_url | default: routes.root_url }}">
+            {{ section.settings.cta_secondary }}{%- render 'icon', name: 'arrow', size: 16 -%}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="cc-proofbar" data-reveal>
+        {%- for block in section.blocks -%}
+          <div class="cc-proofbar__cell" {{ block.shopify_attributes }}>
+            <span class="metric"
+              {% if block.settings.value != blank %}
+                data-count="{{ block.settings.value }}"
+                data-count-prefix="{{ block.settings.prefix }}"
+                data-count-suffix="{{ block.settings.suffix }}"
+              {% endif %}
+            >{{ block.settings.prefix }}{{ block.settings.value }}{{ block.settings.suffix }}</span>
+            <span class="cc-proofbar__label">{{ block.settings.label }}</span>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page — En-tête",
+  "settings": [
+    { "type": "checkbox", "id": "show_breadcrumb", "label": "Afficher le fil d'Ariane", "default": true },
+    { "type": "text", "id": "parent_label", "label": "Rubrique parente" },
+    { "type": "url", "id": "parent_url", "label": "Lien de la rubrique parente" },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
+    { "type": "text", "id": "title", "label": "Titre (H1)", "info": "Vide = titre de la page Shopify." },
+    { "type": "textarea", "id": "lead", "label": "Accroche" },
+    { "type": "text", "id": "cta_primary", "label": "Bouton principal", "default": "Demander un diagnostic" },
+    { "type": "text", "id": "cta_secondary", "label": "Bouton secondaire" },
+    { "type": "url", "id": "cta_secondary_url", "label": "Lien du bouton secondaire" }
+  ],
+  "blocks": [
+    {
+      "type": "proof",
+      "name": "Chiffre de preuve",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "prefix", "label": "Préfixe" },
+        { "type": "text", "id": "value", "label": "Valeur" },
+        { "type": "text", "id": "suffix", "label": "Suffixe" },
+        { "type": "text", "id": "label", "label": "Libellé" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Page — En-tête" }]
+}
+{% endschema %}

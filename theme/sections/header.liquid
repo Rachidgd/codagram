@@ -1,0 +1,264 @@
+{%- liquid
+  assign nav = section.settings.menu.links
+  assign brand = section.settings.wordmark | default: shop.name
+-%}
+
+<header class="cc-head" data-header data-surface-adaptive>
+  <div class="cc-head__bar">
+    <div class="shell cc-head__inner">
+
+      {%- comment -%} Signature de marque : le point volt EST le logo. {%- endcomment -%}
+      <a class="cc-brand" href="{{ routes.root_url }}" aria-label="{{ brand | escape }} — Accueil">
+        {%- if section.settings.logo != blank -%}
+          {{ section.settings.logo | image_url: width: 400 | image_tag: widths: '120,180,240,320,400', sizes: '150px', loading: 'eager', class: 'cc-brand__img', alt: brand }}
+        {%- else -%}
+          <span class="cc-brand__mark" aria-hidden="true"></span>
+          <span class="cc-brand__word">{{ brand }}</span>
+        {%- endif -%}
+      </a>
+
+      <nav class="cc-nav" aria-label="Navigation principale">
+        <ul class="cc-nav__list" role="list">
+          {%- for link in nav -%}
+            {%- if link.links.size > 0 -%}
+              <li class="cc-nav__item" data-nav-group>
+                <button
+                  type="button"
+                  class="cc-nav__link{% if link.child_active %} is-active{% endif %}"
+                  aria-expanded="false"
+                  aria-controls="NavPanel-{{ forloop.index }}"
+                  data-nav-trigger
+                >
+                  <span>{{ link.title }}</span>
+                  {%- render 'icon', name: 'chevron', size: 14, class: 'cc-nav__caret' -%}
+                </button>
+
+                <div class="cc-panel" id="NavPanel-{{ forloop.index }}" data-nav-panel hidden>
+                  <div class="cc-panel__inner">
+
+                    <div class="cc-panel__list">
+                      {%- for child in link.links -%}
+                        {%- liquid
+                          assign child_handle = child.url | split: '?' | first | split: '/' | last
+                          assign note = ''
+                          assign note_icon = 'signal'
+                          for b in section.blocks
+                            if b.type == 'nav_note' and b.settings.handle == child_handle
+                              assign note = b.settings.description
+                              assign note_icon = b.settings.icon
+                              break
+                            endif
+                          endfor
+                        -%}
+                        <a class="cc-panel__link{% if child.active %} is-active{% endif %}" href="{{ child.url }}">
+                          <span class="cc-panel__ico">{%- render 'icon', name: note_icon, size: 16 -%}</span>
+                          <span class="cc-panel__body">
+                            <strong>{{ child.title }}</strong>
+                            {%- if note != blank -%}<span>{{ note }}</span>{%- endif -%}
+                          </span>
+                          {%- render 'icon', name: 'arrow', size: 15, class: 'cc-panel__go' -%}
+                        </a>
+                      {%- endfor -%}
+                    </div>
+
+                    {%- comment -%}
+                      Volet contextuel : chaque famille du menu peut exposer une
+                      preuve chiffrée plutôt qu'un simple lien. C'est le point
+                      d'appui CRO de la navigation.
+                    {%- endcomment -%}
+                    {%- for b in section.blocks -%}
+                      {%- if b.type == 'nav_spotlight' and b.settings.parent == link.title -%}
+                        <aside class="cc-panel__spot" {{ b.shopify_attributes }}>
+                          {%- if b.settings.eyebrow != blank -%}
+                            <p class="eyebrow">{{ b.settings.eyebrow }}</p>
+                          {%- endif -%}
+                          <p class="cc-panel__spot-title">{{ b.settings.title }}</p>
+                          {%- if b.settings.metric != blank -%}
+                            <p class="cc-panel__spot-metric">
+                              <span class="metric" data-metric>{{ b.settings.metric }}</span>
+                              <span>{{ b.settings.metric_label }}</span>
+                            </p>
+                          {%- endif -%}
+                          {%- if b.settings.text != blank -%}
+                            <p class="cc-panel__spot-text">{{ b.settings.text }}</p>
+                          {%- endif -%}
+                          {%- if b.settings.cta_label != blank -%}
+                            <a class="tlink" href="{{ b.settings.cta_url | default: routes.root_url }}">
+                              {{ b.settings.cta_label }}{%- render 'icon', name: 'arrow', size: 14 -%}
+                            </a>
+                          {%- endif -%}
+                        </aside>
+                      {%- endif -%}
+                    {%- endfor -%}
+
+                  </div>
+                </div>
+              </li>
+            {%- else -%}
+              <li class="cc-nav__item">
+                <a
+                  class="cc-nav__link{% if link.active %} is-active{% endif %}"
+                  href="{{ link.url }}"
+                  {% if link.active %}aria-current="page"{% endif %}
+                >{{ link.title }}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </nav>
+
+      <div class="cc-head__actions">
+        {%- comment -%}
+          Le site expose 45+ pages (services, villes, audits, guides).
+          La palette de commandes est le raccourci qui rend cette profondeur
+          utilisable au lieu de la cacher dans des sous-menus.
+        {%- endcomment -%}
+        <button type="button" class="cc-head__cmd" data-palette-open aria-label="Rechercher une page ou un service">
+          {%- render 'icon', name: 'search', size: 15 -%}
+          <span class="cc-head__cmd-text">Rechercher</span>
+          <kbd class="cc-kbd" aria-hidden="true"><span data-cmd-key>Ctrl</span>K</kbd>
+        </button>
+
+        {%- if section.settings.cta_label != blank -%}
+          <button type="button" class="btn btn--primary cc-head__cta" data-diagnostic-open data-diagnostic-entry="header">
+            {{ section.settings.cta_label }}
+          </button>
+        {%- endif -%}
+
+        <button
+          type="button"
+          class="cc-burger"
+          aria-expanded="false"
+          aria-controls="MobileNav"
+          data-mobile-toggle
+        >
+          <span class="visually-hidden">Ouvrir le menu</span>
+          <span class="cc-burger__bars" aria-hidden="true"><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Progression de lecture : repère continu, 2 px, sans poids visuel. {%- endcomment -%}
+  <div class="cc-head__progress" aria-hidden="true"><span data-scroll-progress></span></div>
+</header>
+
+{%- comment -%} ---------- Feuille mobile ---------- {%- endcomment -%}
+<div class="cc-sheet" id="MobileNav" data-mobile-sheet hidden>
+  <button type="button" class="cc-sheet__scrim" data-mobile-close tabindex="-1" aria-hidden="true"></button>
+
+  <div class="cc-sheet__panel" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+    <div class="cc-sheet__top">
+      <a class="cc-brand" href="{{ routes.root_url }}">
+        <span class="cc-brand__mark" aria-hidden="true"></span>
+        <span class="cc-brand__word">{{ brand }}</span>
+      </a>
+      <button type="button" class="cc-sheet__close" data-mobile-close aria-label="Fermer le menu">
+        {%- render 'icon', name: 'close', size: 18 -%}
+      </button>
+    </div>
+
+    <nav class="cc-sheet__nav" aria-label="Navigation mobile">
+      {%- for link in nav -%}
+        <div class="cc-sheet__row" style="--i: {{ forloop.index }}">
+          {%- if link.links.size > 0 -%}
+            <details class="cc-acc">
+              <summary class="cc-acc__head">
+                <span>{{ link.title }}</span>
+                <span class="cc-acc__sign" aria-hidden="true">{%- render 'icon', name: 'plus', size: 14 -%}</span>
+              </summary>
+              <div class="cc-acc__body">
+                {%- for child in link.links -%}
+                  {%- liquid
+                    assign child_handle = child.url | split: '?' | first | split: '/' | last
+                    assign note = ''
+                    for b in section.blocks
+                      if b.type == 'nav_note' and b.settings.handle == child_handle
+                        assign note = b.settings.description
+                        break
+                      endif
+                    endfor
+                  -%}
+                  <a href="{{ child.url }}"{% if child.active %} aria-current="page"{% endif %}>
+                    <span>
+                      <strong>{{ child.title }}</strong>
+                      {%- if note != blank -%}<small>{{ note }}</small>{%- endif -%}
+                    </span>
+                    {%- render 'icon', name: 'arrow-up-right', size: 15 -%}
+                  </a>
+                {%- endfor -%}
+              </div>
+            </details>
+          {%- else -%}
+            <a class="cc-sheet__direct" href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>
+              <span>{{ link.title }}</span>
+              {%- render 'icon', name: 'arrow-up-right', size: 15 -%}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </nav>
+
+    <div class="cc-sheet__foot">
+      <button type="button" class="btn btn--primary btn--block" data-diagnostic-open data-diagnostic-entry="mobile">
+        {{ section.settings.cta_label | default: 'Demander un diagnostic' }}
+      </button>
+      {%- if section.settings.contact_email != blank -%}
+        <a class="cc-sheet__mail" href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "En-tête",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Menu principal", "default": "main-menu" },
+    { "type": "image_picker", "id": "logo", "label": "Logo (optionnel)" },
+    { "type": "text", "id": "wordmark", "label": "Nom affiché", "default": "clickscreation" },
+    { "type": "text", "id": "cta_label", "label": "Bouton d'action", "default": "Diagnostic gratuit" },
+    { "type": "text", "id": "contact_email", "label": "E-mail affiché (menu mobile)", "default": "contact@clickscreation.com" }
+  ],
+  "blocks": [
+    {
+      "type": "nav_note",
+      "name": "Description de lien",
+      "settings": [
+        { "type": "paragraph", "content": "Ajoute une description sous un lien du menu déroulant. Le champ « Identifiant » doit correspondre à la fin de l'URL du lien (ex. agence-seo pour /pages/agence-seo)." },
+        { "type": "text", "id": "handle", "label": "Identifiant de page" },
+        { "type": "text", "id": "description", "label": "Description courte" },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Pictogramme",
+          "default": "signal",
+          "options": [
+            { "value": "signal", "label": "Signal / SEO" },
+            { "value": "layers", "label": "Site sur mesure" },
+            { "value": "cart", "label": "E-commerce" },
+            { "value": "gauge", "label": "Conversion" },
+            { "value": "megaphone", "label": "Publicité" },
+            { "value": "target", "label": "Audit" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "nav_spotlight",
+      "name": "Volet contextuel",
+      "settings": [
+        { "type": "paragraph", "content": "Colonne de droite d'un menu déroulant. « Menu parent » doit reprendre exactement le libellé du menu (ex. Services)." },
+        { "type": "text", "id": "parent", "label": "Menu parent", "default": "Services" },
+        { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Dernier résultat" },
+        { "type": "text", "id": "title", "label": "Titre" },
+        { "type": "text", "id": "metric", "label": "Chiffre" },
+        { "type": "text", "id": "metric_label", "label": "Libellé du chiffre" },
+        { "type": "textarea", "id": "text", "label": "Texte" },
+        { "type": "text", "id": "cta_label", "label": "Libellé du lien" },
+        { "type": "url", "id": "cta_url", "label": "Lien" }
+      ]
+    }
+  ]
+}
+{% endschema %}

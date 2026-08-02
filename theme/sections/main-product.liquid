@@ -1,0 +1,54 @@
+{%- comment -%}
+  Fiche produit. Formulaire natif Shopify, variante sélectionnée transmise par
+  input caché : jamais de sélecteur maison qui casserait l'ajout au panier.
+{%- endcomment -%}
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+<section class="cc-plain surface-dark section-y" data-surface="dark">
+  <div class="shell cc-product">
+
+    <div class="cc-product__media">
+      {%- if product.featured_media != blank -%}
+        {{ product.featured_media | image_url: width: 1200 | image_tag: widths: '400,600,800,1200', sizes: '(max-width: 899px) 92vw, 46vw', loading: 'eager', alt: product.featured_media.alt | default: product.title }}
+      {%- endif -%}
+    </div>
+
+    <div class="cc-product__info">
+      <h1 class="cc-product__title">{{ product.title }}</h1>
+      <p class="cc-product__price metric">
+        {{ current_variant.price | money }}
+        {%- if current_variant.compare_at_price > current_variant.price -%}
+          <s class="fg-faint">{{ current_variant.compare_at_price | money }}</s>
+        {%- endif -%}
+      </p>
+
+      {%- form 'product', product -%}
+        <input type="hidden" name="id" value="{{ current_variant.id }}">
+
+        {%- if product.variants.size > 1 -%}
+          <label class="flabel" for="VariantSelect">Option</label>
+          <select class="field" id="VariantSelect" name="id">
+            {%- for variant in product.variants -%}
+              <option value="{{ variant.id }}"{% if variant == current_variant %} selected{% endif %}{% unless variant.available %} disabled{% endunless %}>
+                {{ variant.title }} — {{ variant.price | money }}{% unless variant.available %} (épuisé){% endunless %}
+              </option>
+            {%- endfor -%}
+          </select>
+        {%- endif -%}
+
+        <button type="submit" name="add" class="btn btn--primary btn--lg btn--block cc-product__add"{% unless current_variant.available %} disabled{% endunless %}>
+          {% if current_variant.available %}Ajouter au panier{% else %}Épuisé{% endif %}
+        </button>
+      {%- endform -%}
+
+      {%- if product.description != blank -%}
+        <div class="prose-cc cc-product__desc">{{ product.description }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Produit", "settings": [] }
+{% endschema %}
