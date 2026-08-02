@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "",
+        "title": "",
+        "lead": "",
+        "cta_primary": "Demander un diagnostic",
+        "cta_secondary": "Voir les résultats",
+        "cta_secondary_url": "/pages/resultats"
+      }
+    },
+    "contenu": {
+      "type": "page-body",
+      "settings": {
+        "surface": "paper"
+      }
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Un avis argumenté avant tout engagement.",
+        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
+        "cta_label": "Demander un diagnostic",
+        "note": "Réponse sous 2 jours ouvrés"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Réponse humaine"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "contenu",
+    "cta"
+  ]
+}

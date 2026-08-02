@@ -1,1 +1,25 @@
-{"sections":{"main":{"type":"main-page"}},"order":["main"]}
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "title": "",
+        "lead": "",
+        "cta_primary": "Demander un diagnostic",
+        "cta_secondary": "",
+        "cta_secondary_url": ""
+      }
+    },
+    "contenu": {
+      "type": "page-body",
+      "settings": {
+        "surface": "paper"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "contenu"
+  ]
+}
