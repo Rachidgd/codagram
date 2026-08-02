@@ -178,3 +178,50 @@ de l'aperçu.
 
 Les fichiers de `build/` et `src/` ne sont jamais envoyés à Shopify : seul le
 contenu de `theme/` constitue le thème.
+
+### Méthode d'envoi
+
+Les fichiers sont poussés par `themeFilesUpsert` avec un corps de type `URL`
+pointant vers le dépôt GitHub à un SHA figé. Shopify télécharge alors chaque
+fichier lui-même — le contenu ne transite pas par la requête.
+
+### Deux pièges à connaître
+
+**1. L'envoi par URL masque les erreurs de validation.**
+Quand Shopify refuse un fichier (schema invalide, syntaxe Liquid), la mutation
+répond `userErrors: []` et `upsertedThemeFiles: []` : l'échec est silencieux.
+Il faut donc **toujours relire les tailles après envoi** :
+
+```graphql
+theme(id: "gid://shopify/OnlineStoreTheme/…") {
+  files(first: 50, filenames: [...]) { nodes { filename size } }
+}
+```
+
+En cas de divergence, renvoyer le fichier en `TEXT` : ce mode remonte le vrai
+message d'erreur.
+
+**2. Un refus se propage en cascade.**
+Une section refusée fait refuser tous les gabarits qui la référencent. Sur ce
+projet, un `name` de schema à 26 caractères a fait échouer 53 gabarits d'un
+coup. `build/qa.py` vérifie maintenant cette contrainte, ainsi que les
+accolades dans une balise de sortie — les deux causes rencontrées.
+
+### État de la préproduction
+
+L'API Shopify interdit `themeFilesDelete` : les 241 fichiers de l'ancien thème
+subsistent sur la préproduction. Ils ne sont plus référencés (aucun gabarit ne
+pointe vers eux, aucune feuille de style n'est chargée) mais ils encombrent le
+thème. Pour repartir totalement propre, les supprimer depuis l'admin Shopify —
+ou dupliquer la préproduction dans un thème neuf après validation.
+
+### Ce qui reste à composer
+
+Les pages suivantes utilisent le gabarit de repli (en-tête + contenu de la page
+Shopify + appel à l'action). Elles s'affichent correctement dans la nouvelle
+identité, mais leur contenu métier n'a pas été réécrit :
+
+- pages villes (13), pages SEO local, audits, Meta Ads, site vitrine par cible.
+
+Pour les composer, dupliquer `templates/page.agence-seo.json` — c'est le
+gabarit de référence, avec `page.agence-shopify.json` et `page.resultats.json`.
