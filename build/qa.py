@@ -170,6 +170,22 @@ for stem, schema in section_schemas.items():
             )
 
 
+# --- 5 ter. Accolades dans une balise de sortie --------------------------------
+# Le parseur Liquid de Shopify referme {{ ... }} à la première accolade
+# rencontrée. Un gabarit du type {search_term_string} placé dans une chaîne
+# à l'intérieur d'une balise de sortie casse le fichier — et l'erreur ne
+# remonte pas lors d'un envoi par URL.
+OUTPUT_TAG = re.compile(r"\{\{(.*?)\}\}", re.S)
+for path in liquid_files():
+    body = strip_comments(strip_schema(path.read_text(encoding="utf-8")))
+    for frag in OUTPUT_TAG.findall(body):
+        if "{" in frag or "}" in frag:
+            errors.append(
+                f"{path.name}: accolade dans une balise de sortie "
+                f"— {{{{{frag.strip()[:60]}}}}}"
+            )
+
+
 # --- 6. Équilibre des tags Liquid ---------------------------------------------
 PAIRS = ["if", "unless", "for", "case", "form", "paginate", "capture", "tablerow"]
 for path in liquid_files():
