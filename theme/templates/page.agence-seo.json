@@ -1,0 +1,153 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "parent_label": "Expertises",
+        "parent_url": "/pages/agence-shopify",
+        "eyebrow": "Référencement naturel",
+        "title": "Capter la demande qui existe déjà sur votre marché.",
+        "lead": "Vos clients cherchent votre service chaque jour. Le référencement naturel consiste à être la réponse qu'ils trouvent — pas à publier plus de contenu que vos concurrents.",
+        "cta_primary": "Demander un diagnostic SEO",
+        "cta_secondary": "Voir les résultats",
+        "cta_secondary_url": "/pages/resultats"
+      },
+      "blocks": {
+        "p1": { "type": "proof", "settings": { "prefix": "+", "value": "236", "suffix": " %", "label": "impressions en 3 mois" } },
+        "p2": { "type": "proof", "settings": { "prefix": "+", "value": "350", "suffix": " %", "label": "clics organiques" } },
+        "p3": { "type": "proof", "settings": { "prefix": "", "value": "48", "suffix": " h", "label": "délai de réponse" } }
+      },
+      "block_order": ["p1", "p2", "p3"]
+    },
+
+    "constat": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Le constat",
+        "title": "Publier davantage ne fait pas monter un site.",
+        "text": "<p>La plupart des sites que nous reprenons ne manquent pas de contenu : ils manquent de structure. Plusieurs pages visent la même requête et se neutralisent, les intentions d'achat ne sont couvertes par aucune page, et les signaux techniques empêchent Google de comprendre la hiérarchie.</p><p>Nous commençons donc par cartographier ce que votre marché cherche réellement, puis nous donnons à chaque page un rôle unique.</p>",
+        "cta_label": "Voir notre méthode",
+        "cta_url": "/pages/a-propos"
+      },
+      "blocks": {
+        "b1": { "type": "point", "settings": { "title": "Une page, une intention", "text": "Deux pages qui visent la même requête se font concurrence. Nous arbitrons et nous consolidons." } },
+        "b2": { "type": "point", "settings": { "title": "L'intention avant le volume", "text": "Une requête à 100 recherches mensuelles avec une intention d'achat vaut mieux qu'une requête à 5 000 purement informative." } },
+        "b3": { "type": "point", "settings": { "title": "La technique conditionne le reste", "text": "Indexation, vitesse, structure et données structurées : sans cette base, le meilleur contenu reste invisible." } }
+      },
+      "block_order": ["b1", "b2", "b3"]
+    },
+
+    "prestation": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "dark",
+        "density": "comfortable",
+        "eyebrow": "Ce que couvre la prestation",
+        "title": "Six chantiers, activés selon votre situation.",
+        "text": "Un site jeune et un site installé depuis dix ans n'ont pas les mêmes priorités. Le diagnostic détermine l'ordre."
+      },
+      "blocks": {
+        "g1": { "type": "item", "settings": { "icon": "target", "title": "Audit technique", "text": "Indexation, exploration, vitesse, balisage, redirections et données structurées. Un état des lieux chiffré, pas une liste générique." } },
+        "g2": { "type": "item", "settings": { "icon": "signal", "title": "Recherche sémantique", "text": "Cartographie des requêtes et des intentions réelles de votre marché, priorisées par difficulté et par valeur commerciale." } },
+        "g3": { "type": "item", "settings": { "icon": "layers", "title": "Architecture des pages", "text": "Arborescence, rôle de chaque page, maillage interne et fils d'Ariane. C'est ce qui fait comprendre le site aux moteurs." } },
+        "g4": { "type": "item", "settings": { "icon": "check", "title": "Rédaction des pages", "text": "Pages de service et pages locales écrites pour répondre à une intention précise et amener à une action, pas pour remplir." } },
+        "g5": { "type": "item", "settings": { "icon": "gauge", "title": "SEO local", "text": "Pages par zone, fiche établissement, signaux de proximité et cohérence des informations sur l'ensemble du web." } },
+        "g6": { "type": "item", "settings": { "icon": "megaphone", "title": "Suivi et arbitrages", "text": "Positions, impressions, clics et demandes entrantes. Nous suivons ce qui se transforme en chiffre d'affaires, pas seulement en trafic." } }
+      },
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"]
+    },
+
+    "deroule": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": true,
+        "eyebrow": "Déroulé",
+        "title": "Le SEO se mesure en trimestres, pas en semaines.",
+        "text": "<p>Nous préférons l'annoncer clairement : les premiers mouvements sont généralement visibles entre six et douze semaines, et les effets composés arrivent plus tard. Toute agence qui vous promet la première position en un mois vous vend autre chose que du référencement.</p>"
+      },
+      "blocks": {
+        "s1": { "type": "point", "settings": { "title": "Semaines 1 à 2 — Diagnostic", "text": "Audit technique, sémantique et concurrentiel. Vous recevez un document écrit et une liste de priorités argumentées." } },
+        "s2": { "type": "point", "settings": { "title": "Semaines 3 à 6 — Fondations", "text": "Correctifs techniques, arbitrage des pages concurrentes, refonte de l'architecture et du maillage." } },
+        "s3": { "type": "point", "settings": { "title": "Semaines 6 à 12 — Contenus", "text": "Rédaction et publication des pages prioritaires, dans l'ordre de valeur commerciale décroissante." } },
+        "s4": { "type": "point", "settings": { "title": "Au-delà — Itérations", "text": "Lecture des données réelles, renforcement de ce qui prend, abandon de ce qui ne prend pas." } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Ce que l'on nous demande avant de démarrer.",
+        "text": "Si votre question ne figure pas ici, posez-la : nous répondons précisément, même quand la réponse ne nous arrange pas.",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "En combien de temps voit-on des résultats en SEO ?",
+            "answer": "<p>Les premiers mouvements d'impressions apparaissent généralement entre six et douze semaines après les correctifs techniques et la restructuration. Les gains de clics suivent, puis se composent. Le délai dépend fortement de l'ancienneté du domaine, de la concurrence sur vos requêtes et de l'état de départ du site. Un site installé qui a un problème de structure remonte plus vite qu'un domaine créé le mois dernier.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Garantissez-vous une position sur Google ?",
+            "answer": "<p>Non, et personne ne le peut honnêtement : le classement dépend d'un algorithme que nous ne contrôlons pas, de vos concurrents et de l'évolution de la demande. Ce que nous garantissons, c'est la méthode, la transparence sur ce qui est fait et la mesure de l'effet réel. Si une action ne produit rien, nous le disons et nous changeons d'approche.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il un engagement de longue durée ?",
+            "answer": "<p>Le diagnostic est ponctuel et sans suite obligatoire. Pour l'accompagnement, nous travaillons par cycles de trois mois : c'est la durée minimale pour observer un effet, et suffisamment court pour que vous puissiez arrêter sans être bloqué. Vos accès et vos contenus restent les vôtres dans tous les cas.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Travaillez-vous sur Shopify, WordPress ou un site sur mesure ?",
+            "answer": "<p>Les trois. Le référencement obéit aux mêmes principes quelle que soit la plateforme ; seule la façon d'appliquer les correctifs change. Nous intervenons directement dans le code quand c'est nécessaire, ce qui évite les allers-retours avec un prestataire technique.</p>"
+          }
+        },
+        "q5": {
+          "type": "qa",
+          "settings": {
+            "question": "Achetez-vous des liens ?",
+            "answer": "<p>Non. Nous travaillons la structure, le contenu et les signaux locaux, et nous construisons la notoriété par des moyens qui ne peuvent pas être sanctionnés du jour au lendemain. Les réseaux de liens achetés produisent des gains rapides puis des pertes brutales — ce n'est pas un service que nous rendons.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5"]
+    },
+
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Commençons par savoir ce qui bloque.",
+        "text": "Décrivez votre site et votre marché. Nous revenons avec les trois priorités que nous identifions — et si le SEO n'est pas votre levier prioritaire, nous vous le dirons.",
+        "cta_label": "Demander un diagnostic SEO",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir les résultats obtenus",
+        "link_url": "/pages/resultats"
+      },
+      "blocks": {
+        "r1": { "type": "point", "settings": { "text": "Sans engagement" } },
+        "r2": { "type": "point", "settings": { "text": "Vos accès restent les vôtres" } },
+        "r3": { "type": "point", "settings": { "text": "Aucune revente de données" } }
+      },
+      "block_order": ["r1", "r2", "r3"]
+    }
+  },
+  "order": ["hero", "constat", "prestation", "deroule", "faq", "cta"]
+}

@@ -1,0 +1,53 @@
+{%- comment -%}
+  CORPS DE PAGE
+
+  Rend le contenu saisi dans l'admin Shopify. La section ne produit rien du tout
+  quand la page est vide : une bande de fond sans contenu est un défaut visible,
+  pas un espacement.
+{%- endcomment -%}
+
+{%- liquid
+  assign body = page.content
+  if section.settings.text != blank
+    assign body = section.settings.text
+  endif
+-%}
+
+{%- if body != blank -%}
+  {%- liquid
+    assign surface = section.settings.surface | default: 'paper'
+    assign surface_class = 'surface-paper'
+    assign surface_attr = 'paper'
+    if surface == 'dark'
+      assign surface_class = 'surface-dark'
+      assign surface_attr = 'dark'
+    endif
+  -%}
+
+  <section class="cc-pagebody {{ surface_class }} section-y" data-surface="{{ surface_attr }}">
+    <div class="shell">
+      <div class="prose-cc cc-pagebody__inner" data-reveal>{{ body }}</div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Page — Corps",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Affiche le contenu de la page Shopify. La section disparaît si la page est vide."
+    },
+    {
+      "type": "select", "id": "surface", "label": "Fond", "default": "paper",
+      "options": [
+        { "value": "paper", "label": "Clair" },
+        { "value": "dark", "label": "Graphite" }
+      ]
+    },
+    { "type": "richtext", "id": "text", "label": "Texte de remplacement", "info": "Laissez vide pour utiliser le contenu de la page." }
+  ],
+  "presets": [{ "name": "Page — Corps" }]
+}
+{% endschema %}

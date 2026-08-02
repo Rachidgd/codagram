@@ -1,0 +1,107 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Résultats",
+        "title": "Ce que nous avons obtenu, avec les dates.",
+        "lead": "Chaque cas indique le point de départ, le travail réalisé et la période observée. Un chiffre sans contexte ne prouve rien — nous préférons en montrer moins et les documenter.",
+        "cta_primary": "Demander un diagnostic",
+        "cta_secondary": "Voir l'agence Shopify",
+        "cta_secondary_url": "/pages/agence-shopify"
+      },
+      "blocks": {
+        "p1": { "type": "proof", "settings": { "prefix": "+", "value": "236", "suffix": " %", "label": "impressions — Maison Ayla" } },
+        "p2": { "type": "proof", "settings": { "prefix": "+", "value": "350", "suffix": " %", "label": "clics — Maison Ayla" } },
+        "p3": { "type": "proof", "settings": { "prefix": "+", "value": "169", "suffix": " %", "label": "impressions — Noza & Co" } }
+      },
+      "block_order": ["p1", "p2", "p3"]
+    },
+
+    "cas": {
+      "type": "home-results",
+      "settings": {
+        "eyebrow": "Trajectoires observées",
+        "title": "Trois situations, trois points de départ différents.",
+        "link_label": "",
+        "disclaimer": "Les résultats dépendent du marché, de l'historique du site, de la concurrence et de la capacité d'exécution. Ils ne constituent pas une garantie de performance. Les données proviennent de la Search Console des comptes concernés, sur les périodes indiquées."
+      },
+      "blocks": {
+        "c1": {
+          "type": "case",
+          "settings": {
+            "client": "Noza & Co",
+            "sector": "SEO",
+            "period": "Mi-mai → juin 2026",
+            "context": "Site en ligne depuis deux ans, structure de pages illisible pour les moteurs et intentions de recherche non couvertes.",
+            "action": "Restructuration de l'arborescence, reprise des signaux techniques et réécriture des pages prioritaires.",
+            "metric_1": "on", "prefix_1": "+", "value_1": "169", "suffix_1": " %", "label_1": "impressions mensuelles",
+            "metric_2": "on", "prefix_2": "+", "value_2": "144", "suffix_2": " %", "label_2": "clics organiques"
+          }
+        },
+        "c2": {
+          "type": "case",
+          "settings": {
+            "client": "Maison Ayla",
+            "sector": "SEO",
+            "period": "Avril → juin 2026",
+            "context": "Pages nombreuses mais concurrentes entre elles, aucune ne ressortant clairement sur les requêtes visées.",
+            "action": "Clarification du rôle de chaque page dans l'architecture, optimisation technique et éditoriale.",
+            "metric_1": "on", "prefix_1": "+", "value_1": "236", "suffix_1": " %", "label_1": "impressions",
+            "metric_2": "on", "prefix_2": "+", "value_2": "350", "suffix_2": " %", "label_2": "clics"
+          }
+        },
+        "c3": {
+          "type": "case",
+          "settings": {
+            "client": "Création web",
+            "sector": "Site & CRO",
+            "period": "Site vitrine ou boutique",
+            "context": "Le choix de la base technique découle du modèle économique, jamais d'une plateforme imposée par habitude.",
+            "action": "Architecture, message, preuve et performance construits à partir du parcours d'achat réel.",
+            "metric_1": "on", "prefix_1": "", "value_1": "2", "suffix_1": " formats", "label_1": "vitrine ou e-commerce",
+            "metric_2": "on", "prefix_2": "", "value_2": "1", "suffix_2": " objectif", "label_2": "générer plus d'actions"
+          }
+        }
+      },
+      "block_order": ["c1", "c2", "c3"]
+    },
+
+    "lecture": {
+      "type": "content-split",
+      "settings": {
+        "surface": "dark",
+        "reverse": false,
+        "eyebrow": "Comment lire ces chiffres",
+        "title": "Une progression n'est pas une promesse.",
+        "text": "<p>Un pourcentage impressionne d'autant plus que le point de départ est bas. C'est pourquoi nous indiquons systématiquement la situation initiale et la période : sans ces deux informations, un chiffre de croissance ne veut rien dire.</p><p>Nous ne publions pas les cas où le travail n'a pas produit d'effet mesurable — mais nous en parlons volontiers pendant un échange, parce que ce sont eux qui expliquent notre méthode.</p>",
+        "cta_label": "Comprendre notre méthode",
+        "cta_url": "/pages/a-propos"
+      },
+      "blocks": {
+        "l1": { "type": "point", "settings": { "title": "La période est indiquée", "text": "Une hausse sur trois mois et une hausse sur trois ans ne se comparent pas." } },
+        "l2": { "type": "point", "settings": { "title": "Le point de départ est décrit", "text": "Passer de 100 à 300 impressions et de 100 000 à 300 000 n'engage pas le même travail." } },
+        "l3": { "type": "point", "settings": { "title": "L'action est nommée", "text": "Nous précisons ce qui a été fait, pour que le lien entre le travail et l'effet soit vérifiable." } }
+      },
+      "block_order": ["l1", "l2", "l3"]
+    },
+
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Votre situation ressemble-t-elle à l'une de celles-ci ?",
+        "text": "Décrivez-la en quatre questions. Nous revenons avec une lecture argumentée de ce qui limite aujourd'hui votre acquisition.",
+        "cta_label": "Demander un diagnostic",
+        "note": "Réponse sous 2 jours ouvrés"
+      },
+      "blocks": {
+        "r1": { "type": "point", "settings": { "text": "Sans engagement" } },
+        "r2": { "type": "point", "settings": { "text": "Réponse humaine, pas un formulaire automatique" } }
+      },
+      "block_order": ["r1", "r2"]
+    }
+  },
+  "order": ["hero", "cas", "lecture", "cta"]
+}

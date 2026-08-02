@@ -376,3 +376,6 @@
   line-height: 1.55;
   color: var(--surface-fg-muted);
 }
+
+/* Corps de page : la mesure de ligne reste bornée même en pleine largeur. */
+.cc-pagebody__inner { max-width: var(--container-prose); }

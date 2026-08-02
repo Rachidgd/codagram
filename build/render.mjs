@@ -299,6 +299,18 @@ const pages = [
     page: { title: 'Contact', content: '', handle: 'contact', metafields: {} }
   }],
   ['404', '404', { request: { locale: { iso_code: 'fr' }, page_type: '404' } }],
+  ['seo', 'page.agence-seo', {
+    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
+    page: { title: 'Agence SEO', content: '', handle: 'agence-seo', metafields: {} }
+  }],
+  ['resultats', 'page.resultats', {
+    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
+    page: { title: 'Résultats', content: '', handle: 'resultats', metafields: {} }
+  }],
+  ['repli', 'page.audit-seo', {
+    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
+    page: { title: 'Audit SEO', content: '<p>Contenu de la page Shopify.</p>', handle: 'audit-seo', metafields: {} }
+  }],
   ['service', 'page.agence-shopify', {
     request: { locale: { iso_code: 'fr' }, page_type: 'page' },
     page: { title: 'Agence Shopify', content: '', handle: 'agence-shopify', metafields: {} }
