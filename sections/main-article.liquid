@@ -1,0 +1,68 @@
+{%- comment -%}
+  Guide. Mesure de ligne courte, sommaire optionnel, et rappel de conversion en
+  fin de lecture — un lecteur convaincu doit pouvoir agir sans remonter.
+{%- endcomment -%}
+
+<article class="cc-article">
+  <header class="cc-pagehead surface-dark" data-surface="dark">
+    <span class="grid-field" aria-hidden="true"></span>
+    <div class="shell">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="cc-crumb" role="list">
+          <li><a href="{{ routes.root_url }}">Accueil</a></li>
+          <li><a href="{{ blog.url }}">{{ blog.title }}</a></li>
+          <li aria-current="page">{{ article.title }}</li>
+        </ol>
+      </nav>
+
+      <h1 class="cc-pagehead__title" data-reveal>{{ article.title }}</h1>
+
+      <p class="cc-article__meta" data-reveal>
+        <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">Publié le {{ article.published_at | date: '%d.%m.%Y' }}</time>
+        {%- if article.author != blank -%}<span>·</span><span>{{ article.author }}</span>{%- endif -%}
+        {%- if article.content != blank -%}
+          {%- assign words = article.content | strip_html | split: ' ' | size | divided_by: 220 | plus: 1 -%}
+          <span>·</span><span>{{ words }} min de lecture</span>
+        {%- endif -%}
+      </p>
+    </div>
+  </header>
+
+  <div class="surface-paper section-y" data-surface="paper">
+    <div class="shell cc-article__grid">
+      <div class="cc-article__body prose-cc" data-reveal>
+        {{ article.content }}
+      </div>
+    </div>
+  </div>
+
+  {%- if blog.articles.size > 1 -%}
+    <section class="surface-dark section-y" data-surface="dark">
+      <div class="shell">
+        <div class="cc-head-block" data-reveal>
+          <p class="eyebrow">Poursuivre</p>
+          <h2>Autres guides</h2>
+        </div>
+        <div class="cc-posts">
+          {%- assign shown = 0 -%}
+          {%- for other in blog.articles -%}
+            {%- if other.id != article.id and shown < 3 -%}
+              {%- assign shown = shown | plus: 1 -%}
+              <a class="cc-post card card--hover" href="{{ other.url }}" data-reveal>
+                <p class="cc-post__meta">
+                  <time datetime="{{ other.published_at | date: '%Y-%m-%d' }}">{{ other.published_at | date: '%d.%m.%Y' }}</time>
+                </p>
+                <h3 class="cc-post__title">{{ other.title }}</h3>
+                <span class="cc-post__go">Lire{%- render 'icon', name: 'arrow', size: 14 -%}</span>
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+</article>
+
+{% schema %}
+{ "name": "Guide — Contenu", "settings": [] }
+{% endschema %}

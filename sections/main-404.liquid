@@ -1,0 +1,16 @@
+<section class="cc-plain surface-dark section-y" data-surface="dark">
+  <span class="grid-field" aria-hidden="true"></span>
+  <div class="shell cc-404">
+    <p class="eyebrow">Erreur 404</p>
+    <h1 class="cc-404__title">Cette page n'existe pas.</h1>
+    <p class="cc-404__text">Le lien est peut-être obsolète, ou l'adresse mal saisie. Vous pouvez repartir de l'accueil ou chercher directement ce dont vous avez besoin.</p>
+    <div class="cc-pagehead__actions">
+      <a class="btn btn--primary btn--lg" href="{{ routes.root_url }}">Retour à l'accueil</a>
+      <button type="button" class="btn btn--ghost btn--lg" data-palette-open>Rechercher une page</button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Page 404", "settings": [] }
+{% endschema %}

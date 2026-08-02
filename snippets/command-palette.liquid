@@ -1,0 +1,93 @@
+{%- comment -%}
+  PALETTE DE COMMANDES — ⌘K / Ctrl+K
+
+  Clickscreation publie plus de 45 pages utiles (services, audits, villes,
+  guides). Un méga-menu ne peut pas toutes les exposer sans devenir illisible.
+  La palette rend l'intégralité du site atteignable en deux frappes, et sert
+  aussi de recherche pour les visiteurs qui arrivent par un guide.
+
+  L'index est généré depuis les menus Shopify : il reste juste sans maintenance.
+{%- endcomment -%}
+
+{%- liquid
+  assign sep = ''
+  assign root = routes.root_url
+-%}
+
+<script type="application/json" data-palette-data>
+[
+{%- for link in settings.header_menu.links -%}
+  {%- if link.links.size == 0 -%}
+    {{ sep }}{"t":{{ link.title | json }},"u":{{ link.url | json }},"g":"Navigation"}
+    {%- assign sep = ',' -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- for link in settings.footer_services_menu.links -%}
+  {{ sep }}{"t":{{ link.title | json }},"u":{{ link.url | json }},"g":"Expertises","k":"service prestation offre"}
+  {%- assign sep = ',' -%}
+{%- endfor -%}
+
+{%- for link in settings.footer_zones_menu.links -%}
+  {{ sep }}{"t":{{ link.title | json }},"u":{{ link.url | json }},"g":"SEO par ville","k":"ville locale zone secteur"}
+  {%- assign sep = ',' -%}
+{%- endfor -%}
+
+{%- for link in settings.footer_resources_menu.links -%}
+  {{ sep }}{"t":{{ link.title | json }},"u":{{ link.url | json }},"g":"Ressources"}
+  {%- assign sep = ',' -%}
+{%- endfor -%}
+
+{%- comment -%} Derniers guides publiés : la recherche couvre aussi l'éditorial. {%- endcomment -%}
+{%- if settings.palette_blog != blank -%}
+  {%- for article in settings.palette_blog.articles limit: 12 -%}
+    {{ sep }}{"t":{{ article.title | json }},"u":{{ article.url | json }},"g":"Guides","k":"blog guide article ressource"}
+    {%- assign sep = ',' -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- for link in settings.footer_legal_menu.links -%}
+  {{ sep }}{"t":{{ link.title | json }},"u":{{ link.url | json }},"g":"Informations"}
+  {%- assign sep = ',' -%}
+{%- endfor -%}
+
+{{ sep }}{"t":"Accueil","u":{{ root | json }},"g":"Navigation","k":"home page principale"}
+]
+</script>
+
+<div class="cc-pal" data-palette hidden>
+  <button type="button" class="cc-pal__scrim" data-palette-close tabindex="-1" aria-hidden="true"></button>
+
+  <div class="cc-pal__box" role="dialog" aria-modal="true" aria-label="Recherche du site">
+    <div class="cc-pal__search">
+      {%- render 'icon', name: 'search', size: 17 -%}
+      <input
+        type="text"
+        class="cc-pal__input"
+        data-palette-input
+        placeholder="Chercher un service, une ville, un guide…"
+        aria-label="Rechercher"
+        autocomplete="off"
+        spellcheck="false"
+        role="combobox"
+        aria-expanded="true"
+        aria-controls="PaletteResults"
+      >
+      <button type="button" class="cc-pal__esc" data-palette-close>
+        <span class="cc-kbd">Esc</span>
+      </button>
+    </div>
+
+    <div class="cc-pal__results" id="PaletteResults" data-palette-list role="listbox" aria-label="Résultats"></div>
+
+    <p class="cc-pal__empty" data-palette-empty hidden>
+      Aucun résultat. Essayez « SEO », « Shopify », « Lyon » ou « audit ».
+    </p>
+
+    <div class="cc-pal__foot" aria-hidden="true">
+      <span><span class="cc-kbd">↑</span><span class="cc-kbd">↓</span> naviguer</span>
+      <span><span class="cc-kbd">↵</span> ouvrir</span>
+      <span><span class="cc-kbd">Esc</span> fermer</span>
+    </div>
+  </div>
+</div>

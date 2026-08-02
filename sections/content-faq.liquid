@@ -1,0 +1,122 @@
+{%- comment -%}
+  FAQ
+
+  Accordéons natifs details/summary : accessibles par défaut, fonctionnels
+  sans JavaScript. L'entité FAQPage n'est émise que si la section contient au
+  moins deux questions réellement rédigées — une FAQPage vide ou dupliquée est
+  pénalisante.
+{%- endcomment -%}
+
+{%- liquid
+  assign surface = section.settings.surface | default: 'paper'
+  assign surface_class = 'surface-paper'
+  assign surface_attr = 'paper'
+  if surface == 'dark'
+    assign surface_class = 'surface-dark'
+    assign surface_attr = 'dark'
+  endif
+
+  assign valid_count = 0
+  for block in section.blocks
+    if block.settings.question != blank and block.settings.answer != blank
+      assign valid_count = valid_count | plus: 1
+    endif
+  endfor
+-%}
+
+<section class="cc-faqsec {{ surface_class }} section-y" data-surface="{{ surface_attr }}">
+  <div class="shell cc-faqsec__grid">
+
+    <div class="cc-faqsec__aside" data-reveal>
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2>{{ section.settings.title | default: 'Questions fréquentes' }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p class="cc-faqsec__text">{{ section.settings.text }}</p>
+      {%- endif -%}
+      {%- if section.settings.cta_label != blank -%}
+        <button type="button" class="btn btn--ghost cc-faqsec__cta" data-diagnostic-open data-diagnostic-entry="faq">
+          {{ section.settings.cta_label }}
+        </button>
+      {%- endif -%}
+    </div>
+
+    <div class="cc-faq" data-accordion{% if section.settings.single_open %} data-accordion-single{% endif %} data-reveal>
+      {%- for block in section.blocks -%}
+        {%- if block.settings.question != blank -%}
+          <details {{ block.shopify_attributes }}{% if forloop.first and section.settings.open_first %} open{% endif %}>
+            <summary>
+              <span>{{ block.settings.question }}</span>
+              <span class="cc-faq__sign" aria-hidden="true">{%- render 'icon', name: 'plus', size: 13 -%}</span>
+            </summary>
+            <div class="cc-faq__body">{{ block.settings.answer }}</div>
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{%- if valid_count >= 2 and section.settings.emit_schema -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": {{ canonical_url | append: '#faq-' | append: section.id | json }},
+    "mainEntity": [
+      {%- assign faq_sep = '' -%}
+      {%- for block in section.blocks -%}
+        {%- if block.settings.question != blank and block.settings.answer != blank -%}
+          {{ faq_sep }}{
+            "@type": "Question",
+            "name": {{ block.settings.question | strip_html | json }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ block.settings.answer | strip_html | json }}
+            }
+          }
+          {%- assign faq_sep = ',' -%}
+        {%- endif -%}
+      {%- endfor -%}
+    ]
+  }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Contenu — FAQ",
+  "settings": [
+    {
+      "type": "select", "id": "surface", "label": "Fond", "default": "paper",
+      "options": [
+        { "value": "paper", "label": "Clair" },
+        { "value": "dark", "label": "Graphite" }
+      ]
+    },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Questions fréquentes" },
+    { "type": "text", "id": "title", "label": "Titre", "default": "Ce que l'on nous demande avant de démarrer." },
+    { "type": "textarea", "id": "text", "label": "Texte" },
+    { "type": "text", "id": "cta_label", "label": "Bouton", "default": "Poser une autre question" },
+    { "type": "checkbox", "id": "open_first", "label": "Ouvrir la première question", "default": true },
+    { "type": "checkbox", "id": "single_open", "label": "Une seule question ouverte à la fois", "default": false },
+    {
+      "type": "checkbox",
+      "id": "emit_schema",
+      "label": "Émettre les données structurées FAQPage",
+      "info": "À n'activer que sur une seule section FAQ par page.",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "richtext", "id": "answer", "label": "Réponse" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Contenu — FAQ" }]
+}
+{% endschema %}

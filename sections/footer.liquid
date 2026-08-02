@@ -1,0 +1,122 @@
+{%- liquid
+  assign year = 'now' | date: '%Y'
+-%}
+
+<footer class="cc-foot surface-deep" data-surface="dark">
+  <div class="shell">
+
+    {%- comment -%}
+      Bandeau d'appel : dernière occasion de convertir, formulé comme une
+      décision à prendre et non comme un slogan.
+    {%- endcomment -%}
+    {%- if section.settings.cta_title != blank -%}
+      <div class="cc-foot__cta" data-reveal>
+        <div class="cc-foot__cta-copy">
+          <p class="eyebrow">{{ section.settings.cta_eyebrow }}</p>
+          <h2 class="cc-foot__cta-title">{{ section.settings.cta_title }}</h2>
+          {%- if section.settings.cta_text != blank -%}
+            <p class="cc-foot__cta-text">{{ section.settings.cta_text }}</p>
+          {%- endif -%}
+        </div>
+
+        <div class="cc-foot__cta-side">
+          <button type="button" class="btn btn--primary btn--lg" data-diagnostic-open data-diagnostic-entry="footer">
+            {{ section.settings.cta_label | default: 'Demander un diagnostic' }}
+          </button>
+          {%- if section.settings.availability != blank -%}
+            <p class="cc-foot__status">
+              <span class="pulse" aria-hidden="true"></span>
+              <span>{{ section.settings.availability }}</span>
+            </p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    <div class="cc-foot__grid">
+
+      <div class="cc-foot__brand">
+        <a class="cc-brand" href="{{ routes.root_url }}">
+          <span class="cc-brand__mark" aria-hidden="true"></span>
+          <span class="cc-brand__word">{{ section.settings.wordmark | default: shop.name }}</span>
+        </a>
+        {%- if section.settings.baseline != blank -%}
+          <p class="cc-foot__baseline">{{ section.settings.baseline }}</p>
+        {%- endif -%}
+
+        <div class="cc-foot__contact">
+          {%- if section.settings.email != blank -%}
+            <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+          {%- endif -%}
+          {%- if section.settings.phone != blank -%}
+            <a href="tel:{{ section.settings.phone | remove: ' ' | remove: '.' }}">{{ section.settings.phone }}</a>
+          {%- endif -%}
+          {%- if section.settings.response_time != blank -%}
+            <span class="fg-faint">{{ section.settings.response_time }}</span>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'menu' and block.settings.menu != blank -%}
+          <nav class="cc-foot__col{% if block.settings.dense %} cc-foot__col--dense{% endif %}" {{ block.shopify_attributes }} aria-label="{{ block.settings.title | escape }}">
+            <h3 class="cc-foot__col-title">{{ block.settings.title }}</h3>
+            <ul role="list">
+              {%- for link in block.settings.menu.links -%}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {%- endfor -%}
+              {%- if block.settings.extra_label != blank -%}
+                <li><a class="cc-foot__more" href="{{ block.settings.extra_url }}">{{ block.settings.extra_label }}{%- render 'icon', name: 'arrow', size: 13 -%}</a></li>
+              {%- endif -%}
+            </ul>
+          </nav>
+        {%- endif -%}
+      {%- endfor -%}
+
+    </div>
+
+    <div class="cc-foot__bottom">
+      <p>© {{ year }} {{ shop.name }}{% if section.settings.legal_line != blank %} — {{ section.settings.legal_line }}{% endif %}</p>
+      <p class="cc-foot__sig">
+        Site conçu et développé en interne
+        <span class="cc-foot__dot" aria-hidden="true"></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Pied de page",
+  "settings": [
+    { "type": "header", "content": "Bandeau d'appel" },
+    { "type": "text", "id": "cta_eyebrow", "label": "Sur-titre", "default": "Prochaine étape" },
+    { "type": "text", "id": "cta_title", "label": "Titre", "default": "Voyons ce qui limite réellement votre acquisition." },
+    { "type": "textarea", "id": "cta_text", "label": "Texte", "default": "Quatre questions, une réponse argumentée sous 2 jours ouvrés. Vous repartez avec les priorités, que nous travaillions ensemble ou non." },
+    { "type": "text", "id": "cta_label", "label": "Bouton", "default": "Demander un diagnostic" },
+    { "type": "text", "id": "availability", "label": "Disponibilité affichée", "default": "Nous ouvrons 2 places d'accompagnement ce mois-ci" },
+
+    { "type": "header", "content": "Identité" },
+    { "type": "text", "id": "wordmark", "label": "Nom affiché", "default": "clickscreation" },
+    { "type": "textarea", "id": "baseline", "label": "Baseline", "default": "Agence d'acquisition : SEO, sites sur mesure, e-commerce Shopify, conversion et publicité." },
+    { "type": "text", "id": "email", "label": "E-mail", "default": "contact@clickscreation.com" },
+    { "type": "text", "id": "phone", "label": "Téléphone" },
+    { "type": "text", "id": "response_time", "label": "Délai de réponse", "default": "Réponse sous 2 jours ouvrés" },
+    { "type": "text", "id": "legal_line", "label": "Mention légale", "default": "Tous droits réservés" }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Colonne de liens",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titre de colonne", "default": "Expertises" },
+        { "type": "link_list", "id": "menu", "label": "Menu" },
+        { "type": "checkbox", "id": "dense", "label": "Affichage compact (listes longues)", "default": false },
+        { "type": "text", "id": "extra_label", "label": "Lien supplémentaire" },
+        { "type": "url", "id": "extra_url", "label": "URL du lien supplémentaire" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Pied de page" }]
+}
+{% endschema %}

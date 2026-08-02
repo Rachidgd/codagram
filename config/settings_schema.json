@@ -1,0 +1,83 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Clickscreation — Signal",
+    "theme_version": "1.0.0",
+    "theme_author": "Clickscreation",
+    "theme_documentation_url": "https://clickscreation.com",
+    "theme_support_url": "https://clickscreation.com/pages/contact"
+  },
+  {
+    "name": "Menus du site",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Ces menus alimentent l'en-tête, le pied de page et la recherche ⌘K. Toute page ajoutée à un menu devient immédiatement trouvable."
+      },
+      { "type": "link_list", "id": "header_menu", "label": "Menu principal", "default": "main-menu" },
+      { "type": "link_list", "id": "footer_services_menu", "label": "Expertises (pied de page)" },
+      { "type": "link_list", "id": "footer_zones_menu", "label": "SEO par ville (pied de page)" },
+      { "type": "link_list", "id": "footer_resources_menu", "label": "Ressources (pied de page)" },
+      { "type": "link_list", "id": "footer_legal_menu", "label": "Mentions légales (pied de page)" },
+      { "type": "blog", "id": "palette_blog", "label": "Blog indexé dans la recherche ⌘K" }
+    ]
+  },
+  {
+    "name": "Identité",
+    "settings": [
+      { "type": "text", "id": "contact_email", "label": "E-mail de contact", "default": "contact@clickscreation.com" },
+      { "type": "text", "id": "contact_phone", "label": "Téléphone" },
+      { "type": "text", "id": "org_city", "label": "Ville principale", "default": "Paris" },
+      { "type": "text", "id": "price_range", "label": "Fourchette de prix (données structurées)", "default": "€€€" },
+      {
+        "type": "textarea",
+        "id": "org_description",
+        "label": "Description de l'agence (données structurées)",
+        "default": "Agence d'acquisition digitale : référencement naturel, création de sites sur mesure, boutiques Shopify, optimisation de la conversion et publicité Meta."
+      },
+      { "type": "image_picker", "id": "share_image", "label": "Image de partage par défaut" },
+      { "type": "url", "id": "social_linkedin", "label": "LinkedIn" },
+      { "type": "url", "id": "social_instagram", "label": "Instagram" }
+    ]
+  },
+  {
+    "name": "Référencement",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Titre et description de la page d'accueil. Les autres pages utilisent leurs propres métachamps (seo_release.title_tag et seo_release.description_tag)."
+      },
+      {
+        "type": "text",
+        "id": "home_meta_title",
+        "label": "Titre de la page d'accueil",
+        "default": "Agence SEO, Shopify et Meta Ads à Paris | Clickscreation"
+      },
+      {
+        "type": "textarea",
+        "id": "home_meta_description",
+        "label": "Description de la page d'accueil",
+        "default": "Agence d'acquisition à Paris : référencement naturel, sites sur mesure, boutiques Shopify, conversion et Meta Ads. Diagnostic gratuit sous 2 jours ouvrés."
+      },
+      { "type": "text", "id": "blog_meta_title", "label": "Titre du blog", "default": "Ressources SEO, Shopify et acquisition | Clickscreation" },
+      {
+        "type": "textarea",
+        "id": "blog_meta_description",
+        "label": "Description du blog",
+        "default": "Guides pratiques sur le référencement naturel, Shopify, la conversion et Meta Ads pour développer votre visibilité et vos performances."
+      }
+    ]
+  },
+  {
+    "name": "Mouvement",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_motion",
+        "label": "Activer les animations",
+        "info": "Les visiteurs ayant demandé une réduction des animations dans leur système ne sont jamais concernés.",
+        "default": true
+      }
+    ]
+  }
+]

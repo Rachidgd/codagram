@@ -1,0 +1,65 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "close": "Close",
+      "menu": "Menu",
+      "search": "Search"
+    },
+    "search": {
+      "title": "Search",
+      "placeholder": "What are you looking for?",
+      "submit": "Search",
+      "results_with_count": {
+        "one": "{{ count }} result",
+        "other": "{{ count }} results"
+      },
+      "no_results": "No results for “{{ terms }}”."
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "label": "Pagination"
+    },
+    "404": {
+      "title": "This page does not exist",
+      "subtext": "The link may be outdated or the address mistyped.",
+      "link": "Back to home"
+    }
+  },
+  "blogs": {
+    "article": {
+      "published": "Published on",
+      "read_more": "Read the guide",
+      "back": "All guides"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "quantity": "Quantity"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Cart",
+      "empty": "Your cart is empty.",
+      "continue": "Continue",
+      "checkout": "Checkout",
+      "subtotal": "Subtotal",
+      "remove": "Remove"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Send",
+      "post_success": "Thanks, your message has been received."
+    }
+  }
+}

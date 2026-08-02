@@ -1,0 +1,125 @@
+{%- comment -%}
+  DONNÉES STRUCTURÉES
+
+  Émises en JSON-LD, une seule fois par page, sans doublon d'entité.
+  L'organisation porte @id stable : les autres entités s'y rattachent au lieu
+  de la redéclarer, ce qui évite les conflits d'identité dans le graphe.
+{%- endcomment -%}
+
+{%- liquid
+  assign org_id = shop.url | append: '/#organisation'
+  assign site_id = shop.url | append: '/#site'
+-%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": {{ org_id | json }},
+      "name": {{ shop.name | json }},
+      "url": {{ shop.url | json }},
+      {% if settings.share_image != blank %}"image": {{ settings.share_image | image_url: width: 1200 | prepend: 'https:' | json }},{% endif %}
+      {% if settings.org_description != blank %}"description": {{ settings.org_description | json }},{% endif %}
+      "email": {{ settings.contact_email | default: shop.email | json }},
+      {% if settings.contact_phone != blank %}"telephone": {{ settings.contact_phone | json }},{% endif %}
+      "priceRange": {{ settings.price_range | default: '€€€' | json }},
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": {{ settings.org_city | default: 'Paris' | json }},
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "France" },
+        { "@type": "Country", "name": "Belgique" },
+        { "@type": "Country", "name": "Suisse" },
+        { "@type": "Country", "name": "Luxembourg" }
+      ],
+      "knowsAbout": [
+        "Référencement naturel",
+        "Shopify",
+        "Optimisation du taux de conversion",
+        "Publicité Meta",
+        "Création de site web"
+      ]
+      {%- if settings.social_linkedin != blank or settings.social_instagram != blank -%}
+      ,"sameAs": [
+        {%- assign social_sep = '' -%}
+        {%- if settings.social_linkedin != blank -%}{{ social_sep }}{{ settings.social_linkedin | json }}{%- assign social_sep = ',' -%}{%- endif -%}
+        {%- if settings.social_instagram != blank -%}{{ social_sep }}{{ settings.social_instagram | json }}{%- endif -%}
+      ]
+      {%- endif -%}
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ site_id | json }},
+      "url": {{ shop.url | json }},
+      "name": {{ shop.name | json }},
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": {{ org_id | json }} },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": {{ shop.url | append: '/search?q={search_term_string}' | json }}
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+
+    {%- comment -%} ---------- Page de contenu ---------- {%- endcomment -%}
+    {%- if request.page_type == 'page' -%}
+    ,{
+      "@type": "WebPage",
+      "@id": {{ canonical_url | append: '#page' | json }},
+      "url": {{ canonical_url | json }},
+      "name": {{ title | json }},
+      {% if description != blank %}"description": {{ description | strip_html | json }},{% endif %}
+      "isPartOf": { "@id": {{ site_id | json }} },
+      "about": { "@id": {{ org_id | json }} },
+      "inLanguage": "fr-FR"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": {{ canonical_url | append: '#fil' | json }},
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": {{ shop.url | json }} },
+        { "@type": "ListItem", "position": 2, "name": {{ page.title | json }}, "item": {{ canonical_url | json }} }
+      ]
+    }
+    {%- endif -%}
+
+    {%- comment -%} ---------- Article ---------- {%- endcomment -%}
+    {%- if request.page_type == 'article' -%}
+    ,{
+      "@type": "Article",
+      "@id": {{ canonical_url | append: '#article' | json }},
+      "headline": {{ article.title | json }},
+      "url": {{ canonical_url | json }},
+      {% if description != blank %}"description": {{ description | strip_html | json }},{% endif %}
+      {% if article.image != blank %}"image": {{ article.image | image_url: width: 1200 | prepend: 'https:' | json }},{% endif %}
+      "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
+      "dateModified": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
+      "author": {
+        "@type": "Person",
+        "name": {{ article.author | default: shop.name | json }}
+      },
+      "publisher": { "@id": {{ org_id | json }} },
+      "isPartOf": { "@id": {{ site_id | json }} },
+      "mainEntityOfPage": { "@id": {{ canonical_url | append: '#article' | json }} },
+      "inLanguage": "fr-FR"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": {{ canonical_url | append: '#fil' | json }},
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": {{ shop.url | json }} },
+        { "@type": "ListItem", "position": 2, "name": {{ blog.title | json }}, "item": {{ shop.url | append: blog.url | json }} },
+        { "@type": "ListItem", "position": 3, "name": {{ article.title | json }}, "item": {{ canonical_url | json }} }
+      ]
+    }
+    {%- endif -%}
+  ]
+}
+</script>

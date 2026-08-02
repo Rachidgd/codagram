@@ -1,0 +1,107 @@
+{%- comment -%}
+  TEXTE RICHE
+
+  Zone de contenu éditorial pour les pages à fort volume sémantique (SEO local,
+  guides). Mesure de ligne bornée à 68 caractères : au-delà, le taux de lecture
+  chute. Fond clair par défaut, c'est là que l'on lit.
+{%- endcomment -%}
+
+{%- liquid
+  assign surface = section.settings.surface | default: 'paper'
+  assign surface_class = 'surface-paper'
+  assign surface_attr = 'paper'
+  if surface == 'dark'
+    assign surface_class = 'surface-dark'
+    assign surface_attr = 'dark'
+  endif
+-%}
+
+<section class="cc-prose {{ surface_class }} section-y" data-surface="{{ surface_attr }}">
+  <div class="shell cc-prose__grid">
+
+    {%- if section.settings.title != blank -%}
+      <div class="cc-prose__aside" data-reveal>
+        {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        <h2 class="cc-prose__title">{{ section.settings.title }}</h2>
+      </div>
+    {%- endif -%}
+
+    <div class="cc-prose__body" data-reveal>
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+
+          {%- when 'text' -%}
+            <div class="prose-cc" {{ block.shopify_attributes }}>{{ block.settings.content }}</div>
+
+          {%- when 'heading' -%}
+            <h3 class="cc-prose__h" {{ block.shopify_attributes }}>{{ block.settings.text }}</h3>
+
+          {%- when 'callout' -%}
+            <aside class="cc-callout" {{ block.shopify_attributes }}>
+              {%- if block.settings.label != blank -%}<p class="eyebrow">{{ block.settings.label }}</p>{%- endif -%}
+              <div class="prose-cc">{{ block.settings.content }}</div>
+            </aside>
+
+          {%- when 'links' -%}
+            <nav class="cc-inlinks" {{ block.shopify_attributes }} aria-label="{{ block.settings.title | escape }}">
+              <p class="cc-inlinks__title">{{ block.settings.title }}</p>
+              <ul role="list">
+                {%- if block.settings.menu != blank -%}
+                  {%- for link in block.settings.menu.links -%}
+                    <li><a href="{{ link.url }}">{{ link.title }}{%- render 'icon', name: 'arrow', size: 13 -%}</a></li>
+                  {%- endfor -%}
+                {%- endif -%}
+              </ul>
+            </nav>
+
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contenu — Texte riche",
+  "settings": [
+    {
+      "type": "select", "id": "surface", "label": "Fond", "default": "paper",
+      "options": [
+        { "value": "paper", "label": "Clair" },
+        { "value": "dark", "label": "Graphite" }
+      ]
+    },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
+    { "type": "text", "id": "title", "label": "Titre" }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Paragraphe",
+      "settings": [{ "type": "richtext", "id": "content", "label": "Contenu" }]
+    },
+    {
+      "type": "heading",
+      "name": "Sous-titre",
+      "settings": [{ "type": "text", "id": "text", "label": "Texte" }]
+    },
+    {
+      "type": "callout",
+      "name": "Encadré",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Libellé" },
+        { "type": "richtext", "id": "content", "label": "Contenu" }
+      ]
+    },
+    {
+      "type": "links",
+      "name": "Maillage interne",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titre", "default": "À lire aussi" },
+        { "type": "link_list", "id": "menu", "label": "Menu de liens" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Contenu — Texte riche" }]
+}
+{% endschema %}
