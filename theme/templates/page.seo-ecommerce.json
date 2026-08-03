@@ -215,6 +215,42 @@
         "g6"
       ]
     },
+    "flux": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "comfortable",
+        "eyebrow": "Aller plus loin",
+        "title": "Le flux produits se contrôle séparément.",
+        "text": "Le référencement place vos pages dans les résultats classiques. Le flux Merchant Center décide de votre présence dans Shopping et Performance Max : deux chantiers distincts, et le second est souvent négligé."
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "cart",
+            "title": "Audit Merchant Center",
+            "text": "Refus silencieux, attributs manquants, prix désynchronisés : nous reprenons le flux ligne par ligne.",
+            "link": "/pages/audit-merchant-center",
+            "link_label": "Voir l'audit du flux"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Audit e-commerce",
+            "text": "Là où votre tunnel perd des commandes, marche par marche, sur mobile et sur ordinateur.",
+            "link": "/pages/audit-ecommerce",
+            "link_label": "Voir l'audit de boutique"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2"
+      ]
+    },
     "position": {
       "type": "content-quote",
       "settings": {
@@ -308,6 +344,7 @@
     "principe",
     "comparaison",
     "perimetre",
+    "flux",
     "position",
     "faq",
     "cta"

@@ -687,3 +687,16 @@
 }
 .cc-foot__sig { display: inline-flex; align-items: center; gap: 0.45rem; }
 .cc-foot__dot { width: 5px; height: 5px; border-radius: 1px; background: var(--color-volt); }
+
+/* Lien secondaire du pied de page : discret, mais réellement cliquable. */
+.cc-foot__cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.7rem;
+  font-size: var(--text-xs);
+  color: var(--surface-fg-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cc-foot__cta-link:hover { color: var(--surface-fg); }

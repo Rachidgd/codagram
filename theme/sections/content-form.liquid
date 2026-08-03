@@ -1,0 +1,131 @@
+{%- comment -%}
+  FORMULAIRE EN LIGNE
+
+  Sur une page dont le seul rôle est de convertir, demander un clic
+  supplémentaire pour ouvrir un tiroir coûte des demandes. Cette section pose
+  le formulaire directement dans la page.
+
+  Quatre champs, deux obligatoires : chaque champ ajouté fait baisser le taux
+  de complétion, et le reste de la qualification se fait à la réponse.
+{%- endcomment -%}
+
+{%- assign surface = section.settings.surface | default: 'paper' -%}
+
+<section class="cc-inlineform surface-{{ surface }} section-y" data-surface="{{ surface }}">
+  <div class="shell cc-inlineform__grid">
+
+    <div class="cc-inlineform__aside" data-reveal>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2>{{ section.settings.title }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p class="cc-inlineform__text">{{ section.settings.text }}</p>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="cc-inlineform__points" role="list">
+          {%- for block in section.blocks -%}
+            <li {{ block.shopify_attributes }}>
+              {%- render 'icon', name: 'check', size: 14 -%}
+              <span>{{ block.settings.text }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    <div class="cc-inlineform__card card" data-reveal>
+      {%- form 'contact', id: 'InlineForm' -%}
+
+        {%- if form.posted_successfully? -%}
+          <div class="cc-contact__done" role="status">
+            <span class="cc-diag__done-mark" aria-hidden="true">{%- render 'icon', name: 'check', size: 22 -%}</span>
+            <h3>Demande reçue.</h3>
+            <p>{{ section.settings.confirmation }}</p>
+          </div>
+        {%- else -%}
+
+          {%- if form.errors -%}
+            <p class="cc-diag__error" role="alert">{{ form.errors | default_errors }}</p>
+          {%- endif -%}
+
+          <input type="hidden" name="contact[origine]" value="{{ section.settings.origine }}">
+
+          <div>
+            <label class="flabel" for="IFName">Votre nom <span aria-hidden="true">*</span></label>
+            <input class="field" type="text" id="IFName" name="contact[name]" required autocomplete="name">
+          </div>
+
+          <div>
+            <label class="flabel" for="IFEmail">E-mail professionnel <span aria-hidden="true">*</span></label>
+            <input class="field" type="email" id="IFEmail" name="contact[email]" required autocomplete="email" inputmode="email">
+          </div>
+
+          <div>
+            <label class="flabel" for="IFSite">Adresse de votre site <span class="fg-faint">(facultatif)</span></label>
+            <input class="field" type="text" id="IFSite" name="contact[site]" placeholder="exemple.fr" inputmode="url">
+          </div>
+
+          <div>
+            <label class="flabel" for="IFGoal">Ce que vous cherchez à obtenir</label>
+            <select class="field" id="IFGoal" name="contact[objectif]">
+              <option value="visibilite">Être trouvé sur Google</option>
+              <option value="demandes">Recevoir plus de demandes</option>
+              <option value="ventes">Vendre plus en ligne</option>
+              <option value="refonte">Refaire mon site</option>
+              <option value="autre">Autre chose</option>
+            </select>
+          </div>
+
+          <p class="cc-diag__legal">{{ section.settings.legal }}</p>
+
+          <button type="submit" class="btn btn--primary btn--lg cc-inlineform__submit">
+            {{ section.settings.cta_label }}{%- render 'icon', name: 'arrow', size: 15 -%}
+          </button>
+
+          {%- if section.settings.note != blank -%}
+            <p class="cc-inlineform__note">{{ section.settings.note }}</p>
+          {%- endif -%}
+
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contenu — Formulaire",
+  "settings": [
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "paper", "label": "Clair" },
+        { "value": "dark", "label": "Sombre" }
+      ],
+      "default": "dark"
+    },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Votre demande" },
+    { "type": "text", "id": "title", "label": "Titre", "default": "Recevez vos trois priorités sous 48 h." },
+    { "type": "textarea", "id": "text", "label": "Texte", "default": "Deux champs suffisent pour commencer. Nous regardons votre site, votre marché et vos concurrents, puis nous vous disons par quoi commencer." },
+    { "type": "text", "id": "cta_label", "label": "Bouton", "default": "Demander mon diagnostic" },
+    { "type": "text", "id": "note", "label": "Note sous le bouton", "default": "Gratuit, sans engagement — réponse sous 48 h" },
+    { "type": "text", "id": "origine", "label": "Origine enregistrée", "default": "landing" },
+    { "type": "textarea", "id": "legal", "label": "Mention légale", "default": "Vos informations servent uniquement à traiter votre demande. Aucune revente, aucune inscription automatique." },
+    { "type": "textarea", "id": "confirmation", "label": "Message de confirmation", "default": "Nous revenons vers vous sous 48 h, à l'adresse indiquée." }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Point de réassurance",
+      "limit": 5,
+      "settings": [{ "type": "text", "id": "text", "label": "Texte" }]
+    }
+  ],
+  "presets": [{ "name": "Contenu — Formulaire" }]
+}
+{% endschema %}

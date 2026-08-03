@@ -581,3 +581,59 @@
   font-weight: 500;
   color: var(--surface-fg);
 }
+
+/* Réassurance du hero interne : même grammaire que celle de l'accueil. */
+.cc-pagehead__trust {
+  margin-top: 1.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.15rem;
+}
+.cc-pagehead__trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--text-xs);
+  color: var(--surface-fg-muted);
+}
+.cc-pagehead__trust svg { color: var(--color-volt-dim); flex: none; }
+
+/* ---------- Formulaire en ligne ---------- */
+.cc-inlineform__grid {
+  display: grid;
+  gap: clamp(1.5rem, 1.1rem + 1.8vw, 2.75rem);
+  align-items: start;
+}
+@media (min-width: 62rem) {
+  .cc-inlineform__grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+}
+.cc-inlineform__aside h2 { margin-top: 0.7rem; max-width: 22ch; }
+.cc-inlineform__text {
+  margin-top: 0.75rem;
+  color: var(--surface-fg-muted);
+  max-width: 46ch;
+}
+.cc-inlineform__points {
+  margin-top: 1.15rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.cc-inlineform__points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: var(--text-sm);
+  color: var(--surface-fg-muted);
+}
+.cc-inlineform__points svg { color: var(--color-volt-dim); flex: none; margin-top: 0.2rem; }
+.cc-inlineform__card {
+  padding: clamp(1.1rem, 0.9rem + 0.9vw, 1.75rem);
+  display: grid;
+  gap: 0.85rem;
+}
+.cc-inlineform__submit { width: 100%; justify-content: center; margin-top: 0.25rem; }
+.cc-inlineform__note {
+  font-size: var(--text-xs);
+  color: var(--surface-fg-faint);
+  text-align: center;
+}

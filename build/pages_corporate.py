@@ -87,18 +87,25 @@ PAGES["hub-villes"] = [
 
     ("zones", grid(
         "Zones couvertes",
-        "Treize marchés que nous suivons régulièrement.",
-        "Nous intervenons au-delà de cette liste : elle correspond aux zones sur lesquelles nous avons assez de recul pour publier une analyse.",
-        [("signal", "Paris et Île-de-France", "Le marché le plus disputé de France, où la stratégie consiste souvent à choisir ses renoncements."),
-         ("layers", "Lyon et sa métropole", "Un marché qui se travaille par commune avant de viser la ville-centre."),
-         ("target", "Marseille", "Une géographie commerciale fragmentée où la recherche se joue au quartier."),
-         ("gauge", "Bordeaux", "Un marché devenu nettement plus concurrentiel depuis l'arrivée de nouveaux entrants."),
-         ("check", "Nantes et Rennes", "Deux métropoles de l'Ouest, jeunes et connectées, où le site est systématiquement vérifié."),
-         ("megaphone", "Lille", "Un bassin transfrontalier dont la demande belge reste largement inexploitée."),
-         ("cart", "Toulouse et Grenoble", "Des marchés industriels où l'expertise technique se démontre avant de se vendre."),
-         ("signal", "Nice et Montpellier", "Le Sud, sa saisonnalité et sa clientèle en partie non résidente."),
-         ("layers", "Strasbourg", "Un marché bilingue dont la demande germanophone est presque libre."),
-         ("target", "Luxembourg", "Peu de volume, une valeur de client sans équivalent, trois langues de recherche.")],
+        "Quinze marchés que nous suivons régulièrement.",
+        "Chaque zone a sa page, son contexte économique et ses priorités. Nous intervenons au-delà de cette liste : elle correspond aux marchés sur lesquels nous avons assez de recul pour publier une analyse.",
+        [
+         ("signal", "Paris", "Le marché le plus disputé de France, où la stratégie consiste souvent à choisir ses renoncements.", "/pages/consultant-seo-paris", "Voir cette zone"),
+         ("layers", "Lyon", "Un marché qui se travaille par commune de la métropole avant de viser la ville-centre.", "/pages/consultant-seo-lyon", "Voir cette zone"),
+         ("target", "Marseille", "Une géographie commerciale fragmentée où la recherche se joue au quartier.", "/pages/agence-seo-marseille", "Voir cette zone"),
+         ("gauge", "Bordeaux", "Un marché devenu nettement plus concurrentiel depuis l'arrivée de nouveaux entrants.", "/pages/agence-seo-bordeaux", "Voir cette zone"),
+         ("check", "Nantes", "Une métropole qui accueille des milliers d'habitants sans réseau local chaque année.", "/pages/agence-seo-nantes", "Voir cette zone"),
+         ("check", "Rennes", "Un public jeune et connecté qui vérifie systématiquement les avis avant d'appeler.", "/pages/consultant-seo-rennes", "Voir cette zone"),
+         ("megaphone", "Lille", "Un bassin transfrontalier dont la demande belge reste largement inexploitée.", "/pages/agence-seo-lille", "Voir cette zone"),
+         ("cart", "Toulouse", "Un tissu industriel qui cherche une norme ou un procédé, jamais un terme générique.", "/pages/agence-seo-toulouse", "Voir cette zone"),
+         ("cart", "Grenoble", "Des prospects ingénieurs qui lisent des données avant de prendre contact.", "/pages/agence-seo-grenoble", "Voir cette zone"),
+         ("signal", "Nice", "Une clientèle en partie non résidente, saisonnière et souvent anglophone.", "/pages/agence-seo-nice", "Voir cette zone"),
+         ("signal", "Montpellier", "Des communes voisines bien plus accessibles que la ville-centre.", "/pages/agence-seo-montpellier", "Voir cette zone"),
+         ("layers", "Strasbourg", "Un marché bilingue dont la demande germanophone est presque libre.", "/pages/agence-seo-strasbourg", "Voir cette zone"),
+         ("target", "Luxembourg", "Peu de volume, une valeur de client sans équivalent, trois langues de recherche.", "/pages/agence-seo-luxembourg", "Voir cette zone"),
+         ("target", "Suisse romande", "Un marché cantonal et premium, où chaque canton se gagne séparément.", "/pages/consultant-seo-suisse", "Voir cette zone"),
+         ("target", "Belgique francophone", "Bruxelles et la Wallonie, deux terrains qui n'ont ni la même concurrence ni le même vocabulaire.", "/pages/consultant-seo-belgique", "Voir cette zone")
+        ],
         surface="dark", density="dense")),
 
     ("faq", faq(

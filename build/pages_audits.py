@@ -135,6 +135,16 @@ PAGES["seo-ecommerce"] = [
          ("target", "Suivi commercial", "Positions rapprochées du chiffre d'affaires par catégorie, pas seulement du trafic.")],
         surface="paper", density="dense")),
 
+    ("flux", grid(
+        "Aller plus loin",
+        "Le flux produits se contrôle séparément.",
+        "Le référencement place vos pages dans les résultats classiques. Le flux Merchant Center décide de votre présence dans Shopping et Performance Max : deux chantiers distincts, et le second est souvent négligé.",
+        [("cart", "Audit Merchant Center", "Refus silencieux, attributs manquants, prix désynchronisés : nous reprenons le flux ligne par ligne.",
+          "/pages/audit-merchant-center", "Voir l'audit du flux"),
+         ("gauge", "Audit e-commerce", "Là où votre tunnel perd des commandes, marche par marche, sur mobile et sur ordinateur.",
+          "/pages/audit-ecommerce", "Voir l'audit de boutique")],
+        surface="paper", density="comfortable")),
+
     ("position", quote(
         "Ce que nous ne ferons pas",
         "Nous ne produirons pas de texte de catégorie destiné aux moteurs et illisible pour vos clients. Si un paragraphe n'aide pas à choisir un produit, il n'a rien à faire sur la page — quel que soit son intérêt supposé pour le référencement.",

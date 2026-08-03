@@ -113,7 +113,9 @@
           "email": "contact@clickscreation.com",
           "phone": "",
           "response_time": "Réponse sous 48 h",
-          "legal_line": "Tous droits réservés"
+          "legal_line": "Tous droits réservés",
+          "cta_link_label": "Ou réserver un audit offert",
+          "cta_link_url": "/pages/reserver"
         },
         "blocks": {
           "col_services": {

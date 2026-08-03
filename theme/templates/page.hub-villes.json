@@ -56,24 +56,28 @@
         "surface": "dark",
         "density": "dense",
         "eyebrow": "Zones couvertes",
-        "title": "Treize marchés que nous suivons régulièrement.",
-        "text": "Nous intervenons au-delà de cette liste : elle correspond aux zones sur lesquelles nous avons assez de recul pour publier une analyse."
+        "title": "Quinze marchés que nous suivons régulièrement.",
+        "text": "Chaque zone a sa page, son contexte économique et ses priorités. Nous intervenons au-delà de cette liste : elle correspond aux marchés sur lesquels nous avons assez de recul pour publier une analyse."
       },
       "blocks": {
         "g1": {
           "type": "item",
           "settings": {
             "icon": "signal",
-            "title": "Paris et Île-de-France",
-            "text": "Le marché le plus disputé de France, où la stratégie consiste souvent à choisir ses renoncements."
+            "title": "Paris",
+            "text": "Le marché le plus disputé de France, où la stratégie consiste souvent à choisir ses renoncements.",
+            "link": "/pages/consultant-seo-paris",
+            "link_label": "Voir cette zone"
           }
         },
         "g2": {
           "type": "item",
           "settings": {
             "icon": "layers",
-            "title": "Lyon et sa métropole",
-            "text": "Un marché qui se travaille par commune avant de viser la ville-centre."
+            "title": "Lyon",
+            "text": "Un marché qui se travaille par commune de la métropole avant de viser la ville-centre.",
+            "link": "/pages/consultant-seo-lyon",
+            "link_label": "Voir cette zone"
           }
         },
         "g3": {
@@ -81,7 +85,9 @@
           "settings": {
             "icon": "target",
             "title": "Marseille",
-            "text": "Une géographie commerciale fragmentée où la recherche se joue au quartier."
+            "text": "Une géographie commerciale fragmentée où la recherche se joue au quartier.",
+            "link": "/pages/agence-seo-marseille",
+            "link_label": "Voir cette zone"
           }
         },
         "g4": {
@@ -89,55 +95,119 @@
           "settings": {
             "icon": "gauge",
             "title": "Bordeaux",
-            "text": "Un marché devenu nettement plus concurrentiel depuis l'arrivée de nouveaux entrants."
+            "text": "Un marché devenu nettement plus concurrentiel depuis l'arrivée de nouveaux entrants.",
+            "link": "/pages/agence-seo-bordeaux",
+            "link_label": "Voir cette zone"
           }
         },
         "g5": {
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Nantes et Rennes",
-            "text": "Deux métropoles de l'Ouest, jeunes et connectées, où le site est systématiquement vérifié."
+            "title": "Nantes",
+            "text": "Une métropole qui accueille des milliers d'habitants sans réseau local chaque année.",
+            "link": "/pages/agence-seo-nantes",
+            "link_label": "Voir cette zone"
           }
         },
         "g6": {
           "type": "item",
           "settings": {
-            "icon": "megaphone",
-            "title": "Lille",
-            "text": "Un bassin transfrontalier dont la demande belge reste largement inexploitée."
+            "icon": "check",
+            "title": "Rennes",
+            "text": "Un public jeune et connecté qui vérifie systématiquement les avis avant d'appeler.",
+            "link": "/pages/consultant-seo-rennes",
+            "link_label": "Voir cette zone"
           }
         },
         "g7": {
           "type": "item",
           "settings": {
-            "icon": "cart",
-            "title": "Toulouse et Grenoble",
-            "text": "Des marchés industriels où l'expertise technique se démontre avant de se vendre."
+            "icon": "megaphone",
+            "title": "Lille",
+            "text": "Un bassin transfrontalier dont la demande belge reste largement inexploitée.",
+            "link": "/pages/agence-seo-lille",
+            "link_label": "Voir cette zone"
           }
         },
         "g8": {
           "type": "item",
           "settings": {
-            "icon": "signal",
-            "title": "Nice et Montpellier",
-            "text": "Le Sud, sa saisonnalité et sa clientèle en partie non résidente."
+            "icon": "cart",
+            "title": "Toulouse",
+            "text": "Un tissu industriel qui cherche une norme ou un procédé, jamais un terme générique.",
+            "link": "/pages/agence-seo-toulouse",
+            "link_label": "Voir cette zone"
           }
         },
         "g9": {
           "type": "item",
           "settings": {
-            "icon": "layers",
-            "title": "Strasbourg",
-            "text": "Un marché bilingue dont la demande germanophone est presque libre."
+            "icon": "cart",
+            "title": "Grenoble",
+            "text": "Des prospects ingénieurs qui lisent des données avant de prendre contact.",
+            "link": "/pages/agence-seo-grenoble",
+            "link_label": "Voir cette zone"
           }
         },
         "g10": {
           "type": "item",
           "settings": {
+            "icon": "signal",
+            "title": "Nice",
+            "text": "Une clientèle en partie non résidente, saisonnière et souvent anglophone.",
+            "link": "/pages/agence-seo-nice",
+            "link_label": "Voir cette zone"
+          }
+        },
+        "g11": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Montpellier",
+            "text": "Des communes voisines bien plus accessibles que la ville-centre.",
+            "link": "/pages/agence-seo-montpellier",
+            "link_label": "Voir cette zone"
+          }
+        },
+        "g12": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Strasbourg",
+            "text": "Un marché bilingue dont la demande germanophone est presque libre.",
+            "link": "/pages/agence-seo-strasbourg",
+            "link_label": "Voir cette zone"
+          }
+        },
+        "g13": {
+          "type": "item",
+          "settings": {
             "icon": "target",
             "title": "Luxembourg",
-            "text": "Peu de volume, une valeur de client sans équivalent, trois langues de recherche."
+            "text": "Peu de volume, une valeur de client sans équivalent, trois langues de recherche.",
+            "link": "/pages/agence-seo-luxembourg",
+            "link_label": "Voir cette zone"
+          }
+        },
+        "g14": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Suisse romande",
+            "text": "Un marché cantonal et premium, où chaque canton se gagne séparément.",
+            "link": "/pages/consultant-seo-suisse",
+            "link_label": "Voir cette zone"
+          }
+        },
+        "g15": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Belgique francophone",
+            "text": "Bruxelles et la Wallonie, deux terrains qui n'ont ni la même concurrence ni le même vocabulaire.",
+            "link": "/pages/consultant-seo-belgique",
+            "link_label": "Voir cette zone"
           }
         }
       },
@@ -151,7 +221,12 @@
         "g7",
         "g8",
         "g9",
-        "g10"
+        "g10",
+        "g11",
+        "g12",
+        "g13",
+        "g14",
+        "g15"
       ]
     },
     "faq": {

@@ -45,6 +45,22 @@
           </a>
         {%- endif -%}
       </div>
+
+      {%- comment -%}
+        Le visiteur clique s'il sait ce que ça lui coûte. Ces trois mentions
+        sont juste sous le bouton, donc visibles sans défiler sur mobile.
+      {%- endcomment -%}
+      {%- assign reassurance = section.settings.trust | split: '|' -%}
+      {%- if reassurance.size > 0 -%}
+        <ul class="cc-pagehead__trust" role="list" data-reveal>
+          {%- for item in reassurance -%}
+            {%- assign texte = item | strip -%}
+            {%- if texte != blank -%}
+              <li>{%- render 'icon', name: 'check', size: 13 -%}<span>{{ texte }}</span></li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
     </div>
 
     {%- if section.blocks.size > 0 -%}
@@ -78,7 +94,8 @@
     { "type": "textarea", "id": "lead", "label": "Accroche" },
     { "type": "text", "id": "cta_primary", "label": "Bouton principal", "default": "Demander un diagnostic" },
     { "type": "text", "id": "cta_secondary", "label": "Bouton secondaire" },
-    { "type": "url", "id": "cta_secondary_url", "label": "Lien du bouton secondaire" }
+    { "type": "url", "id": "cta_secondary_url", "label": "Lien du bouton secondaire" },
+    { "type": "text", "id": "trust", "label": "Réassurance (séparée par |)", "default": "Diagnostic gratuit|Sans engagement|Réponse sous 48 h" }
   ],
   "blocks": [
     {

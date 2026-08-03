@@ -57,8 +57,11 @@ def grid(eyebrow, title, text, items, surface="dark", density="comfortable"):
         "type": "content-grid",
         "settings": {"surface": surface, "density": density, "eyebrow": eyebrow,
                      "title": title, "text": text},
-        "blocks": {f"g{i}": {"type": "item", "settings": {
-            "icon": it[0], "title": it[1], "text": it[2]}}
+        "blocks": {f"g{i}": {"type": "item", "settings": dict(
+            {"icon": it[0], "title": it[1], "text": it[2]},
+            # Un cinquième élément transforme la carte en lien : c'est ce qui
+            # permet à une page pivot de distribuer son autorité.
+            **({"link": it[3], "link_label": it[4]} if len(it) > 4 else {}))}
             for i, it in enumerate(items, 1)},
         "block_order": [f"g{i}" for i in range(1, len(items) + 1)],
     }
@@ -186,6 +189,20 @@ PAGES["creation-site-vitrine"] = [
          ("Design et développement", "Maquettes puis intégration sur mesure. Performance, accessibilité et référencement traités pendant, pas après.", "2 à 3 semaines"),
          ("Mise en ligne", "Bascule, redirections, suivi des conversions, formation à l'administration. Vous repartez autonome.", "2 jours")],
         surface="dark")),
+
+    ("metiers", grid(
+        "Selon votre activité",
+        "Ce qui change d'un métier à l'autre.",
+        "Le site d'un artisan et celui d'un cabinet de conseil n'ont ni le même parcours, ni les mêmes preuves, ni le même déclencheur de contact. Chaque page ci-dessous détaille ce qui change.",
+        [("layers", "PME et TPE", "Une vente à cycle long où le site prépare le rendez-vous et fait circuler l'information en interne.",
+          "/pages/site-vitrine-pme-tpe", "Voir cette page"),
+         ("check", "Indépendant et freelance", "On vous choisit vous avant de choisir votre offre : le site doit installer la confiance.",
+          "/pages/site-vitrine-freelance", "Voir cette page"),
+         ("cart", "Restaurant et hôtellerie", "Chaque réservation en direct est une commission économisée sur les plateformes.",
+          "/pages/site-vitrine-restaurant", "Voir cette page"),
+         ("target", "Artisan et BTP", "Le problème n'est pas le nombre d'appels mais leur qualité : le site filtre en amont.",
+          "/pages/site-vitrine-artisan", "Voir cette page")],
+        surface="dark", density="comfortable")),
 
     ("choix", compare(
         "Faire le bon choix",

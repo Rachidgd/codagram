@@ -326,16 +326,21 @@
 }
 .cc-faq details[open] { border-color: color-mix(in oklab, var(--color-volt) 40%, transparent); }
 .cc-faq summary {
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+/* La question est un h3 : la mise en page vit donc sur le titre lui-même. */
+.cc-faq__q {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.9rem 1rem;
+  margin: 0;
   font-size: var(--text-sm);
   font-weight: 500;
+  line-height: 1.4;
   letter-spacing: -0.012em;
-  cursor: pointer;
-  list-style: none;
 }
 .cc-faq summary::-webkit-details-marker { display: none; }
 .cc-faq__sign {

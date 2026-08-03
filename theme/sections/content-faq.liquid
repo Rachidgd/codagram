@@ -44,9 +44,18 @@
       {%- for block in section.blocks -%}
         {%- if block.settings.question != blank -%}
           <details {{ block.shopify_attributes }}{% if forloop.first and section.settings.open_first %} open{% endif %}>
+            {%- comment -%}
+              La question est un vrai titre de niveau 3, pas un simple span :
+              c'est ce qui la rend éligible aux extraits en position zéro et la
+              fait apparaître dans le plan du document. La spécification HTML
+              autorise un unique élément de titre dans summary, donc le h3
+              enveloppe aussi le signe.
+            {%- endcomment -%}
             <summary>
-              <span>{{ block.settings.question }}</span>
-              <span class="cc-faq__sign" aria-hidden="true">{%- render 'icon', name: 'plus', size: 13 -%}</span>
+              <h3 class="cc-faq__q">
+                <span>{{ block.settings.question }}</span>
+                <span class="cc-faq__sign" aria-hidden="true">{%- render 'icon', name: 'plus', size: 13 -%}</span>
+              </h3>
             </summary>
             <div class="cc-faq__body">{{ block.settings.answer }}</div>
           </details>

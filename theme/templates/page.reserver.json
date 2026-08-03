@@ -46,6 +46,45 @@
         "p3"
       ]
     },
+    "demande": {
+      "type": "content-form",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Votre créneau",
+        "title": "Réservez votre audit en deux champs.",
+        "text": "Nous préparons l'analyse avant l'appel. Donnez-nous simplement de quoi vous recontacter et regarder votre site.",
+        "cta_label": "Réserver mon créneau",
+        "note": "Gratuit — réponse sous 48 h",
+        "origine": "landing-reserver",
+        "legal": "Vos informations servent uniquement à traiter votre demande. Aucune revente, aucune inscription automatique.",
+        "confirmation": "Nous revenons vers vous sous 48 h, à l'adresse indiquée."
+      },
+      "blocks": {
+        "p1": {
+          "type": "point",
+          "settings": {
+            "text": "Trente minutes, par téléphone ou en visio"
+          }
+        },
+        "p2": {
+          "type": "point",
+          "settings": {
+            "text": "Trois priorités écrites, que vous gardez"
+          }
+        },
+        "p3": {
+          "type": "point",
+          "settings": {
+            "text": "Aucun engagement, aucune relance commerciale"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ]
+    },
     "contenu": {
       "type": "content-grid",
       "settings": {
@@ -285,6 +324,7 @@
   },
   "order": [
     "hero",
+    "demande",
     "contenu",
     "filtre",
     "deroule",

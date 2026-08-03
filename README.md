@@ -364,3 +364,34 @@ introduites par raccourci pendant la rédaction — blocs « méthode » et appe
 l'action partagés entre treize pages de villes — qui ont été réécrites page par
 page. Résultat final : **0 champ identique, 0 phrase identique** sur 35 pages
 rédigées, pour 25 enchaînements de sections distincts.
+
+## Audit SEO et CRO
+
+Les deux audits portent sur le **HTML réellement rendu**, pas sur les gabarits :
+les balises se construisent dans le layout, les données structurées dans un
+snippet, les liens dans les menus. Un audit qui lit les JSON passe à côté.
+
+```bash
+node build/render.mjs      # rend les 41 pages publiées dans build/preview
+python3 build/audit_seo.py # structure, balises, snippets, maillage, cannibalisation
+node build/audit_cro.mjs   # mesures navigateur : ligne de flottaison, friction
+```
+
+`build/live_pages.json` liste les pages publiées avec leurs métachamps SEO
+réels. C'est ce manifeste qui rend l'audit fidèle — sans lui, la maquette
+mesure un contenu de remplacement et masque les défauts.
+
+### Ce que l'audit SEO vérifie
+
+structure (un H1 et un seul, hiérarchie sans saut), balises (title et
+description : présence, longueur, unicité), indexation (canonical, robots,
+lang, Open Graph), volume de contenu utile, éligibilité aux extraits enrichis,
+données structurées, maillage interne et pages orphelines, attributs alt,
+et cannibalisation par recouvrement de vocabulaire entre title et H1.
+
+### Ce que l'audit CRO mesure
+
+Dans un navigateur réel, à 390 px et à 1440 px : promesse visible sans défiler,
+bouton visible sans défiler, réassurance visible sans défiler, plus long trajet
+sans occasion de convertir, distance entre le dernier bouton et le bas de page,
+mots lisibles au premier écran, et coût du formulaire en champs obligatoires.

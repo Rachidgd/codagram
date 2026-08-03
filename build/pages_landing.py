@@ -11,6 +11,24 @@ import json
 import pathlib
 from pages_services import hero, split, grid, steps, compare, faq, cta, write
 
+def form_inline(eyebrow, title, text, points, cta_label, note, origine):
+    """Formulaire posé dans la page. Utilisé là où le clic supplémentaire
+    vers le tiroir de diagnostic coûterait des demandes."""
+    blocks = {"p%d" % i: {"type": "point", "settings": {"text": txt}}
+              for i, txt in enumerate(points, 1)}
+    return {
+        "type": "content-form",
+        "settings": {
+            "surface": "dark", "eyebrow": eyebrow, "title": title, "text": text,
+            "cta_label": cta_label, "note": note, "origine": origine,
+            "legal": "Vos informations servent uniquement à traiter votre demande. "
+                     "Aucune revente, aucune inscription automatique.",
+            "confirmation": "Nous revenons vers vous sous 48 h, à l'adresse indiquée."
+        },
+        "blocks": blocks,
+        "block_order": list(blocks),
+    }
+
 write("reserver", [
  ("hero", hero(
    "Audit SEO offert",
@@ -20,6 +38,16 @@ write("reserver", [
    proofs=[("", "30", " min", "d'échange"),
            ("", "3", " priorités", "argumentées"),
            ("", "0", " €", "et sans engagement")])),
+
+ ("demande", form_inline(
+   "Votre créneau",
+   "Réservez votre audit en deux champs.",
+   "Nous préparons l'analyse avant l'appel. Donnez-nous simplement de quoi vous "
+   "recontacter et regarder votre site.",
+   ["Trente minutes, par téléphone ou en visio",
+    "Trois priorités écrites, que vous gardez",
+    "Aucun engagement, aucune relance commerciale"],
+   "Réserver mon créneau", "Gratuit — réponse sous 48 h", "landing-reserver")),
 
  ("contenu", grid(
    "Ce que contient l'échange",

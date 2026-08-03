@@ -1,0 +1,285 @@
+[
+  {
+    "handle": "index",
+    "suffix": null,
+    "title": "Accueil",
+    "template": "index"
+  },
+  {
+    "handle": "contact",
+    "suffix": "contact",
+    "title": "Contact",
+    "titleTag": "Contact Clickscreation | Parlons de votre projet",
+    "descTag": "Contactez Clickscreation pour cadrer votre projet SEO, Shopify, site vitrine, CRO ou Meta Ads et recevoir une première réponse adaptée à votre contexte.",
+    "content": ""
+  },
+  {
+    "handle": "agence-seo",
+    "suffix": "agence-seo",
+    "title": "Agence SEO",
+    "titleTag": "Agence SEO | Visibilité et leads qualifiés",
+    "descTag": "Agence SEO pour auditer votre site, structurer les pages et contenus prioritaires, corriger la technique et transformer la visibilité Google en leads qualifiés."
+  },
+  {
+    "handle": "agence-shopify",
+    "suffix": "agence-shopify",
+    "title": "Agence Shopify",
+    "titleTag": "Agence Shopify | Boutiques sur mesure",
+    "descTag": "Agence Shopify spécialisée dans la création, la refonte et l’optimisation de boutiques rapides, SEO-friendly et pensées pour convertir."
+  },
+  {
+    "handle": "creation-site-vitrine",
+    "suffix": "creation-site-vitrine",
+    "title": "Création site vitrine",
+    "titleTag": "Création site vitrine | Plus de demandes",
+    "descTag": "Création de site vitrine rapide, accessible et SEO-friendly pour clarifier votre offre, rassurer vos prospects et générer davantage de demandes qualifiées."
+  },
+  {
+    "handle": "expert-meta-ads",
+    "suffix": "meta-ads",
+    "title": "Expert Meta Ads",
+    "titleTag": "Expert Meta Ads | Campagnes orientées rentabilité",
+    "descTag": "Expert Meta Ads pour structurer le tracking, les audiences, les créations et les campagnes autour d’indicateurs liés aux demandes, aux ventes et à la marge."
+  },
+  {
+    "handle": "resultats",
+    "suffix": "resultats",
+    "title": "Résultats",
+    "titleTag": "Résultats SEO et acquisition | Cas documentés",
+    "descTag": "Consultez des résultats SEO et acquisition présentés avec leur contexte, leur période, les actions menées, leurs sources et leurs limites d’interprétation."
+  },
+  {
+    "handle": "consultant-seo-paris",
+    "suffix": "seo-paris",
+    "title": "Consultant SEO Paris",
+    "titleTag": "Consultant SEO Paris | Stratégie et leads",
+    "descTag": "Consultant SEO à Paris pour auditer votre site, cibler les recherches prioritaires et transformer votre visibilité Google en leads qualifiés."
+  },
+  {
+    "handle": "consultant-seo-rennes",
+    "suffix": "seo-rennes",
+    "title": "Consultant SEO Rennes",
+    "titleTag": "Consultant SEO Rennes | Réputation et demandes",
+    "descTag": "Consultant SEO à Rennes pour structurer vos pages, cibler les recherches de votre marché et générer davantage de demandes qualifiées depuis Google."
+  },
+  {
+    "handle": "agence-seo-marseille",
+    "suffix": "seo-local-marseille",
+    "title": "Agence SEO Marseille",
+    "titleTag": "Agence SEO Marseille | Trafic et leads",
+    "descTag": "Agence SEO à Marseille pour structurer vos pages locales, améliorer votre visibilité Google et générer des demandes qualifiées sur les zones réellement servies."
+  },
+  {
+    "handle": "consultant-seo-lyon",
+    "suffix": "seo-lyon",
+    "title": "Consultant SEO Lyon",
+    "titleTag": "Consultant SEO Lyon | Acquisition organique",
+    "descTag": "Consultant SEO à Lyon pour hiérarchiser vos offres, renforcer vos pages prioritaires et transformer le trafic organique en demandes commerciales mesurables."
+  },
+  {
+    "handle": "agence-seo-lille",
+    "suffix": "seo-lille",
+    "title": "Agence SEO Lille",
+    "titleTag": "Agence SEO Lille | Capter aussi la demande belge",
+    "descTag": "Agence SEO à Lille pour organiser vos pages, cibler la demande locale et transfrontalière et générer davantage de contacts qualifiés depuis Google."
+  },
+  {
+    "handle": "agence-seo-nantes",
+    "suffix": "seo-local-nantes",
+    "title": "Agence SEO Nantes",
+    "titleTag": "Agence SEO Nantes | Capter les nouveaux arrivants",
+    "descTag": "Agence SEO à Nantes pour structurer vos pages, améliorer votre visibilité Google et générer davantage de demandes qualifiées."
+  },
+  {
+    "handle": "agence-seo-bordeaux",
+    "suffix": "seo-local-bordeaux",
+    "title": "Agence SEO Bordeaux",
+    "titleTag": "Agence SEO Bordeaux | Acquisition organique",
+    "descTag": "Agence SEO à Bordeaux pour cibler les recherches prioritaires, renforcer vos preuves locales et développer une acquisition organique orientée demandes."
+  },
+  {
+    "handle": "agence-seo-nice",
+    "suffix": "seo-nice",
+    "title": "Agence SEO Nice",
+    "titleTag": "Agence SEO Nice | Saison et clientèle internationale",
+    "descTag": "Agence SEO à Nice pour anticiper la saisonnalité, clarifier vos zones et renforcer les pages qui génèrent des demandes locales ou premium."
+  },
+  {
+    "handle": "agence-seo-toulouse",
+    "suffix": "seo-toulouse",
+    "title": "Agence SEO Toulouse",
+    "titleTag": "Agence SEO Toulouse | Requêtes techniques B2B",
+    "descTag": "Agence SEO à Toulouse pour traduire vos expertises en pages ciblées, améliorer votre visibilité Google et générer des demandes B2B qualifiées."
+  },
+  {
+    "handle": "agence-seo-montpellier",
+    "suffix": "seo-montpellier",
+    "title": "Agence SEO Montpellier",
+    "titleTag": "Agence SEO Montpellier | Gains rapides par commune",
+    "descTag": "Agence SEO à Montpellier pour structurer vos contenus, consolider les fondations techniques et transformer la visibilité Google en demandes qualifiées."
+  },
+  {
+    "handle": "agence-seo-strasbourg",
+    "suffix": "seo-strasbourg",
+    "title": "Agence SEO Strasbourg",
+    "titleTag": "Agence SEO Strasbourg | Français et allemand",
+    "descTag": "Agence SEO à Strasbourg pour structurer vos marchés, langues et pages locales et développer une visibilité Google cohérente et mesurable."
+  },
+  {
+    "handle": "agence-seo-grenoble",
+    "suffix": "seo-grenoble",
+    "title": "Agence SEO Grenoble",
+    "titleTag": "Agence SEO Grenoble | Visibilité sur marchés techniques",
+    "descTag": "Agence SEO à Grenoble pour transformer vos expertises techniques en pages compréhensibles, visibles sur Google et capables de générer des contacts qualifiés."
+  },
+  {
+    "handle": "agence-seo-luxembourg",
+    "suffix": "agence-seo-luxembourg",
+    "title": "Agence SEO Luxembourg",
+    "titleTag": "Agence SEO Luxembourg | Visibilité Google",
+    "descTag": "Agence SEO au Luxembourg pour structurer vos marchés et langues, améliorer votre visibilité Google et générer des demandes B2B qualifiées."
+  },
+  {
+    "handle": "consultant-seo-suisse",
+    "suffix": "seo-suisse",
+    "title": "Consultant SEO Suisse",
+    "titleTag": "Consultant SEO Suisse : captez la Suisse romande",
+    "descTag": "Travaillez google.ch, Genève, Lausanne et la Suisse romande avec une stratégie SEO pensée pour un marché premium."
+  },
+  {
+    "handle": "consultant-seo-belgique",
+    "suffix": "seo-belgique",
+    "title": "Consultant SEO Belgique",
+    "titleTag": "Consultant SEO Belgique : gagnez en visibilité",
+    "descTag": "Développez votre visibilité Google en Belgique francophone avec une stratégie SEO claire, locale et orientée demandes."
+  },
+  {
+    "handle": "seo-par-ville",
+    "suffix": "hub-villes",
+    "title": "SEO par ville",
+    "titleTag": "SEO par ville | Experts locaux et leads",
+    "descTag": "Trouvez un accompagnement SEO par ville pour structurer vos pages locales, cibler les recherches de votre marché et générer des demandes qualifiées.",
+    "content": "<p>Retrouvez les accompagnements SEO par ville et par marché proposés par Clickscreation.</p>"
+  },
+  {
+    "handle": "reserver",
+    "suffix": "reserver",
+    "title": "Reserver mon audit SEO offert",
+    "titleTag": "Audit SEO offert | Identifier vos priorités",
+    "descTag": "Réservez un audit SEO offert pour examiner votre visibilité, vos pages et votre parcours, puis recevoir des priorités concrètes classées par impact."
+  },
+  {
+    "handle": "audit-seo",
+    "suffix": "audit-seo",
+    "title": "Audit SEO",
+    "titleTag": "Audit SEO | Priorités techniques et éditoriales",
+    "descTag": "Audit SEO pour identifier les blocages techniques, sémantiques et de maillage, puis obtenir une feuille de route priorisée selon l’impact et l’effort."
+  },
+  {
+    "handle": "seo-ecommerce",
+    "suffix": "seo-ecommerce",
+    "title": "SEO e-commerce",
+    "titleTag": "SEO e-commerce | Visibilité des catégories et produits",
+    "descTag": "SEO e-commerce pour structurer catégories, fiches produits, maillage et données techniques afin d’attirer des recherches utiles et soutenir les ventes."
+  },
+  {
+    "handle": "seo-local",
+    "suffix": "seo-local",
+    "title": "SEO local",
+    "titleTag": "SEO local | Visibilité dans vos zones prioritaires",
+    "descTag": "SEO local pour structurer vos pages, votre présence Google et vos preuves par zone afin de capter des recherches locales réellement liées à votre activité."
+  },
+  {
+    "handle": "a-propos",
+    "suffix": "a-propos",
+    "title": "A propos",
+    "titleTag": "À propos | Méthode et expertise Clickscreation",
+    "descTag": "Découvrez Clickscreation, notre méthode et nos expertises SEO, Shopify, création de site, CRO et Meta Ads pour transformer la visibilité en demandes qualifiées."
+  },
+  {
+    "handle": "audit-meta-ads",
+    "suffix": "audit-meta-ads",
+    "title": "Audit Meta Ads",
+    "titleTag": "Audit Meta Ads | Corriger les dépenses inutiles",
+    "descTag": "Audit Meta Ads pour examiner structure, tracking, audiences, créations et lecture des performances, puis hiérarchiser les corrections selon leur impact."
+  },
+  {
+    "handle": "analyse-concurrentielle-meta-ads",
+    "suffix": "analyse-concurrentielle-meta-ads",
+    "title": "Analyse concurrentielle Meta Ads",
+    "titleTag": "Analyse concurrentielle Meta Ads | Angles et offres",
+    "descTag": "Analyse concurrentielle Meta Ads pour identifier les angles, offres et formats utilisés sur votre marché et orienter des tests publicitaires mieux positionnés."
+  },
+  {
+    "handle": "audit-ecommerce",
+    "suffix": "audit-ecommerce",
+    "title": "Audit e-commerce",
+    "titleTag": "Audit e-commerce | Identifier les fuites de conversion",
+    "descTag": "Audit e-commerce pour analyser le parcours, les fiches produits, le panier, la réassurance et les points de friction qui limitent les ventes de votre boutique."
+  },
+  {
+    "handle": "audit-merchant-center",
+    "suffix": "audit-merchant-center",
+    "title": "Audit Merchant Center",
+    "titleTag": "Audit Merchant Center | Fiabiliser votre flux produits",
+    "descTag": "Audit Merchant Center pour contrôler le flux produits, les attributs, les refus et la conformité avant d’investir davantage dans Shopping ou Performance Max."
+  },
+  {
+    "handle": "optimisation-cro",
+    "suffix": "optimisation-cro",
+    "title": "Optimisation CRO",
+    "titleTag": "Optimisation CRO | Convertir plus de visiteurs",
+    "descTag": "Audit CRO pour identifier les frictions de vos pages, formulaires et parcours mobiles afin de transformer davantage de visiteurs en demandes ou achats."
+  },
+  {
+    "handle": "site-vitrine-pme-tpe",
+    "suffix": "site-vitrine-pme-tpe",
+    "title": "Création de site vitrine PME & TPE",
+    "titleTag": "Site vitrine PME et TPE | Préparer la vente en amont",
+    "descTag": "Création de site vitrine pour PME et TPE afin de clarifier l’offre, présenter les preuves et transformer davantage de visites en demandes commerciales."
+  },
+  {
+    "handle": "site-vitrine-freelance",
+    "suffix": "site-vitrine-freelance",
+    "title": "Site vitrine pour indépendant & freelance",
+    "titleTag": "Site vitrine freelance | Présenter votre expertise",
+    "descTag": "Création de site vitrine pour freelance et indépendant afin de clarifier l’expertise, rassurer les prospects et faciliter les prises de contact qualifiées."
+  },
+  {
+    "handle": "site-vitrine-restaurant",
+    "suffix": "site-vitrine-restaurant",
+    "title": "Création de site pour restaurant & CHR",
+    "titleTag": "Site internet restaurant | Réservations et visibilité",
+    "descTag": "Création de site internet pour restaurant et CHR afin de présenter la carte, rassurer les clients, faciliter les réservations et renforcer la visibilité locale."
+  },
+  {
+    "handle": "site-vitrine-artisan",
+    "suffix": "site-vitrine-artisan",
+    "title": "Site vitrine pour artisan & BTP",
+    "titleTag": "Site vitrine artisan | Générer des demandes locales",
+    "descTag": "Création de site vitrine pour artisan et BTP afin de présenter les services, les réalisations et les zones couvertes et générer des demandes locales qualifiées."
+  },
+  {
+    "handle": "plan-du-site",
+    "suffix": "sitemap",
+    "title": "Plan du site",
+    "titleTag": "Plan du site | Pages et ressources Clickscreation",
+    "descTag": "Parcourez le plan du site Clickscreation et accédez directement aux services SEO, Shopify, création de site, CRO, Meta Ads, résultats et ressources."
+  },
+  {
+    "handle": "mentions-legales",
+    "suffix": "simple",
+    "title": "Mentions légales",
+    "titleTag": "Mentions légales | Clickscreation",
+    "descTag": "Consultez les informations légales relatives à l’éditeur, à l’hébergement, à la propriété intellectuelle et au traitement des données sur Clickscreation.",
+    "content": "<h2>Éditeur du site</h2><p>Le site clickscreation.com est édité par Clickscreation.<br>Forme juridique : Entreprise individuelle<br>Siège social : 50 avenue des Champs-Élysées, 75008 Paris, France<br>Adresse e-mail : contact@clickscreation.com<br>SIRET : 848442471</p><h2>Hébergement</h2><p>Le site est hébergé par Shopify International Limited, Victoria Buildings, 2nd Floor, 1-2 Haddington Road, Dublin 4, D04 XN32, Irlande.</p><h2>Propriété intellectuelle</h2><p>L’ensemble des contenus présents sur ce site (textes, visuels, logo, structure) est la propriété de Clickscreation, sauf mention contraire. Toute reproduction ou réutilisation sans autorisation écrite préalable est interdite.</p><h2>Données personnelles</h2><p>Les informations recueillies via les formulaires du site sont traitées conformément à notre <a href=\"/pages/politique-de-confidentialite\">politique de confidentialité</a>. Vous disposez d’un droit d’accès, de rectification et de suppression de vos données en écrivant à contact@clickscreation.com.</p><h2>Cookies</h2><p>Le site peut utiliser des cookies à des fins de fonctionnement et de mesure d’audience. Vous pouvez gérer votre consentement via le bandeau prévu à cet effet et paramétrer votre navigateur pour les refuser.</p><h2>Litiges</h2><p>Les présentes mentions sont soumises au droit français. En cas de litige, et à défaut d’accord amiable, les tribunaux français sont seuls compétents.</p>"
+  },
+  {
+    "handle": "politique-de-confidentialite",
+    "suffix": "simple",
+    "title": "Politique de confidentialité",
+    "titleTag": "Politique de confidentialité | Clickscreation",
+    "descTag": "Consultez la politique de confidentialité de Clickscreation : données collectées, finalités, conservation, sous-traitants, cookies et exercice de vos droits.",
+    "content": "<h2>Responsable du traitement</h2><p>Les données collectées sur ce site sont traitées par Clickscreation, 50 avenue des Champs-Élysées, 75008 Paris. Pour toute question relative à vos données : contact@clickscreation.com.</p><h2>Données que nous collectons</h2><p>Nous collectons uniquement les données que vous nous transmettez via nos formulaires (demande d’audit, contact) : nom, adresse e-mail, message, et le cas échéant téléphone et adresse de votre site. Nous pouvons également collecter des données de navigation anonymisées à des fins de mesure d’audience.</p><h2>Pourquoi nous les utilisons</h2><p>Vos données servent à répondre à vos demandes, établir un devis ou un audit, et améliorer notre site. Elles ne sont jamais vendues à des tiers.</p><h2>Base légale</h2><p>Le traitement repose sur votre consentement et sur les mesures précontractuelles prises à votre demande (réponse à une sollicitation commerciale).</p><h2>Durée de conservation</h2><p>Vos données sont conservées le temps nécessaire au traitement de votre demande, puis archivées ou supprimées, au plus tard trois ans après le dernier contact.</p><h2>Sous-traitants et outils</h2><p>Notre site s’appuie sur Shopify pour l’hébergement et l’infrastructure. Nous pouvons utiliser des outils de mesure d’audience, par exemple Google Analytics ou Microsoft Clarity ; le cas échéant, leur dépôt est soumis à votre consentement via le bandeau cookies.</p><h2>Vos droits</h2><p>Conformément au RGPD, vous disposez d’un droit d’accès, de rectification, d’effacement, d’opposition, de limitation et de portabilité de vos données. Pour les exercer, écrivez à contact@clickscreation.com. Vous pouvez également introduire une réclamation auprès de la CNIL.</p><h2>Cookies</h2><p>Vous pouvez accepter ou refuser les cookies non essentiels via le bandeau de consentement, et paramétrer votre navigateur pour les bloquer. Les cookies strictement nécessaires au fonctionnement du site restent actifs.</p><h2>Transferts hors Union européenne</h2><p>Certains prestataires peuvent traiter des données hors de l’Union européenne. Ces transferts sont encadrés par les clauses contractuelles types de la Commission européenne.</p>"
+  }
+]

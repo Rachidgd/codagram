@@ -322,46 +322,28 @@ async function renderTemplate(templateName, overrides = {}) {
 }
 
 /* ---------------------------------------------------------------------- main */
-const pages = [
-  ['index', 'index', {}],
-  ['contact', 'page.contact', {
+// Toutes les pages publiées, lues depuis le manifeste : l'audit doit porter
+// sur l'intégralité du site, pas sur un échantillon.
+const manifest = JSON.parse(fs.readFileSync(path.join(HERE, 'live_pages.json'), 'utf8'));
+const pages = manifest.map((p) => {
+  if (p.template === 'index') return ['index', 'index', {}];
+  return [p.handle, `page.${p.suffix}`, {
+    canonical_url: `https://clickscreation.com/pages/${p.handle}`,
     request: { locale: { iso_code: 'fr' }, page_type: 'page' },
-    page: { title: 'Contact', content: '', handle: 'contact', metafields: {} }
-  }],
-  ['404', '404', { request: { locale: { iso_code: 'fr' }, page_type: '404' } }],
-  ['reserver', 'page.reserver', {
-    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
-    page: { title: 'Reserver mon audit SEO offert', content: '', handle: 'reserver', metafields: {} }
-  }],
-  ['plan', 'page.sitemap', {
-    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
-    page: { title: 'Plan du site', content: '', handle: 'plan-du-site', metafields: {} }
-  }],
-  ['paris', 'page.seo-paris', {
-    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
-    page: { title: 'Consultant SEO Paris', content: '', handle: 'consultant-seo-paris', metafields: {} }
-  }],
-  ['vitrine', 'page.creation-site-vitrine', {
-    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
-    page: { title: 'Création site vitrine', content: '', handle: 'creation-site-vitrine', metafields: {} }
-  }],
-  ['seo', 'page.agence-seo', {
-    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
-    page: { title: 'Agence SEO', content: '', handle: 'agence-seo', metafields: {} }
-  }],
-  ['resultats', 'page.resultats', {
-    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
-    page: { title: 'Résultats', content: '', handle: 'resultats', metafields: {} }
-  }],
-  ['repli', 'page.audit-seo', {
-    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
-    page: { title: 'Audit SEO', content: '<p>Contenu de la page Shopify.</p>', handle: 'audit-seo', metafields: {} }
-  }],
-  ['service', 'page.agence-shopify', {
-    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
-    page: { title: 'Agence Shopify', content: '', handle: 'agence-shopify', metafields: {} }
-  }]
-];
+    page: {
+      title: p.title,
+      content: p.content || '',
+      handle: p.handle,
+      url: `/pages/${p.handle}`,
+      metafields: {
+        seo_release: {
+          title_tag: { value: p.titleTag || '' },
+          description_tag: { value: p.descTag || '' }
+        }
+      }
+    }
+  }];
+}).concat([['404', '404', { request: { locale: { iso_code: 'fr' }, page_type: '404' } }]]);
 
 fs.mkdirSync(OUT, { recursive: true });
 const assetLink = path.join(OUT, 'assets');

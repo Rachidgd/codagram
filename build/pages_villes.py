@@ -108,7 +108,7 @@ VILLES = [
     dict(
         suffix="seo-local-nantes", struct="A",
         eyebrow="Référencement naturel — Nantes",
-        h1="Une métropole qui grandit vite, et une concurrence qui suit.",
+        h1="Des milliers de nouveaux Nantais cherchent un prestataire chaque année.",
         lead="Nantes gagne des habitants et des entreprises chaque année. Cette croissance crée de la demande, mais elle attire aussi de nouveaux prestataires : sur beaucoup de métiers, le nombre de concurrents a doublé en quelques années.",
         cells=[("Numérique", "un secteur très dense", "Des clients qui comparent, lisent et arbitrent. Un site approximatif se disqualifie immédiatement."),
                ("Industrie", "naval et aéronautique", "Une sous-traitance technique qui cherche des compétences précises, jamais des termes génériques."),
@@ -226,7 +226,7 @@ VILLES = [
     dict(
         suffix="seo-montpellier", struct="C",
         eyebrow="Référencement naturel — Montpellier",
-        h1="La ville grandit plus vite que la concurrence ne s'organise.",
+        h1="Les communes voisines se gagnent bien plus vite que Montpellier.",
         lead="Montpellier fait partie des métropoles françaises les plus dynamiques démographiquement. Cette croissance crée une demande nouvelle chaque année, et beaucoup d'entreprises locales n'ont pas encore adapté leur visibilité à ce rythme.",
         cells=[("Santé", "recherche et biotechnologies", "Un pôle installé, avec des exigences de fiabilité éditoriale renforcées."),
                ("Croissance", "arrivées continues", "Des habitants sans habitudes locales, qui cherchent tout en ligne."),
