@@ -4,22 +4,63 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "title": "",
-        "lead": "",
+        "eyebrow": "Plan du site",
+        "title": "Toutes les pages, en une vue.",
+        "lead": "Si vous cherchez quelque chose de précis, la recherche du site (Ctrl + K) est plus rapide. Cette page existe pour explorer l'ensemble.",
         "cta_primary": "",
         "cta_secondary": "",
         "cta_secondary_url": ""
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "plan": {
+      "type": "page-sitemap",
       "settings": {
-        "surface": "paper"
-      }
+        "eyebrow": "Navigation",
+        "title": "Toutes les pages du site",
+        "text": "Cette page se construit automatiquement depuis les menus : elle reste à jour sans intervention.",
+        "blog": "ressources",
+        "blog_title": "Guides"
+      },
+      "blocks": {
+        "m1": {
+          "type": "menu",
+          "settings": {
+            "title": "Expertises",
+            "menu": "menu-footer-services-cs26"
+          }
+        },
+        "m2": {
+          "type": "menu",
+          "settings": {
+            "title": "SEO par ville",
+            "menu": "menu-footer-villes-cs26"
+          }
+        },
+        "m3": {
+          "type": "menu",
+          "settings": {
+            "title": "Ressources",
+            "menu": "menu-footer-ressources-cs26"
+          }
+        },
+        "m4": {
+          "type": "menu",
+          "settings": {
+            "title": "Informations",
+            "menu": "menu-legal-cs26"
+          }
+        }
+      },
+      "block_order": [
+        "m1",
+        "m2",
+        "m3",
+        "m4"
+      ]
     }
   },
   "order": [
     "hero",
-    "contenu"
+    "plan"
   ]
 }

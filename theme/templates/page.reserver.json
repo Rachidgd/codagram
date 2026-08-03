@@ -1,0 +1,294 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Audit SEO offert",
+        "title": "Trente minutes pour savoir si votre référencement mérite un investissement.",
+        "lead": "Nous relevons vos positions, l'état technique du site et ce que font vos concurrents, puis nous vous restituons trois priorités par téléphone. C'est gratuit, et cela ne vous engage à rien — pas même à nous rappeler.",
+        "cta_primary": "Réserver mon créneau",
+        "cta_secondary": "Voir la prestation SEO",
+        "cta_secondary_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "p1": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "30",
+            "suffix": " min",
+            "label": "d'échange"
+          }
+        },
+        "p2": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "3",
+            "suffix": " priorités",
+            "label": "argumentées"
+          }
+        },
+        "p3": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "0",
+            "suffix": " €",
+            "label": "et sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ]
+    },
+    "contenu": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "dark",
+        "density": "comfortable",
+        "eyebrow": "Ce que contient l'échange",
+        "title": "Quatre points, dans cet ordre.",
+        "text": "Nous préparons l'analyse avant l'appel : le temps d'échange sert à discuter des conclusions, pas à découvrir votre site ensemble."
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Vos positions actuelles",
+            "text": "Sur quelles requêtes vous apparaissez aujourd'hui, à quelle place, et depuis quelles zones géographiques."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "L'état technique",
+            "text": "Indexation, vitesse, structure, balisage. Ce qui bloque éventuellement tout le reste."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Ce que font vos concurrents",
+            "text": "Qui occupe vos requêtes, avec quel type de page, et pourquoi ces pages passent devant."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Les trois priorités",
+            "text": "Ce par quoi commencer, dans quel ordre, avec un ordre de grandeur d'effort pour chacune."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ]
+    },
+    "filtre": {
+      "type": "content-compare",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Est-ce pour vous ?",
+        "title": "À qui cet audit sert, et à qui il ne sert pas.",
+        "text": "Nous préférons le dire avant : un créneau réservé pour rien coûte du temps aux deux parties.",
+        "col_criteria": "Critère",
+        "col_a": "Utile si",
+        "col_b": "Inutile si",
+        "verdict": "Si votre site a moins de six mois, l'audit n'aura pas assez de données pour être utile. Écrivez-nous quand même : nous vous dirons quoi mettre en place en attendant."
+      },
+      "blocks": {
+        "r1": {
+          "type": "row",
+          "settings": {
+            "criteria": "Votre site",
+            "value_a": "Il est en ligne depuis au moins six mois",
+            "value_b": "Il n'existe pas encore ou vient d'être lancé"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "criteria": "Votre objectif",
+            "value_a": "Vous voulez des demandes entrantes régulières",
+            "value_b": "Vous cherchez un résultat sous quinze jours"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "criteria": "Votre marché",
+            "value_a": "Vos clients cherchent votre service sur Google",
+            "value_b": "Votre activité repose entièrement sur la recommandation"
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "criteria": "Votre disponibilité",
+            "value_a": "Vous pouvez appliquer ou faire appliquer",
+            "value_b": "Personne ne pourra rien mettre en œuvre"
+          }
+        },
+        "r5": {
+          "type": "row",
+          "settings": {
+            "criteria": "Votre attente",
+            "value_a": "Un avis argumenté, y compris négatif",
+            "value_b": "Une confirmation que tout va bien"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ]
+    },
+    "deroule": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Comment ça se passe",
+        "title": "Trois étapes, aucune surprise.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Vous décrivez votre situation",
+            "text": "Quatre questions dans le formulaire. Cela nous permet de préparer l'analyse avant l'appel.",
+            "duration": "2 minutes"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Nous analysons",
+            "text": "Relevé de positions, contrôle technique, étude des concurrents sur vos requêtes principales.",
+            "duration": "Sous 2 jours ouvrés"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Nous en parlons",
+            "text": "Trente minutes au téléphone ou en visioconférence, à l'heure qui vous arrange.",
+            "duration": "À votre convenance"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Questions fréquentes",
+        "title": "Ce qu'on nous demande avant de réserver.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Pourquoi est-ce gratuit ?",
+            "answer": "<p>Parce que c'est notre façon de qualifier les projets. Nous préférons consacrer quelques heures à comprendre une situation plutôt que d'envoyer une proposition commerciale à l'aveugle. Une partie des personnes que nous auditons ne devient pas cliente, et cela fait partie du calcul.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Vais-je subir un argumentaire de vente ?",
+            "answer": "<p>Non. Nous présentons les constats et les priorités. Si vous voulez ensuite savoir ce que coûterait une intervention de notre part, vous demandez — sinon nous ne l'abordons pas. Le document reste utilisable sans nous.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Que se passe-t-il si mon site n'a aucun problème ?",
+            "answer": "<p>Cela arrive, et nous vous le disons. Dans ce cas l'échange sert plutôt à identifier le levier réellement limitant : souvent l'offre, la conversion ou l'acquisition payante plutôt que le référencement.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il me préparer ?",
+            "answer": "<p>Non. Le formulaire suffit. Si vous pouvez nous donner un accès en lecture à vos statistiques d'audience et à votre console de recherche, l'analyse sera plus précise — mais ce n'est pas indispensable pour un premier relevé.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Réserver",
+        "title": "Décrivez votre situation, nous préparons l'analyse.",
+        "text": "Quatre questions suffisent. Nous revenons vers vous sous deux jours ouvrés avec une proposition de créneau.",
+        "cta_label": "Réserver mon créneau",
+        "note": "Réponse sous 2 jours ouvrés"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Gratuit et sans engagement"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Aucun argumentaire de vente"
+          }
+        },
+        "r3": {
+          "type": "point",
+          "settings": {
+            "text": "Document utilisable sans nous"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "contenu",
+    "filtre",
+    "deroule",
+    "faq",
+    "cta"
+  ]
+}

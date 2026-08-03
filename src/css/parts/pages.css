@@ -537,3 +537,47 @@
   font-size: var(--text-micro);
   color: var(--color-light-3);
 }
+
+/* ============================================================================
+   PLAN DU SITE
+   ========================================================================== */
+.cc-map__grid {
+  display: grid;
+  gap: 1.5rem 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+}
+.cc-map__title {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--surface-fg-faint);
+  padding-bottom: 0.55rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--surface-line);
+}
+.cc-map__col ul { display: grid; gap: 0.1rem; }
+/* Les sous-niveaux sont décalés par un filet, pas par une puce. */
+.cc-map__col ul ul {
+  margin: 0.15rem 0 0.35rem 0.55rem;
+  padding-left: 0.6rem;
+  border-left: 1px solid var(--surface-line);
+}
+.cc-map__col a {
+  display: inline-block;
+  padding-block: 3px;
+  font-size: var(--text-sm);
+  color: var(--surface-fg-muted);
+  transition: color 0.16s linear;
+}
+.cc-map__col a:hover { color: var(--surface-fg); }
+.cc-map__col ul ul a { font-size: var(--text-xs); }
+.cc-map__all {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+  font-weight: 500;
+  color: var(--surface-fg);
+}

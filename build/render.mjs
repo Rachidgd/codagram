@@ -200,8 +200,21 @@ function schemaOf(file) {
  * si on le laissait tel quel, toute navigation issue d'un réglage de section
  * rendrait à vide dans l'aperçu — et masquerait la moitié de l'interface.
  */
+const BLOG_MOCK = {
+  title: 'Ressources', url: '/blogs/ressources',
+  articles: [
+    { title: 'Structurer une arborescence SEO qui tient dans le temps', url: '/blogs/ressources/arborescence-seo' },
+    { title: 'Fiche produit Shopify : ce qui fait vraiment basculer l’achat', url: '/blogs/ressources/fiche-produit' },
+    { title: 'Pourquoi vos pages de ville ne se positionnent pas', url: '/blogs/ressources/pages-ville' }
+  ]
+};
+
 const LINKLIST_BY_DEFAULT = {
-  'main-menu': { links: MENUS.main }
+  'main-menu': { links: MENUS.main },
+  'menu-footer-services-cs26': { links: MENUS.services },
+  'menu-footer-villes-cs26': { links: MENUS.zones },
+  'menu-footer-ressources-cs26': { links: MENUS.resources },
+  'menu-legal-cs26': { links: MENUS.legal }
 };
 
 function defaultsFrom(list = []) {
@@ -210,7 +223,7 @@ function defaultsFrom(list = []) {
     if (!f.id) return;
     if (f.type === 'link_list') {
       out[f.id] = LINKLIST_BY_DEFAULT[f.default] || { links: MENUS.main };
-    } else if (f.type === 'blog') {
+    } else if (f.type === 'blog') {  // page-sitemap et la palette listent des articles
       out[f.id] = { articles: [], title: 'Ressources', url: '/blogs/ressources' };
     } else {
       out[f.id] = f.default ?? '';
@@ -259,7 +272,23 @@ async function renderSection(type, conf, env) {
 
   if (!conf.blocks && SECTION_BLOCKS[type]) conf = Object.assign({}, conf, SECTION_BLOCKS[type]);
 
-  const settings = Object.assign(defaultsFrom(schema.settings), conf.settings || {});
+  /* Les valeurs venues du gabarit JSON sont des identifiants (« main-menu »).
+     Shopify les résout en objets ; le banc doit faire pareil, sinon toute
+     navigation définie dans un gabarit rend à vide. */
+  const coerce = (fieldList, values) => {
+    const types = Object.fromEntries((fieldList || []).filter((f) => f.id).map((f) => [f.id, f.type]));
+    const out = Object.assign({}, values);
+    for (const [k, v] of Object.entries(out)) {
+      if (typeof v !== 'string' || !v) continue;
+      if (types[k] === 'link_list') out[k] = LINKLIST_BY_DEFAULT[v] || { links: MENUS.main };
+      if (types[k] === 'blog') out[k] = BLOG_MOCK;
+    }
+    return out;
+  };
+
+  const settings = Object.assign(defaultsFrom(schema.settings),
+                                 coerce(schema.settings, conf.settings || {}));
+  const blockSchema = Object.fromEntries((schema.blocks || []).map((b) => [b.type, b.settings]));
   const blockDefs = Object.fromEntries((schema.blocks || []).map((b) => [b.type, defaultsFrom(b.settings)]));
 
   const order = conf.block_order || Object.keys(conf.blocks || {});
@@ -267,7 +296,8 @@ async function renderSection(type, conf, env) {
     const b = (conf.blocks || {})[id];
     return {
       id, type: b.type,
-      settings: Object.assign({}, blockDefs[b.type] || {}, b.settings || {}),
+      settings: Object.assign({}, blockDefs[b.type] || {},
+                              coerce(blockSchema[b.type], b.settings || {})),
       shopify_attributes: ''
     };
   });
@@ -299,6 +329,14 @@ const pages = [
     page: { title: 'Contact', content: '', handle: 'contact', metafields: {} }
   }],
   ['404', '404', { request: { locale: { iso_code: 'fr' }, page_type: '404' } }],
+  ['reserver', 'page.reserver', {
+    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
+    page: { title: 'Reserver mon audit SEO offert', content: '', handle: 'reserver', metafields: {} }
+  }],
+  ['plan', 'page.sitemap', {
+    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
+    page: { title: 'Plan du site', content: '', handle: 'plan-du-site', metafields: {} }
+  }],
   ['paris', 'page.seo-paris', {
     request: { locale: { iso_code: 'fr' }, page_type: 'page' },
     page: { title: 'Consultant SEO Paris', content: '', handle: 'consultant-seo-paris', metafields: {} }

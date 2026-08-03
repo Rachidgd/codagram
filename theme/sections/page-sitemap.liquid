@@ -1,0 +1,81 @@
+{%- comment -%}
+  PLAN DU SITE
+
+  Construit depuis les menus Shopify plutôt qu'écrit à la main : il ne peut donc
+  jamais devenir obsolète. Sert autant au visiteur perdu qu'au maillage interne,
+  en donnant un chemin d'exploration vers toutes les pages profondes.
+{%- endcomment -%}
+
+<section class="cc-map surface-paper section-y" data-surface="paper">
+  <div class="shell">
+
+    <div class="cc-head-block" data-reveal>
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2>{{ section.settings.title | default: 'Toutes les pages du site' }}</h2>
+      {%- if section.settings.text != blank -%}
+        <p class="cc-head-block__text">{{ section.settings.text }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="cc-map__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'menu' and block.settings.menu != blank -%}
+          <nav class="cc-map__col" {{ block.shopify_attributes }} aria-label="{{ block.settings.title | escape }}" data-reveal>
+            <h3 class="cc-map__title">{{ block.settings.title }}</h3>
+            <ul role="list">
+              {%- for link in block.settings.menu.links -%}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {%- if link.links.size > 0 -%}
+                    <ul role="list">
+                      {%- for child in link.links -%}
+                        <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </nav>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- comment -%} Les guides publiés, repris automatiquement. {%- endcomment -%}
+      {%- if section.settings.blog != blank and section.settings.blog.articles.size > 0 -%}
+        <nav class="cc-map__col" aria-label="Guides publiés" data-reveal>
+          <h3 class="cc-map__title">{{ section.settings.blog_title | default: 'Guides' }}</h3>
+          <ul role="list">
+            {%- for article in section.settings.blog.articles limit: 30 -%}
+              <li><a href="{{ article.url }}">{{ article.title }}</a></li>
+            {%- endfor -%}
+            <li><a class="cc-map__all" href="{{ section.settings.blog.url }}">Tous les guides{%- render 'icon', name: 'arrow', size: 13 -%}</a></li>
+          </ul>
+        </nav>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page — Plan du site",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Navigation" },
+    { "type": "text", "id": "title", "label": "Titre", "default": "Toutes les pages du site" },
+    { "type": "textarea", "id": "text", "label": "Texte", "default": "Cette page se construit automatiquement depuis les menus : elle reste à jour sans intervention." },
+    { "type": "blog", "id": "blog", "label": "Blog à lister" },
+    { "type": "text", "id": "blog_title", "label": "Titre de la colonne blog", "default": "Guides" }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Colonne de menu",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titre" },
+        { "type": "link_list", "id": "menu", "label": "Menu" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Page — Plan du site" }]
+}
+{% endschema %}
