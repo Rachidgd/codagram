@@ -45,7 +45,9 @@
         "reverse": false,
         "eyebrow": "L'approche",
         "title": "Un taux de conversion global ne dit rien d'exploitable.",
-        "text": "<p>Savoir que votre boutique convertit à 1,4 % ne permet aucune décision. Ce qui compte, c'est de savoir que 60 % des visiteurs quittent la fiche produit sans faire défiler. Ou que la moitié des paniers se perdent à l'étape de livraison.</p><p>Nous découpons donc le parcours en marches et nous mesurons chacune séparément. Sur mobile et sur ordinateur : les points de rupture n'y sont jamais les mêmes.</p>"
+        "text": "<p>Savoir que votre boutique convertit à 1,4 % ne permet aucune décision. Ce qui compte, c'est de savoir que 60 % des visiteurs quittent la fiche produit sans faire défiler. Ou que la moitié des paniers se perdent à l'étape de livraison.</p><p>Nous découpons donc le parcours en marches et nous mesurons chacune séparément. Sur mobile et sur ordinateur : les points de rupture n'y sont jamais les mêmes.</p>",
+        "cta_label": "Demander l'audit",
+        "cta_url": "/pages/reserver"
       },
       "blocks": {
         "b1": {
@@ -245,6 +247,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Abandon de panier : 9 corrections",
+            "text": "À faire avant les emails",
+            "link": "/blogs/ressources/abandon-panier-corrections",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "La fiche produit en 9 blocs",
+            "text": "Structure qui transforme",
+            "link": "/blogs/ressources/fiche-produit-structure-conversion",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Trouver ses fuites de conversion",
+            "text": "Microsoft Clarity en une heure",
+            "link": "/blogs/ressources/microsoft-clarity-trouver-fuites-conversion",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -253,6 +302,7 @@
     "livrables",
     "deroule",
     "faq",
+    "lectures",
     "cta"
   ]
 }

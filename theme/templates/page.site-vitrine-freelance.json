@@ -29,7 +29,9 @@
         "reverse": false,
         "eyebrow": "Ce qui construit la confiance",
         "title": "Quatre éléments décident, et ils sont rarement ceux qu'on soigne.",
-        "text": "<p>Les sites d'indépendants consacrent souvent l'essentiel de leur surface à la liste des compétences. Or personne ne choisit un prestataire sur une liste de compétences : on choisit sur la capacité perçue à comprendre son problème.</p><p>Nous réorganisons donc la page autour de ce que le client cherche à vérifier avant de vous écrire.</p>"
+        "text": "<p>Les sites d'indépendants consacrent souvent l'essentiel de leur surface à la liste des compétences. Or personne ne choisit un prestataire sur une liste de compétences : on choisit sur la capacité perçue à comprendre son problème.</p><p>Nous réorganisons donc la page autour de ce que le client cherche à vérifier avant de vous écrire.</p>",
+        "cta_label": "Cadrer mon projet",
+        "cta_url": "/pages/reserver"
       },
       "blocks": {
         "b1": {
@@ -185,6 +187,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Prouver son expertise à Google",
+            "text": "E-E-A-T sans être une marque connue",
+            "link": "/blogs/ressources/eeat-prouver-expertise-google",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Anatomie d'une page contact qui convertit",
+            "text": "7 éléments souvent absents",
+            "link": "/blogs/ressources/page-contact-qui-convertit",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Un site vitrine sans demandes",
+            "text": "Les 7 corrections prioritaires",
+            "link": "/blogs/ressources/site-vitrine-pas-de-demandes-2026",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -193,6 +242,7 @@
     "contenu",
     "deroule",
     "faq",
+    "lectures",
     "cta"
   ]
 }

@@ -19,7 +19,9 @@
         "reverse": false,
         "eyebrow": "Comment lire ces pages",
         "title": "Une page par zone, écrite pour cette zone.",
-        "text": "<p>La pratique courante consiste à produire une page type et à y remplacer le nom de la ville. Nous ne le faisons pas, pour deux raisons : les moteurs identifient ces gabarits et n'en retiennent qu'un, et surtout cela ne rend aucun service au lecteur.</p><p>Chaque page ci-dessous décrit un marché différent : ce qui s'y vend, qui s'y bat, et par où commencer.</p>"
+        "text": "<p>La pratique courante consiste à produire une page type et à y remplacer le nom de la ville. Nous ne le faisons pas, pour deux raisons : les moteurs identifient ces gabarits et n'en retiennent qu'un, et surtout cela ne rend aucun service au lecteur.</p><p>Chaque page ci-dessous décrit un marché différent : ce qui s'y vend, qui s'y bat, et par où commencer.</p>",
+        "cta_label": "Voir ma zone en détail",
+        "cta_url": "/pages/seo-local"
       },
       "blocks": {
         "b1": {
@@ -289,6 +291,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Des pages villes sans duplication",
+            "text": "Ranker localement proprement",
+            "link": "/blogs/ressources/creer-pages-villes-sans-duplicate",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Optimiser sa fiche Google Business",
+            "text": "Ce qui fait monter dans la carte",
+            "link": "/blogs/ressources/optimiser-fiche-google-business-profile",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Recherche de mots-clés par intention",
+            "text": "La méthode qui trouve des clients",
+            "link": "/blogs/ressources/recherche-mots-cles-methode-intentions",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -296,6 +345,7 @@
     "methode",
     "zones",
     "faq",
+    "lectures",
     "cta"
   ]
 }

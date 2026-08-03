@@ -18,28 +18,44 @@
     "suffix": "agence-seo",
     "title": "Agence SEO",
     "titleTag": "Agence SEO | Visibilité et leads qualifiés",
-    "descTag": "Agence SEO pour auditer votre site, structurer les pages et contenus prioritaires, corriger la technique et transformer la visibilité Google en leads qualifiés."
+    "descTag": "Agence SEO pour auditer votre site, structurer les pages et contenus prioritaires, corriger la technique et transformer la visibilité Google en leads qualifiés.",
+    "service": {
+      "name": "Référencement naturel",
+      "area": "France"
+    }
   },
   {
     "handle": "agence-shopify",
     "suffix": "agence-shopify",
     "title": "Agence Shopify",
     "titleTag": "Agence Shopify | Boutiques sur mesure",
-    "descTag": "Agence Shopify spécialisée dans la création, la refonte et l’optimisation de boutiques rapides, SEO-friendly et pensées pour convertir."
+    "descTag": "Agence Shopify spécialisée dans la création, la refonte et l’optimisation de boutiques rapides, SEO-friendly et pensées pour convertir.",
+    "service": {
+      "name": "Création et refonte de boutique Shopify",
+      "area": "France"
+    }
   },
   {
     "handle": "creation-site-vitrine",
     "suffix": "creation-site-vitrine",
     "title": "Création site vitrine",
     "titleTag": "Création site vitrine | Plus de demandes",
-    "descTag": "Création de site vitrine rapide, accessible et SEO-friendly pour clarifier votre offre, rassurer vos prospects et générer davantage de demandes qualifiées."
+    "descTag": "Création de site vitrine rapide, accessible et SEO-friendly pour clarifier votre offre, rassurer vos prospects et générer davantage de demandes qualifiées.",
+    "service": {
+      "name": "Création de site vitrine",
+      "area": "France"
+    }
   },
   {
     "handle": "expert-meta-ads",
     "suffix": "meta-ads",
     "title": "Expert Meta Ads",
     "titleTag": "Expert Meta Ads | Campagnes orientées rentabilité",
-    "descTag": "Expert Meta Ads pour structurer le tracking, les audiences, les créations et les campagnes autour d’indicateurs liés aux demandes, aux ventes et à la marge."
+    "descTag": "Expert Meta Ads pour structurer le tracking, les audiences, les créations et les campagnes autour d’indicateurs liés aux demandes, aux ventes et à la marge.",
+    "service": {
+      "name": "Gestion de publicité Meta",
+      "area": "France"
+    }
   },
   {
     "handle": "resultats",
@@ -53,105 +69,165 @@
     "suffix": "seo-paris",
     "title": "Consultant SEO Paris",
     "titleTag": "Consultant SEO Paris | Stratégie et leads",
-    "descTag": "Consultant SEO à Paris pour auditer votre site, cibler les recherches prioritaires et transformer votre visibilité Google en leads qualifiés."
+    "descTag": "Consultant SEO à Paris pour auditer votre site, cibler les recherches prioritaires et transformer votre visibilité Google en leads qualifiés.",
+    "service": {
+      "name": "Consultant SEO à Paris",
+      "area": "Paris"
+    }
   },
   {
     "handle": "consultant-seo-rennes",
     "suffix": "seo-rennes",
     "title": "Consultant SEO Rennes",
     "titleTag": "Consultant SEO Rennes | Réputation et demandes",
-    "descTag": "Consultant SEO à Rennes pour structurer vos pages, cibler les recherches de votre marché et générer davantage de demandes qualifiées depuis Google."
+    "descTag": "Consultant SEO à Rennes pour structurer vos pages, cibler les recherches de votre marché et générer davantage de demandes qualifiées depuis Google.",
+    "service": {
+      "name": "Consultant SEO à Rennes",
+      "area": "Rennes"
+    }
   },
   {
     "handle": "agence-seo-marseille",
     "suffix": "seo-local-marseille",
     "title": "Agence SEO Marseille",
     "titleTag": "Agence SEO Marseille | Trafic et leads",
-    "descTag": "Agence SEO à Marseille pour structurer vos pages locales, améliorer votre visibilité Google et générer des demandes qualifiées sur les zones réellement servies."
+    "descTag": "Agence SEO à Marseille pour structurer vos pages locales, améliorer votre visibilité Google et générer des demandes qualifiées sur les zones réellement servies.",
+    "service": {
+      "name": "Agence SEO à Marseille",
+      "area": "Marseille"
+    }
   },
   {
     "handle": "consultant-seo-lyon",
     "suffix": "seo-lyon",
     "title": "Consultant SEO Lyon",
     "titleTag": "Consultant SEO Lyon | Acquisition organique",
-    "descTag": "Consultant SEO à Lyon pour hiérarchiser vos offres, renforcer vos pages prioritaires et transformer le trafic organique en demandes commerciales mesurables."
+    "descTag": "Consultant SEO à Lyon pour hiérarchiser vos offres, renforcer vos pages prioritaires et transformer le trafic organique en demandes commerciales mesurables.",
+    "service": {
+      "name": "Consultant SEO à Lyon",
+      "area": "Lyon"
+    }
   },
   {
     "handle": "agence-seo-lille",
     "suffix": "seo-lille",
     "title": "Agence SEO Lille",
     "titleTag": "Agence SEO Lille | Capter aussi la demande belge",
-    "descTag": "Agence SEO à Lille pour organiser vos pages, cibler la demande locale et transfrontalière et générer davantage de contacts qualifiés depuis Google."
+    "descTag": "Agence SEO à Lille pour organiser vos pages, cibler la demande locale et transfrontalière et générer davantage de contacts qualifiés depuis Google.",
+    "service": {
+      "name": "Agence SEO à Lille",
+      "area": "Lille"
+    }
   },
   {
     "handle": "agence-seo-nantes",
     "suffix": "seo-local-nantes",
     "title": "Agence SEO Nantes",
     "titleTag": "Agence SEO Nantes | Capter les nouveaux arrivants",
-    "descTag": "Agence SEO à Nantes pour structurer vos pages, améliorer votre visibilité Google et générer davantage de demandes qualifiées."
+    "descTag": "Agence SEO à Nantes pour structurer vos pages, améliorer votre visibilité Google et générer davantage de demandes qualifiées.",
+    "service": {
+      "name": "Agence SEO à Nantes",
+      "area": "Nantes"
+    }
   },
   {
     "handle": "agence-seo-bordeaux",
     "suffix": "seo-local-bordeaux",
     "title": "Agence SEO Bordeaux",
     "titleTag": "Agence SEO Bordeaux | Acquisition organique",
-    "descTag": "Agence SEO à Bordeaux pour cibler les recherches prioritaires, renforcer vos preuves locales et développer une acquisition organique orientée demandes."
+    "descTag": "Agence SEO à Bordeaux pour cibler les recherches prioritaires, renforcer vos preuves locales et développer une acquisition organique orientée demandes.",
+    "service": {
+      "name": "Agence SEO à Bordeaux",
+      "area": "Bordeaux"
+    }
   },
   {
     "handle": "agence-seo-nice",
     "suffix": "seo-nice",
     "title": "Agence SEO Nice",
     "titleTag": "Agence SEO Nice | Saison et clientèle internationale",
-    "descTag": "Agence SEO à Nice pour anticiper la saisonnalité, clarifier vos zones et renforcer les pages qui génèrent des demandes locales ou premium."
+    "descTag": "Agence SEO à Nice pour anticiper la saisonnalité, clarifier vos zones et renforcer les pages qui génèrent des demandes locales ou premium.",
+    "service": {
+      "name": "Agence SEO à Nice",
+      "area": "Nice"
+    }
   },
   {
     "handle": "agence-seo-toulouse",
     "suffix": "seo-toulouse",
     "title": "Agence SEO Toulouse",
     "titleTag": "Agence SEO Toulouse | Requêtes techniques B2B",
-    "descTag": "Agence SEO à Toulouse pour traduire vos expertises en pages ciblées, améliorer votre visibilité Google et générer des demandes B2B qualifiées."
+    "descTag": "Agence SEO à Toulouse pour traduire vos expertises en pages ciblées, améliorer votre visibilité Google et générer des demandes B2B qualifiées.",
+    "service": {
+      "name": "Agence SEO à Toulouse",
+      "area": "Toulouse"
+    }
   },
   {
     "handle": "agence-seo-montpellier",
     "suffix": "seo-montpellier",
     "title": "Agence SEO Montpellier",
     "titleTag": "Agence SEO Montpellier | Gains rapides par commune",
-    "descTag": "Agence SEO à Montpellier pour structurer vos contenus, consolider les fondations techniques et transformer la visibilité Google en demandes qualifiées."
+    "descTag": "Agence SEO à Montpellier pour structurer vos contenus, consolider les fondations techniques et transformer la visibilité Google en demandes qualifiées.",
+    "service": {
+      "name": "Agence SEO à Montpellier",
+      "area": "Montpellier"
+    }
   },
   {
     "handle": "agence-seo-strasbourg",
     "suffix": "seo-strasbourg",
     "title": "Agence SEO Strasbourg",
     "titleTag": "Agence SEO Strasbourg | Français et allemand",
-    "descTag": "Agence SEO à Strasbourg pour structurer vos marchés, langues et pages locales et développer une visibilité Google cohérente et mesurable."
+    "descTag": "Agence SEO à Strasbourg pour structurer vos marchés, langues et pages locales et développer une visibilité Google cohérente et mesurable.",
+    "service": {
+      "name": "Agence SEO à Strasbourg",
+      "area": "Strasbourg"
+    }
   },
   {
     "handle": "agence-seo-grenoble",
     "suffix": "seo-grenoble",
     "title": "Agence SEO Grenoble",
     "titleTag": "Agence SEO Grenoble | Visibilité sur marchés techniques",
-    "descTag": "Agence SEO à Grenoble pour transformer vos expertises techniques en pages compréhensibles, visibles sur Google et capables de générer des contacts qualifiés."
+    "descTag": "Agence SEO à Grenoble pour transformer vos expertises techniques en pages compréhensibles, visibles sur Google et capables de générer des contacts qualifiés.",
+    "service": {
+      "name": "Agence SEO à Grenoble",
+      "area": "Grenoble"
+    }
   },
   {
     "handle": "agence-seo-luxembourg",
     "suffix": "agence-seo-luxembourg",
     "title": "Agence SEO Luxembourg",
     "titleTag": "Agence SEO Luxembourg | Visibilité Google",
-    "descTag": "Agence SEO au Luxembourg pour structurer vos marchés et langues, améliorer votre visibilité Google et générer des demandes B2B qualifiées."
+    "descTag": "Agence SEO au Luxembourg pour structurer vos marchés et langues, améliorer votre visibilité Google et générer des demandes B2B qualifiées.",
+    "service": {
+      "name": "Agence SEO au Luxembourg",
+      "area": "Luxembourg"
+    }
   },
   {
     "handle": "consultant-seo-suisse",
     "suffix": "seo-suisse",
     "title": "Consultant SEO Suisse",
     "titleTag": "Consultant SEO Suisse : captez la Suisse romande",
-    "descTag": "Travaillez google.ch, Genève, Lausanne et la Suisse romande avec une stratégie SEO pensée pour un marché premium."
+    "descTag": "Travaillez google.ch, Genève, Lausanne et la Suisse romande avec une stratégie SEO pensée pour un marché premium.",
+    "service": {
+      "name": "Consultant SEO en Suisse romande",
+      "area": "Suisse romande"
+    }
   },
   {
     "handle": "consultant-seo-belgique",
     "suffix": "seo-belgique",
     "title": "Consultant SEO Belgique",
     "titleTag": "Consultant SEO Belgique : gagnez en visibilité",
-    "descTag": "Développez votre visibilité Google en Belgique francophone avec une stratégie SEO claire, locale et orientée demandes."
+    "descTag": "Développez votre visibilité Google en Belgique francophone avec une stratégie SEO claire, locale et orientée demandes.",
+    "service": {
+      "name": "Consultant SEO en Belgique",
+      "area": "Belgique francophone"
+    }
   },
   {
     "handle": "seo-par-ville",
@@ -173,21 +249,33 @@
     "suffix": "audit-seo",
     "title": "Audit SEO",
     "titleTag": "Audit SEO | Priorités techniques et éditoriales",
-    "descTag": "Audit SEO pour identifier les blocages techniques, sémantiques et de maillage, puis obtenir une feuille de route priorisée selon l’impact et l’effort."
+    "descTag": "Audit SEO pour identifier les blocages techniques, sémantiques et de maillage, puis obtenir une feuille de route priorisée selon l’impact et l’effort.",
+    "service": {
+      "name": "Audit de référencement",
+      "area": "France"
+    }
   },
   {
     "handle": "seo-ecommerce",
     "suffix": "seo-ecommerce",
     "title": "SEO e-commerce",
     "titleTag": "SEO e-commerce | Visibilité des catégories et produits",
-    "descTag": "SEO e-commerce pour structurer catégories, fiches produits, maillage et données techniques afin d’attirer des recherches utiles et soutenir les ventes."
+    "descTag": "SEO e-commerce pour structurer catégories, fiches produits, maillage et données techniques afin d’attirer des recherches utiles et soutenir les ventes.",
+    "service": {
+      "name": "Référencement e-commerce",
+      "area": "France"
+    }
   },
   {
     "handle": "seo-local",
     "suffix": "seo-local",
     "title": "SEO local",
     "titleTag": "SEO local | Visibilité dans vos zones prioritaires",
-    "descTag": "SEO local pour structurer vos pages, votre présence Google et vos preuves par zone afin de capter des recherches locales réellement liées à votre activité."
+    "descTag": "SEO local pour structurer vos pages, votre présence Google et vos preuves par zone afin de capter des recherches locales réellement liées à votre activité.",
+    "service": {
+      "name": "Référencement local",
+      "area": "France"
+    }
   },
   {
     "handle": "a-propos",
@@ -201,63 +289,99 @@
     "suffix": "audit-meta-ads",
     "title": "Audit Meta Ads",
     "titleTag": "Audit Meta Ads | Corriger les dépenses inutiles",
-    "descTag": "Audit Meta Ads pour examiner structure, tracking, audiences, créations et lecture des performances, puis hiérarchiser les corrections selon leur impact."
+    "descTag": "Audit Meta Ads pour examiner structure, tracking, audiences, créations et lecture des performances, puis hiérarchiser les corrections selon leur impact.",
+    "service": {
+      "name": "Audit de compte publicitaire Meta",
+      "area": "France"
+    }
   },
   {
     "handle": "analyse-concurrentielle-meta-ads",
     "suffix": "analyse-concurrentielle-meta-ads",
     "title": "Analyse concurrentielle Meta Ads",
     "titleTag": "Analyse concurrentielle Meta Ads | Angles et offres",
-    "descTag": "Analyse concurrentielle Meta Ads pour identifier les angles, offres et formats utilisés sur votre marché et orienter des tests publicitaires mieux positionnés."
+    "descTag": "Analyse concurrentielle Meta Ads pour identifier les angles, offres et formats utilisés sur votre marché et orienter des tests publicitaires mieux positionnés.",
+    "service": {
+      "name": "Analyse concurrentielle publicitaire",
+      "area": "France"
+    }
   },
   {
     "handle": "audit-ecommerce",
     "suffix": "audit-ecommerce",
     "title": "Audit e-commerce",
     "titleTag": "Audit e-commerce | Identifier les fuites de conversion",
-    "descTag": "Audit e-commerce pour analyser le parcours, les fiches produits, le panier, la réassurance et les points de friction qui limitent les ventes de votre boutique."
+    "descTag": "Audit e-commerce pour analyser le parcours, les fiches produits, le panier, la réassurance et les points de friction qui limitent les ventes de votre boutique.",
+    "service": {
+      "name": "Audit de boutique en ligne",
+      "area": "France"
+    }
   },
   {
     "handle": "audit-merchant-center",
     "suffix": "audit-merchant-center",
     "title": "Audit Merchant Center",
     "titleTag": "Audit Merchant Center | Fiabiliser votre flux produits",
-    "descTag": "Audit Merchant Center pour contrôler le flux produits, les attributs, les refus et la conformité avant d’investir davantage dans Shopping ou Performance Max."
+    "descTag": "Audit Merchant Center pour contrôler le flux produits, les attributs, les refus et la conformité avant d’investir davantage dans Shopping ou Performance Max.",
+    "service": {
+      "name": "Audit de flux Merchant Center",
+      "area": "France"
+    }
   },
   {
     "handle": "optimisation-cro",
     "suffix": "optimisation-cro",
     "title": "Optimisation CRO",
     "titleTag": "Optimisation CRO | Convertir plus de visiteurs",
-    "descTag": "Audit CRO pour identifier les frictions de vos pages, formulaires et parcours mobiles afin de transformer davantage de visiteurs en demandes ou achats."
+    "descTag": "Audit CRO pour identifier les frictions de vos pages, formulaires et parcours mobiles afin de transformer davantage de visiteurs en demandes ou achats.",
+    "service": {
+      "name": "Optimisation du taux de conversion",
+      "area": "France"
+    }
   },
   {
     "handle": "site-vitrine-pme-tpe",
     "suffix": "site-vitrine-pme-tpe",
     "title": "Création de site vitrine PME & TPE",
     "titleTag": "Site vitrine PME et TPE | Préparer la vente en amont",
-    "descTag": "Création de site vitrine pour PME et TPE afin de clarifier l’offre, présenter les preuves et transformer davantage de visites en demandes commerciales."
+    "descTag": "Création de site vitrine pour PME et TPE afin de clarifier l’offre, présenter les preuves et transformer davantage de visites en demandes commerciales.",
+    "service": {
+      "name": "Création de site vitrine pour PME",
+      "area": "France"
+    }
   },
   {
     "handle": "site-vitrine-freelance",
     "suffix": "site-vitrine-freelance",
     "title": "Site vitrine pour indépendant & freelance",
     "titleTag": "Site vitrine freelance | Présenter votre expertise",
-    "descTag": "Création de site vitrine pour freelance et indépendant afin de clarifier l’expertise, rassurer les prospects et faciliter les prises de contact qualifiées."
+    "descTag": "Création de site vitrine pour freelance et indépendant afin de clarifier l’expertise, rassurer les prospects et faciliter les prises de contact qualifiées.",
+    "service": {
+      "name": "Création de site vitrine pour indépendant",
+      "area": "France"
+    }
   },
   {
     "handle": "site-vitrine-restaurant",
     "suffix": "site-vitrine-restaurant",
     "title": "Création de site pour restaurant & CHR",
     "titleTag": "Site internet restaurant | Réservations et visibilité",
-    "descTag": "Création de site internet pour restaurant et CHR afin de présenter la carte, rassurer les clients, faciliter les réservations et renforcer la visibilité locale."
+    "descTag": "Création de site internet pour restaurant et CHR afin de présenter la carte, rassurer les clients, faciliter les réservations et renforcer la visibilité locale.",
+    "service": {
+      "name": "Création de site pour restaurant",
+      "area": "France"
+    }
   },
   {
     "handle": "site-vitrine-artisan",
     "suffix": "site-vitrine-artisan",
     "title": "Site vitrine pour artisan & BTP",
     "titleTag": "Site vitrine artisan | Générer des demandes locales",
-    "descTag": "Création de site vitrine pour artisan et BTP afin de présenter les services, les réalisations et les zones couvertes et générer des demandes locales qualifiées."
+    "descTag": "Création de site vitrine pour artisan et BTP afin de présenter les services, les réalisations et les zones couvertes et générer des demandes locales qualifiées.",
+    "service": {
+      "name": "Création de site vitrine pour artisan",
+      "area": "France"
+    }
   },
   {
     "handle": "plan-du-site",

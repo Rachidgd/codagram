@@ -637,3 +637,24 @@
   color: var(--surface-fg-faint);
   text-align: center;
 }
+
+/* ---------- Prestation liée en fin de guide ---------- */
+.cc-artcta__inner {
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+}
+@media (min-width: 48rem) {
+  .cc-artcta__inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+  }
+}
+.cc-artcta__title { margin-top: 0.6rem; max-width: 28ch; }
+.cc-artcta__text {
+  margin-top: 0.65rem;
+  color: var(--surface-fg-muted);
+  max-width: 52ch;
+}
+
+.cc-cmp__cta { margin-top: 1.35rem; }

@@ -204,6 +204,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Obtenir plus d'avis Google",
+            "text": "8 façons sans enfreindre les règles",
+            "link": "/blogs/ressources/obtenir-plus-avis-google",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Recherche de mots-clés par intention",
+            "text": "La méthode qui trouve des clients",
+            "link": "/blogs/ressources/recherche-mots-cles-methode-intentions",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Combien de temps avant les premiers résultats",
+            "text": "Les vrais délais, mois par mois",
+            "link": "/blogs/ressources/delais-resultats-seo",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -212,6 +259,7 @@
     "analyse",
     "contexte",
     "faq",
+    "lectures",
     "cta"
   ]
 }

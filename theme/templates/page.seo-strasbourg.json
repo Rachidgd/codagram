@@ -203,6 +203,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Rester visible face aux AI Overviews",
+            "text": "Quand Google répond à votre place",
+            "link": "/blogs/ressources/ai-overviews-rester-visible",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Prouver son expertise à Google",
+            "text": "E-E-A-T sans être une marque connue",
+            "link": "/blogs/ressources/eeat-prouver-expertise-google",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Core Web Vitals expliqués simplement",
+            "text": "LCP, INP, CLS et le reste",
+            "link": "/blogs/ressources/core-web-vitals-explique-simplement",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -211,6 +258,7 @@
     "contexte",
     "methode",
     "faq",
+    "lectures",
     "cta"
   ]
 }

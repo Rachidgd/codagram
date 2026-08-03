@@ -31,6 +31,58 @@
     </div>
   </div>
 
+  {%- liquid
+    assign presta_url = ''
+    if article.tags contains 'SEO local'
+      assign presta_url = '/pages/seo-local'
+      assign presta_titre = 'Être trouvé par les clients qui sont déjà à côté de vous.'
+      assign presta_texte = "Nous travaillons la proximité, la cohérence de vos informations et votre réputation, dans cet ordre."
+    elsif article.tags contains 'SEO e-commerce'
+      assign presta_url = '/pages/seo-ecommerce'
+      assign presta_titre = 'Vos acheteurs arrivent par les catégories.'
+      assign presta_texte = "Nous construisons cette architecture avant d'écrire quoi que ce soit : c'est elle qui capte le trafic qui achète."
+    elsif article.tags contains 'Audit SEO'
+      assign presta_url = '/pages/audit-seo'
+      assign presta_titre = 'Repartez avec trois priorités chiffrées.'
+      assign presta_texte = "Technique, structure sémantique et concurrence, puis un ordre d'exécution. Pas une liste de deux cents points."
+    elsif article.tags contains 'Site vitrine' or article.tags contains 'Création de site'
+      assign presta_url = '/pages/creation-site-vitrine'
+      assign presta_titre = 'Un site vitrine qui vous amène des demandes chaque semaine.'
+      assign presta_texte = "Écrit et développé pour votre activité. Il charge vite, il explique votre offre, et vous le modifiez sans nous."
+    elsif article.tags contains 'Shopify' or article.tags contains 'E-commerce'
+      assign presta_url = '/pages/agence-shopify'
+      assign presta_titre = 'Une boutique qui charge vite et qui vend mieux sur mobile.'
+      assign presta_texte = "Fiche produit, panier et paiement repris un par un, sans empiler des applications qui ralentissent tout."
+    elsif article.tags contains 'Meta Ads' or article.tags contains 'Publicité' or article.tags contains 'Créatives' or article.tags contains 'Analyse concurrentielle'
+      assign presta_url = '/pages/expert-meta-ads'
+      assign presta_titre = 'Des campagnes pilotées sur ce qu&#39;elles vous rapportent.'
+      assign presta_texte = "Offre, page d'arrivée et suivi vérifiés avant la première dépense, puis pilotage sur la marge."
+    elsif article.tags contains 'CRO' or article.tags contains 'Conversion'
+      assign presta_url = '/pages/optimisation-cro'
+      assign presta_titre = 'Le même trafic, plus de demandes.'
+      assign presta_texte = "Nous trouvons où vos visiteurs abandonnent, puis nous retirons une à une les raisons d'hésiter."
+    else
+      assign presta_url = '/pages/agence-seo'
+      assign presta_titre = 'Recevez chaque mois des demandes venues de Google.'
+      assign presta_texte = "Nous repérons les recherches qui précèdent un achat, nous plaçons vos pages dessus, et nous les rendons capables de déclencher un appel."
+    endif
+  -%}
+
+  {%- if presta_url != blank -%}
+    <section class="cc-artcta surface-paper section-y" data-surface="paper">
+      <div class="shell cc-artcta__inner" data-reveal>
+        <div>
+          <p class="eyebrow">La prestation liée</p>
+          <h2 class="cc-artcta__title">{{ presta_titre }}</h2>
+          <p class="cc-artcta__text">{{ presta_texte }}</p>
+        </div>
+        <a class="btn btn--primary btn--lg" href="{{ presta_url }}">
+          Voir la prestation{%- render 'icon', name: 'arrow', size: 15 -%}
+        </a>
+      </div>
+    </section>
+  {%- endif -%}
+
   {%- if blog.articles.size > 1 -%}
     <section class="surface-dark section-y" data-surface="dark">
       <div class="shell">

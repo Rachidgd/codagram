@@ -233,6 +233,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Checklist d'audit SEO",
+            "text": "Les 12 points vérifiés en premier",
+            "link": "/blogs/ressources/checklist-audit-seo",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Combien coûte un audit SEO",
+            "text": "Prix, livrables et pièges",
+            "link": "/blogs/ressources/combien-coute-audit-seo",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Search Console : les 5 rapports utiles",
+            "text": "Et comment les lire",
+            "link": "/blogs/ressources/search-console-rapports-essentiels",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -241,6 +288,7 @@
     "livrables",
     "position",
     "faq",
+    "lectures",
     "cta"
   ]
 }

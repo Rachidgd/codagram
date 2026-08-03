@@ -21,7 +21,9 @@
         "reverse": true,
         "eyebrow": "Le vrai enjeu",
         "title": "Un bon site vous fait recevoir moins d'appels, et de meilleurs.",
-        "text": "<p>Beaucoup d'artisans nous décrivent la même journée : quinze appels, dont trois dans la zone, deux dans le métier, et un seul avec un budget réaliste. Le temps perdu ne se rattrape pas le soir.</p><p>Nous rendons donc explicites les trois critères qui écartent les demandes non pertinentes — sans faire fuir les bonnes.</p>"
+        "text": "<p>Beaucoup d'artisans nous décrivent la même journée : quinze appels, dont trois dans la zone, deux dans le métier, et un seul avec un budget réaliste. Le temps perdu ne se rattrape pas le soir.</p><p>Nous rendons donc explicites les trois critères qui écartent les demandes non pertinentes — sans faire fuir les bonnes.</p>",
+        "cta_label": "Recevoir mes priorités",
+        "cta_url": "/pages/reserver"
       },
       "blocks": {
         "b1": {
@@ -239,6 +241,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Optimiser sa fiche Google Business",
+            "text": "Ce qui fait monter dans la carte",
+            "link": "/blogs/ressources/optimiser-fiche-google-business-profile",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Obtenir plus d'avis Google",
+            "text": "8 façons sans enfreindre les règles",
+            "link": "/blogs/ressources/obtenir-plus-avis-google",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Des pages villes sans duplication",
+            "text": "Ranker localement proprement",
+            "link": "/blogs/ressources/creer-pages-villes-sans-duplicate",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -247,6 +296,7 @@
     "deroule",
     "perimetre",
     "faq",
+    "lectures",
     "cta"
   ]
 }

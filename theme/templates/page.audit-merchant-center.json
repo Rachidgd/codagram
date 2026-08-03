@@ -228,6 +228,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Données structurées produit",
+            "text": "Prix, stock et étoiles dans Google",
+            "link": "/blogs/ressources/donnees-structurees-produit-google",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Collections Shopify : l'architecture",
+            "text": "Celle qui fait ranker et vendre",
+            "link": "/blogs/ressources/collections-shopify-architecture-seo",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Migrer vers Shopify sans casse",
+            "text": "Le plan complet",
+            "link": "/blogs/ressources/migrer-vers-shopify-sans-perdre-seo",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -236,6 +283,7 @@
     "enjeu",
     "deroule",
     "faq",
+    "lectures",
     "cta"
   ]
 }

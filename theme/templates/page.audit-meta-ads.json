@@ -132,7 +132,9 @@
         "col_criteria": "Critère",
         "col_a": "Nous pilotons",
         "col_b": "Vous ou votre équipe pilotez",
-        "verdict": "Sur un budget média limité, des honoraires de pilotage peuvent représenter une part disproportionnée de la dépense. Nous vous le dirons plutôt que de vous vendre un accompagnement."
+        "verdict": "Sur un budget média limité, des honoraires de pilotage peuvent représenter une part disproportionnée de la dépense. Nous vous le dirons plutôt que de vous vendre un accompagnement.",
+        "cta_label": "Demander l'audit",
+        "cta_url": "/pages/reserver"
       },
       "blocks": {
         "r1": {
@@ -263,6 +265,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Calculer son ROAS avec sa marge",
+            "text": "Et arrêter de croire au chiffre brut",
+            "link": "/blogs/ressources/calculer-roas-avec-marge",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Structurer un compte Meta Ads",
+            "text": "Le setup qui laisse l'algo travailler",
+            "link": "/blogs/ressources/structure-compte-meta-ads-2026",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Pixel Meta et API de conversion",
+            "text": "L'installation propre sur Shopify",
+            "link": "/blogs/ressources/pixel-meta-api-conversion-shopify",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -271,6 +320,7 @@
     "deroule",
     "comparaison",
     "faq",
+    "lectures",
     "cta"
   ]
 }

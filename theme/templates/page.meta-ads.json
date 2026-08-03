@@ -61,7 +61,9 @@
         "reverse": true,
         "eyebrow": "Notre méthode",
         "title": "Nous pilotons sur la marge, jamais sur le coût par clic.",
-        "text": "<p>Un coût par clic qui baisse peut parfaitement accompagner une rentabilité qui s'effondre. Le seul indicateur qui décide, c'est ce que rapporte un euro investi une fois toutes les charges déduites.</p><p>Nous remontons donc la chaîne complète : impression, clic, page de destination, formulaire ou panier, puis valeur réelle du client. Chaque décision d'augmentation de budget s'appuie sur ce trajet entier.</p>"
+        "text": "<p>Un coût par clic qui baisse peut parfaitement accompagner une rentabilité qui s'effondre. Le seul indicateur qui décide, c'est ce que rapporte un euro investi une fois toutes les charges déduites.</p><p>Nous remontons donc la chaîne complète : impression, clic, page de destination, formulaire ou panier, puis valeur réelle du client. Chaque décision d'augmentation de budget s'appuie sur ce trajet entier.</p>",
+        "cta_label": "Faire auditer mon compte",
+        "cta_url": "/pages/audit-meta-ads"
       },
       "blocks": {
         "b1": {
@@ -248,6 +250,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Structurer un compte Meta Ads",
+            "text": "Le setup qui laisse l'algo travailler",
+            "link": "/blogs/ressources/structure-compte-meta-ads-2026",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "12 angles créatifs qui arrêtent le scroll",
+            "text": "Avec exemples décortiqués",
+            "link": "/blogs/ressources/angles-creatifs-publicite-meta",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Pixel Meta et API de conversion",
+            "text": "L'installation propre sur Shopify",
+            "link": "/blogs/ressources/pixel-meta-api-conversion-shopify",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -257,6 +306,7 @@
     "perimetre",
     "position",
     "faq",
+    "lectures",
     "cta"
   ]
 }

@@ -45,7 +45,9 @@
         "reverse": false,
         "eyebrow": "Le principe",
         "title": "Une intention d'achat, une page — et une seule.",
-        "text": "<p>« Chaussures de running », « chaussures de running femme », « chaussures de running trail » : trois intentions différentes, donc trois pages distinctes. À l'inverse, une même intention couverte par une catégorie, un filtre et une page de contenu crée trois concurrents internes qui s'annulent.</p><p>La première étape d'une mission e-commerce est presque toujours un travail de tri : quelles pages garder, lesquelles fusionner, lesquelles rediriger.</p>"
+        "text": "<p>« Chaussures de running », « chaussures de running femme », « chaussures de running trail » : trois intentions différentes, donc trois pages distinctes. À l'inverse, une même intention couverte par une catégorie, un filtre et une page de contenu crée trois concurrents internes qui s'annulent.</p><p>La première étape d'une mission e-commerce est presque toujours un travail de tri : quelles pages garder, lesquelles fusionner, lesquelles rediriger.</p>",
+        "cta_label": "Faire auditer ma boutique",
+        "cta_url": "/pages/audit-ecommerce"
       },
       "blocks": {
         "b1": {
@@ -337,6 +339,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Collections Shopify : l'architecture",
+            "text": "Celle qui fait ranker et vendre",
+            "link": "/blogs/ressources/collections-shopify-architecture-seo",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Données structurées produit",
+            "text": "Prix, stock et étoiles dans Google",
+            "link": "/blogs/ressources/donnees-structurees-produit-google",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "La fiche produit en 9 blocs",
+            "text": "Structure qui transforme",
+            "link": "/blogs/ressources/fiche-produit-structure-conversion",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -347,6 +396,7 @@
     "flux",
     "position",
     "faq",
+    "lectures",
     "cta"
   ]
 }

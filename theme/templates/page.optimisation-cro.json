@@ -55,7 +55,9 @@
         "reverse": false,
         "eyebrow": "Le diagnostic",
         "title": "Vos visiteurs sont prêts à acheter. Quelque chose les arrête.",
-        "text": "<p>La conclusion la plus fréquente — et la plus fausse — est d'accuser la qualité du trafic. Dans la plupart des cas que nous reprenons, les visiteurs étaient les bons. C'est la page qui ne répondait pas à leur question au bon moment.</p><p>Nous partons donc de l'observation, pas de l'opinion : enregistrements de sessions, points d'abandon, formulaires abandonnés à mi-parcours, requêtes internes sans résultat.</p>"
+        "text": "<p>La conclusion la plus fréquente — et la plus fausse — est d'accuser la qualité du trafic. Dans la plupart des cas que nous reprenons, les visiteurs étaient les bons. C'est la page qui ne répondait pas à leur question au bon moment.</p><p>Nous partons donc de l'observation, pas de l'opinion : enregistrements de sessions, points d'abandon, formulaires abandonnés à mi-parcours, requêtes internes sans résultat.</p>",
+        "cta_label": "Trouver mes points d'abandon",
+        "cta_url": "/pages/reserver"
       },
       "blocks": {
         "b1": {
@@ -352,6 +354,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Trouver ses fuites de conversion",
+            "text": "Microsoft Clarity en une heure",
+            "link": "/blogs/ressources/microsoft-clarity-trouver-fuites-conversion",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Anatomie d'une page contact qui convertit",
+            "text": "7 éléments souvent absents",
+            "link": "/blogs/ressources/page-contact-qui-convertit",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "A/B tester avec peu de trafic",
+            "text": "Ce qui est réellement testable",
+            "link": "/blogs/ressources/ab-testing-petit-trafic",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -361,6 +410,7 @@
     "leviers",
     "format",
     "faq",
+    "lectures",
     "cta"
   ]
 }

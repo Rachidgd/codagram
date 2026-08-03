@@ -204,6 +204,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Maillage interne et cocon sémantique",
+            "text": "Muscler ses pages business",
+            "link": "/blogs/ressources/maillage-interne-cocon-semantique",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "15 formules de balises title",
+            "text": "Pour augmenter le taux de clic",
+            "link": "/blogs/ressources/balises-title-formules-ctr",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Checklist d'audit SEO",
+            "text": "Les 12 points vérifiés en premier",
+            "link": "/blogs/ressources/checklist-audit-seo",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -212,6 +259,7 @@
     "analyse",
     "contexte",
     "faq",
+    "lectures",
     "cta"
   ]
 }

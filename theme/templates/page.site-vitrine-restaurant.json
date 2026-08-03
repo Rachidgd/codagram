@@ -61,7 +61,9 @@
         "reverse": true,
         "eyebrow": "L'ordre des priorités",
         "title": "Le menu et les horaires avant l'histoire de la maison.",
-        "text": "<p>La page d'accueil d'un restaurant s'ouvre le plus souvent sur un texte d'ambiance, tandis que le menu se cache derrière un fichier à télécharger. C'est l'exact inverse de ce que cherche le visiteur.</p><p>Nous plaçons en premier ce qui déclenche la venue, et nous gardons le récit pour ceux qui font défiler — ils existent, mais ils sont minoritaires.</p>"
+        "text": "<p>La page d'accueil d'un restaurant s'ouvre le plus souvent sur un texte d'ambiance, tandis que le menu se cache derrière un fichier à télécharger. C'est l'exact inverse de ce que cherche le visiteur.</p><p>Nous plaçons en premier ce qui déclenche la venue, et nous gardons le récit pour ceux qui font défiler — ils existent, mais ils sont minoritaires.</p>",
+        "cta_label": "Parler de mon établissement",
+        "cta_url": "/pages/reserver"
       },
       "blocks": {
         "b1": {
@@ -230,6 +232,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Optimiser sa fiche Google Business",
+            "text": "Ce qui fait monter dans la carte",
+            "link": "/blogs/ressources/optimiser-fiche-google-business-profile",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Obtenir plus d'avis Google",
+            "text": "8 façons sans enfreindre les règles",
+            "link": "/blogs/ressources/obtenir-plus-avis-google",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Anatomie d'une page contact qui convertit",
+            "text": "7 éléments souvent absents",
+            "link": "/blogs/ressources/page-contact-qui-convertit",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -238,6 +287,7 @@
     "priorite",
     "perimetre",
     "faq",
+    "lectures",
     "cta"
   ]
 }

@@ -178,6 +178,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Prouver son expertise à Google",
+            "text": "E-E-A-T sans être une marque connue",
+            "link": "/blogs/ressources/eeat-prouver-expertise-google",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Agence SEO ou consultant",
+            "text": "Ce qui change vraiment",
+            "link": "/blogs/ressources/agence-seo-ou-consultant-seo",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Choisir une agence SEO sans se faire avoir",
+            "text": "Les questions qui trient",
+            "link": "/blogs/ressources/comment-choisir-votre-agence-seo-sans-vous-faire-avoir",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -186,6 +233,7 @@
     "equipe",
     "position",
     "faq",
+    "lectures",
     "cta"
   ]
 }

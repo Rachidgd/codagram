@@ -250,6 +250,53 @@
         "c5",
         "c6"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Combien de temps avant les premiers résultats",
+            "text": "Les vrais délais, mois par mois",
+            "link": "/blogs/ressources/delais-resultats-seo",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Search Console : les 5 rapports utiles",
+            "text": "Et comment les lire",
+            "link": "/blogs/ressources/search-console-rapports-essentiels",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Calculer son ROAS avec sa marge",
+            "text": "Et arrêter de croire au chiffre brut",
+            "link": "/blogs/ressources/calculer-roas-avec-marge",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -257,6 +304,7 @@
     "cas",
     "clients",
     "lecture",
+    "lectures",
     "cta"
   ]
 }

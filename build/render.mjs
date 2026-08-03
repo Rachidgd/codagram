@@ -380,11 +380,35 @@ const pages = manifest.map((p) => {
         seo_release: {
           title_tag: { value: p.titleTag || '' },
           description_tag: { value: p.descTag || '' }
+        },
+        seo_service: {
+          name: { value: (p.service || {}).name || '' },
+          area: { value: (p.service || {}).area || '' },
+          type: { value: '' }
         }
       }
     }
   }];
-}).concat([['404', '404', { request: { locale: { iso_code: 'fr' }, page_type: '404' } }]]);
+}).concat([
+  ['404', '404', { request: { locale: { iso_code: 'fr' }, page_type: '404' } }],
+  ['article-shopify', 'article.guide-expert', {
+    canonical_url: 'https://clickscreation.com/blogs/ressources/vitesse-shopify-optimisations',
+    request: { locale: { iso_code: 'fr' }, page_type: 'article' },
+    article: {
+      title: 'Site Shopify lent : 11 optimisations de vitesse',
+      handle: 'vitesse-shopify-optimisations',
+      content: '<h2>Mesurer avant de toucher</h2><p>Un site lent perd des commandes.</p>',
+      author: 'Mathieu · Clickscreation',
+      published_at: '2026-05-14T09:00:00+0200',
+      tags: ['Shopify', 'Performance'],
+      image: null, metafields: {}
+    },
+    blog: { title: 'Ressources', url: '/blogs/ressources', articles: [
+      { id: 1, title: 'Autre guide A', url: '/blogs/ressources/a', published_at: '2026-05-01' },
+      { id: 2, title: 'Autre guide B', url: '/blogs/ressources/b', published_at: '2026-04-01' }
+    ] }
+  }]
+]);
 
 fs.mkdirSync(OUT, { recursive: true });
 const assetLink = path.join(OUT, 'assets');

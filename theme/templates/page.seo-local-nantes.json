@@ -204,6 +204,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Combien de temps avant les premiers résultats",
+            "text": "Les vrais délais, mois par mois",
+            "link": "/blogs/ressources/delais-resultats-seo",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Maillage interne et cocon sémantique",
+            "text": "Muscler ses pages business",
+            "link": "/blogs/ressources/maillage-interne-cocon-semantique",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "15 formules de balises title",
+            "text": "Pour augmenter le taux de clic",
+            "link": "/blogs/ressources/balises-title-formules-ctr",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -212,6 +259,7 @@
     "analyse",
     "methode",
     "faq",
+    "lectures",
     "cta"
   ]
 }

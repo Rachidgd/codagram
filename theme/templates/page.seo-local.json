@@ -129,7 +129,9 @@
         "reverse": true,
         "eyebrow": "L'erreur à éviter",
         "title": "Dupliquer une page en changeant le nom de la ville ne marche plus.",
-        "text": "<p>C'est la méthode la plus répandue et la plus contre-productive : produire trente pages identiques où seul le toponyme change. Les moteurs identifient ces gabarits, n'en retiennent qu'une, et l'ensemble finit ignoré.</p><p>Une page locale doit dire quelque chose de vrai sur ce territoire : son tissu économique, la concurrence qui s'y trouve, les demandes spécifiques qu'on y reçoit. Sinon elle n'a aucune raison d'exister.</p>"
+        "text": "<p>C'est la méthode la plus répandue et la plus contre-productive : produire trente pages identiques où seul le toponyme change. Les moteurs identifient ces gabarits, n'en retiennent qu'une, et l'ensemble finit ignoré.</p><p>Une page locale doit dire quelque chose de vrai sur ce territoire : son tissu économique, la concurrence qui s'y trouve, les demandes spécifiques qu'on y reçoit. Sinon elle n'a aucune raison d'exister.</p>",
+        "cta_label": "Relever mes positions locales",
+        "cta_url": "/pages/reserver"
       },
       "blocks": {
         "b1": {
@@ -287,6 +289,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Optimiser sa fiche Google Business",
+            "text": "Ce qui fait monter dans la carte",
+            "link": "/blogs/ressources/optimiser-fiche-google-business-profile",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Des pages villes sans duplication",
+            "text": "Ranker localement proprement",
+            "link": "/blogs/ressources/creer-pages-villes-sans-duplicate",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Obtenir plus d'avis Google",
+            "text": "8 façons sans enfreindre les règles",
+            "link": "/blogs/ressources/obtenir-plus-avis-google",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -296,6 +345,7 @@
     "erreur",
     "deroule",
     "faq",
+    "lectures",
     "cta"
   ]
 }

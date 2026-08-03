@@ -64,8 +64,8 @@
         "eyebrow": "Ce qui fait la différence",
         "title": "Votre visiteur balaie la page et décide en dix secondes.",
         "text": "<p>En moyenne, un visiteur accorde quelques secondes à une page avant de décider s'il continue. Il ne cherche pas votre histoire, il cherche à savoir si vous résolvez son problème, si vous êtes crédible et combien ça coûte.</p><p>Nous construisons donc chaque page dans cet ordre-là : le problème d'abord, la preuve ensuite, la demande de contact quand la valeur est comprise — jamais avant.</p>",
-        "cta_label": "Voir le déroulé",
-        "cta_url": "#deroule"
+        "cta_label": "Faire cadrer mon projet",
+        "cta_url": "/pages/reserver"
       },
       "blocks": {
         "b1": {
@@ -378,6 +378,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Cahier des charges d'un site vitrine",
+            "text": "Le modèle à remplir",
+            "link": "/blogs/ressources/cahier-des-charges-site-vitrine",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Combien coûte un site vitrine",
+            "text": "Les fourchettes honnêtes",
+            "link": "/blogs/ressources/prix-site-vitrine-2026",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Un site vitrine sans demandes",
+            "text": "Les 7 corrections prioritaires",
+            "link": "/blogs/ressources/site-vitrine-pas-de-demandes-2026",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -388,6 +435,7 @@
     "metiers",
     "choix",
     "faq",
+    "lectures",
     "cta"
   ]
 }

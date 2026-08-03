@@ -543,6 +543,36 @@
         "c5",
         "c6"
       ]
+    },
+    "relance": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Un point d'étape",
+        "title": "Ces chiffres, nous pouvons les relever chez vous.",
+        "text": "Donnez-nous votre activité et votre ville. Nous vous envoyons vos positions actuelles, ce que vous ne captez pas encore, et par quoi commencer.",
+        "cta_label": "Demander mon diagnostic",
+        "note": "Gratuit, sans engagement — réponse sous 48 h",
+        "link_label": "Voir la méthode",
+        "link_url": "/pages/a-propos"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé géolocalisé"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Trois priorités chiffrées"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
     }
   },
   "order": [
@@ -551,6 +581,7 @@
     "selector",
     "levers",
     "results",
+    "relance",
     "method",
     "work"
   ]

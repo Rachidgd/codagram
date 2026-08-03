@@ -438,3 +438,20 @@ Seule exception : la mention de licence MIT de Tailwind en tête de
 `signal.css`, dont la conservation est une obligation légale.
 
 Effet de bord mesuré : `signal.js` passe de 32,6 Ko à 26,0 Ko (6,6 Ko gzip).
+
+## Pipeline de génération
+
+L'ordre compte : `maillage.py` s'applique aux gabarits déjà écrits.
+
+```bash
+for f in build/pages_*.py; do python3 "$f"; done   # écrit les gabarits
+python3 build/maillage.py                          # y insère « Lire aussi »
+npm run build:css
+```
+
+`build/maillage.py` refuse de s'exécuter si un guide cité n'existe pas dans
+`build/blog_articles.json` : un lien mort ne peut pas passer inaperçu.
+
+Le lien article → prestation ne se règle nulle part : `main-article.liquid` le
+déduit de l'étiquette de l'article. Un nouvel article correctement étiqueté
+pointe automatiquement vers la bonne page.

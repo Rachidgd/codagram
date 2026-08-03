@@ -163,7 +163,9 @@
         "reverse": true,
         "eyebrow": "Déroulé",
         "title": "Quatre phases, des points de validation à chacune.",
-        "text": "<p>Vous voyez le travail avancer et vous validez à chaque étape. Aucun projet ne part en développement sans que la structure et les contenus soient arrêtés — c'est ce qui évite les refontes en cours de route.</p>"
+        "text": "<p>Vous voyez le travail avancer et vous validez à chaque étape. Aucun projet ne part en développement sans que la structure et les contenus soient arrêtés — c'est ce qui évite les refontes en cours de route.</p>",
+        "cta_label": "Faire auditer ma boutique",
+        "cta_url": "/pages/audit-ecommerce"
       },
       "blocks": {
         "s1": {
@@ -303,6 +305,53 @@
         "r2",
         "r3"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "11 optimisations de vitesse Shopify",
+            "text": "Réalisables sans développeur",
+            "link": "/blogs/ressources/vitesse-shopify-optimisations",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Apps Shopify : les 10 utiles",
+            "text": "Et celles qui ruinent la vitesse",
+            "link": "/blogs/ressources/apps-shopify-utiles-et-a-eviter",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Une boutique Shopify qui convertit",
+            "text": "La checklist complète",
+            "link": "/blogs/ressources/boutique-shopify-qui-convertit-2026",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -311,6 +360,7 @@
     "inclus",
     "methode",
     "faq",
+    "lectures",
     "cta"
   ]
 }

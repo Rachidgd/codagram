@@ -1,1 +1,60 @@
-{"sections":{"main":{"type":"page-contact"}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "page-contact"
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Avant d'écrire",
+        "title": "Ce que vous voulez sans doute savoir.",
+        "text": "",
+        "cta_label": "",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Sous combien de temps répondez-vous ?",
+            "answer": "<p>Sous 48 heures ouvrées, à l'adresse que vous indiquez. Si votre demande sort de ce que nous savons faire, nous vous le disons dans la même réponse plutôt que de vous faire perdre un rendez-vous.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il un budget minimum pour vous écrire ?",
+            "answer": "<p>Non. Le premier échange est gratuit et sans engagement. Nous vous dirons franchement si votre budget permet d'obtenir un résultat, et sinon par quoi commencer vous-même en attendant.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Travaillez-vous avec des entreprises hors de France ?",
+            "answer": "<p>Oui. Nous accompagnons des clients en Suisse romande, en Belgique francophone et au Luxembourg. Le travail se fait à distance, et nous connaissons les particularités de recherche de ces trois marchés.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Que se passe-t-il après mon message ?",
+            "answer": "<p>Nous regardons votre site et votre marché avant de vous répondre. Vous recevez une lecture écrite de votre situation, pas un rendez-vous commercial déguisé en diagnostic.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "faq"
+  ]
+}

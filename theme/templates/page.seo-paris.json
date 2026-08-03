@@ -212,6 +212,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Des pages villes sans duplication",
+            "text": "Ranker localement proprement",
+            "link": "/blogs/ressources/creer-pages-villes-sans-duplicate",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Optimiser sa fiche Google Business",
+            "text": "Ce qui fait monter dans la carte",
+            "link": "/blogs/ressources/optimiser-fiche-google-business-profile",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Obtenir plus d'avis Google",
+            "text": "8 façons sans enfreindre les règles",
+            "link": "/blogs/ressources/obtenir-plus-avis-google",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -220,6 +267,7 @@
     "analyse",
     "methode",
     "faq",
+    "lectures",
     "cta"
   ]
 }

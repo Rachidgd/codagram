@@ -210,6 +210,53 @@
         "r1",
         "r2"
       ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides sur le sujet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Décoder les publicités des concurrents",
+            "text": "La méthode Ad Library",
+            "link": "/blogs/ressources/ad-library-analyser-pubs-concurrents",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "12 angles créatifs qui arrêtent le scroll",
+            "text": "Avec exemples décortiqués",
+            "link": "/blogs/ressources/angles-creatifs-publicite-meta",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Calculer son ROAS avec sa marge",
+            "text": "Et arrêter de croire au chiffre brut",
+            "link": "/blogs/ressources/calculer-roas-avec-marge",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
     }
   },
   "order": [
@@ -218,6 +265,7 @@
     "lecture",
     "livrables",
     "faq",
+    "lectures",
     "cta"
   ]
 }
