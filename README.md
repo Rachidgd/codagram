@@ -310,6 +310,46 @@ python3 build/bodies_geo.py   # régénère les corps + audit de duplication
 Rennes, Strasbourg, Montpellier, Grenoble, Luxembourg) et 3 marchés
 transfrontaliers (Luxembourg, Suisse, Belgique). Les 16 sont rattachées.
 
+## Règles de rédaction
+
+Le texte suit la logique AIDA, avec une contrainte : **le prospect doit savoir
+ce qu'il gagne avant d'avoir fait défiler**.
+
+| Étape | Où | Ce qu'elle doit faire |
+|---|---|---|
+| Attention | H1 du hero | Nommer le gain, pas l'activité de l'agence |
+| Intérêt | accroche, sélecteur de symptôme | Dire comment, concrètement, en phrases courtes |
+| Désir | résultats datés, méthode | Prouver, et lever le risque |
+| Action | appel du pied de page | Une seule demande, sans friction |
+
+Quatre interdits, tous vérifiés automatiquement :
+
+1. **Le lexique creux** — « levier », « démarche », « solution », « booster »,
+   « à vos côtés », « il est essentiel de »… Un mot qui ne dit rien au prospect
+   ne reste pas.
+2. **Les phrases de plus de 28 mots** — elles se relisent deux fois, c'est de
+   la friction.
+3. **Le hero sans gain nommé** — demandes, clients, trafic, ventes, appels,
+   devis. Si aucun n'apparaît, le visiteur ne sait pas ce qu'il vient chercher.
+4. **Les tics de rédaction** — un procédé répété de page en page sonne
+   automatique, même quand chaque phrase prise seule est bonne. L'antithèse
+   « X, pas Y » et la question rhétorique en titre sont comptées à l'échelle du
+   site, pas de la page.
+
+```bash
+python3 build/copy.py                       # tout le site
+python3 build/copy.py theme/templates/index.json   # un gabarit
+```
+
+État mesuré sur les 39 gabarits réellement publiés : **0 mot creux, 0 phrase de
+plus de 28 mots, 0 hero sans gain nommé, 4 titres à tic** — ces quatre-là sont
+gardés volontairement, parce qu'un procédé employé une fois est un effet de
+style et non un tic.
+
+Quatre pages parlent plus d'elles que du prospect : `resultats`,
+`a-propos`, `etudes-de-cas` et `optimisation-cro`. C'est le sujet même des
+trois premières ; la quatrième est à 20 contre 18, à surveiller sans plus.
+
 ## Contrôle anti-duplication
 
 ```bash
