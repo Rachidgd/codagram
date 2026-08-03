@@ -1,0 +1,216 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement naturel — Grenoble",
+        "title": "Un marché où l'expertise se démontre avant de se vendre.",
+        "lead": "Microélectronique, énergie, instrumentation, montagne : le tissu grenoblois est probablement l'un des plus techniques de France. Les prospects y sont ingénieurs, ils lisent avant de contacter, et ils repèrent immédiatement l'argumentaire creux.",
+        "cta_primary": "Évaluer ma visibilité",
+        "parent_label": "SEO local",
+        "parent_url": "/pages/seo-local",
+        "cta_secondary": "Voir toutes les zones",
+        "cta_secondary_url": "/pages/seo-par-ville"
+      }
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui caractérise ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "R&D",
+            "label": "une densité rare",
+            "note": "Laboratoires, centres de recherche et sous-traitance de haute technicité."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Montagne",
+            "label": "un marché saisonnier propre",
+            "note": "Équipement, tourisme, services d'altitude : des recherches concentrées sur quelques mois."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Vallées",
+            "label": "une géographie contraignante",
+            "note": "Grenoble, Voiron, Grésivaudan : des bassins séparés par le relief autant que par la distance."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "methode": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Se rendre crédible auprès d'un public technique.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Identifier le vocabulaire réel",
+            "text": "Relever les termes exacts employés dans votre filière. L'approximation se voit immédiatement.",
+            "duration": "Semaine 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Produire de la documentation",
+            "text": "Notes techniques, cas d'application, contraintes et limites. Ce qui se lit et se partage entre pairs.",
+            "duration": "Semaines 2-8"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Afficher les qualifications",
+            "text": "Certifications, équipements, moyens de contrôle. Le filtre que le prospect applique en premier.",
+            "duration": "Semaine 2"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Couvrir les bassins",
+            "text": "Traiter séparément les vallées où vous intervenez : le relief structure les recherches.",
+            "duration": "Semaines 4-10"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": true,
+        "eyebrow": "Notre lecture",
+        "title": "Un prospect ingénieur ne lit pas un argumentaire, il cherche des données.",
+        "text": "<p>« Solutions innovantes » et « savoir-faire reconnu » n'ont aucun effet sur ce public — ils en ont même un négatif, en signalant l'absence de contenu réel. Ce qui convainc : des tolérances, des matériaux, des délais, des limites clairement énoncées.</p><p>C'est plus exigeant à produire, et c'est exactement pour cela que la concurrence y est faible.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Des chiffres, pas des adjectifs",
+            "text": "Capacités, précisions, volumes traités. Ce qui permet de vous présélectionner."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Les limites annoncées",
+            "text": "Dire ce que vous ne faites pas installe la crédibilité sur tout le reste."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Des cas documentés",
+            "text": "Un problème, une contrainte, une solution. Le format qui circule entre professionnels."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur cette zone.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Mon marché est trop spécialisé pour le référencement.",
+            "answer": "<p>Un marché spécialisé est le terrain le plus favorable au référencement, pas le moins : peu de volume, mais une intention d'achat presque systématique et quasiment aucun concurrent produisant du contenu sérieux. Dix visiteurs par mois qui cherchent exactement votre procédé valent mieux que mille visiteurs curieux.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il traiter Voiron et le Grésivaudan séparément ?",
+            "answer": "<p>Oui, si vous y intervenez. Le relief structure les habitudes autant que l'administration : un client du Grésivaudan cherche rarement « Grenoble ». Ce sont des zones distinctes, avec une concurrence bien plus faible que sur la ville-centre.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Vérifions si votre expertise est trouvable.",
+        "text": "Donnez-nous votre domaine technique. Nous cherchons ce que tapent vos prospects et regardons si vous apparaissez dessus.",
+        "cta_label": "Demander un relevé de position",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé géolocalisé"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "contexte",
+    "methode",
+    "analyse",
+    "faq",
+    "cta"
+  ]
+}

@@ -4,40 +4,258 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Audit publicitaire Meta",
+        "title": "Savoir où part votre budget avant d'en dépenser plus.",
+        "lead": "Nous reprenons l'historique complet de votre compte : structure, audiences, créations, suivi des conversions et rentabilité réelle par campagne. Vous saurez ce qui produit, ce qui coûte, et ce qui devrait être arrêté aujourd'hui.",
+        "cta_primary": "Demander l'audit",
+        "parent_label": "Audits",
+        "parent_url": "/pages/audit-seo",
+        "cta_secondary": "Voir la prestation Meta Ads",
+        "cta_secondary_url": "/pages/expert-meta-ads"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "perimetre": {
+      "type": "content-grid",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "dark",
+        "density": "comfortable",
+        "eyebrow": "Ce que nous examinons",
+        "title": "Six angles d'analyse.",
+        "text": "L'ordre n'est pas neutre : un problème de suivi rend l'analyse des créations inexploitable, on commence donc par là."
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Fiabilité du suivi",
+            "text": "Pixel, conversions serveur, doublons d'événements, correspondance avec vos ventes réelles. Le point de départ obligatoire."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Structure du compte",
+            "text": "Chevauchement d'audiences, campagnes qui s'enchérissent entre elles, budgets fragmentés."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "megaphone",
+            "title": "Angles créatifs",
+            "text": "Combien d'idées réellement différentes sont testées, et depuis combien de temps elles tournent."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Audiences",
+            "text": "Pertinence, taille, degré de recoupement, dépendance excessive au reciblage."
+          }
+        },
+        "g5": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Pages de destination",
+            "text": "Cohérence entre la promesse publicitaire et ce que trouve le visiteur après le clic."
+          }
+        },
+        "g6": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Rentabilité réelle",
+            "text": "Coût par acquisition rapporté à votre marge, pas au chiffre d'affaires affiché dans l'interface."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ]
+    },
+    "deroule": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Une semaine, trois temps.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Accès et cadrage",
+            "text": "Vous nous donnez un accès en lecture. Nous cadrons vos objectifs et votre marge réelle par produit ou prestation.",
+            "duration": "Jour 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Analyse",
+            "text": "Reprise de l'historique disponible, croisement avec vos données de vente, identification des écarts.",
+            "duration": "Jours 2-5"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Restitution",
+            "text": "Document commenté et échange. Vous repartez avec ce qu'il faut arrêter, garder et tester en priorité.",
+            "duration": "Jour 7"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "comparaison": {
+      "type": "content-compare",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Deux suites possibles",
+        "title": "Après l'audit : reprise en main ou transmission ?",
+        "text": "L'audit ne vous engage à rien. Voici les deux suites que nous proposons.",
+        "col_criteria": "Critère",
+        "col_a": "Nous pilotons",
+        "col_b": "Vous ou votre équipe pilotez",
+        "verdict": "Sur un budget média limité, des honoraires de pilotage peuvent représenter une part disproportionnée de la dépense. Nous vous le dirons plutôt que de vous vendre un accompagnement."
+      },
+      "blocks": {
+        "r1": {
+          "type": "row",
+          "settings": {
+            "criteria": "Qui exécute",
+            "value_a": "Nous, sur votre compte",
+            "value_b": "Votre équipe ou votre prestataire"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "criteria": "Rythme",
+            "value_a": "Arbitrages hebdomadaires",
+            "value_b": "À votre main"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "criteria": "Créations",
+            "value_a": "Produites par nous",
+            "value_b": "À votre charge"
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "criteria": "Coût",
+            "value_a": "Honoraires mensuels",
+            "value_b": "Aucun coût supplémentaire"
+          }
+        },
+        "r5": {
+          "type": "row",
+          "settings": {
+            "criteria": "Pertinent si",
+            "value_a": "Personne en interne n'a le temps ni l'habitude",
+            "value_b": "Vous avez déjà quelqu'un de compétent"
+          }
+        },
+        "r6": {
+          "type": "row",
+          "settings": {
+            "criteria": "Notre avis",
+            "value_a": "Recommandé au-delà d'un certain budget média",
+            "value_b": "Suffisant sur des budgets modestes"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur l'audit Meta Ads.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il un historique long pour que l'audit soit utile ?",
+            "answer": "<p>Trois mois de diffusion continue constituent une base confortable. En dessous, l'analyse porte davantage sur la structure, le suivi et les angles créatifs que sur les performances comparées — ce qui reste utile, mais nous vous le signalons avant.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Allez-vous modifier mes campagnes pendant l'audit ?",
+            "answer": "<p>Non. Nous demandons un accès en lecture seule et nous ne touchons à rien. Toute modification serait faite après restitution, avec votre accord explicite, et seulement si vous nous confiez le pilotage.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "L'audit couvre-t-il Instagram ?",
+            "answer": "<p>Oui : Facebook et Instagram partagent le même gestionnaire et les mêmes campagnes. Nous analysons la répartition des placements, qui est souvent laissée en automatique alors qu'elle mérite un arbitrage selon votre offre.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
-        "note": "Réponse sous 2 jours ouvrés"
+        "title": "Donnez-nous un accès en lecture.",
+        "text": "Une semaine plus tard, vous savez précisément ce que produit chaque euro dépensé — et ce qu'il faudrait arrêter dès demain.",
+        "cta_label": "Demander l'audit Meta Ads",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Analyser mes concurrents",
+        "link_url": "/pages/analyse-concurrentielle-meta-ads"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Lecture seule"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Restitution commentée"
           }
         }
       },
@@ -49,7 +267,10 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "perimetre",
+    "deroule",
+    "comparaison",
+    "faq",
     "cta"
   ]
 }

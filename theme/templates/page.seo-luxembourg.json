@@ -1,0 +1,224 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement naturel — Luxembourg",
+        "title": "Un marché petit, riche, et multilingue par nécessité.",
+        "lead": "Le Grand-Duché concentre un pouvoir d'achat élevé sur un territoire réduit, avec une main-d'œuvre frontalière massive venue de France, de Belgique et d'Allemagne. Les volumes de recherche y sont faibles, mais la valeur de chaque demande est sans commune mesure.",
+        "cta_primary": "Évaluer ma visibilité",
+        "parent_label": "SEO local",
+        "parent_url": "/pages/seo-local",
+        "cta_secondary": "Voir toutes les zones",
+        "cta_secondary_url": "/pages/seo-par-ville"
+      }
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Notre lecture",
+        "title": "Ici, cinquante recherches par mois peuvent suffire.",
+        "text": "<p>Les outils de mesure affichent des volumes qui paraîtraient dérisoires en France. Rapportés au niveau de prix pratiqué et à la valeur d'un client au Luxembourg, ils changent complètement de sens.</p><p>Nous raisonnons donc en valeur de demande entrante, jamais en volume de trafic — le second indicateur est trompeur sur ce marché.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Arbitrer par la valeur",
+            "text": "Une requête à cinquante recherches mensuelles peut être plus rentable qu'une requête à cinq mille en France."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Choisir les langues utilement",
+            "text": "Le français domine largement les services aux particuliers, l'anglais s'impose dans la finance."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Intégrer les frontaliers",
+            "text": "Ils cherchent depuis Thionville ou Arlon des prestataires situés au Luxembourg."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui caractérise ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Frontaliers",
+            "label": "une population pendulaire",
+            "note": "Des personnes qui vivent d'un côté de la frontière et consomment de l'autre — leurs recherches mélangent les deux."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Multilingue",
+            "label": "français, allemand, anglais",
+            "note": "Trois langues de recherche réellement utilisées, selon le secteur et le public visé."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Faible volume",
+            "label": "forte valeur",
+            "note": "Peu de recherches mensuelles, mais un panier moyen et un pouvoir d'achat très supérieurs."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "methode": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Une méthode calibrée pour un marché à faible volume.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Estimer la valeur d'une demande",
+            "text": "Point de départ obligatoire : ce que vaut un client luxembourgeois décide de tout le reste.",
+            "duration": "Semaine 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Choisir les langues",
+            "text": "Français, anglais, allemand : on tranche à partir de votre clientèle réelle, pas d'un principe.",
+            "duration": "Semaine 2"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Couvrir les requêtes à forte valeur",
+            "text": "Peu de pages, très travaillées, sur les intentions qui produisent des demandes qualifiées.",
+            "duration": "Semaines 3-8"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Intégrer les frontaliers",
+            "text": "Ajouter les recherches venues de Thionville, Arlon ou Trèves, largement inexploitées.",
+            "duration": "Semaines 8-12"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur cette zone.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Les volumes de recherche sont très faibles, est-ce rentable ?",
+            "answer": "<p>Le volume est le mauvais indicateur ici. Ce qui compte, c'est la valeur d'un client et le taux de conversion d'une requête à forte intention. Sur beaucoup de métiers luxembourgeois, une poignée de demandes mensuelles bien qualifiées rentabilise largement le travail engagé.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Dans quelle langue faut-il publier ?",
+            "answer": "<p>Le français couvre l'essentiel des services aux particuliers et une grande partie du B2B. L'anglais devient nécessaire dans la finance, le conseil international et les fonctions supports des grands groupes. L'allemand reste utile près de la frontière et sur certains publics résidents. La réponse dépend de votre clientèle réelle, pas d'un principe général.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Puis-je viser aussi les frontaliers français et belges ?",
+            "answer": "<p>Oui, et c'est souvent négligé. Un habitant de Thionville ou d'Arlon qui travaille au Luxembourg y consomme aussi des services. Il cherche depuis chez lui, avec des formulations mêlant les deux pays — un terrain que peu de sites luxembourgeois couvrent explicitement.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Estimons ce que vaut réellement votre visibilité luxembourgeoise.",
+        "text": "Donnez-nous votre activité et votre panier moyen. Nous raisonnons en valeur de demande entrante, jamais en volume de trafic.",
+        "cta_label": "Demander un relevé de position",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé géolocalisé"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "analyse",
+    "contexte",
+    "methode",
+    "faq",
+    "cta"
+  ]
+}

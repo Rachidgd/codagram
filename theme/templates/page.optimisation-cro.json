@@ -4,40 +4,347 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
+        "eyebrow": "Optimisation de la conversion",
+        "title": "Le même trafic peut produire deux fois plus de demandes.",
+        "lead": "Avant d'acheter de la visibilité supplémentaire, il est presque toujours plus rentable de convertir celle que vous avez déjà. Nous identifions les frictions réelles de vos parcours, les hiérarchisons, puis nous les supprimons une par une.",
+        "cta_primary": "Analyser mes parcours",
+        "parent_label": "Expertises",
+        "parent_url": "/pages/agence-seo",
         "cta_secondary": "Voir les résultats",
         "cta_secondary_url": "/pages/resultats"
-      }
+      },
+      "blocks": {
+        "p1": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "3",
+            "suffix": " sem.",
+            "label": "premier cycle de test"
+          }
+        },
+        "p2": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "1",
+            "suffix": " hypothèse",
+            "label": "testée à la fois"
+          }
+        },
+        "p3": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "48",
+            "suffix": " h",
+            "label": "délai de réponse"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ]
     },
-    "contenu": {
-      "type": "page-body",
+    "constat": {
+      "type": "content-split",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Le diagnostic",
+        "title": "Un visiteur qui n'achète pas n'est pas un visiteur non qualifié.",
+        "text": "<p>La conclusion la plus fréquente — et la plus fausse — est d'accuser la qualité du trafic. Dans la majorité des cas que nous reprenons, les visiteurs étaient les bons : c'est la page qui ne répondait pas à leur question au moment où ils se la posaient.</p><p>Nous partons donc de l'observation, pas de l'opinion : enregistrements de sessions, points d'abandon, formulaires abandonnés à mi-parcours, requêtes internes sans résultat.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Là où l'attention se perd",
+            "text": "Analyse des parcours réels : ce que les visiteurs regardent, ignorent, et à quel endroit ils repartent."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Là où le doute apparaît",
+            "text": "Prix absent, délai flou, absence de preuve, engagement perçu comme trop lourd. Le doute a toujours une cause précise."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Là où la friction est mécanique",
+            "text": "Formulaire trop long, étape superflue, bouton invisible sur mobile, temps de chargement."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "cycle": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Comment nous travaillons",
+        "title": "Un cycle court, répété.",
+        "text": "Nous ne livrons pas une liste de cinquante recommandations. Nous en appliquons quelques-unes, nous mesurons, puis nous recommençons avec ce que les données nous ont appris."
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Observer",
+            "text": "Données d'audience, enregistrements, entonnoirs, retours du service commercial. Aucune hypothèse sans matière.",
+            "duration": "Semaine 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Prioriser",
+            "text": "Chaque frein est classé par impact estimé, effort et niveau de certitude. On commence par ce qui rapporte le plus vite.",
+            "duration": "Semaine 1"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Modifier",
+            "text": "Réécriture, refonte de bloc, allègement de formulaire. Une seule variable significative à la fois.",
+            "duration": "Semaines 2-3"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Mesurer",
+            "text": "Comparaison sur une durée suffisante pour être crédible. Un gain non reproductible n'est pas un gain.",
+            "duration": "Semaines 3-5"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "leviers": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Les points que nous travaillons",
+        "title": "Là où se jouent réellement les décisions.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Message d'accueil",
+            "text": "La première phrase décide de la suite. Nous la réécrivons à partir des mots de vos clients."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Preuves",
+            "text": "Avis, cas clients, chiffres datés, garanties. Placés au moment du doute, pas relégués en bas de page."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Hiérarchie mobile",
+            "text": "L'ordre des blocs sur petit écran n'est pas celui du bureau. Beaucoup de sites l'ignorent."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Formulaires",
+            "text": "Chaque champ supprimé augmente le taux de complétion. Nous ne gardons que ce qui sert vraiment."
+          }
+        },
+        "g5": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Prix et engagement",
+            "text": "Un tarif absent n'élimine pas l'objection, il l'aggrave. Nous cadrons comment en parler."
+          }
+        },
+        "g6": {
+          "type": "item",
+          "settings": {
+            "icon": "cart",
+            "title": "Tunnel d'achat",
+            "text": "Panier, livraison, paiement : les trois marches où l'on perd le plus de clients déjà décidés."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ]
+    },
+    "format": {
+      "type": "content-compare",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Deux formats",
+        "title": "Audit ponctuel ou accompagnement continu ?",
+        "text": "Le premier donne une carte, le second parcourt le chemin. Ils ne s'adressent pas aux mêmes situations.",
+        "col_criteria": "Critère",
+        "col_a": "Accompagnement continu",
+        "col_b": "Audit ponctuel",
+        "verdict": "Si personne chez vous n'a le temps d'appliquer les recommandations, l'audit seul finit dans un dossier. Nous préférons le dire avant."
+      },
+      "blocks": {
+        "r1": {
+          "type": "row",
+          "settings": {
+            "criteria": "Ce que vous recevez",
+            "value_a": "Modifications appliquées et mesurées",
+            "value_b": "Un rapport priorisé et argumenté"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "criteria": "Qui exécute",
+            "value_a": "Nous",
+            "value_b": "Votre équipe"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "criteria": "Durée",
+            "value_a": "Cycles de trois mois",
+            "value_b": "Deux à trois semaines"
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "criteria": "Mesure des effets",
+            "value_a": "Incluse et documentée",
+            "value_b": "À votre charge"
+          }
+        },
+        "r5": {
+          "type": "row",
+          "settings": {
+            "criteria": "Pertinent si",
+            "value_a": "Le site est un canal central et vous manquez de temps",
+            "value_b": "Vous avez une équipe technique disponible"
+          }
+        },
+        "r6": {
+          "type": "row",
+          "settings": {
+            "criteria": "Budget",
+            "value_a": "Mensuel",
+            "value_b": "Forfait unique"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur le CRO.",
+        "text": "L'optimisation de la conversion attire beaucoup de raccourcis. Voici où nous nous situons.",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il beaucoup de trafic pour faire du CRO ?",
+            "answer": "<p>Pour des tests comparatifs statistiquement fiables, oui : en dessous d'un certain volume de conversions mensuelles, un écart observé relève du hasard. Mais l'essentiel du travail — clarté du message, preuves, allègement des formulaires, hiérarchie mobile — s'appuie sur l'observation qualitative et fonctionne à tout volume.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Allez-vous refaire tout mon site ?",
+            "answer": "<p>Non, sauf si le diagnostic conclut que la structure elle-même est le frein. La démarche consiste à modifier peu et à mesurer, pas à tout remplacer. Une refonte complète efface aussi les repères de vos visiteurs fidèles.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Comment mesurez-vous vos résultats ?",
+            "answer": "<p>Sur le taux de conversion de l'objectif défini avec vous — demande de devis, prise de rendez-vous, achat — et sur une période complète incluant vos variations habituelles. Nous documentons le point de départ avant toute modification : sans mesure initiale, aucune progression n'est démontrable.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Travaillez-vous sur Shopify et sur les sites sur mesure ?",
+            "answer": "<p>Les deux, ainsi que sur WordPress. Les principes de décision d'achat sont identiques ; seules changent les modalités techniques d'application. Sur Shopify, nous intervenons directement dans le thème.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
-        "note": "Réponse sous 2 jours ouvrés"
+        "title": "Regardons où partent vos visiteurs.",
+        "text": "Décrivez votre site et l'action que vous voulez déclencher. Nous identifions les trois frictions les plus coûteuses et vous disons lesquelles se corrigent en quelques jours.",
+        "cta_label": "Analyser mes parcours",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation Shopify",
+        "link_url": "/pages/agence-shopify"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Diagnostic argumenté"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Priorisation par impact"
           }
         }
       },
@@ -49,7 +356,11 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "constat",
+    "cycle",
+    "leviers",
+    "format",
+    "faq",
     "cta"
   ]
 }

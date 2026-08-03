@@ -1,0 +1,216 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement naturel — Nice",
+        "title": "Une clientèle saisonnière, internationale, et exigeante.",
+        "lead": "Sur la Côte d'Azur, une partie significative de la demande vient de personnes qui ne résident pas sur place : résidents secondaires, touristes, clientèle étrangère. Elles cherchent différemment, souvent en anglais, et avant même d'arriver.",
+        "cta_primary": "Évaluer ma visibilité",
+        "parent_label": "SEO local",
+        "parent_url": "/pages/seo-local",
+        "cta_secondary": "Voir toutes les zones",
+        "cta_secondary_url": "/pages/seo-par-ville"
+      }
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui caractérise ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Saison",
+            "label": "des écarts considérables",
+            "note": "Les volumes de recherche varient fortement selon les mois sur la plupart des métiers de service."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "International",
+            "label": "recherches en anglais",
+            "note": "Une part réelle de la demande formule ses requêtes dans une autre langue."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Prestige",
+            "label": "attentes élevées",
+            "note": "Sur l'immobilier et les services haut de gamme, un site approximatif disqualifie immédiatement."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "methode": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Construire une visibilité qui tient hors saison.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Cartographier la demande",
+            "text": "Séparer ce qui est saisonnier de ce qui est permanent. Les deux n'appellent pas le même contenu.",
+            "duration": "Semaine 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Préparer la haute saison",
+            "text": "Produire et publier les contenus saisonniers plusieurs mois en avance pour qu'ils soient positionnés au bon moment.",
+            "duration": "Semaines 2-8"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Traiter l'international",
+            "text": "Évaluer le volume réel des requêtes en anglais avant d'engager une traduction. Souvent quelques pages suffisent.",
+            "duration": "Semaines 4-6"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Tenir hors saison",
+            "text": "Des contenus permanents qui maintiennent l'activité du site quand la demande retombe.",
+            "duration": "En continu"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": true,
+        "eyebrow": "Notre lecture",
+        "title": "Traduire tout le site est presque toujours une erreur.",
+        "text": "<p>Le réflexe habituel consiste à traduire l'intégralité du site en anglais. Le résultat : un volume de pages à maintenir, souvent traduites approximativement, pour des requêtes dont personne n'a vérifié le volume.</p><p>Nous mesurons d'abord la demande réelle, puis nous traduisons uniquement les pages qui la captent — généralement trois à cinq.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Vérifier avant de traduire",
+            "text": "Le volume de recherche en anglais se mesure. Il est parfois nul, parfois considérable selon le métier."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Traduire, pas transposer",
+            "text": "Une traduction automatique se voit et se retourne contre vous sur une clientèle exigeante."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Baliser correctement",
+            "text": "Les versions linguistiques doivent être déclarées proprement, sinon elles se concurrencent."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur cette zone.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Mon activité s'effondre hors saison, que faire du site ?",
+            "answer": "<p>Le site doit précisément servir à lisser cette courbe : contenus permanents, offres hors saison, clientèle locale à l'année. C'est un travail de fond, mais c'est le seul moyen d'éviter de repartir de zéro chaque printemps en matière de visibilité.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il une version anglaise ?",
+            "answer": "<p>Cela se vérifie plutôt que cela ne se suppose. Sur l'immobilier de prestige, la conciergerie ou le tourisme haut de gamme, la demande anglophone est bien réelle. Sur un métier de service local, elle est souvent négligeable. Nous mesurons avant de vous engager dans un chantier de traduction.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Regardons votre visibilité en saison et hors saison.",
+        "text": "Nous mesurons l'écart entre vos deux périodes et estimons le volume réel de la demande anglophone sur votre métier.",
+        "cta_label": "Demander un relevé de position",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé géolocalisé"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "contexte",
+    "methode",
+    "analyse",
+    "faq",
+    "cta"
+  ]
+}

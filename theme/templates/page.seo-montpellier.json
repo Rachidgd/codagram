@@ -1,0 +1,217 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement naturel — Montpellier",
+        "title": "La ville grandit plus vite que la concurrence ne s'organise.",
+        "lead": "Montpellier fait partie des métropoles françaises les plus dynamiques démographiquement. Cette croissance crée une demande nouvelle chaque année, et beaucoup d'entreprises locales n'ont pas encore adapté leur visibilité à ce rythme.",
+        "cta_primary": "Évaluer ma visibilité",
+        "parent_label": "SEO local",
+        "parent_url": "/pages/seo-local",
+        "cta_secondary": "Voir toutes les zones",
+        "cta_secondary_url": "/pages/seo-par-ville"
+      }
+    },
+    "methode": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "dark",
+        "density": "comfortable",
+        "eyebrow": "Priorités",
+        "title": "Où se trouvent les gains rapides.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Communes périphériques",
+            "text": "Beaucoup moins disputées que Montpellier et souvent ignorées par les concurrents."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Fiche d'établissement",
+            "text": "Le premier point de contact pour un nouvel arrivant sans recommandation."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Contenus d'installation",
+            "text": "Répondre aux questions de quelqu'un qui vient d'arriver capte une demande à faible concurrence."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Avis récents",
+            "text": "Sans bouche-à-oreille local, l'avis en ligne devient le seul repère disponible."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ]
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": true,
+        "eyebrow": "Notre lecture",
+        "title": "Les communes voisines coûtent moins cher que la ville-centre.",
+        "text": "<p>Se positionner sur « Montpellier » demande du temps et de l'autorité. Se positionner sur Lattes, Castelnau-le-Lez ou Saint-Jean-de-Védas demande une page correcte et quelques semaines.</p><p>Ces communes concentrent pourtant une population aisée et une demande réelle. C'est le raccourci le plus sous-exploité de la métropole.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Une page par commune servie",
+            "text": "Avec un contenu propre : ce qu'on y fait, pour qui, avec quelles références."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Un maillage vers la page mère",
+            "text": "Les pages communales renforcent la page Montpellier au lieu de lui faire concurrence."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Des preuves locales",
+            "text": "Une réalisation située dans la commune vaut plus que dix arguments génériques."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui caractérise ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Santé",
+            "label": "recherche et biotechnologies",
+            "note": "Un pôle installé, avec des exigences de fiabilité éditoriale renforcées."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Croissance",
+            "label": "arrivées continues",
+            "note": "Des habitants sans habitudes locales, qui cherchent tout en ligne."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Littoral",
+            "label": "communes périphériques",
+            "note": "Palavas, Lattes, Castelnau : des recherches distinctes et peu disputées."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur cette zone.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Dois-je commencer par Montpellier ou par ma commune ?",
+            "answer": "<p>Par votre commune, presque toujours. Le résultat arrive en quelques semaines au lieu de plusieurs mois, il génère des demandes immédiates, et l'autorité gagnée profite ensuite à la page Montpellier. C'est l'ordre inverse de celui que choisissent la plupart des entreprises.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Le secteur santé impose-t-il des précautions ?",
+            "answer": "<p>Oui, sur deux plans : l'exigence de fiabilité appliquée par les moteurs aux contenus de santé, et les règles déontologiques propres aux professions réglementées, qui encadrent strictement la communication. Nous travaillons dans ce cadre plutôt que de vous exposer.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Identifions les communes où vous pouvez gagner vite.",
+        "text": "Nous relevons votre position sur Montpellier et sur les communes voisines, où la concurrence est souvent bien plus faible.",
+        "cta_label": "Demander un relevé de position",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé géolocalisé"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "methode",
+    "analyse",
+    "contexte",
+    "faq",
+    "cta"
+  ]
+}

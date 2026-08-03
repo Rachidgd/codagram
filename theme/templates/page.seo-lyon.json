@@ -1,0 +1,216 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement naturel — Lyon",
+        "title": "Capter la demande lyonnaise sans se battre sur les requêtes nationales.",
+        "lead": "Deuxième pôle économique français, Lyon concentre un tissu dense de services aux entreprises, de santé et de logistique. La concurrence y est réelle mais nettement moins verrouillée qu'à Paris : les positions se gagnent encore en quelques mois de travail sérieux.",
+        "cta_primary": "Évaluer ma visibilité",
+        "parent_label": "SEO local",
+        "parent_url": "/pages/seo-local",
+        "cta_secondary": "Voir toutes les zones",
+        "cta_secondary_url": "/pages/seo-par-ville"
+      }
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Notre lecture",
+        "title": "Lyon se travaille par métropole, pas par ville.",
+        "text": "<p>La plupart des entreprises lyonnaises ciblent « Lyon » alors que leurs clients se trouvent à Villeurbanne, Bron, Vénissieux ou Écully. Les recherches suivent cette géographie réelle, pas le nom de la ville-centre.</p><p>Nous construisons donc l'arborescence sur les communes de la métropole où vous intervenez effectivement, avec une page mère lyonnaise qui les fédère.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Communes de la métropole",
+            "text": "Une page par commune où vous avez une activité réelle et des références à montrer."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Secteurs verticaux",
+            "text": "La demande B2B lyonnaise cherche un spécialiste de son industrie avant de chercher un prestataire local."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Contenus de fiabilité",
+            "text": "Sur la santé, l'exigence de sérieux est supérieure : auteurs identifiés, sources, mises à jour datées."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui caractérise ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Santé",
+            "label": "pharmacie et biotechnologies",
+            "note": "Un secteur où les contenus doivent être irréprochables : les moteurs y appliquent des exigences de fiabilité renforcées."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Tertiaire",
+            "label": "services aux entreprises",
+            "note": "Part-Dieu et Confluence concentrent une demande B2B qui cherche par spécialité, pas par ville."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Logistique",
+            "label": "position de carrefour",
+            "note": "L'axe rhodanien génère des recherches qui débordent largement la métropole."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "methode": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Comment nous déployons sur la métropole lyonnaise.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Cartographier vos communes",
+            "text": "Identifier où sont réellement vos clients dans la métropole, avant de décider quelles pages créer.",
+            "duration": "Semaine 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Traiter la commune d'abord",
+            "text": "Publier la page communale la plus accessible pour obtenir un premier résultat rapidement.",
+            "duration": "Semaines 2-4"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Étendre par bassin",
+            "text": "Ajouter progressivement les communes voisines, chacune avec ses références propres.",
+            "duration": "Semaines 4-10"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Attaquer Lyon",
+            "text": "Une fois l'autorité constituée, viser la requête métropolitaine devient réaliste.",
+            "duration": "Mois 3 et suivants"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur cette zone.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Vaut-il mieux viser Lyon ou ma commune ?",
+            "answer": "<p>Les deux, dans cet ordre : la commune d'abord, car elle est bien plus accessible et convertit mieux, puis Lyon une fois que le site a gagné en autorité. Attaquer directement la requête métropolitaine est le meilleur moyen de n'apparaître nulle part pendant un an.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Le secteur santé impose-t-il des contraintes particulières ?",
+            "answer": "<p>Oui. Les contenus touchant à la santé sont évalués avec une exigence renforcée sur l'expertise et la fiabilité de l'auteur. Concrètement : signature identifiable, qualifications affichées, sources citées et dates de mise à jour visibles. Un contenu anonyme ne se positionne plus dans ce domaine.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Situons votre visibilité dans la métropole, commune par commune.",
+        "text": "Dites-nous où sont vos clients. Nous relevons votre classement depuis chacune de ces communes, pas depuis un point unique.",
+        "cta_label": "Demander un relevé de position",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé géolocalisé"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "analyse",
+    "contexte",
+    "methode",
+    "faq",
+    "cta"
+  ]
+}

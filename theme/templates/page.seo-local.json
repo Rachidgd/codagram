@@ -4,40 +4,282 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Référencement local",
+        "title": "Être trouvé par les clients qui sont déjà à côté de vous.",
+        "lead": "Quand quelqu'un cherche un professionnel « près de chez lui », Google ne classe pas les sites comme ailleurs : il pondère la proximité, la cohérence des informations et la réputation de l'établissement. Ce sont ces trois signaux que nous travaillons.",
+        "cta_primary": "Évaluer ma visibilité locale",
+        "parent_label": "Expertises",
+        "parent_url": "/pages/agence-seo",
+        "cta_secondary": "Voir les zones couvertes",
+        "cta_secondary_url": "/pages/seo-par-ville"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "enjeux": {
+      "type": "content-stats",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "dark",
+        "eyebrow": "Ce qui se joue",
+        "title": "Trois mécaniques propres à la recherche locale.",
+        "source": "Mécaniques générales du référencement local. Leur poids varie selon le secteur et la densité concurrentielle."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Le trio local",
+            "label": "Les trois fiches du haut",
+            "note": "Le bloc cartographique capte l'essentiel des clics sur une recherche de proximité. Y figurer change tout."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "La distance",
+            "label": "Un critère que vous ne contrôlez pas",
+            "note": "Google pondère l'éloignement du chercheur. D'où l'intérêt de pages par zone plutôt qu'une page générique."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "La cohérence",
+            "label": "Nom, adresse, téléphone",
+            "note": "Une adresse écrite différemment sur trois annuaires affaiblit un signal que Google recoupe."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "perimetre": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "comfortable",
+        "eyebrow": "Périmètre",
+        "title": "Ce que couvre une mission de SEO local.",
+        "text": "L'ordre d'intervention dépend de votre point de départ : une fiche inexistante et une fiche mal optimisée n'appellent pas le même effort."
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Fiche d'établissement",
+            "text": "Catégories, description, horaires, zones desservies, photos, questions-réponses. Le levier le plus rapide."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Pages par zone",
+            "text": "Une page par ville réellement travaillée, avec un contenu propre. Dupliquer une page en changeant le nom de la ville ne fonctionne plus."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Cohérence des citations",
+            "text": "Vérification et correction de vos coordonnées sur les annuaires qui comptent dans votre secteur."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Avis clients",
+            "text": "Méthode de collecte régulière, réponse aux avis, traitement des avis négatifs. Un signal de classement autant qu'un signal de confiance."
+          }
+        },
+        "g5": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Balisage local",
+            "text": "Données structurées d'établissement, horaires, zone d'intervention. Ce que les moteurs lisent sans ambiguïté."
+          }
+        },
+        "g6": {
+          "type": "item",
+          "settings": {
+            "icon": "megaphone",
+            "title": "Suivi par zone",
+            "text": "Positions mesurées depuis chaque secteur visé, pas depuis un point unique — un classement local varie d'un quartier à l'autre."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ]
+    },
+    "erreur": {
+      "type": "content-split",
+      "settings": {
+        "surface": "dark",
+        "reverse": true,
+        "eyebrow": "L'erreur à éviter",
+        "title": "Dupliquer une page en changeant le nom de la ville ne marche plus.",
+        "text": "<p>C'est la méthode la plus répandue et la plus contre-productive : produire trente pages identiques où seul le toponyme change. Les moteurs identifient ces gabarits, n'en retiennent qu'une, et l'ensemble finit ignoré.</p><p>Une page locale doit dire quelque chose de vrai sur ce territoire : son tissu économique, la concurrence qui s'y trouve, les demandes spécifiques qu'on y reçoit. Sinon elle n'a aucune raison d'exister.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Un contexte réel par zone",
+            "text": "Secteurs dominants, typologie de clients, saisonnalité. Ce qui rend la page défendable."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Des preuves situées",
+            "text": "Réalisations, avis ou références rattachés à la zone quand ils existent — et rien d'inventé quand ils n'existent pas."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Un maillage réfléchi",
+            "text": "Les pages locales se relient entre elles et à la page mère sans créer de concurrence interne."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "deroule": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Quatre temps, du plus rapide au plus structurant.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "État des lieux",
+            "text": "Position actuelle par zone, état de la fiche, cohérence des coordonnées, analyse des concurrents locaux.",
+            "duration": "Semaine 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Fiche et citations",
+            "text": "Corrections immédiates. C'est souvent ce qui produit le premier mouvement visible.",
+            "duration": "Semaines 1-2"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Pages de zone",
+            "text": "Rédaction et mise en ligne progressive, en commençant par les secteurs à plus fort potentiel.",
+            "duration": "Semaines 2-8"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Avis et suivi",
+            "text": "Mise en place de la collecte, mesure par zone, arbitrages sur les secteurs à renforcer.",
+            "duration": "En continu"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur le SEO local.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Puis-je apparaître dans une ville où je n'ai pas d'adresse ?",
+            "answer": "<p>Dans le bloc cartographique, non : il exige une présence physique vérifiable et Google sanctionne les adresses de complaisance. Dans les résultats classiques en revanche, oui — une page de service dédiée à cette zone peut se positionner si son contenu est réellement pertinent pour ce territoire.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Combien de pages de villes faut-il créer ?",
+            "answer": "<p>Autant que vous pouvez en défendre sérieusement, pas plus. Cinq pages documentées valent mieux que trente coquilles. Nous partons de vos zones d'intervention réelles et de celles où vous acceptez effectivement de vous déplacer.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Les avis influencent-ils vraiment le classement ?",
+            "answer": "<p>Leur volume, leur régularité et leur fraîcheur comptent parmi les signaux locaux — et ils influencent surtout le taux de clic une fois affiché. Une fiche avec quarante avis récents est choisie devant une fiche à trois avis anciens, même mieux classée.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Intervenez-vous si j'ai plusieurs établissements ?",
+            "answer": "<p>Oui, et la logique change : il faut une fiche par établissement, une page par établissement, et une architecture qui évite que vos propres pages se concurrencent. C'est un cas fréquent que nous traitons régulièrement.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
-        "note": "Réponse sous 2 jours ouvrés"
+        "title": "Voyons où vous apparaissez réellement.",
+        "text": "Indiquez-nous votre activité et vos zones. Nous regardons votre position actuelle depuis chacune d'elles et l'état de votre fiche d'établissement.",
+        "cta_label": "Évaluer ma visibilité locale",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir toutes les zones",
+        "link_url": "/pages/seo-par-ville"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Relevé par zone"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Sans engagement"
           }
         }
       },
@@ -49,7 +291,11 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "enjeux",
+    "perimetre",
+    "erreur",
+    "deroule",
+    "faq",
     "cta"
   ]
 }

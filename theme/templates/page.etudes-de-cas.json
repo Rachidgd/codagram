@@ -4,40 +4,82 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
+        "eyebrow": "Études de cas",
+        "title": "Des missions racontées avec leur point de départ.",
+        "lead": "Un résultat sans contexte n'apprend rien. Nous détaillons ici la situation initiale, ce que nous avons décidé de faire, ce que nous avons écarté et ce que cela a produit sur la période observée.",
         "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
+        "cta_secondary": "Voir tous les résultats",
         "cta_secondary_url": "/pages/resultats"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "lecture": {
+      "type": "content-split",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Comment nous documentons",
+        "title": "Ce qu'une étude de cas honnête doit contenir.",
+        "text": "<p>La plupart des études de cas publiées se réduisent à un pourcentage et un logo. C'est invérifiable et cela ne permet à personne de juger si la méthode s'appliquerait à son cas.</p><p>Nous imposons donc quatre éléments à chacune de nos publications, et nous renonçons à publier quand l'un d'eux manque.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Le point de départ",
+            "text": "L'état réel du site et des données avant intervention. Sans lui, aucun pourcentage n'a de sens."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Les arbitrages",
+            "text": "Ce que nous avons choisi de faire, et surtout ce que nous avons écarté et pourquoi."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "La période",
+            "text": "Les dates exactes d'observation, pas une durée vague."
+          }
+        },
+        "b4": {
+          "type": "point",
+          "settings": {
+            "title": "Les limites",
+            "text": "Ce que le cas ne démontre pas, et ce qui relevait de facteurs extérieurs."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
-        "note": "Réponse sous 2 jours ouvrés"
+        "title": "Votre situation ressemble-t-elle à l'une des nôtres ?",
+        "text": "Décrivez-la nous. Si nous avons déjà traité un cas comparable, nous vous en détaillerons le déroulé complet, résultats mitigés compris.",
+        "cta_label": "Décrire ma situation",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir les résultats chiffrés",
+        "link_url": "/pages/resultats"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Cas comparables détaillés"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Y compris ceux qui ont moins bien marché"
           }
         }
       },
@@ -49,7 +91,7 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "lecture",
     "cta"
   ]
 }

@@ -4,40 +4,315 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
+        "eyebrow": "Création de site vitrine",
+        "title": "Un site vitrine qui travaille, pas une plaquette en ligne.",
+        "lead": "Nous concevons et développons des sites de services sur mesure : architecture pensée pour la prise de contact, contenus écrits avec vous, code propriétaire sans constructeur de pages ni abonnement caché.",
+        "cta_primary": "Cadrer mon projet",
+        "parent_label": "Expertises",
+        "parent_url": "/pages/agence-seo",
+        "cta_secondary": "Voir des réalisations",
         "cta_secondary_url": "/pages/resultats"
+      },
+      "blocks": {
+        "p1": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "0",
+            "suffix": "",
+            "label": "constructeur de pages"
+          }
+        },
+        "p2": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "100",
+            "suffix": " %",
+            "label": "code écrit pour vous"
+          }
+        },
+        "p3": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "4",
+            "suffix": " sem.",
+            "label": "délai courant"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ]
+    },
+    "position": {
+      "type": "content-quote",
+      "settings": {
+        "eyebrow": "Notre parti pris",
+        "quote": "Un site vitrine se juge à une seule chose : le nombre de personnes qui vous écrivent après l'avoir lu. Tout le reste — animations, mentions, palmarès — n'est utile que s'il sert cette phrase.",
+        "attribution": "Clickscreation"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "demonstration": {
+      "type": "content-split",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Ce qui fait la différence",
+        "title": "Le visiteur ne lit pas votre site : il le parcourt pour décider.",
+        "text": "<p>En moyenne, un visiteur accorde quelques secondes à une page avant de décider s'il continue. Il ne cherche pas votre histoire, il cherche à savoir si vous résolvez son problème, si vous êtes crédible et combien ça coûte.</p><p>Nous construisons donc chaque page dans cet ordre-là : le problème d'abord, la preuve ensuite, la demande de contact quand la valeur est comprise — jamais avant.</p>",
+        "cta_label": "Voir le déroulé",
+        "cta_url": "#deroule"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Une promesse compréhensible en dix secondes",
+            "text": "Ce que vous faites, pour qui, et ce qui vous distingue. Sans jargon de métier ni superlatifs invérifiables."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Des preuves à la place des adjectifs",
+            "text": "Réalisations datées, chiffres vérifiables, avis identifiables. « Expert reconnu » ne convainc personne ; un cas client précis, oui."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Un chemin de contact évident",
+            "text": "Un formulaire court, une adresse visible, un délai de réponse annoncé. La friction se mesure en champs inutiles."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "deroule": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Déroulé du projet",
+        "title": "Cinq étapes, un interlocuteur unique.",
+        "text": "Vous validez à chaque étape. Rien ne part en développement tant que la structure et les textes ne sont pas arrêtés — c'est ce qui évite les reprises coûteuses en fin de projet."
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Cadrage",
+            "text": "Nous partons de votre activité, de vos clients types et des demandes que vous voulez recevoir. Aucune ligne de code avant cette clarté.",
+            "duration": "1 semaine"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Architecture",
+            "text": "Arborescence, rôle de chaque page, parcours de contact, plan de rédaction. Vous voyez le site avant qu'il existe.",
+            "duration": "3 à 5 jours"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Rédaction",
+            "text": "Nous écrivons les textes à partir de vos mots et de ce que cherchent vos clients. Vous relisez et amendez.",
+            "duration": "1 semaine"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Design et développement",
+            "text": "Maquettes puis intégration sur mesure. Performance, accessibilité et référencement traités pendant, pas après.",
+            "duration": "2 à 3 semaines"
+          }
+        },
+        "s5": {
+          "type": "step",
+          "settings": {
+            "title": "Mise en ligne",
+            "text": "Bascule, redirections, suivi des conversions, formation à l'administration. Vous repartez autonome.",
+            "duration": "2 jours"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ]
+    },
+    "choix": {
+      "type": "content-compare",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Faire le bon choix",
+        "title": "Site sur mesure, gabarit ou constructeur : lequel pour vous ?",
+        "text": "Le sur-mesure n'est pas toujours justifié. Voici comment nous en discutons avant de vous vendre quoi que ce soit.",
+        "col_criteria": "Critère",
+        "col_a": "Développement sur mesure",
+        "col_b": "Gabarit ou constructeur",
+        "verdict": "Si votre site doit générer des demandes de manière régulière, le sur-mesure se rentabilise. Si vous validez encore votre marché, un gabarit suffit — et nous vous le dirons."
+      },
+      "blocks": {
+        "r1": {
+          "type": "row",
+          "settings": {
+            "criteria": "Coût de départ",
+            "value_a": "Plus élevé",
+            "value_b": "Faible"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "criteria": "Coût sur trois ans",
+            "value_a": "Stable, aucun abonnement d'outil",
+            "value_b": "Abonnements cumulés, souvent supérieur"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "criteria": "Vitesse de chargement",
+            "value_a": "Maîtrisée, code minimal",
+            "value_b": "Alourdie par le constructeur"
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "criteria": "Référencement technique",
+            "value_a": "Structure et balisage contrôlés",
+            "value_b": "Dépend de ce que l'outil autorise"
+          }
+        },
+        "r5": {
+          "type": "row",
+          "settings": {
+            "criteria": "Évolution",
+            "value_a": "Toute demande est réalisable",
+            "value_b": "Limitée aux options prévues"
+          }
+        },
+        "r6": {
+          "type": "row",
+          "settings": {
+            "criteria": "Autonomie",
+            "value_a": "Vous modifiez les contenus",
+            "value_b": "Vous modifiez les contenus"
+          }
+        },
+        "r7": {
+          "type": "row",
+          "settings": {
+            "criteria": "Pertinent si",
+            "value_a": "Le site est un canal d'acquisition",
+            "value_b": "Vous testez une activité naissante"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r7"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Ce qu'on nous demande sur la création de site.",
+        "text": "Des réponses précises, y compris quand elles ne vont pas dans notre sens.",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Combien coûte un site vitrine sur mesure ?",
+            "answer": "<p>Le budget dépend du nombre de pages, du volume de rédaction et des fonctionnalités. Un site de présentation à cinq pages n'a rien à voir avec un site de services couvrant douze métiers et trois zones géographiques. Nous chiffrons après le cadrage, sur un périmètre écrit, et le devis détaille chaque poste.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Qui écrit les textes ?",
+            "answer": "<p>Nous, à partir d'un entretien avec vous et d'une analyse de ce que cherchent vos clients. Vous relisez, corrigez et validez. Beaucoup de projets échouent parce que le prestataire attend des contenus que le client n'a pas le temps d'écrire — nous préférons prendre cette charge.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Le site sera-t-il visible sur Google ?",
+            "answer": "<p>Il sera techniquement irréprochable : structure, balisage, vitesse, données structurées, indexation. Cela ne suffit pas à se positionner sur des requêtes concurrentielles, qui demandent un travail de référencement dans la durée. Nous distinguons toujours les deux, et nous ne facturons pas du SEO déguisé en création de site.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Puis-je modifier le site sans vous ?",
+            "answer": "<p>Oui. Chaque bloc est éditable depuis l'interface d'administration : textes, images, ordre des sections. Nous formons une personne de votre équipe à la mise en ligne et livrons une documentation. Vous ne dépendez de nous que pour les évolutions structurelles.</p>"
+          }
+        },
+        "q5": {
+          "type": "qa",
+          "settings": {
+            "question": "Que se passe-t-il si je veux changer de prestataire ensuite ?",
+            "answer": "<p>Vous partez avec tout : hébergement à votre nom, nom de domaine à votre nom, accès complets, code livré. Nous ne conservons aucune clé qui vous rendrait captif. C'est un choix commercial assumé.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
-        "note": "Réponse sous 2 jours ouvrés"
+        "title": "Parlons de votre projet avant de parler budget.",
+        "text": "Décrivez votre activité et ce que vous attendez du site. Nous revenons avec une lecture de votre situation et un ordre de grandeur honnête — y compris si le sur-mesure n'est pas justifié chez vous.",
+        "cta_label": "Cadrer mon projet",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Devis détaillé poste par poste"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Aucun engagement au cadrage"
           }
         }
       },
@@ -49,7 +324,11 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "position",
+    "demonstration",
+    "deroule",
+    "choix",
+    "faq",
     "cta"
   ]
 }

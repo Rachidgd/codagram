@@ -1,0 +1,171 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement en Belgique francophone",
+        "title": "Un pays petit, un marché plus fragmenté qu'il n'y paraît.",
+        "lead": "Bruxelles et la Wallonie ne se comportent pas de la même façon : la capitale est bilingue, internationale et très concurrentielle, tandis que les provinces wallonnes offrent des positions nettement plus accessibles. La stratégie diffère fortement selon l'endroit où sont vos clients.",
+        "cta_primary": "Évaluer ma visibilité",
+        "cta_secondary": "Voir le SEO local",
+        "cta_secondary_url": "/pages/seo-local"
+      }
+    },
+    "regions": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "dark",
+        "density": "comfortable",
+        "eyebrow": "Les zones",
+        "title": "Trois réalités distinctes.",
+        "text": "Traiter la Belgique comme un bloc unique est l'erreur la plus fréquente des sites qui s'y aventurent."
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Bruxelles",
+            "text": "Bilingue, internationale, fortement concurrentielle. Une part de la demande s'y formule en néerlandais et en anglais."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Wallonie",
+            "text": "Liège, Charleroi, Namur, Mons : des marchés provinciaux où les positions restent accessibles."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Zone frontalière",
+            "text": "Le Hainaut occidental et la région de Mouscron consomment aussi côté français — et réciproquement."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
+    },
+    "langue": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "La langue, une question stratégique",
+        "title": "Le français de Belgique n'est pas le français de France.",
+        "text": "<p>Certains termes courants diffèrent, et ces écarts portent parfois précisément sur les mots que vos clients tapent. Un site rédigé en France peut passer à côté de la requête réelle sans que personne ne s'en aperçoive.</p><p>À Bruxelles s'ajoute la question du néerlandais, qui double le marché potentiel mais aussi le travail éditorial.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Vérifier les formulations",
+            "text": "Les variantes lexicales se mesurent dans les données de recherche, elles ne se devinent pas."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Arbitrer le néerlandais",
+            "text": "Utile à Bruxelles et en Flandre, sans objet en Wallonie. Cela se décide sur les volumes."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Assumer l'ancrage",
+            "text": "Un site clairement belge convertit mieux auprès d'un public belge qu'un site français générique."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions sur le marché belge.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Un site en .fr peut-il se positionner en Belgique ?",
+            "answer": "<p>Oui, mais avec un handicap. Une extension .be envoie un signal géographique fort et rassure le visiteur belge. À défaut, il faut compenser par des contenus explicitement belges, des coordonnées locales et des mentions adaptées.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il viser Bruxelles ou la Wallonie ?",
+            "answer": "<p>Cela dépend de votre clientèle et de votre capacité à supporter la concurrence. Bruxelles concentre la valeur mais aussi les acteurs installés et internationaux. Les provinces wallonnes offrent des positions bien plus accessibles pour un volume moindre — souvent le meilleur point de départ.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Travaillez-vous avec des entreprises belges depuis la France ?",
+            "answer": "<p>Oui, régulièrement, notamment sur la zone frontalière où les échanges sont quotidiens. Les aspects fiscaux et réglementaires de votre activité relèvent en revanche de votre comptable ou de votre conseil juridique, pas de nous.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Voyons ce que vous captez côté belge.",
+        "text": "Indiquez votre activité et vos zones. Nous mesurons votre position à Bruxelles et dans les provinces qui vous intéressent.",
+        "cta_label": "Demander un relevé",
+        "note": "Réponse sous 2 jours ouvrés"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé par région"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "regions",
+    "langue",
+    "faq",
+    "cta"
+  ]
+}

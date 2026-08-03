@@ -4,40 +4,225 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Site pour restaurant et hôtellerie",
+        "title": "Chaque réservation en direct est une commission que vous ne payez pas.",
+        "lead": "Les plateformes vous apportent du volume et prélèvent leur part sur chaque couvert. Un site qui convertit ne les remplace pas : il capte les clients qui vous cherchent déjà par votre nom et qui n'ont aucune raison de passer par un intermédiaire.",
+        "cta_primary": "Parler de mon établissement",
+        "parent_label": "Création de site",
+        "parent_url": "/pages/creation-site-vitrine",
+        "cta_secondary": "Voir le SEO local",
+        "cta_secondary_url": "/pages/seo-local"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "enjeu": {
+      "type": "content-stats",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "dark",
+        "eyebrow": "Ce qui se joue",
+        "title": "Trois mécaniques propres à la restauration.",
+        "source": "Mécaniques observées dans le secteur. Leur intensité varie selon le type d'établissement et l'emplacement."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Recherche de marque",
+            "label": "On vous cherche par votre nom",
+            "note": "Un client qui tape le nom de votre établissement doit tomber sur vous, pas sur une plateforme qui prélèvera une commission."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Décision rapide",
+            "label": "Quelques minutes",
+            "note": "Menu, horaires, adresse et réservation doivent être atteignables immédiatement, sur mobile, souvent depuis la rue."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Preuve visuelle",
+            "label": "La photo décide",
+            "note": "Dans ce secteur, l'image porte la décision plus que le texte. Des visuels faibles annulent le reste."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "priorite": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": true,
+        "eyebrow": "L'ordre des priorités",
+        "title": "Le menu et les horaires avant l'histoire de la maison.",
+        "text": "<p>La page d'accueil d'un restaurant s'ouvre le plus souvent sur un texte d'ambiance, tandis que le menu se cache derrière un fichier à télécharger. C'est l'exact inverse de ce que cherche le visiteur.</p><p>Nous plaçons en premier ce qui déclenche la venue, et nous gardons le récit pour ceux qui font défiler — ils existent, mais ils sont minoritaires.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Menu en page, pas en fichier",
+            "text": "Un document à télécharger n'est ni lisible sur mobile ni indexable. Le menu doit être du texte réel."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Réservation en deux clics",
+            "text": "Depuis n'importe quelle page, sans compte à créer, avec confirmation immédiate."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Informations pratiques visibles",
+            "text": "Horaires à jour, adresse cliquable vers l'itinéraire, téléphone appelable d'un doigt."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "perimetre": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "dark",
+        "density": "comfortable",
+        "eyebrow": "Ce que nous mettons en place",
+        "title": "Six éléments, dans cet ordre.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "cart",
+            "title": "Menu structuré",
+            "text": "Plats, prix, allergènes et suggestions du moment, modifiables par vous en quelques minutes."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Réservation directe",
+            "text": "Intégration du module de votre choix, ou formulaire simple si vous gérez au téléphone."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Fiche d'établissement",
+            "text": "Photos, horaires, plats mis en avant, réponses aux avis. Souvent le premier point de contact réel."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Pages événements",
+            "text": "Privatisation, groupes, brunchs, service traiteur : des demandes à forte valeur, rarement traitées."
+          }
+        },
+        "g5": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Vitesse mobile",
+            "text": "Vos visiteurs sont dehors, parfois en mauvaise réception. Un site lourd perd le client au coin de la rue."
+          }
+        },
+        "g6": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Photos exploitées",
+            "text": "Cadrage, poids et disposition. Nous ne photographions pas, mais nous savons mettre en valeur ce que vous avez."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes en restauration.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Dois-je quitter les plateformes de réservation ?",
+            "answer": "<p>Non, et ce serait risqué. Elles apportent une clientèle de découverte que vous n'atteindriez pas autrement. L'objectif est de récupérer en direct les clients qui vous connaissent déjà — ce sont les plus rentables et ceux pour lesquels la commission est la moins justifiée.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Puis-je changer le menu moi-même ?",
+            "answer": "<p>Oui, c'est un point non négociable dans nos projets de restauration. Un menu qu'il faut faire modifier par un prestataire n'est jamais à jour. Vous modifiez plats, prix et suggestions depuis une interface simple, en quelques minutes.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Faites-vous les photos ?",
+            "answer": "<p>Non, ce n'est pas notre métier et un photographe culinaire fera bien mieux. Nous vous indiquons précisément ce dont le site a besoin — cadrages, formats, nombre de visuels — pour que la séance soit utile du premier coup.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
-        "note": "Réponse sous 2 jours ouvrés"
+        "title": "Parlons de votre établissement.",
+        "text": "Dites-nous où vous en êtes : site existant, plateformes utilisées, part de réservations en direct. Nous vous dirons ce qui est récupérable.",
+        "cta_label": "Prendre contact",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir le référencement local",
+        "link_url": "/pages/seo-local"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Menu modifiable par vous"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Réservation en direct"
           }
         }
       },
@@ -49,7 +234,10 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "enjeu",
+    "priorite",
+    "perimetre",
+    "faq",
     "cta"
   ]
 }

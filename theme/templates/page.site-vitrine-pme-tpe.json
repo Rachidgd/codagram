@@ -4,40 +4,254 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Site vitrine pour PME et TPE",
+        "title": "Un site qui travaille pour vos commerciaux entre deux rendez-vous.",
+        "lead": "Dans une vente à cycle long, le site n'est presque jamais le point de contact final : il prépare, rassure et fait circuler l'information entre plusieurs interlocuteurs. Nous le concevons pour ce rôle-là.",
+        "cta_primary": "Cadrer mon projet",
+        "parent_label": "Création de site",
+        "parent_url": "/pages/creation-site-vitrine",
+        "cta_secondary": "Voir la création de site",
+        "cta_secondary_url": "/pages/creation-site-vitrine"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "realite": {
+      "type": "content-split",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "La réalité de votre cycle",
+        "title": "Votre acheteur n'est pas seul à décider.",
+        "text": "<p>Dans une PME, une décision d'achat passe par plusieurs mains : celui qui cherche, celui qui valide techniquement, celui qui signe. Ces trois personnes n'ont pas les mêmes questions et ne visitent pas votre site au même moment.</p><p>Un site qui ne parle qu'au premier laisse les deux autres sans réponse — et c'est souvent là que le dossier s'enlise.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Pour celui qui cherche",
+            "text": "Compréhension rapide de l'offre, des cas traités et de l'ordre de grandeur budgétaire."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Pour celui qui valide",
+            "text": "Détail des méthodes, des références comparables, des garanties et des délais tenus."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Pour celui qui signe",
+            "text": "Solidité de l'entreprise, ancienneté, conformité, capacité à assumer l'engagement."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "perimetre": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "dark",
+        "density": "comfortable",
+        "eyebrow": "Ce que nous construisons",
+        "title": "Un site structuré par métier et par cas d'usage.",
+        "text": "L'architecture prime sur le nombre de pages : mieux vaut six pages précises que vingt pages vagues."
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Une page par métier",
+            "text": "Chaque prestation a sa page, avec son vocabulaire et ses objections propres. C'est aussi ce qui la rend référençable."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Références comparables",
+            "text": "Un prospect se projette dans une entreprise de sa taille et de son secteur, pas dans votre plus gros client."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Documents téléchargeables",
+            "text": "Plaquette, méthodologie, attestations. Ce qui circule en interne quand vous n'êtes pas dans la pièce."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Formulaire qualifiant",
+            "text": "Quelques questions qui permettent à vos commerciaux d'arriver préparés au premier échange."
+          }
+        },
+        "g5": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Preuves de solidité",
+            "text": "Ancienneté, effectifs, certifications, assurances. Rassure le signataire, pas l'utilisateur."
+          }
+        },
+        "g6": {
+          "type": "item",
+          "settings": {
+            "icon": "megaphone",
+            "title": "Actualités et recrutement",
+            "text": "Un site d'entreprise sert aussi la marque employeur, souvent négligée."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ]
+    },
+    "choix": {
+      "type": "content-compare",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Dimensionner le projet",
+        "title": "Site de présentation ou site de génération de demandes ?",
+        "text": "Les deux sont légitimes, mais ils n'ont ni le même coût ni le même effet.",
+        "col_criteria": "Critère",
+        "col_a": "Site de génération de demandes",
+        "col_b": "Site de présentation",
+        "verdict": "Si vos affaires viennent uniquement de la recommandation et que cela vous suffit, un site de présentation est le bon choix. Nous ne vous vendrons pas l'autre."
+      },
+      "blocks": {
+        "r1": {
+          "type": "row",
+          "settings": {
+            "criteria": "Nombre de pages",
+            "value_a": "Une par métier et par cible",
+            "value_b": "Trois à cinq pages"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "criteria": "Rédaction",
+            "value_a": "Écrite pour les requêtes du marché",
+            "value_b": "Descriptive"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "criteria": "Effet attendu",
+            "value_a": "Demandes entrantes régulières",
+            "value_b": "Crédibilité quand on vous cherche"
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "criteria": "Travail après mise en ligne",
+            "value_a": "Continu",
+            "value_b": "Ponctuel"
+          }
+        },
+        "r5": {
+          "type": "row",
+          "settings": {
+            "criteria": "Budget",
+            "value_a": "Plus élevé",
+            "value_b": "Contenu"
+          }
+        },
+        "r6": {
+          "type": "row",
+          "settings": {
+            "criteria": "Pertinent si",
+            "value_a": "Vous voulez réduire la prospection sortante",
+            "value_b": "Votre activité vient du bouche-à-oreille"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes des dirigeants de PME.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Combien de temps mes équipes devront-elles y consacrer ?",
+            "answer": "<p>Comptez environ deux demi-journées d'entretien au cadrage, puis des relectures ponctuelles. Nous rédigeons à partir de ces échanges plutôt que d'attendre des textes de votre part — c'est le principal facteur de retard sur ce type de projet.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Peut-on démarrer par une seule page métier ?",
+            "answer": "<p>Oui, et c'est souvent la bonne approche : on traite d'abord le métier le plus stratégique, on mesure l'effet sur les demandes entrantes, puis on étend. Cela répartit l'investissement et valide la méthode avant de l'industrialiser.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Que devient notre référencement existant ?",
+            "answer": "<p>Il est protégé. Nous relevons vos pages positionnées avant toute refonte et nous établissons un plan de redirections complet. Une refonte sans ce travail préalable fait chuter le trafic pendant des mois — c'est l'accident le plus courant et le plus évitable.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
+        "title": "Parlons de votre cycle de vente.",
+        "text": "Décrivez comment vos clients vous trouvent aujourd'hui et où le processus se bloque. Nous vous dirons ce qu'un site peut réellement y changer.",
+        "cta_label": "Cadrer mon projet",
         "note": "Réponse sous 2 jours ouvrés"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Devis détaillé"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Démarrage possible par un seul métier"
           }
         }
       },
@@ -49,7 +263,10 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "realite",
+    "perimetre",
+    "choix",
+    "faq",
     "cta"
   ]
 }

@@ -4,40 +4,243 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Publicité Meta",
+        "title": "La publicité amplifie une offre. Elle ne la répare pas.",
+        "lead": "Facebook et Instagram peuvent multiplier vos demandes — à condition que l'offre, la page de destination et le suivi des conversions tiennent déjà debout. Nous vérifions ces trois points avant d'engager le moindre euro de budget média.",
+        "cta_primary": "Faire auditer mes campagnes",
+        "parent_label": "Expertises",
+        "parent_url": "/pages/agence-seo",
+        "cta_secondary": "Voir l'audit Meta Ads",
+        "cta_secondary_url": "/pages/audit-meta-ads"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "constat": {
+      "type": "content-stats",
       "settings": {
-        "surface": "paper"
+        "surface": "dark",
+        "eyebrow": "Ce que nous voyons en audit",
+        "title": "Les trois causes les plus fréquentes d'un budget qui part sans retour.",
+        "source": "Constats récurrents sur les comptes que nous auditons. Ils ne préjugent pas de votre situation."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Suivi",
+            "label": "Conversions mal configurées",
+            "note": "Des achats ou des formulaires non remontés faussent l'optimisation : l'algorithme apprend sur des données incomplètes."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Créations",
+            "label": "Une seule idée déclinée",
+            "note": "Cinq visuels issus du même concept ne testent qu'une hypothèse. La lassitude publicitaire arrive vite."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Destination",
+            "label": "Page non alignée",
+            "note": "La publicité promet une chose, la page en raconte une autre. Le clic est payé, la conversion perdue."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "methode": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": true,
+        "eyebrow": "Notre méthode",
+        "title": "Nous pilotons sur la marge, jamais sur le coût par clic.",
+        "text": "<p>Un coût par clic qui baisse peut parfaitement accompagner une rentabilité qui s'effondre. Le seul indicateur qui décide, c'est ce que rapporte un euro investi une fois toutes les charges déduites.</p><p>Nous remontons donc la chaîne complète : impression, clic, page de destination, formulaire ou panier, puis valeur réelle du client. Chaque décision d'augmentation de budget s'appuie sur ce trajet entier.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Structure lisible",
+            "text": "Peu de campagnes, des ensembles de publicités qui ne se cannibalisent pas, une intention par audience."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Créations testées par angle",
+            "text": "On ne teste pas cinq couleurs de bouton mais cinq raisons d'acheter. Les écarts de performance viennent de là."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Budget piloté par paliers",
+            "text": "On augmente quand le coût par demande reste tenable sur une période complète, pas sur trois bons jours."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "perimetre": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "dark",
+        "density": "comfortable",
+        "eyebrow": "Périmètre d'intervention",
+        "title": "Ce que nous prenons en charge.",
+        "text": "Selon votre situation, tout n'est pas nécessaire. Le diagnostic fixe le périmètre avant le devis."
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Audit du compte",
+            "text": "Structure, historique, dépenses, audiences, angles créatifs et suivi des conversions passés au crible."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "megaphone",
+            "title": "Stratégie de campagne",
+            "text": "Objectifs, segmentation, budgets et calendrier définis à partir de votre marge, pas d'un standard sectoriel."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Production des créations",
+            "text": "Angles rédactionnels, déclinaisons visuelles et vidéos courtes conçues pour être testées les unes contre les autres."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Page de destination",
+            "text": "Alignement message-publicité, réduction des frictions, formulaire raccourci. Souvent le gain le plus rapide."
+          }
+        },
+        "g5": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Suivi et attribution",
+            "text": "Pixel, conversions côté serveur, événements personnalisés. Sans données fiables, aucune optimisation n'est possible."
+          }
+        },
+        "g6": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Pilotage mensuel",
+            "text": "Lecture des résultats, arbitrages de budget, renouvellement des créations avant l'essoufflement."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ]
+    },
+    "position": {
+      "type": "content-quote",
+      "settings": {
+        "eyebrow": "Ce que nous refusons",
+        "quote": "Nous n'acceptons pas de mission publicitaire sur une offre qui ne convertit pas encore. Dépenser du budget média pour masquer un problème de proposition de valeur revient à faire payer au client une erreur que nous aurions dû signaler.",
+        "attribution": "",
+        "link_label": "Commencer par un audit",
+        "link_url": "/pages/audit-meta-ads"
       }
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur Meta Ads.",
+        "text": "Sur la publicité, les promesses sont faciles. Voici nos réponses réelles.",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Quel budget média minimum faut-il prévoir ?",
+            "answer": "<p>En dessous d'un certain volume quotidien, l'algorithme ne sort jamais de sa phase d'apprentissage et les résultats restent erratiques. L'ordre de grandeur dépend de votre secteur et du prix de votre offre : une prestation à 3 000 € et un produit à 40 € n'ont pas le même seuil. Nous le calculons pendant l'audit, avant de vous engager.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Gérez-vous aussi Google Ads ?",
+            "answer": "<p>Non. Nous intervenons sur Meta et sur Google Merchant Center pour les flux produits. Google Ads en recherche est un métier distinct, et nous préférons vous orienter vers quelqu'un dont c'est la spécialité plutôt que de facturer un apprentissage.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Qui est propriétaire du compte publicitaire ?",
+            "answer": "<p>Vous. Nous travaillons sur votre gestionnaire d'entreprise avec un accès délégué. À la fin de la mission, nous retirons nos accès et vous conservez l'historique, les audiences et les créations. Un compte publicitaire détenu par une agence est un point de dépendance que nous refusons de créer.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Combien de temps avant de voir des résultats ?",
+            "answer": "<p>Les premiers signaux exploitables arrivent généralement après deux à trois semaines de diffusion continue, le temps que les campagnes sortent de l'apprentissage et qu'un volume de conversions suffisant se constitue. Toute lecture faite avant relève de l'interprétation de bruit statistique.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
-        "note": "Réponse sous 2 jours ouvrés"
+        "title": "Commençons par regarder ce que disent vos données.",
+        "text": "Donnez-nous un accès en lecture à votre compte publicitaire. Nous revenons avec ce qui fonctionne, ce qui coûte sans rapporter, et si le levier publicitaire est prioritaire chez vous.",
+        "cta_label": "Demander un audit Meta Ads",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Analyser mes concurrents",
+        "link_url": "/pages/analyse-concurrentielle-meta-ads"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Accès en lecture seule"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Aucun changement sans votre accord"
           }
         }
       },
@@ -49,7 +252,11 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "constat",
+    "methode",
+    "perimetre",
+    "position",
+    "faq",
     "cta"
   ]
 }

@@ -1,0 +1,225 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement naturel — Paris",
+        "title": "Se rendre visible sur le marché le plus disputé de France.",
+        "lead": "À Paris, presque toutes les requêtes commerciales sont déjà occupées par des acteurs installés depuis dix ans. Se positionner n'y est pas une question de volume de contenu mais de choix : quelles requêtes vous pouvez réellement gagner, et lesquelles coûteraient plus qu'elles ne rapportent.",
+        "cta_primary": "Évaluer ma visibilité",
+        "parent_label": "SEO local",
+        "parent_url": "/pages/seo-local",
+        "cta_secondary": "Voir toutes les zones",
+        "cta_secondary_url": "/pages/seo-par-ville"
+      }
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui caractérise ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "20",
+            "label": "arrondissements",
+            "note": "Une recherche de proximité ne donne pas le même classement depuis le 15e et depuis le 19e. Le suivi doit être fait par secteur."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "B2B",
+            "label": "forte densité de services",
+            "note": "Conseil, finance, juridique, communication : des cycles longs où le site prépare la vente plus qu'il ne la conclut."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Élevée",
+            "label": "intensité concurrentielle",
+            "note": "Sur les requêtes génériques, les premières places appartiennent à des annuaires et à des acteurs nationaux."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Notre lecture",
+        "title": "La bonne stratégie parisienne consiste souvent à renoncer.",
+        "text": "<p>Viser « avocat Paris » quand on est un cabinet de trois personnes revient à dépenser un budget contre des sites installés depuis quinze ans. La requête est prestigieuse, elle n'est pas rentable.</p><p>Nous travaillons donc l'échelle en dessous : la spécialité, le quartier, le type de client. Moins de volume, beaucoup plus de conversions.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Par arrondissement",
+            "text": "Une page de quartier bien faite se positionne là où la page générique n'a aucune chance."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Par spécialité",
+            "text": "La requête précise attire moins de monde mais un visiteur déjà décidé sur ce qu'il cherche."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Par typologie de client",
+            "text": "Startup, grand compte, particulier : trois vocabulaires, trois pages, trois intentions."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "methode": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "comfortable",
+        "eyebrow": "Notre intervention",
+        "title": "Par où l'on commence sur un marché saturé.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Requêtes de niche",
+            "text": "On cherche les formulations précises que les gros acteurs n'ont jamais rédigées. C'est là que les places sont libres."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Quartier plutôt que ville",
+            "text": "Une page de secteur bien documentée bat une page « Paris » générique sur les recherches de proximité."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Profondeur éditoriale",
+            "text": "Face à des sites installés, seul un contenu plus complet que le leur permet de passer devant."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Arbitrage permanent",
+            "text": "Chaque requête est évaluée en coût d'acquisition. Certaines sont abandonnées, et c'est une décision, pas un renoncement."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur cette zone.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il une page par arrondissement ?",
+            "answer": "<p>Seulement pour ceux où vous intervenez réellement et où vous avez quelque chose à dire. Vingt pages d'arrondissement vides sont contre-productives. Trois ou quatre pages de quartier documentées, avec des références situées, produisent bien davantage.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Mon concurrent est premier depuis des années, est-ce jouable ?",
+            "answer": "<p>Sur sa requête principale, rarement à court terme. Sur les requêtes secondaires qu'il n'a jamais travaillées, souvent oui — les gros sites parisiens négligent presque toujours la longue traîne. C'est précisément là que nous commençons.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Travaillez-vous avec des entreprises hors Paris intra-muros ?",
+            "answer": "<p>Oui. La petite couronne pose une question spécifique : faut-il viser Paris, sa commune, ou les deux ? La réponse dépend de votre zone de chalandise réelle, et nous la tranchons pendant le diagnostic.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Voyons quelles requêtes parisiennes vous pouvez réellement gagner.",
+        "text": "Donnez-nous votre activité et votre secteur. Nous vous dirons lesquelles sont hors de portée aujourd'hui, et lesquelles sont accessibles en quelques mois.",
+        "cta_label": "Demander un relevé de position",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé géolocalisé"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "contexte",
+    "analyse",
+    "methode",
+    "faq",
+    "cta"
+  ]
+}

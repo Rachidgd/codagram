@@ -1,0 +1,216 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement naturel — Lille",
+        "title": "Un bassin transfrontalier que la plupart des sites ignorent.",
+        "lead": "La métropole lilloise fonctionne avec la Belgique : clients, fournisseurs et salariés traversent la frontière quotidiennement. Cette réalité change ce que vos clients tapent dans Google — et presque personne ne l'exploite.",
+        "cta_primary": "Évaluer ma visibilité",
+        "parent_label": "SEO local",
+        "parent_url": "/pages/seo-local",
+        "cta_secondary": "Voir toutes les zones",
+        "cta_secondary_url": "/pages/seo-par-ville"
+      }
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Notre lecture",
+        "title": "La demande belge est accessible et peu disputée.",
+        "text": "<p>Un client de Mouscron ou de Tournai qui cherche un prestataire accepte souvent de venir à Lille — c'est plus proche que Bruxelles. Mais il formule sa recherche autrement, et les sites lillois ne se positionnent quasiment jamais sur ces requêtes.</p><p>Traiter explicitement cette zone représente un gain rapide, sur un terrain que vos concurrents laissent vide.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Une page transfrontalière",
+            "text": "Assumer la zone belge, avec ses communes et ses spécificités. Peu de sites le font."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Vocabulaire adapté",
+            "text": "Le français de Belgique a ses tournures. Les ignorer, c'est manquer la requête."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Praticité affichée",
+            "text": "Distance, temps de trajet, modalités de facturation. Ce qui lève le doute d'un client étranger."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui caractérise ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Frontière",
+            "label": "un marché élargi",
+            "note": "Des recherches venues de Belgique francophone que la plupart des sites lillois ne captent pas."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Retail",
+            "label": "berceau de la distribution",
+            "note": "Un tissu de sièges et de sous-traitants qui cherche des prestataires habitués à ces exigences."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Densité",
+            "label": "communes imbriquées",
+            "note": "Roubaix, Tourcoing, Villeneuve-d'Ascq : des villes distinctes que les clients ne confondent jamais."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "methode": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Ouvrir le marché transfrontalier en quatre temps.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Mesurer la demande belge",
+            "text": "Vérifier les volumes réels côté wallon sur votre métier avant d'investir quoi que ce soit.",
+            "duration": "Semaine 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Adapter le vocabulaire",
+            "text": "Relever les formulations propres au français de Belgique, qui diffèrent plus qu'on ne le croit.",
+            "duration": "Semaine 2"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Publier la page frontalière",
+            "text": "Une page qui assume la zone belge, ses communes et les modalités pratiques de collaboration.",
+            "duration": "Semaines 3-5"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Couvrir la métropole",
+            "text": "Roubaix, Tourcoing, Villeneuve-d'Ascq traités séparément, avec leurs recherches propres.",
+            "duration": "Semaines 5-10"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur cette zone.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Puis-je vraiment attirer des clients belges ?",
+            "answer": "<p>Oui, sur les métiers où le déplacement est acceptable. La frontière est une barrière administrative bien plus qu'une barrière commerciale : de nombreux habitants de la Wallonie occidentale font leurs achats et consultent leurs prestataires côté français. La concurrence sur ces requêtes est très faible.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il traiter Roubaix et Tourcoing à part ?",
+            "answer": "<p>Oui. Ce sont des villes avec leur identité propre et leurs propres recherches. Les englober dans « Lille métropole » vous fait manquer des requêtes nettement plus faciles à gagner que celles portant sur Lille.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Vérifions ce que vous manquez côté belge.",
+        "text": "Nous mesurons les recherches wallonnes sur votre métier et votre position actuelle dessus. Le plus souvent, elle est inexistante.",
+        "cta_label": "Demander un relevé de position",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé géolocalisé"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "analyse",
+    "contexte",
+    "methode",
+    "faq",
+    "cta"
+  ]
+}

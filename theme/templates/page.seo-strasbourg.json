@@ -1,0 +1,216 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement naturel — Strasbourg",
+        "title": "Un marché bilingue que les sites français traitent rarement.",
+        "lead": "Strasbourg vit avec l'Allemagne : clients, salariés et fournisseurs franchissent le Rhin quotidiennement. Une partie mesurable de la demande locale se formule en allemand, sur des requêtes que presque aucun site strasbourgeois ne couvre.",
+        "cta_primary": "Évaluer ma visibilité",
+        "parent_label": "SEO local",
+        "parent_url": "/pages/seo-local",
+        "cta_secondary": "Voir toutes les zones",
+        "cta_secondary_url": "/pages/seo-par-ville"
+      }
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Notre lecture",
+        "title": "La demande allemande est mesurable, et presque libre.",
+        "text": "<p>Un habitant de Kehl qui cherche un prestataire trouve d'abord des sites allemands. Les entreprises strasbourgeoises, à quelques kilomètres, sont invisibles pour lui — simplement parce qu'aucune page ne parle sa langue.</p><p>Quelques pages en allemand, correctement rédigées et balisées, ouvrent un marché de proximité que personne ne dispute.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Mesurer d'abord",
+            "text": "Le volume de recherche allemand sur votre métier se vérifie. Il justifie ou non l'investissement."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Traduction professionnelle",
+            "text": "Une traduction automatique se repère instantanément et détruit la crédibilité sur ce public."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Balisage linguistique",
+            "text": "Les versions doivent être déclarées correctement pour ne pas se concurrencer entre elles."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui caractérise ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Frontière",
+            "label": "le bassin rhénan",
+            "note": "Kehl, Offenbourg et la Ortenau relèvent de la même zone de chalandise pratique."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Institutions",
+            "label": "un tissu européen",
+            "note": "Organisations et prestataires associés, avec des exigences de sérieux élevées."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Bilinguisme",
+            "label": "deux langues de recherche",
+            "note": "Un même besoin exprimé de deux façons, avec une concurrence très inégale entre les deux."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "methode": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Traiter le bilinguisme sans se disperser.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Mesurer la demande allemande",
+            "text": "Volumes réels côté badois sur votre activité. C'est cette mesure qui décide, pas une intuition.",
+            "duration": "Semaine 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Choisir les pages à traduire",
+            "text": "Trois à cinq pages suffisent presque toujours. Traduire l'intégralité du site est rarement justifié.",
+            "duration": "Semaine 2"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Traduction et balisage",
+            "text": "Traduction professionnelle et déclaration correcte des versions, pour qu'elles ne se concurrencent pas.",
+            "duration": "Semaines 3-5"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Suivre les deux marchés",
+            "text": "Positions relevées séparément en français et en allemand, avec des arbitrages distincts.",
+            "duration": "En continu"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur cette zone.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il vraiment une version allemande ?",
+            "answer": "<p>Uniquement si le volume le justifie, et cela se mesure avant tout engagement. Sur les services aux particuliers proches de la frontière, c'est souvent rentable. Sur une activité tournée vers l'intérieur du territoire, non. Nous vérifions les volumes réels avant de recommander quoi que ce soit.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Les institutions européennes représentent-elles un marché ?",
+            "answer": "<p>Indirectement, surtout : l'écosystème de prestataires, de cabinets et de services qui gravite autour est bien plus accessible que les institutions elles-mêmes, dont les achats passent par des marchés publics. C'est ce tissu périphérique que le référencement peut réellement atteindre.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Mesurons ce que cherchent vos voisins allemands.",
+        "text": "Nous relevons les volumes de recherche germanophones sur votre métier et estimons si une version allemande se rentabilise chez vous.",
+        "cta_label": "Demander un relevé de position",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé géolocalisé"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "analyse",
+    "contexte",
+    "methode",
+    "faq",
+    "cta"
+  ]
+}

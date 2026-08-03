@@ -1,0 +1,217 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement naturel — Rennes",
+        "title": "Une ville jeune, connectée, qui vérifie tout avant d'appeler.",
+        "lead": "Avec l'une des plus fortes proportions d'étudiants de France et un écosystème numérique installé, Rennes a un public qui compare en ligne systématiquement. Un site incomplet ou daté élimine avant même le premier contact.",
+        "cta_primary": "Évaluer ma visibilité",
+        "parent_label": "SEO local",
+        "parent_url": "/pages/seo-local",
+        "cta_secondary": "Voir toutes les zones",
+        "cta_secondary_url": "/pages/seo-par-ville"
+      }
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui caractérise ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Étudiants",
+            "label": "une population très mobile",
+            "note": "Un renouvellement permanent qui cherche tous les services sans référence préalable."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Agroalimentaire",
+            "label": "la filière régionale",
+            "note": "Un tissu B2B important, avec un vocabulaire métier précis et peu de concurrence éditoriale."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Numérique",
+            "label": "un pôle installé",
+            "note": "Des clients habitués à évaluer un prestataire sur la qualité de son site."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Notre lecture",
+        "title": "Un public qui lit vraiment les avis, et les réponses aux avis.",
+        "text": "<p>Sur un marché jeune et connecté, la réputation en ligne pèse au moins autant que le classement. Un professionnel bien positionné mais mal noté ne reçoit pas d'appel : le visiteur passe au suivant.</p><p>Nous traitons donc la collecte d'avis et la réponse aux avis comme une partie intégrante du référencement local, pas comme un sujet annexe.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Collecte régulière",
+            "text": "Quelques avis chaque mois valent mieux qu'une campagne ponctuelle suivie de deux ans de silence."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Réponses systématiques",
+            "text": "Répondre aux avis, y compris négatifs, est lu par les prospects et valorisé par les moteurs."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Cohérence des plateformes",
+            "text": "Un profil soigné d'un côté et abandonné de l'autre crée un doute immédiat."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "methode": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "comfortable",
+        "eyebrow": "Notre intervention",
+        "title": "Nos priorités sur le marché rennais.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Réputation en ligne",
+            "text": "Collecte régulière d'avis et réponses systématiques : sur ce public, cela pèse autant que le classement."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Vocabulaire de filière",
+            "text": "Sur l'agroalimentaire, les termes métier ouvrent des requêtes précises et très peu disputées."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Transparence des offres",
+            "text": "Un public qui compare attend des informations concrètes : périmètre, délais, ordres de prix."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Communes de la métropole",
+            "text": "Cesson-Sévigné, Saint-Grégoire, Bruz : des zones à concurrence faible souvent oubliées."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur cette zone.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "La population étudiante est-elle un marché intéressant ?",
+            "answer": "<p>Cela dépend entièrement du métier, et il faut être honnête : sur beaucoup d'activités, le pouvoir d'achat étudiant est faible. En revanche, le renouvellement permanent crée un flux de recherches sans habitude installée — ce qui profite aux nouveaux entrants bien positionnés.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Comment se différencier sur un marché où tout le monde a un bon site ?",
+            "answer": "<p>Par la profondeur plutôt que par l'apparence. Quand tous les concurrents ont un site correct, la différence se fait sur les contenus qui répondent réellement aux questions : tarification transparente, cas traités en détail, limites assumées. C'est plus difficile à copier qu'un design.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Mesurons ce que voit un Rennais qui vous compare.",
+        "text": "Nous relevons votre position, l'état de vos avis et ce que trouvent vos prospects quand ils vérifient votre nom avant de vous appeler.",
+        "cta_label": "Demander un relevé de position",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé géolocalisé"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "contexte",
+    "analyse",
+    "methode",
+    "faq",
+    "cta"
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement en Suisse romande",
+        "title": "Un marché cantonal, pas un marché national.",
+        "lead": "La Suisse se travaille canton par canton : Genève, Vaud et le Valais n'ont ni le même tissu économique, ni la même concurrence, ni les mêmes attentes. S'adresser à « la Suisse » revient le plus souvent à ne s'adresser à personne.",
+        "cta_primary": "Évaluer ma visibilité",
+        "cta_secondary": "Voir le SEO local",
+        "cta_secondary_url": "/pages/seo-local"
+      }
+    },
+    "marche": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché",
+        "title": "Trois particularités qui changent la stratégie.",
+        "source": "Lecture qualitative du marché. Les volumes précis sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Cantons",
+            "label": "des marchés autonomes",
+            "note": "Genève, Vaud, Neuchâtel, Valais : des bassins distincts avec leurs propres acteurs installés."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Pouvoir d'achat",
+            "label": "élevé",
+            "note": "Des paniers moyens supérieurs qui rendent rentables des requêtes à très faible volume."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Frontaliers",
+            "label": "une population importante",
+            "note": "Des dizaines de milliers de personnes qui vivent en France et travaillent en Suisse, avec des recherches à cheval."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "specificites": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": true,
+        "eyebrow": "Ce qui diffère du marché français",
+        "title": "Le même métier, des attentes différentes.",
+        "text": "<p>Le rapport au prix, à la garantie et à la formulation commerciale n'est pas le même. Un argumentaire écrit pour la France passe souvent pour excessif en Suisse romande, où la sobriété inspire davantage confiance.</p><p>S'y ajoutent des exigences réglementaires propres à certaines professions et des mentions légales spécifiques.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Un ton plus sobre",
+            "text": "Les superlatifs et l'urgence commerciale fonctionnent moins bien qu'en France."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Le prix assumé",
+            "text": "L'affichage tarifaire est mieux accepté et souvent attendu."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Des mentions propres",
+            "text": "Conditions générales, protection des données et obligations sectorielles suivent le droit suisse."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions sur le marché suisse.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il un domaine en .ch ?",
+            "answer": "<p>Ce n'est pas obligatoire mais cela aide, à la fois pour le signal géographique et pour la confiance des visiteurs. Un domaine en .fr ciblant la Suisse part avec un désavantage qu'il faut compenser par le contenu et les signaux locaux.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Devez-vous être établis en Suisse pour intervenir ?",
+            "answer": "<p>Non, le travail se fait à distance. Vous restez seul responsable de vos obligations locales — facturation, TVA, conformité sectorielle — sujets sur lesquels nous ne sommes pas compétents et pour lesquels vous devez consulter un professionnel du droit suisse.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il traiter l'allemand ?",
+            "answer": "<p>Seulement si votre clientèle dépasse la Romandie. La Suisse alémanique représente un marché bien plus vaste mais aussi une concurrence linguistique différente, avec ses propres acteurs. C'est un projet distinct, pas une extension automatique.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Situons-vous sur votre canton.",
+        "text": "Indiquez votre activité et votre canton. Nous relevons votre position actuelle et celle des acteurs installés face à vous.",
+        "cta_label": "Demander un relevé",
+        "note": "Réponse sous 2 jours ouvrés"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé par canton"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "marche",
+    "specificites",
+    "faq",
+    "cta"
+  ]
+}

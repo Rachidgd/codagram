@@ -1,0 +1,72 @@
+{%- comment -%}
+  BANDE DE CONTEXTE CHIFFRÉ
+
+  Utilisée sur les pages locales pour ancrer la page dans un marché réel
+  (nombre d'entreprises, tissu économique, intensité concurrentielle). C'est ce
+  qui distingue une page de ville d'un gabarit dupliqué.
+{%- endcomment -%}
+
+{%- liquid
+  assign surface = section.settings.surface | default: 'dark'
+  assign surface_class = 'surface-dark'
+  assign surface_attr = 'dark'
+  if surface == 'paper'
+    assign surface_class = 'surface-paper'
+    assign surface_attr = 'paper'
+  endif
+-%}
+
+<section class="cc-stats {{ surface_class }} section-y-sm" data-surface="{{ surface_attr }}">
+  <div class="shell">
+    {%- if section.settings.title != blank -%}
+      <div class="cc-stats__head" data-reveal>
+        {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        <h2 class="cc-stats__title">{{ section.settings.title }}</h2>
+      </div>
+    {%- endif -%}
+
+    <dl class="cc-stats__grid" data-reveal>
+      {%- for block in section.blocks -%}
+        <div class="cc-stats__cell" {{ block.shopify_attributes }}>
+          <dt>{{ block.settings.label }}</dt>
+          <dd class="metric">{{ block.settings.value }}</dd>
+          {%- if block.settings.note != blank -%}<p>{{ block.settings.note }}</p>{%- endif -%}
+        </div>
+      {%- endfor -%}
+    </dl>
+
+    {%- if section.settings.source != blank -%}
+      <p class="cc-stats__source" data-reveal>{{ section.settings.source }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contenu — Chiffres",
+  "settings": [
+    {
+      "type": "select", "id": "surface", "label": "Fond", "default": "dark",
+      "options": [
+        { "value": "dark", "label": "Graphite" },
+        { "value": "paper", "label": "Clair" }
+      ]
+    },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
+    { "type": "text", "id": "title", "label": "Titre" },
+    { "type": "text", "id": "source", "label": "Mention de source" }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Chiffre",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Valeur" },
+        { "type": "text", "id": "label", "label": "Libellé" },
+        { "type": "text", "id": "note", "label": "Précision" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Contenu — Chiffres" }]
+}
+{% endschema %}

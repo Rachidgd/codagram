@@ -4,40 +4,223 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Audit Merchant Center",
+        "title": "Un flux produit refusé, c'est un catalogue invisible.",
+        "lead": "Google Merchant Center conditionne l'affichage de vos produits dans les résultats et les comparateurs. Refus silencieux, attributs manquants, prix désynchronisés : nous reprenons le flux ligne par ligne pour rouvrir la diffusion.",
+        "cta_primary": "Demander l'audit",
+        "parent_label": "Audits",
+        "parent_url": "/pages/audit-seo",
+        "cta_secondary": "Voir le SEO e-commerce",
+        "cta_secondary_url": "/pages/seo-ecommerce"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "perimetre": {
+      "type": "content-grid",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "paper",
+        "density": "comfortable",
+        "eyebrow": "Ce que nous vérifions",
+        "title": "Six familles de problèmes.",
+        "text": "Les refus les plus coûteux sont rarement les plus visibles : un produit désactivé ne déclenche aucune alerte commerciale."
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Refus et avertissements",
+            "text": "Produits bloqués, en attente, ou diffusés en capacité réduite. Avec la cause exacte de chaque refus."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Qualité des attributs",
+            "text": "Identifiants produit, marque, état, catégorie, taille, couleur. Chaque manque restreint la diffusion."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Synchronisation des prix",
+            "text": "Écart entre le prix du flux et celui de la page : première cause de suspension de compte."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "cart",
+            "title": "Disponibilité",
+            "text": "Stock réel contre stock déclaré. Un produit épuisé mais annoncé disponible dégrade tout le compte."
+          }
+        },
+        "g5": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Conformité",
+            "text": "Mentions de livraison, retours, coordonnées et sécurité du site exigées par la plateforme."
+          }
+        },
+        "g6": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Titres et visuels",
+            "text": "Structure des titres et conformité des images : ce sur quoi se joue le taux de clic."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ]
+    },
+    "enjeu": {
+      "type": "content-split",
+      "settings": {
+        "surface": "dark",
+        "reverse": true,
+        "eyebrow": "Pourquoi c'est urgent",
+        "title": "Une suspension de compte se répare beaucoup plus lentement qu'elle ne survient.",
+        "text": "<p>Les écarts de prix répétés ou les manquements de conformité mènent à une suspension. Le rétablissement suppose une correction complète puis un réexamen, avec un délai que vous ne maîtrisez pas — pendant que votre catalogue reste invisible.</p><p>La plupart des comptes que nous auditons présentent des avertissements ignorés depuis des mois, simplement parce que personne ne consulte l'interface.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Détection des dérives",
+            "text": "Les écarts s'installent progressivement à chaque mise à jour de catalogue ou de promotion."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Correction à la source",
+            "text": "Nous corrigeons dans le flux et dans la boutique, pas seulement dans l'interface — sinon le problème revient."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Surveillance",
+            "text": "Mise en place d'un contrôle régulier pour que le compte ne redérive pas silencieusement."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "deroule": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Une semaine.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Diagnostic du flux",
+            "text": "Analyse complète du fichier produit et de tous les refus en cours.",
+            "duration": "Jours 1-2"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Correctifs",
+            "text": "Reprise des attributs, alignement des prix et de la disponibilité, mise en conformité.",
+            "duration": "Jours 3-5"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Contrôle",
+            "text": "Vérification après réindexation et mise en place du suivi périodique.",
+            "duration": "Jour 7"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur Merchant Center.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Mon compte est suspendu, pouvez-vous le débloquer ?",
+            "answer": "<p>Nous corrigeons les causes et préparons la demande de réexamen. La décision appartient à Google et le délai lui appartient également — méfiez-vous de quiconque garantit un rétablissement sous un nombre de jours donné. Ce que nous garantissons, c'est que les motifs invoqués auront été traités.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il une application pour gérer le flux ?",
+            "answer": "<p>Pas nécessairement. Sur Shopify, le canal natif suffit dans la majorité des cas. Nous ne recommandons une application payante que si votre catalogue exige des règles de transformation que le canal standard ne sait pas produire.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Est-ce utile si je ne fais pas de publicité ?",
+            "answer": "<p>Oui. Les fiches produit apparaissent aussi dans les résultats gratuits de l'onglet Shopping. Un flux propre vous rend visible sans budget média — c'est même l'un des rares gains de visibilité qui ne coûte que du travail de mise en ordre.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
+        "title": "Regardons l'état réel de votre flux.",
+        "text": "Un accès en lecture à votre compte Merchant Center suffit. Nous revenons avec le nombre exact de produits diffusés, restreints et refusés.",
+        "cta_label": "Demander l'audit du flux",
         "note": "Réponse sous 2 jours ouvrés"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Lecture seule"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Causes de refus détaillées"
           }
         }
       },
@@ -49,7 +232,10 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "perimetre",
+    "enjeu",
+    "deroule",
+    "faq",
     "cta"
   ]
 }

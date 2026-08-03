@@ -4,40 +4,180 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Site pour indépendant et freelance",
+        "title": "On ne vous achète pas une prestation. On vous achète, vous.",
+        "lead": "Quand vous êtes seul face au client, le site ne vend pas une méthode : il vend une personne en qui on peut avoir confiance avant de l'avoir rencontrée. Cela change complètement ce qu'il faut y mettre.",
+        "cta_primary": "Parler de mon site",
+        "parent_label": "Création de site",
+        "parent_url": "/pages/creation-site-vitrine",
+        "cta_secondary": "Voir la création de site",
+        "cta_secondary_url": "/pages/creation-site-vitrine"
+      }
+    },
+    "position": {
+      "type": "content-quote",
+      "settings": {
+        "eyebrow": "Le contresens fréquent",
+        "quote": "Beaucoup d'indépendants écrivent « nous » pour paraître plus gros. C'est exactement l'inverse qu'il faut faire : votre avantage sur une agence, c'est qu'on sait qui fera le travail. Le masquer revient à effacer votre seul argument imbattable.",
+        "attribution": "Clickscreation"
       }
     },
     "contenu": {
-      "type": "page-body",
+      "type": "content-split",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Ce qui construit la confiance",
+        "title": "Quatre éléments décident, et ils sont rarement ceux qu'on soigne.",
+        "text": "<p>Les sites d'indépendants consacrent souvent l'essentiel de leur surface à la liste des compétences. Or personne ne choisit un prestataire sur une liste de compétences : on choisit sur la capacité perçue à comprendre son problème.</p><p>Nous réorganisons donc la page autour de ce que le client cherche à vérifier avant de vous écrire.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Un visage et un nom",
+            "text": "Une photo réelle et une présentation directe. L'anonymat coûte plus cher qu'il ne protège."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Un périmètre assumé",
+            "text": "Ce que vous faites et ce que vous ne faites pas. Refuser un domaine renforce la crédibilité sur les autres."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Des cas racontés",
+            "text": "Deux ou trois missions détaillées valent mieux que quinze logos sans contexte."
+          }
+        },
+        "b4": {
+          "type": "point",
+          "settings": {
+            "title": "Une disponibilité claire",
+            "text": "Délai de réponse, capacité actuelle, modalités de démarrage. Le flou fait renoncer."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ]
+    },
+    "deroule": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Comment nous procédons",
+        "title": "Un format court, adapté à un budget d'indépendant.",
+        "text": "Nous savons que ce projet sort de votre poche. Le déroulé est resserré pour rester finançable sans sacrifier ce qui compte."
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Entretien",
+            "text": "Une heure et demie pour comprendre votre activité, vos clients et ce qui vous distingue réellement.",
+            "duration": "1 séance"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Rédaction",
+            "text": "Nous écrivons la totalité des textes. Vous relisez et corrigez, sans page blanche.",
+            "duration": "1 semaine"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Design et intégration",
+            "text": "Un site court, rapide, sans fonctionnalité superflue à maintenir.",
+            "duration": "2 semaines"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Mise en ligne",
+            "text": "Bascule, fiche d'établissement si pertinent, prise en main de l'administration.",
+            "duration": "2 jours"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes des indépendants.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Ai-je vraiment besoin d'un site si j'ai LinkedIn ?",
+            "answer": "<p>LinkedIn vous rend visible auprès de qui vous cherche déjà par votre nom. Un site vous rend trouvable auprès de qui cherche votre compétence sans vous connaître, et vous appartient — un réseau social peut changer ses règles ou votre portée du jour au lendemain. Les deux se complètent plus qu'ils ne se remplacent.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Combien coûte un site d'indépendant ?",
+            "answer": "<p>Nettement moins qu'un site d'entreprise multi-métiers, parce que le périmètre est plus court : moins de pages, une seule cible, pas de fonctionnalité complexe. Nous chiffrons après l'entretien et le devis reste ferme.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Puis-je le faire évoluer si mon activité change ?",
+            "answer": "<p>Oui, c'est même prévu : les sections sont modulaires et vous ajoutez ou réorganisez les blocs vous-même. Une activité d'indépendant bouge souvent dans les deux premières années, le site doit suivre sans nous solliciter à chaque fois.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
+        "title": "Racontez-nous ce que vous faites.",
+        "text": "Un échange d'une heure suffit pour savoir ce que votre site devrait dire — et si vous avez besoin de nous pour l'écrire.",
+        "cta_label": "Prendre contact",
         "note": "Réponse sous 2 jours ouvrés"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Périmètre court et chiffré"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Aucun abonnement caché"
           }
         }
       },
@@ -49,7 +189,10 @@
   },
   "order": [
     "hero",
+    "position",
     "contenu",
+    "deroule",
+    "faq",
     "cta"
   ]
 }

@@ -4,40 +4,234 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Site pour artisan et entreprise du bâtiment",
+        "title": "Des demandes de devis qualifiées, pas des appels sans suite.",
+        "lead": "Le problème d'un artisan visible n'est pas le nombre d'appels, c'est leur qualité : hors zone, hors métier, hors budget. Un site bien construit filtre en amont et vous fait gagner les heures que vous passez à décliner.",
+        "cta_primary": "Parler de mon activité",
+        "parent_label": "Création de site",
+        "parent_url": "/pages/creation-site-vitrine",
+        "cta_secondary": "Voir le SEO local",
+        "cta_secondary_url": "/pages/seo-local"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "filtre": {
+      "type": "content-split",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "paper",
+        "reverse": true,
+        "eyebrow": "Le vrai enjeu",
+        "title": "Un bon site vous fait recevoir moins d'appels, et de meilleurs.",
+        "text": "<p>Beaucoup d'artisans nous décrivent la même journée : quinze appels, dont trois dans la zone, deux dans le métier, et un seul avec un budget réaliste. Le temps perdu ne se rattrape pas le soir.</p><p>Nous rendons donc explicites les trois critères qui écartent les demandes non pertinentes — sans faire fuir les bonnes.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "La zone, écrite noir sur blanc",
+            "text": "Communes couvertes et rayon d'intervention. Le flou géographique génère l'essentiel des appels inutiles."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Le périmètre de métier",
+            "text": "Ce que vous prenez, ce que vous ne prenez pas. Un refus clair vaut mieux qu'un devis jamais envoyé."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "L'ordre de grandeur",
+            "text": "Une fourchette ou un montant minimum d'intervention. C'est l'information la plus évitée et la plus efficace."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "deroule": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Comment ça se passe",
+        "title": "Un projet calé sur votre disponibilité.",
+        "text": "Vous êtes sur les chantiers la journée. Nous organisons le projet pour qu'il n'exige jamais votre présence en pleine semaine."
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Un entretien téléphonique",
+            "text": "Une heure, en fin de journée si besoin. Métiers, zone, clients types, chantiers dont vous êtes fier.",
+            "duration": "1 appel"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Nous rédigeons",
+            "text": "Textes, structure, pages par métier et par commune. Vous validez par retour, sans rien écrire.",
+            "duration": "1 semaine"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Vos photos de chantier",
+            "text": "Nous vous disons quoi photographier avec votre téléphone. Le avant-après vaut tous les arguments.",
+            "duration": "À votre rythme"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Mise en ligne",
+            "text": "Site, fiche d'établissement, demande de devis. Vous recevez les demandes par courriel et par SMS.",
+            "duration": "2 semaines"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "perimetre": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "comfortable",
+        "eyebrow": "Ce que comprend le site",
+        "title": "",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Une page par métier",
+            "text": "Chaque prestation a sa page : c'est ce qui vous rend trouvable sur des recherches précises plutôt que génériques."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Pages par commune",
+            "text": "Vos villes d'intervention réellement travaillées, pas une liste dupliquée."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Galerie de chantiers",
+            "text": "Avant-après classés par métier. La preuve la plus convaincante de votre secteur."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Demande de devis qualifiante",
+            "text": "Type de travaux, commune, échéance, photos jointes. Vous savez si ça vaut le déplacement avant de rappeler."
+          }
+        },
+        "g5": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Garanties et assurances",
+            "text": "Décennale, certifications, qualifications. Ce que vérifie un particulier avant de signer."
+          }
+        },
+        "g6": {
+          "type": "item",
+          "settings": {
+            "icon": "megaphone",
+            "title": "Avis clients",
+            "text": "Collecte organisée après chantier, quand la satisfaction est à son maximum."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes des artisans.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Je n'ai pas le temps de m'occuper d'un site.",
+            "answer": "<p>C'est la remarque la plus fréquente et elle est légitime. Concrètement, votre contribution se limite à un entretien téléphonique et à des photos prises au téléphone entre deux chantiers. Nous nous chargeons de tout le reste, y compris de la rédaction.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il afficher mes prix ?",
+            "answer": "<p>Pas nécessairement un tarif exact, mais un ordre de grandeur ou un montant minimum d'intervention, oui. C'est ce qui écarte les demandes irréalistes avant qu'elles ne vous coûtent un déplacement. Les artisans qui franchissent ce pas reçoivent moins d'appels et signent davantage.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Est-ce que ça remplace les plateformes de mise en relation ?",
+            "answer": "<p>À terme, cela réduit fortement votre dépendance. Une demande arrivée par votre site ne se paie pas au lead et ne vous met pas en concurrence immédiate avec trois confrères. Mais cela demande quelques mois de référencement local avant de produire un volume régulier — nous ne promettons pas l'inverse.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
-        "note": "Réponse sous 2 jours ouvrés"
+        "title": "Un appel en fin de journée suffit pour démarrer.",
+        "text": "Dites-nous vos métiers, vos communes et le type de chantiers que vous cherchez. Nous vous dirons ce qu'un site peut vous apporter et sous quel délai.",
+        "cta_label": "Être rappelé",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir le référencement local",
+        "link_url": "/pages/seo-local"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Un seul entretien nécessaire"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Nous rédigeons tout"
           }
         }
       },
@@ -49,7 +243,10 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "filtre",
+    "deroule",
+    "perimetre",
+    "faq",
     "cta"
   ]
 }

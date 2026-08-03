@@ -4,40 +4,205 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Analyse concurrentielle publicitaire",
+        "title": "Vos concurrents publient leurs publicités. Autant les lire.",
+        "lead": "Toutes les publicités actives sur Facebook et Instagram sont consultables publiquement. Nous en tirons ce qui est réellement exploitable : les angles qu'ils tiennent dans la durée, ceux qu'ils abandonnent, et l'espace qu'ils vous laissent.",
+        "cta_primary": "Demander l'analyse",
+        "parent_label": "Audits",
+        "parent_url": "/pages/audit-seo",
+        "cta_secondary": "Voir l'audit de mon compte",
+        "cta_secondary_url": "/pages/audit-meta-ads"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "deroule": {
+      "type": "content-steps",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Ce que nous faisons de ces données publiques.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Cadrage concurrentiel",
+            "text": "Nous définissons ensemble qui sont vos vrais concurrents publicitaires — rarement la même liste que vos concurrents commerciaux.",
+            "duration": "Jour 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Relevé",
+            "text": "Collecte des créations actives, de leur durée de diffusion et de leurs déclinaisons.",
+            "duration": "Jours 2-3"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Lecture des angles",
+            "text": "Classement par promesse, par objection traitée et par format. C'est là que se trouve l'information utile.",
+            "duration": "Jours 4-5"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Recommandations",
+            "text": "Angles à tester chez vous, terrains saturés à éviter, espaces laissés libres.",
+            "duration": "Jour 7"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "lecture": {
+      "type": "content-split",
+      "settings": {
+        "surface": "dark",
+        "reverse": true,
+        "eyebrow": "Comment nous lisons",
+        "title": "Une publicité qui tourne depuis six mois vous dit quelque chose.",
+        "text": "<p>La durée de diffusion est le signal le plus fiable accessible publiquement : personne ne laisse tourner une création qui ne rapporte pas. Une annonce en ligne depuis plusieurs mois a fait ses preuves chez son annonceur.</p><p>À l'inverse, une profusion de créations lancées puis retirées en quelques jours signale une recherche encore infructueuse — et donc un angle disponible.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Les angles qui durent",
+            "text": "Ce qui tourne longtemps identifie les promesses qui fonctionnent sur votre marché."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Les angles abandonnés",
+            "text": "Ce qui disparaît vite vous évite de payer pour apprendre la même leçon."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Les zones vides",
+            "text": "Les objections que personne ne traite constituent souvent l'espace le plus rentable."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "livrables": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "comfortable",
+        "eyebrow": "Ce que vous recevez",
+        "title": "Trois livrables.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Panorama des angles",
+            "text": "Les promesses tenues par chaque concurrent, classées par ancienneté de diffusion."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Espaces disponibles",
+            "text": "Les terrains que personne n'occupe sérieusement, avec notre estimation de leur potentiel."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "megaphone",
+            "title": "Pistes à tester",
+            "text": "Cinq angles à confronter chez vous, formulés et priorisés, prêts à être produits."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur l'analyse concurrentielle.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Est-ce légal de regarder les publicités des concurrents ?",
+            "answer": "<p>Oui, entièrement. Ces publicités sont rendues publiques par la plateforme elle-même dans un objectif de transparence. Nous n'accédons à aucune donnée privée : ni leurs budgets, ni leurs audiences, ni leurs résultats — seulement ce que tout le monde peut consulter.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Allez-vous copier leurs publicités ?",
+            "answer": "<p>Non. Copier une création revient à arriver second sur un terrain déjà occupé, avec moins de notoriété. Nous cherchons les angles qui fonctionnent sur le marché pour identifier ce qui reste disponible, puis nous construisons votre propre proposition.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Combien de concurrents analysez-vous ?",
+            "answer": "<p>Entre cinq et huit, ce qui couvre généralement l'essentiel des angles d'un marché. Au-delà, l'analyse se répète sans rien apprendre de neuf.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
+        "title": "Dites-nous qui vous affrontez.",
+        "text": "Donnez-nous trois noms de concurrents. Nous vous montrons ce qu'ils diffusent en ce moment et depuis combien de temps.",
+        "cta_label": "Demander l'analyse",
         "note": "Réponse sous 2 jours ouvrés"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Données publiques uniquement"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Cinq angles à tester"
           }
         }
       },
@@ -49,7 +214,10 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "deroule",
+    "lecture",
+    "livrables",
+    "faq",
     "cta"
   ]
 }

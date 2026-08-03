@@ -1,0 +1,217 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Référencement naturel — Toulouse",
+        "title": "Un tissu industriel qui cherche des compétences, pas des prestataires.",
+        "lead": "L'aéronautique et le spatial structurent l'économie toulousaine et sa chaîne de sous-traitance. Sur ces marchés, personne ne tape « prestataire Toulouse » : on cherche une norme, une certification, un procédé précis.",
+        "cta_primary": "Évaluer ma visibilité",
+        "parent_label": "SEO local",
+        "parent_url": "/pages/seo-local",
+        "cta_secondary": "Voir toutes les zones",
+        "cta_secondary_url": "/pages/seo-par-ville"
+      }
+    },
+    "methode": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "dark",
+        "density": "comfortable",
+        "eyebrow": "Priorités",
+        "title": "Ce qui fonctionne sur le marché toulousain.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Pages par compétence",
+            "text": "Une page par procédé, norme ou qualification — c'est le niveau auquel la recherche se fait réellement."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Preuves de conformité",
+            "text": "Certifications, agréments, références de donneurs d'ordre. Le premier filtre du prospect industriel."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Contenus techniques",
+            "text": "Des documents détaillés se positionnent durablement sur des requêtes très qualifiées et peu disputées."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Pôles d'activité",
+            "text": "Blagnac et Labège ne sont pas des quartiers toulousains mais des bassins autonomes."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ]
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": true,
+        "eyebrow": "Notre lecture",
+        "title": "Un contenu technique se positionne mieux qu'une page commerciale.",
+        "text": "<p>Sur un marché industriel, un article détaillant un procédé, ses contraintes et ses tolérances attire exactement le lecteur qui cherche un fournisseur. Il attire peu de monde, mais il attire les bonnes personnes.</p><p>Ces pages sont aussi les plus faciles à défendre : quasiment personne ne les produit, parce qu'elles demandent une expertise réelle.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Écrire à votre niveau",
+            "text": "Le vocabulaire technique n'est pas un obstacle : c'est ce que tape votre prospect."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Documenter les contraintes",
+            "text": "Ce que vous ne pouvez pas faire qualifie autant que ce que vous faites."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Assumer un faible volume",
+            "text": "Trente visiteurs par mois pertinents valent mieux que trois mille visiteurs hors cible."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui caractérise ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Aéronautique",
+            "label": "une chaîne de sous-traitance",
+            "note": "Des donneurs d'ordre exigeants qui vérifient les qualifications avant de consulter."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Recherche",
+            "label": "laboratoires et écoles",
+            "note": "Un public qui lit en détail et compare méthodiquement avant de prendre contact."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Étalement",
+            "label": "une métropole étendue",
+            "note": "Blagnac, Colomiers, Labège : des pôles éloignés avec des recherches distinctes."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur cette zone.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Mon activité est trop technique pour intéresser Google.",
+            "answer": "<p>C'est presque toujours faux, et c'est même l'inverse : les requêtes techniques ont peu de volume mais une intention commerciale très forte et quasiment aucune concurrence éditoriale. Ce sont les positions les plus rentables et les plus stables du référencement B2B.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Les donneurs d'ordre passent-ils vraiment par Google ?",
+            "answer": "<p>Pour identifier de nouveaux fournisseurs et vérifier ceux qu'on leur a recommandés, oui, systématiquement. Un site absent ou daté fait douter au moment précis où le prospect cherche à se rassurer avant de vous consulter.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Voyons sur quelles requêtes techniques vous êtes absent.",
+        "text": "Donnez-nous vos procédés et vos qualifications. Nous relevons les recherches de votre filière et votre présence dessus.",
+        "cta_label": "Demander un relevé de position",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Relevé géolocalisé"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "methode",
+    "analyse",
+    "contexte",
+    "faq",
+    "cta"
+  ]
+}

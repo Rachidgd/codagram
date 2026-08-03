@@ -1,0 +1,72 @@
+{%- comment -%}
+  PROCESS NUMÉROTÉ
+
+  Mise en page horizontale sur desktop, distincte du bloc deux colonnes : évite
+  que toutes les pages service se ressemblent quand elles décrivent un déroulé.
+{%- endcomment -%}
+
+{%- liquid
+  assign surface = section.settings.surface | default: 'dark'
+  assign surface_class = 'surface-dark'
+  assign surface_attr = 'dark'
+  if surface == 'paper'
+    assign surface_class = 'surface-paper'
+    assign surface_attr = 'paper'
+  elsif surface == 'deep'
+    assign surface_class = 'surface-deep'
+  endif
+-%}
+
+<section class="cc-steps {{ surface_class }} section-y" data-surface="{{ surface_attr }}">
+  <div class="shell">
+    <div class="cc-head-block" data-reveal>
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2>{{ section.settings.title }}</h2>
+      {%- if section.settings.text != blank -%}<p class="cc-head-block__text">{{ section.settings.text }}</p>{%- endif -%}
+    </div>
+
+    <ol class="cc-steps__row" role="list">
+      {%- for block in section.blocks -%}
+        <li class="cc-steps__item" data-reveal {{ block.shopify_attributes }}>
+          <span class="cc-steps__num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <h3 class="cc-steps__title">{{ block.settings.title }}</h3>
+          {%- if block.settings.text != blank -%}<p class="cc-steps__text">{{ block.settings.text }}</p>{%- endif -%}
+          {%- if block.settings.duration != blank -%}
+            <p class="cc-steps__meta">{{ block.settings.duration }}</p>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contenu — Étapes",
+  "settings": [
+    {
+      "type": "select", "id": "surface", "label": "Fond", "default": "dark",
+      "options": [
+        { "value": "dark", "label": "Graphite" },
+        { "value": "deep", "label": "Graphite profond" },
+        { "value": "paper", "label": "Clair" }
+      ]
+    },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
+    { "type": "text", "id": "title", "label": "Titre" },
+    { "type": "textarea", "id": "text", "label": "Texte" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Étape",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titre" },
+        { "type": "textarea", "id": "text", "label": "Texte" },
+        { "type": "text", "id": "duration", "label": "Durée / livrable" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Contenu — Étapes" }]
+}
+{% endschema %}

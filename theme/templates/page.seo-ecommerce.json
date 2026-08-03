@@ -4,40 +4,296 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Référencement e-commerce",
+        "title": "Vos catégories rapportent plus que vos fiches produit.",
+        "lead": "Sur une boutique en ligne, l'essentiel du trafic qualifié se joue sur les pages de catégorie et les filtres — pas sur les fiches produit, qui arrivent en fin de parcours. Nous construisons cette architecture avant d'écrire quoi que ce soit.",
+        "cta_primary": "Auditer ma boutique",
+        "parent_label": "Expertises",
+        "parent_url": "/pages/agence-seo",
+        "cta_secondary": "Voir l'agence Shopify",
+        "cta_secondary_url": "/pages/agence-shopify"
+      },
+      "blocks": {
+        "p1": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "1",
+            "suffix": " page",
+            "label": "par intention d'achat"
+          }
+        },
+        "p2": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "0",
+            "suffix": "",
+            "label": "contenu dupliqué toléré"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2"
+      ]
+    },
+    "principe": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Le principe",
+        "title": "Une intention d'achat, une page — et une seule.",
+        "text": "<p>« Chaussures de running », « chaussures de running femme », « chaussures de running trail » : trois intentions différentes, donc trois pages distinctes. À l'inverse, une même intention couverte par une catégorie, un filtre et une page de contenu crée trois concurrents internes qui s'annulent.</p><p>La première étape d'une mission e-commerce est presque toujours un travail de tri : quelles pages garder, lesquelles fusionner, lesquelles rediriger.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Cartographie du catalogue",
+            "text": "Chaque intention commerciale est rattachée à une seule page canonique. Le reste est fusionné ou redirigé."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Filtres maîtrisés",
+            "text": "Certaines combinaisons méritent d'être indexées, la plupart non. Sans arbitrage, un catalogue génère des milliers d'URL inutiles."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Fiches produit utiles",
+            "text": "Description propre, attributs structurés, avis, disponibilité. Elles convertissent plus qu'elles n'attirent — et c'est normal."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "comparaison": {
+      "type": "content-compare",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Où investir en premier",
+        "title": "Catégories ou fiches produit : par quoi commencer ?",
+        "text": "La réponse dépend de la taille du catalogue et de la notoriété de vos marques.",
+        "col_criteria": "Critère",
+        "col_a": "Pages de catégorie",
+        "col_b": "Fiches produit",
+        "verdict": "Dans la majorité des boutiques que nous reprenons, l'effort part sur les fiches alors que les catégories captent la demande. Nous inversons cet ordre."
+      },
+      "blocks": {
+        "r1": {
+          "type": "row",
+          "settings": {
+            "criteria": "Volume de recherche capté",
+            "value_a": "Élevé",
+            "value_b": "Faible sauf marques connues"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "criteria": "Effort de production",
+            "value_a": "Concentré sur peu de pages",
+            "value_b": "Multiplié par le catalogue"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "criteria": "Durée de vie",
+            "value_a": "Longue",
+            "value_b": "Limitée à la vie du produit"
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "criteria": "Risque de duplication",
+            "value_a": "Faible si l'arbitrage est fait",
+            "value_b": "Élevé — descriptions fournisseur"
+          }
+        },
+        "r5": {
+          "type": "row",
+          "settings": {
+            "criteria": "Rôle dans le parcours",
+            "value_a": "Attirer et orienter",
+            "value_b": "Rassurer et déclencher"
+          }
+        },
+        "r6": {
+          "type": "row",
+          "settings": {
+            "criteria": "À traiter en priorité si",
+            "value_a": "Catalogue large, marques peu recherchées",
+            "value_b": "Vous vendez des références nominatives"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6"
+      ]
+    },
+    "perimetre": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Périmètre",
+        "title": "Ce que couvre la mission.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Architecture du catalogue",
+            "text": "Arborescence, canoniques, gestion des filtres et de la pagination, plan de redirections."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Recherche d'intentions",
+            "text": "Requêtes réelles de votre marché, classées par niveau de maturité d'achat."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Contenus de catégorie",
+            "text": "Textes qui aident à choisir, pas des paragraphes ajoutés en bas de page pour remplir."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "cart",
+            "title": "Fiches produit",
+            "text": "Structure, attributs, données structurées produit, avis et disponibilité."
+          }
+        },
+        "g5": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Performance",
+            "text": "Vitesse mobile, images, scripts. Sur une boutique, la lenteur coûte deux fois : classement et conversion."
+          }
+        },
+        "g6": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Suivi commercial",
+            "text": "Positions rapprochées du chiffre d'affaires par catégorie, pas seulement du trafic."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6"
+      ]
+    },
+    "position": {
+      "type": "content-quote",
+      "settings": {
+        "eyebrow": "Ce que nous ne ferons pas",
+        "quote": "Nous ne produirons pas de texte de catégorie destiné aux moteurs et illisible pour vos clients. Si un paragraphe n'aide pas à choisir un produit, il n'a rien à faire sur la page — quel que soit son intérêt supposé pour le référencement.",
+        "attribution": "Clickscreation"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "faq": {
+      "type": "content-faq",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur le SEO e-commerce.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Que faire des descriptions fournisseur ?",
+            "answer": "<p>Les réécrire sur les produits qui comptent, et assumer de les laisser telles quelles sur la longue traîne. Réécrire dix mille fiches n'est ni finançable ni utile : mieux vaut traiter les deux cents références qui font l'essentiel du chiffre et structurer correctement le reste.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il indexer les pages de filtres ?",
+            "answer": "<p>Seulement celles qui correspondent à une vraie demande — une couleur ou une taille recherchées explicitement, par exemple. Les autres combinaisons doivent rester non indexées, sinon le catalogue génère des milliers d'URL quasi identiques qui diluent l'exploration.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Comment gérer les produits épuisés ou supprimés ?",
+            "answer": "<p>Jamais par une suppression sèche renvoyant une erreur. Selon le cas : maintien de la page avec proposition d'alternatives si le produit revient, ou redirection vers la catégorie parente s'il disparaît définitivement. Un catalogue qui bouge sans plan de redirections perd du classement chaque saison.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Travaillez-vous uniquement sur Shopify ?",
+            "answer": "<p>Non, mais c'est notre terrain principal et celui où nous intervenons directement dans le thème. Sur d'autres plateformes, nous produisons les recommandations et travaillons avec votre équipe technique pour la mise en œuvre.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
-        "note": "Réponse sous 2 jours ouvrés"
+        "title": "Regardons ce que capte réellement votre catalogue.",
+        "text": "Communiquez-nous l'adresse de votre boutique et un accès en lecture à vos données de recherche. Nous identifions les pages qui se font concurrence et les intentions non couvertes.",
+        "cta_label": "Auditer ma boutique",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir l'audit e-commerce",
+        "link_url": "/pages/audit-ecommerce"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Analyse du catalogue"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Plan de redirections chiffré"
           }
         }
       },
@@ -49,7 +305,11 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "principe",
+    "comparaison",
+    "perimetre",
+    "position",
+    "faq",
     "cta"
   ]
 }

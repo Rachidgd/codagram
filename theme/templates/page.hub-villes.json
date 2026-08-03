@@ -4,40 +4,209 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Référencement local par zone",
+        "title": "Choisissez votre zone, nous en connaissons le marché.",
+        "lead": "Chaque territoire a son tissu économique, son intensité concurrentielle et ses habitudes de recherche. Nos pages de zone ne sont pas une même page dupliquée : elles décrivent ce que nous observons réellement sur chaque marché.",
+        "cta_primary": "Demander un relevé de position",
+        "cta_secondary": "Voir la prestation SEO local",
+        "cta_secondary_url": "/pages/seo-local"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "methode": {
+      "type": "content-split",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Comment lire ces pages",
+        "title": "Une page par zone, écrite pour cette zone.",
+        "text": "<p>La pratique courante consiste à produire une page type et à y remplacer le nom de la ville. Nous ne le faisons pas, pour deux raisons : les moteurs identifient ces gabarits et n'en retiennent qu'un, et surtout cela ne rend aucun service au lecteur.</p><p>Chaque page ci-dessous décrit un marché différent : ce qui s'y vend, qui s'y bat, et par où commencer.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Un contexte économique réel",
+            "text": "Secteurs dominants et dynamique locale, parce qu'ils changent la stratégie à appliquer."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Une intensité concurrentielle mesurée",
+            "text": "Paris et Grenoble ne demandent ni le même effort ni la même patience."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Des priorités différentes",
+            "text": "Sur certaines zones, la fiche d'établissement prime. Sur d'autres, c'est le contenu technique."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "zones": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "dark",
+        "density": "dense",
+        "eyebrow": "Zones couvertes",
+        "title": "Treize marchés que nous suivons régulièrement.",
+        "text": "Nous intervenons au-delà de cette liste : elle correspond aux zones sur lesquelles nous avons assez de recul pour publier une analyse."
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Paris et Île-de-France",
+            "text": "Le marché le plus disputé de France, où la stratégie consiste souvent à choisir ses renoncements."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Lyon et sa métropole",
+            "text": "Un marché qui se travaille par commune avant de viser la ville-centre."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Marseille",
+            "text": "Une géographie commerciale fragmentée où la recherche se joue au quartier."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Bordeaux",
+            "text": "Un marché devenu nettement plus concurrentiel depuis l'arrivée de nouveaux entrants."
+          }
+        },
+        "g5": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Nantes et Rennes",
+            "text": "Deux métropoles de l'Ouest, jeunes et connectées, où le site est systématiquement vérifié."
+          }
+        },
+        "g6": {
+          "type": "item",
+          "settings": {
+            "icon": "megaphone",
+            "title": "Lille",
+            "text": "Un bassin transfrontalier dont la demande belge reste largement inexploitée."
+          }
+        },
+        "g7": {
+          "type": "item",
+          "settings": {
+            "icon": "cart",
+            "title": "Toulouse et Grenoble",
+            "text": "Des marchés industriels où l'expertise technique se démontre avant de se vendre."
+          }
+        },
+        "g8": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Nice et Montpellier",
+            "text": "Le Sud, sa saisonnalité et sa clientèle en partie non résidente."
+          }
+        },
+        "g9": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Strasbourg",
+            "text": "Un marché bilingue dont la demande germanophone est presque libre."
+          }
+        },
+        "g10": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Luxembourg",
+            "text": "Peu de volume, une valeur de client sans équivalent, trois langues de recherche."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6",
+        "g7",
+        "g8",
+        "g9",
+        "g10"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions sur la couverture géographique.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Vous n'êtes pas dans ma ville, est-ce un problème ?",
+            "answer": "<p>Non. Le travail de référencement se fait à distance et nous accompagnons des clients sur l'ensemble du territoire, ainsi qu'au Luxembourg, en Suisse et en Belgique. Ce qui compte, c'est de connaître le marché sur lequel vous vous battez — pas d'avoir un bureau à côté du vôtre.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Ma ville n'est pas dans la liste.",
+            "answer": "<p>La liste correspond aux zones sur lesquelles nous avons assez d'observations pour publier une analyse sérieuse. Nous intervenons bien au-delà : dites-nous votre ville et nous vous ferons le même relevé de position, simplement sans page publique dédiée.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
+        "title": "Un relevé de position sur votre zone, gratuitement.",
+        "text": "Indiquez votre activité et vos communes. Nous mesurons où vous apparaissez aujourd'hui depuis chacune d'elles.",
+        "cta_label": "Demander le relevé",
         "note": "Réponse sous 2 jours ouvrés"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Relevé géolocalisé"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Sans engagement"
           }
         }
       },
@@ -49,7 +218,9 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "methode",
+    "zones",
+    "faq",
     "cta"
   ]
 }

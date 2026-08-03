@@ -4,40 +4,240 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
-      }
+        "eyebrow": "Audit de boutique en ligne",
+        "title": "Retrouver les commandes que votre tunnel perd en route.",
+        "lead": "Nous suivons le trajet complet de vos visiteurs, de l'arrivée au paiement, et nous chiffrons chaque marche perdue. L'objectif n'est pas de lister des anomalies mais de dire où se trouve l'argent laissé sur la table.",
+        "cta_primary": "Demander l'audit",
+        "parent_label": "Audits",
+        "parent_url": "/pages/audit-seo",
+        "cta_secondary": "Voir l'agence Shopify",
+        "cta_secondary_url": "/pages/agence-shopify"
+      },
+      "blocks": {
+        "p1": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "5",
+            "suffix": " étapes",
+            "label": "du tunnel analysées"
+          }
+        },
+        "p2": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "10",
+            "suffix": " jours",
+            "label": "de délai"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2"
+      ]
     },
-    "contenu": {
-      "type": "page-body",
+    "approche": {
+      "type": "content-split",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "L'approche",
+        "title": "Un taux de conversion global ne dit rien d'exploitable.",
+        "text": "<p>Savoir que votre boutique convertit à 1,4 % ne permet aucune décision. Ce qui compte, c'est de savoir que 60 % des visiteurs quittent la fiche produit sans faire défiler la page, ou que la moitié des paniers se perdent à l'étape de livraison.</p><p>Nous décomposons donc le parcours en marches et nous mesurons chacune séparément, sur mobile et sur ordinateur — parce que les points de rupture n'y sont jamais les mêmes.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Arrivée",
+            "text": "Adéquation entre la source de trafic et la page d'atterrissage. Beaucoup de pertes se jouent avant le premier clic."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Catégorie et fiche",
+            "text": "Lisibilité de l'offre, réassurance, éléments manquants au moment précis du doute."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Panier et paiement",
+            "text": "Frais découverts tardivement, création de compte imposée, moyens de paiement absents."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "livrables": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "dark",
+        "density": "comfortable",
+        "eyebrow": "Ce que vous recevez",
+        "title": "Cinq livrables chiffrés.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Entonnoir chiffré",
+            "text": "Le taux de passage entre chaque marche, comparé mobile et ordinateur."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Points de rupture",
+            "text": "Les trois marches les plus coûteuses, avec une estimation du manque à gagner mensuel."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "cart",
+            "title": "Analyse de la fiche produit",
+            "text": "Ce qui manque au moment de la décision : preuve, délai, garantie, alternative."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Performance technique",
+            "text": "Vitesse réelle sur mobile, poids des applications installées, scripts bloquants."
+          }
+        },
+        "g5": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Plan d'action",
+            "text": "Les correctifs classés en trois vagues : immédiat, à programmer, à arbitrer."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5"
+      ]
+    },
+    "deroule": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Trois temps.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Instrumentation",
+            "text": "Vérification de votre suivi. Si les données sont fausses, l'audit commence par les fiabiliser.",
+            "duration": "Jours 1-2"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Observation",
+            "text": "Analyse quantitative croisée avec l'examen manuel du parcours sur plusieurs appareils.",
+            "duration": "Jours 3-7"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Restitution",
+            "text": "Document chiffré et échange d'une heure pour prioriser ensemble.",
+            "duration": "Jour 10"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur l'audit e-commerce.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il beaucoup de commandes pour que ce soit pertinent ?",
+            "answer": "<p>Une centaine de commandes mensuelles permet une lecture statistique confortable. En dessous, l'audit s'appuie davantage sur l'examen manuel du parcours et sur les enregistrements de sessions, ce qui reste très instructif — les frictions graves se voient à l'œil nu.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Est-ce réservé à Shopify ?",
+            "answer": "<p>Non. La méthode s'applique à toute boutique en ligne. Sur Shopify, nous allons plus loin parce que nous pouvons examiner le thème et les applications installées directement.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Appliquez-vous les correctifs ?",
+            "answer": "<p>C'est une prestation distincte, que vous êtes libre de nous confier ou non. Le plan d'action est rédigé pour être exécutable par votre équipe ou par un autre prestataire, sans dépendance à nous.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
-        "note": "Réponse sous 2 jours ouvrés"
+        "title": "Chiffrons ce que perd votre tunnel.",
+        "text": "Donnez-nous l'adresse de votre boutique et un accès en lecture à vos statistiques. Nous vous montrons où partent les commandes.",
+        "cta_label": "Demander l'audit e-commerce",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir le SEO e-commerce",
+        "link_url": "/pages/seo-ecommerce"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Manque à gagner estimé"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Plan en trois vagues"
           }
         }
       },
@@ -49,7 +249,10 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "approche",
+    "livrables",
+    "deroule",
+    "faq",
     "cta"
   ]
 }

@@ -4,40 +4,228 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Audit de référencement",
+        "title": "Un audit qui se termine par des décisions, pas par un fichier.",
+        "lead": "Nous analysons la technique, la structure sémantique et la concurrence de votre site, puis nous vous remettons trois priorités argumentées et chiffrées. Pas une liste de deux cents points classés par couleur.",
+        "cta_primary": "Demander l'audit",
+        "parent_label": "Audits",
+        "parent_url": "/pages/audit-ecommerce",
+        "cta_secondary": "Voir la prestation SEO",
+        "cta_secondary_url": "/pages/agence-seo"
+      },
+      "blocks": {
+        "p1": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "3",
+            "suffix": " priorités",
+            "label": "au lieu d'une liste"
+          }
+        },
+        "p2": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "10",
+            "suffix": " jours",
+            "label": "de délai"
+          }
+        },
+        "p3": {
+          "type": "proof",
+          "settings": {
+            "prefix": "",
+            "value": "1",
+            "suffix": " restitution",
+            "label": "commentée en direct"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ]
+    },
+    "deroule": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Déroulé",
+        "title": "Ce que nous faisons pendant ces dix jours.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Exploration technique",
+            "text": "Indexation, exploration, redirections, vitesse, balisage, données structurées, versions mobiles.",
+            "duration": "Jours 1-3"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Analyse sémantique",
+            "text": "Couverture des intentions de votre marché, pages en concurrence interne, contenus orphelins.",
+            "duration": "Jours 3-6"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Étude concurrentielle",
+            "text": "Qui occupe vos requêtes, avec quel type de page, et pourquoi ces pages gagnent.",
+            "duration": "Jours 6-8"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Restitution",
+            "text": "Document écrit puis échange d'une heure. Vous posez vos questions, nous justifions chaque priorité.",
+            "duration": "Jour 10"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "livrables": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "comfortable",
+        "eyebrow": "Ce que vous recevez",
+        "title": "Quatre livrables exploitables.",
+        "text": "Tout est rédigé pour être compris par un dirigeant, avec les détails techniques en annexe pour votre développeur."
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Les trois priorités",
+            "text": "Classées par rapport entre effort et gain attendu, avec le raisonnement qui mène à ce classement."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Carte des intentions",
+            "text": "Ce que cherche votre marché, ce que vous couvrez déjà, et les manques qui valent le coût de production."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Correctifs techniques",
+            "text": "Liste actionnable, formulée pour un développeur, avec le niveau d'urgence réel de chaque point."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Trajectoire",
+            "text": "Ce qui est atteignable à trois, six et douze mois compte tenu de votre point de départ et de la concurrence."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ]
+    },
+    "position": {
+      "type": "content-quote",
+      "settings": {
+        "eyebrow": "Notre engagement",
+        "quote": "Si l'audit conclut que le référencement n'est pas votre levier prioritaire, nous vous le disons et nous vous orientons ailleurs. Un audit dont la conclusion est connue d'avance n'est pas un audit, c'est une plaquette commerciale.",
+        "attribution": "",
+        "link_label": "Voir nos autres leviers",
+        "link_url": "/pages/optimisation-cro"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "faq": {
+      "type": "content-faq",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur l'audit SEO.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "L'audit est-il payant ?",
+            "answer": "<p>Le pré-diagnostic est gratuit : quelques questions, un premier relevé, et notre avis sur l'existence d'un enjeu réel. L'audit complet, qui mobilise plusieurs jours de travail, est facturé. Nous vous annonçons le montant avant de commencer, et il est déduit si vous poursuivez avec un accompagnement.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "De quels accès avez-vous besoin ?",
+            "answer": "<p>Un accès en lecture à vos statistiques d'audience et à votre console de recherche, l'adresse du site, et si possible un accès en consultation à l'administration. Nous ne modifions rien pendant l'audit — la phase d'analyse est strictement passive.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "En quoi diffère-t-il d'un audit automatique gratuit ?",
+            "answer": "<p>Un outil automatique liste des anomalies sans les hiérarchiser ni les rapporter à votre marché : il signalera au même niveau une balise manquante sans effet et un problème d'indexation qui vous coûte la moitié de votre trafic. Le travail que nous facturons, c'est précisément cet arbitrage.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Que se passe-t-il après ?",
+            "answer": "<p>Vous appliquez vous-même, vous faites appliquer par votre prestataire, ou vous nous confiez la mise en œuvre. Les trois options sont légitimes et le document est écrit pour rester exploitable sans nous.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
+        "title": "Commençons par le pré-diagnostic gratuit.",
+        "text": "Quelques questions suffisent pour savoir si un audit complet se justifie chez vous — ou si le problème est ailleurs.",
+        "cta_label": "Demander le pré-diagnostic",
         "note": "Réponse sous 2 jours ouvrés"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Gratuit et sans engagement"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Réponse argumentée"
           }
         }
       },
@@ -49,7 +237,10 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "deroule",
+    "livrables",
+    "position",
+    "faq",
     "cta"
   ]
 }
