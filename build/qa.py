@@ -37,6 +37,19 @@ GLOBAL_SETTING = re.compile(r"(?<![.\w])settings\.([a-zA-Z0-9_]+)")
 
 
 # --- 1. Schemas JSON valides -------------------------------------------------
+URL_DEFAUT = re.compile(r'"type"\s*:\s*"url"[^}]*"default"')
+
+
+def verifier_reglages_url(nom, schema_brut, erreurs):
+    """Un réglage de type url ne peut pas porter de valeur par défaut.
+    Shopify rejette le fichier sans message : l'ancienne version reste en
+    place et rien ne signale l'échec. Le repli doit se faire en Liquid,
+    avec le filtre default."""
+    if URL_DEFAUT.search(schema_brut):
+        erreurs.append(f"{nom} : un réglage \"url\" porte un \"default\" — "
+                       f"Shopify rejettera le fichier en silence")
+
+
 section_schemas = {}
 for path in sorted((ROOT / "sections").glob("*.liquid")):
     text = path.read_text(encoding="utf-8")
@@ -48,6 +61,7 @@ for path in sorted((ROOT / "sections").glob("*.liquid")):
         section_schemas[path.stem] = json.loads(m.group(1))
     except json.JSONDecodeError as e:
         errors.append(f"{path.name}: schema JSON invalide — {e}")
+    verifier_reglages_url(path.name, m.group(1), errors)
 
 # Liquid interdit dans un schema
 for path in sorted((ROOT / "sections").glob("*.liquid")):
