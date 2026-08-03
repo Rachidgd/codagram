@@ -1,0 +1,18 @@
+{
+  "_comment": "Fichiers de la bibliothèque Shopify utilisés par le thème. Sert uniquement à la maquette locale : elle résout shopify://shop_images/... vers l'URL réelle du CDN, ce qui permet de vérifier le rendu avec les vraies images.",
+  "clickscreation-social-share-1200x630.png": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/clickscreation-social-share-1200x630.png?v=1784809316",
+  "noza-co-responsive-portfolio.webp": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/noza-co-responsive-portfolio.webp?v=1783261846",
+  "ashewin_paris_portfolio.png": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/ashewin_paris_portfolio.png?v=1783262996",
+  "Boutique_ecommerce_shopify_Mayson_Ayla_Paris.png": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/Boutique_ecommerce_shopify_Mayson_Ayla_Paris.png?v=1783263036",
+  "Boutique_ecommerce_shopify_Seora.png": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/Boutique_ecommerce_shopify_Seora.png?v=1783263075",
+  "Boutique_ecommerce_shopify_Soundeo.png": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/Boutique_ecommerce_shopify_Soundeo.png?v=1783263103",
+  "Site_vitrine_Clean_Elegance.png": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/Site_vitrine_Clean_Elegance.png?v=1783263151",
+  "Boutique_ecommerce_shopify_Saccabines.png": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/Boutique_ecommerce_shopify_Saccabines.png?v=1783263189",
+  "equipe-clickscreation.webp": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/equipe-clickscreation.webp?v=1783264901",
+  "logo_noza.svg": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/logo_noza.svg?v=1783256168",
+  "logo_maison_ayla.svg": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/logo_maison_ayla.svg?v=1783256186",
+  "logo_stellar.svg": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/logo_stellar.svg?v=1783255998",
+  "logo_saccabines.svg": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/logo_saccabines.svg?v=1783254972",
+  "logo_oshira_2.svg": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/logo_oshira_2.svg?v=1783256281",
+  "logo_mbe.svg": "https://cdn.shopify.com/s/files/1/1055/6060/5002/files/logo_mbe.svg?v=1783255145"
+}

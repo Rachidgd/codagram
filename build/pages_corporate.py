@@ -40,7 +40,9 @@ PAGES["a-propos"] = [
         [("Un interlocuteur du début à la fin", "La personne du premier appel est celle qui rédige, développe et vous forme."),
          ("Peu de projets en parallèle", "Nous refusons des missions quand le calendrier est plein plutôt que d'allonger les délais."),
          ("Aucune sous-traitance cachée", "Si nous faisons appel à un spécialiste externe, vous le savez et vous savez qui c'est.")],
-        surface="paper")),
+        surface="paper",
+        image="shopify://shop_images/equipe-clickscreation.webp",
+        image_alt="L'équipe de Clickscreation au travail dans ses bureaux parisiens")),
 
     ("position", quote(
         "Ce que nous ne vendons pas",

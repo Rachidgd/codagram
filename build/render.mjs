@@ -30,17 +30,48 @@ const money = (v) => (Number(v || 0) / 100).toFixed(2).replace('.', ',') + ' €
 engine.registerFilter('asset_url', (v) => `assets/${v}`);
 engine.registerFilter('stylesheet_tag', (v) => `<link rel="stylesheet" href="${v}">`);
 engine.registerFilter('script_tag', (v) => `<script src="${v}"></script>`);
+// Les valeurs d'image_picker sont des références « shopify://shop_images/… ».
+// On les résout vers l'URL réelle du CDN pour que la maquette montre les
+// vraies images, et non un rectangle gris qui masquerait tout défaut.
+const SHOP_FILES = JSON.parse(fs.readFileSync(path.join(HERE, 'shop_files.json'), 'utf8'));
+// Le CDN Shopify n'est pas joignable depuis l'environnement de test. Quand des
+// gabarits locaux existent (mêmes dimensions exactes que les fichiers réels),
+// on les sert : la géométrie de la mise en page est alors fidèle, seul le
+// contenu du visuel diffère. PREVIEW_CDN=1 force l'URL réelle.
+function resoudreImage(v) {
+  const s = String(v || '');
+  const m = s.match(/^shopify:\/\/shop_images\/(.+)$/);
+  if (!m) return null;
+  const nom = m[1];
+  const local = path.join(OUT, 'mock', nom.replace(/\.[^.]+$/, '') + '.png');
+  if (!process.env.PREVIEW_CDN && fs.existsSync(local)) {
+    return 'mock/' + nom.replace(/\.[^.]+$/, '') + '.png';
+  }
+  return SHOP_FILES[nom] || null;
+}
 engine.registerFilter('image_url', function (v, ...args) {
+  const reel = resoudreImage(v);
+  if (reel) return reel;
   const width = args.length ? args[args.length - 1] : 1200;
   const seed = encodeURIComponent(String(v || 'placeholder')).slice(0, 24);
   return `https://placehold.co/${width}x${Math.round(width * 0.62)}/1b201e/98a39e?text=${seed}`;
 });
 engine.registerFilter('image_tag', function (src, ...rest) {
-  const opts = Object.assign({}, ...rest.filter((r) => r && typeof r === 'object'));
-  const attrs = [`src="${src}"`, 'loading="lazy"', 'width="1200"', 'height="744"'];
+  // liquidjs transmet les arguments nommés sous forme de paires [clé, valeur].
+  // Les lire comme des objets faisait perdre class et alt : la maquette
+  // affichait alors des images sans style et sans texte alternatif, ce qui
+  // faussait à la fois le rendu et l'audit d'accessibilité.
+  const opts = {};
+  for (const r of rest) {
+    if (Array.isArray(r) && r.length === 2) opts[r[0]] = r[1];
+    else if (r && typeof r === 'object') Object.assign(opts, r);
+  }
+  const attrs = [`src="${src}"`, `loading="${opts.loading || 'lazy'}"`];
+  if (opts.width) attrs.push(`width="${opts.width}"`);
+  if (opts.height) attrs.push(`height="${opts.height}"`);
   if (opts.class) attrs.push(`class="${opts.class}"`);
   if (opts.sizes) attrs.push(`sizes="${opts.sizes}"`);
-  attrs.push(`alt="${opts.alt || ''}"`);
+  attrs.push(`alt="${String(opts.alt || '').replace(/"/g, '&quot;')}"`);
   return `<img ${attrs.join(' ')}>`;
 });
 engine.registerFilter('money', money);
@@ -152,7 +183,7 @@ function themeSettings() {
   const groups = JSON.parse(fs.readFileSync(path.join(THEME, 'config', 'settings_schema.json'), 'utf8'));
   const s = {};
   groups.forEach((g) => (g.settings || []).forEach((f) => { if (f.id) s[f.id] = f.default ?? ''; }));
-  return Object.assign(s, {
+  Object.assign(s, {
     header_menu: { links: MENUS.main },
     footer_services_menu: { links: MENUS.services },
     footer_zones_menu: { links: MENUS.zones },
@@ -162,8 +193,18 @@ function themeSettings() {
       { title: 'Structurer une arborescence SEO qui tient dans le temps', url: '/blogs/ressources/arborescence-seo' },
       { title: 'Fiche produit Shopify : ce qui fait vraiment basculer l’achat', url: '/blogs/ressources/fiche-produit' }
     ] },
-    share_image: '', logo: ''
+    logo: ''
   });
+  // Les valeurs réellement enregistrées priment sur les défauts du schema :
+  // sans cela la maquette teste une configuration qui n'existe nulle part.
+  const data = JSON.parse(fs.readFileSync(path.join(THEME, 'config', 'settings_data.json'), 'utf8'));
+  for (const [k, v] of Object.entries(data.current || {})) {
+    if (k === 'sections' || typeof v === 'object') continue;
+    if (typeof s[k] === 'object' && s[k] !== null) continue;   // menus déjà simulés
+    s[k] = v;
+  }
+  if (!s.share_image) s.share_image = '';
+  return s;
 }
 
 const BASE = {

@@ -39,11 +39,13 @@ def hero(eyebrow, title, lead, cta1, cta2=None, cta2_url=None, parent=None,
 
 
 def split(eyebrow, title, html, points, surface="paper", reverse=False,
-          cta=None, cta_url=None):
+          cta=None, cta_url=None, image=None, image_alt=None):
     s = {"surface": surface, "reverse": reverse, "eyebrow": eyebrow,
          "title": title, "text": html}
     if cta:
         s["cta_label"], s["cta_url"] = cta, cta_url
+    if image:
+        s["image"], s["image_alt"] = image, image_alt or title
     return {
         "type": "content-split", "settings": s,
         "blocks": {f"b{i}": {"type": "point", "settings": {"title": p[0], "text": p[1]}}

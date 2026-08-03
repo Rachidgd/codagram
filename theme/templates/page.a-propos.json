@@ -69,7 +69,9 @@
         "reverse": false,
         "eyebrow": "Notre fonctionnement",
         "title": "Vous parlez directement à ceux qui font le travail.",
-        "text": "<p>Dans beaucoup d'agences, la personne qui vend n'est pas celle qui exécute, et l'information se dégrade à chaque transmission. Nous avons choisi l'inverse : vous parlez directement à ceux qui produisent.</p><p>Cela limite mécaniquement le nombre de projets que nous pouvons prendre. C'est une contrainte assumée, pas un argument marketing.</p>"
+        "text": "<p>Dans beaucoup d'agences, la personne qui vend n'est pas celle qui exécute, et l'information se dégrade à chaque transmission. Nous avons choisi l'inverse : vous parlez directement à ceux qui produisent.</p><p>Cela limite mécaniquement le nombre de projets que nous pouvons prendre. C'est une contrainte assumée, pas un argument marketing.</p>",
+        "image": "shopify://shop_images/equipe-clickscreation.webp",
+        "image_alt": "L'équipe de Clickscreation au travail dans ses bureaux parisiens"
       },
       "blocks": {
         "b1": {

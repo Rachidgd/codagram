@@ -3,3 +3,4 @@ build/preview/
 build/shots/
 build/audit.json
 .DS_Store
+build/preview/mock/

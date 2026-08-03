@@ -399,30 +399,76 @@
       "settings": {
         "eyebrow": "Réalisations",
         "title": "Des interfaces construites autour de la décision d'achat.",
-        "text": "Chaque projet part du parcours réel : ce que le visiteur doit comprendre, dans quel ordre, et ce qui l'empêche encore d'agir."
+        "text": "Sept projets livrés, en ligne aujourd'hui. Chacun part du parcours réel : ce que le visiteur doit comprendre, dans quel ordre, et ce qui l'empêche encore d'agir."
       },
       "blocks": {
         "p1": {
           "type": "piece",
           "settings": {
-            "service": "Shopify · CRO",
-            "title": "Boutique e-commerce",
+            "image": "shopify://shop_images/Boutique_ecommerce_shopify_Mayson_Ayla_Paris.png",
+            "alt": "Page d'accueil de la boutique Shopify Maison Ayla, développée par Clickscreation",
+            "service": "Boutique Shopify · SEO",
+            "title": "Maison Ayla",
             "external": true
           }
         },
         "p2": {
           "type": "piece",
           "settings": {
-            "service": "Site vitrine · SEO",
-            "title": "Site de services",
+            "image": "shopify://shop_images/noza-co-responsive-portfolio.webp",
+            "alt": "Boutique Noza & Co affichée sur ordinateur, tablette et mobile",
+            "service": "Boutique Shopify · CRO",
+            "title": "Noza & Co",
             "external": true
           }
         },
         "p3": {
           "type": "piece",
           "settings": {
-            "service": "SEO local",
-            "title": "Réseau multi-villes",
+            "image": "shopify://shop_images/Boutique_ecommerce_shopify_Saccabines.png",
+            "alt": "Boutique Shopify Saccabines, développée par Clickscreation",
+            "service": "Boutique Shopify",
+            "title": "Saccabines",
+            "external": true
+          }
+        },
+        "p4": {
+          "type": "piece",
+          "settings": {
+            "image": "shopify://shop_images/Site_vitrine_Clean_Elegance.png",
+            "alt": "Site vitrine Clean Élégance, développé par Clickscreation",
+            "service": "Site vitrine · SEO local",
+            "title": "Clean Élégance",
+            "external": true
+          }
+        },
+        "p5": {
+          "type": "piece",
+          "settings": {
+            "image": "shopify://shop_images/ashewin_paris_portfolio.png",
+            "alt": "Boutique Shopify Ashewin Paris, développée par Clickscreation",
+            "service": "Boutique Shopify",
+            "title": "Ashewin Paris",
+            "external": true
+          }
+        },
+        "p6": {
+          "type": "piece",
+          "settings": {
+            "image": "shopify://shop_images/Boutique_ecommerce_shopify_Soundeo.png",
+            "alt": "Boutique Shopify Soundeo, développée par Clickscreation",
+            "service": "Boutique Shopify",
+            "title": "Soundeo",
+            "external": true
+          }
+        },
+        "p7": {
+          "type": "piece",
+          "settings": {
+            "image": "shopify://shop_images/Boutique_ecommerce_shopify_Seora.png",
+            "alt": "Boutique Shopify Seora, développée par Clickscreation",
+            "service": "Boutique Shopify",
+            "title": "Seora",
             "external": true
           }
         }
@@ -430,12 +476,77 @@
       "block_order": [
         "p1",
         "p2",
-        "p3"
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7"
+      ]
+    },
+    "clients": {
+      "type": "content-logos",
+      "settings": {
+        "surface": "paper",
+        "title": "Ils nous ont confié leur site",
+        "note": ""
+      },
+      "blocks": {
+        "c1": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_noza.svg",
+            "name": "Noza & Co"
+          }
+        },
+        "c2": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_maison_ayla.svg",
+            "name": "Maison Ayla"
+          }
+        },
+        "c3": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_stellar.svg",
+            "name": "Cabinet Stellar"
+          }
+        },
+        "c4": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_saccabines.svg",
+            "name": "Saccabines"
+          }
+        },
+        "c5": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_oshira_2.svg",
+            "name": "Oshira"
+          }
+        },
+        "c6": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_mbe.svg",
+            "name": "MBE"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6"
       ]
     }
   },
   "order": [
     "hero",
+    "clients",
     "selector",
     "levers",
     "results",

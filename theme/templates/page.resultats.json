@@ -12,13 +12,40 @@
         "cta_secondary_url": "/pages/agence-shopify"
       },
       "blocks": {
-        "p1": { "type": "proof", "settings": { "prefix": "+", "value": "236", "suffix": " %", "label": "impressions — Maison Ayla" } },
-        "p2": { "type": "proof", "settings": { "prefix": "+", "value": "350", "suffix": " %", "label": "clics — Maison Ayla" } },
-        "p3": { "type": "proof", "settings": { "prefix": "+", "value": "169", "suffix": " %", "label": "impressions — Noza & Co" } }
+        "p1": {
+          "type": "proof",
+          "settings": {
+            "prefix": "+",
+            "value": "236",
+            "suffix": " %",
+            "label": "impressions — Maison Ayla"
+          }
+        },
+        "p2": {
+          "type": "proof",
+          "settings": {
+            "prefix": "+",
+            "value": "350",
+            "suffix": " %",
+            "label": "clics — Maison Ayla"
+          }
+        },
+        "p3": {
+          "type": "proof",
+          "settings": {
+            "prefix": "+",
+            "value": "169",
+            "suffix": " %",
+            "label": "impressions — Noza & Co"
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3"]
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ]
     },
-
     "cas": {
       "type": "home-results",
       "settings": {
@@ -36,8 +63,16 @@
             "period": "Mi-mai → juin 2026",
             "context": "Site en ligne depuis deux ans, structure de pages illisible pour les moteurs et intentions de recherche non couvertes.",
             "action": "Restructuration de l'arborescence, reprise des signaux techniques et réécriture des pages prioritaires.",
-            "metric_1": "on", "prefix_1": "+", "value_1": "169", "suffix_1": " %", "label_1": "impressions mensuelles",
-            "metric_2": "on", "prefix_2": "+", "value_2": "144", "suffix_2": " %", "label_2": "clics organiques"
+            "metric_1": "on",
+            "prefix_1": "+",
+            "value_1": "169",
+            "suffix_1": " %",
+            "label_1": "impressions mensuelles",
+            "metric_2": "on",
+            "prefix_2": "+",
+            "value_2": "144",
+            "suffix_2": " %",
+            "label_2": "clics organiques"
           }
         },
         "c2": {
@@ -48,8 +83,16 @@
             "period": "Avril → juin 2026",
             "context": "Pages nombreuses mais concurrentes entre elles, aucune ne ressortant clairement sur les requêtes visées.",
             "action": "Clarification du rôle de chaque page dans l'architecture, optimisation technique et éditoriale.",
-            "metric_1": "on", "prefix_1": "+", "value_1": "236", "suffix_1": " %", "label_1": "impressions",
-            "metric_2": "on", "prefix_2": "+", "value_2": "350", "suffix_2": " %", "label_2": "clics"
+            "metric_1": "on",
+            "prefix_1": "+",
+            "value_1": "236",
+            "suffix_1": " %",
+            "label_1": "impressions",
+            "metric_2": "on",
+            "prefix_2": "+",
+            "value_2": "350",
+            "suffix_2": " %",
+            "label_2": "clics"
           }
         },
         "c3": {
@@ -60,14 +103,25 @@
             "period": "Site vitrine ou boutique",
             "context": "Le choix de la base technique découle du modèle économique, jamais d'une plateforme imposée par habitude.",
             "action": "Architecture, message, preuve et performance construits à partir du parcours d'achat réel.",
-            "metric_1": "on", "prefix_1": "", "value_1": "2", "suffix_1": " formats", "label_1": "vitrine ou e-commerce",
-            "metric_2": "on", "prefix_2": "", "value_2": "1", "suffix_2": " objectif", "label_2": "générer plus d'actions"
+            "metric_1": "on",
+            "prefix_1": "",
+            "value_1": "2",
+            "suffix_1": " formats",
+            "label_1": "vitrine ou e-commerce",
+            "metric_2": "on",
+            "prefix_2": "",
+            "value_2": "1",
+            "suffix_2": " objectif",
+            "label_2": "générer plus d'actions"
           }
         }
       },
-      "block_order": ["c1", "c2", "c3"]
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ]
     },
-
     "lecture": {
       "type": "content-split",
       "settings": {
@@ -80,13 +134,34 @@
         "cta_url": "/pages/a-propos"
       },
       "blocks": {
-        "l1": { "type": "point", "settings": { "title": "La période est indiquée", "text": "Une hausse sur trois mois et une hausse sur trois ans ne se comparent pas." } },
-        "l2": { "type": "point", "settings": { "title": "Le point de départ est décrit", "text": "Passer de 100 à 300 impressions et de 100 000 à 300 000 n'engage pas le même travail." } },
-        "l3": { "type": "point", "settings": { "title": "L'action est nommée", "text": "Nous précisons ce qui a été fait, pour que le lien entre le travail et l'effet soit vérifiable." } }
+        "l1": {
+          "type": "point",
+          "settings": {
+            "title": "La période est indiquée",
+            "text": "Une hausse sur trois mois et une hausse sur trois ans ne se comparent pas."
+          }
+        },
+        "l2": {
+          "type": "point",
+          "settings": {
+            "title": "Le point de départ est décrit",
+            "text": "Passer de 100 à 300 impressions et de 100 000 à 300 000 n'engage pas le même travail."
+          }
+        },
+        "l3": {
+          "type": "point",
+          "settings": {
+            "title": "L'action est nommée",
+            "text": "Nous précisons ce qui a été fait, pour que le lien entre le travail et l'effet soit vérifiable."
+          }
+        }
       },
-      "block_order": ["l1", "l2", "l3"]
+      "block_order": [
+        "l1",
+        "l2",
+        "l3"
+      ]
     },
-
     "cta": {
       "type": "content-cta",
       "settings": {
@@ -97,11 +172,90 @@
         "note": "Réponse sous 48 h"
       },
       "blocks": {
-        "r1": { "type": "point", "settings": { "text": "Sans engagement" } },
-        "r2": { "type": "point", "settings": { "text": "Réponse humaine, pas un formulaire automatique" } }
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Réponse humaine, pas un formulaire automatique"
+          }
+        }
       },
-      "block_order": ["r1", "r2"]
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    },
+    "clients": {
+      "type": "content-logos",
+      "settings": {
+        "surface": "paper",
+        "title": "Quelques-uns des sites que nous avons construits",
+        "note": "Les chiffres publiés plus haut portent sur deux de ces comptes. Les autres missions sont en cours ou couvertes par un accord de confidentialité."
+      },
+      "blocks": {
+        "c1": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_noza.svg",
+            "name": "Noza & Co"
+          }
+        },
+        "c2": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_maison_ayla.svg",
+            "name": "Maison Ayla"
+          }
+        },
+        "c3": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_stellar.svg",
+            "name": "Cabinet Stellar"
+          }
+        },
+        "c4": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_saccabines.svg",
+            "name": "Saccabines"
+          }
+        },
+        "c5": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_oshira_2.svg",
+            "name": "Oshira"
+          }
+        },
+        "c6": {
+          "type": "client",
+          "settings": {
+            "logo": "shopify://shop_images/logo_mbe.svg",
+            "name": "MBE"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6"
+      ]
     }
   },
-  "order": ["hero", "cas", "lecture", "cta"]
+  "order": [
+    "hero",
+    "cas",
+    "clients",
+    "lecture",
+    "cta"
+  ]
 }

@@ -160,7 +160,8 @@
           "col_legal"
         ]
       }
-    }
+    },
+    "share_image": "shopify://shop_images/clickscreation-social-share-1200x630.png"
   },
   "presets": {
     "Signal": {}

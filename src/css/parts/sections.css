@@ -693,10 +693,60 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  margin-top: 0.7rem;
+  margin-top: 0.55rem;
+  /* WCAG 2.5.8 : 24 px de haut minimum pour une cible tactile. */
+  padding-block: 4px;
   font-size: var(--text-xs);
   color: var(--surface-fg-muted);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .cc-foot__cta-link:hover { color: var(--surface-fg); }
+
+/* ---------- Bande de logos clients ---------- */
+.cc-logos {
+  padding-block: clamp(1.6rem, 1.3rem + 1.2vw, 2.6rem);
+  border-block: 1px solid var(--surface-line);
+}
+.cc-logos__inner { display: grid; gap: 1.1rem; justify-items: center; }
+.cc-logos__title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--surface-fg-faint);
+  text-align: center;
+}
+.cc-logos__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.4rem, 1rem + 2.2vw, 3.25rem);
+}
+.cc-logos__list li { display: flex; align-items: center; }
+/* Le logo prouve, il ne décore pas : il reste discret jusqu'au survol. */
+.cc-logos__img {
+  height: clamp(1.35rem, 1.15rem + 0.8vw, 1.85rem);
+  width: auto;
+  max-width: 9.5rem;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.62;
+  transition: opacity 0.25s linear, filter 0.25s linear;
+}
+.cc-logos__list li:hover .cc-logos__img { filter: none; opacity: 1; }
+.cc-logos__word {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--surface-fg-muted);
+}
+.cc-logos__note {
+  font-size: var(--text-xs);
+  color: var(--surface-fg-faint);
+  text-align: center;
+  max-width: 52ch;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cc-logos__img { transition: none; }
+}
