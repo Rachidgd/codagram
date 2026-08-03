@@ -254,61 +254,61 @@ gabarit de référence, avec `page.agence-shopify.json` et `page.resultats.json`
 
 ## Mise en ligne : procédure ordonnée
 
-Le thème **CLICKSCREATION Signal — site complet** est prêt et non publié. Deux
-opérations sont nécessaires, **dans cet ordre**.
+Le thème **CLICKSCREATION Signal — site complet** est prêt et non publié. Il ne
+reste **qu'une opération** : publier le thème depuis l'admin Shopify.
 
-### 1. Publier le thème
+Aucun réglage de page n'est à faire, ni avant ni après. Les 16 pages
+géographiques sont déjà rattachées à leur gabarit, et chaque page publiée du
+site porte un suffixe qui lui est propre — aucun gabarit n'est partagé par deux
+pages, donc aucune page ne peut en cloner une autre après publication.
 
-Depuis l'admin Shopify. Toutes les pages fonctionnent immédiatement : chaque
-gabarit porte le nom du suffixe déjà utilisé par sa page, aucune modification
-préalable n'est requise.
+### Rattachement géographique — état réel
 
-### 2. Différencier les neuf villes restantes
-
-Neuf pages partagent encore le suffixe `ville-seo` et affichent donc la même
-page locale générique. Leur gabarit dédié existe déjà dans le thème : il suffit
-de changer le suffixe de chaque page (Pages → une page → Modèle).
-
-| Page | Suffixe actuel | Suffixe à sélectionner |
+| Page | Suffixe | Gabarit |
 |---|---|---|
-| Consultant SEO Paris | ville-seo | `seo-paris` |
-| Consultant SEO Lyon | ville-seo | `seo-lyon` |
-| Consultant SEO Rennes | ville-seo | `seo-rennes` |
-| Agence SEO Lille | ville-seo | `seo-lille` |
-| Agence SEO Nice | ville-seo | `seo-nice` |
-| Agence SEO Toulouse | ville-seo | `seo-toulouse` |
-| Agence SEO Montpellier | ville-seo | `seo-montpellier` |
-| Agence SEO Strasbourg | ville-seo | `seo-strasbourg` |
-| Agence SEO Grenoble | ville-seo | `seo-grenoble` |
+| Consultant SEO Paris | `seo-paris` | page.seo-paris.json |
+| Consultant SEO Lyon | `seo-lyon` | page.seo-lyon.json |
+| Consultant SEO Rennes | `seo-rennes` | page.seo-rennes.json |
+| Agence SEO Lille | `seo-lille` | page.seo-lille.json |
+| Agence SEO Nice | `seo-nice` | page.seo-nice.json |
+| Agence SEO Toulouse | `seo-toulouse` | page.seo-toulouse.json |
+| Agence SEO Montpellier | `seo-montpellier` | page.seo-montpellier.json |
+| Agence SEO Strasbourg | `seo-strasbourg` | page.seo-strasbourg.json |
+| Agence SEO Grenoble | `seo-grenoble` | page.seo-grenoble.json |
+| Agence SEO Marseille | `seo-local-marseille` | page.seo-local-marseille.json |
+| Agence SEO Nantes | `seo-local-nantes` | page.seo-local-nantes.json |
+| Agence SEO Bordeaux | `seo-local-bordeaux` | page.seo-local-bordeaux.json |
+| Agence SEO Luxembourg | `agence-seo-luxembourg` | page.agence-seo-luxembourg.json |
+| Consultant SEO Suisse | `seo-suisse` | page.seo-suisse.json |
+| Consultant SEO Belgique | `seo-belgique` | page.seo-belgique.json |
 
-**Pourquoi ces neuf-là doivent attendre.** Leur contenu réel vit entièrement
-dans le gabarit et dans des métachamps ; le corps de la page ne contient qu'une
-phrase de remplacement. Basculer le suffixe avant publication les ferait
-retomber sur `page.json` du thème en ligne, qui n'affiche que ce corps — soit
-neuf pages quasi vides le temps de la publication.
+À quoi s'ajoutent `a-propos` et `reserver`, rattachés dans le même mouvement.
 
-### Déjà rattachées
+### Le corps de page comme filet de sécurité
 
-Ces quatre pages ont été basculées immédiatement, sans effet sur le site en
-ligne : leur contenu est stocké dans le corps de page, et `page.json` et
-`page.simple.json` du thème live sont identiques — le repli rend donc
-exactement la même chose qu'avant.
+Un gabarit n'existe que dans le thème publié. Tant que **Signal** n'est pas en
+ligne, Shopify retombe sur `page.json`, qui n'affiche que le titre et le corps
+de la page. Les douze pages de villes ne contenaient qu'une phrase de
+remplacement : elles auraient été vides pendant cet intervalle.
 
-| Page | Ancien suffixe | Nouveau suffixe |
-|---|---|---|
-| Consultant SEO Suisse | simple | `seo-suisse` |
-| Consultant SEO Belgique | simple | `seo-belgique` |
-| A propos | simple | `a-propos` |
-| Reserver mon audit SEO offert | simple | `reserver` |
+`build/bodies_geo.py` génère donc un corps HTML depuis le gabarit de chaque
+ville — 415 à 528 mots, mêmes faits, même voix, structure suivant l'ordre de
+sections propre à la ville. Résultat mesuré : 248 phrases longues comparées,
+**zéro collision entre deux villes**.
 
-Marseille, Nantes, Bordeaux et Luxembourg n'ont rien à changer non plus : leur
-suffixe était déjà dédié et leur gabarit porte ce nom.
+Après publication ces corps ne sont plus rendus : aucun gabarit de ville
+n'inclut `main-page` ni `page-body`. Ils ne créent donc **aucun contenu
+dupliqué** — ils couvrent uniquement la fenêtre avant publication, et laissent
+un contenu lisible dans l'admin.
+
+```bash
+python3 build/bodies_geo.py   # régénère les corps + audit de duplication
+```
 
 **Récapitulatif géographique** — 16 pages, 16 gabarits distincts :
 13 villes (Paris, Lyon, Marseille, Bordeaux, Nantes, Lille, Toulouse, Nice,
 Rennes, Strasbourg, Montpellier, Grenoble, Luxembourg) et 3 marchés
-transfrontaliers (Luxembourg, Suisse, Belgique). Sept sont déjà rattachées,
-neuf attendent la publication.
+transfrontaliers (Luxembourg, Suisse, Belgique). Les 16 sont rattachées.
 
 ## Contrôle anti-duplication
 
