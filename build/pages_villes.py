@@ -60,7 +60,7 @@ VILLES = [
                "<p>Oui. Les contenus touchant à la santé sont évalués avec une exigence renforcée sur l'expertise et la fiabilité de l'auteur. Concrètement : signature identifiable, qualifications affichées, sources citées et dates de mise à jour visibles. Un contenu anonyme ne se positionne plus dans ce domaine.</p>")],
     ),
     dict(
-        suffix="seo-marseille", struct="C",
+        suffix="seo-local-marseille", struct="C",
         eyebrow="Référencement naturel — Marseille",
         h1="À Marseille, la recherche locale se joue au quartier.",
         lead="Peu de villes françaises ont une géographie commerciale aussi fragmentée. Entre le Vieux-Port, la Joliette, les quartiers sud et l'est marseillais, un client ne cherche presque jamais « à Marseille » : il cherche près de chez lui, et Google le suit.",
@@ -83,7 +83,7 @@ VILLES = [
                "<p>Oui, si vos clients sont des entreprises de transport, de négoce ou de logistique : une partie de leurs recherches se fait en anglais. Cela peut justifier une version anglaise de quelques pages clés, mais seulement après vérification des volumes réels — pas par principe.</p>")],
     ),
     dict(
-        suffix="seo-bordeaux", struct="D",
+        suffix="seo-local-bordeaux", struct="D",
         eyebrow="Référencement naturel — Bordeaux",
         h1="Un marché bordelais devenu nettement plus concurrentiel.",
         lead="L'arrivée de la ligne à grande vitesse a transformé l'économie bordelaise : afflux d'entreprises, de cadres et de nouveaux entrants sur presque tous les métiers de service. Les positions acquises il y a cinq ans ne tiennent plus toutes seules.",
@@ -106,7 +106,7 @@ VILLES = [
                "<p>Oui, sur le vocabulaire : appellations, millésimes, types de prestations œnotouristiques ont leurs formulations propres, très éloignées du langage marketing général. Une page rédigée sans cette précision se repère immédiatement et ne convainc ni les moteurs ni les professionnels.</p>")],
     ),
     dict(
-        suffix="seo-nantes", struct="A",
+        suffix="seo-local-nantes", struct="A",
         eyebrow="Référencement naturel — Nantes",
         h1="Une métropole qui grandit vite, et une concurrence qui suit.",
         lead="Nantes gagne des habitants et des entreprises chaque année. Cette croissance crée de la demande, mais elle attire aussi de nouveaux prestataires : sur beaucoup de métiers, le nombre de concurrents a doublé en quelques années.",
@@ -270,7 +270,7 @@ VILLES = [
                "<p>Oui, si vous y intervenez. Le relief structure les habitudes autant que l'administration : un client du Grésivaudan cherche rarement « Grenoble ». Ce sont des zones distinctes, avec une concurrence bien plus faible que sur la ville-centre.</p>")],
     ),
     dict(
-        suffix="seo-luxembourg", struct="B",
+        suffix="agence-seo-luxembourg", struct="B",
         eyebrow="Référencement naturel — Luxembourg",
         h1="Un marché petit, riche, et multilingue par nécessité.",
         lead="Le Grand-Duché concentre un pouvoir d'achat élevé sur un territoire réduit, avec une main-d'œuvre frontalière massive venue de France, de Belgique et d'Allemagne. Les volumes de recherche y sont faibles, mais la valeur de chaque demande est sans commune mesure.",
@@ -351,7 +351,7 @@ SUPPLEMENTS = {
    cta_title="Voyons quelles requêtes parisiennes vous pouvez réellement gagner.",
    cta_text="Donnez-nous votre activité et votre secteur. Nous vous dirons lesquelles sont hors de portée aujourd'hui, et lesquelles sont accessibles en quelques mois."),
 
- "seo-nantes": dict(
+ "seo-local-nantes": dict(
    grid_title="Ce que nous mettons en place pour capter les nouveaux arrivants.",
    grid_items=[("check", "Contenus d'orientation", "Répondre aux questions de quelqu'un qui découvre la ville : une demande réelle, presque sans concurrence."),
                ("target", "Fiche irréprochable", "Pour un arrivant sans réseau, votre fiche d'établissement est souvent le seul élément de comparaison."),
@@ -396,7 +396,7 @@ SUPPLEMENTS = {
    cta_title="Mesurons ce que cherchent vos voisins allemands.",
    cta_text="Nous relevons les volumes de recherche germanophones sur votre métier et estimons si une version allemande se rentabilise chez vous."),
 
- "seo-luxembourg": dict(
+ "agence-seo-luxembourg": dict(
    steps_title="Une méthode calibrée pour un marché à faible volume.",
    steps_items=[("Estimer la valeur d'une demande", "Point de départ obligatoire : ce que vaut un client luxembourgeois décide de tout le reste.", "Semaine 1"),
                 ("Choisir les langues", "Français, anglais, allemand : on tranche à partir de votre clientèle réelle, pas d'un principe.", "Semaine 2"),
@@ -405,10 +405,10 @@ SUPPLEMENTS = {
    cta_title="Estimons ce que vaut réellement votre visibilité luxembourgeoise.",
    cta_text="Donnez-nous votre activité et votre panier moyen. Nous raisonnons en valeur de demande entrante, jamais en volume de trafic."),
 
- "seo-marseille": dict(
+ "seo-local-marseille": dict(
    cta_title="Relevons votre visibilité quartier par quartier.",
    cta_text="Nous mesurons votre classement depuis plusieurs points de Marseille : les écarts entre secteurs sont souvent considérables."),
- "seo-bordeaux": dict(
+ "seo-local-bordeaux": dict(
    cta_title="Comparons vos positions d'aujourd'hui à celles d'il y a deux ans.",
    cta_text="Nous identifions les pages qui ont reculé, les concurrents qui sont arrivés dessus, et ce qu'il faut renforcer en priorité."),
  "seo-toulouse": dict(

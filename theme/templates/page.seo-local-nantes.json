@@ -4,40 +4,199 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "",
-        "title": "",
-        "lead": "",
-        "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir les résultats",
-        "cta_secondary_url": "/pages/resultats"
+        "eyebrow": "Référencement naturel — Nantes",
+        "title": "Une métropole qui grandit vite, et une concurrence qui suit.",
+        "lead": "Nantes gagne des habitants et des entreprises chaque année. Cette croissance crée de la demande, mais elle attire aussi de nouveaux prestataires : sur beaucoup de métiers, le nombre de concurrents a doublé en quelques années.",
+        "cta_primary": "Évaluer ma visibilité",
+        "parent_label": "SEO local",
+        "parent_url": "/pages/seo-local",
+        "cta_secondary": "Voir toutes les zones",
+        "cta_secondary_url": "/pages/seo-par-ville"
       }
     },
-    "contenu": {
-      "type": "page-body",
+    "contexte": {
+      "type": "content-stats",
       "settings": {
-        "surface": "paper"
-      }
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui caractérise ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Numérique",
+            "label": "un écosystème dense",
+            "note": "Des clients qui comparent, lisent et arbitrent. Un site approximatif se disqualifie immédiatement."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Industrie",
+            "label": "naval et aéronautique",
+            "note": "Une sous-traitance technique qui cherche des compétences précises, jamais des termes génériques."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Croissance",
+            "label": "arrivées régulières",
+            "note": "Un flux constant de nouveaux habitants qui cherchent tous les services de base sans référence préalable."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Notre lecture",
+        "title": "Les nouveaux arrivants cherchent tout, et ne connaissent personne.",
+        "text": "<p>Une métropole qui accueille chaque année des milliers de nouveaux habitants génère un flux permanent de recherches sans idée préconçue : médecin, artisan, garagiste, comptable. Ces personnes n'ont ni recommandation ni habitude — elles prennent le premier résultat crédible.</p><p>C'est une opportunité que peu d'entreprises locales exploitent explicitement.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Contenus d'orientation",
+            "text": "Répondre aux questions de quelqu'un qui ne connaît pas encore la ville capte une demande à faible concurrence."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Preuves accessibles",
+            "text": "Sans bouche-à-oreille, le visiteur s'appuie entièrement sur ce que montre le site."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Fiche impeccable",
+            "text": "Pour un nouvel arrivant, la fiche d'établissement est souvent le seul point de comparaison."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "methode": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "comfortable",
+        "eyebrow": "Notre intervention",
+        "title": "Ce que nous mettons en place pour capter les nouveaux arrivants.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Contenus d'orientation",
+            "text": "Répondre aux questions de quelqu'un qui découvre la ville : une demande réelle, presque sans concurrence."
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Fiche irréprochable",
+            "text": "Pour un arrivant sans réseau, votre fiche d'établissement est souvent le seul élément de comparaison."
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Communes de l'agglomération",
+            "text": "Saint-Herblain, Rezé, Orvault : des recherches distinctes et bien plus accessibles que Nantes."
+          }
+        },
+        "g4": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Exigence de finition",
+            "text": "Sur un marché habitué au numérique, un site approximatif élimine avant même l'appel."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Questions fréquentes sur cette zone.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Le milieu numérique nantais est-il un frein ou un atout ?",
+            "answer": "<p>Un atout, à condition d'assumer un niveau d'exigence supérieur. Ces clients détectent immédiatement un site bâclé ou un discours creux — mais ils reconnaissent aussi le travail sérieux et le recommandent volontiers.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il viser Saint-Herblain, Rezé ou Saint-Nazaire séparément ?",
+            "answer": "<p>Oui, si vous y intervenez réellement. Ces communes ont leurs propres recherches et une concurrence bien moindre que sur Nantes. Saint-Nazaire relève d'ailleurs d'un bassin distinct, avec son propre tissu industriel — la traiter comme une banlieue nantaise serait une erreur.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
     },
     "cta": {
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Un avis argumenté avant tout engagement.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons vers vous avec les priorités que nous identifions.",
-        "cta_label": "Demander un diagnostic",
-        "note": "Réponse sous 2 jours ouvrés"
+        "title": "Regardons si vous captez les Nantais qui viennent d'arriver.",
+        "text": "Indiquez-nous votre métier et vos communes. Nous mesurons votre visibilité auprès d'une clientèle qui ne vous connaît pas encore.",
+        "cta_label": "Demander un relevé de position",
+        "note": "Réponse sous 2 jours ouvrés",
+        "link_label": "Voir la prestation SEO",
+        "link_url": "/pages/agence-seo"
       },
       "blocks": {
         "r1": {
           "type": "point",
           "settings": {
-            "text": "Sans engagement"
+            "text": "Relevé géolocalisé"
           }
         },
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Réponse humaine"
+            "text": "Sans engagement"
           }
         }
       },
@@ -49,7 +208,10 @@
   },
   "order": [
     "hero",
-    "contenu",
+    "contexte",
+    "analyse",
+    "methode",
+    "faq",
     "cta"
   ]
 }
