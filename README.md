@@ -107,6 +107,24 @@ theme/
 `home-hero` · `home-diagnostic` · `home-levers` · `home-results` ·
 `home-method` · `home-work`
 
+### Inventaire des pages rédigées
+
+39 gabarits portent un contenu écrit spécifiquement, avec 27 enchaînements de
+sections distincts :
+
+| Famille | Pages |
+|---|---|
+| Services | SEO, Shopify, site vitrine, Meta Ads, CRO, SEO local, SEO e-commerce |
+| Audits | SEO, Meta Ads, e-commerce, Merchant Center, analyse concurrentielle |
+| Cibles vitrine | PME/TPE, indépendant, restaurant, artisan |
+| Villes | Paris, Lyon, Marseille, Bordeaux, Nantes, Lille, Toulouse, Nice, Rennes, Strasbourg, Montpellier, Grenoble, Luxembourg |
+| Pays | Suisse, Belgique |
+| Institutionnel | accueil, à propos, résultats, études de cas, contact, hub géographique, plan du site, réservation |
+
+Les 28 autres gabarits utilisent une structure sobre (titre + contenu saisi dans
+l'admin) : pages légales et suffixes qu'aucune page publiée n'utilise. Aucun ne
+porte de copie marketing, donc aucun risque de duplication latente.
+
 ### Sections réutilisables (composition de pages)
 
 Toute page service se construit en assemblant ces sections dans un gabarit JSON,
@@ -120,6 +138,12 @@ sans écrire de Liquid :
 | `content-faq` | FAQ accessible + données structurées FAQPage |
 | `content-prose` | Contenu éditorial dense (SEO local, guides) |
 | `content-cta` | Bande de conversion de fin de page |
+| `content-compare` | Tableau comparatif à trois colonnes |
+| `content-stats` | Bande de contexte chiffré |
+| `content-steps` | Process numéroté horizontal |
+| `content-quote` | Prise de position pleine largeur |
+| `page-sitemap` | Plan du site construit depuis les menus |
+| `page-body` | Contenu saisi dans l'admin, masqué si vide |
 
 `templates/page.agence-shopify.json` est l'exemple de référence : copiez-le
 pour créer une nouvelle page service.
@@ -259,6 +283,7 @@ de changer le suffixe de chaque page dans l'admin (Pages → une page → Modèl
 | A propos | simple | `a-propos` |
 | Consultant SEO Suisse | simple | `seo-suisse` |
 | Consultant SEO Belgique | simple | `seo-belgique` |
+| Reserver mon audit SEO offert | simple | `reserver` |
 
 **Pourquoi ce n'est pas fait automatiquement** : `templateSuffix` est un réglage
 de la page, pas du thème. Le modifier avant publication ferait basculer le site

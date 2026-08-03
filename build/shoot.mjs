@@ -20,7 +20,7 @@ const VIEWPORTS = [
   { name: 'tablette', width: 768, height: 1024 },
   { name: 'desktop', width: 1440, height: 900 }
 ];
-const PAGES = ['index', 'contact', '404', 'service'];
+const PAGES = ['index', 'reserver', 'plan', 'paris', 'vitrine', 'service', 'contact', '404'];
 // Servi en HTTP : file:// bloque le chargement des polices (CORS).
 const BASE_URL = process.env.PREVIEW_URL || 'http://127.0.0.1:8899';
 
