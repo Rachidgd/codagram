@@ -190,7 +190,7 @@
         "title": "Dites-nous qui vous affrontez.",
         "text": "Donnez-nous trois noms de concurrents. Nous vous montrons ce qu'ils diffusent en ce moment et depuis combien de temps.",
         "cta_label": "Demander l'analyse",
-        "note": "Réponse sous 2 jours ouvrés"
+        "note": "Réponse sous 48 h"
       },
       "blocks": {
         "r1": {

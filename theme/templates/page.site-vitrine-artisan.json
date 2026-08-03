@@ -217,7 +217,7 @@
         "title": "Un appel en fin de journée suffit pour démarrer.",
         "text": "Dites-nous vos métiers, vos communes et le type de chantiers que vous cherchez. Nous vous dirons ce qu'un site peut vous apporter et sous quel délai.",
         "cta_label": "Être rappelé",
-        "note": "Réponse sous 2 jours ouvrés",
+        "note": "Réponse sous 48 h",
         "link_label": "Voir le référencement local",
         "link_url": "/pages/seo-local"
       },

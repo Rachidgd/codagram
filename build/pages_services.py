@@ -119,7 +119,7 @@ def faq(title, text, qas, surface="dark", cta="Poser une autre question"):
     }
 
 
-def cta(eyebrow, title, text, label, note="Réponse sous 2 jours ouvrés",
+def cta(eyebrow, title, text, label, note="Réponse sous 48 h",
         link=None, link_url=None, points=()):
     s = {"eyebrow": eyebrow, "title": title, "text": text,
          "cta_label": label, "note": note}

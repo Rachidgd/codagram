@@ -168,7 +168,7 @@
         "title": "Un relevé de position sur votre zone.",
         "text": "Indiquez-nous votre activité et vos communes d'intervention. Nous mesurons où vous apparaissez aujourd'hui depuis chacune d'elles, et l'état réel de votre fiche.",
         "cta_label": "Demander le relevé",
-        "note": "Réponse sous 2 jours ouvrés",
+        "note": "Réponse sous 48 h",
         "link_label": "Voir la prestation SEO local",
         "link_url": "/pages/seo-local"
       },

@@ -49,7 +49,7 @@ write("reserver", [
    "Trois étapes, aucune surprise.",
    "",
    [("Vous décrivez votre situation", "Quatre questions dans le formulaire. Cela nous permet de préparer l'analyse avant l'appel.", "2 minutes"),
-    ("Nous analysons", "Relevé de positions, contrôle technique, étude des concurrents sur vos requêtes principales.", "Sous 2 jours ouvrés"),
+    ("Nous analysons", "Relevé de positions, contrôle technique, étude des concurrents sur vos requêtes principales.", "Sous 48 h"),
     ("Nous en parlons", "Trente minutes au téléphone ou en visioconférence, à l'heure qui vous arrange.", "À votre convenance")],
    surface="dark")),
 

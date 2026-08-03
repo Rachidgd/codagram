@@ -180,7 +180,7 @@
           "settings": {
             "title": "Nous analysons",
             "text": "Relevé de positions, contrôle technique, étude des concurrents sur vos requêtes principales.",
-            "duration": "Sous 2 jours ouvrés"
+            "duration": "Sous 48 h"
           }
         },
         "s3": {
@@ -254,7 +254,7 @@
         "title": "Décrivez votre situation, nous préparons l'analyse.",
         "text": "Quatre questions suffisent. Nous revenons vers vous sous deux jours ouvrés avec une proposition de créneau.",
         "cta_label": "Réserver mon créneau",
-        "note": "Réponse sous 2 jours ouvrés"
+        "note": "Réponse sous 48 h"
       },
       "blocks": {
         "r1": {

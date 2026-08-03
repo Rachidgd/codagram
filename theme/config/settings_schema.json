@@ -57,7 +57,7 @@
         "type": "textarea",
         "id": "home_meta_description",
         "label": "Description de la page d'accueil",
-        "default": "Agence d'acquisition à Paris : référencement naturel, sites sur mesure, boutiques Shopify, conversion et Meta Ads. Diagnostic gratuit sous 2 jours ouvrés."
+        "default": "Agence d'acquisition à Paris : référencement naturel, sites sur mesure, boutiques Shopify, conversion et Meta Ads. Diagnostic gratuit sous 48 h."
       },
       { "type": "text", "id": "blog_meta_title", "label": "Titre du blog", "default": "Ressources SEO, Shopify et acquisition | Clickscreation" },
       {
