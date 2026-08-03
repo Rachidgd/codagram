@@ -14,9 +14,9 @@
         "cta_secondary_url": "/pages/resultats"
       },
       "blocks": {
-        "p1": { "type": "proof", "settings": { "prefix": "+", "value": "236", "suffix": " %", "label": "impressions en 3 mois" } },
-        "p2": { "type": "proof", "settings": { "prefix": "+", "value": "350", "suffix": " %", "label": "clics organiques" } },
-        "p3": { "type": "proof", "settings": { "prefix": "", "value": "48", "suffix": " h", "label": "délai de réponse" } }
+        "p1": { "type": "proof", "settings": { "prefix": "+", "value": "236", "suffix": " %", "label": "affichages Google en 3 mois" } },
+        "p2": { "type": "proof", "settings": { "prefix": "+", "value": "350", "suffix": " %", "label": "visites depuis Google" } },
+        "p3": { "type": "proof", "settings": { "prefix": "", "value": "48", "suffix": " h", "label": "pour vous répondre" } }
       },
       "block_order": ["p1", "p2", "p3"]
     },

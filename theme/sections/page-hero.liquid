@@ -17,7 +17,13 @@
           {%- if section.settings.parent_label != blank -%}
             <li><a href="{{ section.settings.parent_url | default: routes.root_url }}">{{ section.settings.parent_label }}</a></li>
           {%- endif -%}
-          <li aria-current="page">{{ section.settings.title | default: page.title }}</li>
+          {%- comment -%}
+            Le fil d'Ariane porte le nom de la page, pas le H1 : un H1 rédigé
+            comme une phrase y tiendrait sur trois lignes et se retrouverait
+            dupliqué. C'est aussi ce que déclare BreadcrumbList, les deux
+            doivent dire la même chose.
+          {%- endcomment -%}
+          <li aria-current="page">{{ page.title | default: section.settings.title }}</li>
         </ol>
       </nav>
     {%- endif -%}
