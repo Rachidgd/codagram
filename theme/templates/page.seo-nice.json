@@ -123,7 +123,7 @@
         "b2": {
           "type": "point",
           "settings": {
-            "title": "Traduire, pas transposer",
+            "title": "Une traduction faite par un humain",
             "text": "Une traduction automatique se voit et se retourne contre vous sur une clientèle exigeante."
           }
         },

@@ -5,8 +5,8 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Création de site vitrine",
-        "title": "Un site vitrine qui travaille, pas une plaquette en ligne.",
-        "lead": "Nous concevons et développons des sites de services sur mesure : architecture pensée pour la prise de contact, contenus écrits avec vous, code propriétaire sans constructeur de pages ni abonnement caché.",
+        "title": "Un site vitrine qui vous amène des demandes chaque semaine.",
+        "lead": "Votre site est écrit et développé pour votre activité. Il charge vite, il explique votre offre, et vous le modifiez sans nous. Aucun constructeur de pages, aucun abonnement caché.",
         "cta_primary": "Cadrer mon projet",
         "parent_label": "Expertises",
         "parent_url": "/pages/agence-seo",
@@ -62,7 +62,7 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Ce qui fait la différence",
-        "title": "Le visiteur ne lit pas votre site : il le parcourt pour décider.",
+        "title": "Votre visiteur balaie la page et décide en dix secondes.",
         "text": "<p>En moyenne, un visiteur accorde quelques secondes à une page avant de décider s'il continue. Il ne cherche pas votre histoire, il cherche à savoir si vous résolvez son problème, si vous êtes crédible et combien ça coûte.</p><p>Nous construisons donc chaque page dans cet ordre-là : le problème d'abord, la preuve ensuite, la demande de contact quand la valeur est comprise — jamais avant.</p>",
         "cta_label": "Voir le déroulé",
         "cta_url": "#deroule"
@@ -160,7 +160,7 @@
         "surface": "paper",
         "eyebrow": "Faire le bon choix",
         "title": "Site sur mesure, gabarit ou constructeur : lequel pour vous ?",
-        "text": "Le sur-mesure n'est pas toujours justifié. Voici comment nous en discutons avant de vous vendre quoi que ce soit.",
+        "text": "Un site sur mesure ne se justifie pas toujours. Voici comment nous en discutons avant de vous vendre quoi que ce soit.",
         "col_criteria": "Critère",
         "col_a": "Développement sur mesure",
         "col_b": "Gabarit ou constructeur",
@@ -296,7 +296,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Parlons de votre projet avant de parler budget.",
-        "text": "Décrivez votre activité et ce que vous attendez du site. Nous revenons avec une lecture de votre situation et un ordre de grandeur honnête — y compris si le sur-mesure n'est pas justifié chez vous.",
+        "text": "Décrivez votre activité et ce que vous attendez du site. Nous revenons avec une lecture de votre situation et un ordre de grandeur honnête — y compris si un site sur mesure ne se justifie pas chez vous.",
         "cta_label": "Cadrer mon projet",
         "note": "Réponse sous 2 jours ouvrés",
         "link_label": "Voir la prestation SEO",

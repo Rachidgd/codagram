@@ -20,7 +20,7 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Notre lecture",
-        "title": "Lyon se travaille par métropole, pas par ville.",
+        "title": "Vos clients sont à Villeurbanne, Bron ou Écully. Vos pages doivent y être.",
         "text": "<p>La plupart des entreprises lyonnaises ciblent « Lyon » alors que leurs clients se trouvent à Villeurbanne, Bron, Vénissieux ou Écully. Les recherches suivent cette géographie réelle, pas le nom de la ville-centre.</p><p>Nous construisons donc l'arborescence sur les communes de la métropole où vous intervenez effectivement, avec une page mère lyonnaise qui les fédère.</p>"
       },
       "blocks": {
@@ -158,7 +158,7 @@
           "type": "qa",
           "settings": {
             "question": "Vaut-il mieux viser Lyon ou ma commune ?",
-            "answer": "<p>Les deux, dans cet ordre : la commune d'abord, car elle est bien plus accessible et convertit mieux, puis Lyon une fois que le site a gagné en autorité. Attaquer directement la requête métropolitaine est le meilleur moyen de n'apparaître nulle part pendant un an.</p>"
+            "answer": "<p>Les deux, dans cet ordre. La commune d'abord : elle est bien plus accessible et convertit mieux. Lyon ensuite, une fois que le site a gagné en autorité. Attaquer directement la requête métropolitaine est le meilleur moyen de n'apparaître nulle part pendant un an.</p>"
           }
         },
         "q2": {

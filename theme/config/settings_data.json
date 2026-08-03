@@ -6,7 +6,6 @@
     "footer_resources_menu": "menu-footer-ressources-cs26",
     "footer_legal_menu": "menu-legal-cs26",
     "palette_blog": "ressources",
-
     "contact_email": "contact@clickscreation.com",
     "contact_phone": "",
     "org_city": "Paris",
@@ -14,14 +13,11 @@
     "org_description": "Agence d'acquisition digitale : référencement naturel, création de sites sur mesure, boutiques Shopify, optimisation de la conversion et publicité Meta.",
     "social_linkedin": "",
     "social_instagram": "",
-
     "home_meta_title": "Agence SEO, Shopify et Meta Ads à Paris | Clickscreation",
     "home_meta_description": "Agence d'acquisition à Paris : référencement naturel, sites sur mesure, boutiques Shopify, conversion et Meta Ads. Diagnostic gratuit sous 2 jours ouvrés.",
     "blog_meta_title": "Ressources SEO, Shopify et acquisition | Clickscreation",
     "blog_meta_description": "Guides pratiques sur le référencement naturel, Shopify, la conversion et Meta Ads pour développer votre visibilité et vos performances.",
-
     "enable_motion": true,
-
     "sections": {
       "header": {
         "type": "header",
@@ -94,28 +90,39 @@
             }
           }
         },
-        "block_order": ["note_seo", "note_site", "note_shopify", "note_cro", "note_ads", "note_audit", "spotlight"]
+        "block_order": [
+          "note_seo",
+          "note_site",
+          "note_shopify",
+          "note_cro",
+          "note_ads",
+          "note_audit",
+          "spotlight"
+        ]
       },
-
       "footer": {
         "type": "footer",
         "settings": {
           "cta_eyebrow": "Prochaine étape",
-          "cta_title": "Voyons ce qui limite réellement votre acquisition.",
-          "cta_text": "Quatre questions, une réponse argumentée sous 2 jours ouvrés. Vous repartez avec les priorités, que nous travaillions ensemble ou non.",
-          "cta_label": "Demander un diagnostic",
+          "cta_title": "Découvrez ce que vous laissez à vos concurrents.",
+          "cta_text": "Quatre questions, une réponse argumentée sous 48 h. Vous repartez avec vos trois priorités chiffrées, que nous travaillions ensemble ou non.",
+          "cta_label": "Demander mon diagnostic",
           "availability": "Nous ouvrons 2 places d'accompagnement ce mois-ci",
           "wordmark": "clickscreation",
-          "baseline": "Agence d'acquisition : SEO, sites sur mesure, e-commerce Shopify, conversion et publicité.",
+          "baseline": "SEO, sites sur mesure, boutiques Shopify, conversion et publicité Meta — pour que votre site vous amène des clients.",
           "email": "contact@clickscreation.com",
           "phone": "",
-          "response_time": "Réponse sous 2 jours ouvrés",
+          "response_time": "Réponse sous 48 h",
           "legal_line": "Tous droits réservés"
         },
         "blocks": {
           "col_services": {
             "type": "menu",
-            "settings": { "title": "Expertises", "menu": "menu-footer-services-cs26", "dense": false }
+            "settings": {
+              "title": "Expertises",
+              "menu": "menu-footer-services-cs26",
+              "dense": false
+            }
           },
           "col_zones": {
             "type": "menu",
@@ -129,14 +136,27 @@
           },
           "col_resources": {
             "type": "menu",
-            "settings": { "title": "Ressources", "menu": "menu-footer-ressources-cs26", "dense": false }
+            "settings": {
+              "title": "Ressources",
+              "menu": "menu-footer-ressources-cs26",
+              "dense": false
+            }
           },
           "col_legal": {
             "type": "menu",
-            "settings": { "title": "Légal", "menu": "menu-legal-cs26", "dense": false }
+            "settings": {
+              "title": "Légal",
+              "menu": "menu-legal-cs26",
+              "dense": false
+            }
           }
         },
-        "block_order": ["col_services", "col_zones", "col_resources", "col_legal"]
+        "block_order": [
+          "col_services",
+          "col_zones",
+          "col_resources",
+          "col_legal"
+        ]
       }
     }
   },

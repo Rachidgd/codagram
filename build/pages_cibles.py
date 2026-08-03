@@ -52,7 +52,7 @@ PAGES["site-vitrine-pme-tpe"] = [
 
     ("choix", compare(
         "Dimensionner le projet",
-        "Site de présentation ou site de génération de demandes ?",
+        "Ce qui sépare un site qui présente d'un site qui fait vendre.",
         "Les deux sont légitimes, mais ils n'ont ni le même coût ni le même effet.",
         "Site de génération de demandes", "Site de présentation",
         [("Nombre de pages", "Une par métier et par cible", "Trois à cinq pages"),
@@ -90,8 +90,8 @@ PAGES["site-vitrine-pme-tpe"] = [
 PAGES["site-vitrine-freelance"] = [
     ("hero", hero(
         "Site pour indépendant et freelance",
-        "On ne vous achète pas une prestation. On vous achète, vous.",
-        "Quand vous êtes seul face au client, le site ne vend pas une méthode : il vend une personne en qui on peut avoir confiance avant de l'avoir rencontrée. Cela change complètement ce qu'il faut y mettre.",
+        "Vos clients vous choisissent vous, avant de choisir votre offre.",
+        "Quand vous êtes seul face au client, votre site vend une personne en qui on peut avoir confiance avant de l'avoir rencontrée. Cela change tout ce qu'il faut y mettre.",
         "Parler de mon site", "Voir la création de site", "/pages/creation-site-vitrine",
         "Création de site", "/pages/creation-site-vitrine")),
 
@@ -124,7 +124,7 @@ PAGES["site-vitrine-freelance"] = [
         "Questions fréquentes des indépendants.",
         "",
         [("Ai-je vraiment besoin d'un site si j'ai LinkedIn ?",
-          "<p>LinkedIn vous rend visible auprès de qui vous cherche déjà par votre nom. Un site vous rend trouvable auprès de qui cherche votre compétence sans vous connaître, et vous appartient — un réseau social peut changer ses règles ou votre portée du jour au lendemain. Les deux se complètent plus qu'ils ne se remplacent.</p>"),
+          "<p>LinkedIn vous rend visible auprès de qui vous cherche déjà par votre nom. Votre site vous rend trouvable auprès de gens qui cherchent votre compétence sans vous connaître. Et il vous appartient : un réseau social peut changer ses règles du jour au lendemain. Les deux se complètent plus qu'ils ne se remplacent.</p>"),
          ("Combien coûte un site d'indépendant ?",
           "<p>Nettement moins qu'un site d'entreprise multi-métiers, parce que le périmètre est plus court : moins de pages, une seule cible, pas de fonctionnalité complexe. Nous chiffrons après l'entretien et le devis reste ferme.</p>"),
          ("Puis-je le faire évoluer si mon activité change ?",
@@ -146,8 +146,8 @@ PAGES["site-vitrine-freelance"] = [
 PAGES["site-vitrine-restaurant"] = [
     ("hero", hero(
         "Site pour restaurant et hôtellerie",
-        "Chaque réservation en direct est une commission que vous ne payez pas.",
-        "Les plateformes vous apportent du volume et prélèvent leur part sur chaque couvert. Un site qui convertit ne les remplace pas : il capte les clients qui vous cherchent déjà par votre nom et qui n'ont aucune raison de passer par un intermédiaire.",
+        "Chaque réservation en direct vous fait économiser la commission.",
+        "Les plateformes vous apportent du volume et prélèvent leur part sur chaque couvert. Votre site récupère les clients qui vous cherchent déjà par votre nom. Sur ceux-là, vous encaissez la totalité.",
         "Parler de mon établissement", "Voir le SEO local", "/pages/seo-local",
         "Création de site", "/pages/creation-site-vitrine")),
 
@@ -164,7 +164,7 @@ PAGES["site-vitrine-restaurant"] = [
         "L'ordre des priorités",
         "Le menu et les horaires avant l'histoire de la maison.",
         "<p>La page d'accueil d'un restaurant s'ouvre le plus souvent sur un texte d'ambiance, tandis que le menu se cache derrière un fichier à télécharger. C'est l'exact inverse de ce que cherche le visiteur.</p><p>Nous plaçons en premier ce qui déclenche la venue, et nous gardons le récit pour ceux qui font défiler — ils existent, mais ils sont minoritaires.</p>",
-        [("Menu en page, pas en fichier", "Un document à télécharger n'est ni lisible sur mobile ni indexable. Le menu doit être du texte réel."),
+        [("Un menu lisible sur mobile, sans PDF", "Un document à télécharger n'est ni lisible sur mobile ni indexable. Le menu doit être du texte réel."),
          ("Réservation en deux clics", "Depuis n'importe quelle page, sans compte à créer, avec confirmation immédiate."),
          ("Informations pratiques visibles", "Horaires à jour, adresse cliquable vers l'itinéraire, téléphone appelable d'un doigt.")],
         surface="paper", reverse=True)),
@@ -208,7 +208,7 @@ PAGES["site-vitrine-restaurant"] = [
 PAGES["site-vitrine-artisan"] = [
     ("hero", hero(
         "Site pour artisan et entreprise du bâtiment",
-        "Des demandes de devis qualifiées, pas des appels sans suite.",
+        "Recevez des demandes de devis dans votre métier et votre zone.",
         "Le problème d'un artisan visible n'est pas le nombre d'appels, c'est leur qualité : hors zone, hors métier, hors budget. Un site bien construit filtre en amont et vous fait gagner les heures que vous passez à décliner.",
         "Parler de mon activité", "Voir le SEO local", "/pages/seo-local",
         "Création de site", "/pages/creation-site-vitrine")),

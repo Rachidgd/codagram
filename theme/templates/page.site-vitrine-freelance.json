@@ -5,8 +5,8 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Site pour indépendant et freelance",
-        "title": "On ne vous achète pas une prestation. On vous achète, vous.",
-        "lead": "Quand vous êtes seul face au client, le site ne vend pas une méthode : il vend une personne en qui on peut avoir confiance avant de l'avoir rencontrée. Cela change complètement ce qu'il faut y mettre.",
+        "title": "Vos clients vous choisissent vous, avant de choisir votre offre.",
+        "lead": "Quand vous êtes seul face au client, votre site vend une personne en qui on peut avoir confiance avant de l'avoir rencontrée. Cela change tout ce qu'il faut y mettre.",
         "cta_primary": "Parler de mon site",
         "parent_label": "Création de site",
         "parent_url": "/pages/creation-site-vitrine",
@@ -134,7 +134,7 @@
           "type": "qa",
           "settings": {
             "question": "Ai-je vraiment besoin d'un site si j'ai LinkedIn ?",
-            "answer": "<p>LinkedIn vous rend visible auprès de qui vous cherche déjà par votre nom. Un site vous rend trouvable auprès de qui cherche votre compétence sans vous connaître, et vous appartient — un réseau social peut changer ses règles ou votre portée du jour au lendemain. Les deux se complètent plus qu'ils ne se remplacent.</p>"
+            "answer": "<p>LinkedIn vous rend visible auprès de qui vous cherche déjà par votre nom. Votre site vous rend trouvable auprès de gens qui cherchent votre compétence sans vous connaître. Et il vous appartient : un réseau social peut changer ses règles du jour au lendemain. Les deux se complètent plus qu'ils ne se remplacent.</p>"
           }
         },
         "q2": {

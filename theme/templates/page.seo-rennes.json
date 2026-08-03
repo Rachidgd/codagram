@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Rennes",
         "title": "Une ville jeune, connectée, qui vérifie tout avant d'appeler.",
-        "lead": "Avec l'une des plus fortes proportions d'étudiants de France et un écosystème numérique installé, Rennes a un public qui compare en ligne systématiquement. Un site incomplet ou daté élimine avant même le premier contact.",
+        "lead": "Avec l'une des plus fortes proportions d'étudiants de France et un secteur numérique installé, Rennes a un public qui compare en ligne systématiquement. Un site incomplet ou daté élimine avant même le premier contact.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -166,7 +166,7 @@
           "type": "qa",
           "settings": {
             "question": "Comment se différencier sur un marché où tout le monde a un bon site ?",
-            "answer": "<p>Par la profondeur plutôt que par l'apparence. Quand tous les concurrents ont un site correct, la différence se fait sur les contenus qui répondent réellement aux questions : tarification transparente, cas traités en détail, limites assumées. C'est plus difficile à copier qu'un design.</p>"
+            "answer": "<p>Par la profondeur plutôt que par l'apparence. Quand tous les concurrents ont un site correct, la différence se fait sur le contenu. Tarifs annoncés, cas traités en détail, limites assumées. C'est plus difficile à copier qu'un design.</p>"
           }
         }
       },

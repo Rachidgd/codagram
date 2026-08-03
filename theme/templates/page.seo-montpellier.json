@@ -166,7 +166,7 @@
           "type": "qa",
           "settings": {
             "question": "Le secteur santé impose-t-il des précautions ?",
-            "answer": "<p>Oui, sur deux plans : l'exigence de fiabilité appliquée par les moteurs aux contenus de santé, et les règles déontologiques propres aux professions réglementées, qui encadrent strictement la communication. Nous travaillons dans ce cadre plutôt que de vous exposer.</p>"
+            "answer": "<p>Oui, sur deux plans. Les moteurs appliquent une exigence de fiabilité renforcée aux contenus de santé. Et les professions réglementées ont des règles strictes sur leur communication. Nous travaillons dans ce cadre plutôt que de vous exposer.</p>"
           }
         }
       },

@@ -35,7 +35,7 @@ PAGES["a-propos"] = [
 
     ("equipe", split(
         "Notre fonctionnement",
-        "Pas de commercial, pas de chef de projet intermédiaire.",
+        "Vous parlez directement à ceux qui font le travail.",
         "<p>Dans beaucoup d'agences, la personne qui vend n'est pas celle qui exécute, et l'information se dégrade à chaque transmission. Nous avons choisi l'inverse : vous parlez directement à ceux qui produisent.</p><p>Cela limite mécaniquement le nombre de projets que nous pouvons prendre. C'est une contrainte assumée, pas un argument marketing.</p>",
         [("Un interlocuteur du début à la fin", "La personne du premier appel est celle qui rédige, développe et vous forme."),
          ("Peu de projets en parallèle", "Nous refusons des missions quand le calendrier est plein plutôt que d'allonger les délais."),
@@ -51,11 +51,11 @@ PAGES["a-propos"] = [
         "Questions qu'on nous pose avant de travailler ensemble.",
         "",
         [("Combien de personnes travaillent sur mon projet ?",
-          "<p>Une à deux, selon le périmètre, et toujours les mêmes du début à la fin. C'est ce qui nous permet de garder le contexte d'un projet sans réunion de passation, et c'est aussi ce qui limite le nombre de clients que nous pouvons accompagner simultanément.</p>"),
+          "<p>Une à deux, selon le périmètre, et toujours les mêmes du début à la fin. Vous gardez le même interlocuteur du début à la fin, sans réunion de passation. C'est aussi ce qui limite le nombre de clients que nous prenons en même temps.</p>"),
          ("Travaillez-vous avec des entreprises de ma taille ?",
-          "<p>Nous accompagnons aussi bien des indépendants que des PME de cinquante personnes. Le critère n'est pas la taille mais la clarté de l'objectif : une entreprise qui sait ce qu'elle veut obtenir est plus facile à aider qu'un grand compte sans décision arrêtée.</p>"),
+          "<p>Nous accompagnons aussi bien des indépendants que des PME de cinquante personnes. Le critère est la clarté de l'objectif, pas la taille. Une entreprise qui sait ce qu'elle veut obtenir avance plus vite qu'un grand compte sans décision arrêtée.</p>"),
          ("Que se passe-t-il si les résultats ne viennent pas ?",
-          "<p>Nous en parlons ouvertement lors des points de suivi, avec les données. Selon la cause, nous réorientons le travail, nous réduisons le périmètre, ou nous vous disons que le levier n'est pas le bon. Nous n'avons aucun intérêt à faire durer une mission qui ne produit rien.</p>")],
+          "<p>Nous en parlons ouvertement lors des points de suivi, avec les données. Selon la cause, nous réorientons le travail, nous réduisons le périmètre, ou nous vous disons que le canal n'est pas le bon. Nous n'avons aucun intérêt à faire durer une mission qui ne produit rien.</p>")],
         surface="dark")),
 
     ("cta", cta(
@@ -72,8 +72,8 @@ PAGES["a-propos"] = [
 PAGES["hub-villes"] = [
     ("hero", hero(
         "Référencement local par zone",
-        "Choisissez votre zone, nous en connaissons le marché.",
-        "Chaque territoire a son tissu économique, son intensité concurrentielle et ses habitudes de recherche. Nos pages de zone ne sont pas une même page dupliquée : elles décrivent ce que nous observons réellement sur chaque marché.",
+        "Trouvez votre ville et ce qui s'y gagne.",
+        "Chaque territoire a son tissu économique, son intensité concurrentielle et ses habitudes de recherche. Vous trouverez ici ce qui se gagne sur votre marché, et par quoi commencer chez vous.",
         "Demander un relevé de position", "Voir la prestation SEO local", "/pages/seo-local")),
 
     ("methode", split(
@@ -124,7 +124,7 @@ PAGES["hub-villes"] = [
 PAGES["seo-suisse"] = [
     ("hero", hero(
         "Référencement en Suisse romande",
-        "Un marché cantonal, pas un marché national.",
+        "Captez les clients de Suisse romande, canton par canton.",
         "La Suisse se travaille canton par canton : Genève, Vaud et le Valais n'ont ni le même tissu économique, ni la même concurrence, ni les mêmes attentes. S'adresser à « la Suisse » revient le plus souvent à ne s'adresser à personne.",
         "Évaluer ma visibilité", "Voir le SEO local", "/pages/seo-local")),
 
@@ -152,7 +152,7 @@ PAGES["seo-suisse"] = [
         [("Faut-il un domaine en .ch ?",
           "<p>Ce n'est pas obligatoire mais cela aide, à la fois pour le signal géographique et pour la confiance des visiteurs. Un domaine en .fr ciblant la Suisse part avec un désavantage qu'il faut compenser par le contenu et les signaux locaux.</p>"),
          ("Devez-vous être établis en Suisse pour intervenir ?",
-          "<p>Non, le travail se fait à distance. Vous restez seul responsable de vos obligations locales — facturation, TVA, conformité sectorielle — sujets sur lesquels nous ne sommes pas compétents et pour lesquels vous devez consulter un professionnel du droit suisse.</p>"),
+          "<p>Non, le travail se fait à distance. Vous restez responsable de vos obligations locales : facturation, TVA, conformité sectorielle. Nous ne sommes pas compétents sur ces sujets, consultez un professionnel du droit suisse.</p>"),
          ("Faut-il traiter l'allemand ?",
           "<p>Seulement si votre clientèle dépasse la Romandie. La Suisse alémanique représente un marché bien plus vaste mais aussi une concurrence linguistique différente, avec ses propres acteurs. C'est un projet distinct, pas une extension automatique.</p>")],
         surface="dark")),
@@ -172,7 +172,7 @@ PAGES["seo-belgique"] = [
     ("hero", hero(
         "Référencement en Belgique francophone",
         "Un pays petit, un marché plus fragmenté qu'il n'y paraît.",
-        "Bruxelles et la Wallonie ne se comportent pas de la même façon : la capitale est bilingue, internationale et très concurrentielle, tandis que les provinces wallonnes offrent des positions nettement plus accessibles. La stratégie diffère fortement selon l'endroit où sont vos clients.",
+        "Bruxelles et la Wallonie ne se ressemblent pas. La capitale est bilingue, internationale et très disputée. Les provinces wallonnes offrent des positions nettement plus accessibles. La stratégie diffère fortement selon l'endroit où sont vos clients.",
         "Évaluer ma visibilité", "Voir le SEO local", "/pages/seo-local")),
 
     ("regions", grid(
@@ -186,7 +186,7 @@ PAGES["seo-belgique"] = [
 
     ("langue", split(
         "La langue, une question stratégique",
-        "Le français de Belgique n'est pas le français de France.",
+        "Vos clients belges emploient d'autres mots que vos clients français.",
         "<p>Certains termes courants diffèrent, et ces écarts portent parfois précisément sur les mots que vos clients tapent. Un site rédigé en France peut passer à côté de la requête réelle sans que personne ne s'en aperçoive.</p><p>À Bruxelles s'ajoute la question du néerlandais, qui double le marché potentiel mais aussi le travail éditorial.</p>",
         [("Vérifier les formulations", "Les variantes lexicales se mesurent dans les données de recherche, elles ne se devinent pas."),
          ("Arbitrer le néerlandais", "Utile à Bruxelles et en Flandre, sans objet en Wallonie. Cela se décide sur les volumes."),
@@ -218,7 +218,7 @@ PAGES["seo-belgique"] = [
 PAGES["etudes-de-cas"] = [
     ("hero", hero(
         "Études de cas",
-        "Des missions racontées avec leur point de départ.",
+        "Ce que nous avons changé, et ce que ça a rapporté.",
         "Un résultat sans contexte n'apprend rien. Nous détaillons ici la situation initiale, ce que nous avons décidé de faire, ce que nous avons écarté et ce que cela a produit sur la période observée.",
         "Demander un diagnostic", "Voir tous les résultats", "/pages/resultats")),
 
@@ -234,7 +234,7 @@ PAGES["etudes-de-cas"] = [
 
     ("cta", cta(
         "Étape suivante",
-        "Votre situation ressemble-t-elle à l'une des nôtres ?",
+        "Retrouvez votre situation dans ces missions.",
         "Décrivez-la nous. Si nous avons déjà traité un cas comparable, nous vous en détaillerons le déroulé complet, résultats mitigés compris.",
         "Décrire ma situation",
         link="Voir les résultats chiffrés", link_url="/pages/resultats",

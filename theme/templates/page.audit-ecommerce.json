@@ -45,7 +45,7 @@
         "reverse": false,
         "eyebrow": "L'approche",
         "title": "Un taux de conversion global ne dit rien d'exploitable.",
-        "text": "<p>Savoir que votre boutique convertit à 1,4 % ne permet aucune décision. Ce qui compte, c'est de savoir que 60 % des visiteurs quittent la fiche produit sans faire défiler la page, ou que la moitié des paniers se perdent à l'étape de livraison.</p><p>Nous décomposons donc le parcours en marches et nous mesurons chacune séparément, sur mobile et sur ordinateur — parce que les points de rupture n'y sont jamais les mêmes.</p>"
+        "text": "<p>Savoir que votre boutique convertit à 1,4 % ne permet aucune décision. Ce qui compte, c'est de savoir que 60 % des visiteurs quittent la fiche produit sans faire défiler. Ou que la moitié des paniers se perdent à l'étape de livraison.</p><p>Nous découpons donc le parcours en marches et nous mesurons chacune séparément. Sur mobile et sur ordinateur : les points de rupture n'y sont jamais les mêmes.</p>"
       },
       "blocks": {
         "b1": {
@@ -192,7 +192,7 @@
           "type": "qa",
           "settings": {
             "question": "Faut-il beaucoup de commandes pour que ce soit pertinent ?",
-            "answer": "<p>Une centaine de commandes mensuelles permet une lecture statistique confortable. En dessous, l'audit s'appuie davantage sur l'examen manuel du parcours et sur les enregistrements de sessions, ce qui reste très instructif — les frictions graves se voient à l'œil nu.</p>"
+            "answer": "<p>Une centaine de commandes mensuelles permet une lecture statistique confortable. En dessous, l'audit s'appuie sur l'examen manuel du parcours et sur les enregistrements de sessions. C'est très instructif : les blocages graves se voient à l'œil nu.</p>"
           }
         },
         "q2": {

@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement e-commerce",
         "title": "Vos catégories rapportent plus que vos fiches produit.",
-        "lead": "Sur une boutique en ligne, l'essentiel du trafic qualifié se joue sur les pages de catégorie et les filtres — pas sur les fiches produit, qui arrivent en fin de parcours. Nous construisons cette architecture avant d'écrire quoi que ce soit.",
+        "lead": "Vos acheteurs arrivent presque toujours par les pages de catégorie. Nous construisons d'abord cette architecture : c'est elle qui capte le trafic qui achète.",
         "cta_primary": "Auditer ma boutique",
         "parent_label": "Expertises",
         "parent_url": "/pages/agence-seo",
@@ -81,7 +81,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Où investir en premier",
-        "title": "Catégories ou fiches produit : par quoi commencer ?",
+        "title": "Commencez par les catégories : elles rapportent plus vite.",
         "text": "La réponse dépend de la taille du catalogue et de la notoriété de vos marques.",
         "col_criteria": "Critère",
         "col_a": "Pages de catégorie",

@@ -5,7 +5,7 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Audit de référencement",
-        "title": "Un audit qui se termine par des décisions, pas par un fichier.",
+        "title": "Repartez avec trois priorités chiffrées et un ordre d'exécution.",
         "lead": "Nous analysons la technique, la structure sémantique et la concurrence de votre site, puis nous vous remettons trois priorités argumentées et chiffrées. Pas une liste de deux cents points classés par couleur.",
         "cta_primary": "Demander l'audit",
         "parent_label": "Audits",
@@ -188,7 +188,7 @@
           "type": "qa",
           "settings": {
             "question": "En quoi diffère-t-il d'un audit automatique gratuit ?",
-            "answer": "<p>Un outil automatique liste des anomalies sans les hiérarchiser ni les rapporter à votre marché : il signalera au même niveau une balise manquante sans effet et un problème d'indexation qui vous coûte la moitié de votre trafic. Le travail que nous facturons, c'est précisément cet arbitrage.</p>"
+            "answer": "<p>Un outil automatique liste des anomalies sans les hiérarchiser. Il signale au même niveau une balise manquante sans effet et un blocage d'indexation qui vous coûte la moitié de votre trafic. Le travail que nous facturons, c'est précisément cet arbitrage.</p>"
           }
         },
         "q4": {

@@ -68,7 +68,7 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Notre fonctionnement",
-        "title": "Pas de commercial, pas de chef de projet intermédiaire.",
+        "title": "Vous parlez directement à ceux qui font le travail.",
         "text": "<p>Dans beaucoup d'agences, la personne qui vend n'est pas celle qui exécute, et l'information se dégrade à chaque transmission. Nous avons choisi l'inverse : vous parlez directement à ceux qui produisent.</p><p>Cela limite mécaniquement le nombre de projets que nous pouvons prendre. C'est une contrainte assumée, pas un argument marketing.</p>"
       },
       "blocks": {
@@ -125,21 +125,21 @@
           "type": "qa",
           "settings": {
             "question": "Combien de personnes travaillent sur mon projet ?",
-            "answer": "<p>Une à deux, selon le périmètre, et toujours les mêmes du début à la fin. C'est ce qui nous permet de garder le contexte d'un projet sans réunion de passation, et c'est aussi ce qui limite le nombre de clients que nous pouvons accompagner simultanément.</p>"
+            "answer": "<p>Une à deux, selon le périmètre, et toujours les mêmes du début à la fin. Vous gardez le même interlocuteur du début à la fin, sans réunion de passation. C'est aussi ce qui limite le nombre de clients que nous prenons en même temps.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
             "question": "Travaillez-vous avec des entreprises de ma taille ?",
-            "answer": "<p>Nous accompagnons aussi bien des indépendants que des PME de cinquante personnes. Le critère n'est pas la taille mais la clarté de l'objectif : une entreprise qui sait ce qu'elle veut obtenir est plus facile à aider qu'un grand compte sans décision arrêtée.</p>"
+            "answer": "<p>Nous accompagnons aussi bien des indépendants que des PME de cinquante personnes. Le critère est la clarté de l'objectif, pas la taille. Une entreprise qui sait ce qu'elle veut obtenir avance plus vite qu'un grand compte sans décision arrêtée.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
             "question": "Que se passe-t-il si les résultats ne viennent pas ?",
-            "answer": "<p>Nous en parlons ouvertement lors des points de suivi, avec les données. Selon la cause, nous réorientons le travail, nous réduisons le périmètre, ou nous vous disons que le levier n'est pas le bon. Nous n'avons aucun intérêt à faire durer une mission qui ne produit rien.</p>"
+            "answer": "<p>Nous en parlons ouvertement lors des points de suivi, avec les données. Selon la cause, nous réorientons le travail, nous réduisons le périmètre, ou nous vous disons que le canal n'est pas le bon. Nous n'avons aucun intérêt à faire durer une mission qui ne produit rien.</p>"
           }
         }
       },

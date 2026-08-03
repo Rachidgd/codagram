@@ -20,7 +20,7 @@ PAGES["seo-local"] = [
     ("hero", hero(
         "Référencement local",
         "Être trouvé par les clients qui sont déjà à côté de vous.",
-        "Quand quelqu'un cherche un professionnel « près de chez lui », Google ne classe pas les sites comme ailleurs : il pondère la proximité, la cohérence des informations et la réputation de l'établissement. Ce sont ces trois signaux que nous travaillons.",
+        "Quand quelqu'un cherche un professionnel près de chez lui, Google regarde trois choses : votre proximité, la cohérence de vos informations et votre réputation. Nous travaillons ces trois signaux, dans cet ordre.",
         "Évaluer ma visibilité locale", "Voir les zones couvertes", "/pages/seo-par-ville",
         "Expertises", "/pages/agence-seo")),
 
@@ -37,7 +37,7 @@ PAGES["seo-local"] = [
         "Périmètre",
         "Ce que couvre une mission de SEO local.",
         "L'ordre d'intervention dépend de votre point de départ : une fiche inexistante et une fiche mal optimisée n'appellent pas le même effort.",
-        [("target", "Fiche d'établissement", "Catégories, description, horaires, zones desservies, photos, questions-réponses. Le levier le plus rapide."),
+        [("target", "Fiche d'établissement", "Catégories, description, horaires, zones desservies, photos, questions-réponses. C'est ce qui produit un effet le plus vite."),
          ("signal", "Pages par zone", "Une page par ville réellement travaillée, avec un contenu propre. Dupliquer une page en changeant le nom de la ville ne fonctionne plus."),
          ("layers", "Cohérence des citations", "Vérification et correction de vos coordonnées sur les annuaires qui comptent dans votre secteur."),
          ("gauge", "Avis clients", "Méthode de collecte régulière, réponse aux avis, traitement des avis négatifs. Un signal de classement autant qu'un signal de confiance."),
@@ -94,7 +94,7 @@ PAGES["seo-ecommerce"] = [
     ("hero", hero(
         "Référencement e-commerce",
         "Vos catégories rapportent plus que vos fiches produit.",
-        "Sur une boutique en ligne, l'essentiel du trafic qualifié se joue sur les pages de catégorie et les filtres — pas sur les fiches produit, qui arrivent en fin de parcours. Nous construisons cette architecture avant d'écrire quoi que ce soit.",
+        "Vos acheteurs arrivent presque toujours par les pages de catégorie. Nous construisons d'abord cette architecture : c'est elle qui capte le trafic qui achète.",
         "Auditer ma boutique", "Voir l'agence Shopify", "/pages/agence-shopify",
         "Expertises", "/pages/agence-seo",
         proofs=[("", "1", " page", "par intention d'achat"),
@@ -111,7 +111,7 @@ PAGES["seo-ecommerce"] = [
 
     ("comparaison", compare(
         "Où investir en premier",
-        "Catégories ou fiches produit : par quoi commencer ?",
+        "Commencez par les catégories : elles rapportent plus vite.",
         "La réponse dépend de la taille du catalogue et de la notoriété de vos marques.",
         "Pages de catégorie", "Fiches produit",
         [("Volume de recherche capté", "Élevé", "Faible sauf marques connues"),
@@ -169,7 +169,7 @@ PAGES["seo-ecommerce"] = [
 PAGES["audit-seo"] = [
     ("hero", hero(
         "Audit de référencement",
-        "Un audit qui se termine par des décisions, pas par un fichier.",
+        "Repartez avec trois priorités chiffrées et un ordre d'exécution.",
         "Nous analysons la technique, la structure sémantique et la concurrence de votre site, puis nous vous remettons trois priorités argumentées et chiffrées. Pas une liste de deux cents points classés par couleur.",
         "Demander l'audit", "Voir la prestation SEO", "/pages/agence-seo",
         "Audits", "/pages/audit-ecommerce",
@@ -210,7 +210,7 @@ PAGES["audit-seo"] = [
          ("De quels accès avez-vous besoin ?",
           "<p>Un accès en lecture à vos statistiques d'audience et à votre console de recherche, l'adresse du site, et si possible un accès en consultation à l'administration. Nous ne modifions rien pendant l'audit — la phase d'analyse est strictement passive.</p>"),
          ("En quoi diffère-t-il d'un audit automatique gratuit ?",
-          "<p>Un outil automatique liste des anomalies sans les hiérarchiser ni les rapporter à votre marché : il signalera au même niveau une balise manquante sans effet et un problème d'indexation qui vous coûte la moitié de votre trafic. Le travail que nous facturons, c'est précisément cet arbitrage.</p>"),
+          "<p>Un outil automatique liste des anomalies sans les hiérarchiser. Il signale au même niveau une balise manquante sans effet et un blocage d'indexation qui vous coûte la moitié de votre trafic. Le travail que nous facturons, c'est précisément cet arbitrage.</p>"),
          ("Que se passe-t-il après ?",
           "<p>Vous appliquez vous-même, vous faites appliquer par votre prestataire, ou vous nous confiez la mise en œuvre. Les trois options sont légitimes et le document est écrit pour rester exploitable sans nous.</p>")],
         surface="dark")),
@@ -258,7 +258,7 @@ PAGES["audit-meta-ads"] = [
 
     ("comparaison", compare(
         "Deux suites possibles",
-        "Après l'audit : reprise en main ou transmission ?",
+        "Après l'audit, vous choisissez qui reprend la main.",
         "L'audit ne vous engage à rien. Voici les deux suites que nous proposons.",
         "Nous pilotons", "Vous ou votre équipe pilotez",
         [("Qui exécute", "Nous, sur votre compte", "Votre équipe ou votre prestataire"),
@@ -274,7 +274,7 @@ PAGES["audit-meta-ads"] = [
         "Questions fréquentes sur l'audit Meta Ads.",
         "",
         [("Faut-il un historique long pour que l'audit soit utile ?",
-          "<p>Trois mois de diffusion continue constituent une base confortable. En dessous, l'analyse porte davantage sur la structure, le suivi et les angles créatifs que sur les performances comparées — ce qui reste utile, mais nous vous le signalons avant.</p>"),
+          "<p>Trois mois de diffusion continue constituent une base confortable. En dessous, l'analyse porte surtout sur la structure, le suivi et les angles créatifs. Elle reste utile, et nous vous le disons avant de commencer.</p>"),
          ("Allez-vous modifier mes campagnes pendant l'audit ?",
           "<p>Non. Nous demandons un accès en lecture seule et nous ne touchons à rien. Toute modification serait faite après restitution, avec votre accord explicite, et seulement si vous nous confiez le pilotage.</p>"),
          ("L'audit couvre-t-il Instagram ?",
@@ -297,7 +297,7 @@ PAGES["audit-meta-ads"] = [
 PAGES["analyse-concurrentielle-meta-ads"] = [
     ("hero", hero(
         "Analyse concurrentielle publicitaire",
-        "Vos concurrents publient leurs publicités. Autant les lire.",
+        "Sachez ce qui fonctionne chez vos concurrents avant de dépenser.",
         "Toutes les publicités actives sur Facebook et Instagram sont consultables publiquement. Nous en tirons ce qui est réellement exploitable : les angles qu'ils tiennent dans la durée, ceux qu'ils abandonnent, et l'espace qu'ils vous laissent.",
         "Demander l'analyse", "Voir l'audit de mon compte", "/pages/audit-meta-ads",
         "Audits", "/pages/audit-seo")),
@@ -366,7 +366,7 @@ PAGES["audit-ecommerce"] = [
     ("approche", split(
         "L'approche",
         "Un taux de conversion global ne dit rien d'exploitable.",
-        "<p>Savoir que votre boutique convertit à 1,4 % ne permet aucune décision. Ce qui compte, c'est de savoir que 60 % des visiteurs quittent la fiche produit sans faire défiler la page, ou que la moitié des paniers se perdent à l'étape de livraison.</p><p>Nous décomposons donc le parcours en marches et nous mesurons chacune séparément, sur mobile et sur ordinateur — parce que les points de rupture n'y sont jamais les mêmes.</p>",
+        "<p>Savoir que votre boutique convertit à 1,4 % ne permet aucune décision. Ce qui compte, c'est de savoir que 60 % des visiteurs quittent la fiche produit sans faire défiler. Ou que la moitié des paniers se perdent à l'étape de livraison.</p><p>Nous découpons donc le parcours en marches et nous mesurons chacune séparément. Sur mobile et sur ordinateur : les points de rupture n'y sont jamais les mêmes.</p>",
         [("Arrivée", "Adéquation entre la source de trafic et la page d'atterrissage. Beaucoup de pertes se jouent avant le premier clic."),
          ("Catégorie et fiche", "Lisibilité de l'offre, réassurance, éléments manquants au moment précis du doute."),
          ("Panier et paiement", "Frais découverts tardivement, création de compte imposée, moyens de paiement absents.")],
@@ -396,7 +396,7 @@ PAGES["audit-ecommerce"] = [
         "Questions fréquentes sur l'audit e-commerce.",
         "",
         [("Faut-il beaucoup de commandes pour que ce soit pertinent ?",
-          "<p>Une centaine de commandes mensuelles permet une lecture statistique confortable. En dessous, l'audit s'appuie davantage sur l'examen manuel du parcours et sur les enregistrements de sessions, ce qui reste très instructif — les frictions graves se voient à l'œil nu.</p>"),
+          "<p>Une centaine de commandes mensuelles permet une lecture statistique confortable. En dessous, l'audit s'appuie sur l'examen manuel du parcours et sur les enregistrements de sessions. C'est très instructif : les blocages graves se voient à l'œil nu.</p>"),
          ("Est-ce réservé à Shopify ?",
           "<p>Non. La méthode s'applique à toute boutique en ligne. Sur Shopify, nous allons plus loin parce que nous pouvons examiner le thème et les applications installées directement.</p>"),
          ("Appliquez-vous les correctifs ?",

@@ -7,7 +7,7 @@
         "parent_label": "Expertises",
         "parent_url": "/pages/agence-shopify",
         "eyebrow": "Référencement naturel",
-        "title": "Capter la demande qui existe déjà sur votre marché.",
+        "title": "Recevez chaque mois des demandes venues de Google.",
         "lead": "Vos clients cherchent votre service chaque jour. Le référencement naturel consiste à être la réponse qu'ils trouvent — pas à publier plus de contenu que vos concurrents.",
         "cta_primary": "Demander un diagnostic SEO",
         "cta_secondary": "Voir les résultats",
@@ -27,7 +27,7 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Le constat",
-        "title": "Publier davantage ne fait pas monter un site.",
+        "title": "Une page qui répond mieux que celle du concurrent passe devant.",
         "text": "<p>La plupart des sites que nous reprenons ne manquent pas de contenu : ils manquent de structure. Plusieurs pages visent la même requête et se neutralisent, les intentions d'achat ne sont couvertes par aucune page, et les signaux techniques empêchent Google de comprendre la hiérarchie.</p><p>Nous commençons donc par cartographier ce que votre marché cherche réellement, puis nous donnons à chaque page un rôle unique.</p>",
         "cta_label": "Voir notre méthode",
         "cta_url": "/pages/a-propos"
@@ -66,7 +66,7 @@
         "surface": "paper",
         "reverse": true,
         "eyebrow": "Déroulé",
-        "title": "Le SEO se mesure en trimestres, pas en semaines.",
+        "title": "Comptez trois mois pour les premiers gains, un an pour les vrais.",
         "text": "<p>Nous préférons l'annoncer clairement : les premiers mouvements sont généralement visibles entre six et douze semaines, et les effets composés arrivent plus tard. Toute agence qui vous promet la première position en un mois vous vend autre chose que du référencement.</p>"
       },
       "blocks": {
@@ -109,7 +109,7 @@
           "type": "qa",
           "settings": {
             "question": "Faut-il un engagement de longue durée ?",
-            "answer": "<p>Le diagnostic est ponctuel et sans suite obligatoire. Pour l'accompagnement, nous travaillons par cycles de trois mois : c'est la durée minimale pour observer un effet, et suffisamment court pour que vous puissiez arrêter sans être bloqué. Vos accès et vos contenus restent les vôtres dans tous les cas.</p>"
+            "answer": "<p>Le diagnostic est ponctuel et sans suite obligatoire. Ensuite, nous travaillons par cycles de trois mois. C'est la durée minimale pour observer un effet, et c'est assez court pour que vous puissiez arrêter sans être bloqué. Vos accès et vos contenus restent les vôtres dans tous les cas.</p>"
           }
         },
         "q4": {
@@ -135,7 +135,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Commençons par savoir ce qui bloque.",
-        "text": "Décrivez votre site et votre marché. Nous revenons avec les trois priorités que nous identifions — et si le SEO n'est pas votre levier prioritaire, nous vous le dirons.",
+        "text": "Décrivez votre site et votre marché. Nous revenons avec les trois priorités que nous identifions — et si le SEO n'est pas votre priorité, nous vous le dirons.",
         "cta_label": "Demander un diagnostic SEO",
         "note": "Réponse sous 2 jours ouvrés",
         "link_label": "Voir les résultats obtenus",

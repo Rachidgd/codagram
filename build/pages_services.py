@@ -151,8 +151,8 @@ PAGES = {}
 PAGES["creation-site-vitrine"] = [
     ("hero", hero(
         "Création de site vitrine",
-        "Un site vitrine qui travaille, pas une plaquette en ligne.",
-        "Nous concevons et développons des sites de services sur mesure : architecture pensée pour la prise de contact, contenus écrits avec vous, code propriétaire sans constructeur de pages ni abonnement caché.",
+        "Un site vitrine qui vous amène des demandes chaque semaine.",
+        "Votre site est écrit et développé pour votre activité. Il charge vite, il explique votre offre, et vous le modifiez sans nous. Aucun constructeur de pages, aucun abonnement caché.",
         "Cadrer mon projet", "Voir des réalisations", "/pages/resultats",
         "Expertises", "/pages/agence-seo",
         proofs=[("", "0", "", "constructeur de pages"),
@@ -166,7 +166,7 @@ PAGES["creation-site-vitrine"] = [
 
     ("demonstration", split(
         "Ce qui fait la différence",
-        "Le visiteur ne lit pas votre site : il le parcourt pour décider.",
+        "Votre visiteur balaie la page et décide en dix secondes.",
         "<p>En moyenne, un visiteur accorde quelques secondes à une page avant de décider s'il continue. Il ne cherche pas votre histoire, il cherche à savoir si vous résolvez son problème, si vous êtes crédible et combien ça coûte.</p><p>Nous construisons donc chaque page dans cet ordre-là : le problème d'abord, la preuve ensuite, la demande de contact quand la valeur est comprise — jamais avant.</p>",
         [("Une promesse compréhensible en dix secondes",
           "Ce que vous faites, pour qui, et ce qui vous distingue. Sans jargon de métier ni superlatifs invérifiables."),
@@ -190,7 +190,7 @@ PAGES["creation-site-vitrine"] = [
     ("choix", compare(
         "Faire le bon choix",
         "Site sur mesure, gabarit ou constructeur : lequel pour vous ?",
-        "Le sur-mesure n'est pas toujours justifié. Voici comment nous en discutons avant de vous vendre quoi que ce soit.",
+        "Un site sur mesure ne se justifie pas toujours. Voici comment nous en discutons avant de vous vendre quoi que ce soit.",
         "Développement sur mesure", "Gabarit ou constructeur",
         [("Coût de départ", "Plus élevé", "Faible"),
          ("Coût sur trois ans", "Stable, aucun abonnement d'outil", "Abonnements cumulés, souvent supérieur"),
@@ -220,7 +220,7 @@ PAGES["creation-site-vitrine"] = [
     ("cta", cta(
         "Étape suivante",
         "Parlons de votre projet avant de parler budget.",
-        "Décrivez votre activité et ce que vous attendez du site. Nous revenons avec une lecture de votre situation et un ordre de grandeur honnête — y compris si le sur-mesure n'est pas justifié chez vous.",
+        "Décrivez votre activité et ce que vous attendez du site. Nous revenons avec une lecture de votre situation et un ordre de grandeur honnête — y compris si un site sur mesure ne se justifie pas chez vous.",
         "Cadrer mon projet", link="Voir la prestation SEO", link_url="/pages/agence-seo",
         points=("Devis détaillé poste par poste", "Aucun engagement au cadrage"))),
 ]
@@ -234,7 +234,7 @@ PAGES["meta-ads"] = [
     ("hero", hero(
         "Publicité Meta",
         "La publicité amplifie une offre. Elle ne la répare pas.",
-        "Facebook et Instagram peuvent multiplier vos demandes — à condition que l'offre, la page de destination et le suivi des conversions tiennent déjà debout. Nous vérifions ces trois points avant d'engager le moindre euro de budget média.",
+        "Facebook et Instagram peuvent multiplier vos demandes — à condition que l'offre, la page de destination et le suivi des conversions tiennent déjà debout. Vous ne dépensez rien tant que ces trois points ne tiennent pas.",
         "Faire auditer mes campagnes", "Voir l'audit Meta Ads", "/pages/audit-meta-ads",
         "Expertises", "/pages/agence-seo")),
 
@@ -277,19 +277,19 @@ PAGES["meta-ads"] = [
         "Questions fréquentes sur Meta Ads.",
         "Sur la publicité, les promesses sont faciles. Voici nos réponses réelles.",
         [("Quel budget média minimum faut-il prévoir ?",
-          "<p>En dessous d'un certain volume quotidien, l'algorithme ne sort jamais de sa phase d'apprentissage et les résultats restent erratiques. L'ordre de grandeur dépend de votre secteur et du prix de votre offre : une prestation à 3 000 € et un produit à 40 € n'ont pas le même seuil. Nous le calculons pendant l'audit, avant de vous engager.</p>"),
+          "<p>En dessous d'un certain volume quotidien, l'algorithme ne sort jamais de sa phase d'apprentissage et les résultats restent erratiques. L'ordre de grandeur dépend de votre secteur et de votre prix. Une prestation à 3 000 € et un produit à 40 € n'ont pas le même seuil. Nous le calculons pendant l'audit, avant de vous engager.</p>"),
          ("Gérez-vous aussi Google Ads ?",
           "<p>Non. Nous intervenons sur Meta et sur Google Merchant Center pour les flux produits. Google Ads en recherche est un métier distinct, et nous préférons vous orienter vers quelqu'un dont c'est la spécialité plutôt que de facturer un apprentissage.</p>"),
          ("Qui est propriétaire du compte publicitaire ?",
           "<p>Vous. Nous travaillons sur votre gestionnaire d'entreprise avec un accès délégué. À la fin de la mission, nous retirons nos accès et vous conservez l'historique, les audiences et les créations. Un compte publicitaire détenu par une agence est un point de dépendance que nous refusons de créer.</p>"),
          ("Combien de temps avant de voir des résultats ?",
-          "<p>Les premiers signaux exploitables arrivent généralement après deux à trois semaines de diffusion continue, le temps que les campagnes sortent de l'apprentissage et qu'un volume de conversions suffisant se constitue. Toute lecture faite avant relève de l'interprétation de bruit statistique.</p>")],
+          "<p>Comptez deux à trois semaines de diffusion continue. C'est le temps qu'il faut aux campagnes pour sortir de l'apprentissage et réunir assez de conversions. Toute lecture faite avant relève de l'interprétation de bruit statistique.</p>")],
         surface="paper")),
 
     ("cta", cta(
         "Étape suivante",
         "Commençons par regarder ce que disent vos données.",
-        "Donnez-nous un accès en lecture à votre compte publicitaire. Nous revenons avec ce qui fonctionne, ce qui coûte sans rapporter, et si le levier publicitaire est prioritaire chez vous.",
+        "Donnez-nous un accès en lecture à votre compte publicitaire. Nous revenons avec ce qui fonctionne, ce qui coûte sans rapporter, et si la publicité est vraiment votre priorité aujourd'hui.",
         "Demander un audit Meta Ads",
         link="Analyser mes concurrents", link_url="/pages/analyse-concurrentielle-meta-ads",
         points=("Accès en lecture seule", "Aucun changement sans votre accord"))),
@@ -304,7 +304,7 @@ PAGES["optimisation-cro"] = [
     ("hero", hero(
         "Optimisation de la conversion",
         "Le même trafic peut produire deux fois plus de demandes.",
-        "Avant d'acheter de la visibilité supplémentaire, il est presque toujours plus rentable de convertir celle que vous avez déjà. Nous identifions les frictions réelles de vos parcours, les hiérarchisons, puis nous les supprimons une par une.",
+        "Avant d'acheter de la visibilité supplémentaire, il est presque toujours plus rentable de convertir celle que vous avez déjà. Vous gardez le même trafic, vous obtenez plus de demandes : nous retirons une à une les raisons d'hésiter.",
         "Analyser mes parcours", "Voir les résultats", "/pages/resultats",
         "Expertises", "/pages/agence-seo",
         proofs=[("", "3", " sem.", "premier cycle de test"),
@@ -313,8 +313,8 @@ PAGES["optimisation-cro"] = [
 
     ("constat", split(
         "Le diagnostic",
-        "Un visiteur qui n'achète pas n'est pas un visiteur non qualifié.",
-        "<p>La conclusion la plus fréquente — et la plus fausse — est d'accuser la qualité du trafic. Dans la majorité des cas que nous reprenons, les visiteurs étaient les bons : c'est la page qui ne répondait pas à leur question au moment où ils se la posaient.</p><p>Nous partons donc de l'observation, pas de l'opinion : enregistrements de sessions, points d'abandon, formulaires abandonnés à mi-parcours, requêtes internes sans résultat.</p>",
+        "Vos visiteurs sont prêts à acheter. Quelque chose les arrête.",
+        "<p>La conclusion la plus fréquente — et la plus fausse — est d'accuser la qualité du trafic. Dans la plupart des cas que nous reprenons, les visiteurs étaient les bons. C'est la page qui ne répondait pas à leur question au bon moment.</p><p>Nous partons donc de l'observation, pas de l'opinion : enregistrements de sessions, points d'abandon, formulaires abandonnés à mi-parcours, requêtes internes sans résultat.</p>",
         [("Là où l'attention se perd", "Analyse des parcours réels : ce que les visiteurs regardent, ignorent, et à quel endroit ils repartent."),
          ("Là où le doute apparaît", "Prix absent, délai flou, absence de preuve, engagement perçu comme trop lourd. Le doute a toujours une cause précise."),
          ("Là où la friction est mécanique", "Formulaire trop long, étape superflue, bouton invisible sur mobile, temps de chargement.")],
@@ -344,7 +344,7 @@ PAGES["optimisation-cro"] = [
 
     ("format", compare(
         "Deux formats",
-        "Audit ponctuel ou accompagnement continu ?",
+        "Deux façons de travailler, selon votre rythme.",
         "Le premier donne une carte, le second parcourt le chemin. Ils ne s'adressent pas aux mêmes situations.",
         "Accompagnement continu", "Audit ponctuel",
         [("Ce que vous recevez", "Modifications appliquées et mesurées", "Un rapport priorisé et argumenté"),
@@ -362,7 +362,7 @@ PAGES["optimisation-cro"] = [
         [("Faut-il beaucoup de trafic pour faire du CRO ?",
           "<p>Pour des tests comparatifs statistiquement fiables, oui : en dessous d'un certain volume de conversions mensuelles, un écart observé relève du hasard. Mais l'essentiel du travail — clarté du message, preuves, allègement des formulaires, hiérarchie mobile — s'appuie sur l'observation qualitative et fonctionne à tout volume.</p>"),
          ("Allez-vous refaire tout mon site ?",
-          "<p>Non, sauf si le diagnostic conclut que la structure elle-même est le frein. La démarche consiste à modifier peu et à mesurer, pas à tout remplacer. Une refonte complète efface aussi les repères de vos visiteurs fidèles.</p>"),
+          "<p>Non, sauf si le diagnostic conclut que la structure elle-même est le frein. Nous modifions peu et nous mesurons, plutôt que de tout remplacer. Une refonte complète efface aussi les repères de vos visiteurs fidèles.</p>"),
          ("Comment mesurez-vous vos résultats ?",
           "<p>Sur le taux de conversion de l'objectif défini avec vous — demande de devis, prise de rendez-vous, achat — et sur une période complète incluant vos variations habituelles. Nous documentons le point de départ avant toute modification : sans mesure initiale, aucune progression n'est démontrable.</p>"),
          ("Travaillez-vous sur Shopify et sur les sites sur mesure ?",

@@ -5,7 +5,7 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Référencement en Suisse romande",
-        "title": "Un marché cantonal, pas un marché national.",
+        "title": "Captez les clients de Suisse romande, canton par canton.",
         "lead": "La Suisse se travaille canton par canton : Genève, Vaud et le Valais n'ont ni le même tissu économique, ni la même concurrence, ni les mêmes attentes. S'adresser à « la Suisse » revient le plus souvent à ne s'adresser à personne.",
         "cta_primary": "Évaluer ma visibilité",
         "cta_secondary": "Voir le SEO local",
@@ -114,7 +114,7 @@
           "type": "qa",
           "settings": {
             "question": "Devez-vous être établis en Suisse pour intervenir ?",
-            "answer": "<p>Non, le travail se fait à distance. Vous restez seul responsable de vos obligations locales — facturation, TVA, conformité sectorielle — sujets sur lesquels nous ne sommes pas compétents et pour lesquels vous devez consulter un professionnel du droit suisse.</p>"
+            "answer": "<p>Non, le travail se fait à distance. Vous restez responsable de vos obligations locales : facturation, TVA, conformité sectorielle. Nous ne sommes pas compétents sur ces sujets, consultez un professionnel du droit suisse.</p>"
           }
         },
         "q3": {

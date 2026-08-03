@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Optimisation de la conversion",
         "title": "Le même trafic peut produire deux fois plus de demandes.",
-        "lead": "Avant d'acheter de la visibilité supplémentaire, il est presque toujours plus rentable de convertir celle que vous avez déjà. Nous identifions les frictions réelles de vos parcours, les hiérarchisons, puis nous les supprimons une par une.",
+        "lead": "Avant d'acheter de la visibilité supplémentaire, il est presque toujours plus rentable de convertir celle que vous avez déjà. Vous gardez le même trafic, vous obtenez plus de demandes : nous retirons une à une les raisons d'hésiter.",
         "cta_primary": "Analyser mes parcours",
         "parent_label": "Expertises",
         "parent_url": "/pages/agence-seo",
@@ -54,8 +54,8 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Le diagnostic",
-        "title": "Un visiteur qui n'achète pas n'est pas un visiteur non qualifié.",
-        "text": "<p>La conclusion la plus fréquente — et la plus fausse — est d'accuser la qualité du trafic. Dans la majorité des cas que nous reprenons, les visiteurs étaient les bons : c'est la page qui ne répondait pas à leur question au moment où ils se la posaient.</p><p>Nous partons donc de l'observation, pas de l'opinion : enregistrements de sessions, points d'abandon, formulaires abandonnés à mi-parcours, requêtes internes sans résultat.</p>"
+        "title": "Vos visiteurs sont prêts à acheter. Quelque chose les arrête.",
+        "text": "<p>La conclusion la plus fréquente — et la plus fausse — est d'accuser la qualité du trafic. Dans la plupart des cas que nous reprenons, les visiteurs étaient les bons. C'est la page qui ne répondait pas à leur question au bon moment.</p><p>Nous partons donc de l'observation, pas de l'opinion : enregistrements de sessions, points d'abandon, formulaires abandonnés à mi-parcours, requêtes internes sans résultat.</p>"
       },
       "blocks": {
         "b1": {
@@ -208,7 +208,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Deux formats",
-        "title": "Audit ponctuel ou accompagnement continu ?",
+        "title": "Deux façons de travailler, selon votre rythme.",
         "text": "Le premier donne une carte, le second parcourt le chemin. Ils ne s'adressent pas aux mêmes situations.",
         "col_criteria": "Critère",
         "col_a": "Accompagnement continu",
@@ -298,7 +298,7 @@
           "type": "qa",
           "settings": {
             "question": "Allez-vous refaire tout mon site ?",
-            "answer": "<p>Non, sauf si le diagnostic conclut que la structure elle-même est le frein. La démarche consiste à modifier peu et à mesurer, pas à tout remplacer. Une refonte complète efface aussi les repères de vos visiteurs fidèles.</p>"
+            "answer": "<p>Non, sauf si le diagnostic conclut que la structure elle-même est le frein. Nous modifions peu et nous mesurons, plutôt que de tout remplacer. Une refonte complète efface aussi les repères de vos visiteurs fidèles.</p>"
           }
         },
         "q3": {

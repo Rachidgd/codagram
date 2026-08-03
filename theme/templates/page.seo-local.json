@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement local",
         "title": "Être trouvé par les clients qui sont déjà à côté de vous.",
-        "lead": "Quand quelqu'un cherche un professionnel « près de chez lui », Google ne classe pas les sites comme ailleurs : il pondère la proximité, la cohérence des informations et la réputation de l'établissement. Ce sont ces trois signaux que nous travaillons.",
+        "lead": "Quand quelqu'un cherche un professionnel près de chez lui, Google regarde trois choses : votre proximité, la cohérence de vos informations et votre réputation. Nous travaillons ces trois signaux, dans cet ordre.",
         "cta_primary": "Évaluer ma visibilité locale",
         "parent_label": "Expertises",
         "parent_url": "/pages/agence-seo",
@@ -69,7 +69,7 @@
           "settings": {
             "icon": "target",
             "title": "Fiche d'établissement",
-            "text": "Catégories, description, horaires, zones desservies, photos, questions-réponses. Le levier le plus rapide."
+            "text": "Catégories, description, horaires, zones desservies, photos, questions-réponses. C'est ce qui produit un effet le plus vite."
           }
         },
         "g2": {

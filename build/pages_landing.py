@@ -61,9 +61,9 @@ write("reserver", [
     ("Vais-je subir un argumentaire de vente ?",
      "<p>Non. Nous présentons les constats et les priorités. Si vous voulez ensuite savoir ce que coûterait une intervention de notre part, vous demandez — sinon nous ne l'abordons pas. Le document reste utilisable sans nous.</p>"),
     ("Que se passe-t-il si mon site n'a aucun problème ?",
-     "<p>Cela arrive, et nous vous le disons. Dans ce cas l'échange sert plutôt à identifier le levier réellement limitant : souvent l'offre, la conversion ou l'acquisition payante plutôt que le référencement.</p>"),
+     "<p>Cela arrive, et nous vous le disons. L'échange sert alors à trouver ce qui vous bloque vraiment. Souvent votre offre, votre page ou vos publicités, plutôt que le référencement.</p>"),
     ("Faut-il me préparer ?",
-     "<p>Non. Le formulaire suffit. Si vous pouvez nous donner un accès en lecture à vos statistiques d'audience et à votre console de recherche, l'analyse sera plus précise — mais ce n'est pas indispensable pour un premier relevé.</p>")],
+     "<p>Non. Le formulaire suffit. Un accès en lecture à vos statistiques et à votre console de recherche rend l'analyse plus précise. Ce n'est pas indispensable pour un premier relevé.</p>")],
    surface="paper")),
 
  ("cta", cta(
@@ -81,7 +81,7 @@ sitemap = {
   "sections": {
     "hero": {"type": "page-hero", "settings": {
       "show_breadcrumb": True, "eyebrow": "Plan du site",
-      "title": "Toutes les pages, en une vue.",
+      "title": "Trouvez la page qu'il vous faut, en une vue.",
       "lead": "Si vous cherchez quelque chose de précis, la recherche du site (Ctrl + K) est plus rapide. Cette page existe pour explorer l'ensemble.",
       "cta_primary": "", "cta_secondary": "", "cta_secondary_url": ""}},
     "plan": {"type": "page-sitemap", "settings": {

@@ -229,14 +229,14 @@
           "type": "qa",
           "settings": {
             "question": "Que se passe-t-il si mon site n'a aucun problème ?",
-            "answer": "<p>Cela arrive, et nous vous le disons. Dans ce cas l'échange sert plutôt à identifier le levier réellement limitant : souvent l'offre, la conversion ou l'acquisition payante plutôt que le référencement.</p>"
+            "answer": "<p>Cela arrive, et nous vous le disons. L'échange sert alors à trouver ce qui vous bloque vraiment. Souvent votre offre, votre page ou vos publicités, plutôt que le référencement.</p>"
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
             "question": "Faut-il me préparer ?",
-            "answer": "<p>Non. Le formulaire suffit. Si vous pouvez nous donner un accès en lecture à vos statistiques d'audience et à votre console de recherche, l'analyse sera plus précise — mais ce n'est pas indispensable pour un premier relevé.</p>"
+            "answer": "<p>Non. Le formulaire suffit. Un accès en lecture à vos statistiques et à votre console de recherche rend l'analyse plus précise. Ce n'est pas indispensable pour un premier relevé.</p>"
           }
         }
       },

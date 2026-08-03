@@ -5,8 +5,8 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Site pour restaurant et hôtellerie",
-        "title": "Chaque réservation en direct est une commission que vous ne payez pas.",
-        "lead": "Les plateformes vous apportent du volume et prélèvent leur part sur chaque couvert. Un site qui convertit ne les remplace pas : il capte les clients qui vous cherchent déjà par votre nom et qui n'ont aucune raison de passer par un intermédiaire.",
+        "title": "Chaque réservation en direct vous fait économiser la commission.",
+        "lead": "Les plateformes vous apportent du volume et prélèvent leur part sur chaque couvert. Votre site récupère les clients qui vous cherchent déjà par votre nom. Sur ceux-là, vous encaissez la totalité.",
         "cta_primary": "Parler de mon établissement",
         "parent_label": "Création de site",
         "parent_url": "/pages/creation-site-vitrine",
@@ -67,7 +67,7 @@
         "b1": {
           "type": "point",
           "settings": {
-            "title": "Menu en page, pas en fichier",
+            "title": "Un menu lisible sur mobile, sans PDF",
             "text": "Un document à télécharger n'est ni lisible sur mobile ni indexable. Le menu doit être du texte réel."
           }
         },

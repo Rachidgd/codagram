@@ -7,7 +7,7 @@
         "parent_label": "Expertises",
         "parent_url": "/pages/agence-seo",
         "eyebrow": "Agence Shopify",
-        "title": "Une boutique Shopify développée, pas assemblée.",
+        "title": "Une boutique qui charge vite et qui vend mieux sur mobile.",
         "lead": "Création, refonte et optimisation de boutiques Shopify en Liquid natif. Nous écrivons le thème pour votre catalogue et votre marge, sans empiler d'applications qui ralentissent le site et grignotent votre rentabilité.",
         "cta_primary": "Demander un diagnostic",
         "cta_secondary": "Voir les résultats",
@@ -54,8 +54,8 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Le constat",
-        "title": "La plupart des boutiques ne perdent pas des ventes faute de trafic.",
-        "text": "<p>Elles les perdent entre l'arrivée sur la fiche produit et le paiement. Un thème acheté puis rallongé d'une dizaine d'applications finit par produire exactement cela : une page lente, un message flou, une réassurance absente au moment précis où le doute apparaît.</p><p>Nous reprenons ce trajet dans l'ordre où le client le vit — et nous supprimons ce qui l'interrompt.</p>",
+        "title": "Vos ventes se perdent entre le panier et le paiement.",
+        "text": "<p>Elles les perdent entre l'arrivée sur la fiche produit et le paiement. Un thème acheté puis rallongé d'une dizaine d'applications produit exactement cela. Une page lente, un message flou, et rien pour rassurer au moment où le doute apparaît.</p><p>Nous reprenons ce trajet dans l'ordre où le client le vit — et nous supprimons ce qui l'interrompt.</p>",
         "cta_label": "Voir la méthode complète",
         "cta_url": "/pages/a-propos"
       },
@@ -127,7 +127,7 @@
           "settings": {
             "icon": "gauge",
             "title": "Conversion",
-            "text": "Message, preuve et friction retravaillés à partir des parcours réels, pas de bonnes pratiques génériques."
+            "text": "Message, preuve et friction retravaillés à partir des parcours réels, pas de recettes toutes faites."
           }
         },
         "g5": {
@@ -272,7 +272,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Regardons votre boutique avant de parler budget.",
-        "text": "Décrivez votre catalogue et ce qui vous bloque. Nous revenons avec les priorités que nous identifions — et si le levier n'est pas Shopify, nous vous le disons.",
+        "text": "Décrivez votre catalogue et ce qui vous bloque. Nous revenons avec les priorités que nous identifions — et si le problème ne vient pas de Shopify, nous vous le disons.",
         "cta_label": "Demander un diagnostic",
         "note": "Réponse sous 2 jours ouvrés",
         "link_label": "Voir les résultats obtenus",

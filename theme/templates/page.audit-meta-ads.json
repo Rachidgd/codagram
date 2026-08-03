@@ -127,7 +127,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Deux suites possibles",
-        "title": "Après l'audit : reprise en main ou transmission ?",
+        "title": "Après l'audit, vous choisissez qui reprend la main.",
         "text": "L'audit ne vous engage à rien. Voici les deux suites que nous proposons.",
         "col_criteria": "Critère",
         "col_a": "Nous pilotons",
@@ -210,7 +210,7 @@
           "type": "qa",
           "settings": {
             "question": "Faut-il un historique long pour que l'audit soit utile ?",
-            "answer": "<p>Trois mois de diffusion continue constituent une base confortable. En dessous, l'analyse porte davantage sur la structure, le suivi et les angles créatifs que sur les performances comparées — ce qui reste utile, mais nous vous le signalons avant.</p>"
+            "answer": "<p>Trois mois de diffusion continue constituent une base confortable. En dessous, l'analyse porte surtout sur la structure, le suivi et les angles créatifs. Elle reste utile, et nous vous le disons avant de commencer.</p>"
           }
         },
         "q2": {

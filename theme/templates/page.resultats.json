@@ -74,8 +74,8 @@
         "surface": "dark",
         "reverse": false,
         "eyebrow": "Comment lire ces chiffres",
-        "title": "Une progression n'est pas une promesse.",
-        "text": "<p>Un pourcentage impressionne d'autant plus que le point de départ est bas. C'est pourquoi nous indiquons systématiquement la situation initiale et la période : sans ces deux informations, un chiffre de croissance ne veut rien dire.</p><p>Nous ne publions pas les cas où le travail n'a pas produit d'effet mesurable — mais nous en parlons volontiers pendant un échange, parce que ce sont eux qui expliquent notre méthode.</p>",
+        "title": "Comment lire ces chiffres.",
+        "text": "<p>Un pourcentage impressionne d'autant plus que le point de départ est bas. C'est pourquoi nous indiquons systématiquement la situation initiale et la période : sans ces deux informations, un chiffre de croissance ne veut rien dire.</p><p>Nous ne publions pas les cas sans effet mesurable. Nous en parlons volontiers pendant un échange : ce sont eux qui expliquent le mieux notre méthode.</p>",
         "cta_label": "Comprendre notre méthode",
         "cta_url": "/pages/a-propos"
       },
@@ -91,7 +91,7 @@
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Votre situation ressemble-t-elle à l'une de celles-ci ?",
+        "title": "Le point de départ de chacun de ces clients.",
         "text": "Décrivez-la en quatre questions. Nous revenons avec une lecture argumentée de ce qui limite aujourd'hui votre acquisition.",
         "cta_label": "Demander un diagnostic",
         "note": "Réponse sous 2 jours ouvrés"

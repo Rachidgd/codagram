@@ -109,14 +109,14 @@
         "surface": "paper",
         "reverse": true,
         "eyebrow": "Notre lecture",
-        "title": "Un prospect ingénieur ne lit pas un argumentaire, il cherche des données.",
+        "title": "Donnez des chiffres à un prospect ingénieur, il vous consultera.",
         "text": "<p>« Solutions innovantes » et « savoir-faire reconnu » n'ont aucun effet sur ce public — ils en ont même un négatif, en signalant l'absence de contenu réel. Ce qui convainc : des tolérances, des matériaux, des délais, des limites clairement énoncées.</p><p>C'est plus exigeant à produire, et c'est exactement pour cela que la concurrence y est faible.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
-            "title": "Des chiffres, pas des adjectifs",
+            "title": "Des chiffres vérifiables",
             "text": "Capacités, précisions, volumes traités. Ce qui permet de vous présélectionner."
           }
         },
@@ -131,7 +131,7 @@
           "type": "point",
           "settings": {
             "title": "Des cas documentés",
-            "text": "Un problème, une contrainte, une solution. Le format qui circule entre professionnels."
+            "text": "Un problème, une contrainte, ce que vous avez fait. Le format qui circule entre professionnels."
           }
         }
       },
@@ -158,7 +158,7 @@
           "type": "qa",
           "settings": {
             "question": "Mon marché est trop spécialisé pour le référencement.",
-            "answer": "<p>Un marché spécialisé est le terrain le plus favorable au référencement, pas le moins : peu de volume, mais une intention d'achat presque systématique et quasiment aucun concurrent produisant du contenu sérieux. Dix visiteurs par mois qui cherchent exactement votre procédé valent mieux que mille visiteurs curieux.</p>"
+            "answer": "<p>Un marché spécialisé est le terrain le plus favorable au référencement. Peu de volume, mais une intention d'achat presque systématique et quasiment aucun concurrent sérieux en face. Dix visiteurs par mois qui cherchent exactement votre procédé valent mieux que mille visiteurs curieux.</p>"
           }
         },
         "q2": {

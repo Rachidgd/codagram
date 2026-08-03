@@ -5,8 +5,8 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Référencement local par zone",
-        "title": "Choisissez votre zone, nous en connaissons le marché.",
-        "lead": "Chaque territoire a son tissu économique, son intensité concurrentielle et ses habitudes de recherche. Nos pages de zone ne sont pas une même page dupliquée : elles décrivent ce que nous observons réellement sur chaque marché.",
+        "title": "Trouvez votre ville et ce qui s'y gagne.",
+        "lead": "Chaque territoire a son tissu économique, son intensité concurrentielle et ses habitudes de recherche. Vous trouverez ici ce qui se gagne sur votre marché, et par quoi commencer chez vous.",
         "cta_primary": "Demander un relevé de position",
         "cta_secondary": "Voir la prestation SEO local",
         "cta_secondary_url": "/pages/seo-local"

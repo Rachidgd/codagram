@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Publicité Meta",
         "title": "La publicité amplifie une offre. Elle ne la répare pas.",
-        "lead": "Facebook et Instagram peuvent multiplier vos demandes — à condition que l'offre, la page de destination et le suivi des conversions tiennent déjà debout. Nous vérifions ces trois points avant d'engager le moindre euro de budget média.",
+        "lead": "Facebook et Instagram peuvent multiplier vos demandes — à condition que l'offre, la page de destination et le suivi des conversions tiennent déjà debout. Vous ne dépensez rien tant que ces trois points ne tiennent pas.",
         "cta_primary": "Faire auditer mes campagnes",
         "parent_label": "Expertises",
         "parent_url": "/pages/agence-seo",
@@ -187,7 +187,7 @@
           "type": "qa",
           "settings": {
             "question": "Quel budget média minimum faut-il prévoir ?",
-            "answer": "<p>En dessous d'un certain volume quotidien, l'algorithme ne sort jamais de sa phase d'apprentissage et les résultats restent erratiques. L'ordre de grandeur dépend de votre secteur et du prix de votre offre : une prestation à 3 000 € et un produit à 40 € n'ont pas le même seuil. Nous le calculons pendant l'audit, avant de vous engager.</p>"
+            "answer": "<p>En dessous d'un certain volume quotidien, l'algorithme ne sort jamais de sa phase d'apprentissage et les résultats restent erratiques. L'ordre de grandeur dépend de votre secteur et de votre prix. Une prestation à 3 000 € et un produit à 40 € n'ont pas le même seuil. Nous le calculons pendant l'audit, avant de vous engager.</p>"
           }
         },
         "q2": {
@@ -208,7 +208,7 @@
           "type": "qa",
           "settings": {
             "question": "Combien de temps avant de voir des résultats ?",
-            "answer": "<p>Les premiers signaux exploitables arrivent généralement après deux à trois semaines de diffusion continue, le temps que les campagnes sortent de l'apprentissage et qu'un volume de conversions suffisant se constitue. Toute lecture faite avant relève de l'interprétation de bruit statistique.</p>"
+            "answer": "<p>Comptez deux à trois semaines de diffusion continue. C'est le temps qu'il faut aux campagnes pour sortir de l'apprentissage et réunir assez de conversions. Toute lecture faite avant relève de l'interprétation de bruit statistique.</p>"
           }
         }
       },
@@ -224,7 +224,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Commençons par regarder ce que disent vos données.",
-        "text": "Donnez-nous un accès en lecture à votre compte publicitaire. Nous revenons avec ce qui fonctionne, ce qui coûte sans rapporter, et si le levier publicitaire est prioritaire chez vous.",
+        "text": "Donnez-nous un accès en lecture à votre compte publicitaire. Nous revenons avec ce qui fonctionne, ce qui coûte sans rapporter, et si la publicité est vraiment votre priorité aujourd'hui.",
         "cta_label": "Demander un audit Meta Ads",
         "note": "Réponse sous 2 jours ouvrés",
         "link_label": "Analyser mes concurrents",

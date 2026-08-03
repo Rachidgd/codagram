@@ -5,7 +5,7 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Études de cas",
-        "title": "Des missions racontées avec leur point de départ.",
+        "title": "Ce que nous avons changé, et ce que ça a rapporté.",
         "lead": "Un résultat sans contexte n'apprend rien. Nous détaillons ici la situation initiale, ce que nous avons décidé de faire, ce que nous avons écarté et ce que cela a produit sur la période observée.",
         "cta_primary": "Demander un diagnostic",
         "cta_secondary": "Voir tous les résultats",
@@ -62,7 +62,7 @@
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Votre situation ressemble-t-elle à l'une des nôtres ?",
+        "title": "Retrouvez votre situation dans ces missions.",
         "text": "Décrivez-la nous. Si nous avons déjà traité un cas comparable, nous vous en détaillerons le déroulé complet, résultats mitigés compris.",
         "cta_label": "Décrire ma situation",
         "note": "Réponse sous 2 jours ouvrés",
