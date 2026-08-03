@@ -14,7 +14,7 @@
     "social_linkedin": "",
     "social_instagram": "",
     "home_meta_title": "Agence SEO, Shopify et Meta Ads à Paris | Clickscreation",
-    "home_meta_description": "Agence d'acquisition à Paris : référencement naturel, sites sur mesure, boutiques Shopify, conversion et Meta Ads. Diagnostic gratuit sous 2 jours ouvrés.",
+    "home_meta_description": "Agence d'acquisition à Paris : référencement naturel, sites sur mesure, boutiques Shopify, conversion et Meta Ads. Diagnostic gratuit sous 48 h.",
     "blog_meta_title": "Ressources SEO, Shopify et acquisition | Clickscreation",
     "blog_meta_description": "Guides pratiques sur le référencement naturel, Shopify, la conversion et Meta Ads pour développer votre visibilité et vos performances.",
     "enable_motion": true,
@@ -32,7 +32,7 @@
             "type": "nav_note",
             "settings": {
               "handle": "agence-seo",
-              "description": "Capter la demande déjà présente sur votre marché.",
+              "description": "Plus de demandes venues de Google, sans payer le clic.",
               "icon": "signal"
             }
           },
@@ -40,7 +40,7 @@
             "type": "nav_note",
             "settings": {
               "handle": "creation-site-vitrine",
-              "description": "Un site développé pour votre modèle, pas pour un gabarit.",
+              "description": "Un site qui explique votre offre et déclenche l'appel.",
               "icon": "layers"
             }
           },
@@ -48,7 +48,7 @@
             "type": "nav_note",
             "settings": {
               "handle": "agence-shopify",
-              "description": "Boutique pensée pour la décision d'achat mobile.",
+              "description": "Une boutique rapide, qui vend mieux sur mobile.",
               "icon": "cart"
             }
           },
@@ -56,7 +56,7 @@
             "type": "nav_note",
             "settings": {
               "handle": "optimisation-cro",
-              "description": "Retirer ce qui empêche vos visiteurs d'agir.",
+              "description": "Le même trafic, plus de commandes.",
               "icon": "gauge"
             }
           },
@@ -64,7 +64,7 @@
             "type": "nav_note",
             "settings": {
               "handle": "expert-meta-ads",
-              "description": "Accélérer une offre qui tient déjà debout.",
+              "description": "Des campagnes pilotées sur ce qu'elles vous rapportent.",
               "icon": "megaphone"
             }
           },
@@ -72,7 +72,7 @@
             "type": "nav_note",
             "settings": {
               "handle": "audit-seo",
-              "description": "Un état des lieux chiffré avant toute décision.",
+              "description": "Vos trois priorités chiffrées, avant toute dépense.",
               "icon": "target"
             }
           },
@@ -84,7 +84,7 @@
               "title": "Maison Ayla — reprise de l'architecture SEO.",
               "metric": "+350 %",
               "metric_label": "clics organiques en 3 mois",
-              "text": "Trois mois de travail sur la structure des pages et la couverture des intentions de recherche.",
+              "text": "Trois mois de travail sur la structure des pages et la couverture des recherches qui déclenchent un contact.",
               "cta_label": "Voir les résultats",
               "cta_url": "/pages/resultats"
             }
