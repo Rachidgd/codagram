@@ -267,7 +267,7 @@ préalable n'est requise.
 
 Neuf pages partagent encore le suffixe `ville-seo` et affichent donc la même
 page locale générique. Leur gabarit dédié existe déjà dans le thème : il suffit
-de changer le suffixe de chaque page dans l'admin (Pages → une page → Modèle).
+de changer le suffixe de chaque page (Pages → une page → Modèle).
 
 | Page | Suffixe actuel | Suffixe à sélectionner |
 |---|---|---|
@@ -280,18 +280,35 @@ de changer le suffixe de chaque page dans l'admin (Pages → une page → Modèl
 | Agence SEO Montpellier | ville-seo | `seo-montpellier` |
 | Agence SEO Strasbourg | ville-seo | `seo-strasbourg` |
 | Agence SEO Grenoble | ville-seo | `seo-grenoble` |
-| A propos | simple | `a-propos` |
+
+**Pourquoi ces neuf-là doivent attendre.** Leur contenu réel vit entièrement
+dans le gabarit et dans des métachamps ; le corps de la page ne contient qu'une
+phrase de remplacement. Basculer le suffixe avant publication les ferait
+retomber sur `page.json` du thème en ligne, qui n'affiche que ce corps — soit
+neuf pages quasi vides le temps de la publication.
+
+### Déjà rattachées
+
+Ces quatre pages ont été basculées immédiatement, sans effet sur le site en
+ligne : leur contenu est stocké dans le corps de page, et `page.json` et
+`page.simple.json` du thème live sont identiques — le repli rend donc
+exactement la même chose qu'avant.
+
+| Page | Ancien suffixe | Nouveau suffixe |
+|---|---|---|
 | Consultant SEO Suisse | simple | `seo-suisse` |
 | Consultant SEO Belgique | simple | `seo-belgique` |
+| A propos | simple | `a-propos` |
 | Reserver mon audit SEO offert | simple | `reserver` |
 
-**Pourquoi ce n'est pas fait automatiquement** : `templateSuffix` est un réglage
-de la page, pas du thème. Le modifier avant publication ferait basculer le site
-en ligne sur des gabarits que le thème actuel ne contient pas. L'opération n'est
-sûre qu'une fois le nouveau thème publié.
+Marseille, Nantes, Bordeaux et Luxembourg n'ont rien à changer non plus : leur
+suffixe était déjà dédié et leur gabarit porte ce nom.
 
-Marseille, Nantes, Bordeaux et Luxembourg n'ont rien à changer : leur suffixe
-était déjà dédié, leur gabarit porte ce nom.
+**Récapitulatif géographique** — 16 pages, 16 gabarits distincts :
+13 villes (Paris, Lyon, Marseille, Bordeaux, Nantes, Lille, Toulouse, Nice,
+Rennes, Strasbourg, Montpellier, Grenoble, Luxembourg) et 3 marchés
+transfrontaliers (Luxembourg, Suisse, Belgique). Sept sont déjà rattachées,
+neuf attendent la publication.
 
 ## Contrôle anti-duplication
 
