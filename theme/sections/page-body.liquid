@@ -1,11 +1,3 @@
-{%- comment -%}
-  CORPS DE PAGE
-
-  Rend le contenu saisi dans l'admin Shopify. La section ne produit rien du tout
-  quand la page est vide : une bande de fond sans contenu est un défaut visible,
-  pas un espacement.
-{%- endcomment -%}
-
 {%- liquid
   assign body = page.content
   if section.settings.text != blank

@@ -1,14 +1,3 @@
-{%- comment -%}
-  PALETTE DE COMMANDES — ⌘K / Ctrl+K
-
-  Clickscreation publie plus de 45 pages utiles (services, audits, villes,
-  guides). Un méga-menu ne peut pas toutes les exposer sans devenir illisible.
-  La palette rend l'intégralité du site atteignable en deux frappes, et sert
-  aussi de recherche pour les visiteurs qui arrivent par un guide.
-
-  L'index est généré depuis les menus Shopify : il reste juste sans maintenance.
-{%- endcomment -%}
-
 {%- liquid
   assign sep = ''
   assign root = routes.root_url
@@ -38,7 +27,6 @@
   {%- assign sep = ',' -%}
 {%- endfor -%}
 
-{%- comment -%} Derniers guides publiés : la recherche couvre aussi l'éditorial. {%- endcomment -%}
 {%- if settings.palette_blog != blank -%}
   {%- for article in settings.palette_blog.articles limit: 12 -%}
     {{ sep }}{"t":{{ article.title | json }},"u":{{ article.url | json }},"g":"Guides","k":"blog guide article ressource"}

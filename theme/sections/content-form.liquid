@@ -1,14 +1,3 @@
-{%- comment -%}
-  FORMULAIRE EN LIGNE
-
-  Sur une page dont le seul rôle est de convertir, demander un clic
-  supplémentaire pour ouvrir un tiroir coûte des demandes. Cette section pose
-  le formulaire directement dans la page.
-
-  Quatre champs, deux obligatoires : chaque champ ajouté fait baisser le taux
-  de complétion, et le reste de la qualification se fait à la réponse.
-{%- endcomment -%}
-
 {%- assign surface = section.settings.surface | default: 'paper' -%}
 
 <section class="cc-inlineform surface-{{ surface }} section-y" data-surface="{{ surface }}">

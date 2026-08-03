@@ -421,3 +421,20 @@ Shopify n'étant pas joignable depuis l'environnement de test, la maquette
 sert des gabarits locaux **aux dimensions exactes** des fichiers réels : la
 géométrie de la mise en page est donc fidèle, seul le contenu du visuel
 diffère. `PREVIEW_CDN=1 node build/render.mjs` force les URL réelles.
+
+## Code livré : aucun commentaire
+
+Les fichiers du thème ne portent aucun commentaire — ni bloc `{% comment %}`,
+ni commentaire CSS ou JavaScript. Trois raisons :
+
+1. Les commentaires CSS et JS du layout et de `signal.js` étaient **lisibles
+   dans le code source de chaque page** par n'importe quel visiteur.
+2. Les blocs `{% comment %}` restent visibles pour quiconque ouvre l'éditeur
+   de code du thème dans l'admin Shopify.
+3. Le raisonnement derrière chaque choix vit ici et dans l'historique Git,
+   qui sont les bons endroits pour ça.
+
+Seule exception : la mention de licence MIT de Tailwind en tête de
+`signal.css`, dont la conservation est une obligation légale.
+
+Effet de bord mesuré : `signal.js` passe de 32,6 Ko à 26,0 Ko (6,6 Ko gzip).

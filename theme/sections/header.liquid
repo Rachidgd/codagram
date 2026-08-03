@@ -7,7 +7,6 @@
   <div class="cc-head__bar">
     <div class="shell cc-head__inner">
 
-      {%- comment -%} Signature de marque : le point volt EST le logo. {%- endcomment -%}
       <a class="cc-brand" href="{{ routes.root_url }}" aria-label="{{ brand | escape }} — Accueil">
         {%- if section.settings.logo != blank -%}
           {{ section.settings.logo | image_url: width: 400 | image_tag: widths: '120,180,240,320,400', sizes: '150px', loading: 'eager', class: 'cc-brand__img', alt: brand }}
@@ -61,11 +60,6 @@
                       {%- endfor -%}
                     </div>
 
-                    {%- comment -%}
-                      Volet contextuel : chaque famille du menu peut exposer une
-                      preuve chiffrée plutôt qu'un simple lien. C'est le point
-                      d'appui CRO de la navigation.
-                    {%- endcomment -%}
                     {%- for b in section.blocks -%}
                       {%- if b.type == 'nav_spotlight' and b.settings.parent == link.title -%}
                         <aside class="cc-panel__spot" {{ b.shopify_attributes }}>
@@ -108,11 +102,6 @@
       </nav>
 
       <div class="cc-head__actions">
-        {%- comment -%}
-          Le site expose 45+ pages (services, villes, audits, guides).
-          La palette de commandes est le raccourci qui rend cette profondeur
-          utilisable au lieu de la cacher dans des sous-menus.
-        {%- endcomment -%}
         <button type="button" class="cc-head__cmd" data-palette-open aria-label="Rechercher une page ou un service">
           {%- render 'icon', name: 'search', size: 15 -%}
           <span class="cc-head__cmd-text">Rechercher</span>
@@ -139,11 +128,9 @@
     </div>
   </div>
 
-  {%- comment -%} Progression de lecture : repère continu, 2 px, sans poids visuel. {%- endcomment -%}
   <div class="cc-head__progress" aria-hidden="true"><span data-scroll-progress></span></div>
 </header>
 
-{%- comment -%} ---------- Feuille mobile ---------- {%- endcomment -%}
 <div class="cc-sheet" id="MobileNav" data-mobile-sheet hidden>
   <button type="button" class="cc-sheet__scrim" data-mobile-close tabindex="-1" aria-hidden="true"></button>
 

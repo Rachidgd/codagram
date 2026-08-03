@@ -1,12 +1,3 @@
-{%- comment -%}
-  HERO — « console d'acquisition »
-
-  Parti pris : pas d'illustration décorative, pas de photo de bureau. Le visuel
-  de droite est un instrument. Il montre littéralement ce que vend l'agence —
-  transformer une demande brute et bruitée en un signal exploitable — et il est
-  dessiné en canvas, donc unique et impossible à retrouver sur un autre site.
-{%- endcomment -%}
-
 <section class="cc-hero surface-dark" data-surface="dark">
   <span class="grid-field" aria-hidden="true"></span>
 
@@ -20,10 +11,6 @@
         </p>
       {%- endif -%}
 
-      {%- comment -%}
-        L'espace avant <em> est significatif : sans lui, le titre est lu
-        « demandes,pas » par les lecteurs d'écran et indexé collé.
-      {%- endcomment -%}
       <h1 class="cc-hero__title" data-reveal>
         {{ section.settings.title }}
         {% if section.settings.title_accent != blank %}<em>{{ section.settings.title_accent }}</em>{% endif %}
@@ -57,7 +44,6 @@
       {%- endif -%}
     </div>
 
-    {%- comment -%} ---------- Instrument ---------- {%- endcomment -%}
     <div class="cc-console" data-reveal>
       <div class="cc-console__bar">
         <span class="cc-console__id">

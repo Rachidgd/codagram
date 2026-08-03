@@ -1,12 +1,3 @@
-{%- comment -%}
-  SÉLECTEUR DE FREIN
-
-  Décision UX/CRO : le visiteur d'une agence ne cherche pas « nos services »,
-  il cherche son problème. On inverse donc l'entrée : il choisit le symptôme
-  qu'il reconnaît, l'interface lui répond avec le levier, la preuve et l'action.
-  Motif ARIA tablist complet, navigation au clavier, aucun rechargement.
-{%- endcomment -%}
-
 <section class="cc-diag-sel surface-paper section-y" data-surface="paper">
   <div class="shell">
 
@@ -38,11 +29,6 @@
             </button>
           {%- endfor -%}
 
-          {%- comment -%}
-            La colonne d'onglets est plus courte que le panneau de réponse.
-            Plutôt que de laisser un vide, on y place la sortie utile pour le
-            visiteur qui ne se reconnaît dans aucun symptôme.
-          {%- endcomment -%}
           {%- if section.settings.aside_text != blank -%}
             <div class="cc-sel__aside">
               <p class="cc-sel__aside-text">{{ section.settings.aside_text }}</p>

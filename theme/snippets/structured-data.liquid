@@ -1,11 +1,3 @@
-{%- comment -%}
-  DONNÉES STRUCTURÉES
-
-  Émises en JSON-LD, une seule fois par page, sans doublon d'entité.
-  L'organisation porte @id stable : les autres entités s'y rattachent au lieu
-  de la redéclarer, ce qui évite les conflits d'identité dans le graphe.
-{%- endcomment -%}
-
 {%- liquid
   assign org_id = shop.url | append: '/#organisation'
   assign site_id = shop.url | append: '/#site'
@@ -58,11 +50,6 @@
       "name": {{ shop.name | json }},
       "inLanguage": "fr-FR",
       "publisher": { "@id": {{ org_id | json }} },
-      {%- comment -%}
-        Le gabarit d'URL doit rester hors de la balise de sortie : une accolade
-        à l'intérieur d'un {{ }} referme la balise et casse le parseur Liquid
-        de Shopify. On concatène donc en texte brut.
-      {%- endcomment -%}
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -73,7 +60,6 @@
       }
     }
 
-    {%- comment -%} ---------- Page de contenu ---------- {%- endcomment -%}
     {%- if request.page_type == 'page' -%}
     ,{
       "@type": "WebPage",
@@ -95,7 +81,6 @@
     }
     {%- endif -%}
 
-    {%- comment -%} ---------- Article ---------- {%- endcomment -%}
     {%- if request.page_type == 'article' -%}
     ,{
       "@type": "Article",

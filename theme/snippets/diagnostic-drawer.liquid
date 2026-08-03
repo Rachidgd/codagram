@@ -1,15 +1,3 @@
-{%- comment -%}
-  DIAGNOSTIC — formulaire multi-étapes à logique conditionnelle
-
-  Décision CRO : on ne demande jamais les coordonnées en premier. Le visiteur
-  qualifie d'abord son besoin en 2 clics (engagement progressif), les champs
-  d'identité n'arrivent qu'en dernière étape, une fois la valeur perçue.
-
-  Base technique : le tag de formulaire contact natif de Shopify.
-  Sans JavaScript, toutes les étapes restent affichées et le formulaire part
-  normalement — aucune dépendance à une app tierce.
-{%- endcomment -%}
-
 <div class="cc-diag" data-diagnostic hidden>
   <button type="button" class="cc-diag__scrim" data-diagnostic-close tabindex="-1" aria-hidden="true"></button>
 
@@ -48,11 +36,9 @@
             </p>
           {%- endif -%}
 
-          {%- comment -%} Traçabilité d'origine : quel bouton a déclenché la demande. {%- endcomment -%}
           <input type="hidden" name="contact[origine]" value="site" data-diagnostic-entry-field>
           <input type="hidden" name="contact[page]" value="{{ canonical_url }}">
 
-          {%- comment -%} ---------- Étape 1 ---------- {%- endcomment -%}
           <fieldset class="cc-diag__step" data-step data-step-auto>
             <legend class="cc-diag__q">Quel est votre objectif principal ?</legend>
             <div class="cc-diag__choices" data-field>
@@ -69,7 +55,6 @@
             </div>
           </fieldset>
 
-          {%- comment -%} ---------- Étape 2 — conditionnelle e-commerce ---------- {%- endcomment -%}
           <fieldset class="cc-diag__step" data-step data-step-auto data-step-when="contact[objectif]=ecommerce">
             <legend class="cc-diag__q">Où en est votre boutique ?</legend>
             <div class="cc-diag__choices" data-field>
@@ -85,7 +70,6 @@
             </div>
           </fieldset>
 
-          {%- comment -%} ---------- Étape 3 ---------- {%- endcomment -%}
           <fieldset class="cc-diag__step" data-step>
             <legend class="cc-diag__q">Votre situation actuelle</legend>
 
@@ -120,7 +104,6 @@
             </div>
           </fieldset>
 
-          {%- comment -%} ---------- Étape 4 ---------- {%- endcomment -%}
           <fieldset class="cc-diag__step" data-step>
             <legend class="cc-diag__q">Où vous répondons-nous ?</legend>
 

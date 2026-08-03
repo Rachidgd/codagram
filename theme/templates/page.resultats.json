@@ -193,9 +193,10 @@
     "clients": {
       "type": "content-logos",
       "settings": {
-        "surface": "paper",
+        "surface": "dark",
         "title": "Quelques-uns des sites que nous avons construits",
-        "note": "Les chiffres publiés plus haut portent sur deux de ces comptes. Les autres missions sont en cours ou couvertes par un accord de confidentialité."
+        "note": "Les chiffres publiés plus haut portent sur deux de ces comptes. Les autres missions sont en cours ou couvertes par un accord de confidentialité.",
+        "speed": 45
       },
       "blocks": {
         "c1": {
@@ -215,7 +216,7 @@
         "c3": {
           "type": "client",
           "settings": {
-            "logo": "shopify://shop_images/logo_stellar.svg",
+            "logo": "shopify://shop_images/logo_stellar_2.svg",
             "name": "Cabinet Stellar"
           }
         },

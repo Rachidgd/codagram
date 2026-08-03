@@ -705,6 +705,102 @@
 
 /* ---------- Bande de logos clients ---------- */
 .cc-logos {
+  padding-block: clamp(1.5rem, 1.2rem + 1.1vw, 2.4rem);
+  border-block: 1px solid var(--surface-line);
+  overflow: hidden;
+}
+.cc-logos__title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--surface-fg-faint);
+  text-align: center;
+  margin-bottom: 1.15rem;
+}
+.cc-logos__viewport {
+  display: flex;
+  width: max-content;
+  /* Les bords s'estompent : la bande paraît continuer au-delà de l'écran. */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7rem, #000 calc(100% - 7rem), transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 7rem, #000 calc(100% - 7rem), transparent);
+}
+.cc-logos__track {
+  display: flex;
+  align-items: center;
+  flex: none;
+  gap: clamp(2.25rem, 1.6rem + 3vw, 4.5rem);
+  padding-inline: clamp(1.125rem, 0.8rem + 1.5vw, 2.25rem);
+  animation: cc-logos-defile 45s linear infinite;
+  will-change: transform;
+}
+@keyframes cc-logos-defile {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-100%, 0, 0); }
+}
+.cc-logos__viewport:hover .cc-logos__track { animation-play-state: paused; }
+.cc-logos__track li {
+  display: grid;
+  place-items: center;
+  flex: none;
+  /* Une boîte de taille fixe : quel que soit le rapport du fichier fourni,
+     les logos gardent la même emprise et ne peuvent pas se chevaucher. */
+  width: clamp(6.5rem, 5.5rem + 4vw, 9.5rem);
+  height: clamp(1.6rem, 1.4rem + 0.9vw, 2.25rem);
+}
+.cc-logos__img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.72;
+  transition: opacity 0.25s linear;
+}
+.cc-logos__track li:hover .cc-logos__img { opacity: 1; }
+.cc-logos__word {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--surface-fg-muted);
+  white-space: nowrap;
+}
+.cc-logos__note {
+  margin-top: 1.15rem;
+  font-size: var(--text-xs);
+  color: var(--surface-fg-faint);
+  text-align: center;
+  max-width: 60ch;
+  margin-inline: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Sans mouvement : une seule rangée centrée, la seconde piste disparaît. */
+  .cc-logos__viewport { width: auto; mask-image: none; -webkit-mask-image: none; }
+  .cc-logos__viewport > :nth-child(2) { display: none; }
+  .cc-logos__track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1.25rem;
+  }
+}
+
+/* Lien secondaire du pied de page : discret, mais réellement cliquable. */
+.cc-foot__cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.55rem;
+  /* WCAG 2.5.8 : 24 px de haut minimum pour une cible tactile. */
+  padding-block: 4px;
+  font-size: var(--text-xs);
+  color: var(--surface-fg-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cc-foot__cta-link:hover { color: var(--surface-fg); }
+
+/* ---------- Bande de logos clients ---------- */
+.cc-logos {
   padding-block: clamp(1.6rem, 1.3rem + 1.2vw, 2.6rem);
   border-block: 1px solid var(--surface-line);
 }

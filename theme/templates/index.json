@@ -486,9 +486,10 @@
     "clients": {
       "type": "content-logos",
       "settings": {
-        "surface": "paper",
+        "surface": "dark",
         "title": "Ils nous ont confié leur site",
-        "note": ""
+        "note": "",
+        "speed": 45
       },
       "blocks": {
         "c1": {
@@ -508,7 +509,7 @@
         "c3": {
           "type": "client",
           "settings": {
-            "logo": "shopify://shop_images/logo_stellar.svg",
+            "logo": "shopify://shop_images/logo_stellar_2.svg",
             "name": "Cabinet Stellar"
           }
         },

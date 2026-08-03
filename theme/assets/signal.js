@@ -1,10 +1,3 @@
-/* ============================================================================
- * CLICKSCREATION — SIGNAL RUNTIME
- * JavaScript vanilla, sans dépendance, sans framework, sans polyfill.
- * Chaque module s'auto-désactive si son ancrage DOM est absent, et respecte
- * prefers-reduced-motion. Compatible éditeur de thème Shopify (ré-init sur
- * shopify:section:load).
- * ==========================================================================*/
 (function () {
   'use strict';
 
@@ -14,14 +7,8 @@
   var $  = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
 
-  /* ------------------------------------------------------------------------
-   * Utilitaires partagés
-   * ----------------------------------------------------------------------*/
-
   var FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]):not([type="hidden"]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"]),summary';
 
-  /* Piège de focus minimal : nécessaire pour que les couches modales soient
-     réellement utilisables au clavier (WCAG 2.2 — 2.1.2 pas de piège, 2.4.3). */
   function trapFocus(container) {
     function onKey(e) {
       if (e.key !== 'Tab') return;
@@ -46,7 +33,6 @@
 
   function raf(fn) { return window.requestAnimationFrame(fn); }
 
-  /* Regroupe les lectures de scroll : un seul listener passif pour tout le site. */
   var scrollSubs = [];
   var ticking = false;
   function onScroll(fn) { scrollSubs.push(fn); }
@@ -60,9 +46,6 @@
     });
   }, { passive: true });
 
-  /* ------------------------------------------------------------------------
-   * 1. Révélation à l'entrée dans le viewport
-   * ----------------------------------------------------------------------*/
   var revealObserver = null;
 
   function initReveal(scope) {
@@ -84,8 +67,6 @@
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     }
 
-    /* Le décalage est calculé par groupe de frères, pas globalement : une
-       section tardive ne doit pas hériter d'un retard de 2 secondes. */
     var groups = new Map();
     targets.forEach(function (el) {
       if (el.classList.contains('is-in')) return;
@@ -99,9 +80,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------------
-   * 2. En-tête : ancrage, masquage, progression, thème adaptatif
-   * ----------------------------------------------------------------------*/
   function initHeader() {
     var head = $('[data-header]');
     if (!head) return;
@@ -113,8 +91,6 @@
     onScroll(function (y) {
       head.classList.toggle('is-stuck', y > 8);
 
-      /* Masquage uniquement en descente franche et hors du haut de page,
-         pour ne jamais faire clignoter la barre. */
       var delta = y - lastY;
       if (Math.abs(delta) > 6) {
         var shouldHide = delta > 0 && y > 220 && !head.classList.contains('is-open');
@@ -132,8 +108,6 @@
       }
     });
 
-    /* Thème caméléon : on observe une ligne de 1 px située juste sous la barre.
-       La section qui la croise impose sa surface au header. */
     if ('IntersectionObserver' in window) {
       var applySurface = function (entries) {
         entries.forEach(function (entry) {
@@ -161,14 +135,10 @@
       }, { passive: true });
     }
 
-    /* Raccourci affiché selon la plateforme. */
     var cmdKey = $('[data-cmd-key]');
     if (cmdKey && /Mac|iPhone|iPad/.test(navigator.platform || '')) cmdKey.textContent = '⌘';
   }
 
-  /* ------------------------------------------------------------------------
-   * 3. Mega-menu
-   * ----------------------------------------------------------------------*/
   function initNav() {
     var head = $('[data-header]');
     var groups = $$('[data-nav-group]');
@@ -183,8 +153,6 @@
       var trigger = $('[data-nav-trigger]', group);
       var panel = $('[data-nav-panel]', group);
       if (trigger) trigger.setAttribute('aria-expanded', 'false');
-      /* hidden est retiré pendant l'animation puis remis, sinon la transition
-         de sortie ne joue jamais. */
       if (panel) setTimeout(function () { if (!group.classList.contains('is-open')) panel.hidden = true; }, 240);
       if (openGroup === group) openGroup = null;
       if (head && !openGroup) head.classList.remove('is-open');
@@ -210,8 +178,6 @@
         if (group.classList.contains('is-open')) close(group); else open(group);
       });
 
-      /* Intention de survol : ouverture immédiate, fermeture différée pour
-         permettre la diagonale souris vers le panneau. */
       group.addEventListener('mouseenter', function () {
         if (window.innerWidth < 1080) return;
         clearTimeout(hoverTimer);
@@ -223,7 +189,6 @@
         hoverTimer = setTimeout(function () { close(group); }, 180);
       });
 
-      /* Le panneau se referme dès que le focus en sort — indispensable au clavier. */
       group.addEventListener('focusout', function (e) {
         if (!group.contains(e.relatedTarget)) close(group);
       });
@@ -242,9 +207,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------------
-   * 4. Feuille de navigation mobile
-   * ----------------------------------------------------------------------*/
   function initMobileNav() {
     var sheet = $('[data-mobile-sheet]');
     var toggle = $('[data-mobile-toggle]');
@@ -278,15 +240,9 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && sheet.classList.contains('is-open')) close();
     });
-    /* Un lien cliqué doit refermer la feuille avant la navigation. */
     $$('a[href]', sheet).forEach(function (a) { a.addEventListener('click', close); });
   }
 
-  /* ------------------------------------------------------------------------
-   * 5. Palette de commandes (⌘K / Ctrl+K)
-   * Le site expose plus de 45 pages utiles. Plutôt que de les enfouir dans des
-   * sous-menus, on rend l'ensemble atteignable en deux frappes.
-   * ----------------------------------------------------------------------*/
   function initPalette() {
     var root = $('[data-palette]');
     if (!root) return;
@@ -305,8 +261,6 @@
     var cursor = 0;
     var results = items.slice();
 
-    /* Les recherches se font sans accent : « refonte seo » doit trouver
-       « Refonte SEO » comme « référencement ». */
     function normalize(str) {
       return (str || '')
         .toLowerCase()
@@ -314,9 +268,6 @@
         .replace(/[\u0300-\u036f]/g, '');
     }
 
-    /* Score simple mais efficace : correspondance exacte de préfixe > mot
-       entier > sous-chaîne. Pas de fuzzy hasardeux, les résultats restent
-       prévisibles pour un visiteur. */
     function score(item, q) {
       var hay = normalize(item.t + ' ' + (item.k || '') + ' ' + (item.g || ''));
       var title = normalize(item.t);
@@ -436,10 +387,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------------
-   * 6. Compteurs
-   * Les chiffres de résultats s'animent une seule fois, à l'entrée à l'écran.
-   * ----------------------------------------------------------------------*/
   function initCounters(scope) {
     var els = $$('[data-count]', scope || document);
     if (!els.length || !('IntersectionObserver' in window)) return;
@@ -477,11 +424,6 @@
     els.forEach(function (el) { obs.observe(el); });
   }
 
-  /* ------------------------------------------------------------------------
-   * 7. Hero — tracé de signal
-   * Canvas dessiné à la main : une onde de « demande marché » bruitée en
-   * entrée, lissée en sortie. Métaphore directe du travail de l'agence.
-   * ----------------------------------------------------------------------*/
   function initSignalCanvas(scope) {
     var canvas = $('[data-signal-canvas]', scope || document);
     if (!canvas || !canvas.getContext) return;
@@ -502,7 +444,6 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    /* Bruit pseudo-aléatoire déterministe : évite d'embarquer une lib. */
     function noise(x) {
       return Math.sin(x * 1.7) * 0.5 + Math.sin(x * 4.3 + 1.2) * 0.28 + Math.sin(x * 9.1 + 0.4) * 0.14;
     }
@@ -514,12 +455,10 @@
       var mid = h * 0.5;
       var steps = Math.max(60, Math.floor(w / 3));
 
-      /* Couche 1 — le bruit : la demande brute, non exploitable. */
       ctx.beginPath();
       for (var i = 0; i <= steps; i++) {
         var p = i / steps;
         var x = p * w;
-        /* L'amplitude du bruit décroît vers la droite : c'est le traitement. */
         var damp = Math.pow(1 - p, 1.6);
         var y = mid + noise(p * 12 + t * 0.7) * h * 0.3 * damp;
         i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
@@ -528,7 +467,6 @@
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      /* Couche 2 — le signal : lisse, montant, volt. */
       ctx.beginPath();
       for (var j = 0; j <= steps; j++) {
         var q = j / steps;
@@ -543,7 +481,6 @@
       ctx.lineJoin = 'round';
       ctx.stroke();
 
-      /* Aire sous le signal : donne du corps sans dégradé décoratif. */
       ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath();
       var grad = ctx.createLinearGradient(0, 0, 0, h);
       grad.addColorStop(0, 'rgba(214,251,81,0.13)');
@@ -551,7 +488,6 @@
       ctx.fillStyle = grad;
       ctx.fill();
 
-      /* Tête de lecture. */
       var headQ = 1;
       var headY = mid + h * 0.24 - Math.pow(headQ, 1.35) * h * 0.42 + Math.sin(headQ * 3.1 - t * 0.9) * h * 0.055 * (1 - headQ * 0.55);
       ctx.beginPath();
@@ -570,7 +506,6 @@
 
     if (isReduced()) { draw(); return; }
 
-    /* On ne consomme du CPU que si le canvas est visible. */
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
         entries[0].isIntersecting ? start() : stop();
@@ -582,11 +517,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------------
-   * 8. Sélecteur de frein
-   * Machine à états : le visiteur choisit son problème, le panneau affiche le
-   * levier correspondant sans rechargement.
-   * ----------------------------------------------------------------------*/
   function initSelector(scope) {
     $$('[data-selector]', scope || document).forEach(function (root) {
       var tabs = $$('[data-selector-tab]', root);
@@ -612,7 +542,6 @@
         tab.addEventListener('click', function () { activate(tab.getAttribute('data-selector-tab')); });
       });
 
-      /* Navigation clavier conforme au motif ARIA tablist. */
       root.addEventListener('keydown', function (e) {
         var idx = tabs.indexOf(document.activeElement);
         if (idx < 0) return;
@@ -630,9 +559,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------------
-   * 9. Timeline de méthode — progression liée au défilement
-   * ----------------------------------------------------------------------*/
   function initTimeline(scope) {
     $$('[data-timeline]', scope || document).forEach(function (root) {
       var line = $('[data-timeline-line]', root);
@@ -644,8 +570,6 @@
       onScroll(function () {
         var rect = root.getBoundingClientRect();
         var vh = window.innerHeight;
-        /* La ligne se remplit entre l'arrivée du bloc au 3/4 de l'écran et sa
-           sortie par le haut. */
         var startY = vh * 0.78;
         var span = rect.height + vh * 0.35;
         var progressed = Math.min(1, Math.max(0, (startY - rect.top) / span));
@@ -659,11 +583,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------------
-   * 10. Diagnostic — formulaire multi-étapes à logique conditionnelle
-   * S'appuie sur le formulaire contact natif Shopify : sans JS, il reste un
-   * formulaire long mais complet et envoyable.
-   * ----------------------------------------------------------------------*/
   function initDiagnostic() {
     var root = $('[data-diagnostic]');
     if (!root) return;
@@ -681,9 +600,6 @@
 
     if (!steps.length) return;
 
-    /* Une étape peut être conditionnée à une réponse précédente :
-       data-step-when="objectif=ecommerce". C'est ce qui évite de poser 12
-       questions à tout le monde. */
     function stepVisible(step) {
       var cond = step.getAttribute('data-step-when');
       if (!cond) return true;
@@ -743,7 +659,6 @@
         current = steps.indexOf(list[idx - 1]);
       }
       paint();
-      /* Le lecteur d'écran doit annoncer la nouvelle étape, pas rester muet. */
       var heading = $('h3, h2, legend', steps[current]);
       if (heading) {
         heading.setAttribute('tabindex', '-1');
@@ -754,7 +669,6 @@
     if (nextBtn) nextBtn.addEventListener('click', function () { go(1); });
     if (backBtn) backBtn.addEventListener('click', function () { go(-1); });
 
-    /* Un choix unique fait avancer tout seul : moins de clics, moins d'abandon. */
     root.addEventListener('change', function (e) {
       var input = e.target;
       if (input.type !== 'radio') return;
@@ -769,10 +683,6 @@
       });
     }
 
-    /* Ouverture / fermeture du tiroir.
-       Choix délibéré : la progression est conservée d'une ouverture à l'autre.
-       Fermer par erreur ne doit pas coûter trois réponses déjà saisies. On
-       repeint simplement l'état pour rester cohérent avec le formulaire. */
     function open(entry) {
       root.hidden = false;
       raf(function () { raf(function () { root.classList.add('is-open'); }); });
@@ -801,8 +711,6 @@
       if (e.key === 'Escape' && root.classList.contains('is-open')) close();
     });
 
-    /* Shopify renvoie sur ?form_type=contact&contact_posted=true après envoi :
-       on rouvre le tiroir sur l'accusé de réception. */
     if (window.location.search.indexOf('contact_posted=true') > -1 && $('[data-diagnostic-success]', root)) {
       open('retour');
     }
@@ -810,9 +718,6 @@
     paint();
   }
 
-  /* ------------------------------------------------------------------------
-   * 11. Accordéons de contenu (FAQ)
-   * ----------------------------------------------------------------------*/
   function initAccordions(scope) {
     $$('[data-accordion]', scope || document).forEach(function (group) {
       var items = $$('details', group);
@@ -825,9 +730,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------------
-   * Amorçage
-   * ----------------------------------------------------------------------*/
   function boot(scope) {
     initReveal(scope);
     initCounters(scope);
@@ -852,7 +754,6 @@
     bootGlobal();
   }
 
-  /* Éditeur de thème Shopify : les sections sont réinjectées à chaud. */
   document.addEventListener('shopify:section:load', function (e) {
     boot(e.target);
     if ($('[data-header]', e.target)) { initHeader(); initNav(); initMobileNav(); }

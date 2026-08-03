@@ -1,36 +1,23 @@
-{%- comment -%}
-  LOGOS CLIENTS
-
-  Placée juste après l'accroche : c'est le moment où le visiteur se demande
-  « à qui je parle ». Un nom qu'il peut vérifier vaut plus qu'un adjectif.
-
-  Les logos sont posés en niveaux de gris et reprennent leur couleur au survol :
-  la bande sert de preuve, pas de décoration, et ne doit pas voler l'attention
-  au bouton principal.
-
-  Le fond est réglable parce que la lisibilité dépend de la couleur des logos
-  fournis : des logos sombres exigent un fond clair, et inversement.
-{%- endcomment -%}
-
-{%- assign surface = section.settings.surface | default: 'paper' -%}
+{%- assign surface = section.settings.surface | default: 'dark' -%}
 
 {%- if section.blocks.size > 0 -%}
   <section class="cc-logos surface-{{ surface }}" data-surface="{{ surface }}">
-    <div class="shell cc-logos__inner">
-
+    <div class="shell">
       {%- if section.settings.title != blank -%}
-        <p class="cc-logos__title" data-reveal>{{ section.settings.title }}</p>
+        <p class="cc-logos__title">{{ section.settings.title }}</p>
       {%- endif -%}
+    </div>
 
-      <ul class="cc-logos__list" role="list" data-reveal>
+    <div class="cc-logos__viewport" data-logos>
+      <ul class="cc-logos__track" role="list">
         {%- for block in section.blocks -%}
-          <li {{ block.shopify_attributes }}>
+          <li>
             {%- if block.settings.logo != blank -%}
               {{ block.settings.logo
-                | image_url: width: 320
+                | image_url: width: 400
                 | image_tag:
-                  widths: '160,240,320',
-                  sizes: '(max-width: 767px) 34vw, 150px',
+                  widths: '200,300,400',
+                  sizes: '160px',
                   loading: 'lazy',
                   alt: block.settings.name,
                   class: 'cc-logos__img'
@@ -42,11 +29,32 @@
         {%- endfor -%}
       </ul>
 
-      {%- if section.settings.note != blank -%}
-        <p class="cc-logos__note">{{ section.settings.note }}</p>
-      {%- endif -%}
-
+      <ul class="cc-logos__track" role="list" aria-hidden="true">
+        {%- for block in section.blocks -%}
+          <li>
+            {%- if block.settings.logo != blank -%}
+              {{ block.settings.logo
+                | image_url: width: 400
+                | image_tag:
+                  widths: '200,300,400',
+                  sizes: '160px',
+                  loading: 'lazy',
+                  alt: '',
+                  class: 'cc-logos__img'
+              }}
+            {%- else -%}
+              <span class="cc-logos__word">{{ block.settings.name }}</span>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
     </div>
+
+    {%- if section.settings.note != blank -%}
+      <div class="shell">
+        <p class="cc-logos__note">{{ section.settings.note }}</p>
+      </div>
+    {%- endif -%}
   </section>
 {%- endif -%}
 
@@ -59,19 +67,20 @@
       "id": "surface",
       "label": "Fond",
       "options": [
-        { "value": "paper", "label": "Clair (logos sombres)" },
-        { "value": "dark", "label": "Sombre (logos clairs)" }
+        { "value": "dark", "label": "Sombre (logos clairs)" },
+        { "value": "paper", "label": "Clair (logos sombres)" }
       ],
-      "default": "paper"
+      "default": "dark"
     },
     { "type": "text", "id": "title", "label": "Ligne d'introduction", "default": "Ils nous ont confié leur site" },
-    { "type": "text", "id": "note", "label": "Note sous les logos" }
+    { "type": "text", "id": "note", "label": "Note sous les logos" },
+    { "type": "range", "id": "speed", "label": "Durée d'un tour (secondes)", "min": 20, "max": 90, "step": 5, "default": 45, "unit": "s" }
   ],
   "blocks": [
     {
       "type": "client",
       "name": "Client",
-      "limit": 10,
+      "limit": 12,
       "settings": [
         { "type": "image_picker", "id": "logo", "label": "Logo" },
         { "type": "text", "id": "name", "label": "Nom du client" }
@@ -81,3 +90,7 @@
   "presets": [{ "name": "Contenu — Logos" }]
 }
 {% endschema %}
+
+<style>
+  #shopify-section-{{ section.id }} .cc-logos__track { animation-duration: {{ section.settings.speed | default: 45 }}s; }
+</style>

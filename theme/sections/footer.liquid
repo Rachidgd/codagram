@@ -5,10 +5,6 @@
 <footer class="cc-foot surface-deep" data-surface="dark">
   <div class="shell">
 
-    {%- comment -%}
-      Bandeau d'appel : dernière occasion de convertir, formulé comme une
-      décision à prendre et non comme un slogan.
-    {%- endcomment -%}
     {%- if section.settings.cta_title != blank -%}
       <div class="cc-foot__cta" data-reveal>
         <div class="cc-foot__cta-copy">
@@ -23,10 +19,6 @@
           <button type="button" class="btn btn--primary btn--lg" data-diagnostic-open data-diagnostic-entry="footer">
             {{ section.settings.cta_label | default: 'Demander un diagnostic' }}
           </button>
-          {%- comment -%}
-            Un lien réel, en plus du bouton qui ouvre le tiroir : sans lui, la
-            page de réservation n'est atteignable par aucun lien du site.
-          {%- endcomment -%}
           {%- if section.settings.cta_link_label != blank -%}
             <a class="cc-foot__cta-link" href="{{ section.settings.cta_link_url | default: '/pages/reserver' }}">
               {{ section.settings.cta_link_label }}{%- render 'icon', name: 'arrow', size: 13 -%}

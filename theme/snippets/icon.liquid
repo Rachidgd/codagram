@@ -1,11 +1,3 @@
-{%- comment -%}
-  Jeu d'icônes dessiné pour Clickscreation.
-  Grille 16, trait 1.4, extrémités carrées : cohérent avec le vocabulaire
-  « instrument » du design system. Aucune librairie externe.
-
-  Usage : {% render 'icon', name: 'arrow', size: 16 %}
-{%- endcomment -%}
-
 {%- liquid
   assign s = size | default: 16
   assign cls = class | default: ''
@@ -49,7 +41,6 @@
       <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
     </svg>
 
-  {%- comment -%} Marqueurs de leviers : chacun est un pictogramme de mesure. {%- endcomment -%}
   {%- when 'signal' -%}
     <svg class="{{ cls }}" width="{{ s }}" height="{{ s }}" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
       <path d="M2 12h2.2l1.6-6.6L8 13.2l2.1-8.4 1.5 7.2H14" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" stroke-linejoin="round"/>

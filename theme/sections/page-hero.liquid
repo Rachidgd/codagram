@@ -1,11 +1,3 @@
-{%- comment -%}
-  EN-TÊTE DE PAGE
-
-  Sert toutes les pages hors accueil : services, audits, villes, à propos.
-  Fil d'Ariane rendu en HTML (l'entité BreadcrumbList est déclarée à part dans
-  structured-data), un seul H1, et une bande de preuve optionnelle.
-{%- endcomment -%}
-
 <section class="cc-pagehead surface-dark" data-surface="dark">
   <span class="grid-field" aria-hidden="true"></span>
 
@@ -17,12 +9,6 @@
           {%- if section.settings.parent_label != blank -%}
             <li><a href="{{ section.settings.parent_url | default: routes.root_url }}">{{ section.settings.parent_label }}</a></li>
           {%- endif -%}
-          {%- comment -%}
-            Le fil d'Ariane porte le nom de la page, pas le H1 : un H1 rédigé
-            comme une phrase y tiendrait sur trois lignes et se retrouverait
-            dupliqué. C'est aussi ce que déclare BreadcrumbList, les deux
-            doivent dire la même chose.
-          {%- endcomment -%}
           <li aria-current="page">{{ page.title | default: section.settings.title }}</li>
         </ol>
       </nav>
@@ -52,10 +38,6 @@
         {%- endif -%}
       </div>
 
-      {%- comment -%}
-        Le visiteur clique s'il sait ce que ça lui coûte. Ces trois mentions
-        sont juste sous le bouton, donc visibles sans défiler sur mobile.
-      {%- endcomment -%}
       {%- assign reassurance = section.settings.trust | split: '|' -%}
       {%- if reassurance.size > 0 -%}
         <ul class="cc-pagehead__trust" role="list" data-reveal>

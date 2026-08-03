@@ -1,11 +1,3 @@
-{%- comment -%}
-  PLAN DU SITE
-
-  Construit depuis les menus Shopify plutôt qu'écrit à la main : il ne peut donc
-  jamais devenir obsolète. Sert autant au visiteur perdu qu'au maillage interne,
-  en donnant un chemin d'exploration vers toutes les pages profondes.
-{%- endcomment -%}
-
 <section class="cc-map surface-paper section-y" data-surface="paper">
   <div class="shell">
 
@@ -40,7 +32,6 @@
         {%- endif -%}
       {%- endfor -%}
 
-      {%- comment -%} Les guides publiés, repris automatiquement. {%- endcomment -%}
       {%- if section.settings.blog != blank and section.settings.blog.articles.size > 0 -%}
         <nav class="cc-map__col" aria-label="Guides publiés" data-reveal>
           <h3 class="cc-map__title">{{ section.settings.blog_title | default: 'Guides' }}</h3>
