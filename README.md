@@ -395,3 +395,29 @@ Dans un navigateur réel, à 390 px et à 1440 px : promesse visible sans défil
 bouton visible sans défiler, réassurance visible sans défiler, plus long trajet
 sans occasion de convertir, distance entre le dernier bouton et le bas de page,
 mots lisibles au premier écran, et coût du formulaire en champs obligatoires.
+
+## Visuels de la bibliothèque Shopify
+
+Les images ne sont pas des assets du thème : ce sont des fichiers de la
+bibliothèque Shopify, référencés dans les gabarits sous la forme
+`shopify://shop_images/<nom-du-fichier>`.
+
+| Emplacement | Fichiers |
+|---|---|
+| Accueil — Réalisations | 7 captures de projets livrés |
+| Accueil et Résultats — Logos | 6 logos clients |
+| À propos | `equipe-clickscreation.webp` |
+| Partage social (og:image) | `clickscreation-social-share-1200x630.png` |
+
+**La couleur des logos décide du fond.** La section `content-logos` a un
+réglage `surface` : clair pour des logos sombres, sombre pour des logos
+clairs. Le réglage actuel est *clair*, déduit du fait que la bibliothèque
+contient des variantes explicitement suffixées `_Blanc` — donc les fichiers
+sans suffixe sont les versions sombres. À vérifier d'un coup d'œil après
+publication ; si un logo disparaît, une bascule de réglage suffit.
+
+`build/shop_files.json` associe chaque nom de fichier à son URL CDN. Le CDN
+Shopify n'étant pas joignable depuis l'environnement de test, la maquette
+sert des gabarits locaux **aux dimensions exactes** des fichiers réels : la
+géométrie de la mise en page est donc fidèle, seul le contenu du visuel
+diffère. `PREVIEW_CDN=1 node build/render.mjs` force les URL réelles.
