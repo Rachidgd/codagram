@@ -225,3 +225,60 @@ identité, mais leur contenu métier n'a pas été réécrit :
 
 Pour les composer, dupliquer `templates/page.agence-seo.json` — c'est le
 gabarit de référence, avec `page.agence-shopify.json` et `page.resultats.json`.
+
+---
+
+## Mise en ligne : procédure ordonnée
+
+Le thème **CLICKSCREATION Signal — site complet** est prêt et non publié. Deux
+opérations sont nécessaires, **dans cet ordre**.
+
+### 1. Publier le thème
+
+Depuis l'admin Shopify. Toutes les pages fonctionnent immédiatement : chaque
+gabarit porte le nom du suffixe déjà utilisé par sa page, aucune modification
+préalable n'est requise.
+
+### 2. Différencier les neuf villes restantes
+
+Neuf pages partagent encore le suffixe `ville-seo` et affichent donc la même
+page locale générique. Leur gabarit dédié existe déjà dans le thème : il suffit
+de changer le suffixe de chaque page dans l'admin (Pages → une page → Modèle).
+
+| Page | Suffixe actuel | Suffixe à sélectionner |
+|---|---|---|
+| Consultant SEO Paris | ville-seo | `seo-paris` |
+| Consultant SEO Lyon | ville-seo | `seo-lyon` |
+| Consultant SEO Rennes | ville-seo | `seo-rennes` |
+| Agence SEO Lille | ville-seo | `seo-lille` |
+| Agence SEO Nice | ville-seo | `seo-nice` |
+| Agence SEO Toulouse | ville-seo | `seo-toulouse` |
+| Agence SEO Montpellier | ville-seo | `seo-montpellier` |
+| Agence SEO Strasbourg | ville-seo | `seo-strasbourg` |
+| Agence SEO Grenoble | ville-seo | `seo-grenoble` |
+| A propos | simple | `a-propos` |
+| Consultant SEO Suisse | simple | `seo-suisse` |
+| Consultant SEO Belgique | simple | `seo-belgique` |
+
+**Pourquoi ce n'est pas fait automatiquement** : `templateSuffix` est un réglage
+de la page, pas du thème. Le modifier avant publication ferait basculer le site
+en ligne sur des gabarits que le thème actuel ne contient pas. L'opération n'est
+sûre qu'une fois le nouveau thème publié.
+
+Marseille, Nantes, Bordeaux et Luxembourg n'ont rien à changer : leur suffixe
+était déjà dédié, leur gabarit porte ce nom.
+
+## Contrôle anti-duplication
+
+```bash
+python3 build/qa.py          # validité Liquid, schemas, réglages
+node build/render.mjs        # rendu HTML hors Shopify
+node build/functional.mjs    # 28 tests d'interface
+```
+
+Le contrôle de duplication compare tous les champs longs et toutes les phrases
+de plus de 60 caractères entre les gabarits. Il a détecté deux mutualisations
+introduites par raccourci pendant la rédaction — blocs « méthode » et appels à
+l'action partagés entre treize pages de villes — qui ont été réécrites page par
+page. Résultat final : **0 champ identique, 0 phrase identique** sur 35 pages
+rédigées, pour 25 enchaînements de sections distincts.

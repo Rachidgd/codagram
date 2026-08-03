@@ -42,7 +42,7 @@
         "s3": {
           "type": "stat",
           "settings": {
-            "value": "Élevée",
+            "value": "Forte",
             "label": "intensité concurrentielle",
             "note": "Sur les requêtes génériques, les premières places appartiennent à des annuaires et à des acteurs nationaux."
           }

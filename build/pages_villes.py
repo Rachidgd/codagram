@@ -28,7 +28,7 @@ VILLES = [
         lead="À Paris, presque toutes les requêtes commerciales sont déjà occupées par des acteurs installés depuis dix ans. Se positionner n'y est pas une question de volume de contenu mais de choix : quelles requêtes vous pouvez réellement gagner, et lesquelles coûteraient plus qu'elles ne rapportent.",
         cells=[("20", "arrondissements", "Une recherche de proximité ne donne pas le même classement depuis le 15e et depuis le 19e. Le suivi doit être fait par secteur."),
                ("B2B", "forte densité de services", "Conseil, finance, juridique, communication : des cycles longs où le site prépare la vente plus qu'il ne la conclut."),
-               ("Élevée", "intensité concurrentielle", "Sur les requêtes génériques, les premières places appartiennent à des annuaires et à des acteurs nationaux.")],
+               ("Forte", "intensité concurrentielle", "Sur les requêtes génériques, les premières places appartiennent à des annuaires et à des acteurs nationaux.")],
         split_title="La bonne stratégie parisienne consiste souvent à renoncer.",
         split_html="<p>Viser « avocat Paris » quand on est un cabinet de trois personnes revient à dépenser un budget contre des sites installés depuis quinze ans. La requête est prestigieuse, elle n'est pas rentable.</p><p>Nous travaillons donc l'échelle en dessous : la spécialité, le quartier, le type de client. Moins de volume, beaucoup plus de conversions.</p>",
         points=[("Par arrondissement", "Une page de quartier bien faite se positionne là où la page générique n'a aucune chance."),

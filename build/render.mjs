@@ -299,6 +299,14 @@ const pages = [
     page: { title: 'Contact', content: '', handle: 'contact', metafields: {} }
   }],
   ['404', '404', { request: { locale: { iso_code: 'fr' }, page_type: '404' } }],
+  ['paris', 'page.seo-paris', {
+    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
+    page: { title: 'Consultant SEO Paris', content: '', handle: 'consultant-seo-paris', metafields: {} }
+  }],
+  ['vitrine', 'page.creation-site-vitrine', {
+    request: { locale: { iso_code: 'fr' }, page_type: 'page' },
+    page: { title: 'Création site vitrine', content: '', handle: 'creation-site-vitrine', metafields: {} }
+  }],
   ['seo', 'page.agence-seo', {
     request: { locale: { iso_code: 'fr' }, page_type: 'page' },
     page: { title: 'Agence SEO', content: '', handle: 'agence-seo', metafields: {} }
