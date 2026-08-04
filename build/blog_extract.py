@@ -31,6 +31,26 @@ def aerer(corps):
 
 
 def main():
+    # Les articles sont retravaillés à la main dans build/blog/. Réextraire
+    # écraserait ce travail : le script s'arrête si les fichiers ont divergé de
+    # l'export, sauf demande explicite.
+    force = "--force" in sys.argv
+    if DOSSIER.exists() and not force:
+        ecrasables = []
+        for ligne in SOURCE.read_text(encoding="utf-8").splitlines():
+            if not ligne.strip():
+                continue
+            a = json.loads(ligne)
+            local = DOSSIER / ("%s.html" % a["handle"])
+            if local.exists() and local.read_text(encoding="utf-8") != aerer(a["body"] or ""):
+                ecrasables.append(a["handle"])
+        if ecrasables:
+            print("%d articles retravaillés seraient écrasés :" % len(ecrasables))
+            for h in sorted(ecrasables)[:10]:
+                print("   ", h)
+            print("relancer avec --force après avoir rafraîchi l'export.")
+            return 1
+
     DOSSIER.mkdir(exist_ok=True)
     index = {}
     for ligne in SOURCE.read_text(encoding="utf-8").splitlines():

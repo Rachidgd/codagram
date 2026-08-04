@@ -2,17 +2,19 @@
 """
 Reprend les liens et les fins d'article dans build/blog/.
 
-Trois corrections, appliquées à l'ensemble du blog :
+Cinq corrections, appliquées à l'ensemble du blog :
 
 1. L'ancre « /#audit » n'existe plus depuis la refonte : trente-trois articles
    renvoyaient le lecteur en haut de l'accueil au lieu de la page de prise de
    rendez-vous.
 2. Trente-quatre articles pointaient vers l'accueil avec exactement la même
    ancre. Chacun renvoie désormais vers la prestation dont il parle.
-3. Huit articles se terminaient par la même signature recyclée. Chacun reçoit
+3. Cinq articles se terminaient par la même signature recyclée. Chacun reçoit
    une relance qui reprend son sujet.
+4. Les questions de FAQ deviennent des titres de niveau 3.
+5. Les illustrations perdent leur mise en forme écrite dans la balise.
 
-Relancer build/blog_extract.py avant, si l'export a été rafraîchi.
+Le script est sans effet s'il est relancé sur des fichiers déjà corrigés.
 """
 import pathlib
 import re
@@ -115,13 +117,20 @@ SIGNATURE = re.compile(
 # d'écran.
 QUESTION_NUE = re.compile(r"<summary>(?!\s*<h[23])(.*?)</summary>", re.S)
 
+# Les illustrations arrivaient avec leur mise en forme écrite dans la balise et
+# une légende vide réduite à un retour à la ligne. Le style appartient à la
+# feuille de styles, et une légende vide n'a rien à faire dans le document.
+FIGURE = re.compile(r"<figure[^>]*>", re.I)
+IMG_STYLE = re.compile(r'(<img)\s+style="[^"]*"', re.I)
+LEGENDE_VIDE = re.compile(r"<figcaption[^>]*>\s*(?:<br\s*/?>)?\s*</figcaption>", re.I)
+
 
 def main():
     if not DOSSIER.exists():
         print("build/blog absent : lancer build/blog_extract.py d'abord")
         return 1
 
-    audit = accueil = signature = questions = 0
+    audit = accueil = signature = questions = figures = 0
     orphelins = set(CIBLES)
 
     for chemin in sorted(DOSSIER.glob("*.html")):
@@ -153,6 +162,11 @@ def main():
         corps = QUESTION_NUE.sub(
             r'<summary><h3 class="cc-faq-list__q">\1</h3></summary>', corps)
 
+        figures += len(FIGURE.findall(corps))
+        corps = FIGURE.sub('<figure class="cc-figure">', corps)
+        corps = IMG_STYLE.sub(r'\1 decoding="async"', corps)
+        corps = LEGENDE_VIDE.sub("", corps)
+
         if corps != depart:
             chemin.write_text(corps, encoding="utf-8")
 
@@ -160,7 +174,10 @@ def main():
     print("liens : %d liens vers l'accueil renvoyés vers la bonne prestation" % accueil)
     print("fins  : %d signatures recyclées remplacées" % signature)
     print("titres: %d questions de FAQ passées en titre de niveau 3" % questions)
-    if orphelins:
+    print("images: %d illustrations sorties du style en ligne" % figures)
+    # Sur une seconde exécution il ne reste plus rien à substituer : ce n'est
+    # pas une anomalie, seul le premier passage doit être complet.
+    if accueil and orphelins:
         print("cibles déclarées sans occurrence :", sorted(orphelins))
     return 0
 
