@@ -13,7 +13,14 @@
       <h1 class="cc-pagehead__title" data-reveal>{{ article.title }}</h1>
 
       <p class="cc-article__meta" data-reveal>
-        <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">Publié le {{ article.published_at | date: '%d.%m.%Y' }}</time>
+        {%- assign maj = article.metafields.editorial.updated_at.value -%}
+        {%- assign jour_maj = maj | date: '%Y-%m-%d' -%}
+        {%- assign jour_pub = article.published_at | date: '%Y-%m-%d' -%}
+        {%- if maj != blank and jour_maj != jour_pub -%}
+          <time datetime="{{ jour_maj }}">Mis à jour le {{ maj | date: '%d.%m.%Y' }}</time>
+        {%- else -%}
+          <time datetime="{{ jour_pub }}">Publié le {{ article.published_at | date: '%d.%m.%Y' }}</time>
+        {%- endif -%}
         {%- if article.author != blank -%}<span>·</span><span>{{ article.author }}</span>{%- endif -%}
         {%- if article.content != blank -%}
           {%- assign words = article.content | strip_html | split: ' ' | size | divided_by: 220 | plus: 1 -%}

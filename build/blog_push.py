@@ -10,6 +10,7 @@ Sortie : build/blog_push.jsonl, à téléverser puis à passer à
 bulkOperationRunMutation avec la mutation articleUpdate.
 """
 import collections
+import datetime
 import html
 import json
 import pathlib
@@ -21,6 +22,11 @@ DOSSIER = RACINE / "blog"
 INDEX = RACINE / "blog_index.json"
 PAGES = RACINE / "live_pages.json"
 SORTIE = RACINE / "blog_push.jsonl"
+
+# Les articles sont retravaillés aujourd'hui : la date de mise à jour le dit,
+# au lecteur comme au balisage.
+MAINTENANT = datetime.datetime.now(datetime.timezone.utc).replace(
+    microsecond=0).isoformat()
 
 BALISE = re.compile(r"<[^>]+>")
 LIEN = re.compile(r'href="([^"]+)"')
@@ -63,8 +69,11 @@ def main():
 
     # Les liens vers le blog doivent viser un article qui existe. La
     # publication est vérifiée séparément : un lien vers un brouillon reste un
-    # lien mort tant que l'article n'est pas en ligne.
-    brouillons = {h for h, v in index.items() if not v["publie"]}
+    # lien mort tant que l'article n'est pas en ligne. Avec --publier, l'envoi
+    # met les brouillons en ligne, donc ces liens ne sont plus morts.
+    publier = "--publier" in sys.argv
+    brouillons = set() if publier else {
+        h for h, v in index.items() if not v["publie"]}
 
     phrases = collections.defaultdict(set)
 
@@ -119,15 +128,32 @@ def main():
             print("   ", e)
         return 1
 
+    faqs = json.loads((RACINE / "blog_faq.json").read_text(encoding="utf-8"))
+
     lignes = []
     for handle, corps in articles.items():
         fiche = index[handle]
         etiquettes = [t for t in fiche["etiquettes"]
                       if t not in ETIQUETTES_INTERNES]
-        lignes.append(json.dumps({
-            "id": fiche["id"],
-            "article": {"body": corps, "tags": etiquettes},
-        }, ensure_ascii=False))
+        entree = {"body": corps, "tags": etiquettes}
+        if publier and not fiche["publie"]:
+            entree["isPublished"] = True
+        champs = [{
+            "namespace": "editorial",
+            "key": "updated_at",
+            "type": "date_time",
+            "value": MAINTENANT,
+        }]
+        if handle in faqs:
+            champs.append({
+                "namespace": "editorial",
+                "key": "faq",
+                "type": "json",
+                "value": json.dumps(faqs[handle]["faq"], ensure_ascii=False),
+            })
+        entree["metafields"] = champs
+        lignes.append(json.dumps({"id": fiche["id"], "article": entree},
+                                 ensure_ascii=False))
 
     SORTIE.write_text("\n".join(lignes) + "\n", encoding="utf-8")
     volumes = sorted(mots(c) for c in articles.values())

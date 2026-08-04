@@ -1,0 +1,754 @@
+{
+  "ab-testing-petit-trafic": {
+    "id": "gid://shopify/Article/1003548672330",
+    "faq": [
+      {
+        "q": "À partir de combien de trafic un A/B test classique est-il fiable ?",
+        "r": "Grossièrement, il faut viser autour de 1 000 conversions par mois sur la page testée pour des résultats solides. En dessous, privilégiez les gros changements et le qualitatif."
+      },
+      {
+        "q": "Combien de temps laisser tourner un test ?",
+        "r": "Au moins deux semaines pleines pour lisser les variations de jours, et une durée décidée à l'avance. Arrêter dès qu'un chiffre vous plaît est le meilleur moyen de se tromper."
+      },
+      {
+        "q": "Les tests utilisateurs remplacent-ils l'A/B test ?",
+        "r": "Ils le complètent : le test utilisateur explique POURQUOI ça coince, l'A/B test mesure COMBIEN une correction rapporte. À petit volume, le premier est souvent plus actionnable."
+      }
+    ]
+  },
+  "abandon-panier-corrections": {
+    "id": "gid://shopify/Article/1003548574026",
+    "faq": [
+      {
+        "q": "Un taux d'abandon de 70 % est-il normal ?",
+        "r": "Oui, c'est la moyenne du secteur. L'enjeu n'est pas de l'annuler mais de le réduire de quelques points, ce qui représente déjà beaucoup de chiffre d'affaires récupéré."
+      },
+      {
+        "q": "Faut-il forcer la création de compte ?",
+        "r": "Non : c'est un frein majeur. Proposez le paiement invité et offrez la création de compte APRÈS l'achat, en un clic."
+      },
+      {
+        "q": "Les emails de relance servent-ils à quelque chose ?",
+        "r": "Oui, en complément : une fois le tunnel corrigé, ils rattrapent une partie des abandons restants. Mais corrigez la cause d'abord."
+      }
+    ]
+  },
+  "ad-library-analyser-pubs-concurrents": {
+    "id": "gid://shopify/Article/1003548082506",
+    "faq": [
+      {
+        "q": "Est-ce légal d'analyser les publicités des concurrents ?",
+        "r": "Oui, totalement : la bibliothèque est publique, créée par Meta pour la transparence publicitaire. Ce qui est interdit, c'est de copier les créas (droit d'auteur), pas d'analyser les angles."
+      },
+      {
+        "q": "Peut-on voir les budgets des concurrents ?",
+        "r": "Pas directement pour les pubs commerciales classiques. On les estime par signaux indirects : nombre de déclinaisons, durée de diffusion, variété des formats."
+      },
+      {
+        "q": "À quelle fréquence surveiller ?",
+        "r": "Un passage mensuel suffit : notez les nouvelles pubs et surtout celles qui survivent d'un mois sur l'autre. La photo unique dit peu ; le film dit tout."
+      }
+    ]
+  },
+  "agence-seo-ou-consultant-seo": {
+    "id": "gid://shopify/Article/1003789615434",
+    "faq": [
+      {
+        "q": "Consultant ou agence : lequel coûte le moins cher ?",
+        "r": "Le consultant, à périmètre égal, parce qu'il n'a pas de structure à financer. Mais si le projet exige trois métiers différents, additionner trois consultants revient souvent plus cher qu'une agence, coordination comprise."
+      },
+      {
+        "q": "Un consultant peut-il gérer un projet e-commerce complet ?",
+        "r": "C'est possible s'il est spécialisé e-commerce et que le catalogue reste raisonnable. Sur des boutiques à fort volume mêlant architecture, contenu et données structurées, une équipe est généralement plus adaptée."
+      },
+      {
+        "q": "Comment vérifier les résultats annoncés ?",
+        "r": "Demander des captures Search Console avec périodes visibles, le contexte de départ et, si possible, un échange avec le client concerné. Un prestataire fier de ses résultats n'a aucune difficulté à les documenter."
+      },
+      {
+        "q": "Faut-il choisir un prestataire local ?",
+        "r": "Pas nécessairement : la méthode et la transparence comptent plus que le code postal. La proximité devient un atout pour le SEO local, où la connaissance du marché accélère le travail."
+      },
+      {
+        "q": "Quelle durée d'engagement accepter ?",
+        "r": "Trois à six mois renouvelables : assez long pour produire des effets mesurables, assez court pour garder le prestataire concentré sur les résultats plutôt que sur son contrat."
+      },
+      {
+        "q": "Peut-on combiner consultant et agence ?",
+        "r": "Oui, et c'est parfois la meilleure option : une agence pilote la stratégie et la production, un consultant intervient ponctuellement sur une expertise pointue. À condition que les périmètres soient clairement séparés."
+      }
+    ]
+  },
+  "ai-overviews-rester-visible": {
+    "id": "gid://shopify/Article/1003548705098",
+    "faq": [
+      {
+        "q": "Les AI Overviews vont-ils tuer le SEO ?",
+        "r": "Non, ils le transforment : le trafic informationnel générique baisse, mais les requêtes business et la citation par l'IA créent de nouveaux enjeux. Le SEO reste central, il s'adapte."
+      },
+      {
+        "q": "Comment savoir si mon site est cité par une IA ?",
+        "r": "Testez vos requêtes clés dans Google, ChatGPT et Perplexity et regardez les sources. C'est artisanal aujourd'hui, mais révélateur de votre autorité perçue."
+      },
+      {
+        "q": "Faut-il bloquer les robots des IA ?",
+        "r": "Rarement : les bloquer vous retire des réponses IA où vous pourriez être cité. Pour la plupart des entreprises, la visibilité vaut mieux que le blocage."
+      }
+    ]
+  },
+  "angles-creatifs-publicite-meta": {
+    "id": "gid://shopify/Article/1003548377418",
+    "faq": [
+      {
+        "q": "Combien d'angles tester au démarrage ?",
+        "r": "3 à 4 angles bien distincts pour commencer : assez pour comparer des directions réellement différentes, pas assez pour diluer le budget de chacun."
+      },
+      {
+        "q": "Faut-il un angle différent par audience ?",
+        "r": "Souvent, oui : un angle « problème » parle aux gens conscients de leur douleur, un angle « comparaison » à ceux qui magasinent déjà. L'angle suit le niveau de conscience."
+      },
+      {
+        "q": "Un bon angle sur une mauvaise offre peut-il marcher ?",
+        "r": "Non : l'angle amène le clic, l'offre fait la vente. Un angle brillant sur une offre faible fait juste brûler du budget plus vite."
+      }
+    ]
+  },
+  "apps-shopify-utiles-et-a-eviter": {
+    "id": "gid://shopify/Article/1003548442954",
+    "faq": [
+      {
+        "q": "Combien d'apps est-ce trop ?",
+        "r": "Il n'y a pas de nombre magique : le critère est l'impact cumulé sur la vitesse et le coût. Cinq apps légères et utiles valent mieux que quinze dont la moitié dort."
+      },
+      {
+        "q": "Les apps gratuites sont-elles sans risque ?",
+        "r": "Non : gratuit ne veut pas dire léger. Une app gratuite peut peser autant qu'une payante en scripts. Mesurez toujours l'impact vitesse."
+      },
+      {
+        "q": "Faut-il une app SEO sur Shopify ?",
+        "r": "Parfois, pour les redirections en masse ou des données structurées avancées. Mais l'essentiel du SEO Shopify se joue dans la structure et le contenu, pas dans une app."
+      }
+    ]
+  },
+  "balises-title-formules-ctr": {
+    "id": "gid://shopify/Article/1003548934474",
+    "faq": [
+      {
+        "q": "Quelle longueur idéale pour une balise title ?",
+        "r": "Autour de 55 à 60 caractères pour éviter la coupe dans Google. L'essentiel (mot-clé et accroche) doit tenir avant la troncature."
+      },
+      {
+        "q": "Google réécrit parfois mes titles, pourquoi ?",
+        "r": "Google peut remplacer un title jugé peu pertinent ou dupliqué par un extrait de la page. Un title clair, unique et aligné sur le contenu réduit ce risque."
+      },
+      {
+        "q": "Changer un title peut-il faire baisser mon classement ?",
+        "r": "Rarement si vous gardez la requête principale. Le risque est faible et le gain potentiel en CTR élevé : testez sur vos pages à fort trafic en surveillant."
+      }
+    ]
+  },
+  "boutique-shopify-qui-convertit-2026": {
+    "id": "gid://shopify/Article/1003538645322",
+    "faq": [
+      {
+        "q": "Combien coûte une boutique Shopify qui convertit ?",
+        "r": "Le périmètre dépend du catalogue, du niveau de personnalisation et du besoin SEO. Notre article dédié au coût d'une boutique Shopify détaille les fourchettes."
+      },
+      {
+        "q": "Ma boutique existe déjà : refonte ou optimisation ?",
+        "r": "Un audit e-commerce tranche en une session : si la structure est saine, l' optimisation CRO suffit souvent."
+      },
+      {
+        "q": "Shopify est-il bon pour le SEO ?",
+        "r": "Oui, à condition de maîtriser collections, maillage, vitesse et balisage. Nos boutiques sont livrées optimisées dès le premier jour ."
+      }
+    ]
+  },
+  "cahier-des-charges-site-vitrine": {
+    "id": "gid://shopify/Article/1003547984202",
+    "faq": [
+      {
+        "q": "Quelle longueur pour un cahier des charges de site vitrine ?",
+        "r": "2 à 4 pages. En dessous, les prestataires devinent ; au-delà, personne ne le lit en entier. La clarté bat l'exhaustivité."
+      },
+      {
+        "q": "Faut-il indiquer son budget ?",
+        "r": "Oui, en fourchette. Le cacher ne fait pas baisser les prix : ça produit des devis hors sujet dans les deux sens et des allers-retours inutiles."
+      },
+      {
+        "q": "Que faire si je ne sais pas quelles pages il me faut ?",
+        "r": "Listez vos services et vos questions clients : un bon prestataire en déduira l'arborescence avec vous. Méfiez-vous de celui qui ne pose aucune question."
+      }
+    ]
+  },
+  "calculer-roas-avec-marge": {
+    "id": "gid://shopify/Article/1003548868938",
+    "faq": [
+      {
+        "q": "Quel bon ROAS viser ?",
+        "r": "Il n'y a pas de bon ROAS universel : le seul qui compte est le vôtre, calculé à partir de votre marge. Visez au-dessus de votre ROAS seuil, avec une marge de sécurité pour les coûts oubliés."
+      },
+      {
+        "q": "Le ROAS du gestionnaire est-il fiable ?",
+        "r": "Il reflète ce que Meta attribue, souvent avec une part d'approximation (attribution, délai). Recoupez-le toujours avec vos ventes réelles et votre marge."
+      },
+      {
+        "q": "Faut-il inclure les frais de livraison dans le calcul ?",
+        "r": "Oui, la part que vous ne facturez pas au client. Chaque coût réel non répercuté rogne la marge et remonte votre ROAS seuil."
+      }
+    ]
+  },
+  "checklist-audit-seo": {
+    "id": "gid://shopify/Article/1003547853130",
+    "faq": [
+      {
+        "q": "Combien de temps prend un audit SEO sérieux ?",
+        "r": "Comptez 1 heure avec cette checklist pour un premier diagnostic, et plusieurs jours pour un audit professionnel complet avec analyse des données Search Console et plan d'action chiffré."
+      },
+      {
+        "q": "Quels outils gratuits suffisent pour auditer ?",
+        "r": "Search Console, PageSpeed Insights et un navigateur couvrent les 12 points de cette checklist. Les outils payants font gagner du temps, ils ne changent pas le diagnostic."
+      },
+      {
+        "q": "À quelle fréquence refaire l'audit ?",
+        "r": "Un audit complet par an, plus un passage rapide sur la checklist après chaque changement important du site (refonte, nouvelles pages, migration)."
+      }
+    ]
+  },
+  "collections-shopify-architecture-seo": {
+    "id": "gid://shopify/Article/1003547885898",
+    "faq": [
+      {
+        "q": "Combien de collections faut-il créer ?",
+        "r": "Autant qu'il existe de recherches distinctes avec une vraie demande, pas plus. Dix collections alignées sur des requêtes réelles battent quarante collections décoratives qui se cannibalisent."
+      },
+      {
+        "q": "Faut-il mettre un produit dans plusieurs collections ?",
+        "r": "Oui si c'est logique pour le client (une robe lin peut être dans « robes » et « lin »). Shopify gère la canonique produit, il n'y a pas de duplicate pénalisant."
+      },
+      {
+        "q": "Où placer le texte SEO d'une collection ?",
+        "r": "Un court paragraphe au-dessus des produits, le contenu détaillé en dessous. Jamais 800 mots avant la grille : vous feriez fuir les acheteurs pour plaire à un robot qui n'en demande pas tant."
+      }
+    ]
+  },
+  "combien-coute-audit-seo": {
+    "id": "gid://shopify/Article/1003789582666",
+    "faq": [
+      {
+        "q": "Combien coûte un audit SEO en 2026 ?",
+        "r": "Entre 500 et 3 000 euros pour la grande majorité des sites de PME, selon le nombre de pages et la profondeur d'analyse. Les audits e-commerce ou multilingues dépassent fréquemment cette fourchette."
+      },
+      {
+        "q": "Un audit SEO gratuit vaut-il quelque chose ?",
+        "r": "Oui, s'il est mené par un humain et qu'il débouche sur des priorités claires. Il identifie les blocages visibles et permet de juger le prestataire. Il ne remplace pas une analyse page par page sur un site complexe."
+      },
+      {
+        "q": "Combien de temps prend un audit SEO ?",
+        "r": "De 1 à 3 jours pour un diagnostic, 3 à 10 jours ouvrés pour un audit complet de PME, et plusieurs semaines pour un grand site. Le délai dépend surtout du volume de pages à analyser."
+      },
+      {
+        "q": "Que doit contenir le livrable d'un audit ?",
+        "r": "Un état des lieux technique, sémantique et concurrentiel, et surtout une liste de corrections ordonnée par impact et par effort. Un audit qui se termine par un score sans plan d'action n'est pas exploitable."
+      },
+      {
+        "q": "Faut-il refaire un audit chaque année ?",
+        "r": "Un audit complet par an suffit à la plupart des sites, complété d'une vérification rapide après chaque changement important : refonte, migration, ajout massif de pages."
+      },
+      {
+        "q": "Quel budget mensuel prévoir après l'audit ?",
+        "r": "Les fourchettes courantes démarrent autour de 800 euros par mois pour une PME sur un marché local et montent avec la concurrence. En dessous, il faut vérifier très précisément ce que le temps facturé permet réellement de produire."
+      }
+    ]
+  },
+  "combien-coute-le-seo-en-2026-et-pourquoi-fuir-le-200-euros-par-mois": {
+    "id": "gid://shopify/Article/1003468554570",
+    "faq": [
+      {
+        "q": "Quel est le prix moyen du SEO en 2026 ?",
+        "r": "Pour une PME française, la fourchette couramment observée va de 800 à 2 500 euros par mois selon la concurrence du marché et le périmètre confié. Les projets e-commerce ou nationaux mobilisent des budgets supérieurs, souvent au-delà de 3 000 euros mensuels."
+      },
+      {
+        "q": "Pourquoi éviter les offres SEO à 200 euros par mois ?",
+        "r": "Ce tarif ne finance que deux heures de travail environ, ce qui impose d'automatiser : contenus générés, liens de faible qualité, rapports sans analyse. La visibilité ne progresse pas et l'engagement long bloque votre budget pendant des mois."
+      },
+      {
+        "q": "Combien coûte un audit SEO ?",
+        "r": "Entre 500 et 3 000 euros selon la taille du site et la profondeur d'analyse. C'est la dépense la plus rentable du parcours : elle évite d'investir des mois de budget sur les mauvaises priorités."
+      },
+      {
+        "q": "Le SEO est-il rentable pour une PME ?",
+        "r": "Oui, dès que vos clients formulent leur besoin sur Google. Le coût par demande décroît avec le temps, contrairement à la publicité, ce qui en fait l'un des investissements d'acquisition les plus durables pour une PME."
+      },
+      {
+        "q": "Combien de temps avant que le budget SEO soit rentabilisé ?",
+        "r": "Les premiers signaux apparaissent généralement entre deux et quatre mois, la rentabilité s'installe le plus souvent entre six et douze mois. Le SEO se raisonne comme un actif : lent à construire, durable une fois en place."
+      },
+      {
+        "q": "Peut-on faire son SEO soi-même ?",
+        "r": "Les bases, oui : fiche d'établissement Google, pages services claires, contenus réguliers. Au-delà, le temps d'apprentissage et d'exécution dépasse vite ce que coûte un accompagnement — la vraie question est celle de la valeur de votre temps."
+      }
+    ]
+  },
+  "combien-coute-une-boutique-shopify": {
+    "id": "gid://shopify/Article/1003468652874",
+    "faq": [
+      {
+        "q": "Quel est le prix minimum pour lancer une boutique Shopify ?",
+        "r": "En autonomie complète, l'abonnement et un thème gratuit suffisent techniquement. Pour une boutique créée professionnellement, les projets sérieux démarrent autour de 3 000 euros — en dessous, la structure, les fiches produits ou le SEO sont nécessairement sacrifiés."
+      },
+      {
+        "q": "Combien coûte l'abonnement Shopify par mois ?",
+        "r": "De l'ordre d'une trentaine d'euros mensuels pour le plan de base, davantage pour les plans supérieurs, selon la grille en vigueur. S'y ajoutent les commissions sur les paiements et les éventuels abonnements d'applications."
+      },
+      {
+        "q": "Combien de temps faut-il pour créer une boutique Shopify ?",
+        "r": "Comptez 4 à 6 semaines pour une boutique simple, 6 à 8 semaines pour un projet standard avec plusieurs collections, et davantage pour du sur-mesure avec intégrations. Un calendrier clair doit être posé dès le départ."
+      },
+      {
+        "q": "Quels coûts prévoir après la mise en ligne ?",
+        "r": "L'abonnement, les apps conservées, la maintenance du thème et surtout l'acquisition : SEO, publicité ou emailing selon la stratégie. Une boutique en ligne se pilote comme un point de vente — elle demande un budget de fonctionnement, pas seulement un budget d'ouverture."
+      },
+      {
+        "q": "Shopify est-il moins cher qu'un site e-commerce sur-mesure ?",
+        "r": "À périmètre comparable, très nettement : l'hébergement, la sécurité et les mises à jour sont mutualisés par la plateforme. Le développement entièrement sur-mesure ne se justifie que pour des logiques métier très spécifiques, avec un budget et des délais bien supérieurs."
+      },
+      {
+        "q": "Quand investir dans du développement sur-mesure ?",
+        "r": "Quand les ventes sont installées et que les données désignent un frein précis : un parcours spécifique, une intégration ERP, une fonctionnalité que les apps ne couvrent pas proprement. Le sur-mesure se finance par le chiffre d'affaires qu'il débloque, pas par principe."
+      }
+    ]
+  },
+  "comment-choisir-votre-agence-seo-sans-vous-faire-avoir": {
+    "id": "gid://shopify/Article/1003468587338",
+    "faq": [
+      {
+        "q": "Comment vérifier les résultats annoncés par une agence SEO ?",
+        "r": "Demandez des captures Search Console avec périodes visibles, le contexte de départ et, si possible, un échange avec le client concerné. Une agence fière de ses résultats n'a aucune difficulté à les documenter."
+      },
+      {
+        "q": "Faut-il choisir une agence SEO locale ?",
+        "r": "Rarement. Un prestataire à l'autre bout du pays qui travaille bien vaut mieux qu'un voisin qui sous-traite. La géographie ne devient un vrai avantage que sur le référencement local, où connaître le terrain et les concurrents de la zone fait gagner des semaines de recherche."
+      },
+      {
+        "q": "Quel budget prévoir pour une agence SEO sérieuse ?",
+        "r": "Les fourchettes couramment observées démarrent autour de 800 euros par mois pour une PME sur un marché local, et montent avec la concurrence. En dessous, vérifiez très précisément ce que le temps facturé permet réellement de produire."
+      },
+      {
+        "q": "Quelle durée d'engagement accepter ?",
+        "r": "Trois à six mois renouvelables constituent un équilibre sain : assez long pour produire des effets mesurables, assez court pour garder le prestataire concentré sur vos résultats plutôt que sur son contrat."
+      },
+      {
+        "q": "Agence généraliste ou spécialisée : que choisir ?",
+        "r": "Une agence qui connaît votre modèle — e-commerce, services B2B, commerce local — démarre avec des mois d'avance sur les intentions de recherche et les leviers qui convertissent. La spécialisation métier pèse plus que la taille de la structure."
+      },
+      {
+        "q": "Que doit contenir le premier mois de prestation ?",
+        "r": "Un audit complet, la définition des priorités avec vous, la correction des blocages techniques majeurs et un plan de contenu daté. Si le premier mois se résume à « l'installation des outils », le rythme est donné — et il est mauvais."
+      }
+    ]
+  },
+  "core-web-vitals-explique-simplement": {
+    "id": "gid://shopify/Article/1003548967242",
+    "faq": [
+      {
+        "q": "Faut-il viser 100 sur PageSpeed ?",
+        "r": "Non : visez le vert sur les données de terrain (LCP, INP, CLS dans les seuils), pas un score parfait de laboratoire souvent inatteignable et peu corrélé au vécu réel."
+      },
+      {
+        "q": "Un mauvais Core Web Vitals fait-il vraiment chuter le classement ?",
+        "r": "Il peut vous désavantager face à un concurrent équivalent, mais il ne fera pas chuter une page au contenu excellent. Corrigez-le comme un plus, pas comme une urgence absolue si votre contenu est fort."
+      },
+      {
+        "q": "Qui peut corriger ces métriques ?",
+        "r": "Beaucoup de corrections (images, apps, scripts) sont accessibles sans développeur. Les optimisations profondes du thème ou du code peuvent en demander un."
+      }
+    ]
+  },
+  "creer-pages-villes-sans-duplicate": {
+    "id": "gid://shopify/Article/1003548606794",
+    "faq": [
+      {
+        "q": "Combien de mots par page ville ?",
+        "r": "Pas de quota : assez pour apporter un contenu réellement local et utile, souvent plusieurs centaines de mots spécifiques. Le critère est l'unicité, pas la longueur."
+      },
+      {
+        "q": "Peut-on créer une page pour une ville où je ne suis pas physiquement ?",
+        "r": "Oui si vous y intervenez réellement et que le contenu le justifie. Créer des pages pour des villes sans aucun lien avec votre activité est risqué et peu efficace."
+      },
+      {
+        "q": "Faut-il une fiche Google par ville ?",
+        "r": "Non : une fiche Google correspond à une adresse physique réelle. Les pages villes de votre site sont un levier distinct de la fiche."
+      }
+    ]
+  },
+  "delais-resultats-seo": {
+    "id": "gid://shopify/Article/1003549000010",
+    "faq": [
+      {
+        "q": "Peut-on avoir des résultats SEO en 1 mois ?",
+        "r": "Sur un site déjà établi, quelques optimisations peuvent bouger des positions en semaines. Sur un site neuf en marché concurrentiel, un mois est bien trop court pour juger."
+      },
+      {
+        "q": "Le SEO est-il plus rapide en local ?",
+        "r": "Souvent oui : la concurrence locale est généralement plus faible qu'au niveau national, et le pack local plus accessible. Les délais y sont plus courts."
+      },
+      {
+        "q": "Combien de temps avant de rentabiliser le SEO ?",
+        "r": "Cela dépend de votre panier et de votre marge, mais une fois les pages positionnées, le coût par lead baisse dans le temps, contrairement à la publicité. Le SEO est un investissement qui capitalise."
+      }
+    ]
+  },
+  "donnees-structurees-produit-google": {
+    "id": "gid://shopify/Article/1003548737866",
+    "faq": [
+      {
+        "q": "Les données structurées améliorent-elles le classement ?",
+        "r": "Pas directement le classement, mais l'affichage enrichi et donc le taux de clic. Un meilleur CTR peut ensuite influencer indirectement la performance de la page."
+      },
+      {
+        "q": "Faut-il un développeur pour le balisage Shopify ?",
+        "r": "Souvent non : le thème et les apps d'avis gèrent l'essentiel. Un développeur n'intervient que pour corriger un balisage cassé ou très incomplet."
+      },
+      {
+        "q": "Pourquoi mes étoiles n'apparaissent-elles pas dans Google ?",
+        "r": "Plusieurs causes : balisage absent ou invalide, avis non visibles sur la page, ou Google qui choisit simplement de ne pas les afficher. Le test des résultats enrichis identifie les erreurs techniques."
+      }
+    ]
+  },
+  "eeat-prouver-expertise-google": {
+    "id": "gid://shopify/Article/1003548180810",
+    "faq": [
+      {
+        "q": "E-E-A-T est-il un facteur de classement direct ?",
+        "r": "Pas une note unique dans l'algorithme, mais un ensemble de signaux que Google utilise pour évaluer la fiabilité, surtout sur les sujets sensibles. En pratique, les renforcer améliore le classement."
+      },
+      {
+        "q": "Faut-il un auteur expert pour chaque article ?",
+        "r": "Un auteur identifiable et légitime sur le sujet suffit. L'essentiel est la transparence : un vrai nom, une vraie légitimité, pas un pseudonyme générique."
+      },
+      {
+        "q": "Une petite entreprise peut-elle vraiment rivaliser sur E-E-A-T ?",
+        "r": "Oui : l'expérience vécue et la preuve concrète sont accessibles à tous, contrairement à la notoriété de marque. Une PME transparente et spécialisée bat souvent un gros site générique."
+      }
+    ]
+  },
+  "fiche-produit-structure-conversion": {
+    "id": "gid://shopify/Article/1003548016970",
+    "faq": [
+      {
+        "q": "Quelle longueur pour une description produit ?",
+        "r": "Assez longue pour répondre à toutes les objections, assez structurée pour se scanner en 20 secondes. Les blocs et les listes comptent plus que le nombre de mots."
+      },
+      {
+        "q": "Les avis sont-ils indispensables sur une jeune boutique ?",
+        "r": "Oui : même 5 avis authentiques changent la conversion. Demandez-les par email après livraison, avec une relance. N'achetez jamais de faux avis : ça se voit et ça se paie."
+      },
+      {
+        "q": "Une vidéo produit vaut-elle l'investissement ?",
+        "r": "Pour les produits qui se démontrent (usage, taille, texture), oui : même une vidéo smartphone de 20 secondes répond à des questions que les photos ne couvrent pas."
+      }
+    ]
+  },
+  "guide-seo-leads-2026": {
+    "id": "gid://shopify/Article/1003538547018",
+    "faq": [
+      {
+        "q": "Combien de temps pour générer des leads avec le SEO ?",
+        "r": "Les premiers signaux arrivent souvent en quelques semaines sur les pages prioritaires ; une trajectoire solide se construit sur plusieurs mois selon la concurrence."
+      },
+      {
+        "q": "Le SEO vaut-il encore le coup avec les réponses IA ?",
+        "r": "Oui, plus que jamais : les IA citent leurs sources. Être la référence de son sujet, c'est être cité par Google ET par ChatGPT ou Perplexity."
+      },
+      {
+        "q": "Par où commencer concrètement ?",
+        "r": "Par un état des lieux : notre audit SEO identifie vos intentions prioritaires et les corrections à fort impact."
+      }
+    ]
+  },
+  "maillage-interne-cocon-semantique": {
+    "id": "gid://shopify/Article/1003548049738",
+    "faq": [
+      {
+        "q": "Combien de liens internes par page ?",
+        "r": "Pas de quota magique : 2 à 5 liens contextuels pertinents par article suffisent. Le critère est l'utilité pour le lecteur, pas le comptage."
+      },
+      {
+        "q": "Le maillage peut-il remplacer les backlinks ?",
+        "r": "Non, les deux se complètent : le maillage répartit l'autorité que vous avez, les backlinks en apportent de nouvelle. Mais optimisez toujours le maillage d'abord : c'est gratuit et immédiat."
+      },
+      {
+        "q": "Les liens de footer comptent-ils ?",
+        "r": "Ils aident la navigation et l'indexation, mais leur poids sémantique est faible car ils sont répétés partout. Ne comptez pas sur eux pour pousser une page."
+      }
+    ]
+  },
+  "microsoft-clarity-trouver-fuites-conversion": {
+    "id": "gid://shopify/Article/1003548115274",
+    "faq": [
+      {
+        "q": "Clarity ralentit-il le site ?",
+        "r": "Son impact est négligeable pour la plupart des sites : le script se charge en asynchrone. À surveiller seulement si votre site cumule déjà beaucoup de scripts tiers."
+      },
+      {
+        "q": "Clarity respecte-t-il le RGPD ?",
+        "r": "Il faut le déclarer dans votre politique de confidentialité et le soumettre au consentement cookies comme tout outil d'analyse. Clarity masque par défaut les champs de saisie sensibles."
+      },
+      {
+        "q": "Clarity remplace-t-il GA4 ?",
+        "r": "Non, ils se complètent : GA4 dit combien et d'où, Clarity montre comment et pourquoi. Le diagnostic complet a besoin des deux."
+      }
+    ]
+  },
+  "migrer-vers-shopify-sans-perdre-seo": {
+    "id": "gid://shopify/Article/1003548901706",
+    "faq": [
+      {
+        "q": "Vais-je perdre mon référencement en migrant vers Shopify ?",
+        "r": "Pas si les redirections 301 sont complètes et testées. La plupart des pertes de trafic en migration viennent d'URLs orphelines, pas de Shopify lui-même."
+      },
+      {
+        "q": "Combien de temps prend une migration ?",
+        "r": "De quelques jours pour un petit catalogue à plusieurs semaines pour une grosse boutique avec beaucoup de contenus et de personnalisation. La préparation prend souvent plus de temps que la bascule."
+      },
+      {
+        "q": "Peut-on garder son nom de domaine ?",
+        "r": "Oui : le domaine se connecte à Shopify, vous le gardez. C'est essentiel pour préserver votre notoriété et vos liens entrants."
+      }
+    ]
+  },
+  "obtenir-plus-avis-google": {
+    "id": "gid://shopify/Article/1003548508490",
+    "faq": [
+      {
+        "q": "Combien d'avis faut-il viser ?",
+        "r": "Plus que vos concurrents directs sur votre zone, avec un flux régulier. Quelques avis frais chaque mois valent mieux qu'un pic annuel suivi du silence."
+      },
+      {
+        "q": "Peut-on supprimer un faux avis ou un avis injuste ?",
+        "r": "On peut le signaler à Google s'il enfreint les règles (diffamation, hors sujet, concurrent). La suppression n'est pas garantie : la meilleure défense reste une réponse posée et un volume d'avis positifs."
+      },
+      {
+        "q": "Offrir une réduction contre un avis, est-ce autorisé ?",
+        "r": "Non : toute incitation matérielle est interdite et peut faire supprimer vos avis. Vous pouvez demander, jamais récompenser."
+      }
+    ]
+  },
+  "optimiser-fiche-google-business-profile": {
+    "id": "gid://shopify/Article/1003548279114",
+    "faq": [
+      {
+        "q": "Combien de temps pour voir un effet sur la fiche ?",
+        "r": "Les optimisations de catégorie et de contenu peuvent bouger le classement en quelques semaines ; les avis et la notoriété agissent sur la durée. La régularité bat le coup d'éclat."
+      },
+      {
+        "q": "Faut-il répondre à tous les avis ?",
+        "r": "Oui, positifs comme négatifs : ça montre une entreprise active et rassure les futurs clients. Évitez les réponses copiées-collées, elles se voient."
+      },
+      {
+        "q": "La fiche peut-elle remplacer un site ?",
+        "r": "Non : elle capte le local immédiat, mais le site porte votre offre complète, votre SEO et vos conversions. Les deux se renforcent."
+      }
+    ]
+  },
+  "page-contact-qui-convertit": {
+    "id": "gid://shopify/Article/1003548541258",
+    "faq": [
+      {
+        "q": "Combien de champs dans un formulaire de contact ?",
+        "r": "Trois à quatre pour un premier contact : nom, email, message, éventuellement téléphone en optionnel. Vous qualifierez ensuite par échange."
+      },
+      {
+        "q": "Faut-il afficher son numéro de téléphone ?",
+        "r": "Si vous pouvez répondre ou rappeler, oui : certains prospects ne convertiront que par téléphone. Un numéro cliquable sur mobile capte ces demandes."
+      },
+      {
+        "q": "Une page contact peut-elle vraiment changer le nombre de demandes ?",
+        "r": "Oui, souvent nettement : c'est la dernière marche avant l'action. Réduire la friction et ajouter de la réassurance y a un effet direct et mesurable."
+      }
+    ]
+  },
+  "pixel-meta-api-conversion-shopify": {
+    "id": "gid://shopify/Article/1003548639562",
+    "faq": [
+      {
+        "q": "Le pixel seul suffit-il encore en 2026 ?",
+        "r": "Non : sans l'API de conversion, vous perdez une part significative des événements, surtout sur iOS. Les deux ensemble sont désormais le standard."
+      },
+      {
+        "q": "Comment savoir si je compte les achats en double ?",
+        "r": "Dans le Gestionnaire d'événements de Meta, vérifiez le taux de dédoublonnage et comparez le nombre d'achats Meta à vos commandes réelles Shopify. Un écart à la hausse signale un double comptage."
+      },
+      {
+        "q": "Faut-il un développeur pour installer la CAPI ?",
+        "r": "Sur Shopify, l'intégration native ne demande pas de code. Un développeur n'est utile que pour des configurations avancées ou des événements personnalisés."
+      }
+    ]
+  },
+  "prix-site-vitrine-2026": {
+    "id": "gid://shopify/Article/1003548246346",
+    "faq": [
+      {
+        "q": "Un site vitrine à moins de 1 000 euros peut-il suffire ?",
+        "r": "Pour une simple présence de départ, oui. Si le site doit générer des demandes et vous représenter sérieusement, ce budget montre vite ses limites sur le SEO et la conversion."
+      },
+      {
+        "q": "Vaut-il mieux un abonnement mensuel ou un paiement unique ?",
+        "r": "Ça dépend : l'abonnement lisse le coût mais peut vous rendre dépendant. Vérifiez toujours qui possède le domaine et le site, et ce qui se passe si vous arrêtez de payer."
+      },
+      {
+        "q": "Le SEO est-il toujours inclus ?",
+        "r": "Non, et c'est une source fréquente de mauvaise surprise. Exigez que les balises, la structure et une page par service optimisée figurent noir sur blanc au devis."
+      }
+    ]
+  },
+  "recherche-mots-cles-methode-intentions": {
+    "id": "gid://shopify/Article/1003547951434",
+    "faq": [
+      {
+        "q": "Quels outils payants valent le coup ?",
+        "r": "Ils font gagner du temps sur les gros volumes de requêtes, mais pour une PME, Search Console plus la SERP elle-même couvrent 90 % du besoin. Commencez gratuit, payez quand vous saturez."
+      },
+      {
+        "q": "Combien de mots-clés viser au départ ?",
+        "r": "Une dizaine d'intentions transactionnelles prioritaires et deux ou trois grappes de questions suffisent pour 6 mois de travail bien fait."
+      },
+      {
+        "q": "Faut-il viser les requêtes à zéro volume affiché ?",
+        "r": "Oui quand elles sont ultra-spécifiques à votre offre : les outils sous-estiment la longue traîne, et ces requêtes convertissent souvent le mieux."
+      }
+    ]
+  },
+  "refonte-site-sans-perdre-seo": {
+    "id": "gid://shopify/Article/1003548770634",
+    "faq": [
+      {
+        "q": "Vais-je forcément perdre du trafic pendant une refonte ?",
+        "r": "Une légère baisse temporaire est fréquente, le temps que Google recrawle. Avec un bon plan de redirections, le trafic revient vite, parfois au-dessus du niveau initial."
+      },
+      {
+        "q": "Faut-il garder les mêmes URLs ?",
+        "r": "Quand elles sont propres et qu'elles rankent, oui : ne changez que ce qui doit l'être. Chaque URL modifiée est une redirection à gérer et un risque en plus."
+      },
+      {
+        "q": "Combien de temps surveiller après la mise en ligne ?",
+        "r": "Au moins 4 à 8 semaines de suivi rapproché de l'indexation et des 404, le temps que Google digère la nouvelle structure et stabilise les positions."
+      }
+    ]
+  },
+  "search-console-rapports-essentiels": {
+    "id": "gid://shopify/Article/1003548803402",
+    "faq": [
+      {
+        "q": "Search Console suffit-il ou faut-il un outil payant ?",
+        "r": "Pour la majorité des PME, Search Console couvre l'essentiel du pilotage SEO. Les outils payants ajoutent de la recherche concurrentielle et de mots-clés, utile mais pas indispensable au départ."
+      },
+      {
+        "q": "Quelle différence entre Search Console et GA4 ?",
+        "r": "Search Console montre votre présence dans Google (impressions, requêtes, positions) ; GA4 montre ce que font les visiteurs sur le site. Les deux se complètent."
+      },
+      {
+        "q": "Pourquoi une page n'est-elle pas indexée ?",
+        "r": "Plusieurs raisons : contenu jugé trop faible, page trop profonde, balise noindex, ou simplement pas encore crawlée. Le rapport Pages indique la cause exacte pour chacune."
+      }
+    ]
+  },
+  "seo-ou-google-ads-par-quoi-commencer": {
+    "id": "gid://shopify/Article/1003468620106",
+    "faq": [
+      {
+        "q": "SEO ou Google Ads : lequel est le moins cher ?",
+        "r": "À court terme, aucun n'est gratuit : le SEO coûte du temps de production, la publicité coûte chaque clic. À douze mois et au-delà, le coût par demande du SEO devient généralement inférieur, car les pages positionnées continuent de produire sans dépense supplémentaire."
+      },
+      {
+        "q": "Peut-on faire du SEO et du Google Ads avec un petit budget ?",
+        "r": "Oui, en dosant : on concentre le budget sur le levier le plus rentable pour la situation, puis on ajoute le second quand la conversion et la trésorerie suivent. Le piège est de saupoudrer les deux sans masse critique sur aucun."
+      },
+      {
+        "q": "La publicité Google améliore-t-elle le référencement naturel ?",
+        "r": "Pas directement : les campagnes n'influencent pas les positions organiques. Indirectement, oui : elles fournissent des données précieuses sur les requêtes et messages qui convertissent, et du trafic qui alimente la connaissance client."
+      },
+      {
+        "q": "Combien de temps avant que le SEO remplace la publicité ?",
+        "r": "Sur un marché local, comptez généralement six à douze mois pour qu'une part significative des demandes vienne de l'organique. Sur un marché national disputé, la publicité garde souvent un rôle permanent, mais recentré sur les segments les plus rentables."
+      },
+      {
+        "q": "Faut-il couper Google Ads quand le SEO fonctionne ?",
+        "r": "Rarement en totalité : on réduit plutôt les enchères où l'organique capte déjà la demande, et on réalloue vers les requêtes non encore positionnées. La décision se prend requête par requête, chiffres en main."
+      },
+      {
+        "q": "Quel budget minimum pour démarrer sur Google Ads ?",
+        "r": "Assez pour générer des données exploitables : quelques centaines d'euros mensuels sur un marché local, davantage sur des requêtes dont le clic est cher. Un budget trop faible produit des statistiques inutilisables — mieux vaut alors le placer sur le SEO."
+      }
+    ]
+  },
+  "seo-ou-meta-ads-2026": {
+    "id": "gid://shopify/Article/1003538579786",
+    "faq": [
+      {
+        "q": "Avec quel budget démarrer sur Meta Ads en 2026 ?",
+        "r": "Assez pour obtenir des données exploitables : en dessous d'un certain volume de conversions hebdomadaires, l'algorithme n'apprend pas. Un audit Meta Ads cadre un budget réaliste selon votre offre."
+      },
+      {
+        "q": "Le SEO peut-il remplacer totalement la publicité ?",
+        "r": "Rarement à 100 %. Il réduit fortement la dépendance, mais la pub reste utile pour accélérer, tester et relancer."
+      },
+      {
+        "q": "Et Google Ads dans tout ça ?",
+        "r": "Même logique d'arbitrage : Google Ads capte l'intention comme le SEO mais en payant chaque clic. Le SEO reste l'actif qui capitalise."
+      }
+    ]
+  },
+  "site-vitrine-pas-de-demandes-2026": {
+    "id": "gid://shopify/Article/1003538612554",
+    "faq": [
+      {
+        "q": "Faut-il refaire le site ou corriger l'existant ?",
+        "r": "Si la structure est saine, corriger suffit souvent : c'est le travail d' optimisation CRO . Si les fondations sont mauvaises, une refonte de site vitrine coûte moins cher que des rustines sans fin."
+      },
+      {
+        "q": "Combien de demandes un site vitrine doit-il générer ?",
+        "r": "Il n'y a pas de norme unique, mais un site avec du trafic et zéro demande mensuelle a toujours au moins une des 7 fuites ci-dessus."
+      },
+      {
+        "q": "Comment savoir laquelle de ces fuites me concerne ?",
+        "r": "Un audit croise vos données et votre parcours : en une session, on identifie les 2-3 corrections à plus fort impact."
+      }
+    ]
+  },
+  "structure-compte-meta-ads-2026": {
+    "id": "gid://shopify/Article/1003547918666",
+    "faq": [
+      {
+        "q": "Faut-il utiliser les campagnes Advantage+ ?",
+        "r": "Oui pour l'e-commerce avec du volume de conversions : elles automatisent une structure déjà saine. Pour la génération de leads locale, une campagne de conversion classique bien configurée reste souvent plus pilotable."
+      },
+      {
+        "q": "Combien de publicités par ensemble ?",
+        "r": "3 à 6 créas actives : assez pour que l'algorithme distribue vers ce qui marche, pas assez pour diluer le budget de test de chacune."
+      },
+      {
+        "q": "Quand toucher à une campagne qui sous-performe ?",
+        "r": "Après au moins 3 à 4 jours complets de données et un volume de dépense équivalent à 2 ou 3 conversions attendues. Juger une campagne à la demi-journée, c'est jouer aux dés."
+      }
+    ]
+  },
+  "vitesse-shopify-optimisations": {
+    "id": "gid://shopify/Article/1003548213578",
+    "faq": [
+      {
+        "q": "Quel score PageSpeed viser sur Shopify ?",
+        "r": "Visez le vert sur les données de terrain (LCP sous 2,5 s, INP sous 200 ms) plutôt qu'un score de 100. Shopify ajoute des scripts incompressibles : un bon site mobile tourne souvent autour de 50 à 70 en laboratoire tout en étant rapide pour l'utilisateur."
+      },
+      {
+        "q": "Les apps de « speed optimization » servent-elles ?",
+        "r": "Rarement : elles ajoutent un script pour en gérer d'autres. Mieux vaut réduire à la source (images, apps, thème) que superposer une couche de plus."
+      },
+      {
+        "q": "La vitesse change-t-elle vraiment les ventes ?",
+        "r": "Oui, surtout sur mobile : au-delà de 3 secondes, une part importante des visiteurs abandonne avant même de voir vos produits."
+      }
+    ]
+  }
+}
