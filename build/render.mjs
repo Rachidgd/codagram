@@ -401,7 +401,20 @@ const pages = manifest.map((p) => {
       author: 'Mathieu · Clickscreation',
       published_at: '2026-05-14T09:00:00+0200',
       tags: ['Shopify', 'Performance'],
-      image: null, metafields: {}
+      image: null,
+      // Les questions posées en métachamp alimentent le nœud FAQPage et la
+      // date de mise à jour, comme sur la boutique.
+      metafields: {
+        editorial: {
+          updated_at: { value: '2026-08-04T16:30:45+00:00' },
+          faq: { value: [
+            { q: 'Faut-il une application pour accélérer la boutique ?',
+              r: "Non : la plupart des gains viennent des images, des applications retirées et des polices limitées à deux graisses." },
+            { q: 'Combien de temps avant de voir le score bouger ?',
+              r: "Les données de terrain sont calculées sur 28 jours : comptez un mois avant de juger une correction." }
+          ] }
+        }
+      }
     },
     blog: { title: 'Ressources', url: '/blogs/ressources', articles: [
       { id: 1, title: 'Autre guide A', url: '/blogs/ressources/a', published_at: '2026-05-01' },
