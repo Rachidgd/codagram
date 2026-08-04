@@ -1,0 +1,415 @@
+{
+  "ab-testing-petit-trafic": {
+    "etiquettes": [
+      "A/B testing",
+      "CRO"
+    ],
+    "id": "gid://shopify/Article/1003548672330",
+    "publie": false,
+    "resume": "Pas besoin de 100 000 visites : les tests valides avec un petit trafic, les changements assez gros pour être mesurables et les pièges statistiques.",
+    "titre": "A/B testing avec peu de trafic : ce que vous pouvez vraiment tester (et comment)"
+  },
+  "abandon-panier-corrections": {
+    "etiquettes": [
+      "Conversion",
+      "Shopify"
+    ],
+    "id": "gid://shopify/Article/1003548574026",
+    "publie": false,
+    "resume": "70 % des paniers sont abandonnés. Frais surprises, friction, doutes : les 9 corrections dans le tunnel qui récupèrent des ventes dès cette semaine.",
+    "titre": "Abandon de panier : 9 corrections à faire AVANT les emails de relance"
+  },
+  "ad-library-analyser-pubs-concurrents": {
+    "etiquettes": [
+      "Analyse concurrentielle",
+      "Meta Ads"
+    ],
+    "id": "gid://shopify/Article/1003548082506",
+    "publie": false,
+    "resume": "Trouver les ads actives, repérer celles qui tournent depuis des mois, décoder les angles : la méthode Ad Library pas à pas.",
+    "titre": "Ad Library : la méthode pour décoder (légalement) les publicités de vos concurrents"
+  },
+  "agence-seo-ou-consultant-seo": {
+    "etiquettes": [
+      "Agence SEO",
+      "Pilote éditorial",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003789615434",
+    "publie": true,
+    "resume": "Budget, périmètre couvert, continuité de service : le comparatif complet entre agence SEO et consultant SEO, les 7 critères vérifiables qui comptent plus que le format, et les signaux d'alarme avant de signer.",
+    "titre": "Agence SEO ou consultant SEO : comment choisir ?"
+  },
+  "ai-overviews-rester-visible": {
+    "etiquettes": [
+      "GEO",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003548705098",
+    "publie": false,
+    "resume": "Les réponses IA captent les clics informationnels. Voici les requêtes encore gagnables, les formats cités par l'IA et la stratégie à adopter.",
+    "titre": "AI Overviews : comment rester visible quand Google répond à la place de votre site"
+  },
+  "angles-creatifs-publicite-meta": {
+    "etiquettes": [
+      "Créatives",
+      "Meta Ads"
+    ],
+    "id": "gid://shopify/Article/1003548377418",
+    "publie": false,
+    "resume": "Problème, preuve, comparaison, objection : 12 angles publicitaires prêts à briefer, chacun illustré et adapté selon votre offre.",
+    "titre": "12 angles créatifs qui arrêtent le scroll (avec exemples décortiqués)"
+  },
+  "apps-shopify-utiles-et-a-eviter": {
+    "etiquettes": [
+      "Apps",
+      "Shopify"
+    ],
+    "id": "gid://shopify/Article/1003548442954",
+    "publie": false,
+    "resume": "Avis, upsell, email, SEO : les apps qui gagnent leur place sur une boutique, celles que le thème remplace et la méthode pour tester leur poids.",
+    "titre": "Apps Shopify : les 10 vraiment utiles (et celles qui ruinent votre vitesse)"
+  },
+  "balises-title-formules-ctr": {
+    "etiquettes": [
+      "CTR",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003548934474",
+    "publie": true,
+    "resume": "Chiffres, crochets, années, bénéfices : 15 formules de titles testées avec exemples avant/après, et la méthode pour trouver vos pages à fort gain.",
+    "titre": "Balises title : 15 formules qui augmentent le taux de clic (avec avant/après)"
+  },
+  "boutique-shopify-qui-convertit-2026": {
+    "etiquettes": [
+      "Conversion",
+      "E-commerce",
+      "Shopify"
+    ],
+    "id": "gid://shopify/Article/1003538645322",
+    "publie": true,
+    "resume": "<p>Une belle boutique ne suffit plus : structure, fiches produits, vitesse, SEO intégré et tracking fiable font la différence en 2026. La checklist complète.</p>",
+    "titre": "Créer une boutique Shopify qui convertit en 2026 : la checklist complète"
+  },
+  "cahier-des-charges-site-vitrine": {
+    "etiquettes": [
+      "Création de site",
+      "Site vitrine"
+    ],
+    "id": "gid://shopify/Article/1003547984202",
+    "publie": false,
+    "resume": "Pages, contenus, objectifs, exemples, budget : le modèle de cahier des charges qui vous fait gagner des semaines et des devis plus justes.",
+    "titre": "Cahier des charges d'un site vitrine : le modèle complet à remplir avant de demander un devis"
+  },
+  "calculer-roas-avec-marge": {
+    "etiquettes": [
+      "Meta Ads",
+      "Rentabilité"
+    ],
+    "id": "gid://shopify/Article/1003548868938",
+    "publie": false,
+    "resume": "Un ROAS de 3 peut perdre de l'argent. Formules, seuil de rentabilité par produit et tableau à copier pour piloter vos campagnes à la marge.",
+    "titre": "ROAS : le calculer avec votre marge (et arrêter de croire au chiffre d'Ads Manager)"
+  },
+  "checklist-audit-seo": {
+    "etiquettes": [
+      "Audit SEO",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003547853130",
+    "publie": true,
+    "resume": "La checklist exacte utilisée sur nos audits clients : 4 points techniques, 4 points sémantiques, 4 points conversion, et la méthode pour prioriser.",
+    "titre": "Checklist audit SEO : les 12 points que nous vérifions en premier sur chaque site"
+  },
+  "collections-shopify-architecture-seo": {
+    "etiquettes": [
+      "SEO e-commerce",
+      "Shopify"
+    ],
+    "id": "gid://shopify/Article/1003547885898",
+    "publie": true,
+    "resume": "Nommage, hiérarchie, filtres, descriptions : comment structurer vos collections Shopify pour capter les recherches catégorie et guider l'achat.",
+    "titre": "Collections Shopify : l'architecture qui fait ranker ET vendre votre catalogue"
+  },
+  "combien-coute-audit-seo": {
+    "etiquettes": [
+      "Audit SEO",
+      "Pilote éditorial",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003789582666",
+    "publie": true,
+    "resume": "Entre 500 et 3 000 euros selon la taille du site : ce que chaque fourchette d'audit SEO achète réellement, les livrables à exiger, les pièges à éviter et le budget d'accompagnement qui suit.",
+    "titre": "Combien coûte un audit SEO ? Prix, livrables et pièges à éviter"
+  },
+  "combien-coute-le-seo-en-2026-et-pourquoi-fuir-le-200-euros-par-mois": {
+    "etiquettes": [
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003468554570",
+    "publie": false,
+    "resume": "Les vraies fourchettes du prix du SEO en 2026, ce que chaque budget achète poste par poste, et pourquoi les offres à 200 euros par mois coûtent plus cher qu'elles ne rapportent.",
+    "titre": "Combien coûte le SEO en 2026 (et pourquoi fuir le 200 euros par mois)"
+  },
+  "combien-coute-une-boutique-shopify": {
+    "etiquettes": [
+      "Shopify"
+    ],
+    "id": "gid://shopify/Article/1003468652874",
+    "publie": true,
+    "resume": "Abonnement, création, apps, maintenance : le vrai coût d'une boutique Shopify poste par poste, avec les fourchettes du marché et les coûts cachés à anticiper.",
+    "titre": "Combien coûte une boutique Shopify"
+  },
+  "comment-choisir-votre-agence-seo-sans-vous-faire-avoir": {
+    "etiquettes": [
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003468587338",
+    "publie": false,
+    "resume": "Les 7 critères vérifiables pour choisir une agence SEO fiable, les signaux d'alarme qui doivent faire fuir et les questions exactes à poser avant de signer.",
+    "titre": "Comment choisir votre agence SEO sans vous faire avoir"
+  },
+  "core-web-vitals-explique-simplement": {
+    "etiquettes": [
+      "Performance",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003548967242",
+    "publie": true,
+    "resume": "Les 3 métriques de vitesse Google traduites en français, leur vrai poids SEO et les corrections par ordre d'impact, sans jargon de développeur.",
+    "titre": "Core Web Vitals expliqués simplement : LCP, INP, CLS et ce qui compte vraiment"
+  },
+  "creer-boutique-shopify-methode-prix-erreurs": {
+    "etiquettes": [
+      "Pilote éditorial",
+      "Shopify"
+    ],
+    "id": "gid://shopify/Article/1003799871818",
+    "publie": false,
+    "resume": "<p>Guide pilote sur la méthode de création d’une boutique Shopify, les facteurs de prix, la checklist, les erreurs et les liens vers les services associés.</p>",
+    "titre": "Créer une boutique Shopify : méthode, prix et erreurs à éviter"
+  },
+  "creer-pages-villes-sans-duplicate": {
+    "etiquettes": [
+      "Pages villes",
+      "SEO local"
+    ],
+    "id": "gid://shopify/Article/1003548606794",
+    "publie": false,
+    "resume": "Comment créer des pages locales uniques qui se positionnent : structure, contenus différenciants, maillage et erreurs qui déclenchent les filtres.",
+    "titre": "Pages villes : la méthode pour ranker localement sans dupliquer le contenu"
+  },
+  "delais-resultats-seo": {
+    "etiquettes": [
+      "SEO",
+      "Stratégie"
+    ],
+    "id": "gid://shopify/Article/1003549000010",
+    "publie": true,
+    "resume": "Site neuf, site établi, marché local ou national : les délais réalistes observés sur nos projets, les signaux précoces et ce qui accélère.",
+    "titre": "SEO : combien de temps avant les premiers résultats ? Les vrais délais, cas par cas"
+  },
+  "donnees-structurees-produit-google": {
+    "etiquettes": [
+      "Données structurées",
+      "SEO e-commerce"
+    ],
+    "id": "gid://shopify/Article/1003548737866",
+    "publie": false,
+    "resume": "Schema Product, avis, prix, disponibilité : obtenir les résultats enrichis qui font cliquer, avec la méthode de test et les erreurs fréquentes.",
+    "titre": "Données structurées produit : afficher prix, stock et étoiles dans Google"
+  },
+  "eeat-prouver-expertise-google": {
+    "etiquettes": [
+      "E-E-A-T",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003548180810",
+    "publie": false,
+    "resume": "Expérience, expertise, autorité, confiance : les signaux E-E-A-T concrets à mettre en place quand on est une PME, avec exemples avant/après.",
+    "titre": "E-E-A-T : comment prouver votre expertise à Google (et aux IA) sans être une grande marque"
+  },
+  "fiche-produit-structure-conversion": {
+    "etiquettes": [
+      "Conversion",
+      "Shopify"
+    ],
+    "id": "gid://shopify/Article/1003548016970",
+    "publie": false,
+    "resume": "Titre, visuels, bénéfices, preuve, réassurance : les 9 blocs d'une fiche produit qui convertit, avec l'ordre exact et des exemples réels.",
+    "titre": "Fiche produit parfaite : la structure en 9 blocs qui transforme les visiteurs en acheteurs"
+  },
+  "guide-seo-leads-2026": {
+    "etiquettes": [
+      "Guide",
+      "Leads",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003538547018",
+    "publie": true,
+    "resume": "<p>AI Overviews, clics en baisse, exigence E-E-A-T : le SEO de 2026 ne se joue plus comme avant. Voici la méthode complète pour générer des leads, pas seulement du trafic.</p>",
+    "titre": "Guide SEO 2026 : transformer votre référencement en machine à leads"
+  },
+  "maillage-interne-cocon-semantique": {
+    "etiquettes": [
+      "Maillage interne",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003548049738",
+    "publie": false,
+    "resume": "Silos, pages mères, ancres, jus de lien : comment organiser vos liens internes pour pousser les pages qui rapportent. Guide avec schémas.",
+    "titre": "Maillage interne : le guide du cocon sémantique qui muscle vos pages business"
+  },
+  "microsoft-clarity-trouver-fuites-conversion": {
+    "etiquettes": [
+      "Analytics",
+      "CRO"
+    ],
+    "id": "gid://shopify/Article/1003548115274",
+    "publie": false,
+    "resume": "Heatmaps, enregistrements, rage clicks : installer Clarity gratuitement et repérer où vos visiteurs abandonnent, avec une méthode de lecture simple.",
+    "titre": "Microsoft Clarity : trouver les fuites de conversion de votre site en 30 minutes"
+  },
+  "migrer-vers-shopify-sans-perdre-seo": {
+    "etiquettes": [
+      "Migration",
+      "Shopify"
+    ],
+    "id": "gid://shopify/Article/1003548901706",
+    "publie": true,
+    "resume": "WooCommerce, Prestashop, Wix vers Shopify : redirections, produits, contenus et données. Le plan de migration étape par étape, risques inclus.",
+    "titre": "Migrer vers Shopify sans perdre votre SEO ni vos clients : le plan complet"
+  },
+  "obtenir-plus-avis-google": {
+    "etiquettes": [
+      "Avis",
+      "SEO local"
+    ],
+    "id": "gid://shopify/Article/1003548508490",
+    "publie": false,
+    "resume": "Le bon moment, le bon canal, le bon message : 8 mécaniques concrètes pour collecter des avis réguliers, plus la façon d'y répondre qui rassure.",
+    "titre": "Avis Google : 8 façons d'en obtenir plus (sans jamais enfreindre les règles)"
+  },
+  "optimiser-fiche-google-business-profile": {
+    "etiquettes": [
+      "Google Business Profile",
+      "SEO local"
+    ],
+    "id": "gid://shopify/Article/1003548279114",
+    "publie": false,
+    "resume": "Catégories, services, photos, posts, Q&amp;R : chaque champ de votre fiche Google optimisé pour le pack local, avec les erreurs qui font chuter.",
+    "titre": "Google Business Profile : l'optimisation complète qui fait monter votre fiche dans le pack local"
+  },
+  "page-contact-qui-convertit": {
+    "etiquettes": [
+      "Conversion",
+      "Site vitrine"
+    ],
+    "id": "gid://shopify/Article/1003548541258",
+    "publie": false,
+    "resume": "La page contact reçoit vos visiteurs les plus chauds et les fait fuir : formulaire, réassurance, délais, preuves. Les 7 corrections, exemples inclus.",
+    "titre": "Anatomie d'une page contact qui convertit : 7 éléments que 90 % des sites oublient"
+  },
+  "pixel-meta-api-conversion-shopify": {
+    "etiquettes": [
+      "Meta Ads",
+      "Tracking"
+    ],
+    "id": "gid://shopify/Article/1003548639562",
+    "publie": false,
+    "resume": "Événements en double, données manquantes, iOS : installer proprement le pixel et la CAPI sur Shopify pour que vos campagnes apprennent sur du vrai.",
+    "titre": "Pixel Meta et API de conversion sur Shopify : l'installation propre, pas à pas"
+  },
+  "prix-site-vitrine-2026": {
+    "etiquettes": [
+      "Budget",
+      "Site vitrine"
+    ],
+    "id": "gid://shopify/Article/1003548246346",
+    "publie": false,
+    "resume": "De 0 à 15 000 euros : ce que chaque budget achète réellement, ce qui fait varier le prix et les pièges des offres trop basses.",
+    "titre": "Combien coûte un site vitrine en 2026 ? Les fourchettes honnêtes, poste par poste"
+  },
+  "recherche-mots-cles-methode-intentions": {
+    "etiquettes": [
+      "SEO",
+      "Stratégie"
+    ],
+    "id": "gid://shopify/Article/1003547951434",
+    "publie": true,
+    "resume": "Oubliez le volume brut : la méthode pas à pas pour trouver les mots-clés qui précèdent une demande, avec exemples concrets et outils gratuits.",
+    "titre": "Recherche de mots-clés : la méthode par intentions qui trouve des clients, pas du trafic"
+  },
+  "refonte-site-sans-perdre-seo": {
+    "etiquettes": [
+      "SEO",
+      "Site vitrine"
+    ],
+    "id": "gid://shopify/Article/1003548770634",
+    "publie": false,
+    "resume": "Redirections, URLs, contenus, maillage : la checklist complète avant, pendant et après une refonte pour protéger vos positions Google.",
+    "titre": "Refonte de site : la checklist pour ne pas perdre votre trafic Google"
+  },
+  "search-console-rapports-essentiels": {
+    "etiquettes": [
+      "Search Console",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003548803402",
+    "publie": false,
+    "resume": "Performances, indexation, pages, requêtes : lire Search Console en 15 minutes par semaine et savoir exactement quoi corriger en priorité.",
+    "titre": "Search Console : les 5 rapports qui comptent (et comment les lire chaque semaine)"
+  },
+  "seo-ou-google-ads-par-quoi-commencer": {
+    "etiquettes": [
+      "Meta Ads",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003468620106",
+    "publie": true,
+    "resume": "Délais, coûts, durabilité : le comparatif complet entre SEO et Google Ads, et la réponse adaptée à chaque situation pour savoir par quoi commencer.",
+    "titre": "SEO ou Google Ads, par quoi commencer"
+  },
+  "seo-ou-meta-ads-2026": {
+    "etiquettes": [
+      "Acquisition",
+      "Meta Ads",
+      "SEO"
+    ],
+    "id": "gid://shopify/Article/1003538579786",
+    "publie": true,
+    "resume": "<p>CPC en hausse, IA créative, réponses générées dans Google : le match SEO vs Meta Ads a changé en 2026. Comparatif honnête et cas où il faut combiner les deux.</p>",
+    "titre": "SEO ou Meta Ads en 2026 : quel levier choisir pour votre acquisition ?"
+  },
+  "site-vitrine-pas-de-demandes-2026": {
+    "etiquettes": [
+      "Conversion",
+      "CRO",
+      "Site vitrine"
+    ],
+    "id": "gid://shopify/Article/1003538612554",
+    "publie": true,
+    "resume": "<p>Un site propre qui ne sonne jamais ? Dans 90 % des cas, ce sont les 7 mêmes fuites. Checklist 2026 pour transformer vos visiteurs en demandes.</p>",
+    "titre": "Votre site vitrine ne génère pas de demandes : les 7 corrections prioritaires (2026)"
+  },
+  "structure-compte-meta-ads-2026": {
+    "etiquettes": [
+      "Meta Ads",
+      "Publicité"
+    ],
+    "id": "gid://shopify/Article/1003547918666",
+    "publie": false,
+    "resume": "Combien de campagnes, quelles audiences, quel budget par ensemble : la structure de compte Meta Ads qui évite de brider l'algorithme en 2026.",
+    "titre": "Structure de compte Meta Ads en 2026 : le setup qui laisse l'algorithme travailler"
+  },
+  "vitesse-shopify-optimisations": {
+    "etiquettes": [
+      "Performance",
+      "Shopify"
+    ],
+    "id": "gid://shopify/Article/1003548213578",
+    "publie": false,
+    "resume": "Images, apps, polices, thème : les 11 leviers concrets pour accélérer votre boutique Shopify et améliorer LCP et INP, sans toucher au code.",
+    "titre": "Site Shopify lent : 11 optimisations de vitesse réalisables sans développeur"
+  }
+}

@@ -1,0 +1,27 @@
+<p>Si votre pixel Meta est mal installé, tout le reste est faussé : l'algorithme optimise sur des données incomplètes, vos rapports mentent, et vous prenez des décisions à l'aveugle. Depuis les restrictions de tracking (iOS notamment), l'API de conversion (CAPI) est devenue indispensable en complément du pixel. Voici l'installation propre sur Shopify, pas à pas, et comment vérifier qu'elle fonctionne.</p>
+<h2>Pourquoi vos données sont probablement fausses</h2>
+<p>Le pixel seul, côté navigateur, rate une part croissante des événements : bloqueurs de pub, refus de cookies, limitations iOS. Résultat : des conversions réelles que Meta ne voit pas, donc un algorithme qui apprend mal et un ROAS sous-estimé. <strong>L'API de conversion envoie les événements côté serveur</strong>, là où les bloqueurs n'ont pas de prise, et récupère une grande partie de ces données perdues.</p>
+<h2>Le pixel : l'installation native</h2>
+<p>Sur Shopify, passez par le canal Facebook et Instagram officiel plutôt que par un collage manuel de code : connectez votre compte Business, sélectionnez votre pixel, et Shopify câble automatiquement les événements standards (vue de page, vue de produit, ajout au panier, achat). Évitez de cumuler l'installation native ET un collage manuel : c'est la première cause de comptage en double.</p>
+<h2>Activer l'API de conversion</h2>
+<p>Via le canal Facebook de Shopify, l'API de conversion s'active en quelques clics : elle envoie les mêmes événements depuis le serveur, avec un identifiant d'événement partagé qui permet à Meta de dédoublonner. C'est ce partage d'identifiant qui évite de compter deux fois le même achat (une fois par le pixel, une fois par la CAPI).</p>
+<h2>Vérifier les événements et le double comptage</h2>
+<p>Dans le Gestionnaire d'événements de Meta : vérifiez que chaque événement remonte, qu'il arrive bien par les deux canaux (navigateur et serveur), et surtout que le taux de dédoublonnage est élevé. Un achat qui apparaît deux fois sans dédoublonnage gonfle artificiellement vos résultats et trompe l'algorithme. Faites un achat test pour tout valider avant de lancer du budget.</p>
+<h2>Tester avant de dépenser</h2>
+<p>Ne lancez jamais de campagne sur un tracking non vérifié : passez une commande réelle (ou en mode test), suivez-la dans le Gestionnaire d'événements, confirmez que l'achat, sa valeur et sa devise remontent correctement. Cette vérification est la fondation de toute <a href="/pages/expert-meta-ads">campagne Meta Ads</a> rentable : sans elle, vous optimisez sur du sable. Un <a href="/pages/audit-meta-ads">audit Meta Ads</a> commence d'ailleurs toujours par contrôler l'intégrité du tracking. Chez nous, ce câblage est livré vérifié dans chaque <a href="/pages/agence-shopify">création de boutique Shopify</a> : un tracking propre fait partie du socle, pas des options.</p>
+<h2>FAQ</h2>
+<div class="cc-faq-list">
+<details open>
+<summary><h3 class="cc-faq-list__q">Le pixel seul suffit-il encore en 2026 ?</h3></summary>
+<p>Non : sans l'API de conversion, vous perdez une part significative des événements, surtout sur iOS. Les deux ensemble sont désormais le standard.</p>
+</details>
+<details>
+<summary><h3 class="cc-faq-list__q">Comment savoir si je compte les achats en double ?</h3></summary>
+<p>Dans le Gestionnaire d'événements de Meta, vérifiez le taux de dédoublonnage et comparez le nombre d'achats Meta à vos commandes réelles Shopify. Un écart à la hausse signale un double comptage.</p>
+</details>
+<details>
+<summary><h3 class="cc-faq-list__q">Faut-il un développeur pour installer la CAPI ?</h3></summary>
+<p>Sur Shopify, l'intégration native ne demande pas de code. Un développeur n'est utile que pour des configurations avancées ou des événements personnalisés.</p>
+</details>
+</div>
+<p><strong>Vous n'êtes pas sûr que votre tracking soit fiable ?</strong> <a href="/pages/reserver">Demandez votre audit offert</a> : nous vérifions votre pixel, votre CAPI et la qualité de vos données, sans engagement.</p>

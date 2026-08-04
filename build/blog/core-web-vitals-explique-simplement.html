@@ -1,0 +1,34 @@
+<p>Core Web Vitals, LCP, INP, CLS : ces sigles font peur, alors qu'ils décrivent trois choses simples que ressent chaque visiteur. Est-ce que ça s'affiche vite ? Est-ce que ça réagit quand je clique ? Est-ce que ça saute dans tous les sens ? Voici ces trois métriques traduites en français clair, leur vrai poids en SEO, et les corrections par ordre d'impact, sans jargon de développeur.</p>
+<h2>Les 3 métriques traduites</h2>
+<ul>
+<li>
+<strong>LCP (Largest Contentful Paint)</strong> : le temps d'affichage du plus gros élément visible (souvent l'image de hero). En clair : « au bout de combien de temps la page semble chargée ? » Objectif : sous 2,5 secondes.</li>
+<li>
+<strong>INP (Interaction to Next Paint)</strong> : le temps de réaction après un clic ou un tap. En clair : « quand j'appuie, ça répond en combien de temps ? » Objectif : sous 200 millisecondes.</li>
+<li>
+<strong>CLS (Cumulative Layout Shift)</strong> : la stabilité visuelle. En clair : « est-ce que le contenu saute pendant le chargement et me fait cliquer à côté ? » Objectif : score sous 0,1.</li>
+</ul>
+<h2>Combien ça pèse vraiment en SEO</h2>
+<p>Les Core Web Vitals sont un facteur de classement, mais un facteur parmi beaucoup d'autres : ils départagent surtout des pages équivalentes sur le contenu. Un contenu médiocre ultra-rapide ne battra pas un excellent contenu un peu plus lent. <strong>La vitesse est un multiplicateur, pas un substitut au contenu.</strong> Mais elle pèse aussi sur la conversion, ce qui la rend doublement rentable.</p>
+<h2>Mesurer sur données réelles</h2>
+<p>Deux types de données : les données de laboratoire (test ponctuel, ex. PageSpeed Insights) et les données de terrain (le vécu réel de vos visiteurs sur 28 jours, dans Search Console et PageSpeed). Ce sont les données de terrain qui comptent pour Google : un site peut avoir un bon score de laboratoire et de mauvaises données réelles, ou l'inverse. Fiez-vous au terrain.</p>
+<h2>Corriger le LCP d'abord</h2>
+<p>C'est souvent le plus impactant et le plus accessible. Les leviers : compresser et dimensionner l'image de hero, la charger en priorité, servir les images en WebP, réduire le poids des scripts qui bloquent l'affichage. Sur la plupart des sites, l'image de hero non optimisée est le premier coupable du LCP. Ces corrections rejoignent nos <a href="/blogs/ressources/vitesse-shopify-optimisations">optimisations de vitesse Shopify</a>, valables pour tout site.</p>
+<h2>INP : le nouveau venu qui compte</h2>
+<p>L'INP mesure la réactivité réelle et remplace l'ancien FID : il pénalise les sites surchargés de scripts qui « lag » au clic. Pour l'améliorer : alléger le JavaScript, retirer les scripts inutiles (souvent des apps ou trackers), différer ce qui n'est pas critique. Un site sobre en scripts a naturellement un bon INP. Le CLS, lui, se corrige en réservant l'espace des images et en évitant les éléments qui s'insèrent après coup. Ce diagnostic technique fait partie de notre <a href="/pages/agence-seo">accompagnement SEO</a> — et sur un projet neuf, ces seuils se tiennent dès la <a href="/pages/creation-site-vitrine">création de site vitrine</a> plutôt qu'en rattrapage.</p>
+<h2>FAQ</h2>
+<div class="cc-faq-list">
+<details open>
+<summary><h3 class="cc-faq-list__q">Faut-il viser 100 sur PageSpeed ?</h3></summary>
+<p>Non : visez le vert sur les données de terrain (LCP, INP, CLS dans les seuils), pas un score parfait de laboratoire souvent inatteignable et peu corrélé au vécu réel.</p>
+</details>
+<details>
+<summary><h3 class="cc-faq-list__q">Un mauvais Core Web Vitals fait-il vraiment chuter le classement ?</h3></summary>
+<p>Il peut vous désavantager face à un concurrent équivalent, mais il ne fera pas chuter une page au contenu excellent. Corrigez-le comme un plus, pas comme une urgence absolue si votre contenu est fort.</p>
+</details>
+<details>
+<summary><h3 class="cc-faq-list__q">Qui peut corriger ces métriques ?</h3></summary>
+<p>Beaucoup de corrections (images, apps, scripts) sont accessibles sans développeur. Les optimisations profondes du thème ou du code peuvent en demander un.</p>
+</details>
+</div>
+<p><strong>Vos Core Web Vitals sont dans le rouge et vous ne savez pas quoi prioriser ?</strong> <a href="/pages/reserver">Demandez votre audit offert</a> : nous mesurons vos données réelles et priorisons les corrections par impact, sans engagement.</p>

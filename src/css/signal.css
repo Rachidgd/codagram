@@ -512,6 +512,82 @@
   }
   .prose-cc a:hover { background-image: linear-gradient(var(--color-volt), var(--color-volt)); }
 
+  /* Réponse courte posée en tête d'article : ce que le lecteur — et le moteur
+     — vient chercher, avant de dérouler le raisonnement. */
+  .prose-cc .cc-answer {
+    margin-top: 1.4em;
+    padding: 1rem 1.15rem;
+    border-left: 2px solid var(--color-volt);
+    background: var(--surface-raised);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    color: var(--surface-fg);
+  }
+
+  /* Les tableaux sortent du flux de lecture sur mobile plutôt que de forcer un
+     défilement horizontal sur toute la page. */
+  .prose-cc .cc-table {
+    margin-top: 1.6em;
+    overflow-x: auto;
+    border: 1px solid var(--surface-line);
+    border-radius: var(--radius-sm);
+  }
+  .prose-cc table {
+    width: 100%;
+    min-width: 30rem;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+  .prose-cc th, .prose-cc td {
+    padding: 0.7rem 0.9rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--surface-line);
+  }
+  .prose-cc thead th {
+    font-weight: 500;
+    color: var(--surface-fg);
+    background: var(--surface-raised);
+    white-space: nowrap;
+  }
+  .prose-cc tbody th { font-weight: 500; color: var(--surface-fg); }
+  .prose-cc td { color: var(--surface-fg-muted); }
+  .prose-cc tbody tr:last-child th,
+  .prose-cc tbody tr:last-child td { border-bottom: 0; }
+
+  /* FAQ d'article : même dépliant que sur les pages, sans le picto. */
+  .prose-cc .cc-faq-list { display: grid; gap: 0.4rem; margin-top: 1.4em; }
+  .prose-cc .cc-faq-list > * + * { margin-top: 0; }
+  .prose-cc .cc-faq-list details {
+    border: 1px solid var(--surface-line);
+    border-radius: var(--radius-sm);
+    background: var(--surface-raised);
+    transition: border-color 0.2s linear;
+  }
+  .prose-cc .cc-faq-list details[open] {
+    border-color: color-mix(in oklab, var(--color-volt) 40%, transparent);
+  }
+  .prose-cc .cc-faq-list summary {
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  .prose-cc .cc-faq-list summary::-webkit-details-marker { display: none; }
+  .prose-cc .cc-faq-list__q {
+    display: block;
+    margin: 0;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.012em;
+    color: var(--surface-fg);
+  }
+  .prose-cc .cc-faq-list details > p {
+    margin-top: 0;
+    padding: 0 1rem 1rem;
+    font-size: var(--text-sm);
+    line-height: 1.65;
+  }
+
   .visually-hidden {
     position: absolute !important;
     width: 1px; height: 1px;

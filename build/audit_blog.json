@@ -1,0 +1,1090 @@
+[
+  {
+    "handle": "ab-testing-petit-trafic",
+    "titre": "A/B testing avec peu de trafic : ce que vous pouvez vraiment tester (et comment)",
+    "publie": false,
+    "etiquettes": [
+      "A/B testing",
+      "CRO"
+    ],
+    "mots": 577,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 71,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/microsoft-clarity-trouver-fuites-conversion",
+      "/pages/optimisation-cro"
+    ]
+  },
+  {
+    "handle": "abandon-panier-corrections",
+    "titre": "Abandon de panier : 9 corrections à faire AVANT les emails de relance",
+    "publie": false,
+    "etiquettes": [
+      "Conversion",
+      "Shopify"
+    ],
+    "mots": 553,
+    "h2": 7,
+    "h3": 0,
+    "intro_mots": 57,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/fiche-produit-structure-conversion",
+      "/pages/audit-ecommerce"
+    ]
+  },
+  {
+    "handle": "ad-library-analyser-pubs-concurrents",
+    "titre": "Ad Library : la méthode pour décoder (légalement) les publicités de vos concurrents",
+    "publie": false,
+    "etiquettes": [
+      "Analyse concurrentielle",
+      "Meta Ads"
+    ],
+    "mots": 577,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 63,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/pages/analyse-concurrentielle-meta-ads",
+      "/pages/expert-meta-ads"
+    ]
+  },
+  {
+    "handle": "agence-seo-ou-consultant-seo",
+    "titre": "Agence SEO ou consultant SEO : comment choisir ?",
+    "publie": true,
+    "etiquettes": [
+      "Agence SEO",
+      "Pilote éditorial",
+      "SEO"
+    ],
+    "mots": 1281,
+    "h2": 8,
+    "h3": 13,
+    "intro_mots": 95,
+    "tableau": true,
+    "liste": 1,
+    "faq": 0,
+    "liens_internes": 2,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines"
+    ],
+    "cibles": [
+      "/",
+      "/pages/reserver"
+    ]
+  },
+  {
+    "handle": "ai-overviews-rester-visible",
+    "titre": "AI Overviews : comment rester visible quand Google répond à la place de votre site",
+    "publie": false,
+    "etiquettes": [
+      "GEO",
+      "SEO"
+    ],
+    "mots": 563,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 57,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/eeat-prouver-expertise-google",
+      "/pages/agence-seo"
+    ]
+  },
+  {
+    "handle": "angles-creatifs-publicite-meta",
+    "titre": "12 angles créatifs qui arrêtent le scroll (avec exemples décortiqués)",
+    "publie": false,
+    "etiquettes": [
+      "Créatives",
+      "Meta Ads"
+    ],
+    "mots": 563,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 61,
+    "tableau": false,
+    "liste": 3,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/ad-library-analyser-pubs-concurrents",
+      "/pages/expert-meta-ads"
+    ]
+  },
+  {
+    "handle": "apps-shopify-utiles-et-a-eviter",
+    "titre": "Apps Shopify : les 10 vraiment utiles (et celles qui ruinent votre vitesse)",
+    "publie": false,
+    "etiquettes": [
+      "Apps",
+      "Shopify"
+    ],
+    "mots": 538,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 60,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/vitesse-shopify-optimisations",
+      "/pages/agence-shopify"
+    ]
+  },
+  {
+    "handle": "balises-title-formules-ctr",
+    "titre": "Balises title : 15 formules qui augmentent le taux de clic (avec avant/après)",
+    "publie": true,
+    "etiquettes": [
+      "CTR",
+      "SEO"
+    ],
+    "mots": 633,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 66,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/search-console-rapports-essentiels",
+      "/pages/agence-seo"
+    ]
+  },
+  {
+    "handle": "boutique-shopify-qui-convertit-2026",
+    "titre": "Créer une boutique Shopify qui convertit en 2026 : la checklist complète",
+    "publie": true,
+    "etiquettes": [
+      "Conversion",
+      "E-commerce",
+      "Shopify"
+    ],
+    "mots": 436,
+    "h2": 7,
+    "h3": 0,
+    "intro_mots": 37,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 6,
+    "liens_accueil": [
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/#audit",
+      "/blogs/ressources/combien-coute-une-boutique-shopify",
+      "/pages/agence-shopify",
+      "/pages/audit-ecommerce",
+      "/pages/optimisation-cro",
+      "/pages/seo-ecommerce"
+    ]
+  },
+  {
+    "handle": "cahier-des-charges-site-vitrine",
+    "titre": "Cahier des charges d'un site vitrine : le modèle complet à remplir avant de demander un devis",
+    "publie": false,
+    "etiquettes": [
+      "Création de site",
+      "Site vitrine"
+    ],
+    "mots": 688,
+    "h2": 7,
+    "h3": 0,
+    "intro_mots": 69,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/site-vitrine-pas-de-demandes-2026",
+      "/pages/creation-site-vitrine"
+    ]
+  },
+  {
+    "handle": "calculer-roas-avec-marge",
+    "titre": "ROAS : le calculer avec votre marge (et arrêter de croire au chiffre d'Ads Manager)",
+    "publie": false,
+    "etiquettes": [
+      "Meta Ads",
+      "Rentabilité"
+    ],
+    "mots": 591,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 69,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/pages/audit-meta-ads",
+      "/pages/expert-meta-ads"
+    ]
+  },
+  {
+    "handle": "checklist-audit-seo",
+    "titre": "Checklist audit SEO : les 12 points que nous vérifions en premier sur chaque site",
+    "publie": true,
+    "etiquettes": [
+      "Audit SEO",
+      "SEO"
+    ],
+    "mots": 609,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 67,
+    "tableau": false,
+    "liste": 2,
+    "faq": 3,
+    "liens_internes": 2,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines"
+    ],
+    "cibles": [
+      "/",
+      "/pages/reserver"
+    ]
+  },
+  {
+    "handle": "collections-shopify-architecture-seo",
+    "titre": "Collections Shopify : l'architecture qui fait ranker ET vendre votre catalogue",
+    "publie": true,
+    "etiquettes": [
+      "SEO e-commerce",
+      "Shopify"
+    ],
+    "mots": 607,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 66,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 3,
+    "liens_accueil": [
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/#audit",
+      "/pages/agence-shopify",
+      "/pages/seo-ecommerce"
+    ]
+  },
+  {
+    "handle": "combien-coute-audit-seo",
+    "titre": "Combien coûte un audit SEO ? Prix, livrables et pièges à éviter",
+    "publie": true,
+    "etiquettes": [
+      "Audit SEO",
+      "Pilote éditorial",
+      "SEO"
+    ],
+    "mots": 1359,
+    "h2": 8,
+    "h3": 9,
+    "intro_mots": 93,
+    "tableau": true,
+    "liste": 1,
+    "faq": 0,
+    "liens_internes": 2,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines"
+    ],
+    "cibles": [
+      "/",
+      "/pages/reserver"
+    ]
+  },
+  {
+    "handle": "combien-coute-le-seo-en-2026-et-pourquoi-fuir-le-200-euros-par-mois",
+    "titre": "Combien coûte le SEO en 2026 (et pourquoi fuir le 200 euros par mois)",
+    "publie": false,
+    "etiquettes": [
+      "SEO"
+    ],
+    "mots": 1403,
+    "h2": 8,
+    "h3": 10,
+    "intro_mots": 96,
+    "tableau": true,
+    "liste": 0,
+    "faq": 0,
+    "liens_internes": 5,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines"
+    ],
+    "cibles": [
+      "/",
+      "/blogs/ressources/checklist-audit-seo",
+      "/pages/agence-seo",
+      "/pages/audit-seo",
+      "/pages/reserver"
+    ]
+  },
+  {
+    "handle": "combien-coute-une-boutique-shopify",
+    "titre": "Combien coûte une boutique Shopify",
+    "publie": true,
+    "etiquettes": [
+      "Shopify"
+    ],
+    "mots": 1159,
+    "h2": 7,
+    "h3": 11,
+    "intro_mots": 89,
+    "tableau": true,
+    "liste": 1,
+    "faq": 0,
+    "liens_internes": 2,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines"
+    ],
+    "cibles": [
+      "/",
+      "/pages/reserver"
+    ]
+  },
+  {
+    "handle": "comment-choisir-votre-agence-seo-sans-vous-faire-avoir",
+    "titre": "Comment choisir votre agence SEO sans vous faire avoir",
+    "publie": false,
+    "etiquettes": [
+      "SEO"
+    ],
+    "mots": 1180,
+    "h2": 7,
+    "h3": 13,
+    "intro_mots": 83,
+    "tableau": true,
+    "liste": 1,
+    "faq": 0,
+    "liens_internes": 5,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines"
+    ],
+    "cibles": [
+      "/",
+      "/blogs/ressources/checklist-audit-seo",
+      "/pages/agence-seo",
+      "/pages/audit-seo",
+      "/pages/reserver"
+    ]
+  },
+  {
+    "handle": "core-web-vitals-explique-simplement",
+    "titre": "Core Web Vitals expliqués simplement : LCP, INP, CLS et ce qui compte vraiment",
+    "publie": true,
+    "etiquettes": [
+      "Performance",
+      "SEO"
+    ],
+    "mots": 634,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 67,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/vitesse-shopify-optimisations",
+      "/pages/agence-seo"
+    ]
+  },
+  {
+    "handle": "creer-boutique-shopify-methode-prix-erreurs",
+    "titre": "Créer une boutique Shopify : méthode, prix et erreurs à éviter",
+    "publie": false,
+    "etiquettes": [
+      "Pilote éditorial",
+      "Shopify"
+    ],
+    "mots": 7,
+    "h2": 0,
+    "h3": 0,
+    "intro_mots": 7,
+    "tableau": false,
+    "liste": 0,
+    "faq": 0,
+    "liens_internes": 0,
+    "liens_accueil": [],
+    "cibles": []
+  },
+  {
+    "handle": "creer-pages-villes-sans-duplicate",
+    "titre": "Pages villes : la méthode pour ranker localement sans dupliquer le contenu",
+    "publie": false,
+    "etiquettes": [
+      "Pages villes",
+      "SEO local"
+    ],
+    "mots": 565,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 61,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 5,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/maillage-interne-cocon-semantique",
+      "/pages/seo-local",
+      "/pages/seo-par-ville"
+    ]
+  },
+  {
+    "handle": "delais-resultats-seo",
+    "titre": "SEO : combien de temps avant les premiers résultats ? Les vrais délais, cas par cas",
+    "publie": true,
+    "etiquettes": [
+      "SEO",
+      "Stratégie"
+    ],
+    "mots": 655,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 71,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 6,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/guide-seo-leads-2026",
+      "/blogs/ressources/search-console-rapports-essentiels",
+      "/pages/agence-seo",
+      "/pages/resultats"
+    ]
+  },
+  {
+    "handle": "donnees-structurees-produit-google",
+    "titre": "Données structurées produit : afficher prix, stock et étoiles dans Google",
+    "publie": false,
+    "etiquettes": [
+      "Données structurées",
+      "SEO e-commerce"
+    ],
+    "mots": 538,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 63,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/collections-shopify-architecture-seo",
+      "/pages/seo-ecommerce"
+    ]
+  },
+  {
+    "handle": "eeat-prouver-expertise-google",
+    "titre": "E-E-A-T : comment prouver votre expertise à Google (et aux IA) sans être une grande marque",
+    "publie": false,
+    "etiquettes": [
+      "E-E-A-T",
+      "SEO"
+    ],
+    "mots": 586,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 64,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/guide-seo-leads-2026",
+      "/pages/agence-seo"
+    ]
+  },
+  {
+    "handle": "fiche-produit-structure-conversion",
+    "titre": "Fiche produit parfaite : la structure en 9 blocs qui transforme les visiteurs en acheteurs",
+    "publie": false,
+    "etiquettes": [
+      "Conversion",
+      "Shopify"
+    ],
+    "mots": 620,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 57,
+    "tableau": false,
+    "liste": 2,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/pages/agence-shopify",
+      "/pages/optimisation-cro"
+    ]
+  },
+  {
+    "handle": "guide-seo-leads-2026",
+    "titre": "Guide SEO 2026 : transformer votre référencement en machine à leads",
+    "publie": true,
+    "etiquettes": [
+      "Guide",
+      "Leads",
+      "SEO"
+    ],
+    "mots": 513,
+    "h2": 4,
+    "h3": 5,
+    "intro_mots": 53,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 5,
+    "liens_accueil": [
+      "Demandez votre audit SEO offert"
+    ],
+    "cibles": [
+      "/#audit",
+      "/pages/agence-seo",
+      "/pages/audit-seo",
+      "/pages/resultats",
+      "/pages/seo-local"
+    ]
+  },
+  {
+    "handle": "maillage-interne-cocon-semantique",
+    "titre": "Maillage interne : le guide du cocon sémantique qui muscle vos pages business",
+    "publie": false,
+    "etiquettes": [
+      "Maillage interne",
+      "SEO"
+    ],
+    "mots": 661,
+    "h2": 7,
+    "h3": 0,
+    "intro_mots": 71,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/recherche-mots-cles-methode-intentions",
+      "/pages/agence-seo"
+    ]
+  },
+  {
+    "handle": "microsoft-clarity-trouver-fuites-conversion",
+    "titre": "Microsoft Clarity : trouver les fuites de conversion de votre site en 30 minutes",
+    "publie": false,
+    "etiquettes": [
+      "Analytics",
+      "CRO"
+    ],
+    "mots": 574,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 59,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/pages/audit-ecommerce",
+      "/pages/optimisation-cro"
+    ]
+  },
+  {
+    "handle": "migrer-vers-shopify-sans-perdre-seo",
+    "titre": "Migrer vers Shopify sans perdre votre SEO ni vos clients : le plan complet",
+    "publie": true,
+    "etiquettes": [
+      "Migration",
+      "Shopify"
+    ],
+    "mots": 552,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 61,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/refonte-site-sans-perdre-seo",
+      "/pages/agence-shopify"
+    ]
+  },
+  {
+    "handle": "obtenir-plus-avis-google",
+    "titre": "Avis Google : 8 façons d'en obtenir plus (sans jamais enfreindre les règles)",
+    "publie": false,
+    "etiquettes": [
+      "Avis",
+      "SEO local"
+    ],
+    "mots": 588,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 59,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/optimiser-fiche-google-business-profile",
+      "/pages/seo-local"
+    ]
+  },
+  {
+    "handle": "optimiser-fiche-google-business-profile",
+    "titre": "Google Business Profile : l'optimisation complète qui fait monter votre fiche dans le pack local",
+    "publie": false,
+    "etiquettes": [
+      "Google Business Profile",
+      "SEO local"
+    ],
+    "mots": 541,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 56,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/pages/seo-local",
+      "/pages/seo-par-ville"
+    ]
+  },
+  {
+    "handle": "page-contact-qui-convertit",
+    "titre": "Anatomie d'une page contact qui convertit : 7 éléments que 90 % des sites oublient",
+    "publie": false,
+    "etiquettes": [
+      "Conversion",
+      "Site vitrine"
+    ],
+    "mots": 620,
+    "h2": 9,
+    "h3": 0,
+    "intro_mots": 60,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/pages/creation-site-vitrine",
+      "/pages/optimisation-cro"
+    ]
+  },
+  {
+    "handle": "pixel-meta-api-conversion-shopify",
+    "titre": "Pixel Meta et API de conversion sur Shopify : l'installation propre, pas à pas",
+    "publie": false,
+    "etiquettes": [
+      "Meta Ads",
+      "Tracking"
+    ],
+    "mots": 550,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 60,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/pages/audit-meta-ads",
+      "/pages/expert-meta-ads"
+    ]
+  },
+  {
+    "handle": "prix-site-vitrine-2026",
+    "titre": "Combien coûte un site vitrine en 2026 ? Les fourchettes honnêtes, poste par poste",
+    "publie": false,
+    "etiquettes": [
+      "Budget",
+      "Site vitrine"
+    ],
+    "mots": 662,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 66,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 5,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/cahier-des-charges-site-vitrine",
+      "/blogs/ressources/site-vitrine-pas-de-demandes-2026",
+      "/pages/creation-site-vitrine"
+    ]
+  },
+  {
+    "handle": "recherche-mots-cles-methode-intentions",
+    "titre": "Recherche de mots-clés : la méthode par intentions qui trouve des clients, pas du trafic",
+    "publie": true,
+    "etiquettes": [
+      "SEO",
+      "Stratégie"
+    ],
+    "mots": 568,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 64,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 3,
+    "liens_accueil": [
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/#audit",
+      "/blogs/ressources/checklist-audit-seo",
+      "/pages/agence-seo"
+    ]
+  },
+  {
+    "handle": "refonte-site-sans-perdre-seo",
+    "titre": "Refonte de site : la checklist pour ne pas perdre votre trafic Google",
+    "publie": false,
+    "etiquettes": [
+      "SEO",
+      "Site vitrine"
+    ],
+    "mots": 541,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 54,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/checklist-audit-seo",
+      "/pages/creation-site-vitrine"
+    ]
+  },
+  {
+    "handle": "search-console-rapports-essentiels",
+    "titre": "Search Console : les 5 rapports qui comptent (et comment les lire chaque semaine)",
+    "publie": false,
+    "etiquettes": [
+      "Search Console",
+      "SEO"
+    ],
+    "mots": 543,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 58,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/pages/agence-seo",
+      "/pages/audit-seo"
+    ]
+  },
+  {
+    "handle": "seo-ou-google-ads-par-quoi-commencer",
+    "titre": "SEO ou Google Ads, par quoi commencer",
+    "publie": true,
+    "etiquettes": [
+      "Meta Ads",
+      "SEO"
+    ],
+    "mots": 1068,
+    "h2": 7,
+    "h3": 12,
+    "intro_mots": 96,
+    "tableau": true,
+    "liste": 0,
+    "faq": 0,
+    "liens_internes": 2,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines"
+    ],
+    "cibles": [
+      "/",
+      "/pages/reserver"
+    ]
+  },
+  {
+    "handle": "seo-ou-meta-ads-2026",
+    "titre": "SEO ou Meta Ads en 2026 : quel levier choisir pour votre acquisition ?",
+    "publie": true,
+    "etiquettes": [
+      "Acquisition",
+      "Meta Ads",
+      "SEO"
+    ],
+    "mots": 484,
+    "h2": 5,
+    "h3": 0,
+    "intro_mots": 55,
+    "tableau": false,
+    "liste": 1,
+    "faq": 3,
+    "liens_internes": 5,
+    "liens_accueil": [
+      "Demandez un audit offert"
+    ],
+    "cibles": [
+      "/#audit",
+      "/pages/agence-seo",
+      "/pages/analyse-concurrentielle-meta-ads",
+      "/pages/audit-meta-ads",
+      "/pages/expert-meta-ads"
+    ]
+  },
+  {
+    "handle": "site-vitrine-pas-de-demandes-2026",
+    "titre": "Votre site vitrine ne génère pas de demandes : les 7 corrections prioritaires (2026)",
+    "publie": true,
+    "etiquettes": [
+      "Conversion",
+      "CRO",
+      "Site vitrine"
+    ],
+    "mots": 478,
+    "h2": 8,
+    "h3": 0,
+    "intro_mots": 32,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 5,
+    "liens_accueil": [
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/#audit",
+      "/pages/audit-seo",
+      "/pages/creation-site-vitrine",
+      "/pages/optimisation-cro",
+      "/pages/seo-local"
+    ]
+  },
+  {
+    "handle": "structure-compte-meta-ads-2026",
+    "titre": "Structure de compte Meta Ads en 2026 : le setup qui laisse l'algorithme travailler",
+    "publie": false,
+    "etiquettes": [
+      "Meta Ads",
+      "Publicité"
+    ],
+    "mots": 676,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 73,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/pages/audit-meta-ads",
+      "/pages/expert-meta-ads"
+    ]
+  },
+  {
+    "handle": "vitesse-shopify-optimisations",
+    "titre": "Site Shopify lent : 11 optimisations de vitesse réalisables sans développeur",
+    "publie": false,
+    "etiquettes": [
+      "Performance",
+      "Shopify"
+    ],
+    "mots": 558,
+    "h2": 6,
+    "h3": 0,
+    "intro_mots": 53,
+    "tableau": false,
+    "liste": 0,
+    "faq": 3,
+    "liens_internes": 4,
+    "liens_accueil": [
+      "création de sites Shopify et vitrines",
+      "Demandez votre audit offert"
+    ],
+    "cibles": [
+      "/",
+      "/#audit",
+      "/blogs/ressources/boutique-shopify-qui-convertit-2026",
+      "/pages/agence-shopify"
+    ]
+  }
+]
