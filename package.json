@@ -1,0 +1,15 @@
+{
+  "name": "elyskin-paris-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Thème Shopify sur mesure — Ély'Skin Paris. Cabinet de soin esthétique.",
+  "scripts": {
+    "build": "tailwindcss -i ./src/ely.css -o ./assets/ely.css --minify",
+    "dev": "tailwindcss -i ./src/ely.css -o ./assets/ely.css --watch",
+    "check": "node ./scripts/theme-check.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}

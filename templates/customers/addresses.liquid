@@ -1,0 +1,46 @@
+<section class="section">
+  <div class="lisiere compte">
+    <a class="lien text-sm" href="{{ routes.account_url }}">{{ 'compte.retour_compte' | t }}</a>
+    <h1 class="mt-6 equilibre">{{ 'compte.adresses' | t }}</h1>
+    <span class="filet mt-7 mb-10 w-full max-w-25" aria-hidden="true"></span>
+
+    {%- paginate customer.addresses by 10 -%}
+      {%- for adresse in customer.addresses -%}
+        <div class="compte__adresse">
+          <address class="text-sm not-italic leading-relaxed">{{ adresse | format_address }}</address>
+        </div>
+      {%- endfor -%}
+    {%- endpaginate -%}
+
+    {%- form 'customer_address', customer.new_address, class: 'formulaire mt-10' -%}
+      <p class="surtitre">{{ 'compte.adresses' | t }}</p>
+      <div class="formulaire__rangee formulaire__rangee--deux">
+        <label class="champ">
+          <input type="text" name="address[first_name]" id="adresse-prenom" class="champ__saisie" autocomplete="given-name" placeholder=" ">
+          <span class="champ__label">{{ 'compte.prenom' | t }}</span>
+        </label>
+        <label class="champ">
+          <input type="text" name="address[last_name]" id="adresse-nom" class="champ__saisie" autocomplete="family-name" placeholder=" ">
+          <span class="champ__label">{{ 'compte.nom' | t }}</span>
+        </label>
+      </div>
+      <label class="champ">
+        <input type="text" name="address[address1]" id="adresse-rue" class="champ__saisie" autocomplete="address-line1" placeholder=" ">
+        <span class="champ__label">{{ 'cabinet.adresse' | t }}</span>
+      </label>
+      <div class="formulaire__rangee formulaire__rangee--deux">
+        <label class="champ">
+          <input type="text" name="address[zip]" id="adresse-cp" class="champ__saisie" autocomplete="postal-code" placeholder=" ">
+          <span class="champ__label">Code postal</span>
+        </label>
+        <label class="champ">
+          <input type="text" name="address[city]" id="adresse-ville" class="champ__saisie" autocomplete="address-level2" placeholder=" ">
+          <span class="champ__label">Ville</span>
+        </label>
+      </div>
+      <div class="formulaire__actions">
+        <button type="submit" class="btn">{{ 'general.voir_plus' | t }}</button>
+      </div>
+    {%- endform -%}
+  </div>
+</section>

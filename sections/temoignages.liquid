@@ -1,0 +1,138 @@
+{%- comment -%}
+  Témoignages.
+
+  Volontairement sobres : pas d'étoiles, pas de photos de banque d'images, pas
+  de note globale inventée. Le protocole concerné est cité — c'est ce qui rend
+  un avis crédible et exploitable pour la décision.
+{%- endcomment -%}
+
+<section
+  id="{{ section.settings.ancre | default: 'temoignages' | handleize }}"
+  class="section {{ section.settings.surface }}"
+  {% if section.settings.surface == 'surface-sombre' %}
+    data-entete-inverse
+  {% endif %}
+>
+  <div class="lisiere">
+    <div class="grille-12 gap-y-8">
+      <div class="col-span-12 lg:col-span-6">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+      </div>
+      {%- if section.settings.lien_avis != blank -%}
+        <div class="col-span-12 lg:col-span-4 lg:col-start-9 self-end" data-reveal>
+          {%- render 'bouton',
+            libelle: section.settings.libelle_avis,
+            lien: section.settings.lien_avis,
+            style: 'ligne',
+            fleche: true
+          -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div
+      class="mt-12 grid gap-6 md:grid-cols-2 lg:mt-16 lg:grid-cols-3"
+      data-reveal-groupe
+      data-reveal-pas="90"
+    >
+      {%- for bloc in section.blocks -%}
+        <figure class="temoignage" data-reveal {{ bloc.shopify_attributes }}>
+          <blockquote class="temoignage__texte">{{ bloc.settings.texte }}</blockquote>
+          <figcaption class="temoignage__signature">
+            <span class="temoignage__trait" aria-hidden="true"></span>
+            <span>
+              <span class="text-encre">{{ bloc.settings.auteur }}</span>
+              {%- if bloc.settings.protocole != blank -%}
+                <span class="block">{{ bloc.settings.protocole }}</span>
+              {%- endif -%}
+            </span>
+          </figcaption>
+        </figure>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Témoignages",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ancre",
+      "label": "Ancre",
+      "info": "Permet de pointer vers cette section depuis un lien : #temoignages",
+      "default": "temoignages"
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" }
+      ],
+      "default": "surface-craie"
+    },
+    { "type": "text", "id": "index", "label": "Index", "default": "07" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Retours" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Ce qu'en disent celles et ceux qui reviennent."
+    },
+    { "type": "text", "id": "libelle_avis", "label": "Libellé du lien", "default": "Lire tous les avis" },
+    { "type": "url", "id": "lien_avis", "label": "Lien vers la fiche d'avis" }
+  ],
+  "blocks": [
+    {
+      "type": "temoignage",
+      "name": "Témoignage",
+      "limit": 9,
+      "settings": [
+        { "type": "textarea", "id": "texte", "label": "Témoignage" },
+        { "type": "text", "id": "auteur", "label": "Signature", "default": "Prénom, âge" },
+        { "type": "text", "id": "protocole", "label": "Protocole suivi" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Témoignages",
+      "blocks": [
+        {
+          "type": "temoignage",
+          "settings": {
+            "texte": "On m'a dit non à la première séance. J'ai compris pourquoi en dix minutes, et le protocole proposé après a tenu ses délais.",
+            "auteur": "Camille, 34 ans",
+            "protocole": "Peeling — 4 séances"
+          }
+        },
+        {
+          "type": "temoignage",
+          "settings": {
+            "texte": "Le bilan m'a évité une cure que j'étais prête à payer ailleurs. Trois séances ont suffi.",
+            "auteur": "Inès, 41 ans",
+            "protocole": "Microneedling — 3 séances"
+          }
+        },
+        {
+          "type": "temoignage",
+          "settings": {
+            "texte": "Les photos de suivi, c'est ce qui m'a convaincue. On voit ce qui bouge, et on voit aussi ce qui ne bouge pas.",
+            "auteur": "Sarah, 29 ans",
+            "protocole": "Hydrafacial — entretien mensuel"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

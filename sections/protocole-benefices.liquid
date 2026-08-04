@@ -1,0 +1,131 @@
+{%- comment -%}
+  Bénéfices — la section qui porte la conversion.
+
+  Chaque bloc énonce une situation de départ puis ce qu'elle devient. C'est la
+  transformation qui décide, pas la liste des caractéristiques de l'appareil.
+{%- endcomment -%}
+
+<section class="section {{ section.settings.surface }}" id="{{ section.settings.ancre | default: 'benefices' }}">
+  <div class="lisiere">
+    <div class="grille-12 gap-y-8">
+      <div class="col-span-12 lg:col-span-5">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+      </div>
+      {%- if section.settings.chapo != blank -%}
+        <div
+          class="col-span-12 lg:col-span-5 lg:col-start-8 self-end text-sm text-grain"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          {{ section.settings.chapo }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div
+      class="methode__grille mt-12 lg:mt-16"
+      data-reveal-groupe
+      data-reveal-pas="80"
+    >
+      {%- for bloc in section.blocks -%}
+        <div class="benefice" data-reveal {{ bloc.shopify_attributes }}>
+          {%- if bloc.settings.avant != blank -%}
+            <p class="benefice__avant">{{ bloc.settings.avant }}</p>
+          {%- endif -%}
+          <p class="benefice__apres">{{ bloc.settings.apres }}</p>
+          {%- if bloc.settings.texte != blank -%}
+            <p class="benefice__texte">{{ bloc.settings.texte }}</p>
+          {%- endif -%}
+          {%- if bloc.settings.delai != blank -%}
+            <span class="mesure">
+              {{ 'protocole.resultat' | t }}
+              <span class="mesure__valeur">{{ bloc.settings.delai }}</span>
+            </span>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Protocole — bénéfices",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" }
+      ],
+      "default": ""
+    },
+    { "type": "text", "id": "ancre", "label": "Ancre", "default": "benefices" },
+    { "type": "text", "id": "index", "label": "Index", "default": "01" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Ce que ça change" },
+    { "type": "textarea", "id": "titre", "label": "Titre", "default": "Avant, après." },
+    {
+      "type": "textarea",
+      "id": "chapo",
+      "label": "Texte d'accompagnement",
+      "default": "Les délais annoncés sont ceux constatés au cabinet sur une peau qui suit le protocole. Ils ne constituent pas une garantie de résultat."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefice",
+      "name": "Bénéfice",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "avant", "label": "Situation de départ", "default": "Aujourd'hui" },
+        { "type": "textarea", "id": "apres", "label": "Ce que ça devient", "default": "Nouveau bénéfice" },
+        { "type": "textarea", "id": "texte", "label": "Précision" },
+        { "type": "text", "id": "delai", "label": "Délai constaté" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Protocole — bénéfices",
+      "blocks": [
+        {
+          "type": "benefice",
+          "settings": {
+            "avant": "Un teint qui ne suit plus",
+            "apres": "Une peau lisse et lumineuse dès la sortie",
+            "texte": "L'aspiration retire ce que le nettoyage quotidien ne va pas chercher. Le relief redevient régulier, la lumière accroche à nouveau.",
+            "delai": "dès la première séance"
+          }
+        },
+        {
+          "type": "benefice",
+          "settings": {
+            "avant": "Des pores visibles en permanence",
+            "apres": "Un grain resserré, un maquillage qui tient",
+            "texte": "En désengorgeant les pores, on réduit ce qui les rend visibles. L'effet se consolide sur trois à quatre séances rapprochées.",
+            "delai": "3 à 4 séances"
+          }
+        },
+        {
+          "type": "benefice",
+          "settings": {
+            "avant": "Une peau qui tiraille après chaque soin",
+            "apres": "Un confort immédiat, sans rebond",
+            "texte": "L'infusion de sérums se fait dans le même geste que l'extraction : la barrière cutanée n'est jamais laissée à nu.",
+            "delai": "immédiat"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

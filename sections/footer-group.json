@@ -1,0 +1,43 @@
+{
+  "type": "footer",
+  "name": "Pied de page",
+  "sections": {
+    "pied": {
+      "type": "pied",
+      "blocks": {
+        "c1": {
+          "type": "colonne",
+          "settings": {
+            "titre": "Protocoles",
+            "menu": ""
+          }
+        },
+        "c2": {
+          "type": "colonne",
+          "settings": {
+            "titre": "Le cabinet",
+            "menu": "footer"
+          }
+        },
+        "c3": {
+          "type": "coordonnees",
+          "settings": {
+            "titre": "Nous trouver"
+          }
+        }
+      },
+      "block_order": ["c1", "c2", "c3"],
+      "settings": {
+        "afficher_relance": true,
+        "index_relance": "09",
+        "surtitre_relance": "Premier rendez-vous",
+        "titre_relance": "Un bilan avant tout soin. C'est là que tout commence.",
+        "libelle_secondaire": "Poser une question",
+        "lien_secondaire": "/pages/contact",
+        "phrase": "Une peau se lit avant de se traiter. Chaque protocole part d'un bilan, se règle sur votre calendrier, et se corrige séance après séance.",
+        "menu_legal": ""
+      }
+    }
+  },
+  "order": ["pied"]
+}

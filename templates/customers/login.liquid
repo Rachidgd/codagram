@@ -1,0 +1,38 @@
+<section class="section">
+  <div class="lisiere compte">
+    <h1 class="equilibre">{{ 'compte.connexion' | t }}</h1>
+    <span class="filet mt-7 mb-10 w-full max-w-25" aria-hidden="true"></span>
+
+    {%- form 'customer_login', class: 'formulaire compte__formulaire' -%}
+      {{ form.errors | default_errors }}
+      <label class="champ">
+        <input type="email" name="customer[email]" id="login-email" class="champ__saisie" autocomplete="email" placeholder=" " required>
+        <span class="champ__label">{{ 'formulaire.email' | t }}</span>
+      </label>
+      <label class="champ">
+        <input type="password" name="customer[password]" id="login-mdp" class="champ__saisie" autocomplete="current-password" placeholder=" " required>
+        <span class="champ__label">{{ 'compte.mot_de_passe' | t }}</span>
+      </label>
+      <div class="formulaire__actions">
+        <button type="submit" class="btn">{{ 'compte.connexion' | t }}</button>
+        <a class="lien text-sm" href="{{ routes.account_register_url }}">{{ 'compte.creer' | t }}</a>
+      </div>
+    {%- endform -%}
+
+    <div class="compte__secondaire">
+      {%- form 'recover_customer_password', class: 'formulaire' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="formulaire__message formulaire__message--succes" role="status">{{ 'formulaire.succes' | t }}</p>
+        {%- endif -%}
+        <p class="surtitre">{{ 'compte.mot_de_passe_oublie' | t }}</p>
+        <label class="champ">
+          <input type="email" name="email" id="recover-email" class="champ__saisie" autocomplete="email" placeholder=" " required>
+          <span class="champ__label">{{ 'formulaire.email' | t }}</span>
+        </label>
+        <div class="formulaire__actions">
+          <button type="submit" class="btn btn--ligne">{{ 'compte.reinitialiser' | t }}</button>
+        </div>
+      {%- endform -%}
+    </div>
+  </div>
+</section>

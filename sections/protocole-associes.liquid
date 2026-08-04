@@ -1,0 +1,114 @@
+{%- comment -%}
+  Protocoles associés — maillage interne entre les pages de soin.
+
+  Placés en fin de page, ils captent le visiteur qui n'est pas convaincu par
+  le protocole courant sans le renvoyer vers l'accueil.
+{%- endcomment -%}
+
+<section class="section-serree {{ section.settings.surface }}">
+  <div class="lisiere">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="surtitre" data-index="{{ section.settings.index }}" data-reveal>
+          {{ section.settings.surtitre }}
+        </p>
+        {%- if section.settings.titre != blank -%}
+          <h2 class="mt-4 text-2xl equilibre max-w-[20ch]" data-reveal style="--reveal-delay: 60ms">
+            {{ section.settings.titre }}
+          </h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.lien != blank -%}
+        <div data-reveal>
+          {%- render 'bouton',
+            libelle: section.settings.libelle_lien,
+            lien: section.settings.lien,
+            style: 'ligne',
+            fleche: true
+          -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="mt-10" data-reveal-groupe data-reveal-pas="70">
+      {%- for bloc in section.blocks -%}
+        <a
+          class="associe"
+          href="{{ bloc.settings.lien | default: '#' }}"
+          data-reveal
+          data-curseur="lien"
+          {{ bloc.shopify_attributes }}
+        >
+          <span class="associe__sigle">
+            {%- render 'icone', nom: bloc.settings.sigle, taille: 28 -%}
+          </span>
+          <span class="associe__corps">
+            <span class="associe__nom">{{ bloc.settings.nom }}</span>
+            {%- if bloc.settings.raison != blank -%}
+              <span class="associe__raison">{{ bloc.settings.raison }}</span>
+            {%- endif -%}
+          </span>
+          {%- render 'icone', nom: 'ui.fleche-diagonale', taille: 15, classe: 'associe__fleche' -%}
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Protocole — associés",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" }
+      ],
+      "default": "surface-craie"
+    },
+    { "type": "text", "id": "index", "label": "Index", "default": "06" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "À combiner" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Ce qui se travaille bien avec."
+    },
+    { "type": "text", "id": "libelle_lien", "label": "Libellé du lien", "default": "Tous les protocoles" },
+    { "type": "url", "id": "lien", "label": "Lien" }
+  ],
+  "blocks": [
+    {
+      "type": "associe",
+      "name": "Protocole associé",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "nom", "label": "Nom", "default": "Protocole" },
+        { "type": "textarea", "id": "raison", "label": "Pourquoi l'associer" },
+        { "type": "url", "id": "lien", "label": "Page" },
+        {
+          "type": "select",
+          "id": "sigle",
+          "label": "Sigle",
+          "options": [
+            { "value": "sigle.hydrafacial", "label": "Vortex — Hydrafacial" },
+            { "value": "sigle.microneedling", "label": "Trame — Microneedling" },
+            { "value": "sigle.peeling", "label": "Strates — Peeling" },
+            { "value": "sigle.diagnostic", "label": "Mire — Diagnostic" },
+            { "value": "sigle.hifu", "label": "Focalisation — HIFU" },
+            { "value": "sigle.led", "label": "Rayonnement — LED" },
+            { "value": "sigle.drainage", "label": "Flux — Drainage" },
+            { "value": "sigle.protocole", "label": "Générique" }
+          ],
+          "default": "sigle.protocole"
+        }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Protocole — associés" }]
+}
+{% endschema %}

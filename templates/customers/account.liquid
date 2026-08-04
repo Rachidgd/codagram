@@ -1,0 +1,43 @@
+<section class="section">
+  <div class="lisiere">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h1 class="equilibre">{{ 'compte.titre' | t }}</h1>
+      <a class="lien text-sm" href="{{ routes.account_logout_url }}">{{ 'compte.deconnexion' | t }}</a>
+    </div>
+    <span class="filet mt-7 mb-10 w-full max-w-30" aria-hidden="true"></span>
+
+    <div class="grille-12 gap-y-10">
+      <div class="col-span-12 lg:col-span-7">
+        <p class="surtitre">{{ 'compte.commandes' | t }}</p>
+        {%- if customer.orders.size > 0 -%}
+          <div class="mt-6">
+            {%- for commande in customer.orders -%}
+              <a class="associe" href="{{ commande.customer_url }}">
+                <span class="associe__sigle">{%- render 'icone', nom: 'ui.fleche-droite', taille: 20 -%}</span>
+                <span class="associe__corps">
+                  <span class="associe__nom nombres-tabulaires">{{ commande.name }}</span>
+                  <span class="associe__raison nombres-tabulaires">
+                    {{ commande.created_at | date: '%d.%m.%Y' }} — {{ commande.total_price | money }}
+                  </span>
+                </span>
+                {%- render 'icone', nom: 'ui.fleche-diagonale', taille: 14, classe: 'associe__fleche' -%}
+              </a>
+            {%- endfor -%}
+          </div>
+        {%- else -%}
+          <p class="mt-4 text-sm text-grain">{{ 'compte.aucune_commande' | t }}</p>
+        {%- endif -%}
+      </div>
+
+      <div class="col-span-12 lg:col-span-4 lg:col-start-9">
+        <p class="surtitre">{{ 'compte.adresses' | t }}</p>
+        <address class="mt-6 text-sm not-italic leading-relaxed text-grain">
+          {{ customer.default_address | format_address }}
+        </address>
+        <div class="mt-6">
+          <a class="btn btn--ligne" href="{{ routes.account_addresses_url }}">{{ 'compte.adresses' | t }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

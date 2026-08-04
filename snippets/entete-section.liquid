@@ -1,0 +1,66 @@
+{%- comment -%}
+  En-tête de section — le motif de rythme éditorial du site.
+
+  Surtitre indexé, titre, filet qui se trace à l'apparition, chapô facultatif.
+  Utilisé par toutes les sections pour garantir une trame identique.
+
+  Paramètres :
+    index    — numéro affiché (« 01 »)
+    surtitre — libellé court en capitales
+    titre    — titre de section
+    niveau   — h1 | h2 | h3 (défaut h2)
+    chapo    — paragraphe d'introduction
+    aligne   — gauche (défaut) | centre
+    classe   — classes additionnelles du conteneur
+    sans_filet — true pour masquer le filet
+{%- endcomment -%}
+
+{%- liquid
+  assign balise = niveau | default: 'h2'
+  assign centre = false
+  if aligne == 'centre'
+    assign centre = true
+  endif
+-%}
+
+<div class="entete-section {% if centre %}flex flex-col items-center text-center{% endif %} {{ classe }}">
+  {%- if surtitre != blank -%}
+    <p
+      class="surtitre"
+      {% if index != blank %}
+        data-index="{{ index }}"
+      {% endif %}
+      data-reveal
+    >
+      {{ surtitre }}
+    </p>
+  {%- endif -%}
+
+  {%- if titre != blank -%}
+    {%- comment -%}
+      Une seule classe de largeur : deux utilitaires concurrents dépendraient
+      de l'ordre de génération de Tailwind, ce qui n'est pas garanti.
+    {%- endcomment -%}
+    <{{ balise }}
+      class="mt-4 equilibre {% if centre %}max-w-[22ch]{% else %}max-w-[19ch]{% endif %}"
+      data-reveal
+      style="--reveal-delay: 60ms"
+    >
+      {{ titre }}
+    </{{ balise }}>
+  {%- endif -%}
+
+  {%- unless sans_filet -%}
+    <span class="filet mt-7 w-full max-w-[7.5rem]" data-reveal-rule aria-hidden="true"></span>
+  {%- endunless -%}
+
+  {%- if chapo != blank -%}
+    <div
+      class="mt-6 texte-mesure text-lg text-grain {% if centre %}mx-auto{% endif %}"
+      data-reveal
+      style="--reveal-delay: 120ms"
+    >
+      {{ chapo }}
+    </div>
+  {%- endif -%}
+</div>

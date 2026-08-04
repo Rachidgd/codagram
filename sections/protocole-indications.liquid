@@ -1,0 +1,116 @@
+{%- comment -%}
+  Indications et contre-indications.
+
+  Assumer ce que le soin ne traite pas est un accélérateur de confiance, et
+  une obligation de prudence pour un établissement esthétique en France.
+{%- endcomment -%}
+
+<section class="section {{ section.settings.surface }}" id="{{ section.settings.ancre | default: 'indications' }}">
+  <div class="lisiere">
+    <div class="grille-12 gap-y-10">
+      <div class="col-span-12 lg:col-span-4">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+      </div>
+
+      <div class="col-span-12 lg:col-span-4 lg:col-start-6">
+        <h3 class="surtitre">{{ 'protocole.indications' | t }}</h3>
+        <ul role="list" class="liste-marquee liste-marquee--oui mt-6" data-reveal-groupe data-reveal-pas="60">
+          {%- for bloc in section.blocks -%}
+            {%- if bloc.type == 'indication' -%}
+              <li data-reveal {{ bloc.shopify_attributes }}>
+                {%- render 'icone', nom: 'ui.coche', taille: 15 -%}
+                <span>{{ bloc.settings.texte }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <div class="col-span-12 lg:col-span-3 lg:col-start-10">
+        <h3 class="surtitre">{{ 'protocole.contre_indications' | t }}</h3>
+        <ul role="list" class="liste-marquee liste-marquee--non mt-6" data-reveal-groupe data-reveal-pas="60">
+          {%- for bloc in section.blocks -%}
+            {%- if bloc.type == 'contre' -%}
+              <li data-reveal {{ bloc.shopify_attributes }}>
+                {%- render 'icone', nom: 'ui.fermer', taille: 13 -%}
+                <span>{{ bloc.settings.texte }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- if section.settings.note != blank -%}
+          <p class="mt-7 text-xs text-grain" data-reveal>{{ section.settings.note }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Protocole — indications",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" }
+      ],
+      "default": ""
+    },
+    { "type": "text", "id": "ancre", "label": "Ancre", "default": "indications" },
+    { "type": "text", "id": "index", "label": "Index", "default": "03" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Pour qui" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Ce que ce protocole traite — et ce qu'il ne traite pas."
+    },
+    {
+      "type": "textarea",
+      "id": "note",
+      "label": "Note",
+      "default": "Cette liste n'est pas exhaustive. Les contre-indications sont vérifiées une par une lors du bilan."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "indication",
+      "name": "Indication",
+      "limit": 10,
+      "settings": [{ "type": "text", "id": "texte", "label": "Texte", "default": "Nouvelle indication" }]
+    },
+    {
+      "type": "contre",
+      "name": "Contre-indication",
+      "limit": 10,
+      "settings": [{ "type": "text", "id": "texte", "label": "Texte", "default": "Nouvelle contre-indication" }]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Protocole — indications",
+      "blocks": [
+        { "type": "indication", "settings": { "texte": "Teint terne, peau encombrée ou congestionnée" } },
+        { "type": "indication", "settings": { "texte": "Pores dilatés et grain de peau irrégulier" } },
+        { "type": "indication", "settings": { "texte": "Peau déshydratée qui tiraille en fin de journée" } },
+        { "type": "indication", "settings": { "texte": "Entretien mensuel entre deux protocoles plus soutenus" } },
+        { "type": "contre", "settings": { "texte": "Poussée inflammatoire en cours" } },
+        { "type": "contre", "settings": { "texte": "Traitement dermatologique récent sans avis médical" } },
+        { "type": "contre", "settings": { "texte": "Exposition solaire intense dans les jours précédents" } },
+        { "type": "contre", "settings": { "texte": "Grossesse et allaitement, selon le protocole" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

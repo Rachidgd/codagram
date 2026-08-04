@@ -1,0 +1,213 @@
+{%- comment -%}
+  Questions fréquentes.
+
+  Double rôle : lever les objections avant qu'elles ne bloquent la prise de
+  rendez-vous, et occuper les recherches conversationnelles via les données
+  structurées FAQPage.
+
+  Les panneaux sont rendus ouverts côté serveur puis refermés par le script :
+  sans JavaScript, tout le contenu reste lisible et indexable.
+{%- endcomment -%}
+
+<section
+  id="{{ section.settings.ancre | default: 'questions' | handleize }}" class="section {{ section.settings.surface }}">
+  <div class="lisiere">
+    <div class="grille-12 gap-y-10">
+      <div class="col-span-12 lg:col-span-4">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+
+        {%- if section.settings.aide != blank -%}
+          <div class="mt-8 text-sm text-grain texte-mesure" data-reveal style="--reveal-delay: 140ms">
+            {{ section.settings.aide }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.lien != blank -%}
+          <div class="mt-6" data-reveal style="--reveal-delay: 200ms">
+            {%- render 'bouton',
+              libelle: section.settings.libelle_lien,
+              lien: section.settings.lien,
+              style: 'ligne',
+              fleche: true
+            -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="col-span-12 lg:col-span-7 lg:col-start-6">
+        <ely-accordeon class="accordeon block" data-solo="{{ section.settings.une_seule }}">
+          {%- for bloc in section.blocks -%}
+            <div class="accordeon__item" data-reveal {{ bloc.shopify_attributes }}>
+              <h3>
+                <button
+                  type="button"
+                  class="accordeon__tete"
+                  id="faq-t-{{ section.id }}-{{ forloop.index }}"
+                  aria-expanded="false"
+                  aria-controls="faq-p-{{ section.id }}-{{ forloop.index }}"
+                  data-accordeon-tete
+                >
+                  <span>{{ bloc.settings.question }}</span>
+                  <span class="accordeon__signe" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordeon__corps"
+                id="faq-p-{{ section.id }}-{{ forloop.index }}"
+                role="region"
+                aria-labelledby="faq-t-{{ section.id }}-{{ forloop.index }}"
+                data-ouvert="non"
+              >
+                <div>
+                  <div class="accordeon__texte">{{ bloc.settings.reponse }}</div>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </ely-accordeon>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- comment -%} Données structurées — reprises telles quelles par les moteurs. {%- endcomment -%}
+{%- if section.settings.donnees_structurees and section.blocks.size > 0 -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- for bloc in section.blocks -%}
+          {
+            "@type": "Question",
+            "name": {{ bloc.settings.question | strip_html | json }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ bloc.settings.reponse | strip_html | strip_newlines | json }}
+            }
+          }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Questions fréquentes",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ancre",
+      "label": "Ancre",
+      "info": "Permet de pointer vers cette section depuis un lien : #questions",
+      "default": "questions"
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" }
+      ],
+      "default": ""
+    },
+    { "type": "text", "id": "index", "label": "Index", "default": "08" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Questions fréquentes" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Ce qu'on nous demande avant de venir."
+    },
+    {
+      "type": "richtext",
+      "id": "aide",
+      "label": "Texte d'aide",
+      "default": "<p>Une question qui n'est pas ici ? Elle mérite probablement une vraie réponse, pas une ligne de FAQ.</p>"
+    },
+    { "type": "text", "id": "libelle_lien", "label": "Libellé du lien", "default": "Nous écrire" },
+    { "type": "url", "id": "lien", "label": "Lien" },
+    {
+      "type": "checkbox",
+      "id": "une_seule",
+      "label": "N'ouvrir qu'une réponse à la fois",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "donnees_structurees",
+      "label": "Publier les données structurées FAQ",
+      "default": true,
+      "info": "À n'activer qu'une fois par page, sur la FAQ principale."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "limit": 20,
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Nouvelle question" },
+        { "type": "richtext", "id": "reponse", "label": "Réponse" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Questions fréquentes",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "Le bilan est-il obligatoire avant un premier soin ?",
+            "reponse": "<p>Oui. C'est lui qui détermine si un protocole est indiqué, lequel, et à quelle fréquence. Il permet aussi d'écarter les contre-indications : traitement en cours, grossesse, exposition solaire récente, cicatrisation particulière. Une séance réalisée sans bilan est une séance vendue à l'aveugle.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Combien de séances faut-il prévoir ?",
+            "reponse": "<p>Trois à six selon le protocole et l'objectif. Le nombre est fixé par écrit après le bilan, avec le budget total. Il est revu en cours de route : si la peau répond plus vite que prévu, on s'arrête plus tôt.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Y a-t-il une éviction sociale après les soins ?",
+            "reponse": "<p>Cela dépend du protocole. L'Hydrafacial, la LED et le drainage lymphatique n'en demandent aucune. Le microneedling et les peelings entraînent des rougeurs pendant vingt-quatre à soixante-douze heures, et parfois une desquamation. La durée exacte vous est annoncée avant la séance, pas après.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Les soins sont-ils douloureux ?",
+            "reponse": "<p>La plupart ne le sont pas. Le microneedling et le HIFU produisent une sensation de picotement ou de chaleur ponctuelle ; une crème anesthésiante est appliquée en amont quand c'est nécessaire. Vous pouvez demander l'arrêt de la séance à tout moment.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Que se passe-t-il si aucun protocole n'est indiqué pour moi ?",
+            "reponse": "<p>On vous le dit, et le bilan s'arrête là. Cela arrive : peau en poussée inflammatoire, traitement dermatologique en cours, attentes qui relèvent d'un acte médical. Vous êtes alors orienté vers le bon interlocuteur.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Comment sont fixés les tarifs ?",
+            "reponse": "<p>Chaque protocole affiche un tarif de départ, hors cas particuliers. Les prises en charge combinées ou étendues à plusieurs zones sont chiffrées sur devis après le bilan. Aucun montant n'est engagé avant que vous ayez le plan de soin en main.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

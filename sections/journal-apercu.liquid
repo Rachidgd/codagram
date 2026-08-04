@@ -1,0 +1,137 @@
+{%- comment -%}
+  Aperçu du journal.
+
+  Le premier article occupe une place éditoriale ; les suivants sont listés en
+  filets. Alimente le maillage interne et l'autorité thématique du cabinet.
+{%- endcomment -%}
+
+{%- liquid
+  assign source = blogs[section.settings.blog]
+  assign articles = source.articles
+-%}
+
+<section
+  id="{{ section.settings.ancre | default: 'journal' | handleize }}" class="section {{ section.settings.surface }}">
+  <div class="lisiere">
+    <div class="grille-12 gap-y-8">
+      <div class="col-span-12 lg:col-span-6">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+      </div>
+      <div class="col-span-12 lg:col-span-4 lg:col-start-9 self-end" data-reveal>
+        {%- if source != blank -%}
+          {%- render 'bouton',
+            libelle: section.settings.libelle_lien,
+            lien: source.url,
+            style: 'ligne',
+            fleche: true
+          -%}
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if articles.size > 0 -%}
+      <div class="mt-12 grid gap-x-10 gap-y-12 lg:mt-16 lg:grid-cols-12">
+        {%- comment -%} — Article mis en avant — {%- endcomment -%}
+        {%- assign une = articles.first -%}
+        <article class="lg:col-span-6" data-reveal>
+          <a class="journal__une group block" href="{{ une.url }}" data-curseur="lien">
+            {%- render 'image-reactive',
+              image: une.image,
+              ratio: 'paysage',
+              tailles: '(min-width: 64rem) 46vw, 92vw',
+              alt: une.title,
+              zoom: true
+            -%}
+            <div class="mt-6 flex flex-col gap-3">
+              <span class="journal__meta">
+                <time datetime="{{ une.published_at | date: '%Y-%m-%d' }}">
+                  {{ une.published_at | date: '%d.%m.%Y' }}
+                </time>
+                {%- if une.tags.size > 0 -%}
+                  <span class="journal__separateur" aria-hidden="true">—</span>
+                  <span>{{ une.tags.first }}</span>
+                {%- endif -%}
+              </span>
+              <h3 class="journal__titre">{{ une.title }}</h3>
+              {%- if une.excerpt_or_content != blank -%}
+                <p class="journal__extrait">
+                  {{ une.excerpt_or_content | strip_html | truncate: 170 }}
+                </p>
+              {%- endif -%}
+            </div>
+          </a>
+        </article>
+
+        {%- comment -%} — Suite en index — {%- endcomment -%}
+        <div class="lg:col-span-5 lg:col-start-8" data-reveal-groupe data-reveal-pas="80">
+          {%- for article in articles offset: 1 limit: section.settings.nombre -%}
+            <article data-reveal>
+              <a class="journal__ligne" href="{{ article.url }}" data-curseur="lien">
+                <span class="journal__meta">
+                  <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                    {{ article.published_at | date: '%d.%m.%Y' }}
+                  </time>
+                </span>
+                <span class="journal__ligne-titre">{{ article.title }}</span>
+                {%- render 'icone', nom: 'ui.fleche-diagonale', taille: 14, classe: 'journal__ligne-fleche' -%}
+              </a>
+            </article>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- else -%}
+      <p class="mt-12 text-sm text-grain" data-reveal>{{ 'journal.aucun_article' | t }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Aperçu du journal",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ancre",
+      "label": "Ancre",
+      "info": "Permet de pointer vers cette section depuis un lien : #journal",
+      "default": "journal"
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" }
+      ],
+      "default": ""
+    },
+    { "type": "blog", "id": "blog", "label": "Blog source" },
+    { "type": "text", "id": "index", "label": "Index", "default": "08" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Le journal" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Comprendre avant de choisir."
+    },
+    { "type": "text", "id": "libelle_lien", "label": "Libellé du lien", "default": "Tous les articles" },
+    {
+      "type": "range",
+      "id": "nombre",
+      "label": "Articles listés en plus de la une",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "presets": [{ "name": "Aperçu du journal" }]
+}
+{% endschema %}

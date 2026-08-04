@@ -1,0 +1,4 @@
+{
+  "sections": { "recherche": { "type": "recherche-principale", "settings": {} } },
+  "order": ["recherche"]
+}

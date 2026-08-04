@@ -1,0 +1,153 @@
+{%- comment -%}
+  Manifeste — la prise de position du cabinet.
+
+  Grille délibérément asymétrique : l'affirmation occupe les colonnes 1 à 6,
+  l'argumentaire les colonnes 8 à 12. Aucun centrage, aucune symétrie.
+{%- endcomment -%}
+
+<section
+  id="{{ section.settings.ancre | default: 'manifeste' | handleize }}" class="section {{ section.settings.surface }}">
+  <div class="lisiere">
+    <div class="grille-12 gap-y-10">
+      <div class="col-span-12 lg:col-span-6">
+        {%- if section.settings.surtitre != blank -%}
+          <p
+            class="surtitre"
+            {% if section.settings.index != blank %}
+              data-index="{{ section.settings.index }}"
+            {% endif %}
+            data-reveal
+          >
+            {{ section.settings.surtitre }}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.affirmation != blank -%}
+          <p class="manifeste__texte mt-7" data-reveal style="--reveal-delay: 70ms">
+            {{ section.settings.affirmation }}
+          </p>
+        {%- endif -%}
+
+        <span class="filet mt-9 w-full max-w-30" data-reveal-rule aria-hidden="true"></span>
+      </div>
+
+      <div class="col-span-12 lg:col-span-4 lg:col-start-8 flex flex-col gap-6 lg:pt-14">
+        {%- if section.settings.appui != blank -%}
+          <div class="manifeste__appui" data-reveal style="--reveal-delay: 140ms">
+            {{ section.settings.appui }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul role="list" class="expertise__liste mt-2" data-reveal-groupe data-reveal-pas="80">
+            {%- for bloc in section.blocks -%}
+              <li class="expertise__item" data-reveal {{ bloc.shopify_attributes }}>
+                {%- render 'icone', nom: 'ui.coche', taille: 15 -%}
+                <span>{{ bloc.settings.texte }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.lien != blank and section.settings.libelle != blank -%}
+          <div data-reveal style="--reveal-delay: 220ms">
+            {%- render 'bouton',
+              libelle: section.settings.libelle,
+              lien: section.settings.lien,
+              style: 'ligne',
+              fleche: true
+            -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Manifeste",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ancre",
+      "label": "Ancre",
+      "info": "Permet de pointer vers cette section depuis un lien : #manifeste",
+      "default": "manifeste"
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "index",
+      "label": "Index",
+      "default": "02"
+    },
+    {
+      "type": "text",
+      "id": "surtitre",
+      "label": "Surtitre",
+      "default": "Notre parti pris"
+    },
+    {
+      "type": "textarea",
+      "id": "affirmation",
+      "label": "Affirmation",
+      "default": "Aucun soin n'est vendu avant d'avoir été justifié."
+    },
+    {
+      "type": "richtext",
+      "id": "appui",
+      "label": "Argumentaire",
+      "default": "<p>Un institut vend des séances. Un cabinet construit une trajectoire. Le premier rendez-vous n'est pas un soin : c'est une lecture de la peau, de son histoire, de ce qu'elle supporte et de ce qu'elle refuse. Le protocole vient après, et il peut être court.</p>"
+    },
+    {
+      "type": "text",
+      "id": "libelle",
+      "label": "Libellé du lien",
+      "default": "Comment nous travaillons"
+    },
+    {
+      "type": "url",
+      "id": "lien",
+      "label": "Lien"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Point d'appui",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "texte",
+          "label": "Texte",
+          "default": "Bilan cutané systématique avant la première séance"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Manifeste",
+      "blocks": [
+        { "type": "point", "settings": { "texte": "Bilan cutané systématique avant la première séance" } },
+        { "type": "point", "settings": { "texte": "Protocoles ajustés à chaque rendez-vous, jamais figés" } },
+        { "type": "point", "settings": { "texte": "Aucune cure engagée sans indication écrite" } },
+        { "type": "point", "settings": { "texte": "Suivi photographique remis en fin de protocole" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

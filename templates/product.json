@@ -1,0 +1,4 @@
+{
+  "sections": { "produit": { "type": "produit-principal", "settings": {} } },
+  "order": ["produit"]
+}

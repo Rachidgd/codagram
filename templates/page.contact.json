@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "contact": {
+      "type": "contact-formulaire",
+      "blocks": {
+        "s1": { "type": "sujet", "settings": { "libelle": "Prendre un premier rendez-vous" } },
+        "s2": { "type": "sujet", "settings": { "libelle": "Une question sur un protocole" } },
+        "s3": { "type": "sujet", "settings": { "libelle": "Vérifier une contre-indication" } },
+        "s4": { "type": "sujet", "settings": { "libelle": "Demander un devis" } },
+        "s5": { "type": "sujet", "settings": { "libelle": "Autre demande" } },
+        "p1": { "type": "protocole", "settings": { "nom": "Hydrafacial" } },
+        "p2": { "type": "protocole", "settings": { "nom": "Microneedling" } },
+        "p3": { "type": "protocole", "settings": { "nom": "Peeling" } },
+        "p4": { "type": "protocole", "settings": { "nom": "Diagnostic infirmier" } },
+        "p5": { "type": "protocole", "settings": { "nom": "HIFU & radiofréquence" } },
+        "p6": { "type": "protocole", "settings": { "nom": "Luminothérapie LED" } },
+        "p7": { "type": "protocole", "settings": { "nom": "Drainage lymphatique" } },
+        "p8": { "type": "protocole", "settings": { "nom": "Je ne sais pas encore" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4", "s5", "p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
+      "settings": {
+        "surface": "",
+        "ancre": "contact",
+        "index": "01",
+        "surtitre": "Nous écrire",
+        "titre": "Une question précise appelle une réponse précise.",
+        "niveau_titre": "h1",
+        "chapo": "<p>Nous répondons sous 24 heures ouvrées. Pour une prise de rendez-vous immédiate, le lien de réservation reste le chemin le plus court.</p>",
+        "legende_1": "Votre demande",
+        "legende_2": "Vos coordonnées",
+        "legende_3": "Votre message",
+        "mention_rgpd": "Les informations transmises servent uniquement à traiter votre demande et ne sont ni cédées ni utilisées à des fins commerciales. Vous pouvez demander leur suppression à tout moment."
+      }
+    },
+    "questions": {
+      "type": "faq",
+      "blocks": {
+        "f1": { "type": "question", "settings": { "question": "Sous quel délai répondez-vous ?", "reponse": "<p>Sous vingt-quatre heures ouvrées pour les demandes écrites. Pour une réservation immédiate, le lien de prise de rendez-vous reste plus rapide que le formulaire.</p>" } },
+        "f2": { "type": "question", "settings": { "question": "Puis-je poser une question sans venir ?", "reponse": "<p>Oui. Beaucoup de questions se règlent en quelques lignes, et il arrive que la réponse soit qu'aucun rendez-vous n'est utile. Le formulaire n'est pas un tunnel de vente.</p>" } },
+        "f3": { "type": "question", "settings": { "question": "Comment annuler ou décaler un rendez-vous ?", "reponse": "<p>Par téléphone ou par e-mail, au moins vingt-quatre heures à l'avance. Un créneau libéré tardivement est un créneau perdu pour quelqu'un d'autre.</p>" } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
+        "surface": "surface-craie",
+        "index": "02",
+        "surtitre": "Avant d'écrire",
+        "titre": "Trois réponses qui font parfois gagner un message.",
+        "aide": "",
+        "libelle_lien": "",
+        "une_seule": true,
+        "donnees_structurees": false
+      }
+    }
+  },
+  "order": ["contact", "questions"]
+}

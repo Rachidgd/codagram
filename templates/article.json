@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "article": {
+      "type": "article-principal",
+      "settings": {
+        "sommaire": true,
+        "progression": true,
+        "rappel_cta": true,
+        "texte_rappel": "Cet article décrit un principe général. Ce qui vaut pour votre peau se détermine au bilan."
+      }
+    }
+  },
+  "order": ["article"]
+}

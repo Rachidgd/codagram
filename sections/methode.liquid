@@ -1,0 +1,157 @@
+{%- comment -%}
+  La méthode — trois à cinq temps, numérotés en contour.
+  Sert la confiance : le visiteur sait exactement ce qui va se passer.
+{%- endcomment -%}
+
+<section
+  id="{{ section.settings.ancre | default: 'methode' | handleize }}"
+  class="section {{ section.settings.surface }}"
+  {% if section.settings.surface == 'surface-sombre' %}
+    data-entete-inverse
+  {% endif %}
+>
+  <div class="lisiere">
+    <div class="grille-12 gap-y-8">
+      <div class="col-span-12 lg:col-span-6">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+      </div>
+      {%- if section.settings.chapo != blank -%}
+        <div
+          class="col-span-12 lg:col-span-4 lg:col-start-9 self-end text-sm {% if section.settings.surface == 'surface-sombre' %}text-brume{% else %}text-grain{% endif %}"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          {{ section.settings.chapo }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%}
+      Grille en auto-fit : le nombre de colonnes suit le nombre d'étapes
+      réellement configurées, sans classe calculée en Liquid.
+    {%- endcomment -%}
+    <ol
+      role="list"
+      class="methode__grille mt-12 lg:mt-16"
+      data-reveal-groupe
+      data-reveal-pas="90"
+    >
+      {%- for bloc in section.blocks -%}
+        <li class="methode__etape" data-reveal {{ bloc.shopify_attributes }}>
+          <span class="chiffre-contour" aria-hidden="true">
+            {{- forloop.index | prepend: '0' | slice: -2, 2 -}}
+          </span>
+          <div class="flex flex-col gap-3">
+            <h3 class="methode__titre">{{ bloc.settings.titre }}</h3>
+            {%- if bloc.settings.texte != blank -%}
+              <p class="methode__texte">{{ bloc.settings.texte }}</p>
+            {%- endif -%}
+            {%- if bloc.settings.duree != blank -%}
+              <span class="mesure mt-1">
+                {{ 'protocole.duree' | t }}
+                <span class="mesure__valeur">{{ bloc.settings.duree }}</span>
+              </span>
+            {%- endif -%}
+          </div>
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "La méthode",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ancre",
+      "label": "Ancre",
+      "info": "Permet de pointer vers cette section depuis un lien : #methode",
+      "default": "methode"
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-sombre", "label": "Vert absolu" }
+      ],
+      "default": "surface-craie"
+    },
+    { "type": "text", "id": "index", "label": "Index", "default": "04" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "La méthode" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Ce qui se passe, dans l'ordre."
+    },
+    {
+      "type": "textarea",
+      "id": "chapo",
+      "label": "Texte d'accompagnement",
+      "default": "Aucune surprise, aucun soin improvisé. Le déroulé est le même pour tout le monde, quel que soit le protocole retenu."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "etape",
+      "name": "Étape",
+      "limit": 5,
+      "settings": [
+        { "type": "text", "id": "titre", "label": "Titre", "default": "Nouvelle étape" },
+        { "type": "textarea", "id": "texte", "label": "Description" },
+        { "type": "text", "id": "duree", "label": "Durée" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "La méthode",
+      "blocks": [
+        {
+          "type": "etape",
+          "settings": {
+            "titre": "Le bilan",
+            "texte": "Lecture de la peau, antécédents, traitements en cours, habitudes. On identifie ce qui est traitable maintenant et ce qui ne l'est pas.",
+            "duree": "40 min"
+          }
+        },
+        {
+          "type": "etape",
+          "settings": {
+            "titre": "Le plan",
+            "texte": "Un protocole écrit : soins retenus, nombre de séances, espacement, budget total. Vous repartez avec, vous décidez après.",
+            "duree": "remis le jour même"
+          }
+        },
+        {
+          "type": "etape",
+          "settings": {
+            "titre": "Les séances",
+            "texte": "Chaque rendez-vous commence par un point sur ce qu'a fait la peau depuis le précédent. Le protocole s'ajuste, il ne se déroule pas mécaniquement.",
+            "duree": "30 à 90 min"
+          }
+        },
+        {
+          "type": "etape",
+          "settings": {
+            "titre": "Le contrôle",
+            "texte": "Photos comparatives dans les mêmes conditions de lumière, bilan de fin de protocole, et une réponse honnête sur la suite — y compris quand la réponse est « on s'arrête là ».",
+            "duree": "30 min"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

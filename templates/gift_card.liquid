@@ -1,0 +1,47 @@
+{%- comment -%} Carte cadeau — rendue hors du gabarit principal par Shopify. {%- endcomment -%}
+{% layout none %}
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ shop.name }} — {{ 'panier.titre' | t }}</title>
+    <link rel="stylesheet" href="{{ 'ely.css' | asset_url }}">
+    <style>
+      @font-face { font-family: "Jost"; font-weight: 100 900; font-display: swap;
+        src: url({{ 'jost-var-latin.woff2' | asset_url }}) format("woff2"); }
+      @font-face { font-family: "Instrument Sans"; font-weight: 400 700; font-display: swap;
+        src: url({{ 'instrument-var-latin.woff2' | asset_url }}) format("woff2"); }
+      body { margin: 0; }
+    </style>
+    {{ content_for_header }}
+  </head>
+  <body>
+    <main class="section">
+      <div class="lisiere carte-cadeau">
+        <p class="surtitre">{{ shop.name }}</p>
+        <h1 class="mt-5 equilibre">{{ gift_card.balance | money }}</h1>
+        <span class="filet mt-7 mb-9 w-full max-w-25" aria-hidden="true"></span>
+
+        {%- if gift_card.enabled == false or gift_card.expired -%}
+          <p class="formulaire__message formulaire__message--erreur">
+            {{ 'panier.epuise' | t }}
+          </p>
+        {%- else -%}
+          <div class="carte-cadeau__code">
+            <span class="surtitre">Code</span>
+            <p class="carte-cadeau__valeur nombres-tabulaires">{{ gift_card.code | format_code }}</p>
+          </div>
+          {%- if gift_card.expires_on -%}
+            <p class="mt-5 text-xs text-grain nombres-tabulaires">
+              {{ gift_card.expires_on | date: '%d.%m.%Y' }}
+            </p>
+          {%- endif -%}
+          <div class="mt-9">
+            <a class="btn" href="{{ shop.url }}">{{ shop.name }}</a>
+          </div>
+        {%- endif -%}
+      </div>
+    </main>
+  </body>
+</html>

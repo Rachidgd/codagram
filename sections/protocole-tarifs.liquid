@@ -1,0 +1,176 @@
+{%- comment -%}
+  Tarifs du protocole.
+
+  Chaque ligne se règle indépendamment : « à partir de … € » ou « sur devis ».
+  Le mode devis affiche une explication plutôt qu'un prix caché — c'est ce qui
+  évite le décrochage sur les protocoles réellement variables.
+{%- endcomment -%}
+
+<section
+  class="section {{ section.settings.surface }}"
+  id="{{ section.settings.ancre | default: 'tarifs' }}"
+  {% if section.settings.surface == 'surface-sombre' %}
+    data-entete-inverse
+  {% endif %}
+>
+  <div class="lisiere">
+    <div class="grille-12 gap-y-10">
+      <div class="col-span-12 lg:col-span-4">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+
+        {%- if section.settings.chapo != blank -%}
+          <div
+            class="mt-7 text-sm {% if section.settings.surface == 'surface-sombre' %}text-brume{% else %}text-grain{% endif %} texte-mesure"
+            data-reveal
+            style="--reveal-delay: 140ms"
+          >
+            {{ section.settings.chapo }}
+          </div>
+        {%- endif -%}
+
+        <div class="mt-8" data-reveal style="--reveal-delay: 200ms">
+          {%- if section.settings.surface == 'surface-sombre' -%}
+            {%- render 'bouton', rdv: true, style: 'clair', fleche: true -%}
+          {%- else -%}
+            {%- render 'bouton', rdv: true, style: 'plein', fleche: true -%}
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-7 lg:col-start-6">
+        <ul role="list" data-reveal-groupe data-reveal-pas="70">
+          {%- for bloc in section.blocks -%}
+            <li class="tarif-ligne" data-reveal {{ bloc.shopify_attributes }}>
+              <div class="tarif-ligne__intitule">
+                <span class="tarif-ligne__nom">{{ bloc.settings.intitule }}</span>
+                {%- if bloc.settings.precision != blank -%}
+                  <span class="tarif-ligne__precision">{{ bloc.settings.precision }}</span>
+                {%- endif -%}
+              </div>
+              <div class="tarif-ligne__valeur">
+                {%- render 'tarif',
+                  mode: bloc.settings.mode_tarif,
+                  montant: bloc.settings.montant,
+                  note: bloc.settings.note_devis
+                -%}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        {%- if section.settings.mention != blank -%}
+          <p
+            class="mt-8 text-xs {% if section.settings.surface == 'surface-sombre' %}text-brume{% else %}text-grain{% endif %} max-w-[64ch]"
+            data-reveal
+          >
+            {{ section.settings.mention }}
+          </p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Protocole — tarifs",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" },
+        { "value": "surface-sombre", "label": "Vert absolu" }
+      ],
+      "default": ""
+    },
+    { "type": "text", "id": "ancre", "label": "Ancre", "default": "tarifs" },
+    { "type": "text", "id": "index", "label": "Index", "default": "04" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Tarifs" },
+    { "type": "textarea", "id": "titre", "label": "Titre", "default": "Ce que ça coûte, dit avant." },
+    {
+      "type": "richtext",
+      "id": "chapo",
+      "label": "Texte d'accompagnement",
+      "default": "<p>Les tarifs de départ s'entendent pour une séance unitaire, sur la zone indiquée. Toute prise en charge combinée est chiffrée après le bilan.</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "mention",
+      "label": "Mention légale",
+      "default": "Tarifs toutes taxes comprises, en vigueur à la date d'affichage. Le devis remis après le bilan fait foi. Aucun montant n'est engagé avant votre accord écrit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ligne",
+      "name": "Ligne de tarif",
+      "limit": 10,
+      "settings": [
+        { "type": "text", "id": "intitule", "label": "Intitulé", "default": "Séance unitaire" },
+        { "type": "text", "id": "precision", "label": "Précision", "info": "Zone, durée, conditions." },
+        {
+          "type": "select",
+          "id": "mode_tarif",
+          "label": "Affichage du tarif",
+          "options": [
+            { "value": "depuis", "label": "À partir de … €" },
+            { "value": "devis", "label": "Sur devis" }
+          ],
+          "default": "depuis"
+        },
+        { "type": "text", "id": "montant", "label": "Montant", "info": "Nombre seul, sans symbole.", "default": "140" },
+        {
+          "type": "textarea",
+          "id": "note_devis",
+          "label": "Explication du devis",
+          "info": "Affichée uniquement en mode « sur devis ». Dites pourquoi le prix varie."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Protocole — tarifs",
+      "blocks": [
+        {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Séance unitaire",
+            "precision": "Visage, 60 minutes",
+            "mode_tarif": "depuis",
+            "montant": "140"
+          }
+        },
+        {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Protocole de 4 séances",
+            "precision": "Espacées de 3 à 4 semaines",
+            "mode_tarif": "depuis",
+            "montant": "500"
+          }
+        },
+        {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Prise en charge étendue",
+            "precision": "Plusieurs zones ou protocoles combinés",
+            "mode_tarif": "devis",
+            "note_devis": "Le montant dépend du nombre de zones, du nombre de séances retenu et de la fréquence. Il est arrêté après le bilan, par écrit, avant toute réservation."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

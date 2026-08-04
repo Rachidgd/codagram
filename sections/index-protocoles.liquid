@@ -1,0 +1,341 @@
+{%- comment -%}
+  Index des protocoles.
+
+  Remplace la grille de cartes attendue par un index typographique : sept
+  lignes, une trame de filets, et un aperçu flottant qui suit le pointeur sur
+  desktop. Chaque ligne reste un lien complet — donc utilisable au clavier,
+  au tactile et sans JavaScript.
+{%- endcomment -%}
+
+<section
+  id="{{ section.settings.ancre | default: 'protocoles' | handleize }}" class="section {{ section.settings.surface }}">
+  <div class="lisiere">
+    <div class="grille-12 gap-y-8">
+      <div class="col-span-12 lg:col-span-5">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+      </div>
+      {%- if section.settings.chapo != blank -%}
+        <div
+          class="col-span-12 lg:col-span-5 lg:col-start-8 self-end text-grain text-sm"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          {{ section.settings.chapo }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <ely-index class="block mt-12 lg:mt-16" data-reveal-groupe data-reveal-pas="60">
+      {%- for bloc in section.blocks -%}
+        <a
+          class="protocole"
+          href="{{ bloc.settings.lien | default: '#' }}"
+          data-reveal
+          data-index-ligne="{{ forloop.index0 }}"
+          data-curseur="lien"
+          {{ bloc.shopify_attributes }}
+        >
+          <span class="protocole__ligne">
+            <span class="protocole__num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+
+            <span>
+              <span class="protocole__nom block">{{ bloc.settings.nom }}</span>
+
+              <span class="protocole__revelation">
+                <span>
+                  {%- if bloc.settings.resume != blank -%}
+                    <span class="protocole__resume block">{{ bloc.settings.resume }}</span>
+                  {%- endif -%}
+                </span>
+              </span>
+            </span>
+
+            <span class="protocole__mesures">
+              {%- if bloc.settings.duree != blank -%}
+                <span class="mesure">
+                  {{ 'protocole.duree' | t }}
+                  <span class="mesure__valeur">{{ bloc.settings.duree }}</span>
+                </span>
+              {%- endif -%}
+
+              {%- if section.settings.afficher_tarifs -%}
+                <span class="mesure">
+                  {{ 'protocole.tarif' | t }}
+                  <span class="mesure__valeur">
+                    {%- render 'tarif',
+                      mode: bloc.settings.mode_tarif,
+                      montant: bloc.settings.montant,
+                      compact: true
+                    -%}
+                  </span>
+                </span>
+              {%- endif -%}
+            </span>
+          </span>
+        </a>
+      {%- endfor -%}
+
+      {%- comment -%} Aperçu flottant — desktop, pointeur fin, mouvement autorisé. {%- endcomment -%}
+      <div class="index-apercu" data-index-apercu aria-hidden="true">
+        {%- for bloc in section.blocks -%}
+          {%- if bloc.settings.image != blank -%}
+            <img
+              src="{{ bloc.settings.image | image_url: width: 560 }}"
+              alt=""
+              width="{{ bloc.settings.image.width }}"
+              height="{{ bloc.settings.image.height }}"
+              loading="lazy"
+              decoding="async"
+              data-index-image="{{ forloop.index0 }}"
+            >
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </ely-index>
+
+    {%- if section.settings.libelle_lien != blank and section.settings.lien != blank -%}
+      <div class="mt-12" data-reveal>
+        {%- render 'bouton',
+          libelle: section.settings.libelle_lien,
+          lien: section.settings.lien,
+          style: 'ligne',
+          fleche: true
+        -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{%- comment -%} Liste structurée des soins pour les moteurs de recherche. {%- endcomment -%}
+{%- if section.blocks.size > 0 -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": {{ section.settings.titre | default: 'Protocoles' | json }},
+      "itemListElement": [
+        {%- for bloc in section.blocks -%}
+          {
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "name": {{ bloc.settings.nom | json }}
+            {%- if bloc.settings.lien != blank -%}
+              , "url": {{ shop.url | append: bloc.settings.lien | json }}
+            {%- endif -%}
+          }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Index des protocoles",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ancre",
+      "label": "Ancre",
+      "info": "Permet de pointer vers cette section depuis un lien : #protocoles",
+      "default": "protocoles"
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "index",
+      "label": "Index",
+      "default": "03"
+    },
+    {
+      "type": "text",
+      "id": "surtitre",
+      "label": "Surtitre",
+      "default": "Les protocoles"
+    },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Sept réponses, une seule méthode."
+    },
+    {
+      "type": "textarea",
+      "id": "chapo",
+      "label": "Texte d'accompagnement",
+      "default": "Chaque protocole répond à une indication précise. Le bilan détermine lequel s'applique, à quelle fréquence, et pendant combien de temps."
+    },
+    {
+      "type": "checkbox",
+      "id": "afficher_tarifs",
+      "label": "Afficher les tarifs dans l'index",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "libelle_lien",
+      "label": "Libellé du lien",
+      "default": "Comparer les protocoles"
+    },
+    {
+      "type": "url",
+      "id": "lien",
+      "label": "Lien"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "protocole",
+      "name": "Protocole",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "nom",
+          "label": "Nom",
+          "default": "Nouveau protocole"
+        },
+        {
+          "type": "textarea",
+          "id": "resume",
+          "label": "Résumé",
+          "info": "Une à deux phrases. Apparaît au survol sur desktop, en permanence sur mobile."
+        },
+        {
+          "type": "text",
+          "id": "duree",
+          "label": "Durée",
+          "default": "60 min"
+        },
+        {
+          "type": "select",
+          "id": "mode_tarif",
+          "label": "Affichage du tarif",
+          "options": [
+            { "value": "depuis", "label": "À partir de … €" },
+            { "value": "devis", "label": "Sur devis" },
+            { "value": "masque", "label": "Ne pas afficher" }
+          ],
+          "default": "depuis"
+        },
+        {
+          "type": "text",
+          "id": "montant",
+          "label": "Montant",
+          "info": "Nombre seul, sans symbole. Exemple : 120",
+          "default": "120"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image d'aperçu",
+          "info": "Suit le pointeur au survol sur grand écran."
+        },
+        {
+          "type": "url",
+          "id": "lien",
+          "label": "Page du protocole"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index des protocoles",
+      "blocks": [
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Hydrafacial",
+            "resume": "Nettoyage profond par aspiration contrôlée, exfoliation et infusion de sérums. La séance de remise à niveau quand la peau est encombrée, terne ou congestionnée.",
+            "duree": "60 min",
+            "mode_tarif": "depuis",
+            "montant": "140",
+            "lien": "/pages/hydrafacial"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Microneedling",
+            "resume": "Micro-perforations calibrées qui relancent la production de collagène. Indiqué sur les cicatrices d'acné, les pores dilatés et le relâchement débutant.",
+            "duree": "75 min",
+            "mode_tarif": "depuis",
+            "montant": "220",
+            "lien": "/pages/microneedling"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Peeling",
+            "resume": "Exfoliation chimique dosée séance par séance. Agit sur les taches, le grain irrégulier et les marques post-inflammatoires.",
+            "duree": "45 min",
+            "mode_tarif": "depuis",
+            "montant": "110",
+            "lien": "/pages/peeling"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Diagnostic infirmier",
+            "resume": "Lecture complète de la peau par une infirmière : antécédents, traitements en cours, contre-indications, plan de soin écrit.",
+            "duree": "40 min",
+            "mode_tarif": "depuis",
+            "montant": "60",
+            "lien": "/pages/diagnostic-infirmier"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "HIFU & radiofréquence",
+            "resume": "Chauffe ciblée des couches profondes pour retendre l'ovale et le cou, sans acte chirurgical ni éviction.",
+            "duree": "90 min",
+            "mode_tarif": "devis",
+            "lien": "/pages/hifu-radiofrequence"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Luminothérapie LED",
+            "resume": "Longueurs d'onde choisies selon l'objectif : apaiser une inflammation, assainir une peau acnéique, soutenir une cicatrisation.",
+            "duree": "30 min",
+            "mode_tarif": "depuis",
+            "montant": "55",
+            "lien": "/pages/luminotherapie-led"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Drainage lymphatique",
+            "resume": "Manœuvres manuelles lentes qui relancent la circulation lymphatique. Dégonfle, décongestionne, prolonge le résultat des autres protocoles.",
+            "duree": "60 min",
+            "mode_tarif": "depuis",
+            "montant": "90",
+            "lien": "/pages/drainage-lymphatique"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

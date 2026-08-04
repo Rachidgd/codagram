@@ -1,0 +1,72 @@
+{%- comment -%}
+  Page 404 — on ne s'excuse pas, on remet sur le chemin.
+{%- endcomment -%}
+
+<section class="erreur section">
+  <div class="lisiere">
+    <div class="grille-12 gap-y-10">
+      <div class="col-span-12 lg:col-span-5">
+        <p class="erreur__code" aria-hidden="true">404</p>
+        <h1 class="mt-6 equilibre max-w-[14ch]">{{ 'general.page_introuvable' | t }}</h1>
+        <p class="mt-5 text-sm text-grain max-w-[42ch]">{{ 'general.page_introuvable_texte' | t }}</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          {%- render 'bouton', libelle: section.settings.libelle_accueil, lien: routes.root_url, style: 'plein', fleche: true -%}
+          {%- render 'bouton', rdv: true, style: 'ligne' -%}
+        </div>
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <nav class="col-span-12 lg:col-span-5 lg:col-start-8 self-center" aria-label="{{ 'navigation.principale' | t }}">
+          <p class="surtitre">{{ section.settings.surtitre_liens }}</p>
+          <div class="mt-6">
+            {%- for bloc in section.blocks -%}
+              <a class="associe" href="{{ bloc.settings.lien | default: '/' }}" {{ bloc.shopify_attributes }}>
+                <span class="associe__sigle">
+                  {%- render 'icone', nom: bloc.settings.sigle, taille: 24 -%}
+                </span>
+                <span class="associe__corps">
+                  <span class="associe__nom">{{ bloc.settings.titre }}</span>
+                </span>
+                {%- render 'icone', nom: 'ui.fleche-diagonale', taille: 14, classe: 'associe__fleche' -%}
+              </a>
+            {%- endfor -%}
+          </div>
+        </nav>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page introuvable",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "libelle_accueil", "label": "Libellé du bouton", "default": "Retour à l'accueil" },
+    { "type": "text", "id": "surtitre_liens", "label": "Surtitre de la liste", "default": "Reprendre ici" }
+  ],
+  "blocks": [
+    {
+      "type": "lien",
+      "name": "Raccourci",
+      "limit": 5,
+      "settings": [
+        { "type": "text", "id": "titre", "label": "Titre", "default": "Les protocoles" },
+        { "type": "url", "id": "lien", "label": "Lien" },
+        {
+          "type": "select",
+          "id": "sigle",
+          "label": "Sigle",
+          "options": [
+            { "value": "sigle.protocole", "label": "Générique" },
+            { "value": "sigle.diagnostic", "label": "Mire" },
+            { "value": "ui.courriel", "label": "Enveloppe" },
+            { "value": "ui.epingle", "label": "Épingle" }
+          ],
+          "default": "sigle.protocole"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

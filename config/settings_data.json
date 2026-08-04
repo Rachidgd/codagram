@@ -1,0 +1,51 @@
+{
+  "current": {
+    "logo_hauteur": 28,
+    "signature": "Cabinet de soin esthétique — Paris",
+
+    "c_porcelaine": "#f6f3ef",
+    "c_craie": "#ebe5dd",
+    "c_lin": "#ded5c9",
+    "c_encre": "#191512",
+    "c_grain": "#75695f",
+    "c_absolu": "#1b3a31",
+    "c_absolu_clair": "#2a5245",
+    "c_brume": "#9fb3aa",
+    "c_peau": "#e0c4b2",
+    "c_peau_pale": "#f0e2d9",
+
+    "cabinet_nom": "Ély'Skin Paris",
+    "cabinet_rue": "",
+    "cabinet_cp": "",
+    "cabinet_ville": "Paris",
+    "cabinet_pays": "FR",
+    "cabinet_tel": "",
+    "cabinet_email": "",
+    "cabinet_lat": "",
+    "cabinet_lon": "",
+    "cabinet_horaires": "Mardi — Vendredi : 10h — 19h\nSamedi : 10h — 17h",
+    "cabinet_horaires_donnees": "Tu,We,Th,Fr 10:00-19:00\nSa 10:00-17:00",
+    "cabinet_prix_indicatif": "€€",
+
+    "rdv_url": "",
+    "rdv_libelle": "Prendre rendez-vous",
+
+    "reseau_instagram": "",
+    "reseau_tiktok": "",
+    "reseau_facebook": "",
+    "reseau_linkedin": "",
+    "reseau_google": "",
+
+    "anim_apparitions": true,
+    "anim_filets": true,
+    "anim_curseur": true,
+    "anim_compteurs": true,
+
+    "seo_donnees_structurees": true,
+    "seo_type_etablissement": "HealthAndBeautyBusiness",
+    "seo_description_etablissement": "Ély'Skin est un cabinet de soin esthétique à Paris. Chaque prise en charge commence par un bilan cutané et se construit séance après séance : Hydrafacial, microneedling, peeling, diagnostic infirmier, HIFU et radiofréquence, luminothérapie LED, drainage lymphatique.",
+
+    "avertissement": "<p>Les soins présentés sont des soins esthétiques non médicaux. Ils ne remplacent ni une consultation ni un traitement dermatologique. Les résultats varient selon la personne, son mode de vie et le protocole suivi. Un bilan est réalisé avant toute séance, et certaines demandes peuvent être écartées ou réorientées vers un médecin.</p>",
+    "copyright": "Ély'Skin Paris"
+  }
+}

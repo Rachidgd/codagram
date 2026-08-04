@@ -1,0 +1,4 @@
+{
+  "sections": { "collection": { "type": "collection-principale", "settings": { "par_page": 16 } } },
+  "order": ["collection"]
+}

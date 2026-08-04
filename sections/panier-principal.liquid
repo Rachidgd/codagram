@@ -1,0 +1,87 @@
+{%- comment -%}
+  Panier — formulaire natif Shopify, sans appel réseau supplémentaire.
+  La mise à jour des quantités passe par la soumission du formulaire : c'est
+  fiable, accessible, et fonctionne sans JavaScript.
+{%- endcomment -%}
+
+<section class="section">
+  <div class="lisiere">
+    <h1 class="equilibre">{{ 'panier.titre' | t }}</h1>
+    <span class="filet mt-7 w-full max-w-30" aria-hidden="true"></span>
+
+    {%- if cart.item_count > 0 -%}
+      {%- form 'cart', cart, class: 'panier__formulaire' -%}
+        <ul role="list" class="panier__lignes mt-10">
+          {%- for ligne in cart.items -%}
+            <li class="panier__ligne">
+              <a href="{{ ligne.url }}" class="panier__media" aria-hidden="true" tabindex="-1">
+                {%- render 'image-reactive',
+                  image: ligne.image,
+                  ratio: 'carre',
+                  tailles: '96px',
+                  alt: ligne.title
+                -%}
+              </a>
+
+              <div class="panier__infos">
+                <a class="panier__nom" href="{{ ligne.url }}">{{ ligne.product.title }}</a>
+                {%- unless ligne.variant.title contains 'Default' -%}
+                  <p class="panier__variante">{{ ligne.variant.title }}</p>
+                {%- endunless -%}
+                <p class="panier__prix nombres-tabulaires">{{ ligne.original_price | money }}</p>
+              </div>
+
+              <div class="panier__actions">
+                <label class="panier__quantite">
+                  <span class="lecteur-seul">{{ 'panier.quantite' | t }}</span>
+                  <input
+                    type="number"
+                    name="updates[]"
+                    value="{{ ligne.quantity }}"
+                    min="0"
+                    inputmode="numeric"
+                    class="panier__champ-quantite nombres-tabulaires"
+                  >
+                </label>
+                <a class="panier__retirer lien" href="{{ ligne.url_to_remove }}">
+                  {{ 'panier.retirer' | t }}
+                </a>
+              </div>
+
+              <p class="panier__total-ligne nombres-tabulaires">{{ ligne.final_line_price | money }}</p>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <div class="panier__pied">
+          <button type="submit" name="update" class="btn btn--ligne">
+            {{ 'general.voir_plus' | t }}
+          </button>
+
+          <div class="panier__recapitulatif">
+            <p class="panier__total">
+              <span>{{ 'panier.total' | t }}</span>
+              <span class="nombres-tabulaires">{{ cart.total_price | money }}</span>
+            </p>
+            <button type="submit" name="checkout" class="btn">
+              {{ 'panier.commander' | t }}
+            </button>
+          </div>
+        </div>
+      {%- endform -%}
+    {%- else -%}
+      <p class="mt-10 text-lg text-grain">{{ 'panier.vide' | t }}</p>
+      <div class="mt-8">
+        {%- render 'bouton', libelle: 'Retour à l’accueil', lien: routes.root_url, style: 'plein', fleche: true -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Panier",
+  "tag": "div",
+  "settings": []
+}
+{% endschema %}

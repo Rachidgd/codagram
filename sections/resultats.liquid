@@ -1,0 +1,154 @@
+{%- comment -%}
+  Résultats chiffrés.
+
+  Les valeurs sont saisies par le cabinet et doivent rester vérifiables : la
+  note de bas de section porte la source. En France, un établissement
+  esthétique ne peut pas promettre un résultat médical — le libellé reste
+  descriptif, jamais curatif.
+{%- endcomment -%}
+
+<section
+  id="{{ section.settings.ancre | default: 'resultats' | handleize }}"
+  class="section {{ section.settings.surface }}"
+  {% if section.settings.surface == 'surface-sombre' %}
+    data-entete-inverse
+  {% endif %}
+>
+  <div class="lisiere">
+    <div class="grille-12 gap-y-8">
+      <div class="col-span-12 lg:col-span-5">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+      </div>
+    </div>
+
+    <div
+      class="mt-12 grid gap-x-8 gap-y-9 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4"
+      data-reveal-groupe
+      data-reveal-pas="80"
+    >
+      {%- for bloc in section.blocks -%}
+        <div class="resultat" data-reveal {{ bloc.shopify_attributes }}>
+          <p class="stat">
+            {%- if bloc.settings.prefixe != blank -%}
+              <span>{{ bloc.settings.prefixe }}</span>
+            {%- endif -%}
+            <span data-compteur="{{ bloc.settings.valeur }}">{{ bloc.settings.valeur }}</span>
+            {%- if bloc.settings.suffixe != blank -%}
+              <span>{{ bloc.settings.suffixe }}</span>
+            {%- endif -%}
+          </p>
+          <p class="resultat__libelle">{{ bloc.settings.libelle }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.source != blank -%}
+      <p class="resultat__note mt-9 max-w-[68ch]" data-reveal>{{ section.settings.source }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Résultats chiffrés",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ancre",
+      "label": "Ancre",
+      "info": "Permet de pointer vers cette section depuis un lien : #resultats",
+      "default": "resultats"
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" },
+        { "value": "surface-sombre", "label": "Vert absolu" }
+      ],
+      "default": ""
+    },
+    { "type": "text", "id": "index", "label": "Index", "default": "05" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Ce que ça donne" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Des chiffres tenus, pas des promesses."
+    },
+    {
+      "type": "textarea",
+      "id": "source",
+      "label": "Note de source",
+      "info": "Obligatoire dès qu'un chiffre est avancé. Précisez la période, l'effectif et la méthode de relevé.",
+      "default": "Relevés internes sur les protocoles conduits au cabinet. Les résultats varient selon la peau, l'âge, le mode de vie et l'observance du protocole. Aucun résultat n'est garanti."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "chiffre",
+      "name": "Chiffre",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "valeur", "label": "Valeur", "info": "Nombre seul. Exemple : 94", "default": "94" },
+        { "type": "text", "id": "prefixe", "label": "Préfixe" },
+        { "type": "text", "id": "suffixe", "label": "Suffixe", "default": "%" },
+        {
+          "type": "textarea",
+          "id": "libelle",
+          "label": "Libellé",
+          "default": "des protocoles ajustés au moins une fois en cours de route"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Résultats chiffrés",
+      "blocks": [
+        {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "40",
+            "suffixe": " min",
+            "libelle": "de bilan avant qu'un seul soin ne soit proposé"
+          }
+        },
+        {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "3",
+            "suffixe": " à 6",
+            "libelle": "séances suffisent sur la majorité des protocoles"
+          }
+        },
+        {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "94",
+            "suffixe": "%",
+            "libelle": "des plans de soin sont réajustés en cours de protocole"
+          }
+        },
+        {
+          "type": "chiffre",
+          "settings": {
+            "valeur": "0",
+            "suffixe": "",
+            "libelle": "engagement demandé avant le premier rendez-vous"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

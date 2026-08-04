@@ -1,0 +1,91 @@
+{
+  "type": "header",
+  "name": "En-tête",
+  "sections": {
+    "bandeau": {
+      "type": "bandeau-annonce",
+      "settings": {
+        "afficher": true,
+        "message": "Premier rendez-vous : bilan cutané offert, sans engagement.",
+        "libelle_lien": "Réserver",
+        "lien": ""
+      }
+    },
+    "entete": {
+      "type": "entete",
+      "blocks": {
+        "p1": {
+          "type": "protocole",
+          "settings": {
+            "titre": "Hydrafacial",
+            "lien": "/pages/hydrafacial",
+            "sigle": "sigle.hydrafacial",
+            "mesure": "60 min"
+          }
+        },
+        "p2": {
+          "type": "protocole",
+          "settings": {
+            "titre": "Microneedling",
+            "lien": "/pages/microneedling",
+            "sigle": "sigle.microneedling",
+            "mesure": "75 min"
+          }
+        },
+        "p3": {
+          "type": "protocole",
+          "settings": {
+            "titre": "Peeling",
+            "lien": "/pages/peeling",
+            "sigle": "sigle.peeling",
+            "mesure": "45 min"
+          }
+        },
+        "p4": {
+          "type": "protocole",
+          "settings": {
+            "titre": "Diagnostic infirmier",
+            "lien": "/pages/diagnostic-infirmier",
+            "sigle": "sigle.diagnostic",
+            "mesure": "40 min"
+          }
+        },
+        "p5": {
+          "type": "protocole",
+          "settings": {
+            "titre": "HIFU & radiofréquence",
+            "lien": "/pages/hifu-radiofrequence",
+            "sigle": "sigle.hifu",
+            "mesure": "90 min"
+          }
+        },
+        "p6": {
+          "type": "protocole",
+          "settings": {
+            "titre": "Luminothérapie LED",
+            "lien": "/pages/luminotherapie-led",
+            "sigle": "sigle.led",
+            "mesure": "30 min"
+          }
+        },
+        "p7": {
+          "type": "protocole",
+          "settings": {
+            "titre": "Drainage lymphatique",
+            "lien": "/pages/drainage-lymphatique",
+            "sigle": "sigle.drainage",
+            "mesure": "60 min"
+          }
+        }
+      },
+      "block_order": ["p1", "p2", "p3", "p4", "p5", "p6", "p7"],
+      "settings": {
+        "libelle_protocoles": "Protocoles",
+        "menu_secondaire": "main-menu",
+        "note_menu": "Chaque protocole commence par un bilan. Aucun soin n'est vendu sans indication.",
+        "afficher_telephone": true
+      }
+    }
+  },
+  "order": ["bandeau", "entete"]
+}

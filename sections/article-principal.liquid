@@ -1,0 +1,152 @@
+{%- comment -%}
+  Article.
+
+  Sommaire construit côté client depuis les titres réellement présents dans le
+  corps de l'article — aucune saisie manuelle à maintenir. Barre de progression
+  de lecture, temps de lecture estimé, et données structurées Article.
+{%- endcomment -%}
+
+{%- liquid
+  assign mots = article.content | strip_html | split: ' ' | size
+  assign minutes = mots | divided_by: 220 | at_least: 1
+-%}
+
+<article class="article">
+  {%- if section.settings.progression -%}
+    <div class="progression" data-progression aria-hidden="true"></div>
+  {%- endif -%}
+
+  <header class="article__entete section-serree">
+    <div class="lisiere">
+      <nav class="ariane" aria-label="{{ 'referencement.accueil' | t }}">
+        <a href="{{ routes.root_url }}">{{ 'referencement.accueil' | t }}</a>
+        <span aria-hidden="true">/</span>
+        <a href="{{ blog.url }}">{{ blog.title }}</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{{ article.title }}</span>
+      </nav>
+
+      <div class="grille-12 mt-9">
+        <div class="col-span-12 lg:col-span-8">
+          {%- if article.tags.size > 0 -%}
+            <p class="surtitre" data-reveal>{{ article.tags.first }}</p>
+          {%- endif -%}
+
+          <h1 class="mt-5 equilibre max-w-[20ch]" data-reveal style="--reveal-delay: 60ms">
+            {{ article.title }}
+          </h1>
+
+          <div class="article__meta" data-reveal style="--reveal-delay: 120ms">
+            <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+              {{ article.published_at | date: '%-d %B %Y' }}
+            </time>
+            {%- if article.author != blank -%}
+              <span aria-hidden="true">·</span>
+              <span>{{ 'journal.par' | t }} {{ article.author }}</span>
+            {%- endif -%}
+            <span aria-hidden="true">·</span>
+            <span>{{ 'journal.temps_lecture' | t: minutes: minutes }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {%- if article.image -%}
+    <div class="lisiere">
+      <div data-reveal>
+        {%- render 'image-reactive',
+          image: article.image,
+          ratio: 'paysage',
+          tailles: '(min-width: 96rem) 88rem, 100vw',
+          alt: article.title,
+          priorite: true
+        -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="lisiere section">
+    <div class="grille-12 gap-y-10">
+      {%- if section.settings.sommaire -%}
+        <aside class="col-span-12 lg:col-span-3 lg:order-2 lg:col-start-10">
+          <ely-sommaire class="sommaire block" data-cible="#corps-article" hidden>
+            <p class="surtitre">{{ 'journal.sommaire' | t }}</p>
+            <nav class="sommaire__liste" aria-label="{{ 'journal.sommaire' | t }}"></nav>
+          </ely-sommaire>
+        </aside>
+      {%- endif -%}
+
+      <div class="col-span-12 lg:col-span-7 lg:order-1">
+        <div class="prose-ely" id="corps-article">
+          {{ article.content }}
+        </div>
+
+        {%- if section.settings.rappel_cta -%}
+          <aside class="article__rappel" data-reveal>
+            <p class="article__rappel-texte">{{ section.settings.texte_rappel }}</p>
+            {%- render 'bouton', rdv: true, style: 'plein', fleche: true -%}
+          </aside>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- if blog.next_article or blog.previous_article -%}
+    <nav class="article__voisins surface-craie" aria-label="{{ blog.title }}">
+      <div class="lisiere article__voisins-grille">
+        {%- if blog.previous_article -%}
+          <a class="article__voisin" href="{{ blog.previous_article.url }}" rel="prev">
+            <span class="surtitre">{{ 'journal.precedent' | t }}</span>
+            <span class="article__voisin-titre">{{ blog.previous_article.title }}</span>
+          </a>
+        {%- endif -%}
+        {%- if blog.next_article -%}
+          <a class="article__voisin article__voisin--fin" href="{{ blog.next_article.url }}" rel="next">
+            <span class="surtitre">{{ 'journal.suivant' | t }}</span>
+            <span class="article__voisin-titre">{{ blog.next_article.title }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+    </nav>
+  {%- endif -%}
+</article>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ article.title | json }},
+    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
+    "dateModified": {{ article.updated_at | default: article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
+    "mainEntityOfPage": { "@type": "WebPage", "@id": {{ shop.url | append: article.url | json }} }
+    {%- if article.excerpt_or_content != blank -%}
+      , "description": {{ article.excerpt_or_content | strip_html | truncate: 300 | json }}
+    {%- endif -%}
+    {%- if article.image -%}
+      , "image": {{ article.image | image_url: width: 1200 | prepend: 'https:' | json }}
+    {%- endif -%}
+    {%- if article.author != blank -%}
+      , "author": { "@type": "Person", "name": {{ article.author | json }} }
+    {%- endif -%}
+    , "publisher": { "@id": {{ shop.url | append: '/#etablissement' | json }} }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Article",
+  "tag": "div",
+  "settings": [
+    { "type": "checkbox", "id": "sommaire", "label": "Afficher le sommaire", "default": true },
+    { "type": "checkbox", "id": "progression", "label": "Afficher la progression de lecture", "default": true },
+    { "type": "checkbox", "id": "rappel_cta", "label": "Rappel de prise de rendez-vous en fin d'article", "default": true },
+    {
+      "type": "textarea",
+      "id": "texte_rappel",
+      "label": "Texte du rappel",
+      "default": "Cet article décrit un principe général. Ce qui vaut pour votre peau se détermine au bilan."
+    }
+  ]
+}
+{% endschema %}

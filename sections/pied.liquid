@@ -1,0 +1,288 @@
+{%- comment -%}
+  Pied de page — surface sombre, structure éditoriale.
+  Porte les coordonnées réelles du cabinet (référencement local) et la
+  dernière relance de prise de rendez-vous.
+{%- endcomment -%}
+
+<footer class="pied surface-sombre" data-entete-inverse role="contentinfo">
+  {%- if section.settings.afficher_relance -%}
+    <div class="pied__relance">
+      <div class="lisiere">
+        <div class="pied__relance-grille">
+          <div>
+            <p class="surtitre" data-index="{{ section.settings.index_relance | default: '—' }}">
+              {{ section.settings.surtitre_relance }}
+            </p>
+            <p class="pied__relance-titre equilibre">{{ section.settings.titre_relance }}</p>
+          </div>
+          <div class="pied__relance-actions">
+            {%- render 'bouton', rdv: true, style: 'clair', fleche: true -%}
+            {%- if section.settings.lien_secondaire != blank -%}
+              {%- render 'bouton',
+                libelle: section.settings.libelle_secondaire,
+                lien: section.settings.lien_secondaire,
+                style: 'fantome'
+              -%}
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="lisiere pied__corps">
+    <div class="pied__grille">
+      {%- comment -%} — Marque — {%- endcomment -%}
+      <div class="pied__marque">
+        <a href="{{ routes.root_url }}" class="pied__logo-lien" aria-label="{{ shop.name | escape }}">
+          {%- if settings.logo_clair != blank -%}
+            <img
+              src="{{ settings.logo_clair | image_url: height: 120 }}"
+              alt="{{ shop.name | escape }}"
+              width="{{ settings.logo_clair.width }}"
+              height="{{ settings.logo_clair.height }}"
+              style="height: {{ settings.logo_hauteur | default: 28 | plus: 4 }}px; width: auto;"
+            >
+          {%- elsif settings.logo != blank -%}
+            <img
+              src="{{ settings.logo | image_url: height: 120 }}"
+              alt="{{ shop.name | escape }}"
+              width="{{ settings.logo.width }}"
+              height="{{ settings.logo.height }}"
+              style="height: {{ settings.logo_hauteur | default: 28 | plus: 4 }}px; width: auto;"
+            >
+          {%- else -%}
+            <span class="pied__mot">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+
+        {%- if settings.signature != blank -%}
+          <p class="pied__signature">{{ settings.signature }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.phrase != blank -%}
+          <p class="pied__phrase">{{ section.settings.phrase }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} — Colonnes de liens — {%- endcomment -%}
+      {%- for bloc in section.blocks -%}
+        {%- case bloc.type -%}
+          {%- when 'colonne' -%}
+            <nav class="pied__colonne" aria-label="{{ bloc.settings.titre | escape }}" {{ bloc.shopify_attributes }}>
+              <p class="surtitre">{{ bloc.settings.titre }}</p>
+              {%- if bloc.settings.menu != blank -%}
+                <ul role="list" class="pied__liens">
+                  {%- for lien in linklists[bloc.settings.menu].links -%}
+                    <li>
+                      <a class="lien" href="{{ lien.url }}">{{ lien.title }}</a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </nav>
+
+          {%- when 'coordonnees' -%}
+            <div class="pied__colonne" {{ bloc.shopify_attributes }}>
+              <p class="surtitre">{{ bloc.settings.titre | default: 'Le cabinet' }}</p>
+              <address class="pied__adresse">
+                {%- if settings.cabinet_rue != blank -%}
+                  <span>{{ settings.cabinet_rue }}</span>
+                {%- endif -%}
+                {%- if settings.cabinet_cp != blank or settings.cabinet_ville != blank -%}
+                  <span>{{ settings.cabinet_cp }} {{ settings.cabinet_ville }}</span>
+                {%- endif -%}
+
+                {%- if settings.cabinet_tel != blank -%}
+                  <a class="lien pied__contact" href="tel:{{ settings.cabinet_tel | remove: ' ' | remove: '.' }}">
+                    {{ settings.cabinet_tel }}
+                  </a>
+                {%- endif -%}
+                {%- if settings.cabinet_email != blank -%}
+                  <a class="lien pied__contact" href="mailto:{{ settings.cabinet_email }}">
+                    {{ settings.cabinet_email }}
+                  </a>
+                {%- endif -%}
+              </address>
+
+              {%- if settings.cabinet_horaires != blank -%}
+                <p class="surtitre pied__sous-titre">{{ 'cabinet.horaires' | t }}</p>
+                <p class="pied__horaires">{{ settings.cabinet_horaires | newline_to_br }}</p>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+    {%- comment -%} — Réseaux — {%- endcomment -%}
+    {%- liquid
+      assign a_reseaux = false
+      if settings.reseau_instagram != blank or settings.reseau_tiktok != blank or settings.reseau_facebook != blank or settings.reseau_linkedin != blank
+        assign a_reseaux = true
+      endif
+    -%}
+    {%- if a_reseaux -%}
+      <div class="pied__reseaux">
+        <span class="surtitre">{{ 'cabinet.suivre' | t }}</span>
+        <ul role="list" class="pied__reseaux-liste">
+          {%- if settings.reseau_instagram != blank -%}
+            <li>
+              <a href="{{ settings.reseau_instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
+                {%- render 'icone', nom: 'ui.instagram', taille: 19 -%}
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if settings.reseau_tiktok != blank -%}
+            <li>
+              <a href="{{ settings.reseau_tiktok }}" target="_blank" rel="noopener" aria-label="TikTok">
+                {%- render 'icone', nom: 'ui.tiktok', taille: 19 -%}
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if settings.reseau_facebook != blank -%}
+            <li>
+              <a href="{{ settings.reseau_facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
+                {%- render 'icone', nom: 'ui.facebook', taille: 19 -%}
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if settings.reseau_linkedin != blank -%}
+            <li>
+              <a href="{{ settings.reseau_linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+                {%- render 'icone', nom: 'ui.linkedin', taille: 19 -%}
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} — Mentions — {%- endcomment -%}
+    <div class="pied__bas">
+      {%- if settings.avertissement != blank -%}
+        <div class="pied__avertissement">{{ settings.avertissement }}</div>
+      {%- endif -%}
+
+      <div class="pied__legal">
+        <p class="pied__copyright">
+          © {{ 'now' | date: '%Y' }} {{ settings.copyright | default: shop.name }}
+        </p>
+        {%- if section.settings.menu_legal != blank -%}
+          <ul role="list" class="pied__legal-liens">
+            {%- for lien in linklists[section.settings.menu_legal].links -%}
+              <li>
+                <a class="lien" href="{{ lien.url }}">{{ lien.title }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Pied de page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Relance finale"
+    },
+    {
+      "type": "checkbox",
+      "id": "afficher_relance",
+      "label": "Afficher le bandeau de relance",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "index_relance",
+      "label": "Index",
+      "default": "09"
+    },
+    {
+      "type": "text",
+      "id": "surtitre_relance",
+      "label": "Surtitre",
+      "default": "Premier rendez-vous"
+    },
+    {
+      "type": "text",
+      "id": "titre_relance",
+      "label": "Titre",
+      "default": "Un bilan avant tout soin. C'est là que tout commence."
+    },
+    {
+      "type": "text",
+      "id": "libelle_secondaire",
+      "label": "Libellé du second bouton",
+      "default": "Poser une question"
+    },
+    {
+      "type": "url",
+      "id": "lien_secondaire",
+      "label": "Lien du second bouton"
+    },
+    {
+      "type": "header",
+      "content": "Marque"
+    },
+    {
+      "type": "textarea",
+      "id": "phrase",
+      "label": "Phrase de marque",
+      "default": "Une peau se lit avant de se traiter. Chaque protocole part d'un bilan, se règle sur votre calendrier, et se corrige séance après séance."
+    },
+    {
+      "type": "header",
+      "content": "Bas de page"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_legal",
+      "label": "Menu des mentions légales"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "colonne",
+      "name": "Colonne de liens",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "titre",
+          "label": "Titre de la colonne",
+          "default": "Protocoles"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+      "type": "coordonnees",
+      "name": "Coordonnées",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "titre",
+          "label": "Titre",
+          "default": "Le cabinet"
+        },
+        {
+          "type": "paragraph",
+          "content": "Les coordonnées proviennent des réglages du thème, rubrique « Le cabinet »."
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "groups": ["footer"]
+  }
+}
+{% endschema %}

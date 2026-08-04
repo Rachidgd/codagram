@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "page": {
+      "type": "page-principale",
+      "settings": { "index": "—", "surtitre": "Le cabinet" }
+    }
+  },
+  "order": ["page"]
+}

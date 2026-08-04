@@ -1,0 +1,97 @@
+{%- comment -%}
+  Image réactive avec dimensions réservées — zéro décalage de mise en page.
+
+  Paramètres :
+    image      — objet image Shopify
+    ratio      — portrait | paysage | carre | large | auto (défaut : portrait)
+    tailles    — attribut sizes (défaut : 100vw)
+    priorite   — true pour l'image de plus grande peinture (pas de lazy)
+    classe     — classes du conteneur
+    classe_img — classes de l'élément img
+    alt        — texte alternatif de substitution
+    zoom       — true pour activer le zoom lent au survol
+{%- endcomment -%}
+
+{%- liquid
+  assign r = ratio | default: 'portrait'
+  case r
+    when 'paysage'
+      assign proportion = '16 / 10'
+    when 'carre'
+      assign proportion = '1 / 1'
+    when 'large'
+      assign proportion = '21 / 9'
+    when 'portrait'
+      assign proportion = '4 / 5'
+    when 'auto'
+      assign proportion = blank
+    else
+      assign proportion = r
+  endcase
+
+  assign attr_tailles = tailles | default: '100vw'
+  assign texte_alt = alt
+  if texte_alt == blank
+    assign texte_alt = image.alt
+  endif
+
+  assign classes_conteneur = 'voile-media-hote overflow-hidden'
+  if zoom
+    assign classes_conteneur = classes_conteneur | append: ' media-zoom'
+  endif
+  if classe != blank
+    assign classes_conteneur = classes_conteneur | append: ' ' | append: classe
+  endif
+-%}
+
+<div
+  class="{{ classes_conteneur }}"
+  {% if proportion != blank %}
+    style="aspect-ratio: {{ proportion }};"
+  {% endif %}
+>
+  {%- if image != blank -%}
+    <img
+      src="{{ image | image_url: width: 1400 }}"
+      srcset="
+        {{ image | image_url: width: 400 }} 400w,
+        {{ image | image_url: width: 640 }} 640w,
+        {{ image | image_url: width: 900 }} 900w,
+        {{ image | image_url: width: 1200 }} 1200w,
+        {{ image | image_url: width: 1600 }} 1600w,
+        {{ image | image_url: width: 2000 }} 2000w
+      "
+      sizes="{{ attr_tailles }}"
+      alt="{{ texte_alt | escape }}"
+      width="{{ image.width }}"
+      height="{{ image.height }}"
+      loading="{% if priorite %}eager{% else %}lazy{% endif %}"
+      fetchpriority="{% if priorite %}high{% else %}auto{% endif %}"
+      decoding="async"
+      class="h-full w-full object-cover {{ classe_img }}"
+    >
+  {%- else -%}
+    {%- comment -%}
+      Repli graphique maison — pas de silhouette Shopify générique.
+      Trame de filets fins, cohérente avec le langage du site.
+    {%- endcomment -%}
+    <div class="ely-repli h-full w-full" role="img" aria-label="{{ texte_alt | default: '' | escape }}">
+      <svg
+        viewBox="0 0 100 125"
+        preserveAspectRatio="xMidYMid slice"
+        class="h-full w-full"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <rect width="100" height="125" fill="var(--color-craie)"/>
+        <g stroke="var(--color-lin)" stroke-width="0.4" fill="none">
+          <circle cx="50" cy="62.5" r="14"/>
+          <circle cx="50" cy="62.5" r="22"/>
+          <circle cx="50" cy="62.5" r="30"/>
+          <line x1="0" y1="62.5" x2="100" y2="62.5"/>
+          <line x1="50" y1="0" x2="50" y2="125"/>
+        </g>
+      </svg>
+    </div>
+  {%- endif -%}
+</div>

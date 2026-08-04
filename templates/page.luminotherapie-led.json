@@ -1,0 +1,350 @@
+{
+  "sections": {
+    "entete": {
+      "type": "protocole-entete",
+      "settings": {
+        "sigle": "sigle.led",
+        "surtitre": "Protocole",
+        "titre": "Luminothérapie LED — apaiser, assainir, réparer.",
+        "chapo": "Des longueurs d'onde choisies selon l'objectif, appliquées sans contact ni chaleur. Le protocole le plus doux du cabinet, et le seul qui convienne à une peau en pleine réaction.",
+        "lien_parent": "/#protocoles",
+        "libelle_secondaire": "Voir le déroulé",
+        "ancre_secondaire": "#deroule",
+        "duree": "30 min",
+        "seances": "6 à 10",
+        "eviction": "Aucune",
+        "mode_tarif": "depuis",
+        "montant": "55",
+        "donnees_structurees": true,
+        "type_service": "photothérapie du visage par diodes électroluminescentes"
+      }
+    },
+    "benefices": {
+      "type": "protocole-benefices",
+      "blocks": {
+        "b1": {
+          "type": "benefice",
+          "settings": {
+            "avant": "Une peau qui rougit au moindre soin",
+            "apres": "Une inflammation qui retombe séance après séance",
+            "texte": "Le rouge et l'infrarouge agissent sur les mécanismes de l'inflammation sans aucune contrainte mécanique. Rien n'est frotté, rien n'est pénétré.",
+            "delai": "3 à 4 séances"
+          }
+        },
+        "b2": {
+          "type": "benefice",
+          "settings": {
+            "avant": "Des boutons qui s'enchaînent",
+            "apres": "Une peau assainie sans dessèchement",
+            "texte": "Le bleu cible la bactérie impliquée dans l'acné. Contrairement aux traitements asséchants, il n'abîme pas la barrière cutanée au passage.",
+            "delai": "6 à 8 séances"
+          }
+        },
+        "b3": {
+          "type": "benefice",
+          "settings": {
+            "avant": "Une cicatrisation lente après un soin",
+            "apres": "Une récupération nettement raccourcie",
+            "texte": "Programmée dans les jours qui suivent un peeling ou un microneedling, elle réduit sensiblement la durée de la phase de rougeur.",
+            "delai": "dès la séance suivante"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "settings": {
+        "surface": "",
+        "ancre": "benefices",
+        "index": "01",
+        "surtitre": "Ce que ça change",
+        "titre": "Avant, après.",
+        "chapo": "Les délais annoncés sont ceux constatés au cabinet sur une peau qui suit le protocole. Ils ne constituent pas une garantie de résultat."
+      }
+    },
+    "deroule": {
+      "type": "protocole-deroule",
+      "blocks": {
+        "t1": {
+          "type": "temps",
+          "settings": {
+            "minute": "0 — 5 min",
+            "titre": "Point d'entrée",
+            "texte": "Objectif de la séance et choix des longueurs d'onde : bleu, rouge, infrarouge ou combinaison, selon ce que la peau montre le jour même."
+          }
+        },
+        "t2": {
+          "type": "temps",
+          "settings": {
+            "minute": "5 — 10 min",
+            "titre": "Préparation",
+            "texte": "Nettoyage et séchage complet. La peau doit être nue : tout résidu de crème ou de maquillage filtre une partie du rayonnement."
+          }
+        },
+        "t3": {
+          "type": "temps",
+          "settings": {
+            "minute": "10 — 30 min",
+            "titre": "Exposition",
+            "texte": "Panneau positionné à distance fixe, yeux protégés. Aucune sensation de chaleur ni de contact. Vous pouvez fermer les yeux et rester immobile le temps de la séance."
+          }
+        },
+        "t4": {
+          "type": "temps",
+          "settings": {
+            "minute": "30 min",
+            "titre": "Sortie",
+            "texte": "Application d'un soin adapté et protection solaire. Aucune consigne particulière : maquillage, sport et exposition normale sont possibles immédiatement."
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {
+        "surface": "surface-craie",
+        "ancre": "deroule",
+        "index": "02",
+        "surtitre": "La séance",
+        "titre": "Minute par minute.",
+        "note": "Les durées sont indicatives et s'ajustent à votre peau le jour même. Vous pouvez demander une pause ou l'arrêt de la séance à tout moment."
+      }
+    },
+    "indications": {
+      "type": "protocole-indications",
+      "blocks": {
+        "i1": {
+          "type": "indication",
+          "settings": {
+            "texte": "Peau réactive, rougeurs et inflammation diffuse"
+          }
+        },
+        "i2": {
+          "type": "indication",
+          "settings": {
+            "texte": "Acné légère à modérée en entretien"
+          }
+        },
+        "i3": {
+          "type": "indication",
+          "settings": {
+            "texte": "Récupération après peeling, microneedling ou HIFU"
+          }
+        },
+        "i4": {
+          "type": "indication",
+          "settings": {
+            "texte": "Peau terne sans tolérance aux protocoles plus actifs"
+          }
+        },
+        "i5": {
+          "type": "indication",
+          "settings": {
+            "texte": "Entretien entre deux protocoles soutenus"
+          }
+        },
+        "c1": {
+          "type": "contre",
+          "settings": {
+            "texte": "Traitement photosensibilisant en cours"
+          }
+        },
+        "c2": {
+          "type": "contre",
+          "settings": {
+            "texte": "Épilepsie photosensible"
+          }
+        },
+        "c3": {
+          "type": "contre",
+          "settings": {
+            "texte": "Pathologie rétinienne évolutive"
+          }
+        },
+        "c4": {
+          "type": "contre",
+          "settings": {
+            "texte": "Lupus et affections aggravées par la lumière"
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "settings": {
+        "surface": "",
+        "ancre": "indications",
+        "index": "03",
+        "surtitre": "Pour qui",
+        "titre": "Ce que ce protocole traite — et ce qu'il ne traite pas.",
+        "note": "Cette liste n'est pas exhaustive. Les contre-indications sont vérifiées une par une lors du bilan."
+      }
+    },
+    "tarifs": {
+      "type": "protocole-tarifs",
+      "blocks": {
+        "l1": {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Séance unitaire",
+            "precision": "30 minutes",
+            "mode_tarif": "depuis",
+            "montant": "55",
+            "note_devis": ""
+          }
+        },
+        "l2": {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Protocole de 8 séances",
+            "precision": "Deux séances par semaine pendant un mois",
+            "mode_tarif": "depuis",
+            "montant": "360",
+            "note_devis": ""
+          }
+        },
+        "l3": {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Séance de récupération",
+            "precision": "Programmée après un protocole actif",
+            "mode_tarif": "depuis",
+            "montant": "40",
+            "note_devis": ""
+          }
+        }
+      },
+      "block_order": [
+        "l1",
+        "l2",
+        "l3"
+      ],
+      "settings": {
+        "surface": "surface-sombre",
+        "ancre": "tarifs",
+        "index": "04",
+        "surtitre": "Tarifs",
+        "titre": "Ce que ça coûte, dit avant.",
+        "chapo": "<p>Les tarifs de départ s'entendent pour une séance unitaire, sur la zone indiquée. Toute prise en charge combinée est chiffrée après le bilan.</p>",
+        "mention": "Tarifs toutes taxes comprises, en vigueur à la date d'affichage. Le devis remis après le bilan fait foi. Aucun montant n'est engagé avant votre accord écrit."
+      }
+    },
+    "questions": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Est-ce vraiment efficace seul ?",
+            "reponse": "<p>Sur l'inflammation et sur l'acné légère à modérée, oui, à condition de respecter le rythme : deux séances par semaine pendant quatre à six semaines. En séance isolée et espacée, l'effet reste marginal. C'est un protocole de fréquence, pas d'intensité.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Y a-t-il un risque pour les yeux ?",
+            "reponse": "<p>Des protections oculaires sont posées systématiquement pendant toute l'exposition. Les longueurs d'onde utilisées ne contiennent pas d'ultraviolets. En cas de pathologie rétinienne connue, un avis ophtalmologique est demandé avant la première séance.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Peut-on l'enchaîner après un autre soin ?",
+            "reponse": "<p>Oui, et c'est l'un de ses meilleurs usages. Après un Hydrafacial, elle calme la rougeur d'extraction ; après un peeling ou un microneedling, elle raccourcit la phase inflammatoire. C'est aussi le seul protocole réalisable sur une peau qui n'en supporte aucun autre.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de temps l'effet dure-t-il ?",
+            "reponse": "<p>Sur l'acné, plusieurs mois si la routine à domicile suit, avec un entretien mensuel. Sur les rougeurs, l'effet s'estompe plus vite et demande des séances régulières. Le rythme d'entretien se fixe en fin de protocole, en fonction de ce qui a été observé.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "settings": {
+        "surface": "",
+        "index": "05",
+        "surtitre": "Questions fréquentes",
+        "titre": "Ce qu'on nous demande sur ce protocole.",
+        "aide": "<p>Une question qui n'est pas ici ? Posez-la : elle mérite une vraie réponse.</p>",
+        "libelle_lien": "Nous écrire",
+        "lien": "/pages/contact",
+        "une_seule": true,
+        "donnees_structurees": true
+      }
+    },
+    "associes": {
+      "type": "protocole-associes",
+      "blocks": {
+        "a1": {
+          "type": "associe",
+          "settings": {
+            "nom": "Hydrafacial",
+            "raison": "Enchaînés dans la même séance, ils couvrent le nettoyage en profondeur et l'apaisement.",
+            "lien": "/pages/hydrafacial",
+            "sigle": "sigle.hydrafacial"
+          }
+        },
+        "a2": {
+          "type": "associe",
+          "settings": {
+            "nom": "Microneedling",
+            "raison": "Deux séances de LED dans la semaine qui suit raccourcissent la phase de rougeur.",
+            "lien": "/pages/microneedling",
+            "sigle": "sigle.microneedling"
+          }
+        },
+        "a3": {
+          "type": "associe",
+          "settings": {
+            "nom": "Diagnostic infirmier",
+            "raison": "Sur une peau en pleine réaction, le bilan détermine si la LED est le seul protocole indiqué.",
+            "lien": "/pages/diagnostic-infirmier",
+            "sigle": "sigle.diagnostic"
+          }
+        }
+      },
+      "block_order": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "settings": {
+        "surface": "surface-craie",
+        "index": "06",
+        "surtitre": "À combiner",
+        "titre": "Ce qui se travaille bien avec.",
+        "libelle_lien": "Tous les protocoles",
+        "lien": "/#protocoles"
+      }
+    }
+  },
+  "order": [
+    "entete",
+    "benefices",
+    "deroule",
+    "indications",
+    "tarifs",
+    "questions",
+    "associes"
+  ]
+}

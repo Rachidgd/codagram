@@ -1,0 +1,78 @@
+{%- comment -%}
+  Bouton unifié du thème.
+
+  Paramètres :
+    libelle   — texte du bouton (obligatoire)
+    lien      — URL. Si vide et rdv = true, retombe sur le lien de réservation global.
+    style     — plein (défaut) | ligne | clair | fantome
+    rdv       — true pour un bouton de prise de rendez-vous
+    fleche    — true pour afficher la flèche diagonale
+    pleine_largeur — true pour occuper toute la largeur disponible
+    attributs — attributs HTML additionnels (chaîne brute)
+{%- endcomment -%}
+
+{%- liquid
+  assign url = lien
+  if rdv and url == blank
+    assign url = settings.rdv_url
+  endif
+  if url == blank
+    assign url = '/pages/contact'
+  endif
+
+  assign texte = libelle
+  if texte == blank and rdv
+    assign texte = settings.rdv_libelle | default: 'Prendre rendez-vous'
+  endif
+
+  assign classe = 'btn'
+  case style
+    when 'ligne'
+      assign classe = 'btn btn--ligne'
+    when 'clair'
+      assign classe = 'btn btn--clair'
+    when 'fantome'
+      assign classe = 'btn btn--fantome'
+  endcase
+
+  if pleine_largeur
+    assign classe = classe | append: ' w-full'
+  endif
+
+  assign externe = false
+  if url contains '://'
+    unless url contains shop.domain
+      assign externe = true
+    endunless
+  endif
+-%}
+
+{%- if texte != blank -%}
+  <a
+    class="{{ classe }}"
+    href="{{ url }}"
+    {% if externe %}
+      target="_blank" rel="noopener"
+    {% endif %}
+    data-curseur="lien"
+    {{ attributs }}
+  >
+    <span>{{ texte }}</span>
+    {%- if fleche -%}
+      <svg
+        class="btn__fleche"
+        width="11"
+        height="11"
+        viewBox="0 0 11 11"
+        fill="none"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M1.5 9.5 9.5 1.5M9.5 1.5H3.2M9.5 1.5v6.3" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+    {%- endif -%}
+    {%- if externe -%}
+      <span class="lecteur-seul">{{ 'accessibilite.nouvel_onglet' | t }}</span>
+    {%- endif -%}
+  </a>
+{%- endif -%}

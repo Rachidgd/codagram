@@ -1,0 +1,359 @@
+{
+  "sections": {
+    "entete": {
+      "type": "protocole-entete",
+      "settings": {
+        "sigle": "sigle.hydrafacial",
+        "surtitre": "Protocole",
+        "titre": "Hydrafacial — désencombrer sans agresser.",
+        "chapo": "Aspiration contrôlée, exfoliation douce et infusion de sérums dans le même geste. Soixante minutes, aucune suite visible, un teint qui repart le jour même.",
+        "lien_parent": "/#protocoles",
+        "libelle_secondaire": "Voir le déroulé",
+        "ancre_secondaire": "#deroule",
+        "duree": "60 min",
+        "seances": "1 à 4",
+        "eviction": "Aucune",
+        "mode_tarif": "depuis",
+        "montant": "140",
+        "donnees_structurees": true,
+        "type_service": "soin du visage par hydradermabrasion"
+      }
+    },
+    "benefices": {
+      "type": "protocole-benefices",
+      "blocks": {
+        "b1": {
+          "type": "benefice",
+          "settings": {
+            "avant": "Un teint qui ne suit plus",
+            "apres": "Une peau lisse et lumineuse dès la sortie",
+            "texte": "L'aspiration retire ce que le nettoyage quotidien ne va pas chercher. Le relief redevient régulier, la lumière accroche à nouveau.",
+            "delai": "dès la première séance"
+          }
+        },
+        "b2": {
+          "type": "benefice",
+          "settings": {
+            "avant": "Des pores visibles en permanence",
+            "apres": "Un grain resserré, un maquillage qui tient",
+            "texte": "En désengorgeant les pores, on réduit ce qui les rend visibles. L'effet se consolide sur trois à quatre séances rapprochées.",
+            "delai": "3 à 4 séances"
+          }
+        },
+        "b3": {
+          "type": "benefice",
+          "settings": {
+            "avant": "Une peau qui tiraille après chaque soin",
+            "apres": "Un confort immédiat, sans rebond",
+            "texte": "L'infusion des sérums se fait dans le même geste que l'extraction : la barrière cutanée n'est jamais laissée à nu.",
+            "delai": "immédiat"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "settings": {
+        "surface": "",
+        "ancre": "benefices",
+        "index": "01",
+        "surtitre": "Ce que ça change",
+        "titre": "Avant, après.",
+        "chapo": "Les délais annoncés sont ceux constatés au cabinet sur une peau qui suit le protocole. Ils ne constituent pas une garantie de résultat."
+      }
+    },
+    "deroule": {
+      "type": "protocole-deroule",
+      "blocks": {
+        "t1": {
+          "type": "temps",
+          "settings": {
+            "minute": "0 — 10 min",
+            "titre": "Point d'entrée",
+            "texte": "Ce qu'a fait la peau depuis la dernière séance, ce qui a changé dans votre routine, ce qui vous gêne aujourd'hui. Le réglage de l'appareil se décide ici."
+          }
+        },
+        "t2": {
+          "type": "temps",
+          "settings": {
+            "minute": "10 — 20 min",
+            "titre": "Nettoyage et exfoliation",
+            "texte": "Démaquillage complet puis exfoliation douce à l'acide glycolique et salicylique, dosée selon la tolérance constatée."
+          }
+        },
+        "t3": {
+          "type": "temps",
+          "settings": {
+            "minute": "20 — 40 min",
+            "titre": "Extraction par aspiration",
+            "texte": "Passage zone par zone avec contrôle visuel entre chaque. La dépression est réglée au plus bas nécessaire, jamais au maximum par principe."
+          }
+        },
+        "t4": {
+          "type": "temps",
+          "settings": {
+            "minute": "40 — 55 min",
+            "titre": "Infusion et apaisement",
+            "texte": "Sérums choisis selon l'objectif — hydratation, éclat ou séborégulation — puis quelques minutes de LED apaisante si la peau a réagi."
+          }
+        },
+        "t5": {
+          "type": "temps",
+          "settings": {
+            "minute": "55 — 60 min",
+            "titre": "Protection et consignes",
+            "texte": "Protection solaire, consignes écrites pour les quarante-huit heures qui suivent, et point sur l'espacement de la séance suivante."
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "settings": {
+        "surface": "surface-craie",
+        "ancre": "deroule",
+        "index": "02",
+        "surtitre": "La séance",
+        "titre": "Minute par minute.",
+        "note": "Les durées sont indicatives et s'ajustent à votre peau le jour même. Vous pouvez demander une pause ou l'arrêt de la séance à tout moment."
+      }
+    },
+    "indications": {
+      "type": "protocole-indications",
+      "blocks": {
+        "i1": {
+          "type": "indication",
+          "settings": {
+            "texte": "Teint terne, peau encombrée ou congestionnée"
+          }
+        },
+        "i2": {
+          "type": "indication",
+          "settings": {
+            "texte": "Pores dilatés et grain de peau irrégulier"
+          }
+        },
+        "i3": {
+          "type": "indication",
+          "settings": {
+            "texte": "Peau déshydratée qui tiraille en fin de journée"
+          }
+        },
+        "i4": {
+          "type": "indication",
+          "settings": {
+            "texte": "Entretien mensuel entre deux protocoles plus soutenus"
+          }
+        },
+        "i5": {
+          "type": "indication",
+          "settings": {
+            "texte": "Préparation de la peau avant un événement"
+          }
+        },
+        "c1": {
+          "type": "contre",
+          "settings": {
+            "texte": "Poussée inflammatoire ou acné en crise"
+          }
+        },
+        "c2": {
+          "type": "contre",
+          "settings": {
+            "texte": "Herpès labial en poussée"
+          }
+        },
+        "c3": {
+          "type": "contre",
+          "settings": {
+            "texte": "Exposition solaire intense dans les jours précédents"
+          }
+        },
+        "c4": {
+          "type": "contre",
+          "settings": {
+            "texte": "Traitement par isotrétinoïne en cours ou récent"
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "settings": {
+        "surface": "",
+        "ancre": "indications",
+        "index": "03",
+        "surtitre": "Pour qui",
+        "titre": "Ce que ce protocole traite — et ce qu'il ne traite pas.",
+        "note": "Cette liste n'est pas exhaustive. Les contre-indications sont vérifiées une par une lors du bilan."
+      }
+    },
+    "tarifs": {
+      "type": "protocole-tarifs",
+      "blocks": {
+        "l1": {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Séance unitaire",
+            "precision": "Visage, 60 minutes",
+            "mode_tarif": "depuis",
+            "montant": "140",
+            "note_devis": ""
+          }
+        },
+        "l2": {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Protocole de 4 séances",
+            "precision": "Espacées de 3 à 4 semaines",
+            "mode_tarif": "depuis",
+            "montant": "500",
+            "note_devis": ""
+          }
+        },
+        "l3": {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Duo avec luminothérapie LED",
+            "precision": "Visage et cou, 90 minutes",
+            "mode_tarif": "depuis",
+            "montant": "185",
+            "note_devis": ""
+          }
+        }
+      },
+      "block_order": [
+        "l1",
+        "l2",
+        "l3"
+      ],
+      "settings": {
+        "surface": "surface-sombre",
+        "ancre": "tarifs",
+        "index": "04",
+        "surtitre": "Tarifs",
+        "titre": "Ce que ça coûte, dit avant.",
+        "chapo": "<p>Les tarifs de départ s'entendent pour une séance unitaire, sur la zone indiquée. Toute prise en charge combinée est chiffrée après le bilan.</p>",
+        "mention": "Tarifs toutes taxes comprises, en vigueur à la date d'affichage. Le devis remis après le bilan fait foi. Aucun montant n'est engagé avant votre accord écrit."
+      }
+    },
+    "questions": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de temps le résultat tient-il ?",
+            "reponse": "<p>Trois à quatre semaines sur une peau normale, un peu moins sur une peau à tendance grasse. C'est ce qui fixe le rythme d'entretien : une séance par mois suffit à maintenir le résultat une fois le protocole initial terminé.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Peut-on le faire juste avant un événement ?",
+            "reponse": "<p>Oui, et c'est même l'un de ses intérêts : il n'y a ni rougeur durable ni desquamation. On recommande néanmoins de prévoir la séance deux à trois jours avant plutôt que la veille, le temps que la peau se stabilise complètement.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Est-ce adapté à une peau sensible ?",
+            "reponse": "<p>Dans la grande majorité des cas, oui. L'intensité d'aspiration et la concentration des acides sont réglées séance par séance. Sur une peau très réactive, on démarre au dosage le plus bas et on ne monte que si la tolérance le permet.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Quelle différence avec un nettoyage de peau classique ?",
+            "reponse": "<p>Le nettoyage traditionnel repose sur l'extraction manuelle, qui traumatise davantage et laisse des marques. Ici, l'extraction, l'exfoliation et l'hydratation se font en un seul passage mécanique, avec un dosage mesurable et reproductible d'une séance à l'autre.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "settings": {
+        "surface": "",
+        "index": "05",
+        "surtitre": "Questions fréquentes",
+        "titre": "Ce qu'on nous demande sur ce protocole.",
+        "aide": "<p>Une question qui n'est pas ici ? Posez-la : elle mérite une vraie réponse.</p>",
+        "libelle_lien": "Nous écrire",
+        "lien": "/pages/contact",
+        "une_seule": true,
+        "donnees_structurees": true
+      }
+    },
+    "associes": {
+      "type": "protocole-associes",
+      "blocks": {
+        "a1": {
+          "type": "associe",
+          "settings": {
+            "nom": "Luminothérapie LED",
+            "raison": "Enchaînée juste après, elle calme la rougeur d'extraction et prolonge l'effet sur les peaux à imperfections.",
+            "lien": "/pages/luminotherapie-led",
+            "sigle": "sigle.led"
+          }
+        },
+        "a2": {
+          "type": "associe",
+          "settings": {
+            "nom": "Drainage lymphatique",
+            "raison": "Sur un visage qui gonfle facilement, le drainage donne au résultat une netteté que l'Hydrafacial seul n'atteint pas.",
+            "lien": "/pages/drainage-lymphatique",
+            "sigle": "sigle.drainage"
+          }
+        },
+        "a3": {
+          "type": "associe",
+          "settings": {
+            "nom": "Peeling",
+            "raison": "Quand les taches persistent après plusieurs Hydrafacial, c'est le peeling qui prend le relais.",
+            "lien": "/pages/peeling",
+            "sigle": "sigle.peeling"
+          }
+        }
+      },
+      "block_order": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "settings": {
+        "surface": "surface-craie",
+        "index": "06",
+        "surtitre": "À combiner",
+        "titre": "Ce qui se travaille bien avec.",
+        "libelle_lien": "Tous les protocoles",
+        "lien": "/#protocoles"
+      }
+    }
+  },
+  "order": [
+    "entete",
+    "benefices",
+    "deroule",
+    "indications",
+    "tarifs",
+    "questions",
+    "associes"
+  ]
+}

@@ -1,0 +1,157 @@
+{%- comment -%}
+  Produit — utilisé au cabinet pour les bons cadeaux et les soins à domicile.
+  Panier natif Shopify, sélecteur de variantes sans dépendance.
+{%- endcomment -%}
+
+<section class="section">
+  <div class="lisiere">
+    <nav class="ariane" aria-label="{{ 'referencement.accueil' | t }}">
+      <a href="{{ routes.root_url }}">{{ 'referencement.accueil' | t }}</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ product.title }}</span>
+    </nav>
+
+    <div class="grille-12 mt-9 gap-y-10">
+      {%- comment -%} — Médias — {%- endcomment -%}
+      <div class="col-span-12 lg:col-span-6">
+        <div class="produit__medias">
+          {%- if product.media.size > 0 -%}
+            {%- for media in product.media limit: 4 -%}
+              {%- render 'image-reactive',
+                image: media.preview_image,
+                ratio: 'portrait',
+                tailles: '(min-width: 64rem) 46vw, 92vw',
+                alt: product.title,
+                priorite: forloop.first
+              -%}
+            {%- endfor -%}
+          {%- else -%}
+            {%- render 'image-reactive', ratio: 'portrait', alt: product.title -%}
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} — Achat — {%- endcomment -%}
+      <div class="col-span-12 lg:col-span-5 lg:col-start-8">
+        <div class="produit__achat">
+          {%- if product.type != blank -%}
+            <p class="surtitre">{{ product.type }}</p>
+          {%- endif -%}
+
+          <h1 class="mt-4 equilibre max-w-[18ch]">{{ product.title }}</h1>
+
+          {%- liquid
+            assign variante = product.selected_or_first_available_variant
+          -%}
+          <p class="produit__prix nombres-tabulaires">
+            {{ variante.price | money }}
+            {%- if variante.compare_at_price > variante.price -%}
+              <s class="produit__prix-barre">{{ variante.compare_at_price | money }}</s>
+            {%- endif -%}
+          </p>
+
+          <span class="filet my-7 w-full max-w-25" aria-hidden="true"></span>
+
+          {%- form 'product', product, id: 'formulaire-produit', class: 'produit__formulaire' -%}
+            {%- unless product.has_only_default_variant -%}
+              <div class="produit__variantes">
+                <label class="champ">
+                  <select
+                    class="champ__saisie"
+                    id="variante-produit"
+                    name="id"
+                    data-rempli="oui"
+                  >
+                    {%- for variante in product.variants -%}
+                      <option
+                        value="{{ variante.id }}"
+                        {% if variante == product.selected_or_first_available_variant %}
+                          selected
+                        {% endif %}
+                        {% unless variante.available %}
+                          disabled
+                        {% endunless %}
+                      >
+                        {{ variante.title }} — {{ variante.price | money }}
+                        {%- unless variante.available %} ({{ 'panier.epuise' | t }}){% endunless -%}
+                      </option>
+                    {%- endfor -%}
+                  </select>
+                  <span class="champ__label">{{ product.options_with_values.first.name }}</span>
+                </label>
+              </div>
+            {%- else -%}
+              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            {%- endunless -%}
+
+            <label class="champ produit__quantite">
+              <input
+                type="number"
+                class="champ__saisie"
+                id="quantite-produit"
+                name="quantity"
+                value="1"
+                min="1"
+                inputmode="numeric"
+                placeholder=" "
+              >
+              <span class="champ__label">{{ 'panier.quantite' | t }}</span>
+            </label>
+
+            <button
+              type="submit"
+              name="add"
+              class="btn w-full"
+              {% unless product.selected_or_first_available_variant.available %}
+                disabled
+              {% endunless %}
+            >
+              {%- if product.selected_or_first_available_variant.available -%}
+                {{ 'panier.ajouter' | t }}
+              {%- else -%}
+                {{ 'panier.epuise' | t }}
+              {%- endif -%}
+            </button>
+          {%- endform -%}
+
+          {%- if product.description != blank -%}
+            <div class="prose-ely produit__description">{{ product.description }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "url": {{ shop.url | append: product.url | json }}
+    {%- if product.description != blank -%}
+      , "description": {{ product.description | strip_html | truncate: 400 | json }}
+    {%- endif -%}
+    {%- if product.featured_image -%}
+      , "image": {{ product.featured_image | image_url: width: 1200 | prepend: 'https:' | json }}
+    {%- endif -%}
+    {%- if product.vendor != blank -%}
+      , "brand": { "@type": "Brand", "name": {{ product.vendor | json }} }
+    {%- endif -%}
+    , "offers": {
+      "@type": "Offer",
+      "priceCurrency": {{ cart.currency.iso_code | json }},
+      "price": {{ product.selected_or_first_available_variant.price | divided_by: 100.0 | json }},
+      "availability": {% if product.selected_or_first_available_variant.available %}"https://schema.org/InStock"{% else %}"https://schema.org/OutOfStock"{% endif %},
+      "url": {{ shop.url | append: product.url | json }}
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Produit",
+  "tag": "div",
+  "settings": []
+}
+{% endschema %}

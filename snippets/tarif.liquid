@@ -1,0 +1,34 @@
+{%- comment -%}
+  Affichage du tarif d'un protocole.
+
+  Deux modes, choisis soin par soin depuis l'éditeur :
+    — « depuis »  : « à partir de 120 € » ;
+    — « devis »   : « Sur devis », avec une note explicative facultative.
+
+  Un troisième mode « masque » permet de ne rien afficher là où le prix
+  nuirait à la conversion (page d'accueil, méga-menu).
+
+  Paramètres : mode, montant, note, compact (true pour la version en ligne)
+{%- endcomment -%}
+
+{%- liquid
+  assign devise = cart.currency.symbol | default: '€'
+-%}
+
+{%- case mode -%}
+  {%- when 'depuis' -%}
+    {%- if montant != blank -%}
+      <span class="tarif {% if compact %}tarif--compact{% endif %}">
+        <span class="tarif__mention">{{ 'protocole.a_partir_de' | t }}</span>
+        <span class="tarif__montant nombres-tabulaires">{{ montant }}&nbsp;{{ devise }}</span>
+      </span>
+    {%- endif -%}
+
+  {%- when 'devis' -%}
+    <span class="tarif {% if compact %}tarif--compact{% endif %}">
+      <span class="tarif__montant">{{ 'protocole.sur_devis' | t }}</span>
+      {%- unless compact -%}
+        <span class="tarif__note">{{ note | default: 'protocole.sur_devis_note' | t }}</span>
+      {%- endunless -%}
+    </span>
+{%- endcase -%}

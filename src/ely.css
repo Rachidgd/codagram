@@ -1,0 +1,894 @@
+/* ==========================================================================
+   ÉLY'SKIN PARIS — Design system
+   Concept directeur : « Le Protocole ».
+   Ély'Skin n'est pas un institut de beauté, c'est un cabinet de soin.
+   Le langage visuel emprunte à la précision clinique — index, filets,
+   mesures, grille asymétrique — et le réchauffe par une palette peau
+   et une géométrie douce (Jost).
+
+   Interdits structurels tenus par ce fichier :
+   — aucune police à empattements ;
+   — aucune carte à ombre portée « générique » (on travaille au filet 1px) ;
+   — aucun dégradé décoratif violet/bleu ;
+   — aucun titre au-delà de 50px, aucune taille non bornée ;
+   — aucun rayon > 8px hors pilules de navigation.
+   ========================================================================== */
+
+@import "tailwindcss";
+@import "./parties/entete.css";
+@import "./parties/sections.css";
+@import "./parties/diagnostic.css";
+@import "./parties/editorial.css";
+
+@source "../layout/**/*.liquid";
+@source "../sections/**/*.liquid";
+@source "../snippets/**/*.liquid";
+@source "../templates/**/*.json";
+@source "../assets/*.js";
+
+/* --------------------------------------------------------------------------
+   1. TOKENS
+   Toutes les couleurs sont surchargeables à l'exécution depuis l'éditeur de
+   thème (theme.liquid émet un bloc :root). Tailwind v4 compile les utilitaires
+   en var(), la surcharge est donc automatique.
+   -------------------------------------------------------------------------- */
+@theme {
+  /* — Couleurs — contrastes WCAG 2.2 vérifiés en commentaire — */
+  --color-porcelaine: #f6f3ef; /* fond principal */
+  --color-craie: #ebe5dd; /* surface secondaire */
+  --color-lin: #ded5c9; /* surface appuyée */
+  --color-encre: #191512; /* texte principal — 16.8:1 sur porcelaine */
+  --color-grain: #75695f; /* texte secondaire — 4.81:1 sur porcelaine */
+  --color-absolu: #1b3a31; /* vert signature — blanc 12.4:1 dessus */
+  --color-absolu-clair: #2a5245;
+  --color-brume: #9fb3aa; /* texte secondaire sur absolu — 5.60:1 */
+  --color-peau: #e0c4b2; /* teinte chaude, surfaces et voiles uniquement */
+  --color-peau-pale: #f0e2d9;
+  --color-alerte: #8c3a24;
+
+  /* Filets — la signature graphique du site */
+  --color-lisere: color-mix(in oklab, var(--color-encre) 14%, transparent);
+  --color-lisere-fort: color-mix(in oklab, var(--color-encre) 26%, transparent);
+  --color-lisere-clair: color-mix(in oklab, #ffffff 22%, transparent);
+
+  /* — Typographie —
+     Jost : géométrique, tenue haute en display. Instrument Sans : grotesque
+     neutre, lisible sous 18px là où le géométrique fatigue. Aucune serif. */
+  --font-display: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* Échelle fluide bornée — aucune valeur ne dépasse 50px.
+     Bornes basses calées pour 320px sans césure de mot. */
+  --text-eyebrow: 0.6875rem;
+  --text-eyebrow--line-height: 1.1;
+  --text-eyebrow--letter-spacing: 0.18em;
+
+  --text-xs: clamp(0.75rem, 0.735rem + 0.07vw, 0.8125rem);
+  --text-xs--line-height: 1.5;
+  --text-sm: clamp(0.8125rem, 0.79rem + 0.11vw, 0.875rem);
+  --text-sm--line-height: 1.55;
+  --text-base: clamp(0.9375rem, 0.912rem + 0.13vw, 1.0625rem);
+  --text-base--line-height: 1.62;
+  --text-lg: clamp(1.0625rem, 1.025rem + 0.19vw, 1.1875rem);
+  --text-lg--line-height: 1.5;
+  --text-xl: clamp(1.1875rem, 1.12rem + 0.34vw, 1.375rem);
+  --text-xl--line-height: 1.34;
+  --text-2xl: clamp(1.375rem, 1.27rem + 0.52vw, 1.6875rem);
+  --text-2xl--line-height: 1.22;
+  --text-2xl--letter-spacing: -0.012em;
+  --text-3xl: clamp(1.625rem, 1.45rem + 0.87vw, 2.125rem);
+  --text-3xl--line-height: 1.14;
+  --text-3xl--letter-spacing: -0.016em;
+  --text-4xl: clamp(1.8125rem, 1.58rem + 1.16vw, 2.625rem);
+  --text-4xl--line-height: 1.1;
+  --text-4xl--letter-spacing: -0.02em;
+  --text-5xl: clamp(1.9375rem, 1.66rem + 1.48vw, 3.125rem);
+  --text-5xl--line-height: 1.06;
+  --text-5xl--letter-spacing: -0.024em;
+
+  /* — Rythme — espacements courts entre sections, densité assumée.
+     Deux sections consécutives cumulent leur retrait : ces valeurs sont
+     calées pour que la respiration totale reste sous 160 px en desktop. */
+  --spacing-section: clamp(3rem, 2.35rem + 2.8vw, 5rem);
+  --spacing-section-sm: clamp(2rem, 1.6rem + 1.8vw, 3.25rem);
+  --spacing-gutter: clamp(1.25rem, 0.85rem + 1.7vw, 2.75rem);
+
+  --container-lisiere: 96rem;
+  --container-contenu: 78rem;
+  --container-texte: 42rem;
+
+  /* — Formes — précision plutôt que rondeur — */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+
+  /* — Mouvement — */
+  --ease-ely: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-ely-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-ely-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme {
+  --dur-fast: 180ms;
+  --dur-base: 420ms;
+  --dur-slow: 720ms;
+  --dur-rule: 900ms;
+  --header-h: 4.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. BASE
+   -------------------------------------------------------------------------- */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    min-width: 0;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 1.5rem);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--color-porcelaine);
+    color: var(--color-encre);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.62;
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  /* Titres : Jost, graisses basses, jamais de gras lourd. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .u-display {
+    font-family: var(--font-display);
+    font-weight: 300;
+    text-wrap: balance;
+    hyphens: manual;
+    overflow-wrap: break-word;
+  }
+
+  /* Les couples interligne/approche des jetons `--text-*` ne sont appliqués
+     par Tailwind qu'au travers des utilitaires `text-*`. Les titres passant
+     par ces règles de base, ils doivent porter leurs valeurs explicitement —
+     sans quoi ils héritent de l'interligne du corps de texte (1,62) et le
+     rythme typographique s'effondre. */
+  h1 {
+    font-size: var(--text-5xl);
+    line-height: 1.06;
+    letter-spacing: -0.024em;
+  }
+  h2 {
+    font-size: var(--text-4xl);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  h3 {
+    font-size: var(--text-2xl);
+    line-height: 1.22;
+    letter-spacing: -0.012em;
+  }
+  h4 {
+    font-size: var(--text-xl);
+    line-height: 1.3;
+  }
+  h5,
+  h6 {
+    font-size: var(--text-lg);
+    line-height: 1.4;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Le focus est dessiné, pas subi. */
+  :focus-visible {
+    outline: 2px solid var(--color-absolu);
+    outline-offset: 3px;
+    border-radius: var(--radius-xs);
+  }
+
+  .theme-sombre :focus-visible,
+  [data-surface="sombre"] :focus-visible {
+    outline-color: var(--color-peau);
+  }
+
+  ::selection {
+    background: var(--color-absolu);
+    color: var(--color-porcelaine);
+  }
+
+  img,
+  video,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Réserve d'espace systématique : zéro CLS induit par les médias. */
+  img[width][height] {
+    height: auto;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Le contenu reste lisible si le JS ne se charge pas : aucune opacité 0
+     permanente n'est posée en CSS seul — elle est conditionnée par [data-js]. */
+  [data-reveal] {
+    opacity: 1;
+  }
+  html[data-js="on"] [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    transition:
+      opacity var(--dur-base) var(--ease-ely) var(--reveal-delay, 0ms),
+      transform var(--dur-base) var(--ease-ely) var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  html[data-js="on"] [data-reveal].est-visible {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html[data-js="on"] [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. COMPOSANTS
+   -------------------------------------------------------------------------- */
+@layer components {
+  /* — Gabarit — grille asymétrique 12 colonnes — */
+  .lisiere {
+    width: 100%;
+    max-width: var(--container-lisiere);
+    margin-inline: auto;
+    padding-inline: var(--spacing-gutter);
+  }
+
+  .contenu {
+    width: 100%;
+    max-width: var(--container-contenu);
+    margin-inline: auto;
+    padding-inline: var(--spacing-gutter);
+  }
+
+  .grille-12 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(1rem, 0.6rem + 1.4vw, 2rem);
+  }
+
+  .section {
+    padding-block: var(--spacing-section);
+  }
+  .section-serree {
+    padding-block: var(--spacing-section-sm);
+  }
+
+  /* — Surtitre indexé : « 01 — PROTOCOLES ». Rythme éditorial du site. — */
+  .surtitre {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-eyebrow);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: var(--color-grain);
+  }
+  .surtitre::before {
+    content: attr(data-index);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-encre);
+  }
+  .surtitre[data-index]::after {
+    content: "";
+    width: 1.75rem;
+    height: 1px;
+    background: var(--color-lisere-fort);
+    order: -1;
+  }
+  .surtitre:not([data-index])::before {
+    content: none;
+  }
+
+  /* — Filet actif : se dessine à l'entrée dans le viewport.
+       C'est la signature graphique — utilisée sous chaque titre de section. — */
+  .filet {
+    display: block;
+    height: 1px;
+    background: var(--color-lisere-fort);
+    transform-origin: left center;
+  }
+  html[data-js="on"] .filet[data-reveal-rule] {
+    transform: scaleX(0);
+    transition: transform var(--dur-rule) var(--ease-ely-out);
+  }
+  html[data-js="on"] .filet[data-reveal-rule].est-visible {
+    transform: scaleX(1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html[data-js="on"] .filet[data-reveal-rule] {
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* — Boutons — */
+  .btn {
+    --btn-bg: var(--color-absolu);
+    --btn-fg: var(--color-porcelaine);
+    --btn-bd: var(--color-absolu);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    min-height: 2.875rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--btn-bd);
+    border-radius: var(--radius-pill);
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    isolation: isolate;
+    overflow: hidden;
+    transition:
+      color var(--dur-fast) var(--ease-ely),
+      border-color var(--dur-fast) var(--ease-ely),
+      transform var(--dur-fast) var(--ease-ely);
+  }
+  /* Remplissage qui monte depuis le bas — pas un simple changement de fond. */
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--btn-fg);
+    transform: translateY(101%);
+    transition: transform var(--dur-base) var(--ease-ely);
+  }
+  .btn:hover::before,
+  .btn:focus-visible::before {
+    transform: translateY(0);
+  }
+  .btn:hover,
+  .btn:focus-visible {
+    color: var(--btn-bg);
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn--ligne {
+    --btn-bg: transparent;
+    --btn-fg: var(--color-encre);
+    --btn-bd: var(--color-lisere-fort);
+  }
+  .btn--ligne::before {
+    background: var(--color-encre);
+  }
+  .btn--ligne:hover,
+  .btn--ligne:focus-visible {
+    color: var(--color-porcelaine);
+    border-color: var(--color-encre);
+  }
+
+  .btn--clair {
+    --btn-bg: var(--color-porcelaine);
+    --btn-fg: var(--color-absolu);
+    --btn-bd: var(--color-porcelaine);
+  }
+
+  .btn--fantome {
+    --btn-bg: transparent;
+    --btn-fg: var(--color-porcelaine);
+    --btn-bd: var(--color-lisere-clair);
+  }
+  .btn--fantome::before {
+    background: var(--color-porcelaine);
+  }
+  .btn--fantome:hover,
+  .btn--fantome:focus-visible {
+    color: var(--color-absolu);
+    border-color: var(--color-porcelaine);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn::before {
+      display: none;
+    }
+    .btn:hover,
+    .btn:focus-visible {
+      background: color-mix(in oklab, var(--btn-bg) 82%, var(--color-encre));
+      color: var(--btn-fg);
+    }
+  }
+
+  /* — Lien souligné à la volée — */
+  .lien {
+    position: relative;
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    padding-bottom: 2px;
+  }
+  .lien::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform var(--dur-base) var(--ease-ely);
+  }
+  .lien:hover::after,
+  .lien:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+  .lien--actif::after {
+    transform: scaleX(1);
+  }
+
+  /* — Ligne de protocole : remplace la « carte service » générique.
+       Fermée, elle donne le nom + la durée. Ouverte au survol/focus, elle
+       révèle l'indication, la zone et le tarif. — */
+  .protocole {
+    position: relative;
+    display: block;
+    border-top: 1px solid var(--color-lisere);
+    padding-block: clamp(1.25rem, 1rem + 1.1vw, 1.875rem);
+    text-decoration: none;
+    color: inherit;
+    transition: padding-inline var(--dur-base) var(--ease-ely);
+  }
+  .protocole:last-of-type {
+    border-bottom: 1px solid var(--color-lisere);
+  }
+  .protocole::after {
+    content: "";
+    position: absolute;
+    inset: -1px 0 auto 0;
+    height: 1px;
+    background: var(--color-encre);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--dur-base) var(--ease-ely);
+  }
+  .protocole:hover::after,
+  .protocole:focus-visible::after {
+    transform: scaleX(1);
+  }
+  @media (hover: hover) and (min-width: 48rem) {
+    .protocole:hover,
+    .protocole:focus-within {
+      padding-inline: 1rem;
+    }
+    .protocole__revelation {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transition:
+        grid-template-rows var(--dur-base) var(--ease-ely),
+        opacity var(--dur-base) var(--ease-ely);
+    }
+    .protocole__revelation > * {
+      overflow: hidden;
+    }
+    .protocole:hover .protocole__revelation,
+    .protocole:focus-within .protocole__revelation {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .protocole,
+    .protocole__revelation {
+      transition: none;
+    }
+  }
+
+  /* — Chiffre de méthode, en contour — */
+  .chiffre-contour {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 2rem + 3.6vw, 4.5rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-lisere-fort);
+    font-variant-numeric: tabular-nums;
+  }
+  @supports not (-webkit-text-stroke: 1px black) {
+    .chiffre-contour {
+      color: var(--color-lin);
+      -webkit-text-stroke: 0;
+    }
+  }
+
+  /* — Chiffre-résultat — */
+  .stat {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 1.85rem + 1.9vw, 3.125rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  /* — Champs de formulaire : soulignés, jamais encadrés en boîte grise. — */
+  .champ {
+    position: relative;
+    display: block;
+  }
+  .champ__saisie {
+    width: 100%;
+    min-height: 3rem;
+    padding: 1.375rem 0 0.5rem;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--color-lisere-fort);
+    border-radius: 0;
+    font-size: var(--text-base);
+    color: var(--color-encre);
+    transition: border-color var(--dur-fast) var(--ease-ely);
+    appearance: none;
+  }
+  .champ__saisie:focus {
+    outline: none;
+    border-bottom-color: var(--color-absolu);
+    border-bottom-width: 1.5px;
+  }
+  .champ__saisie:focus-visible {
+    outline: none;
+  }
+  .champ__label {
+    position: absolute;
+    left: 0;
+    top: 1.375rem;
+    font-size: var(--text-base);
+    color: var(--color-grain);
+    pointer-events: none;
+    transform-origin: left top;
+    transition:
+      transform var(--dur-fast) var(--ease-ely),
+      color var(--dur-fast) var(--ease-ely);
+  }
+  .champ__saisie:focus + .champ__label,
+  .champ__saisie:not(:placeholder-shown) + .champ__label,
+  .champ__saisie[data-rempli="oui"] + .champ__label {
+    transform: translateY(-1.375rem) scale(0.72);
+    color: var(--color-grain);
+  }
+  .champ__saisie[aria-invalid="true"] {
+    border-bottom-color: var(--color-alerte);
+  }
+  .champ__erreur {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: var(--text-xs);
+    color: var(--color-alerte);
+  }
+  textarea.champ__saisie {
+    min-height: 7rem;
+    resize: vertical;
+    line-height: 1.6;
+  }
+  select.champ__saisie {
+    cursor: pointer;
+  }
+
+  /* — Case à cocher / radio dessinées — */
+  .choix {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    min-height: 2.75rem;
+    padding: 0.625rem 0;
+    cursor: pointer;
+    font-size: var(--text-sm);
+  }
+  .choix input {
+    flex: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-top: 0.125rem;
+    accent-color: var(--color-absolu);
+    cursor: pointer;
+  }
+
+  /* — Voile progressif sur média, sans dégradé « stock » — */
+  .voile-media {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-craie);
+  }
+  .voile-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      color-mix(in oklab, var(--color-encre) 46%, transparent) 0%,
+      color-mix(in oklab, var(--color-encre) 12%, transparent) 38%,
+      transparent 68%
+    );
+    pointer-events: none;
+  }
+
+  /* — Média avec zoom lent au survol — */
+  .media-zoom img {
+    transition: transform var(--dur-slow) var(--ease-ely);
+  }
+  @media (hover: hover) {
+    .media-zoom:hover img {
+      transform: scale(1.035);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .media-zoom img {
+      transition: none;
+    }
+    .media-zoom:hover img {
+      transform: none;
+    }
+  }
+
+  /* — Bandeau défilant (CSS pur, aucune dépendance) — */
+  .bandeau {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+  }
+  .bandeau__piste {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: var(--bandeau-gap, 3rem);
+    padding-right: var(--bandeau-gap, 3rem);
+    animation: bandeau-defile var(--bandeau-duree, 42s) linear infinite;
+  }
+  .bandeau:hover .bandeau__piste {
+    animation-play-state: paused;
+  }
+  @keyframes bandeau-defile {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bandeau__piste {
+      animation: none;
+    }
+    .bandeau {
+      overflow-x: auto;
+      mask-image: none;
+    }
+  }
+
+  /* — Accordéon (FAQ) — */
+  .accordeon__item {
+    border-top: 1px solid var(--color-lisere);
+  }
+  .accordeon__item:last-child {
+    border-bottom: 1px solid var(--color-lisere);
+  }
+  .accordeon__tete {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+    padding-block: clamp(1rem, 0.85rem + 0.6vw, 1.375rem);
+    background: none;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 400;
+    color: var(--color-encre);
+  }
+  .accordeon__signe {
+    flex: none;
+    position: relative;
+    width: 0.875rem;
+    height: 0.875rem;
+    margin-top: 0.375rem;
+  }
+  .accordeon__signe::before,
+  .accordeon__signe::after {
+    content: "";
+    position: absolute;
+    inset: 50% 0 auto 0;
+    height: 1px;
+    background: var(--color-encre);
+    transition: transform var(--dur-base) var(--ease-ely);
+  }
+  .accordeon__signe::after {
+    transform: rotate(90deg);
+  }
+  .accordeon__tete[aria-expanded="true"] .accordeon__signe::after {
+    transform: rotate(0deg);
+  }
+  /* Sans JavaScript, les réponses restent dépliées : le contenu est lisible
+     et indexable. Le repli n'existe que lorsque le script est actif. */
+  .accordeon__corps {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+  html[data-js="on"] .accordeon__corps {
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--dur-base) var(--ease-ely);
+  }
+  html[data-js="on"] .accordeon__corps[data-ouvert="oui"] {
+    grid-template-rows: 1fr;
+  }
+  .accordeon__corps > div {
+    overflow: hidden;
+  }
+  .accordeon__texte {
+    padding-bottom: clamp(1rem, 0.85rem + 0.6vw, 1.5rem);
+    max-width: 62ch;
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    color: var(--color-grain);
+  }
+  .accordeon__texte p + p {
+    margin-top: 0.875rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .accordeon__corps,
+    .accordeon__signe::before,
+    .accordeon__signe::after {
+      transition: none;
+    }
+  }
+
+  /* — Étiquette de mesure (durée, zone, prix) — */
+  .mesure {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4375rem;
+    font-size: var(--text-xs);
+    letter-spacing: 0.04em;
+    color: var(--color-grain);
+  }
+  .mesure__valeur {
+    color: var(--color-encre);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* — Surface sombre — */
+  .surface-sombre {
+    background: var(--color-absolu);
+    color: var(--color-porcelaine);
+  }
+  .surface-sombre .surtitre,
+  .surface-sombre .mesure {
+    color: var(--color-brume);
+  }
+  .surface-sombre .surtitre::before,
+  .surface-sombre .mesure__valeur {
+    color: var(--color-porcelaine);
+  }
+  .surface-sombre .filet,
+  .surface-sombre .surtitre[data-index]::after {
+    background: var(--color-lisere-clair);
+  }
+  .surface-sombre .protocole {
+    border-color: var(--color-lisere-clair);
+  }
+  .surface-sombre .protocole::after {
+    background: var(--color-porcelaine);
+  }
+  .surface-sombre .chiffre-contour {
+    -webkit-text-stroke-color: var(--color-lisere-clair);
+  }
+
+  .surface-craie {
+    background: var(--color-craie);
+  }
+  .surface-peau {
+    background: var(--color-peau-pale);
+  }
+
+  /* — Utilitaire d'accessibilité — */
+  .lecteur-seul {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+  .evitement {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 200;
+    transform: translateY(-200%);
+    transition: transform var(--dur-fast) var(--ease-ely);
+  }
+  .evitement:focus {
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. UTILITAIRES PROJET
+   -------------------------------------------------------------------------- */
+@utility texte-mesure {
+  max-width: var(--container-texte);
+}
+
+@utility nombres-tabulaires {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+@utility equilibre {
+  text-wrap: balance;
+}

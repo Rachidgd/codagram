@@ -1,0 +1,349 @@
+{%- comment -%}
+  Formulaire de contact en trois temps.
+
+  Le formulaire natif Shopify est conservé intégralement : sans JavaScript,
+  les trois panneaux sont visibles à la suite et l'envoi fonctionne. Le script
+  ne fait que replier les panneaux, valider au fil de la saisie et gérer
+  l'avancement — il n'est jamais indispensable à l'envoi.
+
+  Le champ leurre piège les robots sans imposer de captcha au visiteur.
+{%- endcomment -%}
+
+<section class="section {{ section.settings.surface }}" id="{{ section.settings.ancre | default: 'contact' }}">
+  <div class="lisiere">
+    <div class="grille-12 gap-y-12">
+      {%- comment -%} — Colonne informations — {%- endcomment -%}
+      <div class="col-span-12 lg:col-span-4">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: section.settings.niveau_titre
+        -%}
+
+        {%- if section.settings.chapo != blank -%}
+          <div class="mt-7 text-sm text-grain texte-mesure" data-reveal style="--reveal-delay: 140ms">
+            {{ section.settings.chapo }}
+          </div>
+        {%- endif -%}
+
+        <dl class="contact__coordonnees" data-reveal-groupe data-reveal-pas="70">
+          {%- if settings.cabinet_rue != blank or settings.cabinet_ville != blank -%}
+            <div class="contact__champ" data-reveal>
+              <dt class="surtitre">{{ 'cabinet.adresse' | t }}</dt>
+              <dd>
+                {{ settings.cabinet_rue }}<br>
+                {{ settings.cabinet_cp }} {{ settings.cabinet_ville }}
+                {%- if section.settings.lien_itineraire != blank -%}
+                  <br>
+                  <a class="lien" href="{{ section.settings.lien_itineraire }}" target="_blank" rel="noopener">
+                    {{ 'cabinet.itineraire' | t }}
+                  </a>
+                {%- endif -%}
+              </dd>
+            </div>
+          {%- endif -%}
+
+          {%- if settings.cabinet_tel != blank -%}
+            <div class="contact__champ" data-reveal>
+              <dt class="surtitre">{{ 'cabinet.telephone' | t }}</dt>
+              <dd>
+                <a class="lien nombres-tabulaires" href="tel:{{ settings.cabinet_tel | remove: ' ' | remove: '.' }}">
+                  {{ settings.cabinet_tel }}
+                </a>
+              </dd>
+            </div>
+          {%- endif -%}
+
+          {%- if settings.cabinet_email != blank -%}
+            <div class="contact__champ" data-reveal>
+              <dt class="surtitre">{{ 'cabinet.email' | t }}</dt>
+              <dd><a class="lien" href="mailto:{{ settings.cabinet_email }}">{{ settings.cabinet_email }}</a></dd>
+            </div>
+          {%- endif -%}
+
+          {%- if settings.cabinet_horaires != blank -%}
+            <div class="contact__champ" data-reveal>
+              <dt class="surtitre">{{ 'cabinet.horaires' | t }}</dt>
+              <dd class="nombres-tabulaires">{{ settings.cabinet_horaires | newline_to_br }}</dd>
+            </div>
+          {%- endif -%}
+        </dl>
+      </div>
+
+      {%- comment -%} — Colonne formulaire — {%- endcomment -%}
+      <div class="col-span-12 lg:col-span-7 lg:col-start-6">
+        {%- form 'contact', id: 'formulaire-contact', class: 'formulaire' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="formulaire__message formulaire__message--succes" role="status" tabindex="-1">
+              {{ 'formulaire.succes' | t }}
+            </p>
+          {%- elsif form.errors -%}
+            <div class="formulaire__message formulaire__message--erreur" role="alert" tabindex="-1">
+              <p>{{ 'formulaire.erreurs_a_corriger' | t }}</p>
+              <ul role="list" class="mt-2">
+                {%- for champ in form.errors -%}
+                  <li>{{ form.errors.messages[champ] }}</li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endif -%}
+
+          <ely-formulaire
+            class="block"
+            data-etapes="3"
+            data-libelle-suivant="{{ 'diagnostic.suivant' | t | escape }}"
+            data-libelle-precedent="{{ 'diagnostic.precedent' | t | escape }}"
+            data-libelle-envoyer="{{ 'formulaire.envoyer' | t | escape }}"
+            data-libelle-etape="{{ 'formulaire.etape_sur' | t: courante: '%C%', total: '%T%' | escape }}"
+            data-erreur-requis="{{ 'formulaire.obligatoire' | t | escape }}"
+            data-erreur-email="{{ 'formulaire.email_invalide' | t | escape }}"
+            data-erreur-telephone="{{ 'formulaire.telephone_invalide' | t | escape }}"
+            data-erreur-consentement="{{ 'formulaire.consentement_requis' | t | escape }}"
+          >
+            <div class="formulaire__etapes" data-formulaire-avancement hidden>
+              <span data-formulaire-compteur></span>
+              <span class="formulaire__jauge" aria-hidden="true"></span>
+            </div>
+
+            {%- comment -%} — Temps 1 : l'intention — {%- endcomment -%}
+            <fieldset class="formulaire__panneau" data-panneau="1">
+              <legend class="formulaire__legende">{{ section.settings.legende_1 }}</legend>
+
+              <div class="formulaire__rangee">
+                <label class="champ">
+                  <select id="contact-sujet" class="champ__saisie" name="contact[Objet]" data-requis>
+                    <option value=""></option>
+                    {%- for bloc in section.blocks -%}
+                      {%- if bloc.type == 'sujet' -%}
+                        <option value="{{ bloc.settings.libelle | escape }}">{{ bloc.settings.libelle }}</option>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </select>
+                  <span class="champ__label">{{ 'formulaire.sujet' | t }}</span>
+                  <span class="champ__erreur" data-erreur hidden></span>
+                </label>
+
+                <label class="champ">
+                  <select id="contact-protocole" class="champ__saisie" name="contact[Protocole envisagé]">
+                    <option value=""></option>
+                    {%- for bloc in section.blocks -%}
+                      {%- if bloc.type == 'protocole' -%}
+                        <option value="{{ bloc.settings.nom | escape }}">{{ bloc.settings.nom }}</option>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </select>
+                  <span class="champ__label">
+                    {{ 'formulaire.protocole_souhaite' | t }} ({{ 'formulaire.facultatif' | t }})
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            {%- comment -%} — Temps 2 : les coordonnées — {%- endcomment -%}
+            <fieldset class="formulaire__panneau" data-panneau="2">
+              <legend class="formulaire__legende">{{ section.settings.legende_2 }}</legend>
+
+              <div class="formulaire__rangee formulaire__rangee--deux">
+                <label class="champ">
+                  <input
+                    type="text"
+                    id="contact-nom"
+                    class="champ__saisie"
+                    name="contact[name]"
+                    autocomplete="name"
+                    placeholder=" "
+                    value="{{ form.name }}"
+                    data-requis
+                  >
+                  <span class="champ__label">{{ 'formulaire.nom' | t }}</span>
+                  <span class="champ__erreur" data-erreur hidden></span>
+                </label>
+
+                <label class="champ">
+                  <input
+                    type="email"
+                    id="contact-email"
+                    class="champ__saisie"
+                    name="contact[email]"
+                    autocomplete="email"
+                    inputmode="email"
+                    placeholder=" "
+                    value="{{ form.email }}"
+                    data-requis
+                    data-type="email"
+                  >
+                  <span class="champ__label">{{ 'formulaire.email' | t }}</span>
+                  <span class="champ__erreur" data-erreur hidden></span>
+                </label>
+              </div>
+
+              <div class="formulaire__rangee formulaire__rangee--deux">
+                <label class="champ">
+                  <input
+                    type="tel"
+                    id="contact-tel"
+                    class="champ__saisie"
+                    name="contact[phone]"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    placeholder=" "
+                    data-type="telephone"
+                  >
+                  <span class="champ__label">
+                    {{ 'formulaire.telephone' | t }} ({{ 'formulaire.facultatif' | t }})
+                  </span>
+                  <span class="champ__erreur" data-erreur hidden></span>
+                </label>
+
+                <label class="champ">
+                  <input
+                    type="text"
+                    id="contact-creneau"
+                    class="champ__saisie"
+                    name="contact[Disponibilités]"
+                    placeholder=" "
+                  >
+                  <span class="champ__label">
+                    {{ 'formulaire.creneau' | t }} ({{ 'formulaire.facultatif' | t }})
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            {%- comment -%} — Temps 3 : le message — {%- endcomment -%}
+            <fieldset class="formulaire__panneau" data-panneau="3">
+              <legend class="formulaire__legende">{{ section.settings.legende_3 }}</legend>
+
+              <label class="champ">
+                <textarea
+                  id="contact-message"
+                  class="champ__saisie"
+                  name="contact[body]"
+                  rows="5"
+                  placeholder=" "
+                  data-requis
+                >{{ form.body }}</textarea>
+                <span class="champ__label">{{ 'formulaire.message' | t }}</span>
+                <span class="champ__erreur" data-erreur hidden></span>
+              </label>
+
+              <div>
+                <label class="choix">
+                  <input type="checkbox" name="contact[Consentement]" value="Accordé" data-requis data-type="consentement">
+                  <span>{{ 'formulaire.consentement' | t }}</span>
+                </label>
+                <span class="champ__erreur" data-erreur hidden></span>
+              </div>
+
+              {%- if section.settings.mention_rgpd != blank -%}
+                <p class="text-xs text-grain max-w-[62ch]">{{ section.settings.mention_rgpd }}</p>
+              {%- endif -%}
+            </fieldset>
+
+            {%- comment -%} Leurre anti-robot : un humain ne le voit ni ne le remplit. {%- endcomment -%}
+            <div class="formulaire__leurre" aria-hidden="true">
+              <label for="contact-reference">Ne pas remplir ce champ</label>
+              <input type="text" id="contact-reference" name="contact[reference-interne]" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="formulaire__actions" data-formulaire-actions>
+              <button type="submit" class="btn" data-formulaire-envoyer>
+                {{ 'formulaire.envoyer' | t }}
+              </button>
+            </div>
+          </ely-formulaire>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Formulaire de contact",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" }
+      ],
+      "default": ""
+    },
+    { "type": "text", "id": "ancre", "label": "Ancre", "default": "contact" },
+    { "type": "text", "id": "index", "label": "Index", "default": "01" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Nous écrire" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Une question précise appelle une réponse précise."
+    },
+    {
+      "type": "select",
+      "id": "niveau_titre",
+      "label": "Niveau du titre",
+      "options": [
+        { "value": "h1", "label": "H1 — page dédiée" },
+        { "value": "h2", "label": "H2 — section dans une page" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "richtext",
+      "id": "chapo",
+      "label": "Texte d'accompagnement",
+      "default": "<p>Nous répondons sous 24 heures ouvrées. Pour une prise de rendez-vous immédiate, le lien de réservation reste le chemin le plus court.</p>"
+    },
+    { "type": "url", "id": "lien_itineraire", "label": "Lien d'itinéraire" },
+    { "type": "text", "id": "legende_1", "label": "Légende — temps 1", "default": "Votre demande" },
+    { "type": "text", "id": "legende_2", "label": "Légende — temps 2", "default": "Vos coordonnées" },
+    { "type": "text", "id": "legende_3", "label": "Légende — temps 3", "default": "Votre message" },
+    {
+      "type": "textarea",
+      "id": "mention_rgpd",
+      "label": "Mention sur les données",
+      "default": "Les informations transmises servent uniquement à traiter votre demande et ne sont ni cédées ni utilisées à des fins commerciales. Vous pouvez demander leur suppression à tout moment."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sujet",
+      "name": "Objet de demande",
+      "limit": 8,
+      "settings": [{ "type": "text", "id": "libelle", "label": "Libellé", "default": "Nouvel objet" }]
+    },
+    {
+      "type": "protocole",
+      "name": "Protocole proposé",
+      "limit": 12,
+      "settings": [{ "type": "text", "id": "nom", "label": "Nom", "default": "Protocole" }]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Formulaire de contact",
+      "blocks": [
+        { "type": "sujet", "settings": { "libelle": "Prendre un premier rendez-vous" } },
+        { "type": "sujet", "settings": { "libelle": "Une question sur un protocole" } },
+        { "type": "sujet", "settings": { "libelle": "Vérifier une contre-indication" } },
+        { "type": "sujet", "settings": { "libelle": "Demander un devis" } },
+        { "type": "sujet", "settings": { "libelle": "Autre demande" } },
+        { "type": "protocole", "settings": { "nom": "Hydrafacial" } },
+        { "type": "protocole", "settings": { "nom": "Microneedling" } },
+        { "type": "protocole", "settings": { "nom": "Peeling" } },
+        { "type": "protocole", "settings": { "nom": "Diagnostic infirmier" } },
+        { "type": "protocole", "settings": { "nom": "HIFU & radiofréquence" } },
+        { "type": "protocole", "settings": { "nom": "Luminothérapie LED" } },
+        { "type": "protocole", "settings": { "nom": "Drainage lymphatique" } },
+        { "type": "protocole", "settings": { "nom": "Je ne sais pas encore" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

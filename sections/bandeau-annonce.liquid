@@ -1,0 +1,84 @@
+{%- comment -%}
+  Bandeau d'annonce — une ligne, refermable, mémorisée en session.
+  Volontairement discret : il informe, il ne crie pas.
+{%- endcomment -%}
+
+{%- if section.settings.afficher and section.settings.message != blank -%}
+  <ely-annonce class="annonce" data-cle="annonce-{{ section.settings.message | handleize | truncate: 40, '' }}">
+    <div class="lisiere annonce__ligne">
+      <p class="annonce__texte">
+        {{ section.settings.message }}
+        {%- if section.settings.lien != blank and section.settings.libelle_lien != blank -%}
+          <a class="lien annonce__lien" href="{{ section.settings.lien }}">
+            {{ section.settings.libelle_lien }}
+          </a>
+        {%- endif -%}
+      </p>
+      <button type="button" class="annonce__fermer" data-annonce-fermer>
+        {%- render 'icone', nom: 'ui.fermer', taille: 14 -%}
+        <span class="lecteur-seul">{{ 'general.fermer' | t }}</span>
+      </button>
+    </div>
+  </ely-annonce>
+
+  <script>
+    if (!customElements.get('ely-annonce')) {
+      customElements.define(
+        'ely-annonce',
+        class extends HTMLElement {
+          connectedCallback() {
+            this.cle = this.dataset.cle || 'annonce';
+            try {
+              if (sessionStorage.getItem(this.cle) === 'ferme') {
+                this.hidden = true;
+                return;
+              }
+            } catch (e) {
+              /* navigation privée : le bandeau reste simplement affiché */
+            }
+            this.querySelector('[data-annonce-fermer]')?.addEventListener('click', () => {
+              this.hidden = true;
+              try {
+                sessionStorage.setItem(this.cle, 'ferme');
+              } catch (e) {}
+            });
+          }
+        }
+      );
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Bandeau d'annonce",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "afficher",
+      "label": "Afficher le bandeau",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "message",
+      "label": "Message",
+      "default": "Premier rendez-vous : bilan cutané offert, sans engagement."
+    },
+    {
+      "type": "text",
+      "id": "libelle_lien",
+      "label": "Libellé du lien",
+      "default": "Réserver"
+    },
+    {
+      "type": "url",
+      "id": "lien",
+      "label": "Lien"
+    }
+  ],
+  "enabled_on": {
+    "groups": ["header"]
+  }
+}
+{% endschema %}

@@ -1,0 +1,126 @@
+<!doctype html>
+<html
+  lang="{{ request.locale.iso_code }}"
+  data-js="off"
+  class="no-js"
+>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="{{ settings.c_porcelaine }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- comment -%}
+      Le drapeau data-js est posé avant la première peinture : le CSS ne masque
+      les éléments à révéler que si le JavaScript est réellement actif. Le
+      filet de sécurité rend tout visible si le script principal ne démarre pas.
+    {%- endcomment -%}
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.setAttribute('data-js', 'on');
+        d.classList.remove('no-js');
+        setTimeout(function () {
+          if (!window.__elyPret) {
+            d.setAttribute('data-js', 'off');
+          }
+        }, 2600);
+      })();
+    </script>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    {%- comment -%} Polices auto-hébergées : deux fichiers variables, 56 Ko au total. {%- endcomment -%}
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="{{ 'jost-var-latin.woff2' | asset_url }}"
+      crossorigin
+    >
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="{{ 'instrument-var-latin.woff2' | asset_url }}"
+      crossorigin
+    >
+
+    <style>
+      @font-face {
+        font-family: "Jost";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url({{ 'jost-var-latin.woff2' | asset_url }}) format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Instrument Sans";
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url({{ 'instrument-var-latin.woff2' | asset_url }}) format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      {%- comment -%} Surcharge des jetons de couleur depuis l'éditeur de thème. {%- endcomment -%}
+      :root {
+        --color-porcelaine: {{ settings.c_porcelaine | default: '#f6f3ef' }};
+        --color-craie: {{ settings.c_craie | default: '#ebe5dd' }};
+        --color-lin: {{ settings.c_lin | default: '#ded5c9' }};
+        --color-encre: {{ settings.c_encre | default: '#191512' }};
+        --color-grain: {{ settings.c_grain | default: '#75695f' }};
+        --color-absolu: {{ settings.c_absolu | default: '#1b3a31' }};
+        --color-absolu-clair: {{ settings.c_absolu_clair | default: '#2a5245' }};
+        --color-brume: {{ settings.c_brume | default: '#9fb3aa' }};
+        --color-peau: {{ settings.c_peau | default: '#e0c4b2' }};
+        --color-peau-pale: {{ settings.c_peau_pale | default: '#f0e2d9' }};
+      }
+
+      {%- comment -%}
+        Repli minimal appliqué avant l'arrivée de la feuille principale :
+        évite tout flash de contenu non stylé sur le fond blanc par défaut.
+      {%- endcomment -%}
+      html { background: var(--color-porcelaine); }
+      body { margin: 0; font-family: "Instrument Sans", Arial, sans-serif; color: var(--color-encre); }
+    </style>
+
+    <link rel="stylesheet" href="{{ 'ely.css' | asset_url }}">
+
+    {%- render 'meta-referencement' -%}
+
+    {{ content_for_header }}
+
+    {%- if settings.seo_donnees_structurees -%}
+      {%- render 'schema-etablissement' -%}
+    {%- endif -%}
+    {%- render 'schema-fil-ariane' -%}
+  </head>
+
+  <body
+    class="ely"
+    data-gabarit="{{ template.name }}"
+    data-anim-apparitions="{{ settings.anim_apparitions }}"
+    data-anim-filets="{{ settings.anim_filets }}"
+    data-anim-curseur="{{ settings.anim_curseur }}"
+    data-anim-compteurs="{{ settings.anim_compteurs }}"
+  >
+    <a class="evitement btn btn--ligne" href="#contenu-principal">
+      {{- 'accessibilite.aller_contenu' | t -}}
+    </a>
+
+    {% sections 'header-group' %}
+
+    <main id="contenu-principal" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    <script src="{{ 'ely.js' | asset_url }}" type="module"></script>
+  </body>
+</html>

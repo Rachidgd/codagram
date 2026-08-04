@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "erreur": {
+      "type": "erreur",
+      "blocks": {
+        "l1": { "type": "lien", "settings": { "titre": "Les protocoles", "lien": "/#protocoles", "sigle": "sigle.protocole" } },
+        "l2": { "type": "lien", "settings": { "titre": "Trouver mon protocole", "lien": "/#orientation", "sigle": "sigle.diagnostic" } },
+        "l3": { "type": "lien", "settings": { "titre": "Nous écrire", "lien": "/pages/contact", "sigle": "ui.courriel" } }
+      },
+      "block_order": ["l1", "l2", "l3"],
+      "settings": { "libelle_accueil": "Retour à l'accueil", "surtitre_liens": "Reprendre ici" }
+    }
+  },
+  "order": ["erreur"]
+}

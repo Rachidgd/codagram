@@ -1,0 +1,292 @@
+/* ==========================================================================
+   DIAGNOSTIC INTERACTIF
+   Pensé pour vivre sur fond clair comme sur fond vert absolu : toutes les
+   couleurs passent par currentColor ou par un jeton local surchargé sous
+   .surface-sombre.
+   ========================================================================== */
+
+@layer components {
+  .diagnostic {
+    --diag-filet: var(--color-lisere);
+    --diag-filet-fort: var(--color-lisere-fort);
+    --diag-attenue: var(--color-grain);
+    --diag-surface: color-mix(in oklab, var(--color-porcelaine) 55%, transparent);
+    --diag-surface-active: var(--color-porcelaine);
+    display: block;
+    border: 1px solid var(--diag-filet-fort);
+    padding: clamp(1.5rem, 1.1rem + 1.6vw, 2.5rem);
+  }
+
+  .surface-sombre .diagnostic {
+    --diag-filet: var(--color-lisere-clair);
+    --diag-filet-fort: color-mix(in oklab, #ffffff 34%, transparent);
+    --diag-attenue: var(--color-brume);
+    --diag-surface: color-mix(in oklab, #ffffff 6%, transparent);
+    --diag-surface-active: color-mix(in oklab, #ffffff 14%, transparent);
+  }
+
+  .diagnostic__scene {
+    display: grid;
+    gap: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+  }
+
+  .diagnostic__entete {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .diagnostic__compteur {
+    font-size: var(--text-eyebrow);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--diag-attenue);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .diagnostic__jauge {
+    position: relative;
+    flex: 1;
+    height: 1px;
+    background: var(--diag-filet);
+    overflow: hidden;
+  }
+  .diagnostic__jauge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+    transform: scaleX(var(--avancement, 0));
+    transform-origin: left center;
+    transition: transform var(--dur-slow) var(--ease-ely);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .diagnostic__jauge::after {
+      transition: none;
+    }
+  }
+
+  .diagnostic__groupe {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+  }
+  .diagnostic__question {
+    padding: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    line-height: 1.24;
+    letter-spacing: -0.014em;
+    text-wrap: balance;
+    max-width: 22ch;
+  }
+  .diagnostic__question:focus-visible {
+    outline-offset: 6px;
+  }
+
+  .diagnostic__options {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  }
+  @media (min-width: 40rem) {
+    .diagnostic__options {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* L'option est un vrai bouton radio, habillé. Le clavier fonctionne sans
+     aucun code : flèches pour parcourir, espace pour choisir. */
+  .diagnostic__option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    min-height: 3.25rem;
+    padding: 0.875rem 1.125rem;
+    border: 1px solid var(--diag-filet);
+    background: var(--diag-surface);
+    cursor: pointer;
+    transition:
+      border-color var(--dur-fast) var(--ease-ely),
+      background-color var(--dur-fast) var(--ease-ely),
+      transform var(--dur-fast) var(--ease-ely);
+  }
+  .diagnostic__option:hover {
+    border-color: var(--diag-filet-fort);
+  }
+  .diagnostic__option:active {
+    transform: translateY(1px);
+  }
+
+  .diagnostic__radio {
+    flex: none;
+    appearance: none;
+    width: 0.875rem;
+    height: 0.875rem;
+    margin: 0;
+    border: 1px solid var(--diag-filet-fort);
+    border-radius: 50%;
+    cursor: pointer;
+    transition:
+      border-width var(--dur-fast) var(--ease-ely),
+      border-color var(--dur-fast) var(--ease-ely);
+  }
+  .diagnostic__radio:checked {
+    border-width: 4px;
+    border-color: currentColor;
+  }
+  .diagnostic__radio:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+  .diagnostic__option:has(.diagnostic__radio:checked) {
+    border-color: currentColor;
+    background: var(--diag-surface-active);
+  }
+
+  .diagnostic__option-texte {
+    font-size: var(--text-sm);
+    line-height: 1.4;
+  }
+
+  .diagnostic__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .surface-sombre .diagnostic__precedent {
+    --btn-bg: transparent;
+    --btn-fg: var(--color-porcelaine);
+    --btn-bd: var(--color-lisere-clair);
+  }
+  .surface-sombre .diagnostic__precedent::before {
+    background: var(--color-porcelaine);
+  }
+  .surface-sombre .diagnostic__precedent:hover,
+  .surface-sombre .diagnostic__precedent:focus-visible {
+    color: var(--color-absolu);
+    border-color: var(--color-porcelaine);
+  }
+
+  /* — Résultat — */
+  .diagnostic__resultat {
+    display: grid;
+    gap: 1rem;
+  }
+  .diagnostic__resultat-surtitre {
+    font-size: var(--text-eyebrow);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--diag-attenue);
+  }
+  .diagnostic__resultat-nom {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .diagnostic__resultat-nom:focus-visible {
+    outline-offset: 6px;
+  }
+  .diagnostic__resultat-intro,
+  .diagnostic__resultat-argument {
+    font-size: var(--text-sm);
+    line-height: 1.65;
+    color: var(--diag-attenue);
+    max-width: 52ch;
+  }
+  .diagnostic__resultat-argument {
+    color: inherit;
+  }
+  .diagnostic__mesures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--diag-filet);
+  }
+  .surface-sombre .diagnostic__mesures .mesure {
+    color: var(--color-brume);
+  }
+  .surface-sombre .diagnostic__mesures .mesure__valeur {
+    color: var(--color-porcelaine);
+  }
+  .diagnostic__resultat-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .diagnostic__alternative {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.75rem 1rem;
+    margin-top: 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--diag-filet);
+  }
+  .diagnostic__alternative-lien {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+  }
+
+  .diagnostic__recommencer {
+    justify-self: start;
+    margin-top: 0.5rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--diag-attenue);
+    cursor: pointer;
+    transition: color var(--dur-fast) var(--ease-ely);
+  }
+  .diagnostic__recommencer:hover {
+    color: inherit;
+  }
+
+  /* — Repli sans JavaScript — */
+  .diagnostic__repli-note {
+    font-size: var(--text-sm);
+    color: var(--diag-attenue);
+    max-width: 54ch;
+  }
+  .diagnostic__repli-liste {
+    display: grid;
+    gap: 0;
+    margin-top: 1.5rem;
+  }
+  .diagnostic__repli-item {
+    display: grid;
+    gap: 0.375rem;
+    padding-block: 1rem;
+    border-top: 1px solid var(--diag-filet);
+    color: inherit;
+    text-decoration: none;
+  }
+  .diagnostic__repli-liste li:last-child .diagnostic__repli-item {
+    border-bottom: 1px solid var(--diag-filet);
+  }
+  .diagnostic__repli-nom {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 400;
+  }
+  .diagnostic__repli-texte {
+    font-size: var(--text-sm);
+    color: var(--diag-attenue);
+    max-width: 60ch;
+  }
+}

@@ -1,0 +1,357 @@
+{
+  "sections": {
+    "entete": {
+      "type": "protocole-entete",
+      "settings": {
+        "sigle": "sigle.hifu",
+        "surtitre": "Protocole",
+        "titre": "HIFU et radiofréquence — retendre en profondeur.",
+        "chapo": "Une chauffe ciblée des couches profondes provoque une rétraction progressive des tissus. Le résultat se construit sur trois à six mois, sans acte chirurgical ni arrêt d'activité.",
+        "lien_parent": "/#protocoles",
+        "libelle_secondaire": "Voir le déroulé",
+        "ancre_secondaire": "#deroule",
+        "duree": "90 min",
+        "seances": "1 à 2 par an",
+        "eviction": "Aucune",
+        "mode_tarif": "devis",
+        "montant": "",
+        "donnees_structurees": true,
+        "type_service": "raffermissement cutané par ultrasons focalisés et radiofréquence"
+      }
+    },
+    "benefices": {
+      "type": "protocole-benefices",
+      "blocks": {
+        "b1": {
+          "type": "benefice",
+          "settings": {
+            "avant": "Un ovale qui se relâche",
+            "apres": "Une ligne de mâchoire redessinée",
+            "texte": "Les ultrasons focalisés atteignent le plan profond sans traverser la surface. La rétraction se fait là où le relâchement commence, pas en surface.",
+            "delai": "3 à 6 mois"
+          }
+        },
+        "b2": {
+          "type": "benefice",
+          "settings": {
+            "avant": "Un cou qui marque avant le visage",
+            "apres": "Une peau plus dense et mieux tenue",
+            "texte": "La radiofréquence travaille le derme sur une profondeur plus large et prépare le terrain que les ultrasons vont ensuite retendre.",
+            "delai": "2 à 4 mois"
+          }
+        },
+        "b3": {
+          "type": "benefice",
+          "settings": {
+            "avant": "L'hésitation devant un acte chirurgical",
+            "apres": "Une réponse progressive, réversible et sans arrêt",
+            "texte": "Rien n'est retiré, rien n'est injecté. Vous reprenez vos activités en sortant, et le résultat s'installe assez lentement pour rester naturel.",
+            "delai": "immédiat pour la reprise"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "settings": {
+        "surface": "",
+        "ancre": "benefices",
+        "index": "01",
+        "surtitre": "Ce que ça change",
+        "titre": "Avant, après.",
+        "chapo": "Les délais annoncés sont ceux constatés au cabinet sur une peau qui suit le protocole. Ils ne constituent pas une garantie de résultat."
+      }
+    },
+    "deroule": {
+      "type": "protocole-deroule",
+      "blocks": {
+        "t1": {
+          "type": "temps",
+          "settings": {
+            "minute": "0 — 15 min",
+            "titre": "Point d'entrée et repérage",
+            "texte": "Vérification des contre-indications, photographies de référence, tracé des lignes de traitement sur les zones à retendre."
+          }
+        },
+        "t2": {
+          "type": "temps",
+          "settings": {
+            "minute": "15 — 30 min",
+            "titre": "Préchauffage par radiofréquence",
+            "texte": "Montée en température progressive et contrôlée du derme, mesurée en continu. Elle prépare le tissu et rend le passage ultrasonore plus confortable."
+          }
+        },
+        "t3": {
+          "type": "temps",
+          "settings": {
+            "minute": "30 — 75 min",
+            "titre": "Ultrasons focalisés",
+            "texte": "Passage ligne par ligne selon le tracé, à deux profondeurs distinctes. La sensation de chaleur ponctuelle est normale ; l'intensité s'ajuste à votre retour immédiat."
+          }
+        },
+        "t4": {
+          "type": "temps",
+          "settings": {
+            "minute": "75 — 90 min",
+            "titre": "Apaisement et suivi",
+            "texte": "Soin apaisant, protection solaire, et calendrier de contrôle : un point à un mois, puis à trois mois, avec photographies dans les mêmes conditions."
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {
+        "surface": "surface-craie",
+        "ancre": "deroule",
+        "index": "02",
+        "surtitre": "La séance",
+        "titre": "Minute par minute.",
+        "note": "Les durées sont indicatives et s'ajustent à votre peau le jour même. Vous pouvez demander une pause ou l'arrêt de la séance à tout moment."
+      }
+    },
+    "indications": {
+      "type": "protocole-indications",
+      "blocks": {
+        "i1": {
+          "type": "indication",
+          "settings": {
+            "texte": "Relâchement de l'ovale et de la ligne de mâchoire"
+          }
+        },
+        "i2": {
+          "type": "indication",
+          "settings": {
+            "texte": "Perte de fermeté du cou et du décolleté"
+          }
+        },
+        "i3": {
+          "type": "indication",
+          "settings": {
+            "texte": "Peau qui manque de densité après quarante ans"
+          }
+        },
+        "i4": {
+          "type": "indication",
+          "settings": {
+            "texte": "Alternative envisagée avant un geste chirurgical"
+          }
+        },
+        "i5": {
+          "type": "indication",
+          "settings": {
+            "texte": "Entretien annuel après un premier protocole"
+          }
+        },
+        "c1": {
+          "type": "contre",
+          "settings": {
+            "texte": "Implants métalliques ou électroniques dans la zone"
+          }
+        },
+        "c2": {
+          "type": "contre",
+          "settings": {
+            "texte": "Grossesse et allaitement"
+          }
+        },
+        "c3": {
+          "type": "contre",
+          "settings": {
+            "texte": "Pathologie cutanée évolutive sur la zone"
+          }
+        },
+        "c4": {
+          "type": "contre",
+          "settings": {
+            "texte": "Injections d'acide hyaluronique récentes sans délai respecté"
+          }
+        },
+        "c5": {
+          "type": "contre",
+          "settings": {
+            "texte": "Relâchement majeur relevant d'une prise en charge chirurgicale"
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "settings": {
+        "surface": "",
+        "ancre": "indications",
+        "index": "03",
+        "surtitre": "Pour qui",
+        "titre": "Ce que ce protocole traite — et ce qu'il ne traite pas.",
+        "note": "Cette liste n'est pas exhaustive. Les contre-indications sont vérifiées une par une lors du bilan."
+      }
+    },
+    "tarifs": {
+      "type": "protocole-tarifs",
+      "blocks": {
+        "l1": {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Ovale et bas du visage",
+            "precision": "90 minutes",
+            "mode_tarif": "devis",
+            "montant": "",
+            "note_devis": "Le nombre de lignes de traitement dépend de la surface et de l'épaisseur de la peau. Il est déterminé au bilan, et le montant est arrêté avant toute réservation."
+          }
+        },
+        "l2": {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Cou et décolleté",
+            "precision": "Séance dédiée ou en complément",
+            "mode_tarif": "devis",
+            "montant": "",
+            "note_devis": "Le tarif dépend de l'étendue traitée et du nombre de passages retenus. Il est chiffré après examen de la zone."
+          }
+        },
+        "l3": {
+          "type": "ligne",
+          "settings": {
+            "intitule": "Protocole annuel d'entretien",
+            "precision": "Une à deux séances par an, suivi photographique inclus",
+            "mode_tarif": "devis",
+            "montant": "",
+            "note_devis": "Le rythme se fixe au cas par cas selon la réponse observée à la première séance. Le devis couvre l'année complète et reste ferme."
+          }
+        }
+      },
+      "block_order": [
+        "l1",
+        "l2",
+        "l3"
+      ],
+      "settings": {
+        "surface": "surface-sombre",
+        "ancre": "tarifs",
+        "index": "04",
+        "surtitre": "Tarifs",
+        "titre": "Ce que ça coûte, dit avant.",
+        "chapo": "<p>Les tarifs de départ s'entendent pour une séance unitaire, sur la zone indiquée. Toute prise en charge combinée est chiffrée après le bilan.</p>",
+        "mention": "Tarifs toutes taxes comprises, en vigueur à la date d'affichage. Le devis remis après le bilan fait foi. Aucun montant n'est engagé avant votre accord écrit."
+      }
+    },
+    "questions": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Pourquoi n'affichez-vous pas de tarif fixe ?",
+            "reponse": "<p>Parce que la séance se compte en lignes de traitement, et que leur nombre dépend de la surface, de l'épaisseur de la peau et du degré de relâchement. Afficher un prix d'appel reviendrait à annoncer un montant qui ne serait presque jamais celui payé. Le devis est remis au bilan, par écrit, et il est ferme.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Quand voit-on le résultat ?",
+            "reponse": "<p>Un effet de tension immédiat apparaît souvent dans les jours qui suivent, puis s'estompe : ce n'est pas le vrai résultat. La rétraction réelle se construit entre le troisième et le sixième mois, à mesure que le collagène se réorganise. C'est pourquoi le contrôle photographique est fixé à trois mois.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Est-ce douloureux ?",
+            "reponse": "<p>La sensation est celle de piqûres de chaleur brèves, plus marquées sur les zones osseuses — mâchoire, tempes. Elle est supportable sans anesthésie pour la plupart des personnes, et l'intensité se règle en continu selon votre retour. La séance peut être interrompue à tout moment.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de temps le résultat tient-il ?",
+            "reponse": "<p>Douze à dix-huit mois en moyenne. Le protocole ne suspend pas le vieillissement : il repositionne un point de départ. L'entretien annuel sert à maintenir ce point plutôt qu'à repartir de zéro à chaque fois.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "settings": {
+        "surface": "",
+        "index": "05",
+        "surtitre": "Questions fréquentes",
+        "titre": "Ce qu'on nous demande sur ce protocole.",
+        "aide": "<p>Une question qui n'est pas ici ? Posez-la : elle mérite une vraie réponse.</p>",
+        "libelle_lien": "Nous écrire",
+        "lien": "/pages/contact",
+        "une_seule": true,
+        "donnees_structurees": true
+      }
+    },
+    "associes": {
+      "type": "protocole-associes",
+      "blocks": {
+        "a1": {
+          "type": "associe",
+          "settings": {
+            "nom": "Diagnostic infirmier",
+            "raison": "Sur une demande de fermeté, le bilan distingue ce qui relève de l'esthétique et ce qui relève du médical.",
+            "lien": "/pages/diagnostic-infirmier",
+            "sigle": "sigle.diagnostic"
+          }
+        },
+        "a2": {
+          "type": "associe",
+          "settings": {
+            "nom": "Microneedling",
+            "raison": "Il travaille la qualité de surface pendant que le HIFU travaille la structure profonde.",
+            "lien": "/pages/microneedling",
+            "sigle": "sigle.microneedling"
+          }
+        },
+        "a3": {
+          "type": "associe",
+          "settings": {
+            "nom": "Drainage lymphatique",
+            "raison": "Dans les jours qui suivent, il aide à évacuer l'œdème léger et affine le résultat.",
+            "lien": "/pages/drainage-lymphatique",
+            "sigle": "sigle.drainage"
+          }
+        }
+      },
+      "block_order": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "settings": {
+        "surface": "surface-craie",
+        "index": "06",
+        "surtitre": "À combiner",
+        "titre": "Ce qui se travaille bien avec.",
+        "libelle_lien": "Tous les protocoles",
+        "lien": "/#protocoles"
+      }
+    }
+  },
+  "order": [
+    "entete",
+    "benefices",
+    "deroule",
+    "indications",
+    "tarifs",
+    "questions",
+    "associes"
+  ]
+}

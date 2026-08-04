@@ -1,0 +1,86 @@
+{%- comment -%}
+  Recherche — formulaire natif, résultats mêlant pages, articles et produits.
+{%- endcomment -%}
+
+<section class="section">
+  <div class="lisiere">
+    <h1 class="equilibre">{{ 'general.recherche' | t }}</h1>
+
+    <form action="{{ routes.search_url }}" method="get" role="search" class="recherche__formulaire">
+      <label class="champ">
+        <input
+          type="search"
+          name="q"
+          id="champ-recherche"
+          class="champ__saisie"
+          value="{{ search.terms | escape }}"
+          placeholder=" "
+          autocomplete="off"
+        >
+        <span class="champ__label">{{ 'general.recherche' | t }}</span>
+      </label>
+      <button type="submit" class="btn">{{ 'general.recherche' | t }}</button>
+    </form>
+
+    {%- if search.performed -%}
+      {%- paginate search.results by 20 -%}
+        <p class="recherche__compte">
+          {{ 'general.resultats' | t }} — <span class="nombres-tabulaires">{{ search.results_count }}</span>
+        </p>
+
+        {%- if search.results_count > 0 -%}
+          <div class="mt-8" data-reveal-groupe data-reveal-pas="50">
+            {%- for resultat in search.results -%}
+              <a class="associe" href="{{ resultat.url }}" data-reveal>
+                <span class="associe__sigle">
+                  {%- render 'icone', nom: 'ui.fleche-droite', taille: 20 -%}
+                </span>
+                <span class="associe__corps">
+                  <span class="associe__nom">{{ resultat.title }}</span>
+                  {%- if resultat.object_type == 'article' or resultat.object_type == 'page' -%}
+                    <span class="associe__raison">
+                      {{ resultat.content | strip_html | truncate: 160 }}
+                    </span>
+                  {%- elsif resultat.object_type == 'product' -%}
+                    <span class="associe__raison nombres-tabulaires">{{ resultat.price | money }}</span>
+                  {%- endif -%}
+                </span>
+                {%- render 'icone', nom: 'ui.fleche-diagonale', taille: 14, classe: 'associe__fleche' -%}
+              </a>
+            {%- endfor -%}
+          </div>
+
+          {%- if paginate.pages > 1 -%}
+            <nav class="pagination" aria-label="Pagination">
+              {%- if paginate.previous -%}
+                <a class="pagination__lien" href="{{ paginate.previous.url }}" rel="prev">
+                  {%- render 'icone', nom: 'ui.fleche-gauche', taille: 15 -%}
+                  <span>{{ paginate.previous.title }}</span>
+                </a>
+              {%- endif -%}
+              <span class="pagination__etat nombres-tabulaires">
+                {{ paginate.current_page }} / {{ paginate.pages }}
+              </span>
+              {%- if paginate.next -%}
+                <a class="pagination__lien" href="{{ paginate.next.url }}" rel="next">
+                  <span>{{ paginate.next.title }}</span>
+                  {%- render 'icone', nom: 'ui.fleche-droite', taille: 15 -%}
+                </a>
+              {%- endif -%}
+            </nav>
+          {%- endif -%}
+        {%- else -%}
+          <p class="mt-6 text-sm text-grain">{{ 'general.aucun_resultat' | t }}</p>
+        {%- endif -%}
+      {%- endpaginate -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Recherche",
+  "tag": "div",
+  "settings": []
+}
+{% endschema %}

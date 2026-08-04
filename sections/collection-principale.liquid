@@ -1,0 +1,93 @@
+{%- comment -%}
+  Collection — grille sobre, cohérente avec le reste du thème.
+{%- endcomment -%}
+
+<section class="section">
+  <div class="lisiere">
+    <nav class="ariane" aria-label="{{ 'referencement.accueil' | t }}">
+      <a href="{{ routes.root_url }}">{{ 'referencement.accueil' | t }}</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ collection.title }}</span>
+    </nav>
+
+    <div class="grille-12 mt-9 gap-y-6">
+      <div class="col-span-12 lg:col-span-6">
+        <h1 class="equilibre max-w-[18ch]">{{ collection.title }}</h1>
+        <span class="filet mt-7 w-full max-w-30" data-reveal-rule aria-hidden="true"></span>
+      </div>
+      {%- if collection.description != blank -%}
+        <div class="col-span-12 lg:col-span-5 lg:col-start-8 self-end text-sm text-grain">
+          {{ collection.description }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- paginate collection.products by section.settings.par_page -%}
+      {%- if collection.products.size > 0 -%}
+        <div class="produits-grille mt-12" data-reveal-groupe data-reveal-pas="70">
+          {%- for produit in collection.products -%}
+            <a class="produit-carte" href="{{ produit.url }}" data-reveal data-curseur="lien">
+              {%- render 'image-reactive',
+                image: produit.featured_image,
+                ratio: 'portrait',
+                tailles: '(min-width: 64rem) 24vw, (min-width: 40rem) 44vw, 88vw',
+                alt: produit.title,
+                zoom: true
+              -%}
+              <span class="produit-carte__corps">
+                <span class="produit-carte__nom">{{ produit.title }}</span>
+                <span class="produit-carte__prix nombres-tabulaires">
+                  {%- if produit.price_varies -%}
+                    {{ 'protocole.a_partir_de' | t }} {{ produit.price_min | money }}
+                  {%- else -%}
+                    {{ produit.price | money }}
+                  {%- endif -%}
+                </span>
+              </span>
+            </a>
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="pagination" aria-label="Pagination">
+            {%- if paginate.previous -%}
+              <a class="pagination__lien" href="{{ paginate.previous.url }}" rel="prev">
+                {%- render 'icone', nom: 'ui.fleche-gauche', taille: 15 -%}
+                <span>{{ paginate.previous.title }}</span>
+              </a>
+            {%- endif -%}
+            <span class="pagination__etat nombres-tabulaires">
+              {{ paginate.current_page }} / {{ paginate.pages }}
+            </span>
+            {%- if paginate.next -%}
+              <a class="pagination__lien" href="{{ paginate.next.url }}" rel="next">
+                <span>{{ paginate.next.title }}</span>
+                {%- render 'icone', nom: 'ui.fleche-droite', taille: 15 -%}
+              </a>
+            {%- endif -%}
+          </nav>
+        {%- endif -%}
+      {%- else -%}
+        <p class="mt-12 text-sm text-grain">{{ 'general.aucun_resultat' | t }}</p>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "range",
+      "id": "par_page",
+      "label": "Produits par page",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "default": 16
+    }
+  ]
+}
+{% endschema %}

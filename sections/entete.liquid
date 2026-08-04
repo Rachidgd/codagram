@@ -1,0 +1,315 @@
+{%- comment -%}
+  En-tête — navigation principale.
+
+  Comportements :
+    — fond transparent en haut de page, condensation en fond plein au défilement ;
+    — inversion automatique des couleurs au-dessus d'un bloc sombre ;
+    — méga-menu « Protocoles » à deux colonnes avec aperçu qui se substitue au survol ;
+    — tiroir mobile en <dialog> natif (piège de focus et échappement gratuits).
+{%- endcomment -%}
+
+<ely-entete
+  class="entete"
+  data-condense-seuil="24"
+>
+  <div class="entete__barre">
+    <div class="lisiere flex h-(--header-h) items-center justify-between gap-4">
+      {%- comment -%} — Marque — {%- endcomment -%}
+      <a
+        class="entete__marque"
+        href="{{ routes.root_url }}"
+        aria-label="{{ shop.name | escape }} — {{ 'accessibilite.accueil' | t }}"
+        data-curseur="lien"
+      >
+        {%- if settings.logo != blank -%}
+          <img
+            class="entete__logo entete__logo--sombre"
+            src="{{ settings.logo | image_url: height: 120 }}"
+            alt="{{ shop.name | escape }}"
+            width="{{ settings.logo.width }}"
+            height="{{ settings.logo.height }}"
+            style="height: {{ settings.logo_hauteur | default: 28 }}px; width: auto;"
+          >
+          {%- if settings.logo_clair != blank -%}
+            <img
+              class="entete__logo entete__logo--clair"
+              src="{{ settings.logo_clair | image_url: height: 120 }}"
+              alt=""
+              aria-hidden="true"
+              width="{{ settings.logo_clair.width }}"
+              height="{{ settings.logo_clair.height }}"
+              style="height: {{ settings.logo_hauteur | default: 28 }}px; width: auto;"
+            >
+          {%- endif -%}
+        {%- else -%}
+          <span class="entete__mot">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+
+      {%- comment -%} — Navigation desktop — {%- endcomment -%}
+      <nav class="entete__nav" aria-label="{{ 'navigation.principale' | t }}">
+        {%- if section.blocks.size > 0 -%}
+          <div class="entete__mega-hote">
+            <button
+              type="button"
+              class="entete__lien entete__lien--mega"
+              aria-expanded="false"
+              aria-controls="mega-protocoles"
+              data-mega-declencheur
+              data-curseur="lien"
+            >
+              <span>{{ section.settings.libelle_protocoles | default: 'Protocoles' }}</span>
+              {%- render 'icone', nom: 'ui.chevron', taille: 14, classe: 'entete__chevron' -%}
+            </button>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.menu_secondaire != blank -%}
+          {%- for lien in linklists[section.settings.menu_secondaire].links -%}
+            <a
+              class="entete__lien lien {% if lien.active %}lien--actif{% endif %}"
+              href="{{ lien.url }}"
+              {% if lien.active %}
+                aria-current="page"
+              {% endif %}
+              data-curseur="lien"
+            >
+              {{ lien.title }}
+            </a>
+          {%- endfor -%}
+        {%- endif -%}
+      </nav>
+
+      {%- comment -%} — Actions — {%- endcomment -%}
+      <div class="entete__actions">
+        {%- if section.settings.afficher_telephone and settings.cabinet_tel != blank -%}
+          <a
+            class="entete__tel"
+            href="tel:{{ settings.cabinet_tel | remove: ' ' | remove: '.' }}"
+            data-curseur="lien"
+          >
+            {%- render 'icone', nom: 'ui.telephone', taille: 15 -%}
+            <span class="nombres-tabulaires">{{ settings.cabinet_tel }}</span>
+          </a>
+        {%- endif -%}
+
+        <span class="entete__cta">
+          {%- render 'bouton', rdv: true, style: 'plein' -%}
+        </span>
+
+        <button
+          type="button"
+          class="entete__bascule"
+          aria-controls="tiroir-navigation"
+          aria-expanded="false"
+          data-tiroir-ouvrir
+        >
+          {%- render 'icone', nom: 'ui.menu', taille: 22 -%}
+          <span class="lecteur-seul">{{ 'navigation.ouvrir_menu' | t }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} — Méga-menu — {%- endcomment -%}
+  {%- if section.blocks.size > 0 -%}
+    <div class="entete__mega" id="mega-protocoles" data-mega hidden>
+      <div class="lisiere entete__mega-grille">
+        <div class="entete__mega-liste">
+          <p class="surtitre mb-6" data-index="01">{{ 'navigation.les_protocoles' | t }}</p>
+          <ul role="list">
+            {%- for bloc in section.blocks -%}
+              <li {{ bloc.shopify_attributes }}>
+                <a
+                  class="entete__protocole"
+                  href="{{ bloc.settings.lien | default: '#' }}"
+                  data-apercu="{{ forloop.index0 }}"
+                  data-curseur="lien"
+                >
+                  <span class="entete__protocole-sigle">
+                    {%- render 'icone', nom: bloc.settings.sigle, taille: 26 -%}
+                  </span>
+                  <span class="entete__protocole-nom">{{ bloc.settings.titre }}</span>
+                  {%- if bloc.settings.mesure != blank -%}
+                    <span class="entete__protocole-mesure nombres-tabulaires">{{ bloc.settings.mesure }}</span>
+                  {%- endif -%}
+                  {%- render 'icone', nom: 'ui.fleche-diagonale', taille: 15, classe: 'entete__protocole-fleche' -%}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+
+          {%- if section.settings.note_menu != blank -%}
+            <p class="entete__mega-note">{{ section.settings.note_menu }}</p>
+          {%- endif -%}
+        </div>
+
+        <div class="entete__mega-apercu" aria-hidden="true">
+          {%- for bloc in section.blocks -%}
+            <figure
+              class="entete__apercu {% if forloop.first %}est-actif{% endif %}"
+              data-apercu-cible="{{ forloop.index0 }}"
+            >
+              {%- render 'image-reactive',
+                image: bloc.settings.image,
+                ratio: 'paysage',
+                tailles: '(min-width: 64rem) 34vw, 90vw',
+                classe: 'h-full w-full'
+              -%}
+              <figcaption class="entete__apercu-legende">
+                <span class="surtitre">{{ bloc.settings.titre }}</span>
+                {%- if bloc.settings.accroche != blank -%}
+                  <span class="entete__apercu-accroche">{{ bloc.settings.accroche }}</span>
+                {%- endif -%}
+              </figcaption>
+            </figure>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+</ely-entete>
+
+{%- comment -%} — Tiroir mobile — {%- endcomment -%}
+<dialog class="tiroir" id="tiroir-navigation" data-tiroir>
+  <div class="tiroir__panneau">
+    <div class="tiroir__tete">
+      <span class="surtitre">{{ 'navigation.menu' | t }}</span>
+      <button type="button" class="tiroir__fermer" data-tiroir-fermer>
+        {%- render 'icone', nom: 'ui.fermer', taille: 20 -%}
+        <span class="lecteur-seul">{{ 'navigation.fermer_menu' | t }}</span>
+      </button>
+    </div>
+
+    <nav class="tiroir__corps" aria-label="{{ 'navigation.mobile' | t }}">
+      {%- if section.blocks.size > 0 -%}
+        <p class="surtitre tiroir__rubrique" data-index="01">
+          {{ section.settings.libelle_protocoles | default: 'Protocoles' }}
+        </p>
+        <ul role="list" class="tiroir__liste">
+          {%- for bloc in section.blocks -%}
+            <li>
+              <a class="tiroir__protocole" href="{{ bloc.settings.lien | default: '#' }}">
+                {%- render 'icone', nom: bloc.settings.sigle, taille: 22 -%}
+                <span>{{ bloc.settings.titre }}</span>
+                {%- if bloc.settings.mesure != blank -%}
+                  <span class="tiroir__mesure nombres-tabulaires">{{ bloc.settings.mesure }}</span>
+                {%- endif -%}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if section.settings.menu_secondaire != blank -%}
+        <p class="surtitre tiroir__rubrique" data-index="02">{{ 'navigation.le_cabinet' | t }}</p>
+        <ul role="list" class="tiroir__liste tiroir__liste--simple">
+          {%- for lien in linklists[section.settings.menu_secondaire].links -%}
+            <li>
+              <a class="tiroir__lien" href="{{ lien.url }}">{{ lien.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </nav>
+
+    <div class="tiroir__pied">
+      {%- render 'bouton', rdv: true, style: 'plein', pleine_largeur: true -%}
+      {%- if settings.cabinet_tel != blank -%}
+        <a class="tiroir__tel" href="tel:{{ settings.cabinet_tel | remove: ' ' | remove: '.' }}">
+          {%- render 'icone', nom: 'ui.telephone', taille: 15 -%}
+          <span class="nombres-tabulaires">{{ settings.cabinet_tel }}</span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</dialog>
+
+{% schema %}
+{
+  "name": "En-tête",
+  "settings": [
+    {
+      "type": "text",
+      "id": "libelle_protocoles",
+      "label": "Libellé du méga-menu",
+      "default": "Protocoles"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_secondaire",
+      "label": "Menu secondaire",
+      "info": "Le cabinet, l'équipe, le journal, le contact… Les protocoles se gèrent par blocs ci-dessous."
+    },
+    {
+      "type": "text",
+      "id": "note_menu",
+      "label": "Note du méga-menu",
+      "info": "Une phrase courte au bas de la liste des protocoles."
+    },
+    {
+      "type": "checkbox",
+      "id": "afficher_telephone",
+      "label": "Afficher le téléphone dans l'en-tête",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "protocole",
+      "name": "Protocole",
+      "limit": 9,
+      "settings": [
+        {
+          "type": "text",
+          "id": "titre",
+          "label": "Nom du protocole",
+          "default": "Nouveau protocole"
+        },
+        {
+          "type": "url",
+          "id": "lien",
+          "label": "Page du protocole"
+        },
+        {
+          "type": "select",
+          "id": "sigle",
+          "label": "Sigle",
+          "options": [
+            { "value": "sigle.hydrafacial", "label": "Vortex — Hydrafacial" },
+            { "value": "sigle.microneedling", "label": "Trame — Microneedling" },
+            { "value": "sigle.peeling", "label": "Strates — Peeling" },
+            { "value": "sigle.diagnostic", "label": "Mire — Diagnostic" },
+            { "value": "sigle.hifu", "label": "Focalisation — HIFU" },
+            { "value": "sigle.led", "label": "Rayonnement — LED" },
+            { "value": "sigle.drainage", "label": "Flux — Drainage" },
+            { "value": "sigle.protocole", "label": "Générique" }
+          ],
+          "default": "sigle.protocole"
+        },
+        {
+          "type": "text",
+          "id": "mesure",
+          "label": "Durée",
+          "info": "Affichée en petit à droite du nom. Exemple : 60 min."
+        },
+        {
+          "type": "text",
+          "id": "accroche",
+          "label": "Accroche de l'aperçu",
+          "info": "Une ligne, affichée sur l'image du méga-menu."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image d'aperçu",
+          "info": "Format paysage. Visible au survol dans le méga-menu."
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "groups": ["header"]
+  }
+}
+{% endschema %}

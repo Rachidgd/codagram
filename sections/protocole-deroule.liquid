@@ -1,0 +1,133 @@
+{%- comment -%}
+  Déroulé minuté de la séance.
+
+  Lever l'incertitude sur ce qui va se passer est le levier de conversion le
+  plus efficace sur une page de soin : le visiteur qui sait n'hésite plus.
+{%- endcomment -%}
+
+<section class="section {{ section.settings.surface }}" id="{{ section.settings.ancre | default: 'deroule' }}">
+  <div class="lisiere">
+    <div class="grille-12 gap-y-10">
+      <div class="col-span-12 lg:col-span-4">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+
+        {%- if section.settings.image != blank -%}
+          <div class="mt-9 hidden lg:block" data-reveal style="--reveal-delay: 160ms">
+            {%- render 'image-reactive',
+              image: section.settings.image,
+              ratio: 'portrait',
+              tailles: '30vw',
+              zoom: true
+            -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="col-span-12 lg:col-span-7 lg:col-start-6">
+        <ol role="list" data-reveal-groupe data-reveal-pas="70">
+          {%- for bloc in section.blocks -%}
+            <li class="deroule__temps" data-reveal {{ bloc.shopify_attributes }}>
+              <span class="deroule__minute">{{ bloc.settings.minute }}</span>
+              <div>
+                <h3 class="deroule__titre">{{ bloc.settings.titre }}</h3>
+                {%- if bloc.settings.texte != blank -%}
+                  <p class="deroule__texte">{{ bloc.settings.texte }}</p>
+                {%- endif -%}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ol>
+
+        {%- if section.settings.note != blank -%}
+          <p class="mt-8 text-xs text-grain max-w-[62ch]" data-reveal>{{ section.settings.note }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Protocole — déroulé",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" }
+      ],
+      "default": "surface-craie"
+    },
+    { "type": "text", "id": "ancre", "label": "Ancre", "default": "deroule" },
+    { "type": "text", "id": "index", "label": "Index", "default": "02" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "La séance" },
+    { "type": "textarea", "id": "titre", "label": "Titre", "default": "Minute par minute." },
+    { "type": "image_picker", "id": "image", "label": "Image d'appui" },
+    {
+      "type": "textarea",
+      "id": "note",
+      "label": "Note",
+      "default": "Les durées sont indicatives et s'ajustent à votre peau le jour même. Vous pouvez demander une pause ou l'arrêt de la séance à tout moment."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "temps",
+      "name": "Temps",
+      "limit": 8,
+      "settings": [
+        { "type": "text", "id": "minute", "label": "Repère de temps", "default": "0 — 10 min" },
+        { "type": "text", "id": "titre", "label": "Titre", "default": "Nouvelle étape" },
+        { "type": "textarea", "id": "texte", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Protocole — déroulé",
+      "blocks": [
+        {
+          "type": "temps",
+          "settings": {
+            "minute": "0 — 10 min",
+            "titre": "Point d'entrée",
+            "texte": "Ce qu'a fait la peau depuis la dernière séance, ce qui a changé dans votre routine, ce qui vous gêne aujourd'hui. Le protocole du jour se décide ici."
+          }
+        },
+        {
+          "type": "temps",
+          "settings": {
+            "minute": "10 — 20 min",
+            "titre": "Préparation",
+            "texte": "Démaquillage complet, nettoyage, lecture de la peau à la lumière rasante. On repère les zones à traiter et celles à éviter."
+          }
+        },
+        {
+          "type": "temps",
+          "settings": {
+            "minute": "20 — 45 min",
+            "titre": "Le soin",
+            "texte": "Le geste technique à proprement parler, conduit zone par zone, avec un contrôle visuel entre chaque passage."
+          }
+        },
+        {
+          "type": "temps",
+          "settings": {
+            "minute": "45 — 60 min",
+            "titre": "Apaisement et consignes",
+            "texte": "Application des soins de sortie, protection solaire, et remise des consignes écrites pour les jours qui suivent."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

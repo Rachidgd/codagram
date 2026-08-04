@@ -1,0 +1,158 @@
+{%- comment -%}
+  Expertise — la personne derrière le cabinet.
+
+  Bloc décisif pour la confiance et pour les critères d'expérience et
+  d'autorité des moteurs de recherche : un praticien nommé, une qualification
+  vérifiable, une parole à la première personne.
+{%- endcomment -%}
+
+<section
+  id="{{ section.settings.ancre | default: 'expertise' | handleize }}" class="section {{ section.settings.surface }}">
+  <div class="lisiere">
+    <div class="grille-12 gap-y-10">
+      <div class="col-span-12 md:col-span-5 lg:col-span-4">
+        <div data-reveal>
+          {%- render 'image-reactive',
+            image: section.settings.portrait,
+            ratio: 'portrait',
+            tailles: '(min-width: 64rem) 30vw, (min-width: 48rem) 42vw, 92vw',
+            alt: section.settings.nom,
+            zoom: true
+          -%}
+        </div>
+
+        {%- if section.settings.nom != blank -%}
+          <div class="mt-5 flex flex-col gap-1" data-reveal style="--reveal-delay: 80ms">
+            <p class="font-display text-lg">{{ section.settings.nom }}</p>
+            {%- if section.settings.fonction != blank -%}
+              <p class="text-xs uppercase tracking-[0.14em] text-grain">{{ section.settings.fonction }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="col-span-12 md:col-span-6 md:col-start-7 lg:col-span-6 lg:col-start-7">
+        {%- if section.settings.surtitre != blank -%}
+          <p
+            class="surtitre"
+            {% if section.settings.index != blank %}
+              data-index="{{ section.settings.index }}"
+            {% endif %}
+            data-reveal
+          >
+            {{ section.settings.surtitre }}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.citation != blank -%}
+          <blockquote class="expertise__citation mt-7" data-reveal style="--reveal-delay: 70ms">
+            {{ section.settings.citation }}
+          </blockquote>
+        {%- endif -%}
+
+        <span class="filet mt-8 mb-8 w-full max-w-25" data-reveal-rule aria-hidden="true"></span>
+
+        {%- if section.settings.texte != blank -%}
+          <div class="text-base text-grain texte-mesure" data-reveal style="--reveal-delay: 140ms">
+            {{ section.settings.texte }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul role="list" class="expertise__liste mt-9" data-reveal-groupe data-reveal-pas="70">
+            {%- for bloc in section.blocks -%}
+              <li class="expertise__item" data-reveal {{ bloc.shopify_attributes }}>
+                {%- render 'icone', nom: 'ui.coche', taille: 15 -%}
+                <span>
+                  <span class="block">{{ bloc.settings.titre }}</span>
+                  {%- if bloc.settings.precision != blank -%}
+                    <span class="mt-1 block text-xs text-grain">{{ bloc.settings.precision }}</span>
+                  {%- endif -%}
+                </span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Expertise",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ancre",
+      "label": "Ancre",
+      "info": "Permet de pointer vers cette section depuis un lien : #expertise",
+      "default": "expertise"
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" }
+      ],
+      "default": "surface-peau"
+    },
+    { "type": "text", "id": "index", "label": "Index", "default": "06" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Qui vous reçoit" },
+    { "type": "image_picker", "id": "portrait", "label": "Portrait" },
+    { "type": "text", "id": "nom", "label": "Nom du praticien" },
+    {
+      "type": "text",
+      "id": "fonction",
+      "label": "Fonction",
+      "default": "Infirmière diplômée d'État — praticienne en soin esthétique"
+    },
+    {
+      "type": "textarea",
+      "id": "citation",
+      "label": "Citation",
+      "default": "Je préfère annuler une séance que la faire sur une peau qui n'est pas prête."
+    },
+    {
+      "type": "richtext",
+      "id": "texte",
+      "label": "Texte",
+      "default": "<p>La formation infirmière change la manière de lire une peau : on regarde d'abord ce qui contre-indique, ensuite ce qui est possible. C'est ce cadre qui permet de proposer des protocoles courts, et d'écarter ceux qui n'apporteraient rien.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "qualification",
+      "name": "Qualification",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "titre", "label": "Intitulé", "default": "Diplôme d'État d'infirmier" },
+        { "type": "text", "id": "precision", "label": "Précision" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Expertise",
+      "blocks": [
+        {
+          "type": "qualification",
+          "settings": { "titre": "Diplôme d'État d'infirmier", "precision": "Lecture clinique de la peau et des contre-indications" }
+        },
+        {
+          "type": "qualification",
+          "settings": { "titre": "Formations constructeurs", "precision": "Certifications obtenues auprès des fabricants des appareils utilisés" }
+        },
+        {
+          "type": "qualification",
+          "settings": { "titre": "Protocoles écrits et tracés", "precision": "Chaque séance est consignée, chaque ajustement est justifié" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

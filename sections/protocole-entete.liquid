@@ -1,0 +1,228 @@
+{%- comment -%}
+  En-tête de page protocole.
+
+  Porte le H1 de la page, le fil d'Ariane visible, la fiche technique
+  (durée, séances, suites, tarif) et les données structurées Service.
+  Le tarif se règle soin par soin : « à partir de … € » ou « sur devis ».
+{%- endcomment -%}
+
+<section class="protocole-heros" data-entete-inverse>
+  {%- if section.settings.image != blank -%}
+    <div class="protocole-heros__fond" aria-hidden="true">
+      <img
+        src="{{ section.settings.image | image_url: width: 2000 }}"
+        srcset="
+          {{ section.settings.image | image_url: width: 900 }} 900w,
+          {{ section.settings.image | image_url: width: 1400 }} 1400w,
+          {{ section.settings.image | image_url: width: 2000 }} 2000w
+        "
+        sizes="100vw"
+        alt=""
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+    </div>
+  {%- endif -%}
+
+  <div class="lisiere relative">
+    <nav class="ariane" aria-label="{{ 'referencement.accueil' | t }}">
+      <a href="{{ routes.root_url }}">{{ 'referencement.accueil' | t }}</a>
+      <span aria-hidden="true">/</span>
+      {%- if section.settings.lien_parent != blank -%}
+        <a href="{{ section.settings.lien_parent }}">{{ 'referencement.protocoles' | t }}</a>
+        <span aria-hidden="true">/</span>
+      {%- endif -%}
+      <span aria-current="page">{{ section.settings.titre | default: page.title }}</span>
+    </nav>
+
+    <div class="grille-12 mt-9 gap-y-8">
+      <div class="col-span-12 lg:col-span-7">
+        <div class="flex items-center gap-4" data-reveal>
+          {%- if section.settings.sigle != blank -%}
+            <span class="protocole-heros__sigle">
+              {%- render 'icone', nom: section.settings.sigle, taille: 38 -%}
+            </span>
+          {%- endif -%}
+          {%- if section.settings.surtitre != blank -%}
+            <p class="surtitre heros__surtitre">{{ section.settings.surtitre }}</p>
+          {%- endif -%}
+        </div>
+
+        <h1 class="mt-6 equilibre max-w-[16ch]" data-reveal style="--reveal-delay: 70ms">
+          {{ section.settings.titre | default: page.title }}
+        </h1>
+
+        {%- if section.settings.chapo != blank -%}
+          <p
+            class="heros__chapo"
+            data-reveal
+            style="--reveal-delay: 140ms"
+          >
+            {{ section.settings.chapo }}
+          </p>
+        {%- endif -%}
+
+        <div class="heros__actions" data-reveal style="--reveal-delay: 210ms">
+          {%- render 'bouton', rdv: true, style: 'clair', fleche: true -%}
+          {%- if section.settings.ancre_secondaire != blank -%}
+            {%- render 'bouton',
+              libelle: section.settings.libelle_secondaire,
+              lien: section.settings.ancre_secondaire,
+              style: 'fantome'
+            -%}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+
+    <dl class="protocole-heros__fiche" data-reveal-groupe data-reveal-pas="70">
+      {%- if section.settings.duree != blank -%}
+        <div class="protocole-heros__champ" data-reveal>
+          <dt class="protocole-heros__cle">{{ 'protocole.duree' | t }}</dt>
+          <dd class="protocole-heros__valeur">{{ section.settings.duree }}</dd>
+        </div>
+      {%- endif -%}
+      {%- if section.settings.seances != blank -%}
+        <div class="protocole-heros__champ" data-reveal>
+          <dt class="protocole-heros__cle">{{ 'protocole.seances' | t }}</dt>
+          <dd class="protocole-heros__valeur">{{ section.settings.seances }}</dd>
+        </div>
+      {%- endif -%}
+      {%- if section.settings.eviction != blank -%}
+        <div class="protocole-heros__champ" data-reveal>
+          <dt class="protocole-heros__cle">{{ 'protocole.eviction' | t }}</dt>
+          <dd class="protocole-heros__valeur">{{ section.settings.eviction }}</dd>
+        </div>
+      {%- endif -%}
+      {%- if section.settings.mode_tarif != 'masque' -%}
+        <div class="protocole-heros__champ" data-reveal>
+          <dt class="protocole-heros__cle">{{ 'protocole.tarif' | t }}</dt>
+          <dd class="protocole-heros__valeur">
+            {%- render 'tarif',
+              mode: section.settings.mode_tarif,
+              montant: section.settings.montant,
+              compact: true
+            -%}
+          </dd>
+        </div>
+      {%- endif -%}
+    </dl>
+  </div>
+</section>
+
+{%- comment -%} Données structurées du soin, rattachées à l'établissement. {%- endcomment -%}
+{%- if section.settings.donnees_structurees -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": {{ section.settings.titre | default: page.title | json }},
+      "serviceType": {{ section.settings.type_service | default: section.settings.titre | json }},
+      "url": {{ shop.url | append: request.path | json }}
+      {%- if section.settings.chapo != blank -%}
+        , "description": {{ section.settings.chapo | strip_html | json }}
+      {%- endif -%}
+      {%- if section.settings.image != blank -%}
+        , "image": {{ section.settings.image | image_url: width: 1200 | prepend: 'https:' | json }}
+      {%- endif -%}
+      , "provider": { "@id": {{ shop.url | append: '/#etablissement' | json }} }
+      {%- if settings.cabinet_ville != blank -%}
+        , "areaServed": { "@type": "City", "name": {{ settings.cabinet_ville | json }} }
+      {%- endif -%}
+      {%- if section.settings.mode_tarif == 'depuis' and section.settings.montant != blank -%}
+        , "offers": {
+          "@type": "Offer",
+          "priceCurrency": {{ shop.currency | json }},
+          "price": {{ section.settings.montant | json }},
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": {{ shop.currency | json }},
+            "minPrice": {{ section.settings.montant | json }},
+            "valueAddedTaxIncluded": true
+          },
+          "availability": "https://schema.org/InStock"
+        }
+      {%- elsif section.settings.mode_tarif == 'devis' -%}
+        , "offers": {
+          "@type": "Offer",
+          "priceCurrency": {{ shop.currency | json }},
+          "availability": "https://schema.org/InStock",
+          "description": {{ 'protocole.sur_devis_note' | t | json }}
+        }
+      {%- endif -%}
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Protocole — en-tête",
+  "tag": "div",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image de fond" },
+    {
+      "type": "select",
+      "id": "sigle",
+      "label": "Sigle",
+      "options": [
+        { "value": "sigle.hydrafacial", "label": "Vortex — Hydrafacial" },
+        { "value": "sigle.microneedling", "label": "Trame — Microneedling" },
+        { "value": "sigle.peeling", "label": "Strates — Peeling" },
+        { "value": "sigle.diagnostic", "label": "Mire — Diagnostic" },
+        { "value": "sigle.hifu", "label": "Focalisation — HIFU" },
+        { "value": "sigle.led", "label": "Rayonnement — LED" },
+        { "value": "sigle.drainage", "label": "Flux — Drainage" },
+        { "value": "sigle.protocole", "label": "Générique" }
+      ],
+      "default": "sigle.protocole"
+    },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Protocole" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre (H1)",
+      "info": "Laisser vide pour reprendre le titre de la page. Viser 4 à 8 mots.",
+      "default": ""
+    },
+    { "type": "textarea", "id": "chapo", "label": "Chapô" },
+    { "type": "url", "id": "lien_parent", "label": "Lien « Protocoles » du fil d'Ariane" },
+    { "type": "text", "id": "libelle_secondaire", "label": "Second bouton — libellé", "default": "Voir le déroulé" },
+    { "type": "text", "id": "ancre_secondaire", "label": "Second bouton — ancre", "default": "#deroule" },
+
+    { "type": "header", "content": "Fiche technique" },
+    { "type": "text", "id": "duree", "label": "Durée", "default": "60 min" },
+    { "type": "text", "id": "seances", "label": "Séances", "default": "3 à 5" },
+    { "type": "text", "id": "eviction", "label": "Suites", "default": "Aucune" },
+    {
+      "type": "select",
+      "id": "mode_tarif",
+      "label": "Affichage du tarif",
+      "options": [
+        { "value": "depuis", "label": "À partir de … €" },
+        { "value": "devis", "label": "Sur devis" },
+        { "value": "masque", "label": "Ne pas afficher" }
+      ],
+      "default": "depuis"
+    },
+    { "type": "text", "id": "montant", "label": "Montant", "info": "Nombre seul, sans symbole.", "default": "140" },
+
+    { "type": "header", "content": "Référencement" },
+    {
+      "type": "checkbox",
+      "id": "donnees_structurees",
+      "label": "Publier les données structurées du soin",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "type_service",
+      "label": "Type de service déclaré",
+      "info": "Terme générique lu par les moteurs. Exemple : soin du visage par hydradermabrasion."
+    }
+  ],
+  "presets": [{ "name": "Protocole — en-tête" }]
+}
+{% endschema %}

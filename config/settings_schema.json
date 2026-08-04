@@ -1,0 +1,374 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Ély'Skin Paris",
+    "theme_version": "1.0.0",
+    "theme_author": "Studio — sur mesure",
+    "theme_documentation_url": "https://github.com/rachidgd/codagram",
+    "theme_support_url": "https://github.com/rachidgd/codagram/issues"
+  },
+
+  {
+    "name": "Identité",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Marque"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo (fond clair)",
+        "info": "SVG ou PNG transparent. Hauteur de rendu : 26 à 34 px."
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_clair",
+        "label": "Logo (fond sombre)",
+        "info": "Version claire du logo, utilisée sur les surfaces vert absolu."
+      },
+      {
+        "type": "range",
+        "id": "logo_hauteur",
+        "label": "Hauteur du logo",
+        "min": 18,
+        "max": 48,
+        "step": 2,
+        "unit": "px",
+        "default": 28
+      },
+      {
+        "type": "text",
+        "id": "signature",
+        "label": "Signature de marque",
+        "default": "Cabinet de soin esthétique — Paris",
+        "info": "Affichée sous le logo dans le pied de page."
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon",
+        "info": "Image carrée, 96 × 96 px minimum."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_partage",
+        "label": "Image de partage par défaut",
+        "info": "1200 × 630 px. Utilisée quand une page n'a pas d'image propre."
+      }
+    ]
+  },
+
+  {
+    "name": "Couleurs",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "La palette est volontairement courte : quatre couleurs porteuses, deux teintes de soutien. Chaque couple texte/fond a été vérifié au contraste WCAG 2.2 AA. Modifier ces valeurs recalcule tout le site."
+      },
+      {
+        "type": "header",
+        "content": "Fonds"
+      },
+      {
+        "type": "color",
+        "id": "c_porcelaine",
+        "label": "Porcelaine — fond principal",
+        "default": "#f6f3ef"
+      },
+      {
+        "type": "color",
+        "id": "c_craie",
+        "label": "Craie — surface secondaire",
+        "default": "#ebe5dd"
+      },
+      {
+        "type": "color",
+        "id": "c_lin",
+        "label": "Lin — surface appuyée",
+        "default": "#ded5c9"
+      },
+      {
+        "type": "header",
+        "content": "Textes"
+      },
+      {
+        "type": "color",
+        "id": "c_encre",
+        "label": "Encre — texte principal",
+        "default": "#191512"
+      },
+      {
+        "type": "color",
+        "id": "c_grain",
+        "label": "Grain — texte secondaire",
+        "default": "#75695f",
+        "info": "Doit conserver un contraste ≥ 4,5:1 sur le fond porcelaine."
+      },
+      {
+        "type": "header",
+        "content": "Signature"
+      },
+      {
+        "type": "color",
+        "id": "c_absolu",
+        "label": "Vert absolu — couleur signature",
+        "default": "#1b3a31"
+      },
+      {
+        "type": "color",
+        "id": "c_absolu_clair",
+        "label": "Vert absolu clair",
+        "default": "#2a5245"
+      },
+      {
+        "type": "color",
+        "id": "c_brume",
+        "label": "Brume — texte secondaire sur vert",
+        "default": "#9fb3aa"
+      },
+      {
+        "type": "header",
+        "content": "Teintes chaudes"
+      },
+      {
+        "type": "color",
+        "id": "c_peau",
+        "label": "Peau",
+        "default": "#e0c4b2"
+      },
+      {
+        "type": "color",
+        "id": "c_peau_pale",
+        "label": "Peau pâle",
+        "default": "#f0e2d9"
+      }
+    ]
+  },
+
+  {
+    "name": "Le cabinet",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Ces informations alimentent le pied de page, la page contact et les données structurées lues par Google. Les renseigner complètement améliore directement le référencement local."
+      },
+      {
+        "type": "text",
+        "id": "cabinet_nom",
+        "label": "Raison sociale",
+        "default": "Ély'Skin Paris"
+      },
+      {
+        "type": "text",
+        "id": "cabinet_rue",
+        "label": "Adresse — rue",
+        "default": ""
+      },
+      {
+        "type": "text",
+        "id": "cabinet_cp",
+        "label": "Code postal",
+        "default": ""
+      },
+      {
+        "type": "text",
+        "id": "cabinet_ville",
+        "label": "Ville",
+        "default": "Paris"
+      },
+      {
+        "type": "text",
+        "id": "cabinet_pays",
+        "label": "Pays (code ISO)",
+        "default": "FR"
+      },
+      {
+        "type": "text",
+        "id": "cabinet_tel",
+        "label": "Téléphone",
+        "default": "",
+        "info": "Format international recommandé : +33 1 23 45 67 89"
+      },
+      {
+        "type": "text",
+        "id": "cabinet_email",
+        "label": "E-mail de contact",
+        "default": ""
+      },
+      {
+        "type": "text",
+        "id": "cabinet_lat",
+        "label": "Latitude",
+        "default": "",
+        "info": "Optionnel — améliore le référencement local."
+      },
+      {
+        "type": "text",
+        "id": "cabinet_lon",
+        "label": "Longitude",
+        "default": ""
+      },
+      {
+        "type": "textarea",
+        "id": "cabinet_horaires",
+        "label": "Horaires (affichage)",
+        "default": "Mardi — Vendredi : 10h — 19h\nSamedi : 10h — 17h",
+        "info": "Une ligne par plage. Affiché tel quel."
+      },
+      {
+        "type": "textarea",
+        "id": "cabinet_horaires_donnees",
+        "label": "Horaires (données structurées)",
+        "default": "Tu,We,Th,Fr 10:00-19:00\nSa 10:00-17:00",
+        "info": "Une ligne par plage, au format « Mo,Tu 09:00-18:00 ». Codes : Mo Tu We Th Fr Sa Su."
+      },
+      {
+        "type": "text",
+        "id": "cabinet_prix_indicatif",
+        "label": "Fourchette de prix",
+        "default": "€€",
+        "info": "De € à €€€€. Affiché aux moteurs de recherche."
+      },
+      {
+        "type": "header",
+        "content": "Prise de rendez-vous"
+      },
+      {
+        "type": "url",
+        "id": "rdv_url",
+        "label": "Lien de réservation",
+        "info": "Planity, Treatwell, Doctolib, agenda interne… Utilisé par tous les boutons « Prendre rendez-vous »."
+      },
+      {
+        "type": "text",
+        "id": "rdv_libelle",
+        "label": "Libellé du bouton",
+        "default": "Prendre rendez-vous"
+      }
+    ]
+  },
+
+  {
+    "name": "Réseaux",
+    "settings": [
+      {
+        "type": "url",
+        "id": "reseau_instagram",
+        "label": "Instagram"
+      },
+      {
+        "type": "url",
+        "id": "reseau_tiktok",
+        "label": "TikTok"
+      },
+      {
+        "type": "url",
+        "id": "reseau_facebook",
+        "label": "Facebook"
+      },
+      {
+        "type": "url",
+        "id": "reseau_linkedin",
+        "label": "LinkedIn"
+      },
+      {
+        "type": "url",
+        "id": "reseau_google",
+        "label": "Fiche Google Business",
+        "info": "Renforce le lien entre le site et la fiche locale."
+      }
+    ]
+  },
+
+  {
+    "name": "Mouvement",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Les animations du thème sont écrites en JavaScript natif, sans bibliothèque externe. Elles se désactivent automatiquement si le visiteur a activé « réduire les animations » dans son système."
+      },
+      {
+        "type": "checkbox",
+        "id": "anim_apparitions",
+        "label": "Apparitions au défilement",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "anim_filets",
+        "label": "Tracé des filets de section",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "anim_curseur",
+        "label": "Curseur contextuel (desktop)",
+        "default": true,
+        "info": "Disque discret qui réagit aux zones interactives. Ignoré sur tactile."
+      },
+      {
+        "type": "checkbox",
+        "id": "anim_compteurs",
+        "label": "Compteurs chiffrés animés",
+        "default": true
+      }
+    ]
+  },
+
+  {
+    "name": "Référencement",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Les données structurées décrivent le cabinet à Google. Elles s'appuient sur la section « Le cabinet »."
+      },
+      {
+        "type": "checkbox",
+        "id": "seo_donnees_structurees",
+        "label": "Publier les données structurées du cabinet",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "seo_type_etablissement",
+        "label": "Type d'établissement déclaré",
+        "options": [
+          { "value": "MedicalBusiness", "label": "Établissement de santé" },
+          { "value": "BeautySalon", "label": "Institut de beauté" },
+          { "value": "HealthAndBeautyBusiness", "label": "Santé et beauté" }
+        ],
+        "default": "HealthAndBeautyBusiness"
+      },
+      {
+        "type": "textarea",
+        "id": "seo_description_etablissement",
+        "label": "Description de l'établissement",
+        "info": "2 à 3 phrases. Reprise dans les données structurées.",
+        "default": ""
+      }
+    ]
+  },
+
+  {
+    "name": "Mentions",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Mentions réglementaires affichées en bas de page. Un cabinet esthétique en France doit rester prudent sur les allégations de résultat."
+      },
+      {
+        "type": "richtext",
+        "id": "avertissement",
+        "label": "Avertissement",
+        "default": "<p>Les soins présentés sont des soins esthétiques non médicaux. Les résultats varient selon la personne, son mode de vie et le protocole suivi. Un premier bilan est réalisé avant toute séance.</p>"
+      },
+      {
+        "type": "text",
+        "id": "copyright",
+        "label": "Mention de copyright",
+        "default": "Ély'Skin Paris"
+      }
+    ]
+  }
+]

@@ -1,0 +1,491 @@
+/* ==========================================================================
+   EN-TÊTE, MÉGA-MENU, TIROIR MOBILE
+   ========================================================================== */
+
+@layer components {
+  .entete {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    display: block;
+    /* Le fond ne se pose qu'à la condensation : au repos, l'en-tête laisse
+       passer le premier bloc de la page. */
+    transition:
+      background-color var(--dur-base) var(--ease-ely),
+      box-shadow var(--dur-base) var(--ease-ely);
+  }
+
+  .entete__barre {
+    position: relative;
+    border-bottom: 1px solid transparent;
+    transition:
+      border-color var(--dur-base) var(--ease-ely),
+      background-color var(--dur-base) var(--ease-ely),
+      backdrop-filter var(--dur-base) var(--ease-ely);
+  }
+
+  .entete.est-condense .entete__barre {
+    background-color: color-mix(in oklab, var(--color-porcelaine) 88%, transparent);
+    border-bottom-color: var(--color-lisere);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+  }
+
+  @supports not (backdrop-filter: blur(1px)) {
+    .entete.est-condense .entete__barre {
+      background-color: var(--color-porcelaine);
+    }
+  }
+
+  /* Hauteur qui se resserre au défilement — la page gagne de la surface. */
+  .entete .lisiere {
+    transition: height var(--dur-base) var(--ease-ely);
+  }
+  .entete.est-condense .lisiere {
+    --header-h: 3.75rem;
+  }
+
+  /* Inversion au-dessus d'un bloc sombre. */
+  .entete.sur-sombre:not(.est-condense) {
+    color: var(--color-porcelaine);
+  }
+  .entete.sur-sombre:not(.est-condense) .entete__lien,
+  .entete.sur-sombre:not(.est-condense) .entete__tel,
+  .entete.sur-sombre:not(.est-condense) .entete__bascule {
+    color: var(--color-porcelaine);
+  }
+  .entete.sur-sombre:not(.est-condense) .btn {
+    --btn-bg: transparent;
+    --btn-fg: var(--color-porcelaine);
+    --btn-bd: var(--color-lisere-clair);
+  }
+  .entete.sur-sombre:not(.est-condense) .btn::before {
+    background: var(--color-porcelaine);
+  }
+  .entete.sur-sombre:not(.est-condense) .btn:hover,
+  .entete.sur-sombre:not(.est-condense) .btn:focus-visible {
+    color: var(--color-absolu);
+  }
+
+  /* Bascule des deux versions du logo. */
+  .entete__marque {
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+  }
+  .entete__logo--clair {
+    display: none;
+  }
+  .entete.sur-sombre:not(.est-condense) .entete__logo--sombre {
+    display: none;
+  }
+  .entete.sur-sombre:not(.est-condense) .entete__logo--clair {
+    display: block;
+  }
+  .entete__mot {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: currentColor;
+  }
+
+  /* — Navigation — */
+  .entete__nav {
+    display: none;
+    align-items: center;
+    gap: clamp(1.25rem, 0.7rem + 1.4vw, 2.25rem);
+  }
+  @media (min-width: 64rem) {
+    .entete__nav {
+      display: flex;
+    }
+  }
+
+  .entete__lien {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: var(--color-encre);
+    background: none;
+    border: 0;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .entete__lien--mega {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+  .entete__chevron {
+    transition: transform var(--dur-base) var(--ease-ely);
+  }
+  .entete__lien--mega[aria-expanded="true"] .entete__chevron {
+    transform: rotate(180deg);
+  }
+
+  .entete__actions {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 0.4rem + 1vw, 1.5rem);
+    flex: none;
+  }
+  .entete__tel {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--text-sm);
+    color: var(--color-encre);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  @media (min-width: 80rem) {
+    .entete__tel {
+      display: inline-flex;
+    }
+  }
+  .entete__cta {
+    display: none;
+  }
+  @media (min-width: 48rem) {
+    .entete__cta {
+      display: inline-flex;
+    }
+  }
+  .entete__bascule {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-right: -0.625rem;
+    background: none;
+    border: 0;
+    color: var(--color-encre);
+    cursor: pointer;
+  }
+  @media (min-width: 64rem) {
+    .entete__bascule {
+      display: none;
+    }
+  }
+
+  /* — Méga-menu — */
+  .entete__mega {
+    position: absolute;
+    inset-inline: 0;
+    top: 100%;
+    background: var(--color-porcelaine);
+    border-bottom: 1px solid var(--color-lisere);
+    overflow: hidden;
+  }
+  .entete__mega[hidden] {
+    display: none;
+  }
+  .entete__mega {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--dur-base) var(--ease-ely),
+      transform var(--dur-base) var(--ease-ely);
+  }
+  .entete__mega.est-ouvert {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .entete__mega {
+      transition: none;
+      transform: none;
+    }
+  }
+
+  .entete__mega-grille {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+    gap: clamp(2rem, 1rem + 3vw, 4.5rem);
+    padding-block: clamp(2rem, 1.4rem + 2vw, 3rem);
+  }
+
+  .entete__protocole {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 0.8125rem;
+    border-bottom: 1px solid var(--color-lisere);
+    color: var(--color-encre);
+    text-decoration: none;
+    transition:
+      padding-inline var(--dur-base) var(--ease-ely),
+      background-color var(--dur-base) var(--ease-ely);
+  }
+  .entete__mega-liste li:first-child .entete__protocole {
+    border-top: 1px solid var(--color-lisere);
+  }
+  .entete__protocole-sigle {
+    display: inline-flex;
+    color: var(--color-grain);
+    transition:
+      color var(--dur-base) var(--ease-ely),
+      transform var(--dur-base) var(--ease-ely);
+  }
+  .entete__protocole-nom {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 400;
+  }
+  .entete__protocole-mesure {
+    font-size: var(--text-xs);
+    color: var(--color-grain);
+  }
+  .entete__protocole-fleche {
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition:
+      opacity var(--dur-base) var(--ease-ely),
+      transform var(--dur-base) var(--ease-ely);
+  }
+  .entete__protocole:hover,
+  .entete__protocole:focus-visible {
+    padding-inline: 0.75rem;
+    background-color: color-mix(in oklab, var(--color-craie) 55%, transparent);
+  }
+  .entete__protocole:hover .entete__protocole-sigle,
+  .entete__protocole:focus-visible .entete__protocole-sigle {
+    color: var(--color-absolu);
+    transform: rotate(-12deg);
+  }
+  .entete__protocole:hover .entete__protocole-fleche,
+  .entete__protocole:focus-visible .entete__protocole-fleche {
+    opacity: 1;
+    transform: none;
+  }
+
+  .entete__mega-note {
+    margin-top: 1.5rem;
+    max-width: 34ch;
+    font-size: var(--text-xs);
+    line-height: 1.6;
+    color: var(--color-grain);
+  }
+
+  .entete__mega-apercu {
+    position: relative;
+    display: none;
+    min-height: 100%;
+  }
+  @media (min-width: 64rem) {
+    .entete__mega-apercu {
+      display: block;
+    }
+  }
+  .entete__apercu {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    transform: scale(1.02);
+    transition:
+      opacity var(--dur-base) var(--ease-ely),
+      transform var(--dur-slow) var(--ease-ely);
+    pointer-events: none;
+  }
+  .entete__apercu.est-actif {
+    opacity: 1;
+    transform: none;
+  }
+  .entete__apercu > div {
+    height: 100%;
+  }
+  .entete__apercu-legende {
+    position: absolute;
+    left: 1.25rem;
+    bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    color: var(--color-porcelaine);
+    text-shadow: 0 1px 12px color-mix(in oklab, var(--color-encre) 55%, transparent);
+  }
+  .entete__apercu-legende .surtitre {
+    color: var(--color-porcelaine);
+  }
+  .entete__apercu-accroche {
+    font-size: var(--text-sm);
+    max-width: 30ch;
+  }
+
+  /* — Tiroir mobile — */
+  .tiroir {
+    margin: 0 0 0 auto;
+    padding: 0;
+    max-width: min(24rem, 92vw);
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border: 0;
+    background: var(--color-porcelaine);
+    color: var(--color-encre);
+    overflow: hidden;
+  }
+  .tiroir::backdrop {
+    background: color-mix(in oklab, var(--color-encre) 55%, transparent);
+    backdrop-filter: blur(2px);
+  }
+
+  /* Ouverture/fermeture animées, avec repli propre si allow-discrete manque. */
+  @supports (transition-behavior: allow-discrete) {
+    .tiroir {
+      translate: 100% 0;
+      transition:
+        translate var(--dur-base) var(--ease-ely),
+        display var(--dur-base) allow-discrete,
+        overlay var(--dur-base) allow-discrete;
+    }
+    .tiroir[open] {
+      translate: 0 0;
+    }
+    @starting-style {
+      .tiroir[open] {
+        translate: 100% 0;
+      }
+    }
+    .tiroir::backdrop {
+      opacity: 0;
+      transition:
+        opacity var(--dur-base) var(--ease-ely),
+        display var(--dur-base) allow-discrete,
+        overlay var(--dur-base) allow-discrete;
+    }
+    .tiroir[open]::backdrop {
+      opacity: 1;
+    }
+    @starting-style {
+      .tiroir[open]::backdrop {
+        opacity: 0;
+      }
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tiroir,
+    .tiroir::backdrop {
+      transition: none;
+    }
+  }
+
+  .tiroir__panneau {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.25rem var(--spacing-gutter) calc(1.25rem + env(safe-area-inset-bottom));
+  }
+  .tiroir__tete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-lisere);
+  }
+  .tiroir__fermer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-right: -0.75rem;
+    background: none;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+  }
+  .tiroir__corps {
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-block: 1.5rem;
+  }
+  .tiroir__rubrique {
+    margin-bottom: 0.75rem;
+  }
+  .tiroir__rubrique + .tiroir__liste {
+    margin-bottom: 2rem;
+  }
+  .tiroir__protocole,
+  .tiroir__lien {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    min-height: 3rem;
+    padding-block: 0.5rem;
+    border-bottom: 1px solid var(--color-lisere);
+    color: inherit;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 400;
+  }
+  .tiroir__protocole svg {
+    color: var(--color-grain);
+    flex: none;
+  }
+  .tiroir__mesure {
+    margin-left: auto;
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    color: var(--color-grain);
+  }
+  .tiroir__pied {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-lisere);
+  }
+  .tiroir__tel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    font-size: var(--text-sm);
+    color: var(--color-grain);
+    text-decoration: none;
+  }
+
+  /* — Curseur contextuel (desktop, pointeur fin uniquement) — */
+  .curseur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-absolu);
+    pointer-events: none;
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0);
+    transition:
+      opacity var(--dur-fast) linear,
+      width var(--dur-base) var(--ease-ely),
+      height var(--dur-base) var(--ease-ely),
+      background-color var(--dur-base) var(--ease-ely);
+    mix-blend-mode: difference;
+  }
+  .curseur.est-visible {
+    opacity: 0.85;
+  }
+  .curseur.est-actif {
+    width: 42px;
+    height: 42px;
+    background: var(--color-peau);
+  }
+  @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+    .curseur {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<section class="section">
+  <div class="lisiere compte">
+    <h1 class="equilibre">{{ 'compte.creer' | t }}</h1>
+    <span class="filet mt-7 mb-10 w-full max-w-25" aria-hidden="true"></span>
+
+    {%- form 'create_customer', class: 'formulaire compte__formulaire' -%}
+      {{ form.errors | default_errors }}
+      <div class="formulaire__rangee formulaire__rangee--deux">
+        <label class="champ">
+          <input type="text" name="customer[first_name]" id="inscription-prenom" class="champ__saisie" autocomplete="given-name" placeholder=" ">
+          <span class="champ__label">{{ 'compte.prenom' | t }}</span>
+        </label>
+        <label class="champ">
+          <input type="text" name="customer[last_name]" id="inscription-nom" class="champ__saisie" autocomplete="family-name" placeholder=" ">
+          <span class="champ__label">{{ 'compte.nom' | t }}</span>
+        </label>
+      </div>
+      <label class="champ">
+        <input type="email" name="customer[email]" id="inscription-email" class="champ__saisie" autocomplete="email" placeholder=" " required>
+        <span class="champ__label">{{ 'formulaire.email' | t }}</span>
+      </label>
+      <label class="champ">
+        <input type="password" name="customer[password]" id="inscription-mdp" class="champ__saisie" autocomplete="new-password" placeholder=" " required>
+        <span class="champ__label">{{ 'compte.mot_de_passe' | t }}</span>
+      </label>
+      <div class="formulaire__actions">
+        <button type="submit" class="btn">{{ 'compte.creer' | t }}</button>
+        <a class="lien text-sm" href="{{ routes.account_login_url }}">{{ 'compte.connexion' | t }}</a>
+      </div>
+    {%- endform -%}
+  </div>
+</section>

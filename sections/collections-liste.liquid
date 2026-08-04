@@ -1,0 +1,39 @@
+{%- comment -%}
+  Liste des collections — gabarit obligatoire de Shopify, tenu au même
+  standard que le reste du thème plutôt que laissé en l'état.
+{%- endcomment -%}
+
+<section class="section">
+  <div class="lisiere">
+    <h1 class="equilibre">{{ page_title }}</h1>
+    <span class="filet mt-7 w-full max-w-30" data-reveal-rule aria-hidden="true"></span>
+
+    {%- if collections.size > 0 -%}
+      <div class="produits-grille mt-12" data-reveal-groupe data-reveal-pas="70">
+        {%- for collection in collections -%}
+          <a class="produit-carte" href="{{ collection.url }}" data-reveal data-curseur="lien">
+            {%- render 'image-reactive',
+              image: collection.featured_image,
+              ratio: 'portrait',
+              tailles: '(min-width: 64rem) 24vw, (min-width: 40rem) 44vw, 88vw',
+              alt: collection.title,
+              zoom: true
+            -%}
+            <span class="produit-carte__corps">
+              <span class="produit-carte__nom">{{ collection.title }}</span>
+              <span class="produit-carte__prix nombres-tabulaires">
+                {{ collection.all_products_count }}
+              </span>
+            </span>
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <p class="mt-12 text-sm text-grain">{{ 'general.aucun_resultat' | t }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Liste des collections", "tag": "div", "settings": [] }
+{% endschema %}

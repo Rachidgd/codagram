@@ -1,0 +1,28 @@
+<section class="section">
+  <div class="lisiere">
+    <a class="lien text-sm" href="{{ routes.account_url }}">{{ 'compte.retour_compte' | t }}</a>
+    <h1 class="mt-6 equilibre nombres-tabulaires">{{ order.name }}</h1>
+    <p class="mt-3 text-sm text-grain nombres-tabulaires">{{ order.created_at | date: '%d.%m.%Y' }}</p>
+    <span class="filet mt-7 mb-10 w-full max-w-25" aria-hidden="true"></span>
+
+    <ul role="list" class="panier__lignes">
+      {%- for ligne in order.line_items -%}
+        <li class="panier__ligne">
+          <div class="panier__media">
+            {%- render 'image-reactive', image: ligne.image, ratio: 'carre', tailles: '96px', alt: ligne.title -%}
+          </div>
+          <div class="panier__infos">
+            <span class="panier__nom">{{ ligne.title }}</span>
+            <p class="panier__variante nombres-tabulaires">× {{ ligne.quantity }}</p>
+          </div>
+          <p class="panier__total-ligne nombres-tabulaires">{{ ligne.final_line_price | money }}</p>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    <p class="panier__total mt-8">
+      <span>{{ 'panier.total' | t }}</span>
+      <span class="nombres-tabulaires">{{ order.total_price | money }}</span>
+    </p>
+  </div>
+</section>

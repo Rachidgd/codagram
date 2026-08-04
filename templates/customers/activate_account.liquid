@@ -1,0 +1,22 @@
+<section class="section">
+  <div class="lisiere compte">
+    <h1 class="equilibre">{{ 'compte.creer' | t }}</h1>
+    <span class="filet mt-7 mb-10 w-full max-w-25" aria-hidden="true"></span>
+
+    {%- form 'activate_customer_password', class: 'formulaire compte__formulaire' -%}
+      {{ form.errors | default_errors }}
+      <label class="champ">
+        <input type="password" name="customer[password]" id="activation-mdp" class="champ__saisie" autocomplete="new-password" placeholder=" " required>
+        <span class="champ__label">{{ 'compte.mot_de_passe' | t }}</span>
+      </label>
+      <label class="champ">
+        <input type="password" name="customer[password_confirmation]" id="activation-mdp2" class="champ__saisie" autocomplete="new-password" placeholder=" " required>
+        <span class="champ__label">{{ 'compte.mot_de_passe' | t }}</span>
+      </label>
+      <div class="formulaire__actions">
+        <button type="submit" class="btn">{{ 'compte.creer' | t }}</button>
+        <button type="submit" name="decline" class="btn btn--ligne">{{ 'general.fermer' | t }}</button>
+      </div>
+    {%- endform -%}
+  </div>
+</section>

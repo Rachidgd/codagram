@@ -1,0 +1,441 @@
+{%- comment -%}
+  Diagnostic interactif — l'appel à l'action dynamique du site.
+
+  Quatre questions courtes (objectif, zone, réactivité, disponibilité) et un
+  score par protocole calculé à partir des réglages de chaque bloc. Le résultat
+  n'est jamais présenté comme un avis médical : c'est une orientation, à
+  confirmer au bilan.
+
+  Amélioration progressive : sans JavaScript, la liste complète des protocoles
+  et de leurs indications reste affichée et cliquable. Le module n'est
+  téléchargé qu'à l'approche de la section.
+{%- endcomment -%}
+
+{%- liquid
+  assign codes_objectifs = 'eclat,imperfections,taches,relachement,circulation,cicatrices' | split: ','
+  assign libelles_objectifs = section.settings.obj_eclat | append: '||' | append: section.settings.obj_imperfections | append: '||' | append: section.settings.obj_taches | append: '||' | append: section.settings.obj_relachement | append: '||' | append: section.settings.obj_circulation | append: '||' | append: section.settings.obj_cicatrices | split: '||'
+
+  assign codes_zones = 'visage,visage-cou,ovale-cou,corps' | split: ','
+  assign libelles_zones = section.settings.zone_visage | append: '||' | append: section.settings.zone_visage_cou | append: '||' | append: section.settings.zone_ovale | append: '||' | append: section.settings.zone_corps | split: '||'
+
+  assign codes_peau = 'reactive,normale,tolerante' | split: ','
+  assign libelles_peau = section.settings.peau_reactive | append: '||' | append: section.settings.peau_normale | append: '||' | append: section.settings.peau_tolerante | split: '||'
+
+  assign codes_dispo = 'aucune,courte,longue' | split: ','
+  assign libelles_dispo = section.settings.dispo_aucune | append: '||' | append: section.settings.dispo_courte | append: '||' | append: section.settings.dispo_longue | split: '||'
+-%}
+
+<section
+  id="{{ section.settings.ancre | default: 'orientation' | handleize }}"
+  class="section {{ section.settings.surface }}"
+  {% if section.settings.surface == 'surface-sombre' %}
+    data-entete-inverse
+  {% endif %}
+>
+  <div class="lisiere">
+    <div class="grille-12 gap-y-10">
+      <div class="col-span-12 lg:col-span-4">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+
+        {%- if section.settings.chapo != blank -%}
+          <div
+            class="mt-7 text-sm {% if section.settings.surface == 'surface-sombre' %}text-brume{% else %}text-grain{% endif %} texte-mesure"
+            data-reveal
+            style="--reveal-delay: 140ms"
+          >
+            {{ section.settings.chapo }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="col-span-12 lg:col-span-7 lg:col-start-6">
+        <ely-diagnostic
+          class="diagnostic block"
+          data-module="{{ 'diagnostic.js' | asset_url }}"
+          data-libelle-suivant="{{ 'diagnostic.suivant' | t | escape }}"
+          data-libelle-precedent="{{ 'diagnostic.precedent' | t | escape }}"
+          data-libelle-recommencer="{{ 'diagnostic.recommencer' | t | escape }}"
+          data-libelle-etape="{{ 'diagnostic.etape' | t: courante: '%C%', total: '%T%' | escape }}"
+          data-libelle-resultat="{{ 'diagnostic.resultat_titre' | t | escape }}"
+          data-libelle-intro="{{ 'diagnostic.resultat_intro' | t | escape }}"
+          data-libelle-alternative="{{ 'diagnostic.alternative' | t | escape }}"
+          data-libelle-reserver="{{ section.settings.libelle_reserver | default: 'Réserver ce protocole' | escape }}"
+          data-libelle-fiche="{{ 'diagnostic.voir_page' | t | escape }}"
+          data-url-rdv="{{ settings.rdv_url | escape }}"
+        >
+          {%- comment -%} — Données de questionnement — {%- endcomment -%}
+          <script type="application/json" data-diagnostic-questions>
+            [
+              {
+                "cle": "objectif",
+                "titre": {{ section.settings.q_objectif | json }},
+                "options": [
+                  {%- for code in codes_objectifs -%}
+                    { "code": {{ code | json }}, "libelle": {{ libelles_objectifs[forloop.index0] | json }} }
+                    {%- unless forloop.last -%},{%- endunless -%}
+                  {%- endfor -%}
+                ]
+              },
+              {
+                "cle": "zone",
+                "titre": {{ section.settings.q_zone | json }},
+                "options": [
+                  {%- for code in codes_zones -%}
+                    { "code": {{ code | json }}, "libelle": {{ libelles_zones[forloop.index0] | json }} }
+                    {%- unless forloop.last -%},{%- endunless -%}
+                  {%- endfor -%}
+                ]
+              },
+              {
+                "cle": "peau",
+                "titre": {{ section.settings.q_peau | json }},
+                "options": [
+                  {%- for code in codes_peau -%}
+                    { "code": {{ code | json }}, "libelle": {{ libelles_peau[forloop.index0] | json }} }
+                    {%- unless forloop.last -%},{%- endunless -%}
+                  {%- endfor -%}
+                ]
+              },
+              {
+                "cle": "dispo",
+                "titre": {{ section.settings.q_dispo | json }},
+                "options": [
+                  {%- for code in codes_dispo -%}
+                    { "code": {{ code | json }}, "libelle": {{ libelles_dispo[forloop.index0] | json }} }
+                    {%- unless forloop.last -%},{%- endunless -%}
+                  {%- endfor -%}
+                ]
+              }
+            ]
+          </script>
+
+          {%- comment -%} — Données de scoring, une entrée par protocole — {%- endcomment -%}
+          <script type="application/json" data-diagnostic-protocoles>
+            [
+              {%- for bloc in section.blocks -%}
+                {
+                  "nom": {{ bloc.settings.nom | json }},
+                  "lien": {{ bloc.settings.lien | default: '' | json }},
+                  "argument": {{ bloc.settings.argument | json }},
+                  "duree": {{ bloc.settings.duree | default: '' | json }},
+                  "seances": {{ bloc.settings.seances | default: '' | json }},
+                  "objectifs": [
+                    {%- capture objs -%}
+                      {%- if bloc.settings.o_eclat -%}"eclat",{%- endif -%}
+                      {%- if bloc.settings.o_imperfections -%}"imperfections",{%- endif -%}
+                      {%- if bloc.settings.o_taches -%}"taches",{%- endif -%}
+                      {%- if bloc.settings.o_relachement -%}"relachement",{%- endif -%}
+                      {%- if bloc.settings.o_circulation -%}"circulation",{%- endif -%}
+                      {%- if bloc.settings.o_cicatrices -%}"cicatrices",{%- endif -%}
+                    {%- endcapture -%}
+                    {{ objs | strip | split: ',' | join: ',' }}
+                  ],
+                  "zones": [
+                    {%- capture zns -%}
+                      {%- if bloc.settings.z_visage -%}"visage",{%- endif -%}
+                      {%- if bloc.settings.z_visage_cou -%}"visage-cou",{%- endif -%}
+                      {%- if bloc.settings.z_ovale -%}"ovale-cou",{%- endif -%}
+                      {%- if bloc.settings.z_corps -%}"corps",{%- endif -%}
+                    {%- endcapture -%}
+                    {{ zns | strip | split: ',' | join: ',' }}
+                  ],
+                  "reactivite": {{ bloc.settings.reactivite | default: 'adapter' | json }},
+                  "eviction": {{ bloc.settings.eviction | default: 'aucune' | json }}
+                }{%- unless forloop.last -%},{%- endunless -%}
+              {%- endfor -%}
+            ]
+          </script>
+
+          {%- comment -%}
+            Repli sans JavaScript — remplacé par l'interface une fois le module
+            chargé. Il reste la source de vérité du contenu pour l'indexation.
+          {%- endcomment -%}
+          <div data-diagnostic-repli>
+            <p class="diagnostic__repli-note">{{ 'diagnostic.repli' | t }}</p>
+            <ul role="list" class="diagnostic__repli-liste">
+              {%- for bloc in section.blocks -%}
+                <li>
+                  <a class="diagnostic__repli-item" href="{{ bloc.settings.lien | default: '#' }}">
+                    <span class="diagnostic__repli-nom">{{ bloc.settings.nom }}</span>
+                    {%- if bloc.settings.argument != blank -%}
+                      <span class="diagnostic__repli-texte">{{ bloc.settings.argument }}</span>
+                    {%- endif -%}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </ely-diagnostic>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Diagnostic interactif",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ancre",
+      "label": "Ancre",
+      "info": "Permet de pointer vers cette section depuis un lien : #orientation",
+      "default": "orientation"
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" },
+        { "value": "surface-sombre", "label": "Vert absolu" }
+      ],
+      "default": "surface-sombre"
+    },
+    { "type": "text", "id": "index", "label": "Index", "default": "06" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Orientation" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Quatre questions pour savoir par où commencer."
+    },
+    {
+      "type": "richtext",
+      "id": "chapo",
+      "label": "Texte d'accompagnement",
+      "default": "<p>Cet outil oriente, il ne diagnostique pas. Le protocole retenu est toujours confirmé — ou écarté — lors du bilan en cabinet.</p>"
+    },
+    {
+      "type": "text",
+      "id": "libelle_reserver",
+      "label": "Libellé du bouton de réservation",
+      "default": "Réserver un bilan"
+    },
+
+    { "type": "header", "content": "Question 1 — objectif" },
+    {
+      "type": "text",
+      "id": "q_objectif",
+      "label": "Intitulé",
+      "default": "Qu'est-ce qui vous amène en premier ?"
+    },
+    { "type": "text", "id": "obj_eclat", "label": "Option — éclat", "default": "Teint terne, peau fatiguée" },
+    { "type": "text", "id": "obj_imperfections", "label": "Option — imperfections", "default": "Imperfections, pores dilatés" },
+    { "type": "text", "id": "obj_taches", "label": "Option — taches", "default": "Taches, grain irrégulier" },
+    { "type": "text", "id": "obj_relachement", "label": "Option — relâchement", "default": "Relâchement, ovale flou" },
+    { "type": "text", "id": "obj_circulation", "label": "Option — circulation", "default": "Gonflement, rétention" },
+    { "type": "text", "id": "obj_cicatrices", "label": "Option — cicatrices", "default": "Cicatrices d'acné, reliefs" },
+
+    { "type": "header", "content": "Question 2 — zone" },
+    { "type": "text", "id": "q_zone", "label": "Intitulé", "default": "Sur quelle zone ?" },
+    { "type": "text", "id": "zone_visage", "label": "Option — visage", "default": "Le visage" },
+    { "type": "text", "id": "zone_visage_cou", "label": "Option — visage et cou", "default": "Visage et cou" },
+    { "type": "text", "id": "zone_ovale", "label": "Option — ovale", "default": "L'ovale et le cou" },
+    { "type": "text", "id": "zone_corps", "label": "Option — corps", "default": "Une zone du corps" },
+
+    { "type": "header", "content": "Question 3 — réactivité" },
+    { "type": "text", "id": "q_peau", "label": "Intitulé", "default": "Comment réagit votre peau ?" },
+    { "type": "text", "id": "peau_reactive", "label": "Option — réactive", "default": "Elle rougit vite, elle est sensible" },
+    { "type": "text", "id": "peau_normale", "label": "Option — normale", "default": "Rien de particulier" },
+    { "type": "text", "id": "peau_tolerante", "label": "Option — tolérante", "default": "Elle supporte bien les soins" },
+
+    { "type": "header", "content": "Question 4 — disponibilité" },
+    { "type": "text", "id": "q_dispo", "label": "Intitulé", "default": "Pouvez-vous rester discrète quelques jours ?" },
+    { "type": "text", "id": "dispo_aucune", "label": "Option — aucune éviction", "default": "Non, je dois être présentable tout de suite" },
+    { "type": "text", "id": "dispo_courte", "label": "Option — courte", "default": "Un ou deux jours, c'est jouable" },
+    { "type": "text", "id": "dispo_longue", "label": "Option — longue", "default": "Oui, plusieurs jours si nécessaire" }
+  ],
+  "blocks": [
+    {
+      "type": "protocole",
+      "name": "Protocole",
+      "limit": 12,
+      "settings": [
+        { "type": "text", "id": "nom", "label": "Nom", "default": "Nouveau protocole" },
+        { "type": "url", "id": "lien", "label": "Page du protocole" },
+        {
+          "type": "textarea",
+          "id": "argument",
+          "label": "Argument de recommandation",
+          "info": "Phrase affichée quand ce protocole ressort. Parlez du résultat, pas de la technique."
+        },
+        { "type": "text", "id": "duree", "label": "Durée" },
+        { "type": "text", "id": "seances", "label": "Nombre de séances" },
+
+        { "type": "header", "content": "Objectifs couverts" },
+        { "type": "checkbox", "id": "o_eclat", "label": "Teint terne, peau fatiguée", "default": false },
+        { "type": "checkbox", "id": "o_imperfections", "label": "Imperfections, pores dilatés", "default": false },
+        { "type": "checkbox", "id": "o_taches", "label": "Taches, grain irrégulier", "default": false },
+        { "type": "checkbox", "id": "o_relachement", "label": "Relâchement, ovale flou", "default": false },
+        { "type": "checkbox", "id": "o_circulation", "label": "Gonflement, rétention", "default": false },
+        { "type": "checkbox", "id": "o_cicatrices", "label": "Cicatrices d'acné, reliefs", "default": false },
+
+        { "type": "header", "content": "Zones traitées" },
+        { "type": "checkbox", "id": "z_visage", "label": "Visage", "default": true },
+        { "type": "checkbox", "id": "z_visage_cou", "label": "Visage et cou", "default": false },
+        { "type": "checkbox", "id": "z_ovale", "label": "Ovale et cou", "default": false },
+        { "type": "checkbox", "id": "z_corps", "label": "Corps", "default": false },
+
+        { "type": "header", "content": "Tolérance et suites" },
+        {
+          "type": "select",
+          "id": "reactivite",
+          "label": "Sur peau réactive",
+          "options": [
+            { "value": "adapte", "label": "Adapté" },
+            { "value": "adapter", "label": "Possible, à adapter" },
+            { "value": "deconseille", "label": "Déconseillé" }
+          ],
+          "default": "adapter"
+        },
+        {
+          "type": "select",
+          "id": "eviction",
+          "label": "Éviction sociale",
+          "options": [
+            { "value": "aucune", "label": "Aucune" },
+            { "value": "courte", "label": "24 à 48 heures" },
+            { "value": "longue", "label": "Plusieurs jours" }
+          ],
+          "default": "aucune"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Diagnostic interactif",
+      "blocks": [
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Hydrafacial",
+            "lien": "/pages/hydrafacial",
+            "argument": "Le teint repart le jour même, sans rougeur ni suite visible. C'est la remise à niveau la plus sûre quand la peau est encombrée mais qu'il faut rester présentable.",
+            "duree": "60 min",
+            "seances": "1 à 4",
+            "o_eclat": true,
+            "o_imperfections": true,
+            "z_visage": true,
+            "z_visage_cou": true,
+            "reactivite": "adapte",
+            "eviction": "aucune"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Microneedling",
+            "lien": "/pages/microneedling",
+            "argument": "C'est le protocole qui agit le plus franchement sur les reliefs et les pores. Il demande en revanche quelques jours de discrétion après chaque séance.",
+            "duree": "75 min",
+            "seances": "3 à 5",
+            "o_cicatrices": true,
+            "o_imperfections": true,
+            "o_relachement": true,
+            "z_visage": true,
+            "reactivite": "adapter",
+            "eviction": "longue"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Peeling",
+            "lien": "/pages/peeling",
+            "argument": "Le dosage se règle séance après séance : on commence bas, on monte seulement si la peau suit. C'est la voie la plus directe sur les taches et le grain.",
+            "duree": "45 min",
+            "seances": "3 à 6",
+            "o_taches": true,
+            "o_eclat": true,
+            "o_cicatrices": true,
+            "z_visage": true,
+            "reactivite": "adapter",
+            "eviction": "courte"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Diagnostic infirmier",
+            "lien": "/pages/diagnostic-infirmier",
+            "argument": "Quand la peau est réactive ou qu'un traitement est en cours, on commence par lire avant d'agir. Vous repartez avec un plan écrit, pas avec une séance vendue.",
+            "duree": "40 min",
+            "seances": "1",
+            "o_eclat": true,
+            "o_imperfections": true,
+            "o_taches": true,
+            "o_relachement": true,
+            "o_circulation": true,
+            "o_cicatrices": true,
+            "z_visage": true,
+            "z_visage_cou": true,
+            "z_ovale": true,
+            "z_corps": true,
+            "reactivite": "adapte",
+            "eviction": "aucune"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "HIFU & radiofréquence",
+            "lien": "/pages/hifu-radiofrequence",
+            "argument": "C'est la réponse au relâchement de l'ovale sans passer par un acte chirurgical. Le résultat se construit sur plusieurs mois, sans arrêt d'activité.",
+            "duree": "90 min",
+            "seances": "1 à 2 par an",
+            "o_relachement": true,
+            "z_ovale": true,
+            "z_visage_cou": true,
+            "reactivite": "adapter",
+            "eviction": "aucune"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Luminothérapie LED",
+            "lien": "/pages/luminotherapie-led",
+            "argument": "Rien à supporter, rien à récupérer : c'est le protocole le plus doux du cabinet, et le seul qui convienne à une peau en pleine réaction.",
+            "duree": "30 min",
+            "seances": "6 à 10",
+            "o_imperfections": true,
+            "o_eclat": true,
+            "z_visage": true,
+            "z_visage_cou": true,
+            "z_corps": true,
+            "reactivite": "adapte",
+            "eviction": "aucune"
+          }
+        },
+        {
+          "type": "protocole",
+          "settings": {
+            "nom": "Drainage lymphatique",
+            "lien": "/pages/drainage-lymphatique",
+            "argument": "Sur un visage qui gonfle ou une zone qui stagne, le drainage donne un résultat visible dès la première séance et prolonge celui des autres protocoles.",
+            "duree": "60 min",
+            "seances": "4 à 8",
+            "o_circulation": true,
+            "o_eclat": true,
+            "z_visage": true,
+            "z_visage_cou": true,
+            "z_corps": true,
+            "reactivite": "adapte",
+            "eviction": "aucune"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
