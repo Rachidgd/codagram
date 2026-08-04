@@ -5,18 +5,31 @@
       "blocks": {
         "r1": {
           "type": "repere",
-          "settings": { "valeur": "07", "libelle": "protocoles, tous conduits en cabinet" }
+          "settings": {
+            "valeur": "07",
+            "libelle": "protocoles, tous conduits en cabinet"
+          }
         },
         "r2": {
           "type": "repere",
-          "settings": { "valeur": "40 min", "libelle": "de bilan avant la première séance" }
+          "settings": {
+            "valeur": "40 min",
+            "libelle": "de bilan avant la première séance"
+          }
         },
         "r3": {
           "type": "repere",
-          "settings": { "valeur": "0", "libelle": "cure vendue sans indication écrite" }
+          "settings": {
+            "valeur": "0",
+            "libelle": "cure vendue sans indication écrite"
+          }
         }
       },
-      "block_order": ["r1", "r2", "r3"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
       "settings": {
         "hauteur": 90,
         "index": "01",
@@ -27,16 +40,40 @@
         "lien_secondaire": "#orientation"
       }
     },
-
     "manifeste": {
       "type": "manifeste",
       "blocks": {
-        "p1": { "type": "point", "settings": { "texte": "Bilan cutané systématique avant la première séance" } },
-        "p2": { "type": "point", "settings": { "texte": "Protocoles ajustés à chaque rendez-vous, jamais figés" } },
-        "p3": { "type": "point", "settings": { "texte": "Aucune cure engagée sans plan de soin écrit" } },
-        "p4": { "type": "point", "settings": { "texte": "Suivi photographique remis en fin de protocole" } }
+        "p1": {
+          "type": "point",
+          "settings": {
+            "texte": "Bilan cutané systématique avant la première séance"
+          }
+        },
+        "p2": {
+          "type": "point",
+          "settings": {
+            "texte": "Protocoles ajustés à chaque rendez-vous, jamais figés"
+          }
+        },
+        "p3": {
+          "type": "point",
+          "settings": {
+            "texte": "Aucune cure engagée sans plan de soin écrit"
+          }
+        },
+        "p4": {
+          "type": "point",
+          "settings": {
+            "texte": "Suivi photographique remis en fin de protocole"
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3", "p4"],
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
       "settings": {
         "surface": "",
         "index": "02",
@@ -47,7 +84,6 @@
         "lien": "#methode"
       }
     },
-
     "protocoles": {
       "type": "index-protocoles",
       "blocks": {
@@ -129,7 +165,15 @@
           }
         }
       },
-      "block_order": ["s1", "s2", "s3", "s4", "s5", "s6", "s7"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7"
+      ],
       "settings": {
         "surface": "",
         "index": "03",
@@ -141,7 +185,6 @@
         "lien": "#orientation"
       }
     },
-
     "methode": {
       "type": "methode",
       "blocks": {
@@ -178,7 +221,12 @@
           }
         }
       },
-      "block_order": ["e1", "e2", "e3", "e4"],
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
       "settings": {
         "surface": "surface-craie",
         "index": "04",
@@ -187,28 +235,48 @@
         "chapo": "Aucune surprise, aucun soin improvisé. Le déroulé est le même pour tout le monde, quel que soit le protocole retenu."
       }
     },
-
     "resultats": {
       "type": "resultats",
       "blocks": {
         "c1": {
           "type": "chiffre",
-          "settings": { "valeur": "40", "suffixe": " min", "libelle": "de bilan avant qu'un seul soin ne soit proposé" }
+          "settings": {
+            "valeur": "40",
+            "suffixe": " min",
+            "libelle": "de bilan avant qu'un seul soin ne soit proposé"
+          }
         },
         "c2": {
           "type": "chiffre",
-          "settings": { "valeur": "3", "suffixe": " à 6", "libelle": "séances suffisent sur la majorité des protocoles" }
+          "settings": {
+            "valeur": "3",
+            "suffixe": " à 6",
+            "libelle": "séances suffisent sur la majorité des protocoles"
+          }
         },
         "c3": {
           "type": "chiffre",
-          "settings": { "valeur": "94", "suffixe": "%", "libelle": "des plans de soin sont réajustés en cours de protocole" }
+          "settings": {
+            "valeur": "94",
+            "suffixe": "%",
+            "libelle": "des plans de soin sont réajustés en cours de protocole"
+          }
         },
         "c4": {
           "type": "chiffre",
-          "settings": { "valeur": "0", "suffixe": "", "libelle": "engagement demandé avant le premier rendez-vous" }
+          "settings": {
+            "valeur": "0",
+            "suffixe": "",
+            "libelle": "engagement demandé avant le premier rendez-vous"
+          }
         }
       },
-      "block_order": ["c1", "c2", "c3", "c4"],
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
       "settings": {
         "surface": "",
         "index": "05",
@@ -217,7 +285,6 @@
         "source": "Relevés internes sur les protocoles conduits au cabinet. Les résultats varient selon la peau, l'âge, le mode de vie et l'observance du protocole. Aucun résultat n'est garanti."
       }
     },
-
     "orientation": {
       "type": "diagnostic",
       "blocks": {
@@ -341,7 +408,15 @@
           }
         }
       },
-      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6", "d7"],
+      "block_order": [
+        "d1",
+        "d2",
+        "d3",
+        "d4",
+        "d5",
+        "d6",
+        "d7"
+      ],
       "settings": {
         "surface": "surface-sombre",
         "index": "06",
@@ -371,7 +446,6 @@
         "dispo_longue": "Oui, plusieurs jours si nécessaire"
       }
     },
-
     "expertise": {
       "type": "expertise",
       "blocks": {
@@ -397,7 +471,11 @@
           }
         }
       },
-      "block_order": ["q1", "q2", "q3"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
       "settings": {
         "surface": "surface-peau",
         "index": "07",
@@ -407,7 +485,6 @@
         "texte": "<p>La formation infirmière change la manière de lire une peau : on regarde d'abord ce qui contre-indique, ensuite ce qui est possible. C'est ce cadre qui permet de proposer des protocoles courts, et d'écarter ceux qui n'apporteraient rien.</p>"
       }
     },
-
     "temoignages": {
       "type": "temoignages",
       "blocks": {
@@ -436,7 +513,11 @@
           }
         }
       },
-      "block_order": ["t1", "t2", "t3"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ],
       "settings": {
         "surface": "surface-craie",
         "index": "08",
@@ -445,7 +526,6 @@
         "libelle_avis": "Lire tous les avis"
       }
     },
-
     "journal": {
       "type": "journal-apercu",
       "settings": {
@@ -454,10 +534,10 @@
         "surtitre": "Le journal",
         "titre": "Comprendre avant de choisir.",
         "libelle_lien": "Tous les articles",
-        "nombre": 4
+        "nombre": 4,
+        "blog": "journal"
       }
     },
-
     "questions": {
       "type": "faq",
       "blocks": {
@@ -504,7 +584,14 @@
           }
         }
       },
-      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
       "settings": {
         "surface": "",
         "index": "10",

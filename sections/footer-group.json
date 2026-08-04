@@ -9,7 +9,7 @@
           "type": "colonne",
           "settings": {
             "titre": "Protocoles",
-            "menu": ""
+            "menu": "protocoles"
           }
         },
         "c2": {
@@ -26,7 +26,11 @@
           }
         }
       },
-      "block_order": ["c1", "c2", "c3"],
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
       "settings": {
         "afficher_relance": true,
         "index_relance": "09",
@@ -39,5 +43,7 @@
       }
     }
   },
-  "order": ["pied"]
+  "order": [
+    "pied"
+  ]
 }

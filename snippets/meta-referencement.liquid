@@ -8,13 +8,34 @@
 {%- liquid
   assign titre = page_title
 
+  comment
+    Ordre de repli : description SEO saisie dans l'admin, puis contenu propre
+    à la ressource, puis description de l'établissement. Aucune page ne part
+    sans description — c'est ce qui est repris tel quel dans les résultats
+    de recherche.
+  endcomment
   assign description = page_description
   if description == blank
-    if template.name == 'index' and settings.seo_description_etablissement != blank
-      assign description = settings.seo_description_etablissement
-    else
-      assign description = shop.description
-    endif
+    case template.name
+      when 'index'
+        assign description = settings.seo_description_etablissement
+      when 'page'
+        assign description = page.content
+      when 'article'
+        assign description = article.excerpt_or_content
+      when 'blog'
+        assign description = blog.metafields.ely.chapo
+      when 'product'
+        assign description = product.description
+      when 'collection'
+        assign description = collection.description
+    endcase
+  endif
+  if description == blank
+    assign description = settings.seo_description_etablissement
+  endif
+  if description == blank
+    assign description = shop.description
   endif
   assign description = description | strip_html | strip_newlines | truncate: 300
 
