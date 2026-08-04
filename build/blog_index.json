@@ -5,7 +5,7 @@
       "CRO"
     ],
     "id": "gid://shopify/Article/1003548672330",
-    "publie": false,
+    "publie": true,
     "resume": "Pas besoin de 100 000 visites : les tests valides avec un petit trafic, les changements assez gros pour être mesurables et les pièges statistiques.",
     "titre": "A/B testing avec peu de trafic : ce que vous pouvez vraiment tester (et comment)"
   },
@@ -178,16 +178,6 @@
     "publie": true,
     "resume": "Les 3 métriques de vitesse Google traduites en français, leur vrai poids SEO et les corrections par ordre d'impact, sans jargon de développeur.",
     "titre": "Core Web Vitals expliqués simplement : LCP, INP, CLS et ce qui compte vraiment"
-  },
-  "creer-boutique-shopify-methode-prix-erreurs": {
-    "etiquettes": [
-      "Pilote éditorial",
-      "Shopify"
-    ],
-    "id": "gid://shopify/Article/1003799871818",
-    "publie": false,
-    "resume": "<p>Guide pilote sur la méthode de création d’une boutique Shopify, les facteurs de prix, la checklist, les erreurs et les liens vers les services associés.</p>",
-    "titre": "Créer une boutique Shopify : méthode, prix et erreurs à éviter"
   },
   "creer-pages-villes-sans-duplicate": {
     "etiquettes": [
