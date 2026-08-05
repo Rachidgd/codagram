@@ -118,6 +118,39 @@ Shopify synchronise ensuite dans les deux sens : les réglages faits par le
 cabinet dans l'éditeur reviennent dans le dépôt. **Toujours faire un `git pull`
 avant de reprendre le développement**, sous peine d'écraser le travail du client.
 
+### Pièges de l'API de thème (`themeFilesUpsert`)
+
+Constats faits en poussant ce thème, à connaître avant d'automatiser quoi
+que ce soit dessus :
+
+- **Les erreurs de validation sont silencieuses quand le corps est envoyé en
+  `URL`.** La réponse renvoie `upsertedThemeFiles: []` et `userErrors: []`, et
+  le fichier n'est simplement pas écrit. Le même envoi en `TEXT` renvoie le
+  message d'erreur réel. En cas d'échec inexpliqué, refaire l'appel en `TEXT`
+  sur une version minimale du fichier pour obtenir la cause.
+- **Un fichier absent ne se voit pas dans une vérification par lot.** La requête
+  `files(filenames: [...])` ne renvoie que ce qui existe : comparer les tailles
+  des fichiers *renvoyés* laisse passer les manquants. Toujours comparer à la
+  liste **demandée**.
+- **`"default": ""` est refusé** sur les réglages de saisie libre (`text`,
+  `textarea`, `richtext`…). C'est ce qui bloquait `protocole-entete.liquid`, et
+  par ricochet les sept gabarits de protocole. `npm run check` le détecte
+  désormais.
+- **L'API n'ouvre pas de nouveau fichier dans `templates/`.** Contournement :
+  `themeFilesCopy` pour créer le fichier depuis un gabarit existant, puis
+  `themeFilesUpsert` pour l'écraser.
+- **`config/settings_schema.json` ne peut pas être remplacé** par l'API. Les
+  réglages Liquid se lisent toutefois dans `settings_data.json`, qui, lui,
+  s'écrit — le site rend donc correctement même si l'éditeur affiche encore le
+  panneau de l'ancien thème.
+- **`themeFilesDelete` est bloqué** par la politique de sécurité du connecteur.
+  Impossible de retirer les locales du thème dupliqué : il faut écraser les
+  fichiers existants plutôt que d'en ajouter (deux fichiers `*.default.json`
+  provoquent une erreur).
+
+Aucune de ces limites ne s'applique à l'intégration GitHub, qui synchronise
+l'arborescence complète.
+
 ### Option B — Shopify CLI
 
 ```bash
@@ -229,6 +262,10 @@ Le barème est en tête de `assets/diagnostic.js`, en clair et modifiable.
 - **Aucune image n'est fournie.** Les emplacements affichent un repli graphique
   maison (trame de filets) et non une silhouette générique. Le rendu ne sera au
   niveau qu'avec des photographies réelles du cabinet.
+- **Les tarifs affichés sont des ordres de grandeur** repris du brief initial
+  (140 € l'Hydrafacial, 220 € le microneedling…). Ils doivent être confirmés ou
+  corrigés avant publication : ils apparaissent aussi dans les données
+  structurées lues par Google.
 - **Les chiffres de la section « Résultats » sont des valeurs d'exemple.** Ils
   doivent être remplacés par des relevés réels avant publication : la note de
   source est obligatoire dès qu'un chiffre est avancé.
