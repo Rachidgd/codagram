@@ -57,15 +57,15 @@
         <ely-diagnostic
           class="diagnostic block"
           data-module="{{ 'diagnostic.js' | asset_url }}"
-          data-libelle-suivant="{{ 'diagnostic.suivant' | t | escape }}"
-          data-libelle-precedent="{{ 'diagnostic.precedent' | t | escape }}"
-          data-libelle-recommencer="{{ 'diagnostic.recommencer' | t | escape }}"
-          data-libelle-etape="{{ 'diagnostic.etape' | t: courante: '%C%', total: '%T%' | escape }}"
-          data-libelle-resultat="{{ 'diagnostic.resultat_titre' | t | escape }}"
-          data-libelle-intro="{{ 'diagnostic.resultat_intro' | t | escape }}"
-          data-libelle-alternative="{{ 'diagnostic.alternative' | t | escape }}"
+          data-libelle-suivant="{{ 'diagnostic.suivant' | t }}"
+          data-libelle-precedent="{{ 'diagnostic.precedent' | t }}"
+          data-libelle-recommencer="{{ 'diagnostic.recommencer' | t }}"
+          data-libelle-etape="{{ 'diagnostic.etape' | t: courante: '%C%', total: '%T%'  }}"
+          data-libelle-resultat="{{ 'diagnostic.resultat_titre' | t }}"
+          data-libelle-intro="{{ 'diagnostic.resultat_intro' | t }}"
+          data-libelle-alternative="{{ 'diagnostic.alternative' | t }}"
           data-libelle-reserver="{{ section.settings.libelle_reserver | default: 'Réserver ce protocole' | escape }}"
-          data-libelle-fiche="{{ 'diagnostic.voir_page' | t | escape }}"
+          data-libelle-fiche="{{ 'diagnostic.voir_page' | t }}"
           data-url-rdv="{{ settings.rdv_url | escape }}"
         >
           {%- comment -%} — Données de questionnement — {%- endcomment -%}

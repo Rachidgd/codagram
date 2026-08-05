@@ -92,14 +92,14 @@
           <ely-formulaire
             class="block"
             data-etapes="3"
-            data-libelle-suivant="{{ 'diagnostic.suivant' | t | escape }}"
-            data-libelle-precedent="{{ 'diagnostic.precedent' | t | escape }}"
-            data-libelle-envoyer="{{ 'formulaire.envoyer' | t | escape }}"
-            data-libelle-etape="{{ 'formulaire.etape_sur' | t: courante: '%C%', total: '%T%' | escape }}"
-            data-erreur-requis="{{ 'formulaire.obligatoire' | t | escape }}"
-            data-erreur-email="{{ 'formulaire.email_invalide' | t | escape }}"
-            data-erreur-telephone="{{ 'formulaire.telephone_invalide' | t | escape }}"
-            data-erreur-consentement="{{ 'formulaire.consentement_requis' | t | escape }}"
+            data-libelle-suivant="{{ 'diagnostic.suivant' | t }}"
+            data-libelle-precedent="{{ 'diagnostic.precedent' | t }}"
+            data-libelle-envoyer="{{ 'formulaire.envoyer' | t }}"
+            data-libelle-etape="{{ 'formulaire.etape_sur' | t: courante: '%C%', total: '%T%'  }}"
+            data-erreur-requis="{{ 'formulaire.obligatoire' | t }}"
+            data-erreur-email="{{ 'formulaire.email_invalide' | t }}"
+            data-erreur-telephone="{{ 'formulaire.telephone_invalide' | t }}"
+            data-erreur-consentement="{{ 'formulaire.consentement_requis' | t }}"
           >
             <div class="formulaire__etapes" data-formulaire-avancement hidden>
               <span data-formulaire-compteur></span>
