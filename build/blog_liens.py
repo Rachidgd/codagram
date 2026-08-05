@@ -121,7 +121,10 @@ QUESTION_NUE = re.compile(r"<summary>(?!\s*<h[23])(.*?)</summary>", re.S)
 # une légende vide réduite à un retour à la ligne. Le style appartient à la
 # feuille de styles, et une légende vide n'a rien à faire dans le document.
 FIGURE = re.compile(r"<figure[^>]*>", re.I)
-IMG_STYLE = re.compile(r'(<img|<figcaption)\s+style="[^"]*"', re.I)
+# Le style peut se trouver n'importe où dans la balise, pas seulement en
+# premier attribut : la première version du nettoyage laissait passer les
+# images dont le style suivait alt ou loading.
+IMG_STYLE = re.compile(r'(<(?:img|figcaption)\b[^>]*?)\s+style="[^"]*"', re.I)
 LEGENDE_VIDE = re.compile(
     r"<figcaption[^>]*>(?:\s|<br\s*/?>|&nbsp;|[.·–-])*</figcaption>", re.I)
 
