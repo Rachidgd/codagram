@@ -21,6 +21,14 @@ INDEX = RACINE / "blog_index.json"
 SORTIE = RACINE / "blog_faq.json"
 
 BALISE = re.compile(r"<[^>]+>")
+
+# Une balise remplacée par une espace laisse une trace là où le français n'en
+# veut pas : « le travail d' optimisation CRO . » quand la réponse contenait un
+# lien. Le point et la virgule ne prennent jamais d'espace avant ; l'apostrophe
+# et la parenthèse ouvrante jamais après. Les autres signes en prennent une,
+# insécable, et sont laissés tranquilles.
+COLLE_AVANT = re.compile(r"\s+([.,)\]…])")
+COLLE_APRES = re.compile(r"(['’(\[])\s+")
 PAIRE = re.compile(
     r"<details[^>]*>\s*<summary[^>]*>(.*?)</summary>\s*(.*?)\s*</details>",
     re.I | re.S)
@@ -37,7 +45,8 @@ MAX = 900
 
 
 def texte(fragment):
-    return " ".join(html.unescape(BALISE.sub(" ", fragment)).split())
+    brut = " ".join(html.unescape(BALISE.sub(" ", fragment)).split())
+    return COLLE_APRES.sub(r"\1", COLLE_AVANT.sub(r"\1", brut))
 
 
 def main():
