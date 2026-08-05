@@ -35,7 +35,7 @@
         "index": "01",
         "surtitre": "Cabinet de soin esthétique — Paris",
         "titre": "Une peau se lit avant de se traiter.",
-        "chapo": "Bilan cutané, protocole construit séance après séance, résultat mesuré. Sept soins, aucune cure imposée.",
+        "chapo": "Un bilan pour comprendre votre peau, un protocole construit pour elle, un résultat que vous pouvez mesurer. Sept soins, aucune cure imposée.",
         "libelle_secondaire": "Trouver mon protocole",
         "lien_secondaire": "#orientation"
       }
@@ -79,7 +79,7 @@
         "index": "02",
         "surtitre": "Notre parti pris",
         "affirmation": "Aucun soin n'est vendu avant d'avoir été justifié.",
-        "appui": "<p>Un institut vend des séances. Un cabinet construit une trajectoire. Le premier rendez-vous n'est pas un soin : c'est une lecture de la peau, de son histoire, de ce qu'elle supporte et de ce qu'elle refuse. Le protocole vient après, et il peut être court.</p>",
+        "appui": "<p>Ailleurs, on vous vend une cure avant de vous avoir regardée. Ici, le premier rendez-vous n'est pas un soin : c'est une lecture de votre peau, de son histoire, de ce qu'elle supporte et de ce qu'elle refuse. Le protocole vient après — et il est parfois plus court que ce que vous imaginiez.</p>",
         "libelle": "Comment nous travaillons",
         "lien": "#methode"
       }
@@ -91,7 +91,7 @@
           "type": "protocole",
           "settings": {
             "nom": "Hydrafacial",
-            "resume": "Nettoyage profond par aspiration contrôlée, exfoliation et infusion de sérums dans le même geste. La remise à niveau quand la peau est encombrée, terne ou congestionnée.",
+            "resume": "Vous ressortez la peau lisse et lumineuse, sans une rougeur. Le soin qui remet un teint à niveau quand il faut rester présentable le soir même.",
             "duree": "60 min",
             "mode_tarif": "depuis",
             "montant": "140",
@@ -102,7 +102,7 @@
           "type": "protocole",
           "settings": {
             "nom": "Microneedling",
-            "resume": "Micro-perforations calibrées qui relancent la production de collagène. Indiqué sur les cicatrices d'acné, les pores dilatés et le relâchement débutant.",
+            "resume": "Les creux laissés par l'acné se comblent par le fond, les pores se resserrent pour de bon. Trois à cinq séances, deux jours de discrétion à chaque fois.",
             "duree": "75 min",
             "mode_tarif": "depuis",
             "montant": "220",
@@ -113,7 +113,7 @@
           "type": "protocole",
           "settings": {
             "nom": "Peeling",
-            "resume": "Exfoliation chimique dosée séance par séance. Agit sur les taches, le grain irrégulier et les marques laissées par l'inflammation.",
+            "resume": "Les taches s'effacent couche après couche et le teint redevient uni. Le dosage monte seulement si votre peau suit — jamais avant.",
             "duree": "45 min",
             "mode_tarif": "depuis",
             "montant": "110",
@@ -124,7 +124,7 @@
           "type": "protocole",
           "settings": {
             "nom": "Diagnostic infirmier",
-            "resume": "Lecture complète de la peau par une infirmière diplômée d'État : antécédents, traitements en cours, contre-indications, plan de soin écrit.",
+            "resume": "Quarante minutes pour savoir enfin quoi faire, dans quel ordre et pour quel budget. Vous repartez avec le plan écrit, même si vous ne réservez rien.",
             "duree": "40 min",
             "mode_tarif": "depuis",
             "montant": "60",
@@ -135,7 +135,7 @@
           "type": "protocole",
           "settings": {
             "nom": "HIFU & radiofréquence",
-            "resume": "Chauffe ciblée des couches profondes pour retendre l'ovale et le cou, sans acte chirurgical ni arrêt d'activité.",
+            "resume": "L'ovale se redessine et le cou se retend, sans bistouri ni arrêt d'activité. Une à deux séances par an suffisent.",
             "duree": "90 min",
             "mode_tarif": "devis",
             "montant": "",
@@ -146,7 +146,7 @@
           "type": "protocole",
           "settings": {
             "nom": "Luminothérapie LED",
-            "resume": "Longueurs d'onde choisies selon l'objectif : apaiser une inflammation, assainir une peau acnéique, soutenir une cicatrisation.",
+            "resume": "Ni contact, ni chaleur, ni suites : le seul protocole possible quand la peau est en pleine réaction et que tout le reste est contre-indiqué.",
             "duree": "30 min",
             "mode_tarif": "depuis",
             "montant": "55",
@@ -157,7 +157,7 @@
           "type": "protocole",
           "settings": {
             "nom": "Drainage lymphatique",
-            "resume": "Manœuvres manuelles lentes qui relancent la circulation. Dégonfle, décongestionne, et prolonge le résultat des autres protocoles.",
+            "resume": "Le visage dégonfle et les traits s'affinent dès la sortie de séance. Ce qui rend visible le résultat de tous les autres protocoles.",
             "duree": "60 min",
             "mode_tarif": "depuis",
             "montant": "90",
@@ -179,7 +179,7 @@
         "index": "03",
         "surtitre": "Les protocoles",
         "titre": "Sept réponses, une seule méthode.",
-        "chapo": "Chaque protocole répond à une indication précise. Le bilan détermine lequel s'applique, à quelle fréquence, et pendant combien de temps.",
+        "chapo": "Chaque protocole répond à une situation précise. Le bilan détermine celui qui vous concerne, à quelle fréquence, et pendant combien de temps.",
         "afficher_tarifs": true,
         "libelle_lien": "Comparer les protocoles",
         "lien": "#orientation"
@@ -232,7 +232,7 @@
         "index": "04",
         "surtitre": "La méthode",
         "titre": "Ce qui se passe, dans l'ordre.",
-        "chapo": "Aucune surprise, aucun soin improvisé. Le déroulé est le même pour tout le monde, quel que soit le protocole retenu."
+        "chapo": "Vous saurez à l'avance ce qui va se passer, combien de temps, et ce que ça donne. Le déroulé est le même pour tout le monde, quel que soit le protocole retenu."
       }
     },
     "resultats": {
