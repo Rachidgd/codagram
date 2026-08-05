@@ -30,6 +30,7 @@ AUJOURD_HUI = datetime.date.today().isoformat()
 
 BALISE = re.compile(r"<[^>]+>")
 LIEN = re.compile(r'href="([^"]+)"')
+ANCRE = re.compile(r'<a href="([^"]+)">([^<]*)</a>')
 PARA = re.compile(r"<p[^>]*>(.*?)</p>", re.I | re.S)
 
 MARQUEURS = re.compile(
@@ -126,6 +127,14 @@ def main():
                                    % (prefixe, cible))
             elif url.startswith("/"):
                 erreurs.append("%s lien interne non vérifiable %s" % (prefixe, url))
+
+        # Deux liens identiques — même adresse, même ancre — dans un seul
+        # article signalent presque toujours une substitution automatique qui
+        # a écrasé un lien légitime.
+        for (url, ancre), n in collections.Counter(ANCRE.findall(corps)).items():
+            if n > 1:
+                erreurs.append("%s lien répété %d fois : « %s » vers %s"
+                               % (prefixe, n, ancre, url))
 
         for para in PARA.findall(corps):
             for phrase in re.split(r"(?<=[.!?])\s+", texte(para).strip()):

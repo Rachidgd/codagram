@@ -37,9 +37,13 @@ future est, elle, explicitement refusée.
 
 ## Métachamps
 
-`build/blog_metafields.json` porte les quatre-vingts métachamps
-(`editorial.faq` et `editorial.updated_at`), à poser par `metafieldsSet`,
-vingt-cinq au maximum par appel. Ils sont sortis des appels d'article : y
+`build/blog_metafields.json` porte les 88 métachamps — `editorial.faq`,
+`editorial.updated_date` et `global.title_tag` pour les articles retitrés —
+à poser par `metafieldsSet`, vingt-cinq au maximum par appel.
+
+La clé de date rejoint `editorial.updated_date`, déjà posée par l'ancien
+système éditorial : en créer une seconde aurait laissé deux sources de vérité
+pour la même information. Ils sont sortis des appels d'article : y
 recopier la FAQ aurait dupliqué un texte déjà présent dans le corps.
 
 ## Régénérer
