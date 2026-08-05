@@ -162,14 +162,12 @@
       {
         "type": "text",
         "id": "cabinet_rue",
-        "label": "Adresse — rue",
-        "default": ""
+        "label": "Adresse — rue"
       },
       {
         "type": "text",
         "id": "cabinet_cp",
-        "label": "Code postal",
-        "default": ""
+        "label": "Code postal"
       },
       {
         "type": "text",
@@ -187,27 +185,23 @@
         "type": "text",
         "id": "cabinet_tel",
         "label": "Téléphone",
-        "default": "",
         "info": "Format international recommandé : +33 1 23 45 67 89"
       },
       {
         "type": "text",
         "id": "cabinet_email",
-        "label": "E-mail de contact",
-        "default": ""
+        "label": "E-mail de contact"
       },
       {
         "type": "text",
         "id": "cabinet_lat",
         "label": "Latitude",
-        "default": "",
         "info": "Optionnel — améliore le référencement local."
       },
       {
         "type": "text",
         "id": "cabinet_lon",
-        "label": "Longitude",
-        "default": ""
+        "label": "Longitude"
       },
       {
         "type": "textarea",
@@ -344,8 +338,7 @@
         "type": "textarea",
         "id": "seo_description_etablissement",
         "label": "Description de l'établissement",
-        "info": "2 à 3 phrases. Reprise dans les données structurées.",
-        "default": ""
+        "info": "2 à 3 phrases. Reprise dans les données structurées."
       }
     ]
   },

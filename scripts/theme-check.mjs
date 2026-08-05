@@ -58,6 +58,20 @@ for (const fichier of lister('sections', '.liquid')) {
       blocs: new Set((schema.blocks || []).map((b) => b.type)),
       reglages: new Set((schema.settings || []).map((s) => s.id).filter(Boolean)),
     });
+
+    // Shopify rejette une valeur par défaut vide sur les champs de saisie
+    // libre. L'API de thème avale l'erreur en silence : le fichier n'est
+    // simplement jamais écrit. Il faut donc l'attraper ici.
+    const saisieLibre = new Set(['text', 'textarea', 'richtext', 'html', 'liquid']);
+    const parcourir = (reglages, ou) => {
+      for (const r of reglages || []) {
+        if (saisieLibre.has(r.type) && r.default === '') {
+          err(`sections/${type}.liquid — ${ou} « ${r.id} » : "default" vide, refusé par Shopify (retirer la clé)`);
+        }
+      }
+    };
+    parcourir(schema.settings, 'réglage');
+    for (const b of schema.blocks || []) parcourir(b.settings, `réglage du bloc « ${b.type} »`);
   } catch (e) {
     err(`sections/${type}.liquid — schema JSON invalide : ${e.message}`);
   }
