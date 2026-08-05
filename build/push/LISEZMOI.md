@@ -30,10 +30,10 @@ session quotidienne n'est nécessaire.
 Passent en premier les brouillons vers lesquels un article déjà en ligne
 renvoie. Tant qu'ils sont invisibles, ces liens sont morts pour un visiteur.
 
-**À vérifier au premier envoi** : que `publishDate` seul, sans `isPublished`,
-programme bien la mise en ligne. La combinaison `isPublished: true` + date
-future est explicitement refusée par l'API. Si la date seule ne suffit pas, il
-faudra publier au fil de l'eau.
+**Vérifié le 4 août** : `publishDate` seul, sans `isPublished`, programme bien
+la sortie — l'API renvoie `isPublished: false` avec le `publishedAt` demandé, et
+Shopify révèle l'article le jour dit. La combinaison `isPublished: true` + date
+future est, elle, explicitement refusée.
 
 ## Métachamps
 
