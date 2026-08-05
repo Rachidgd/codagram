@@ -13,7 +13,7 @@
       <h1 class="cc-pagehead__title" data-reveal>{{ article.title }}</h1>
 
       <p class="cc-article__meta" data-reveal>
-        {%- assign maj = article.metafields.editorial.updated_at.value -%}
+        {%- assign maj = article.metafields.editorial.updated_date.value -%}
         {%- assign jour_maj = maj | date: '%Y-%m-%d' -%}
         {%- assign jour_pub = article.published_at | date: '%Y-%m-%d' -%}
         {%- if maj != blank and jour_maj != jour_pub -%}

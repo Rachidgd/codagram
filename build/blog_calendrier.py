@@ -61,13 +61,31 @@ def main():
     for f in DOSSIER.glob("*.json"):
         f.unlink()
 
+    titres = json.loads((RACINE / "blog_titres.json").read_text(encoding="utf-8"))
+    champs = []
+
     calendrier, n = [], 0
     for i, handle in enumerate(sorted(corps), 1):
         article = {
+            "title": index[handle]["titre"],
             "body": corps[handle].replace("\n", ""),
             "tags": [t for t in index[handle]["etiquettes"]
                      if t != "Pilote éditorial"],
         }
+        champs.append({"ownerId": index[handle]["id"], "namespace": "editorial",
+                       "key": "updated_date", "type": "date",
+                       "value": datetime.date.today().isoformat()})
+        if handle in faqs:
+            champs.append({"ownerId": index[handle]["id"],
+                           "namespace": "editorial", "key": "faq",
+                           "type": "json",
+                           "value": json.dumps(faqs[handle]["faq"],
+                                               ensure_ascii=False)})
+        if handle in titres:
+            champs.append({"ownerId": index[handle]["id"],
+                           "namespace": "global", "key": "title_tag",
+                           "type": "single_line_text_field",
+                           "value": titres[handle]["title_tag"]})
         quand = ""
         if handle in file:
             jour = DEPART + datetime.timedelta(days=file.index(handle))
@@ -80,7 +98,12 @@ def main():
         calendrier.append((quand or "déjà en ligne", handle,
                            "prioritaire" if handle in attendus else ""))
 
-    print("%d articles à envoyer, dont %d programmés" % (len(corps), n))
+    (RACINE / "blog_metafields.json").write_text(
+        json.dumps(champs, ensure_ascii=False, indent=1) + "\n",
+        encoding="utf-8")
+
+    print("%d articles à envoyer, dont %d programmés, %d métachamps à poser"
+          % (len(corps), n, len(champs)))
     print()
     for quand, handle, note in sorted(calendrier):
         print("  %-14s %-58s %s" % (quand, handle, note))

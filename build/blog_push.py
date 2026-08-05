@@ -16,6 +16,7 @@ import json
 import pathlib
 import re
 import sys
+import unicodedata
 
 RACINE = pathlib.Path(__file__).resolve().parent
 DOSSIER = RACINE / "blog"
@@ -25,8 +26,7 @@ SORTIE = RACINE / "blog_push.jsonl"
 
 # Les articles sont retravaillés aujourd'hui : la date de mise à jour le dit,
 # au lecteur comme au balisage.
-MAINTENANT = datetime.datetime.now(datetime.timezone.utc).replace(
-    microsecond=0).isoformat()
+AUJOURD_HUI = datetime.date.today().isoformat()
 
 BALISE = re.compile(r"<[^>]+>")
 LIEN = re.compile(r'href="([^"]+)"')
@@ -41,7 +41,13 @@ ETIQUETTES_INTERNES = {"Pilote éditorial"}
 
 # Brouillon resté à l'état de coquille, dont le sujet est déjà couvert par deux
 # articles en ligne. Il est laissé de côté ici : à supprimer côté Shopify.
-ECARTES = {"creer-boutique-shopify-methode-prix-erreurs"}
+ECARTES = set()
+
+# Ce que la typographie française utilise légitimement, au-delà de l'ASCII.
+ALPHABET_ATTENDU = ("LATIN", "QUOTATION", "DASH", "SPACE", "APOSTROPHE",
+                    "ELLIPSIS", "SIGN", "BULLET", "MARK", "ARROW", "TIMES",
+                    "MULTIPLICATION", "DEGREE", "SUPERSCRIPT", "MIDDLE DOT",
+                    "NO-BREAK", "EQUAL TO", "PLUS-MINUS", "SECTION")
 
 
 def texte(fragment):
@@ -92,6 +98,16 @@ def main():
         if n < 300:
             erreurs.append("%s %d mots seulement" % (prefixe, n))
 
+        # Un caractère d'un autre alphabet passe inaperçu à la relecture et
+        # reste dans le texte publié. Le contrôle est né d'un « processus »
+        # écrit à moitié en cyrillique.
+        for c in sorted(set(corps)):
+            if ord(c) > 127:
+                nom = unicodedata.name(c, "")
+                if not any(k in nom for k in ALPHABET_ATTENDU):
+                    erreurs.append("%s caractère hors jeu latin : %s (%s)"
+                                   % (prefixe, c, nom or "inconnu"))
+
         for url in LIEN.findall(corps):
             if url.startswith(("http", "mailto:", "tel:", "#")):
                 continue
@@ -140,9 +156,9 @@ def main():
             entree["isPublished"] = True
         champs = [{
             "namespace": "editorial",
-            "key": "updated_at",
-            "type": "date_time",
-            "value": MAINTENANT,
+            "key": "updated_date",
+            "type": "date",
+            "value": AUJOURD_HUI,
         }]
         if handle in faqs:
             champs.append({

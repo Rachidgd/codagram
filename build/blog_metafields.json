@@ -2,9 +2,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548672330",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548672330",
@@ -16,9 +16,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548574026",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548574026",
@@ -30,9 +30,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548082506",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548082506",
@@ -44,9 +44,9 @@
  {
   "ownerId": "gid://shopify/Article/1003789615434",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003789615434",
@@ -56,11 +56,18 @@
   "value": "[{\"q\": \"Consultant ou agence : lequel coûte le moins cher ?\", \"r\": \"Le consultant, à périmètre égal, parce qu'il n'a pas de structure à financer. Mais si le projet exige trois métiers différents, additionner trois consultants revient souvent plus cher qu'une agence, coordination comprise.\"}, {\"q\": \"Un consultant peut-il gérer un projet e-commerce complet ?\", \"r\": \"C'est possible s'il est spécialisé e-commerce et que le catalogue reste raisonnable. Sur des boutiques à fort volume mêlant architecture, contenu et données structurées, une équipe est généralement plus adaptée.\"}, {\"q\": \"Comment vérifier les résultats annoncés ?\", \"r\": \"Demander des captures Search Console avec périodes visibles, le contexte de départ et, si possible, un échange avec le client concerné. Un prestataire fier de ses résultats n'a aucune difficulté à les documenter.\"}, {\"q\": \"Faut-il choisir un prestataire local ?\", \"r\": \"Pas nécessairement : la méthode et la transparence comptent plus que le code postal. La proximité devient un atout pour le SEO local, où la connaissance du marché accélère le travail.\"}, {\"q\": \"Quelle durée d'engagement accepter ?\", \"r\": \"Trois à six mois renouvelables : assez long pour produire des effets mesurables, assez court pour garder le prestataire concentré sur les résultats plutôt que sur son contrat.\"}, {\"q\": \"Peut-on combiner consultant et agence ?\", \"r\": \"Oui, et c'est parfois la meilleure option : une agence pilote la stratégie et la production, un consultant intervient ponctuellement sur une expertise pointue. À condition que les périmètres soient clairement séparés.\"}]"
  },
  {
+  "ownerId": "gid://shopify/Article/1003789615434",
+  "namespace": "global",
+  "key": "title_tag",
+  "type": "single_line_text_field",
+  "value": "Consultant SEO ou agence : lequel choisir"
+ },
+ {
   "ownerId": "gid://shopify/Article/1003548705098",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548705098",
@@ -72,9 +79,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548377418",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548377418",
@@ -86,9 +93,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548442954",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548442954",
@@ -100,9 +107,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548934474",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548934474",
@@ -112,11 +119,18 @@
   "value": "[{\"q\": \"Quelle longueur idéale pour une balise title ?\", \"r\": \"Autour de 55 à 60 caractères pour éviter la coupe dans Google. L'essentiel (mot-clé et accroche) doit tenir avant la troncature.\"}, {\"q\": \"Google réécrit parfois mes titles, pourquoi ?\", \"r\": \"Google peut remplacer un title jugé peu pertinent ou dupliqué par un extrait de la page. Un title clair, unique et aligné sur le contenu réduit ce risque.\"}, {\"q\": \"Changer un title peut-il faire baisser mon classement ?\", \"r\": \"Rarement si vous gardez la requête principale. Le risque est faible et le gain potentiel en CTR élevé : testez sur vos pages à fort trafic en surveillant.\"}]"
  },
  {
+  "ownerId": "gid://shopify/Article/1003548934474",
+  "namespace": "global",
+  "key": "title_tag",
+  "type": "single_line_text_field",
+  "value": "Balise title : 15 formules qui font cliquer"
+ },
+ {
   "ownerId": "gid://shopify/Article/1003538645322",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003538645322",
@@ -128,9 +142,9 @@
  {
   "ownerId": "gid://shopify/Article/1003547984202",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003547984202",
@@ -142,9 +156,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548868938",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548868938",
@@ -156,9 +170,9 @@
  {
   "ownerId": "gid://shopify/Article/1003547853130",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003547853130",
@@ -170,9 +184,9 @@
  {
   "ownerId": "gid://shopify/Article/1003547885898",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003547885898",
@@ -182,11 +196,18 @@
   "value": "[{\"q\": \"Combien de collections faut-il créer ?\", \"r\": \"Autant qu'il existe de recherches distinctes avec une vraie demande, pas plus. Dix collections alignées sur des requêtes réelles battent quarante collections décoratives qui se cannibalisent.\"}, {\"q\": \"Faut-il mettre un produit dans plusieurs collections ?\", \"r\": \"Oui si c'est logique pour le client (une robe lin peut être dans « robes » et « lin »). Shopify gère la canonique produit, il n'y a pas de duplicate pénalisant.\"}, {\"q\": \"Où placer le texte SEO d'une collection ?\", \"r\": \"Un court paragraphe au-dessus des produits, le contenu détaillé en dessous. Jamais 800 mots avant la grille : vous feriez fuir les acheteurs pour plaire à un robot qui n'en demande pas tant.\"}]"
  },
  {
+  "ownerId": "gid://shopify/Article/1003547885898",
+  "namespace": "global",
+  "key": "title_tag",
+  "type": "single_line_text_field",
+  "value": "SEO Shopify : l'architecture de collections qui vend"
+ },
+ {
   "ownerId": "gid://shopify/Article/1003789582666",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003789582666",
@@ -196,11 +217,18 @@
   "value": "[{\"q\": \"Combien coûte un audit SEO en 2026 ?\", \"r\": \"Entre 500 et 3 000 euros pour la grande majorité des sites de PME, selon le nombre de pages et la profondeur d'analyse. Les audits e-commerce ou multilingues dépassent fréquemment cette fourchette.\"}, {\"q\": \"Un audit SEO gratuit vaut-il quelque chose ?\", \"r\": \"Oui, s'il est mené par un humain et qu'il débouche sur des priorités claires. Il identifie les blocages visibles et permet de juger le prestataire. Il ne remplace pas une analyse page par page sur un site complexe.\"}, {\"q\": \"Combien de temps prend un audit SEO ?\", \"r\": \"De 1 à 3 jours pour un diagnostic, 3 à 10 jours ouvrés pour un audit complet de PME, et plusieurs semaines pour un grand site. Le délai dépend surtout du volume de pages à analyser.\"}, {\"q\": \"Que doit contenir le livrable d'un audit ?\", \"r\": \"Un état des lieux technique, sémantique et concurrentiel, et surtout une liste de corrections ordonnée par impact et par effort. Un audit qui se termine par un score sans plan d'action n'est pas exploitable.\"}, {\"q\": \"Faut-il refaire un audit chaque année ?\", \"r\": \"Un audit complet par an suffit à la plupart des sites, complété d'une vérification rapide après chaque changement important : refonte, migration, ajout massif de pages.\"}, {\"q\": \"Quel budget mensuel prévoir après l'audit ?\", \"r\": \"Les fourchettes courantes démarrent autour de 800 euros par mois pour une PME sur un marché local et montent avec la concurrence. En dessous, il faut vérifier très précisément ce que le temps facturé permet réellement de produire.\"}]"
  },
  {
+  "ownerId": "gid://shopify/Article/1003789582666",
+  "namespace": "global",
+  "key": "title_tag",
+  "type": "single_line_text_field",
+  "value": "Prix d'un audit SEO en 2026 : tarifs et livrables"
+ },
+ {
   "ownerId": "gid://shopify/Article/1003468554570",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003468554570",
@@ -210,11 +238,18 @@
   "value": "[{\"q\": \"Quel est le prix moyen du SEO en 2026 ?\", \"r\": \"Pour une PME française, la fourchette couramment observée va de 800 à 2 500 euros par mois selon la concurrence du marché et le périmètre confié. Les projets e-commerce ou nationaux mobilisent des budgets supérieurs, souvent au-delà de 3 000 euros mensuels.\"}, {\"q\": \"Pourquoi éviter les offres SEO à 200 euros par mois ?\", \"r\": \"Ce tarif ne finance que deux heures de travail environ, ce qui impose d'automatiser : contenus générés, liens de faible qualité, rapports sans analyse. La visibilité ne progresse pas et l'engagement long bloque votre budget pendant des mois.\"}, {\"q\": \"Combien coûte un audit SEO ?\", \"r\": \"Entre 500 et 3 000 euros selon la taille du site et la profondeur d'analyse. C'est la dépense la plus rentable du parcours : elle évite d'investir des mois de budget sur les mauvaises priorités.\"}, {\"q\": \"Le SEO est-il rentable pour une PME ?\", \"r\": \"Oui, dès que vos clients formulent leur besoin sur Google. Le coût par demande décroît avec le temps, contrairement à la publicité, ce qui en fait l'un des investissements d'acquisition les plus durables pour une PME.\"}, {\"q\": \"Combien de temps avant que le budget SEO soit rentabilisé ?\", \"r\": \"Les premiers signaux apparaissent généralement entre deux et quatre mois, la rentabilité s'installe le plus souvent entre six et douze mois. Le SEO se raisonne comme un actif : lent à construire, durable une fois en place.\"}, {\"q\": \"Peut-on faire son SEO soi-même ?\", \"r\": \"Les bases, oui : fiche d'établissement Google, pages services claires, contenus réguliers. Au-delà, le temps d'apprentissage et d'exécution dépasse vite ce que coûte un accompagnement — la vraie question est celle de la valeur de votre temps.\"}]"
  },
  {
+  "ownerId": "gid://shopify/Article/1003468554570",
+  "namespace": "global",
+  "key": "title_tag",
+  "type": "single_line_text_field",
+  "value": "Tarif SEO 2026 : prix réels par prestation"
+ },
+ {
   "ownerId": "gid://shopify/Article/1003468652874",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003468652874",
@@ -224,11 +259,18 @@
   "value": "[{\"q\": \"Quel est le prix minimum pour lancer une boutique Shopify ?\", \"r\": \"En autonomie complète, l'abonnement et un thème gratuit suffisent techniquement. Pour une boutique créée professionnellement, les projets sérieux démarrent autour de 3 000 euros — en dessous, la structure, les fiches produits ou le SEO sont nécessairement sacrifiés.\"}, {\"q\": \"Combien coûte l'abonnement Shopify par mois ?\", \"r\": \"De l'ordre d'une trentaine d'euros mensuels pour le plan de base, davantage pour les plans supérieurs, selon la grille en vigueur. S'y ajoutent les commissions sur les paiements et les éventuels abonnements d'applications.\"}, {\"q\": \"Combien de temps faut-il pour créer une boutique Shopify ?\", \"r\": \"Comptez 4 à 6 semaines pour une boutique simple, 6 à 8 semaines pour un projet standard avec plusieurs collections, et davantage pour du sur-mesure avec intégrations. Un calendrier clair doit être posé dès le départ.\"}, {\"q\": \"Quels coûts prévoir après la mise en ligne ?\", \"r\": \"L'abonnement, les apps conservées, la maintenance du thème et surtout l'acquisition : SEO, publicité ou emailing selon la stratégie. Une boutique en ligne se pilote comme un point de vente — elle demande un budget de fonctionnement, pas seulement un budget d'ouverture.\"}, {\"q\": \"Shopify est-il moins cher qu'un site e-commerce sur-mesure ?\", \"r\": \"À périmètre comparable, très nettement : l'hébergement, la sécurité et les mises à jour sont mutualisés par la plateforme. Le développement entièrement sur-mesure ne se justifie que pour des logiques métier très spécifiques, avec un budget et des délais bien supérieurs.\"}, {\"q\": \"Quand investir dans du développement sur-mesure ?\", \"r\": \"Quand les ventes sont installées et que les données désignent un frein précis : un parcours spécifique, une intégration ERP, une fonctionnalité que les apps ne couvrent pas proprement. Le sur-mesure se finance par le chiffre d'affaires qu'il débloque, pas par principe.\"}]"
  },
  {
+  "ownerId": "gid://shopify/Article/1003468652874",
+  "namespace": "global",
+  "key": "title_tag",
+  "type": "single_line_text_field",
+  "value": "Prix d'une boutique Shopify en 2026, poste par poste"
+ },
+ {
   "ownerId": "gid://shopify/Article/1003468587338",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003468587338",
@@ -238,11 +280,18 @@
   "value": "[{\"q\": \"Comment vérifier les résultats annoncés par une agence SEO ?\", \"r\": \"Demandez des captures Search Console avec périodes visibles, le contexte de départ et, si possible, un échange avec le client concerné. Une agence fière de ses résultats n'a aucune difficulté à les documenter.\"}, {\"q\": \"Faut-il choisir une agence SEO locale ?\", \"r\": \"Rarement. Un prestataire à l'autre bout du pays qui travaille bien vaut mieux qu'un voisin qui sous-traite. La géographie ne devient un vrai avantage que sur le référencement local, où connaître le terrain et les concurrents de la zone fait gagner des semaines de recherche.\"}, {\"q\": \"Quel budget prévoir pour une agence SEO sérieuse ?\", \"r\": \"Les fourchettes couramment observées démarrent autour de 800 euros par mois pour une PME sur un marché local, et montent avec la concurrence. En dessous, vérifiez très précisément ce que le temps facturé permet réellement de produire.\"}, {\"q\": \"Quelle durée d'engagement accepter ?\", \"r\": \"Trois à six mois renouvelables constituent un équilibre sain : assez long pour produire des effets mesurables, assez court pour garder le prestataire concentré sur vos résultats plutôt que sur son contrat.\"}, {\"q\": \"Agence généraliste ou spécialisée : que choisir ?\", \"r\": \"Une agence qui connaît votre modèle — e-commerce, services B2B, commerce local — démarre avec des mois d'avance sur les intentions de recherche et les leviers qui convertissent. La spécialisation métier pèse plus que la taille de la structure.\"}, {\"q\": \"Que doit contenir le premier mois de prestation ?\", \"r\": \"Un audit complet, la définition des priorités avec vous, la correction des blocages techniques majeurs et un plan de contenu daté. Si le premier mois se résume à « l'installation des outils », le rythme est donné — et il est mauvais.\"}]"
  },
  {
+  "ownerId": "gid://shopify/Article/1003468587338",
+  "namespace": "global",
+  "key": "title_tag",
+  "type": "single_line_text_field",
+  "value": "Vérifier une agence SEO : les 7 critères avant de signer"
+ },
+ {
   "ownerId": "gid://shopify/Article/1003548967242",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548967242",
@@ -254,9 +303,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548606794",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548606794",
@@ -268,9 +317,9 @@
  {
   "ownerId": "gid://shopify/Article/1003549000010",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003549000010",
@@ -282,9 +331,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548737866",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548737866",
@@ -296,9 +345,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548180810",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548180810",
@@ -310,9 +359,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548016970",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548016970",
@@ -324,9 +373,9 @@
  {
   "ownerId": "gid://shopify/Article/1003538547018",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003538547018",
@@ -338,9 +387,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548049738",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548049738",
@@ -352,9 +401,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548115274",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548115274",
@@ -366,9 +415,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548901706",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548901706",
@@ -380,9 +429,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548508490",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548508490",
@@ -394,9 +443,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548279114",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548279114",
@@ -408,9 +457,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548541258",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548541258",
@@ -422,9 +471,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548639562",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548639562",
@@ -436,9 +485,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548246346",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548246346",
@@ -450,9 +499,9 @@
  {
   "ownerId": "gid://shopify/Article/1003547951434",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003547951434",
@@ -464,9 +513,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548770634",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548770634",
@@ -478,9 +527,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548803402",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548803402",
@@ -492,9 +541,9 @@
  {
   "ownerId": "gid://shopify/Article/1003468620106",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003468620106",
@@ -504,11 +553,18 @@
   "value": "[{\"q\": \"SEO ou Google Ads : lequel est le moins cher ?\", \"r\": \"À court terme, aucun n'est gratuit : le SEO coûte du temps de production, la publicité coûte chaque clic. À douze mois et au-delà, le coût par demande du SEO devient généralement inférieur, car les pages positionnées continuent de produire sans dépense supplémentaire.\"}, {\"q\": \"Peut-on faire du SEO et du Google Ads avec un petit budget ?\", \"r\": \"Oui, en dosant : on concentre le budget sur le levier le plus rentable pour la situation, puis on ajoute le second quand la conversion et la trésorerie suivent. Le piège est de saupoudrer les deux sans masse critique sur aucun.\"}, {\"q\": \"La publicité Google améliore-t-elle le référencement naturel ?\", \"r\": \"Pas directement : les campagnes n'influencent pas les positions organiques. Indirectement, oui : elles fournissent des données précieuses sur les requêtes et messages qui convertissent, et du trafic qui alimente la connaissance client.\"}, {\"q\": \"Combien de temps avant que le SEO remplace la publicité ?\", \"r\": \"Sur un marché local, comptez généralement six à douze mois pour qu'une part significative des demandes vienne de l'organique. Sur un marché national disputé, la publicité garde souvent un rôle permanent, mais recentré sur les segments les plus rentables.\"}, {\"q\": \"Faut-il couper Google Ads quand le SEO fonctionne ?\", \"r\": \"Rarement en totalité : on réduit plutôt les enchères où l'organique capte déjà la demande, et on réalloue vers les requêtes non encore positionnées. La décision se prend requête par requête, chiffres en main.\"}, {\"q\": \"Quel budget minimum pour démarrer sur Google Ads ?\", \"r\": \"Assez pour générer des données exploitables : quelques centaines d'euros mensuels sur un marché local, davantage sur des requêtes dont le clic est cher. Un budget trop faible produit des statistiques inutilisables — mieux vaut alors le placer sur le SEO.\"}]"
  },
  {
+  "ownerId": "gid://shopify/Article/1003468620106",
+  "namespace": "global",
+  "key": "title_tag",
+  "type": "single_line_text_field",
+  "value": "SEO vs SEA : par quoi commencer en 2026"
+ },
+ {
   "ownerId": "gid://shopify/Article/1003538579786",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003538579786",
@@ -520,9 +576,9 @@
  {
   "ownerId": "gid://shopify/Article/1003538612554",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003538612554",
@@ -534,9 +590,9 @@
  {
   "ownerId": "gid://shopify/Article/1003547918666",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003547918666",
@@ -548,9 +604,9 @@
  {
   "ownerId": "gid://shopify/Article/1003548213578",
   "namespace": "editorial",
-  "key": "updated_at",
-  "type": "date_time",
-  "value": "2026-08-04T16:30:45+00:00"
+  "key": "updated_date",
+  "type": "date",
+  "value": "2026-08-05"
  },
  {
   "ownerId": "gid://shopify/Article/1003548213578",
