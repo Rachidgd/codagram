@@ -185,3 +185,39 @@ Les articles plus récents n'ont pas de surcharge `seo_release` : pour eux,
    produisent le plus vite.
 4. **Ne rien investir** sur les douze articles à volume nul, et corriger le
    ciblage des six articles hors de portée.
+
+## Ce qui a été exécuté le 6 août
+
+**Un seul champ SEO.** Le gabarit lisait un métachamp `seo_release`
+prioritaire sur la saisie faite dans l'admin Shopify : modifier le champ
+« Référencement » restait sans effet. 64 surcharges supprimées après avoir
+remonté les valeurs dans le champ natif, en gardant systématiquement la
+valeur native quand elle existait déjà. Le gabarit ne lit plus qu'elle.
+
+**Les H1 des pages villes portent leur requête.** Quatorze pages avaient une
+accroche éditoriale sans le métier ni la ville. C'est la correction la plus
+susceptible de débloquer des positions déjà acquises entre la 45e et la 100e
+place.
+
+**Six pages « création site internet + ville ».** Strasbourg (390 / KD 13),
+Marseille (480 / KD 17), Lille (590 / KD 18), Lyon (480 / KD 18), Nice
+(480 / KD 21), Nantes (590 / KD 23). Chacune part de ce que le marché local
+attend d'un site — objections, preuves, parcours de contact — là où les
+pages « agence SEO + ville » traitent la visibilité. Zéro phrase partagée
+entre deux villes, environ 580 mots propres chacune. Reliées depuis la page
+mère, donc atteignables en deux clics depuis l'accueil.
+
+**Rennes, corrigé autrement que prévu.** La page `agence-seo-rennes` s'est
+révélée être une coquille vide sur un ancien gabarit. C'est
+`consultant-seo-rennes`, qui porte le contenu, qui a été retargetée sur
+« agence seo rennes » (1 900 / KD 21) via son H1. La redirection envisagée
+aurait détruit la seule page utile des deux.
+
+### Ce qu'il reste à faire
+
+- Publier le thème `PREPROD 06-08 — SEO natif + H1 villes` (205160120650).
+- Ajouter les six nouvelles pages au menu de pied de page pour qu'elles
+  apparaissent au plan du site, qui se construit depuis les menus.
+- Demander l'indexation des six nouvelles URL dans Search Console.
+- Relever les positions à 30 et 60 jours : les pages villes déjà indexées
+  sont celles qui diront le plus vite si le réalignement des H1 produit.
