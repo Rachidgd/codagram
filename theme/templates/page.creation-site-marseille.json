@@ -1,0 +1,264 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Création de site — Marseille",
+        "title": "Création de site internet à Marseille, quartier par quartier",
+        "lead": "À Marseille, la première question d'un client n'est pas ce que vous faites, mais si vous vous déplacez chez lui. Un site qui ne nomme pas ses zones d'intervention laisse cette question sans réponse, et le prospect appelle le suivant.",
+        "cta_primary": "Cadrer mon projet",
+        "parent_label": "Création de site vitrine",
+        "parent_url": "/pages/creation-site-vitrine",
+        "cta_secondary": "Voir la prestation complète",
+        "cta_secondary_url": "/pages/creation-site-vitrine"
+      }
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui distingue ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Étendue",
+            "label": "une ville de villages",
+            "note": "Du 8e au 15e, les distances et les habitudes changent. Un client du sud ne suppose pas qu'on monte au nord."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Indépendants",
+            "label": "un tissu très dense",
+            "note": "Beaucoup de petites structures dont le bouche-à-oreille est solide mais la présence en ligne inexistante."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Port",
+            "label": "une économie tournée vers l'extérieur",
+            "note": "Logistique, import, maritime : un B2B qui cherche des compétences précises, pas des prestataires génériques."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Notre lecture",
+        "title": "La question qu'on vous pose au téléphone doit déjà être réglée sur le site.",
+        "text": "<p>« Vous intervenez dans le 11e ? » Cette question revient à chaque appel, ce qui veut dire qu'elle a fait renoncer tous ceux qui n'ont pas appelé. Elle se règle avec une liste de quartiers visible, pas avec une carte décorative.</p><p>Nous construisons donc le site autour de la zone réellement servie, en l'écrivant noir sur blanc plutôt qu'en la suggérant.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Les zones écrites en clair",
+            "text": "Les arrondissements et communes servis, nommés, pas déduits d'une carte."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Les délais assumés",
+            "text": "Combien de temps pour venir, à quel tarif de déplacement. Le silence coûte des appels."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Des preuves situées",
+            "text": "Un chantier daté et localisé rassure plus que dix témoignages anonymes."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "deroule": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Comment se passe un projet, concrètement.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Cadrage",
+            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d'échange, pas un questionnaire.",
+            "duration": "Semaine 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Structure et contenus",
+            "text": "L'arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
+            "duration": "Semaines 2-3"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Conception et intégration",
+            "text": "Maquettes puis intégration, avec deux tours de corrections prévus au contrat.",
+            "duration": "Semaines 3-5"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Mise en ligne et transfert",
+            "text": "Mesure installée, référencement de base posé, et tous les accès à votre nom.",
+            "duration": "Semaine 6"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Ce qu'on nous demande sur ce marché.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il une page par arrondissement ?",
+            "answer": "<p>Rarement au démarrage. Une page qui liste clairement les zones servies règle l'essentiel. Les pages par quartier ne se justifient que si vous y avez de vraies références à montrer — sinon elles se ressemblent toutes et aucune ne se positionne.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Mon activité marche au bouche-à-oreille, à quoi sert un site ?",
+            "answer": "<p>À convertir ce bouche-à-oreille. Aujourd'hui, la personne à qui l'on vous a recommandé cherche votre nom avant d'appeler. Ce qu'elle trouve — ou ne trouve pas — décide si la recommandation aboutit.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides avant de lancer un projet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Prix d'un site vitrine en 2026",
+            "text": "Les vraies fourchettes, poste par poste",
+            "link": "/blogs/ressources/prix-site-vitrine-2026",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Modèle de cahier des charges",
+            "text": "Pour rendre les devis comparables",
+            "link": "/blogs/ressources/cahier-des-charges-site-vitrine",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Un site vitrine sans demandes",
+            "text": "Les 7 corrections prioritaires",
+            "link": "/blogs/ressources/site-vitrine-pas-de-demandes-2026",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Voyons ce que trouve un Marseillais à qui l'on vous a recommandé.",
+        "text": "Donnez-nous votre métier et vos secteurs. Nous regardons ce qui apparaît à votre nom et ce qui manque pour déclencher l'appel.",
+        "cta_label": "Demander un diagnostic",
+        "note": "Réponse sous 48 h",
+        "link_label": "Voir le référencement à Marseille",
+        "link_url": "/pages/agence-seo-marseille"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Accès à votre nom"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "contexte",
+    "analyse",
+    "deroule",
+    "faq",
+    "lectures",
+    "cta"
+  ]
+}

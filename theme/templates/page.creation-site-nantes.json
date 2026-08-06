@@ -1,0 +1,264 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "eyebrow": "Création de site — Nantes",
+        "title": "Création de site internet à Nantes, pour des clients qui ne vous connaissent pas",
+        "lead": "Nantes accueille chaque année des milliers de nouveaux habitants et de nouvelles entreprises. Ces clients n'ont ni recommandation ni habitude : ils choisissent sur ce qu'ils lisent, et ils lisent avec attention.",
+        "cta_primary": "Cadrer mon projet",
+        "parent_label": "Création de site vitrine",
+        "parent_url": "/pages/creation-site-vitrine",
+        "cta_secondary": "Voir la prestation complète",
+        "cta_secondary_url": "/pages/creation-site-vitrine"
+      }
+    },
+    "contexte": {
+      "type": "content-stats",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Le marché local",
+        "title": "Ce qui distingue ce marché.",
+        "source": "Lecture qualitative du tissu économique local. Les volumes réels sont mesurés pendant le diagnostic."
+      },
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "Croissance",
+            "label": "des arrivées continues",
+            "note": "Un flux permanent de personnes qui cherchent tous les services de base sans référence préalable."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "Numérique",
+            "label": "un secteur très présent",
+            "note": "Des clients qui savent reconnaître un site bâclé et en tirent une conclusion immédiate."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "value": "Industrie",
+            "label": "naval et aéronautique",
+            "note": "Une sous-traitance technique dont les acheteurs vérifient un fournisseur avant de le consulter."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "analyse": {
+      "type": "content-split",
+      "settings": {
+        "surface": "paper",
+        "reverse": false,
+        "eyebrow": "Notre lecture",
+        "title": "Sans bouche-à-oreille, le site porte seul la confiance.",
+        "text": "<p>Un client installé depuis vingt ans vous choisit sur recommandation, et votre site n'a qu'à ne pas lui faire peur. Un nouvel arrivant, lui, n'a que le site : il y cherche depuis quand vous existez, qui vous êtes, ce que d'autres en ont pensé.</p><p>Ces trois informations manquent sur la majorité des sites que nous auditons.</p>"
+      },
+      "blocks": {
+        "b1": {
+          "type": "point",
+          "settings": {
+            "title": "Une ancienneté visible",
+            "text": "Depuis quand vous exercez : l'information la plus simple et la plus rassurante."
+          }
+        },
+        "b2": {
+          "type": "point",
+          "settings": {
+            "title": "Des visages",
+            "text": "Une photo réelle de l'équipe convainc davantage qu'une page « à propos » abstraite."
+          }
+        },
+        "b3": {
+          "type": "point",
+          "settings": {
+            "title": "Des avis accessibles",
+            "text": "Visibles sur le site, pas seulement sur une fiche qu'il faudra aller chercher."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ]
+    },
+    "deroule": {
+      "type": "content-steps",
+      "settings": {
+        "surface": "paper",
+        "eyebrow": "Déroulé",
+        "title": "Comment se passe un projet, concrètement.",
+        "text": ""
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Cadrage",
+            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d'échange, pas un questionnaire.",
+            "duration": "Semaine 1"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Structure et contenus",
+            "text": "L'arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
+            "duration": "Semaines 2-3"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Conception et intégration",
+            "text": "Maquettes puis intégration, avec deux tours de corrections prévus au contrat.",
+            "duration": "Semaines 3-5"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Mise en ligne et transfert",
+            "text": "Mesure installée, référencement de base posé, et tous les accès à votre nom.",
+            "duration": "Semaine 6"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "faq": {
+      "type": "content-faq",
+      "settings": {
+        "surface": "dark",
+        "eyebrow": "Questions fréquentes",
+        "title": "Ce qu'on nous demande sur ce marché.",
+        "text": "",
+        "cta_label": "Poser une autre question",
+        "open_first": true,
+        "single_open": false,
+        "emit_schema": true
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "Comment inspirer confiance quand on vient de s'installer ?",
+            "answer": "<p>En étant précis plutôt qu'ancien. Décrire exactement ce que vous faites, montrer les premiers travaux même peu nombreux, afficher un vrai visage et un vrai numéro. La transparence compense l'absence d'historique mieux que n'importe quel argument.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "Les avis sont-ils indispensables au démarrage ?",
+            "answer": "<p>Quelques avis authentiques changent beaucoup, et cinq suffisent pour lever le doute initial. L'important est qu'ils soient réels et récents : un client nantais habitué au numérique repère les faux immédiatement.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2"
+      ]
+    },
+    "lectures": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "dense",
+        "eyebrow": "Pour aller plus loin",
+        "title": "Trois guides avant de lancer un projet.",
+        "text": ""
+      },
+      "blocks": {
+        "g1": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Prix d'un site vitrine en 2026",
+            "text": "Les vraies fourchettes, poste par poste",
+            "link": "/blogs/ressources/prix-site-vitrine-2026",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g2": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Modèle de cahier des charges",
+            "text": "Pour rendre les devis comparables",
+            "link": "/blogs/ressources/cahier-des-charges-site-vitrine",
+            "link_label": "Lire le guide"
+          }
+        },
+        "g3": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Un site vitrine sans demandes",
+            "text": "Les 7 corrections prioritaires",
+            "link": "/blogs/ressources/site-vitrine-pas-de-demandes-2026",
+            "link_label": "Lire le guide"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ]
+    },
+    "cta": {
+      "type": "content-cta",
+      "settings": {
+        "eyebrow": "Étape suivante",
+        "title": "Voyons ce que comprend un Nantais qui découvre votre entreprise.",
+        "text": "Nous regardons votre site comme quelqu'un qui n'a jamais entendu parler de vous et vous disons ce qui manque pour déclencher le contact.",
+        "cta_label": "Demander un diagnostic",
+        "note": "Réponse sous 48 h",
+        "link_label": "Voir le référencement à Nantes",
+        "link_url": "/pages/agence-seo-nantes"
+      },
+      "blocks": {
+        "r1": {
+          "type": "point",
+          "settings": {
+            "text": "Sans engagement"
+          }
+        },
+        "r2": {
+          "type": "point",
+          "settings": {
+            "text": "Accès à votre nom"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "contexte",
+    "analyse",
+    "deroule",
+    "faq",
+    "lectures",
+    "cta"
+  ]
+}
