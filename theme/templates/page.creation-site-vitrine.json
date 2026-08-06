@@ -425,6 +425,86 @@
         "g2",
         "g3"
       ]
+    },
+    "villes": {
+      "type": "content-grid",
+      "settings": {
+        "surface": "paper",
+        "density": "comfortable",
+        "eyebrow": "Selon votre ville",
+        "title": "Ce qui change d'un marché local à l'autre.",
+        "text": "Les objections d'un client ne sont pas les mêmes à Strasbourg et à Nice. Chaque page ci-dessous part de ce que votre marché attend d'un site, pas d'un argumentaire générique."
+      },
+      "blocks": {
+        "v1": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Strasbourg",
+            "text": "Un site qui parle aussi à la clientèle germanophone.",
+            "link": "/pages/creation-site-internet-strasbourg",
+            "link_label": "Voir cette page"
+          }
+        },
+        "v2": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Marseille",
+            "text": "Des zones d'intervention écrites, pas suggérées.",
+            "link": "/pages/creation-site-internet-marseille",
+            "link_label": "Voir cette page"
+          }
+        },
+        "v3": {
+          "type": "item",
+          "settings": {
+            "icon": "layers",
+            "title": "Lille",
+            "text": "Les détails qui font renoncer un prospect belge.",
+            "link": "/pages/creation-site-internet-lille",
+            "link_label": "Voir cette page"
+          }
+        },
+        "v4": {
+          "type": "item",
+          "settings": {
+            "icon": "gauge",
+            "title": "Lyon",
+            "text": "Se démarquer là où tous les concurrents ont déjà un site.",
+            "link": "/pages/creation-site-internet-lyon",
+            "link_label": "Voir cette page"
+          }
+        },
+        "v5": {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Nice",
+            "text": "Convaincre des clients qui réservent avant d'arriver.",
+            "link": "/pages/creation-site-internet-nice",
+            "link_label": "Voir cette page"
+          }
+        },
+        "v6": {
+          "type": "item",
+          "settings": {
+            "icon": "signal",
+            "title": "Nantes",
+            "text": "Inspirer confiance sans bouche-à-oreille préalable.",
+            "link": "/pages/creation-site-internet-nantes",
+            "link_label": "Voir cette page"
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ]
     }
   },
   "order": [
@@ -433,6 +513,7 @@
     "demonstration",
     "deroule",
     "metiers",
+    "villes",
     "choix",
     "faq",
     "lectures",
