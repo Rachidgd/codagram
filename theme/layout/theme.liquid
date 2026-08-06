@@ -1,7 +1,13 @@
 {%- liquid
   # ---------------------------------------------------------------------------
-  # Résolution SEO centralisée.
-  # Priorité : métachamp éditorial > réglage de thème > valeur Shopify native.
+  # Résolution SEO.
+  #
+  # Le champ SEO natif de Shopify fait foi, et lui seul : page_title et
+  # page_description renvoient ce qui est saisi dans « Référencement » côté
+  # admin, sinon le titre de l'objet. Un seul endroit à modifier, pas de
+  # métachamp parallèle qui écrase silencieusement la saisie.
+  #
+  # Les replis ci-dessous ne comblent qu'un champ laissé vide.
   # ---------------------------------------------------------------------------
   assign seo_title = page_title
   assign seo_description = page_description
@@ -15,29 +21,12 @@
       assign seo_title_is_custom = true
 
     when 'page'
-      if page.metafields.seo_release.title_tag.value != blank
-        assign seo_title = page.metafields.seo_release.title_tag.value
-        assign seo_title_is_custom = true
-      endif
-      if page.metafields.seo_release.description_tag.value != blank
-        assign seo_description = page.metafields.seo_release.description_tag.value
-      elsif page.metafields.editorial.excerpt.value != blank
-        assign seo_description = page.metafields.editorial.excerpt.value
-      endif
       if page.metafields.editorial.noindex.value == true
         assign seo_noindex = true
       endif
 
     when 'article'
-      if article.metafields.seo_release.title_tag.value != blank
-        assign seo_title = article.metafields.seo_release.title_tag.value
-        assign seo_title_is_custom = true
-      endif
-      if article.metafields.seo_release.description_tag.value != blank
-        assign seo_description = article.metafields.seo_release.description_tag.value
-      elsif article.metafields.editorial.excerpt.value != blank
-        assign seo_description = article.metafields.editorial.excerpt.value
-      elsif article.excerpt != blank
+      if seo_description == blank
         assign seo_description = article.excerpt | strip_html
       endif
       if article.metafields.editorial.noindex.value == true

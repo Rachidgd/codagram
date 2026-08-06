@@ -45,7 +45,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Titre et description de la page d'accueil. Les autres pages utilisent leurs propres métachamps (seo_release.title_tag et seo_release.description_tag)."
+        "content": "Titre et description de la page d'accueil uniquement. Toutes les autres pages et tous les articles se règlent dans leur propre section « Référencement », en bas de leur fiche Shopify."
       },
       {
         "type": "text",
