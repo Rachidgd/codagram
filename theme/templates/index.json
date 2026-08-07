@@ -4,9 +4,9 @@
       "type": "home-hero",
       "settings": {
         "eyebrow": "Agence SEO et acquisition — Paris",
-        "title": "Gagnez des clients",
-        "title_accent": "que Google vous envoie.",
-        "lead": "Nous repérons les recherches que vos futurs clients tapent avant d'acheter, nous plaçons vos pages dessus, et nous les rendons capables de déclencher un appel. Site sur mesure, boutique Shopify et publicité Meta servent le même objectif.",
+        "title": "Votre site doit produire des demandes,",
+        "title_accent": "pas seulement des visites.",
+        "lead": "Nous repérons les recherches que vos futurs clients tapent avant d'acheter, nous plaçons vos pages dessus, et nous les rendons capables de déclencher un appel. Site sur mesure, boutique Shopify ou publicité Meta : nous engageons le levier qui rapporte le plus vite chez vous, pas les cinq à la fois.",
         "cta_primary": "Demander mon diagnostic",
         "cta_secondary": "Voir des résultats",
         "cta_secondary_url": "/pages/resultats",
@@ -398,8 +398,8 @@
       "type": "home-work",
       "settings": {
         "eyebrow": "Réalisations",
-        "title": "Des interfaces construites autour de la décision d'achat.",
-        "text": "Sept projets livrés, en ligne aujourd'hui. Chacun part du parcours réel : ce que le visiteur doit comprendre, dans quel ordre, et ce qui l'empêche encore d'agir."
+        "title": "Sept projets livrés, et toujours en ligne.",
+        "text": "Chacun part du parcours réel : ce que le visiteur doit comprendre, dans quel ordre, et ce qui l'empêche encore d'agir."
       },
       "blocks": {
         "p1": {
@@ -487,8 +487,8 @@
       "type": "content-logos",
       "settings": {
         "surface": "dark",
-        "title": "Ils nous ont confié leur site",
-        "note": "",
+        "title": "Ils nous ont confié leur site ou leur boutique",
+        "note": "Deux d'entre eux ont accepté que nous publiions leurs chiffres. Ils sont plus bas, datés et sourcés.",
         "speed": 45
       },
       "blocks": {
