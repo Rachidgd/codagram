@@ -221,3 +221,23 @@ aurait détruit la seule page utile des deux.
 - Demander l'indexation des six nouvelles URL dans Search Console.
 - Relever les positions à 30 et 60 jours : les pages villes déjà indexées
   sont celles qui diront le plus vite si le réalignement des H1 produit.
+
+## Règle de rédaction des balises
+
+Une balise title se compose en deux temps : la requête, puis **ce que le
+client gagne**. Pas le marché, pas la méthode. « Création de site internet à
+Nice | Clients qui réservent de loin » décrivait l'audience ; « | Visible
+toute l'année » décrit le bénéfice.
+
+La méta-description répond à la problématique du visiteur et annonce le
+résultat, en 140 à 158 caractères pour ne pas être tronquée. Elle ne
+décrit pas notre façon de travailler.
+
+| Page | Bénéfice annoncé |
+|---|---|
+| Strasbourg | Visible sur Google |
+| Marseille | Visibilité locale |
+| Lille | Plus de demandes |
+| Lyon | Visible et qui convertit |
+| Nice | Visible toute l'année |
+| Nantes | Trouvé par vos clients |
