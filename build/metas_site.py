@@ -92,6 +92,12 @@ PAGES = [
      "Soyez visible auprès des clients proches de vous : fiche Google, pages "
      "locales et avis. Plus d'appels, de visites et de devis. Audit offert."),
 
+    # « CRO » ne veut rien dire pour un dirigeant qui cherche à nous joindre.
+    ("contact",
+     None,
+     "Contactez Clickscreation pour cadrer votre projet : référencement, site "
+     "vitrine, boutique Shopify, conversion ou Meta Ads. Réponse sous 48 h."),
+
     ("a-propos",
      "À propos de Clickscreation | Agence SEO, web et Meta Ads",
      "Une agence à taille humaine, installée à Paris, qui relie site, "
