@@ -241,3 +241,25 @@ décrit pas notre façon de travailler.
 | Lyon | Visible et qui convertit |
 | Nice | Visible toute l'année |
 | Nantes | Trouvé par vos clients |
+
+## Ce qu'une méta-description ne doit pas contenir
+
+Trois mentions ont été bannies après relecture client, et la raison vaut
+au-delà de ces pages : « accès à votre nom », « vous restez propriétaire »,
+« pas un thème acheté ». Ce sont des conditions normales d'une prestation
+correcte, pas des arguments. Personne ne choisit une agence parce qu'on lui
+laisse ses mots de passe.
+
+Même verdict pour toute description de notre processus interne — rédaction,
+développement, interlocuteur unique. Le lecteur n'achète pas notre
+organisation, il achète un résultat.
+
+L'axe retenu est celui du dirigeant : être trouvé, recevoir du trafic,
+consolider sa présence locale, obtenir des demandes. Formulé au conditionnel
+de conception — « conçu pour », « construit pour » — jamais en performance
+promise : deux cas clients documentés ne permettent aucun chiffre.
+
+Contrainte transversale, apprise d'un refus précédent : la description ne
+doit supposer aucun métier. Ces requêtes sont tapées par un maçon comme par
+un cabinet comptable. Nommer un cas d'usage — réservation, avis clients —
+exclut la majorité des visiteurs dès la page de résultats.
