@@ -17,19 +17,19 @@
         "p1": {
           "type": "proof",
           "settings": {
-            "prefix": "+",
-            "value": "236",
-            "suffix": " %",
-            "label": "affichages Google en 3 mois"
+            "prefix": "",
+            "value": "1",
+            "suffix": " page",
+            "label": "par intention de recherche"
           }
         },
         "p2": {
           "type": "proof",
           "settings": {
-            "prefix": "+",
-            "value": "350",
-            "suffix": " %",
-            "label": "visites depuis Google"
+            "prefix": "",
+            "value": "3",
+            "suffix": " priorités",
+            "label": "chiffrées au diagnostic"
           }
         },
         "p3": {

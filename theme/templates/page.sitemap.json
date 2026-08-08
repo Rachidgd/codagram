@@ -16,7 +16,7 @@
       "type": "page-sitemap",
       "settings": {
         "eyebrow": "Navigation",
-        "title": "Toutes les pages du site",
+        "title": "Toutes les pages du site.",
         "text": "Cette page se construit automatiquement depuis les menus : elle reste à jour sans intervention.",
         "blog": "ressources",
         "blog_title": "Guides"

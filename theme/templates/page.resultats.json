@@ -50,7 +50,7 @@
       "type": "home-results",
       "settings": {
         "eyebrow": "Trajectoires observées",
-        "title": "Trois situations, trois points de départ différents.",
+        "title": "Deux missions, documentées du point de départ à la période observée.",
         "link_label": "",
         "disclaimer": "Les résultats dépendent du marché, de l'historique du site, de la concurrence et de la capacité d'exécution. Ils ne constituent pas une garantie de performance. Les données proviennent de la Search Console des comptes concernés, sur les périodes indiquées."
       },
@@ -94,32 +94,11 @@
             "suffix_2": " %",
             "label_2": "clics"
           }
-        },
-        "c3": {
-          "type": "case",
-          "settings": {
-            "client": "Création web",
-            "sector": "Site & CRO",
-            "period": "Site vitrine ou boutique",
-            "context": "Le choix de la base technique découle du modèle économique, jamais d'une plateforme imposée par habitude.",
-            "action": "Architecture, message, preuve et performance construits à partir du parcours d'achat réel.",
-            "metric_1": "on",
-            "prefix_1": "",
-            "value_1": "2",
-            "suffix_1": " formats",
-            "label_1": "vitrine ou e-commerce",
-            "metric_2": "on",
-            "prefix_2": "",
-            "value_2": "1",
-            "suffix_2": " objectif",
-            "label_2": "générer plus d'actions"
-          }
         }
       },
       "block_order": [
         "c1",
-        "c2",
-        "c3"
+        "c2"
       ]
     },
     "lecture": {
@@ -127,7 +106,7 @@
       "settings": {
         "surface": "dark",
         "reverse": false,
-        "eyebrow": "Comment lire ces chiffres",
+        "eyebrow": "Méthode de lecture",
         "title": "Comment lire ces chiffres.",
         "text": "<p>Un pourcentage impressionne d'autant plus que le point de départ est bas. C'est pourquoi nous indiquons systématiquement la situation initiale et la période : sans ces deux informations, un chiffre de croissance ne veut rien dire.</p><p>Nous ne publions pas les cas sans effet mesurable. Nous en parlons volontiers pendant un échange : ce sont eux qui expliquent le mieux notre méthode.</p>",
         "cta_label": "Comprendre notre méthode",
@@ -166,8 +145,8 @@
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Le point de départ de chacun de ces clients.",
-        "text": "Décrivez-la en quatre questions. Nous revenons avec une lecture argumentée de ce qui limite aujourd'hui votre acquisition.",
+        "title": "Vous êtes là où ces deux clients étaient il y a six mois.",
+        "text": "Décrivez votre situation en quatre questions. Nous revenons avec une lecture argumentée de ce qui limite aujourd'hui votre acquisition.",
         "cta_label": "Demander un diagnostic",
         "note": "Réponse sous 48 h"
       },
@@ -194,7 +173,7 @@
       "type": "content-logos",
       "settings": {
         "surface": "dark",
-        "title": "Quelques-uns des sites que nous avons construits",
+        "title": "Quelques-uns des sites que nous avons construits.",
         "note": "Les chiffres publiés plus haut portent sur deux de ces comptes. Les autres missions sont en cours ou couvertes par un accord de confidentialité.",
         "speed": 45
       },

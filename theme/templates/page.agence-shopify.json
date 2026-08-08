@@ -54,8 +54,8 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Le constat",
-        "title": "Vos ventes se perdent entre le panier et le paiement.",
-        "text": "<p>Elles les perdent entre l'arrivée sur la fiche produit et le paiement. Un thème acheté puis rallongé d'une dizaine d'applications produit exactement cela. Une page lente, un message flou, et rien pour rassurer au moment où le doute apparaît.</p><p>Nous reprenons ce trajet dans l'ordre où le client le vit — et nous supprimons ce qui l'interrompt.</p>",
+        "title": "Vos ventes se perdent avant le paiement, pas pendant.",
+        "text": "<p>La plupart des boutiques cherchent le problème au moment du paiement. Il est presque toujours en amont, entre l'arrivée sur la fiche produit et le panier. Une page lente, un message flou, et rien pour rassurer à l'instant où le doute apparaît.</p><p>Nous reprenons ce trajet dans l'ordre où le client le vit — et nous supprimons ce qui l'interrompt.</p>",
         "cta_label": "Voir la méthode complète",
         "cta_url": "/pages/a-propos"
       },

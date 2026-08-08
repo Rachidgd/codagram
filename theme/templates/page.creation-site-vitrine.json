@@ -18,18 +18,18 @@
           "type": "proof",
           "settings": {
             "prefix": "",
-            "value": "0",
-            "suffix": "",
-            "label": "constructeur de pages"
+            "value": "5",
+            "suffix": " étapes",
+            "label": "avec validation à chacune"
           }
         },
         "p2": {
           "type": "proof",
           "settings": {
             "prefix": "",
-            "value": "100",
-            "suffix": " %",
-            "label": "code écrit pour vous"
+            "value": "2",
+            "suffix": " tours",
+            "label": "de corrections au contrat"
           }
         },
         "p3": {
@@ -52,7 +52,7 @@
       "type": "content-quote",
       "settings": {
         "eyebrow": "Notre parti pris",
-        "quote": "Un site vitrine se juge à une seule chose : le nombre de personnes qui vous écrivent après l'avoir lu. Tout le reste — animations, mentions, palmarès — n'est utile que s'il sert cette phrase.",
+        "quote": "Un site vitrine se juge à une seule chose : le nombre de personnes qui vous écrivent après l'avoir lu. Animations, distinctions, effets de style : tout le reste n'est utile que s'il sert ce chiffre-là.",
         "attribution": "Clickscreation"
       }
     },
@@ -269,8 +269,8 @@
           "type": "row",
           "settings": {
             "criteria": "Autonomie",
-            "value_a": "Vous modifiez les contenus",
-            "value_b": "Vous modifiez les contenus"
+            "value_a": "Vous modifiez tout, y compris la structure",
+            "value_b": "Vous modifiez les contenus, pas le cadre"
           }
         },
         "r7": {

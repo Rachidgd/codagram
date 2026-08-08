@@ -127,7 +127,7 @@
           "type": "qa",
           "settings": {
             "question": "Combien de personnes travaillent sur mon projet ?",
-            "answer": "<p>Une à deux, selon le périmètre, et toujours les mêmes du début à la fin. Vous gardez le même interlocuteur du début à la fin, sans réunion de passation. C'est aussi ce qui limite le nombre de clients que nous prenons en même temps.</p>"
+            "answer": "<p>Une à deux, selon le périmètre, et toujours les mêmes du début à la fin — sans réunion de passation ni changement d'interlocuteur en cours de route. C'est aussi ce qui limite le nombre de clients que nous prenons en même temps.</p>"
           }
         },
         "q2": {

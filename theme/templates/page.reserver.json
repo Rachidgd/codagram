@@ -52,7 +52,7 @@
         "surface": "dark",
         "eyebrow": "Votre créneau",
         "title": "Réservez votre audit en deux champs.",
-        "text": "Nous préparons l'analyse avant l'appel. Donnez-nous simplement de quoi vous recontacter et regarder votre site.",
+        "text": "Donnez-nous simplement de quoi vous recontacter et regarder votre site.",
         "cta_label": "Réserver mon créneau",
         "note": "Gratuit — réponse sous 48 h",
         "origine": "landing-reserver",
@@ -210,7 +210,7 @@
           "type": "step",
           "settings": {
             "title": "Vous décrivez votre situation",
-            "text": "Quatre questions dans le formulaire. Cela nous permet de préparer l'analyse avant l'appel.",
+            "text": "Quatre questions dans le formulaire. Elles suffisent à savoir où chercher.",
             "duration": "2 minutes"
           }
         },
@@ -290,7 +290,7 @@
       "type": "content-cta",
       "settings": {
         "eyebrow": "Réserver",
-        "title": "Décrivez votre situation, nous préparons l'analyse.",
+        "title": "Dites-nous où vous en êtes, nous regardons avant de vous rappeler.",
         "text": "Quatre questions suffisent. Nous revenons vers vous sous deux jours ouvrés avec une proposition de créneau.",
         "cta_label": "Réserver mon créneau",
         "note": "Réponse sous 48 h"

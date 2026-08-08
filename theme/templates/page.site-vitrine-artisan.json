@@ -83,7 +83,7 @@
           "type": "step",
           "settings": {
             "title": "Vos photos de chantier",
-            "text": "Nous vous disons quoi photographier avec votre téléphone. Le avant-après vaut tous les arguments.",
+            "text": "Nous vous disons quoi photographier avec votre téléphone. L'avant-après vaut tous les arguments.",
             "duration": "À votre rythme"
           }
         },
@@ -109,7 +109,7 @@
         "surface": "paper",
         "density": "comfortable",
         "eyebrow": "Ce que comprend le site",
-        "title": "",
+        "title": "Six éléments, et l'ordre compte.",
         "text": ""
       },
       "blocks": {
@@ -195,7 +195,7 @@
           "type": "qa",
           "settings": {
             "question": "Faut-il afficher mes prix ?",
-            "answer": "<p>Pas nécessairement un tarif exact, mais un ordre de grandeur ou un montant minimum d'intervention, oui. C'est ce qui écarte les demandes irréalistes avant qu'elles ne vous coûtent un déplacement. Les artisans qui franchissent ce pas reçoivent moins d'appels et signent davantage.</p>"
+            "answer": "<p>Pas nécessairement un tarif exact, mais un ordre de grandeur ou un montant minimum d'intervention, oui. C'est ce qui écarte les demandes irréalistes avant qu'elles ne vous coûtent un déplacement. C'est le point sur lequel nous insistons le plus, et celui sur lequel on nous résiste le plus.</p>"
           }
         },
         "q3": {
