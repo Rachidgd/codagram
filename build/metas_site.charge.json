@@ -1,0 +1,251 @@
+{
+  "pages": [
+    {
+      "handle": "agence-seo",
+      "title": "Agence SEO et référencement naturel | Plus de clients",
+      "description": "Être présent sur les recherches qui précèdent un achat, c'est du trafic chaque mois et des demandes qui arrivent seules. Diagnostic gratuit sous 48 h."
+    },
+    {
+      "handle": "agence-shopify",
+      "title": "Agence Shopify | Création, refonte et plus de ventes",
+      "description": "Création ou refonte de votre boutique Shopify : rapide, visible sur Google et construite pour vendre davantage à trafic égal. Diagnostic gratuit 48 h."
+    },
+    {
+      "handle": "creation-site-vitrine",
+      "title": "Création de site vitrine | Un site qui amène des clients",
+      "description": "Un site vitrine clair, rapide et visible sur Google, qui présente votre activité et transforme vos visiteurs en appels et en demandes de devis."
+    },
+    {
+      "handle": "expert-meta-ads",
+      "title": "Expert Meta Ads : campagnes Facebook et Instagram rentables",
+      "description": null
+    },
+    {
+      "handle": "optimisation-cro",
+      "title": "Optimisation CRO | Plus de ventes sans plus de trafic",
+      "description": "Le même trafic, plus de ventes : nous corrigeons ce qui fait abandonner vos visiteurs sur vos pages, vos formulaires et votre parcours mobile."
+    },
+    {
+      "handle": "seo-local",
+      "title": "SEO local | Plus d'appels depuis les recherches de proximité",
+      "description": "Soyez visible auprès des clients proches de vous : fiche Google, pages locales et avis. Plus d'appels, de visites et de devis. Audit offert."
+    },
+    {
+      "handle": "a-propos",
+      "title": "À propos de Clickscreation | Agence SEO, web et Meta Ads",
+      "description": "Une agence à taille humaine, installée à Paris, qui relie site, référencement et publicité pour transformer votre visibilité en appels et en demandes."
+    },
+    {
+      "handle": "audit-seo",
+      "title": "Audit SEO gratuit | Vos 3 priorités pour monter sur Google",
+      "description": "Nous cherchons ce qui bloque votre visibilité et vous renvoyons les trois actions à mener en premier pour gagner des places. Gratuit, sous 48 h."
+    },
+    {
+      "handle": "audit-meta-ads",
+      "title": "Audit Meta Ads gratuit : où part vraiment votre budget ?",
+      "description": "Campagnes, ciblage, créas, tracking : nous cherchons ce qui vous coûte des ventes avant que vous n'ajoutiez un euro de budget. Gratuit, sous 48 h."
+    },
+    {
+      "handle": "analyse-concurrentielle-meta-ads",
+      "title": "Analyse concurrentielle Meta Ads : trouvez votre angle",
+      "description": "Ce que vos concurrents diffusent, depuis quand et avec quels arguments : de quoi lancer des campagnes plus claires et dépenser moins pour vendre autant."
+    },
+    {
+      "handle": "audit-ecommerce",
+      "title": "Audit e-commerce : trouvez ce qui freine vos ventes",
+      "description": "Boutique lente, offre floue, panier abandonné, pages invisibles : nous vous disons ce qui vous fait perdre des ventes et par quoi commencer. Gratuit."
+    },
+    {
+      "handle": "audit-merchant-center",
+      "title": "Audit Merchant Center : débloquez vos produits refusés",
+      "description": "Flux, produits refusés, titres, tracking : nous cherchons ce qui empêche vos produits d'apparaître dans Shopping et ce qu'il faut corriger en premier."
+    },
+    {
+      "handle": "reserver",
+      "title": null,
+      "description": "Choisissez un créneau : nous analysons votre site et vous repartez avec les priorités à corriger pour gagner en visibilité et en demandes. C'est gratuit."
+    },
+    {
+      "handle": "plan-du-site",
+      "title": null,
+      "description": "Toutes les pages de Clickscreation en un coup d'œil : référencement, création de site, Shopify, Meta Ads, conversion, audits, villes et ressources."
+    },
+    {
+      "handle": "mentions-legales",
+      "title": null,
+      "description": "Mentions légales du site Clickscreation : éditeur, directeur de la publication, hébergeur, propriété intellectuelle et coordonnées de contact."
+    },
+    {
+      "handle": "politique-de-confidentialite",
+      "title": null,
+      "description": "Politique de confidentialité de Clickscreation : données collectées, finalités, durées de conservation, cookies et exercice de vos droits."
+    },
+    {
+      "handle": "seo-par-ville",
+      "title": "SEO par ville | Le référencement local, ville par ville",
+      "description": "Nos pages ville par ville : ce qui se joue sur chaque marché local et comment y gagner en visibilité, en trafic et en demandes. Diagnostic gratuit 48 h."
+    },
+    {
+      "handle": "consultant-seo-paris",
+      "title": "Consultant SEO Paris | Être visible malgré la concurrence",
+      "description": "À Paris, tout le monde est sur Google et peu sont vus. Nous visons les recherches encore accessibles pour vous ramener du trafic et des demandes."
+    },
+    {
+      "handle": "consultant-seo-lyon",
+      "title": "Consultant SEO Lyon | Capter la demande locale sur Google",
+      "description": "Référencement naturel à Lyon : apparaître sur les recherches de votre activité, faire venir du trafic local et transformer ces visites en clients."
+    },
+    {
+      "handle": "consultant-seo-rennes",
+      "title": "Consultant SEO Rennes | Être choisi par ceux qui comparent",
+      "description": "Référencement naturel à Rennes : vos clients comparent avant d'appeler. Nous vous plaçons sur ces recherches pour capter le trafic et les demandes."
+    },
+    {
+      "handle": "agence-seo-marseille",
+      "title": "Agence SEO Marseille | Visible quartier par quartier",
+      "description": "Référencement naturel à Marseille : apparaître sur les recherches des quartiers que vous couvrez, capter ce trafic et recevoir plus de demandes."
+    },
+    {
+      "handle": "agence-seo-lille",
+      "title": "Agence SEO Lille | Visible en France et en Belgique",
+      "description": "Référencement naturel à Lille : capter la demande locale et la clientèle belge voisine, pour du trafic régulier et davantage de demandes de devis."
+    },
+    {
+      "handle": "agence-seo-nantes",
+      "title": "Agence SEO Nantes | Capter une demande qui augmente",
+      "description": "Référencement naturel à Nantes : une ville qui grandit vite, donc des clients qui cherchent tout sur Google. Nous vous plaçons sur ces recherches-là."
+    },
+    {
+      "handle": "agence-seo-bordeaux",
+      "title": "Agence SEO Bordeaux | Passer devant vos concurrents",
+      "description": "Référencement naturel à Bordeaux : sur un marché devenu disputé, nous visons les recherches qui rapportent pour vous ramener trafic et demandes."
+    },
+    {
+      "handle": "agence-seo-nice",
+      "title": "Agence SEO Nice | Une visibilité qui tient toute l'année",
+      "description": "Référencement naturel à Nice : capter la demande de la saison sans disparaître le reste de l'année, pour du trafic et des demandes réguliers."
+    },
+    {
+      "handle": "agence-seo-toulouse",
+      "title": "Agence SEO Toulouse | Gagner en visibilité et en demandes",
+      "description": "Référencement naturel à Toulouse : rendre votre savoir-faire lisible sur Google, capter les recherches de votre marché et recevoir plus de demandes."
+    },
+    {
+      "handle": "agence-seo-montpellier",
+      "title": "Agence SEO Montpellier | Visible sur toute la métropole",
+      "description": "Référencement naturel à Montpellier et dans les communes voisines : apparaître là où vos clients cherchent et transformer ce trafic en demandes."
+    },
+    {
+      "handle": "agence-seo-strasbourg",
+      "title": "Agence SEO Strasbourg | Visible en France et en Allemagne",
+      "description": "Référencement naturel à Strasbourg : être visible côté français comme côté allemand, pour élargir votre trafic et recevoir davantage de demandes."
+    },
+    {
+      "handle": "agence-seo-grenoble",
+      "title": "Agence SEO Grenoble | Rendre votre expertise visible",
+      "description": "Référencement naturel à Grenoble : traduire ce que vous savez faire en pages que Google comprend, pour attirer du trafic et des demandes concrètes."
+    },
+    {
+      "handle": "agence-seo-luxembourg",
+      "title": "Agence SEO Luxembourg | Plus de visibilité, plus de clients",
+      "description": "Référencement naturel au Luxembourg : être visible dans les langues de vos clients, capter les recherches de votre marché et recevoir plus de demandes."
+    },
+    {
+      "handle": "consultant-seo-suisse",
+      "title": null,
+      "description": "Référencement naturel en Suisse romande : apparaître sur google.ch à Genève, Lausanne et dans les cantons voisins, et transformer ce trafic en clients."
+    },
+    {
+      "handle": "consultant-seo-belgique",
+      "title": "Consultant SEO Belgique | Gagner en visibilité locale",
+      "description": "Référencement naturel en Belgique francophone : apparaître sur les recherches de votre région, attirer du trafic et recevoir davantage de demandes."
+    },
+    {
+      "handle": "site-vitrine-restaurant",
+      "title": null,
+      "description": "Un site qui remplit vos couverts : carte à jour, réservation en direct sans commission, avis en avant, visible sur Google. Audit gratuit sous 48 h."
+    },
+    {
+      "handle": "site-vitrine-artisan",
+      "title": null,
+      "description": "Un site qui transforme vos chantiers en demandes de devis, visible sur vos villes d'intervention. Photos, avis, contact direct. Audit gratuit sous 48 h."
+    },
+    {
+      "handle": "creation-site-internet-strasbourg",
+      "title": "Création site internet Strasbourg | Sur mesure et SEO",
+      "description": "Votre site à Strasbourg placé sur les recherches de votre métier, pour attirer du trafic local et le transformer en demandes de devis et en rendez-vous."
+    },
+    {
+      "handle": "creation-site-internet-marseille",
+      "title": "Création site internet Marseille | Site vitrine sur mesure",
+      "description": "À Marseille, votre site peut devenir votre première source de contacts : visible sur les recherches de votre activité, il déclenche l'appel ou le message."
+    },
+    {
+      "handle": "creation-site-internet-lille",
+      "title": "Création site internet Lille | Sur mesure, SEO inclus",
+      "description": null
+    },
+    {
+      "handle": "creation-site-internet-lyon",
+      "title": "Création site internet Lyon | Site vitrine et référencement",
+      "description": null
+    },
+    {
+      "handle": "creation-site-internet-nice",
+      "title": "Création site internet Nice | Agence web sur mesure",
+      "description": null
+    },
+    {
+      "handle": "creation-site-internet-nantes",
+      "title": "Création site internet Nantes | Agence web et site vitrine",
+      "description": null
+    }
+  ],
+  "articles": [
+    {
+      "handle": "boutique-shopify-qui-convertit-2026",
+      "title": "Boutique Shopify qui convertit : la checklist 2026",
+      "description": "Structure, fiches produits, vitesse, référencement et tracking : la checklist complète pour lancer une boutique qui vend, et pas seulement qui existe."
+    },
+    {
+      "handle": "delais-resultats-seo",
+      "title": "SEO : combien de temps avant les premiers résultats ?",
+      "description": null
+    },
+    {
+      "handle": "migrer-vers-shopify-sans-perdre-seo",
+      "title": "Migrer vers Shopify sans perdre votre SEO : le plan",
+      "description": null
+    },
+    {
+      "handle": "seo-ou-google-ads-par-quoi-commencer",
+      "title": null,
+      "description": "Délais, coûts, durabilité, intention : le comparatif SEO ou Google Ads pour savoir par quoi commencer selon votre budget et vos objectifs."
+    },
+    {
+      "handle": "agence-seo-ou-consultant-seo",
+      "title": null,
+      "description": "Budget, périmètre, continuité : agence SEO ou consultant, les 7 critères qui comptent vraiment et les signaux d'alarme à repérer avant de signer."
+    },
+    {
+      "handle": "guide-seo-leads-2026",
+      "title": "Guide SEO 2026 : transformer le trafic en demandes",
+      "description": "Intentions de recherche, cocon sémantique, E-E-A-T, IA et mesure : la méthode complète pour que votre référencement produise des demandes, pas du trafic."
+    },
+    {
+      "handle": "seo-ou-meta-ads-2026",
+      "title": null,
+      "description": "Délais, coûts, durabilité, intention : le comparatif honnête entre référencement et publicité Meta, et pourquoi les meilleurs comptes cumulent."
+    },
+    {
+      "handle": "site-vitrine-pas-de-demandes-2026",
+      "title": null,
+      "description": "Promesse floue, preuves absentes, formulaire trop long, mobile négligé : les 7 corrections à faire pour qu'un site vitrine génère enfin des demandes."
+    },
+    {
+      "handle": "angles-creatifs-publicite-meta",
+      "title": null,
+      "description": "Problème, preuve, comparaison, objection : 12 angles publicitaires prêts à briefer, chacun illustré par un exemple et adapté au type de votre offre."
+    }
+  ]
+}

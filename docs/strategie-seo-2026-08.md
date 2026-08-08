@@ -263,3 +263,67 @@ Contrainte transversale, apprise d'un refus précédent : la description ne
 doit supposer aucun métier. Ces requêtes sont tapées par un maçon comme par
 un cabinet comptable. Nommer un cas d'usage — réservation, avis clients —
 exclut la majorité des visiteurs dès la page de résultats.
+
+## Relecture générale des balises, 8 août 2026
+
+Avant publication, les 45 pages et 40 articles ont été relus champ par
+champ. Quatre-vingts valeurs corrigées sur 165. Voici ce qui n'allait pas,
+regroupé par cause plutôt que par page — la cause se répète, la page non.
+
+### Une promesse d'implantation que nous ne tenons pas
+
+`SEO par ville` annonçait « Experts locaux et leads ». Nous n'avons pas
+d'expert à Nice ni à Grenoble : l'agence est à Paris. Une promesse qui
+tombe au premier rendez-vous coûte plus cher que l'absence de promesse.
+Remplacée par « Le référencement local, ville par ville », qui décrit ce
+que la page contient sans rien inventer.
+
+### Notre vocabulaire à la place de celui du client
+
+« Leads qualifiés », « acquisition organique », « SEO-friendly »,
+« hiérarchiser vos offres », « consolider les fondations techniques ».
+Sept titres et quatorze descriptions parlaient de nos livrables. Le
+dirigeant qui tape « agence seo bordeaux » ne cherche pas une acquisition
+organique : il veut du trafic, des appels, des devis. Les balises disent
+maintenant cela.
+
+### Un angle qui rétrécit le marché
+
+Quatre titres restreignaient l'audience à un segment : « Requêtes
+techniques B2B » sur Toulouse, « Saison et clientèle internationale » sur
+Nice, « Visibilité sur marchés techniques » sur Grenoble, « Français et
+allemand » sur Strasbourg. L'angle est juste — le corps de ces pages le
+développe et c'est ce qui les distingue — mais il n'a rien à faire dans la
+balise, lue par toute la requête générique. Une entreprise de BTP à
+Toulouse qui lit « B2B » passe son chemin.
+
+Les titres sont redevenus ouverts ; l'angle reste dans la page, où il
+convainc ceux qu'il concerne sans écarter les autres.
+
+### Quatorze descriptions bâties sur la même phrase à trou
+
+« Agence SEO à [Ville] pour structurer vos pages, améliorer votre
+visibilité Google et générer davantage de demandes qualifiées. » Douze
+villes plus le hub plus le Luxembourg. Chaque description part désormais
+d'un fait propre au marché : la clientèle belge à Lille, les quartiers à
+Marseille, la croissance démographique à Nantes, la saison à Nice, les
+communes voisines à Montpellier. Elles placent au passage « référencement
+naturel à [Ville] », requête secondaire absente jusqu'ici.
+
+### Défauts mécaniques
+
+Deux titres d'articles dépassaient 60 caractères et se faisaient couper.
+Deux descriptions dépassaient 158. Deux pages légales n'avaient aucune
+description. Trois descriptions d'articles recopiaient leur propre titre,
+si bien que le résultat de recherche disait deux fois la même chose. Deux
+autres finissaient par « Par Clickscreation », vingt caractères qui ne
+convainquent personne. Un titre portait une majuscule au milieu d'une
+phrase, un séparateur sur six pages villes différait des cinq autres.
+
+### Le contrôle est désormais automatique
+
+`build/metas_site.py` porte les corrections et refuse de produire sa charge
+utile si l'une d'elles enfreint une règle : longueur, vocabulaire proscrit,
+description recopiant son titre, deux pages partageant le même segment
+après la barre verticale. Le vocabulaire proscrit est la liste des refus
+successifs du client — elle s'allonge, elle ne se discute plus.
