@@ -1,0 +1,214 @@
+{%- comment -%}
+  Comparaison avant / après, au curseur.
+
+  Deux images superposées, la première découpée par un `clip-path` piloté
+  par une variable CSS. Le curseur est un vrai `input[type=range]` : il
+  fonctionne à la souris, au doigt et au clavier sans code supplémentaire,
+  et les lecteurs d'écran annoncent la valeur.
+
+  Sans JavaScript, la comparaison s'affiche figée à 50 % — les deux états
+  restent donc visibles et le contenu garde son sens.
+
+  Prudence réglementaire : en esthétique, une photographie avant/après ne
+  doit pas laisser croire à un résultat garanti. La mention sous la section
+  est obligatoire et rappelée dans l'éditeur.
+{%- endcomment -%}
+
+<section
+  class="section {{ section.settings.surface }}"
+  id="{{ section.settings.ancre | default: 'avant-apres' | handleize }}"
+  {% if section.settings.surface == 'surface-sombre' %}
+    data-entete-inverse
+  {% endif %}
+>
+  <div class="lisiere">
+    <div class="grille-12 gap-y-8">
+      <div class="col-span-12 lg:col-span-5">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+      </div>
+      {%- if section.settings.chapo != blank -%}
+        <div
+          class="col-span-12 lg:col-span-5 lg:col-start-8 self-end text-sm {% if section.settings.surface == 'surface-sombre' %}text-brume{% else %}text-grain{% endif %}"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          {{ section.settings.chapo }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="comparaisons mt-12 lg:mt-16" data-reveal-groupe data-reveal-pas="90">
+      {%- for bloc in section.blocks -%}
+        {%- assign uid = section.id | append: '-' | append: forloop.index -%}
+        <figure class="comparaison" data-reveal {{ bloc.shopify_attributes }}>
+          <ely-comparaison class="comparaison__cadre" style="--position: 50%">
+            {%- comment -%} État de départ — visible sous le volet. {%- endcomment -%}
+            <div class="comparaison__couche comparaison__couche--apres">
+              {%- render 'image-reactive',
+                image: bloc.settings.image_apres,
+                ratio: section.settings.ratio,
+                tailles: '(min-width: 64rem) 44vw, 92vw',
+                alt: bloc.settings.alt_apres
+              -%}
+            </div>
+
+            {%- comment -%} Volet découpé, superposé. {%- endcomment -%}
+            <div class="comparaison__couche comparaison__couche--avant" aria-hidden="true">
+              {%- render 'image-reactive',
+                image: bloc.settings.image_avant,
+                ratio: section.settings.ratio,
+                tailles: '(min-width: 64rem) 44vw, 92vw',
+                alt: ''
+              -%}
+            </div>
+
+            <span class="comparaison__etiquette comparaison__etiquette--avant" aria-hidden="true">
+              {{ section.settings.libelle_avant }}
+            </span>
+            <span class="comparaison__etiquette comparaison__etiquette--apres" aria-hidden="true">
+              {{ section.settings.libelle_apres }}
+            </span>
+
+            <span class="comparaison__poignee" aria-hidden="true">
+              <span class="comparaison__trait"></span>
+              <span class="comparaison__prise">
+                {%- render 'icone', nom: 'ui.fleche-gauche', taille: 13 -%}
+                {%- render 'icone', nom: 'ui.fleche-droite', taille: 13 -%}
+              </span>
+            </span>
+
+            <label class="lecteur-seul" for="comparaison-{{ uid }}">
+              {{ section.settings.libelle_curseur }}
+            </label>
+            <input
+              class="comparaison__curseur"
+              type="range"
+              id="comparaison-{{ uid }}"
+              min="0"
+              max="100"
+              value="50"
+              step="1"
+              data-comparaison-curseur
+            >
+          </ely-comparaison>
+
+          <figcaption class="comparaison__legende">
+            {%- if bloc.settings.protocole != blank -%}
+              <span class="comparaison__protocole">{{ bloc.settings.protocole }}</span>
+            {%- endif -%}
+            {%- if bloc.settings.detail != blank -%}
+              <span class="comparaison__detail">{{ bloc.settings.detail }}</span>
+            {%- endif -%}
+          </figcaption>
+        </figure>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.mention != blank -%}
+      <p
+        class="comparaison__mention {% if section.settings.surface == 'surface-sombre' %}text-brume{% else %}text-grain{% endif %}"
+        data-reveal
+      >
+        {{ section.settings.mention }}
+      </p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avant / après",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Rappel : une photographie avant/après ne doit jamais laisser croire à un résultat garanti. Utilisez des photos prises dans les mêmes conditions de lumière, de cadrage et de maquillage, sans retouche, et conservez l'accord écrit de la personne. La mention en bas de section est obligatoire."
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" },
+        { "value": "surface-sombre", "label": "Vert absolu" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Format des images",
+      "options": [
+        { "value": "portrait", "label": "Portrait" },
+        { "value": "carre", "label": "Carré" },
+        { "value": "paysage", "label": "Paysage" }
+      ],
+      "default": "portrait"
+    },
+    { "type": "text", "id": "ancre", "label": "Ancre", "default": "avant-apres" },
+    { "type": "text", "id": "index", "label": "Index", "default": "03" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Résultats" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Faites glisser, jugez par vous-même."
+    },
+    {
+      "type": "textarea",
+      "id": "chapo",
+      "label": "Texte d'accompagnement",
+      "default": "Photos prises au cabinet, dans les mêmes conditions de lumière et de cadrage, sans retouche. Le nombre de séances est indiqué sous chaque comparaison."
+    },
+    { "type": "text", "id": "libelle_avant", "label": "Étiquette de gauche", "default": "Avant" },
+    { "type": "text", "id": "libelle_apres", "label": "Étiquette de droite", "default": "Après" },
+    {
+      "type": "text",
+      "id": "libelle_curseur",
+      "label": "Libellé du curseur",
+      "info": "Lu par les lecteurs d'écran. Décrit l'action, pas l'apparence.",
+      "default": "Faire glisser pour comparer l'avant et l'après"
+    },
+    {
+      "type": "textarea",
+      "id": "mention",
+      "label": "Mention obligatoire",
+      "default": "Photographies non retouchées, publiées avec l'accord écrit des personnes concernées. Les résultats présentés sont individuels : ils dépendent de la peau, de l'âge, du mode de vie et de l'observance du protocole, et ne constituent pas une garantie."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comparaison",
+      "name": "Comparaison",
+      "limit": 6,
+      "settings": [
+        { "type": "image_picker", "id": "image_avant", "label": "Photo — avant" },
+        { "type": "image_picker", "id": "image_apres", "label": "Photo — après" },
+        {
+          "type": "text",
+          "id": "alt_apres",
+          "label": "Texte alternatif",
+          "info": "Décrit ce que montre la comparaison. Exemple : joue droite avant et après quatre séances de peeling."
+        },
+        { "type": "text", "id": "protocole", "label": "Protocole suivi", "default": "Protocole" },
+        { "type": "text", "id": "detail", "label": "Détail", "info": "Nombre de séances, délai constaté." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avant / après",
+      "blocks": [
+        { "type": "comparaison", "settings": { "protocole": "Protocole à renseigner", "detail": "Séances et délai à renseigner" } },
+        { "type": "comparaison", "settings": { "protocole": "Protocole à renseigner", "detail": "Séances et délai à renseigner" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

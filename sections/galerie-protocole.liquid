@@ -1,0 +1,143 @@
+{%- comment -%}
+  Galerie du protocole — le soin en images.
+
+  Prévue pour être remplie plus tard avec le cabinet : tant qu'aucune photo
+  n'est chargée, chaque emplacement affiche le repli graphique du thème
+  (trame de filets) plutôt qu'une silhouette générique, et la légende
+  indique ce que la photo devra montrer. La section reste donc lisible et
+  utile avant même d'avoir les visuels.
+{%- endcomment -%}
+
+<section
+  class="section {{ section.settings.surface }}"
+  id="{{ section.settings.ancre | default: 'en-images' | handleize }}"
+  {% if section.settings.surface == 'surface-sombre' %}
+    data-entete-inverse
+  {% endif %}
+>
+  <div class="lisiere">
+    <div class="grille-12 gap-y-8">
+      <div class="col-span-12 lg:col-span-5">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+      </div>
+      {%- if section.settings.chapo != blank -%}
+        <div
+          class="col-span-12 lg:col-span-5 lg:col-start-8 self-end text-sm {% if section.settings.surface == 'surface-sombre' %}text-brume{% else %}text-grain{% endif %}"
+          data-reveal
+          style="--reveal-delay: 120ms"
+        >
+          {{ section.settings.chapo }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="galerie mt-12 lg:mt-16" data-reveal-groupe data-reveal-pas="80">
+      {%- for bloc in section.blocks -%}
+        <figure
+          class="galerie__element {% if bloc.settings.large %}galerie__element--large{% endif %}"
+          data-reveal
+          {{ bloc.shopify_attributes }}
+        >
+          {%- render 'image-reactive',
+            image: bloc.settings.image,
+            ratio: bloc.settings.ratio,
+            tailles: '(min-width: 64rem) 30vw, (min-width: 48rem) 46vw, 92vw',
+            alt: bloc.settings.alt,
+            zoom: true
+          -%}
+          {%- if bloc.settings.legende != blank -%}
+            <figcaption class="galerie__legende">{{ bloc.settings.legende }}</figcaption>
+          {%- endif -%}
+        </figure>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Le soin en images",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Section prévue pour être complétée avec les photos du cabinet. Tant qu'un emplacement est vide, il affiche un repli graphique et sa légende : la page reste présentable. Prévoir des photos réelles du lieu, du matériel et du geste — jamais de banque d'images."
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" },
+        { "value": "surface-sombre", "label": "Vert absolu" }
+      ]
+    },
+    { "type": "text", "id": "ancre", "label": "Ancre", "default": "en-images" },
+    { "type": "text", "id": "index", "label": "Index", "default": "04" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Le soin en images" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Ce que vous verrez en arrivant."
+    },
+    {
+      "type": "textarea",
+      "id": "chapo",
+      "label": "Texte d'accompagnement",
+      "default": "Le lieu, le matériel et le geste, photographiés au cabinet. Aucune image de banque : ce que vous voyez ici est ce que vous trouverez sur place."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 6,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Texte alternatif",
+          "info": "Décrit ce que montre la photo, pour les lecteurs d'écran et les moteurs."
+        },
+        {
+          "type": "text",
+          "id": "legende",
+          "label": "Légende",
+          "info": "Sert aussi de consigne de prise de vue tant que la photo n'est pas chargée."
+        },
+        {
+          "type": "select",
+          "id": "ratio",
+          "label": "Format",
+          "options": [
+            { "value": "portrait", "label": "Portrait" },
+            { "value": "carre", "label": "Carré" },
+            { "value": "paysage", "label": "Paysage" }
+          ],
+          "default": "portrait"
+        },
+        { "type": "checkbox", "id": "large", "label": "Occuper deux colonnes", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Le soin en images",
+      "blocks": [
+        { "type": "image", "settings": { "ratio": "paysage", "large": true, "legende": "À photographier : la cabine, en lumière naturelle, sans personne dans le champ." } },
+        { "type": "image", "settings": { "ratio": "portrait", "legende": "À photographier : l'appareil utilisé pour ce protocole, en plan rapproché." } },
+        { "type": "image", "settings": { "ratio": "portrait", "legende": "À photographier : le geste en cours, mains et zone traitée, sans visage identifiable." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

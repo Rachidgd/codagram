@@ -419,7 +419,7 @@
       ],
       "settings": {
         "surface": "surface-sombre",
-        "index": "06",
+        "index": "07",
         "surtitre": "Orientation",
         "titre": "Quatre questions pour savoir par où commencer.",
         "chapo": "<p>Cet outil oriente, il ne diagnostique pas. Le protocole retenu est toujours confirmé — ou écarté — lors du bilan en cabinet.</p>",
@@ -478,7 +478,7 @@
       ],
       "settings": {
         "surface": "surface-peau",
-        "index": "07",
+        "index": "08",
         "surtitre": "Qui vous reçoit",
         "fonction": "Infirmière diplômée d'État — praticienne en soin esthétique",
         "citation": "Je préfère annuler une séance que la faire sur une peau qui n'est pas prête.",
@@ -520,7 +520,7 @@
       ],
       "settings": {
         "surface": "surface-craie",
-        "index": "08",
+        "index": "09",
         "surtitre": "Retours",
         "titre": "Ce qu'en disent celles et ceux qui reviennent.",
         "libelle_avis": "Lire tous les avis"
@@ -530,7 +530,7 @@
       "type": "journal-apercu",
       "settings": {
         "surface": "",
-        "index": "09",
+        "index": "10",
         "surtitre": "Le journal",
         "titre": "Comprendre avant de choisir.",
         "libelle_lien": "Tous les articles",
@@ -594,7 +594,7 @@
       ],
       "settings": {
         "surface": "",
-        "index": "10",
+        "index": "11",
         "surtitre": "Questions fréquentes",
         "titre": "Ce qu'on nous demande avant de venir.",
         "aide": "<p>Une question qui n'est pas ici ? Elle mérite probablement une vraie réponse, pas une ligne de FAQ.</p>",
@@ -602,6 +602,53 @@
         "lien": "/pages/contact",
         "une_seule": true,
         "donnees_structurees": true
+      }
+    },
+    "preuves": {
+      "type": "avant-apres",
+      "blocks": {
+        "c1": {
+          "type": "comparaison",
+          "settings": {
+            "protocole": "Protocole à renseigner",
+            "detail": "Séances et délai à renseigner",
+            "alt_apres": ""
+          }
+        },
+        "c2": {
+          "type": "comparaison",
+          "settings": {
+            "protocole": "Protocole à renseigner",
+            "detail": "Séances et délai à renseigner",
+            "alt_apres": ""
+          }
+        },
+        "c3": {
+          "type": "comparaison",
+          "settings": {
+            "protocole": "Protocole à renseigner",
+            "detail": "Séances et délai à renseigner",
+            "alt_apres": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "surface": "surface-peau",
+        "ratio": "portrait",
+        "ancre": "preuves",
+        "index": "06",
+        "surtitre": "Ce que ça donne",
+        "titre": "Faites glisser, jugez par vous-même.",
+        "chapo": "Photos prises au cabinet, dans les mêmes conditions de lumière et de cadrage, sans retouche. Le protocole suivi et le nombre de séances figurent sous chaque comparaison.",
+        "libelle_avant": "Avant",
+        "libelle_apres": "Après",
+        "libelle_curseur": "Faire glisser pour comparer l'avant et l'après",
+        "mention": "Photographies non retouchées, publiées avec l'accord écrit des personnes concernées. Les résultats présentés sont individuels : ils dépendent de la peau, de l'âge, du mode de vie et de l'observance du protocole, et ne constituent pas une garantie de résultat."
       }
     }
   },
@@ -611,6 +658,7 @@
     "protocoles",
     "methode",
     "resultats",
+    "preuves",
     "orientation",
     "expertise",
     "temoignages",

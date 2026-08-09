@@ -727,6 +727,77 @@ function diagnostic() {
 }
 
 /* --------------------------------------------------------------------------
+   6 ter. COMPARAISON AVANT / APRÈS
+   Le curseur est un input[type=range] natif : souris, tactile et clavier
+   fonctionnent sans code. Ce module ne fait que reporter la valeur dans une
+   variable CSS, et ajouter le glisser directement sur l'image.
+   -------------------------------------------------------------------------- */
+class ElyComparaison extends HTMLElement {
+  connectedCallback() {
+    this.curseur = this.querySelector('[data-comparaison-curseur]');
+    if (!this.curseur) return;
+
+    this.signal = new AbortController();
+    const s = this.signal.signal;
+
+    const appliquer = () => {
+      this.style.setProperty('--position', `${this.curseur.value}%`);
+    };
+
+    this.curseur.addEventListener('input', appliquer, { signal: s });
+    appliquer();
+
+    // Glisser n'importe où sur l'image, pas seulement sur la poignée.
+    // On ne capture le pointeur qu'après un appui : le défilement tactile
+    // vertical reste possible tant que l'utilisateur n'a pas saisi le volet.
+    let actif = false;
+
+    const positionner = (e) => {
+      const boite = this.getBoundingClientRect();
+      if (!boite.width) return;
+      const ratio = ((e.clientX - boite.left) / boite.width) * 100;
+      this.curseur.value = String(Math.max(0, Math.min(100, ratio)));
+      appliquer();
+    };
+
+    this.addEventListener(
+      'pointerdown',
+      (e) => {
+        if (e.target === this.curseur) return;
+        actif = true;
+        this.setPointerCapture(e.pointerId);
+        positionner(e);
+      },
+      { signal: s }
+    );
+
+    this.addEventListener(
+      'pointermove',
+      (e) => {
+        if (!actif) return;
+        e.preventDefault();
+        positionner(e);
+      },
+      { signal: s }
+    );
+
+    const relacher = (e) => {
+      if (!actif) return;
+      actif = false;
+      if (this.hasPointerCapture?.(e.pointerId)) this.releasePointerCapture(e.pointerId);
+    };
+    this.addEventListener('pointerup', relacher, { signal: s });
+    this.addEventListener('pointercancel', relacher, { signal: s });
+
+    this.dataset.pret = 'oui';
+  }
+
+  disconnectedCallback() {
+    this.signal?.abort();
+  }
+}
+
+/* --------------------------------------------------------------------------
    7 bis. SOMMAIRE D'ARTICLE
    Construit depuis les titres réellement présents dans le corps de l'article.
    Si l'article n'a aucun titre, le sommaire ne s'affiche pas du tout.
@@ -828,6 +899,7 @@ if (!customElements.get('ely-accordeon')) customElements.define('ely-accordeon',
 if (!customElements.get('ely-index')) customElements.define('ely-index', ElyIndex);
 if (!customElements.get('ely-formulaire')) customElements.define('ely-formulaire', ElyFormulaire);
 if (!customElements.get('ely-sommaire')) customElements.define('ely-sommaire', ElySommaire);
+if (!customElements.get('ely-comparaison')) customElements.define('ely-comparaison', ElyComparaison);
 
 apparitions();
 compteurs();
