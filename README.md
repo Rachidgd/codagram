@@ -176,6 +176,8 @@ affecter le gabarit correspondant (champ « Modèle de thème ») :
 | Luminothérapie LED | `luminotherapie-led` | `page.luminotherapie-led` |
 | Drainage lymphatique | `drainage-lymphatique` | `page.drainage-lymphatique` |
 | Contact | `contact` | `page.contact` |
+| Le cabinet | `cabinet` | `page.cabinet` |
+| Tarifs | `tarifs` | `page.tarifs` |
 
 Les liens internes du thème pointent déjà vers `/pages/<handle>` : respecter
 ces handles évite d'avoir à reprendre les menus.
@@ -253,6 +255,12 @@ Le barème est en tête de `assets/diagnostic.js`, en clair et modifiable.
   construit depuis les titres réels.
 - `<title>` et meta description rendus par le thème avec repli sur la
   description de l'établissement — aucune page ne part sans description.
+- **Pack SERP par page.** Shopify n'expose pas de champ `seo` dans
+  `PageCreateInput` / `PageUpdateInput` : le titre et la description de
+  recherche se stockent dans les métachamps `global.title_tag` et
+  `global.description_tag`, que Liquid lit via `page_title` et
+  `page_description`. Ils sont renseignés pour les dix pages du site et
+  restent modifiables dans l'admin, rubrique « Référencement » de chaque page.
 - Aucune chaîne en dur : tout passe par `locales/`, français et anglais.
 
 ---
