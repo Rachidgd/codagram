@@ -178,6 +178,8 @@ affecter le gabarit correspondant (champ « Modèle de thème ») :
 | Contact | `contact` | `page.contact` |
 | Le cabinet | `cabinet` | `page.cabinet` |
 | Tarifs | `tarifs` | `page.tarifs` |
+| Mentions légales | `mentions-legales` | *(par défaut)* |
+| Politique de confidentialité | `politique-de-confidentialite` | *(par défaut)* |
 
 Les liens internes du thème pointent déjà vers `/pages/<handle>` : respecter
 ces handles évite d'avoir à reprendre les menus.
@@ -270,6 +272,14 @@ Le barème est en tête de `assets/diagnostic.js`, en clair et modifiable.
 - **Aucune image n'est fournie.** Les emplacements affichent un repli graphique
   maison (trame de filets) et non une silhouette générique. Le rendu ne sera au
   niveau qu'avec des photographies réelles du cabinet.
+- **Les pages légales contiennent des champs provisoires** entre crochets
+  (`[À COMPLÉTER — …]`) : raison sociale, SIRET, assurance, médiateur,
+  prestataire de réservation, durées de conservation. Elles ne sont pas
+  publiables en l'état et doivent être relues avec le cabinet.
+- **Les emplacements photo des sections « avant / après » et « le soin en
+  images » sont vides.** Les légendes servent de consignes de prise de vue.
+  Une photographie avant/après en esthétique engage : mêmes conditions de
+  lumière et de cadrage, aucune retouche, accord écrit de la personne.
 - **Les tarifs affichés sont des ordres de grandeur** repris du brief initial
   (140 € l'Hydrafacial, 220 € le microneedling…). Ils doivent être confirmés ou
   corrigés avant publication : ils apparaissent aussi dans les données
