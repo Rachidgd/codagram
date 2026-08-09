@@ -721,19 +721,21 @@ class ElyFormulaire extends HTMLElement {
 }
 
 /* --------------------------------------------------------------------------
-   7. CHARGEMENT À LA DEMANDE DU DIAGNOSTIC
-   Le module n'est téléchargé que si la page contient réellement l'outil.
+   7. CHARGEMENT À LA DEMANDE
+   Les modules lourds — diagnostic, agenda — ne sont téléchargés que si la
+   page contient réellement l'outil, et seulement à son approche.
    -------------------------------------------------------------------------- */
-function diagnostic() {
-  const hote = document.querySelector('ely-diagnostic');
-  if (!hote) return;
+function moduleALaDemande(selecteur) {
+  const hote = document.querySelector(selecteur);
+  if (!hote || hote.dataset.moduleDemande === 'oui') return;
+  hote.dataset.moduleDemande = 'oui';
 
   const charger = () => {
     const url = hote.dataset.module;
     if (!url) return;
     import(/* @vite-ignore */ url).catch((e) => {
       // En cas d'échec, le repli sans JavaScript reste affiché et utilisable.
-      console.warn('[ely] diagnostic indisponible', e);
+      console.warn('[ely] module indisponible', selecteur, e);
     });
   };
 
@@ -931,7 +933,8 @@ apparitions();
 compteurs();
 curseur();
 champs();
-diagnostic();
+moduleALaDemande('ely-diagnostic');
+moduleALaDemande('ely-agenda');
 progression();
 
 // Signale au filet de sécurité posé dans <head> que le thème a bien démarré.
@@ -942,5 +945,6 @@ document.addEventListener('shopify:section:load', () => {
   apparitions();
   compteurs();
   champs();
-  diagnostic();
+  moduleALaDemande('ely-diagnostic');
+  moduleALaDemande('ely-agenda');
 });

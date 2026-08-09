@@ -1,0 +1,372 @@
+{%- comment -%}
+  Prise de rendez-vous.
+
+  Les soins, les plages d'ouverture et les fermetures ne vivent pas dans cette
+  section : ils sont saisis dans l'admin Shopify, sous Contenu → Métaobjets.
+  Le cabinet modifie ses horaires sans toucher au thème, et sans nous.
+
+  La section ne fait que publier ces données et laisser le module calculer les
+  créneaux. Sans JavaScript, le repli affiche les plages d'ouverture en clair
+  et le formulaire reste envoyable avec un créneau écrit à la main : personne
+  ne se retrouve devant une page morte.
+
+  Une demande n'est pas une réservation ferme — aucun verrou ne peut exister
+  sans serveur dédié. La mention le dit, et elle n'est pas retirable par
+  inadvertance : c'est un réglage à part, avec une valeur par défaut honnête.
+{%- endcomment -%}
+
+{%- liquid
+  assign soins = shop.metaobjects.ely_soin.values
+  assign plages = shop.metaobjects.ely_disponibilite.values
+  assign fermetures = shop.metaobjects.ely_fermeture.values
+-%}
+
+<section
+  id="{{ section.settings.ancre | default: 'rendez-vous' | handleize }}"
+  class="section {{ section.settings.surface }}"
+  {% if section.settings.surface == 'surface-sombre' %}
+    data-entete-inverse
+  {% endif %}
+>
+  <div class="lisiere">
+    <div class="grille-12 gap-y-10">
+      <div class="col-span-12 lg:col-span-4">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: section.settings.niveau_titre
+        -%}
+
+        {%- if section.settings.chapo != blank -%}
+          <div
+            class="mt-7 text-sm {% if section.settings.surface == 'surface-sombre' %}text-brume{% else %}text-grain{% endif %} texte-mesure"
+            data-reveal
+            style="--reveal-delay: 140ms"
+          >
+            {{ section.settings.chapo }}
+          </div>
+        {%- endif -%}
+
+        <p class="agenda__mention-fuseau">{{ section.settings.mention_fuseau }}</p>
+      </div>
+
+      <div class="col-span-12 lg:col-span-7 lg:col-start-6">
+        {%- if soins == empty or plages == empty -%}
+          {%- comment -%}
+            Rien à proposer tant que l'admin n'est pas rempli. On le dit à
+            l'éditeur du thème plutôt que d'afficher un agenda vide.
+          {%- endcomment -%}
+          <p class="agenda__vide">{{ 'agenda.a_configurer' | t }}</p>
+        {%- else -%}
+          <ely-agenda
+            class="agenda block"
+            data-module="{{ 'agenda.js' | asset_url }}"
+            data-fuseau="{{ section.settings.fuseau | escape }}"
+            data-horizon="{{ section.settings.horizon }}"
+            data-delai="{{ section.settings.delai }}"
+            data-libelle-soin="{{ 'agenda.quel_soin' | t }}"
+            data-libelle-jour="{{ 'agenda.quel_jour' | t }}"
+            data-libelle-creneau="{{ 'agenda.quelle_heure' | t: jour: '%J%' }}"
+            data-libelle-duree="{{ 'agenda.duree' | t: minutes: '%D%' }}"
+            data-libelle-rappel="{{ 'agenda.rappel' | t: soin: '%S%', creneau: '%Q%' }}"
+            data-libelle-aucun-jour="{{ 'agenda.aucun_jour' | t }}"
+            data-libelle-reprendre="{{ 'agenda.reprendre' | t }}"
+          >
+            <script type="application/json" data-agenda-soins>
+              [
+                {%- assign premier = true -%}
+                {%- for soin in soins -%}
+                  {%- if soin.actif.value -%}
+                    {%- unless premier -%},{%- endunless -%}
+                    {
+                      "handle": {{ soin.system.handle | json }},
+                      "nom": {{ soin.nom.value | json }},
+                      "duree": {{ soin.duree_minutes.value | default: 60 | json }},
+                      "battement": {{ soin.battement_minutes.value | default: 0 | json }},
+                      "ordre": {{ soin.ordre.value | default: 99 | json }},
+                      "page": {{ soin.page.value | default: '' | json }}
+                    }
+                    {%- assign premier = false -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              ]
+            </script>
+
+            <script type="application/json" data-agenda-plages>
+              [
+                {%- assign premier = true -%}
+                {%- for plage in plages -%}
+                  {%- if plage.actif.value -%}
+                    {%- unless premier -%},{%- endunless -%}
+                    {
+                      "jour": {{ plage.jour.value | json }},
+                      "debut": {{ plage.debut.value | json }},
+                      "fin": {{ plage.fin.value | json }},
+                      "soins": [
+                        {%- for lie in plage.soins.value -%}
+                          {{ lie.system.handle | json }}{%- unless forloop.last -%},{%- endunless -%}
+                        {%- endfor -%}
+                      ]
+                    }
+                    {%- assign premier = false -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              ]
+            </script>
+
+            <script type="application/json" data-agenda-fermetures>
+              [
+                {%- for fermeture in fermetures -%}
+                  {
+                    "debut": {{ fermeture.date_debut.value | date: '%Y-%m-%d' | json }},
+                    "fin": {{ fermeture.date_fin.value | date: '%Y-%m-%d' | json }}
+                  }{%- unless forloop.last -%},{%- endunless -%}
+                {%- endfor -%}
+              ]
+            </script>
+
+            {%- comment -%}
+              Repli sans JavaScript : les horaires réels, lisibles, et un
+              formulaire où le créneau se saisit à la main.
+            {%- endcomment -%}
+            <div data-agenda-repli>
+              <p class="agenda__repli-note">{{ 'agenda.repli' | t }}</p>
+              <dl class="agenda__repli-liste">
+                {%- for plage in plages -%}
+                  {%- if plage.actif.value -%}
+                    <div class="agenda__repli-ligne">
+                      <dt>{{ plage.jour.value | capitalize }}</dt>
+                      <dd class="nombres-tabulaires">{{ plage.debut.value }} — {{ plage.fin.value }}</dd>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              </dl>
+            </div>
+
+            {%- form 'contact', id: 'rendez-vous-contact', class: 'agenda__capture' -%}
+              {%- if form.posted_successfully? -%}
+                <div
+                  class="formulaire__message formulaire__message--succes"
+                  role="status"
+                  tabindex="-1"
+                  data-agenda-succes
+                >
+                  {{ 'agenda.succes' | t }}
+                </div>
+              {%- else -%}
+                <div data-agenda-formulaire hidden>
+                  {%- if form.errors -%}
+                    <div class="formulaire__message formulaire__message--erreur" role="alert">
+                      {{ 'formulaire.erreurs_a_corriger' | t }}
+                    </div>
+                  {%- endif -%}
+
+                  <p class="agenda__capture-titre">{{ section.settings.capture_titre }}</p>
+
+                  <input type="hidden" name="contact[Soin demandé]" value="" data-agenda-champ="soin">
+                  <input type="hidden" name="contact[Date souhaitée]" value="" data-agenda-champ="date">
+                  <input type="hidden" name="contact[Heure souhaitée]" value="" data-agenda-champ="heure">
+                  <input type="hidden" name="contact[Créneau]" value="" data-agenda-champ="recap">
+                  <input type="hidden" name="contact[Origine]" value="{{ 'agenda.origine' | t }}">
+
+                  <p class="agenda__rappel" data-agenda-rappel hidden></p>
+
+                  <div class="formulaire__rangee formulaire__rangee--deux">
+                    <label class="champ">
+                      <input
+                        type="text"
+                        id="rdv-nom"
+                        class="champ__saisie"
+                        name="contact[name]"
+                        autocomplete="name"
+                        placeholder=" "
+                        value="{{ form.name }}"
+                        required
+                      >
+                      <span class="champ__label">{{ 'formulaire.nom' | t }}</span>
+                    </label>
+
+                    <label class="champ">
+                      <input
+                        type="email"
+                        id="rdv-email"
+                        class="champ__saisie"
+                        name="contact[email]"
+                        autocomplete="email"
+                        inputmode="email"
+                        placeholder=" "
+                        value="{{ form.email }}"
+                        required
+                      >
+                      <span class="champ__label">{{ 'formulaire.email' | t }}</span>
+                    </label>
+                  </div>
+
+                  <label class="champ">
+                    <input
+                      type="tel"
+                      id="rdv-tel"
+                      class="champ__saisie"
+                      name="contact[phone]"
+                      autocomplete="tel"
+                      inputmode="tel"
+                      placeholder=" "
+                      required
+                    >
+                    <span class="champ__label">{{ 'formulaire.telephone' | t }}</span>
+                  </label>
+
+                  <label class="champ">
+                    <textarea
+                      id="rdv-message"
+                      class="champ__saisie"
+                      name="contact[body]"
+                      rows="3"
+                      placeholder=" "
+                    >{{ form.body }}</textarea>
+                    <span class="champ__label">
+                      {{ 'agenda.precision' | t }} ({{ 'formulaire.facultatif' | t }})
+                    </span>
+                  </label>
+
+                  <label class="choix">
+                    <input type="checkbox" name="contact[Consentement]" value="Accordé" required>
+                    <span>{{ 'formulaire.consentement' | t }}</span>
+                  </label>
+
+                  {%- comment -%} Leurre anti-robot. {%- endcomment -%}
+                  <div class="formulaire__leurre" aria-hidden="true">
+                    <label for="rdv-reference">Ne pas remplir ce champ</label>
+                    <input type="text" id="rdv-reference" name="contact[reference-rdv]" tabindex="-1" autocomplete="off">
+                  </div>
+
+                  <div class="formulaire__actions">
+                    <button type="submit" class="btn {% if section.settings.surface == 'surface-sombre' %}btn--clair{% endif %}">
+                      {{ section.settings.capture_bouton }}
+                    </button>
+                  </div>
+
+                  <p class="agenda__mention">{{ section.settings.mention_confirmation }}</p>
+                </div>
+              {%- endif -%}
+            {%- endform -%}
+          </ely-agenda>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Prise de rendez-vous",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Les soins, les plages d'ouverture et les fermetures se saisissent dans l'admin, sous Contenu → Métaobjets (Rendez-vous — soin, — disponibilité, — fermeture)."
+    },
+    {
+      "type": "text",
+      "id": "ancre",
+      "label": "Ancre",
+      "info": "Permet de pointer vers cette section depuis un lien : #rendez-vous",
+      "default": "rendez-vous"
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" },
+        { "value": "surface-sombre", "label": "Vert absolu" }
+      ],
+      "default": "surface-craie"
+    },
+    { "type": "text", "id": "index", "label": "Index", "default": "01" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Rendez-vous" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre",
+      "default": "Choisissez votre soin, puis votre heure."
+    },
+    {
+      "type": "select",
+      "id": "niveau_titre",
+      "label": "Niveau du titre",
+      "options": [
+        { "value": "h1", "label": "H1 — page dédiée" },
+        { "value": "h2", "label": "H2 — section dans une page" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "richtext",
+      "id": "chapo",
+      "label": "Texte d'accompagnement",
+      "default": "<p>Les durées affichées sont celles réellement réservées en cabine, remise en état comprise. Si aucun créneau ne vous convient, écrivez-nous : il reste souvent de la place là où l'agenda n'en montre pas.</p>"
+    },
+
+    { "type": "header", "content": "Calcul des créneaux" },
+    {
+      "type": "text",
+      "id": "fuseau",
+      "label": "Fuseau horaire du cabinet",
+      "info": "Identifiant IANA. Les heures affichées sont toujours celles du cabinet, jamais celles du visiteur.",
+      "default": "Europe/Paris"
+    },
+    {
+      "type": "range",
+      "id": "horizon",
+      "label": "Jours proposés à l'avance",
+      "min": 7,
+      "max": 60,
+      "step": 7,
+      "unit": "j",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "delai",
+      "label": "Délai minimum avant un rendez-vous",
+      "min": 0,
+      "max": 72,
+      "step": 2,
+      "unit": "h",
+      "default": 24
+    },
+
+    { "type": "header", "content": "Formulaire" },
+    {
+      "type": "text",
+      "id": "capture_titre",
+      "label": "Titre du formulaire",
+      "default": "Vos coordonnées"
+    },
+    {
+      "type": "text",
+      "id": "capture_bouton",
+      "label": "Libellé du bouton",
+      "default": "Demander ce créneau"
+    },
+    {
+      "type": "textarea",
+      "id": "mention_confirmation",
+      "label": "Mention sous le bouton",
+      "info": "Doit rester exacte : sans confirmation du cabinet, un créneau demandé n'est pas réservé.",
+      "default": "Votre demande n'est pas encore une réservation : nous la confirmons par téléphone ou par e-mail sous 24 h ouvrées. Tant que cette confirmation n'est pas arrivée, le créneau reste ouvert à d'autres demandes."
+    },
+    {
+      "type": "textarea",
+      "id": "mention_fuseau",
+      "label": "Mention sur les horaires",
+      "default": "Tous les horaires sont donnés à l'heure de Paris."
+    }
+  ],
+  "presets": [{ "name": "Prise de rendez-vous" }]
+}
+{% endschema %}

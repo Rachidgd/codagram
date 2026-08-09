@@ -18,6 +18,7 @@
 @import "./parties/entete.css";
 @import "./parties/sections.css";
 @import "./parties/diagnostic.css";
+@import "./parties/agenda.css";
 @import "./parties/editorial.css";
 
 @source "../layout/**/*.liquid";
