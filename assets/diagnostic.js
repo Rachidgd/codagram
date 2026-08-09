@@ -88,13 +88,26 @@ class ElyDiagnostic extends HTMLElement {
     if (!this.questions.length || !this.protocoles.length) return;
 
     this.repli = this.querySelector('[data-diagnostic-repli]');
+    this.formulaire = this.querySelector('[data-diagnostic-formulaire]');
+    this.succes = this.querySelector('[data-diagnostic-succes]');
+    this.rappel = this.querySelector('[data-diagnostic-rappel]');
     this.etape = 0;
     this.reponses = {};
     this.minuterie = 0;
 
     this.scene = document.createElement('div');
     this.scene.className = 'diagnostic__scene';
-    this.appendChild(this.scene);
+    // Le formulaire de capture est rendu côté serveur : la scène se glisse
+    // avant lui pour que l'ordre visuel reste questionnaire → coordonnées.
+    const capture = this.querySelector('.diagnostic__capture');
+    if (capture) this.insertBefore(this.scene, capture);
+    else this.appendChild(this.scene);
+
+    // « Recommencer » vit après le formulaire : c'est une sortie de secours,
+    // elle ne doit pas s'interposer entre le résultat et l'appel à l'action.
+    this.pied = document.createElement('div');
+    this.pied.className = 'diagnostic__pied';
+    this.appendChild(this.pied);
 
     // Le repli reste dans le document pour l'indexation, mais sort du flux
     // visuel et de l'ordre de tabulation une fois l'outil opérationnel.
@@ -104,7 +117,12 @@ class ElyDiagnostic extends HTMLElement {
     }
 
     this.dataset.pret = 'oui';
-    this.dessinerQuestion();
+
+    // Retour d'envoi : Shopify a rechargé la page. Rejouer le questionnaire
+    // depuis la première question effacerait l'accusé de réception — on
+    // affiche directement l'état « envoyé ».
+    if (this.succes) this.dessinerEnvoi();
+    else this.dessinerQuestion();
   }
 
   disconnectedCallback() {
@@ -126,6 +144,8 @@ class ElyDiagnostic extends HTMLElement {
     const question = this.questions[this.etape];
     const avancement = this.etape / this.total;
 
+    this.masquerCapture();
+    this.pied.innerHTML = '';
     this.scene.innerHTML = '';
     this.scene.style.setProperty('--avancement', String(avancement));
 
@@ -262,20 +282,88 @@ class ElyDiagnostic extends HTMLElement {
       }
     }
 
-    const recommencer = document.createElement('button');
-    recommencer.type = 'button';
-    recommencer.className = 'diagnostic__recommencer';
-    recommencer.textContent = this.dataset.libelleRecommencer || 'Recommencer';
-    recommencer.addEventListener('click', () => {
-      this.reponses = {};
-      this.etape = 0;
-      this.dessinerQuestion();
-    });
-    bloc.appendChild(recommencer);
+    this.pied.innerHTML = '';
+    this.pied.appendChild(this.boutonRecommencer());
 
     this.scene.appendChild(bloc);
     bloc.querySelector('.diagnostic__resultat-nom')?.setAttribute('tabindex', '-1');
     bloc.querySelector('.diagnostic__resultat-nom')?.focus();
+
+    this.afficherCapture(principal ? principal.protocole : null, alternative ? alternative.protocole : null);
+  }
+
+  /* — Capture des coordonnées —
+     Le formulaire n'apparaît qu'ici, une fois le résultat connu, et repart
+     avec le contexte : sans lui, le cabinet reçoit un nom sans savoir de
+     quoi il est question. */
+  afficherCapture(protocole, alternative) {
+    if (!this.formulaire) return;
+
+    const aucun = this.dataset.libelleAucun || 'Aucun protocole retenu en ligne — bilan à programmer';
+    const nom = protocole ? protocole.nom : aucun;
+
+    this.remplirChamp('protocole', nom);
+    this.remplirChamp('alternative', alternative ? alternative.nom : '');
+    this.remplirChamp('reponses', this.resumerReponses());
+
+    if (this.rappel) {
+      const modele = this.dataset.libelleRappel || 'Votre orientation : %P%';
+      this.rappel.textContent = modele.replace('%P%', nom);
+      this.rappel.hidden = false;
+    }
+
+    this.formulaire.hidden = false;
+  }
+
+  masquerCapture() {
+    if (this.formulaire) this.formulaire.hidden = true;
+  }
+
+  remplirChamp(cle, valeur) {
+    const champ = this.querySelector(`[data-diagnostic-champ="${cle}"]`);
+    if (champ) champ.value = valeur;
+  }
+
+  /* Sérialisation lisible par un humain : c'est un e-mail que quelqu'un va
+     lire avant un rendez-vous, pas un enregistrement de base de données. */
+  resumerReponses() {
+    return this.questions
+      .map((question) => {
+        const code = this.reponses[question.cle];
+        const option = question.options.find((o) => o.code === code);
+        return option ? `${question.titre} ${option.libelle}` : null;
+      })
+      .filter(Boolean)
+      .join(' — ');
+  }
+
+  boutonRecommencer() {
+    const bouton = document.createElement('button');
+    bouton.type = 'button';
+    bouton.className = 'diagnostic__recommencer';
+    bouton.textContent = this.dataset.libelleRecommencer || 'Recommencer';
+    bouton.addEventListener('click', () => {
+      this.reponses = {};
+      this.etape = 0;
+      this.dessinerQuestion();
+    });
+    return bouton;
+  }
+
+  /* État affiché au retour d'un envoi réussi. */
+  dessinerEnvoi() {
+    this.masquerCapture();
+    this.scene.innerHTML = '';
+    this.scene.style.setProperty('--avancement', '1');
+
+    // L'accusé de réception est déplacé dans la scène : il prend la place du
+    // questionnaire au lieu de s'afficher sous un formulaire vide.
+    this.scene.appendChild(this.succes);
+
+    this.pied.innerHTML = '';
+    this.pied.appendChild(this.boutonRecommencer());
+
+    this.succes.focus();
   }
 
   mesures(p) {

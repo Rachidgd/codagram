@@ -239,9 +239,13 @@
     text-decoration-thickness: 1px;
   }
 
+  /* Pied de l'outil : la sortie de secours, sous l'appel à l'action. */
+  .diagnostic__pied:not(:empty) {
+    margin-top: clamp(1.25rem, 1rem + 0.9vw, 1.875rem);
+  }
+
   .diagnostic__recommencer {
     justify-self: start;
-    margin-top: 0.5rem;
     padding: 0;
     background: none;
     border: 0;
@@ -255,6 +259,90 @@
   }
   .diagnostic__recommencer:hover {
     color: inherit;
+  }
+
+  /* — Prise de contact à l'étape résultat —
+     Elle n'apparaît qu'une fois le protocole calculé : c'est le moment où la
+     demande a un objet. Le filet de séparation marque cette bascule. */
+  .diagnostic__capture[hidden],
+  .diagnostic__capture > [hidden] {
+    display: none;
+  }
+  .diagnostic__capture > *:not([hidden]) {
+    display: grid;
+    gap: clamp(1.125rem, 0.95rem + 0.7vw, 1.625rem);
+    margin-top: clamp(1.75rem, 1.4rem + 1.4vw, 2.75rem);
+    padding-top: clamp(1.75rem, 1.4rem + 1.4vw, 2.75rem);
+    border-top: 1px solid var(--diag-filet-fort);
+  }
+  .diagnostic__capture-titre {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 300;
+    line-height: 1.22;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+  }
+  .diagnostic__capture-intro,
+  .diagnostic__capture-mention {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--diag-attenue);
+    max-width: 56ch;
+  }
+  .diagnostic__capture-mention {
+    font-size: var(--text-xs);
+    line-height: 1.55;
+  }
+  .diagnostic__capture-intro,
+  .diagnostic__capture-titre {
+    margin: 0;
+  }
+  /* Rappel de ce qui part avec la demande : le prospect voit le contenu du
+     message avant de l'envoyer. */
+  .diagnostic__capture-rappel {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--diag-filet-fort);
+    background: var(--diag-surface);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  /* Les champs sont dessinés pour fond clair : sur le vert absolu, tout ce
+     qui porte une couleur d'encre doit être repris. */
+  .surface-sombre .diagnostic__capture .champ__saisie {
+    border-bottom-color: var(--color-lisere-clair);
+    color: var(--color-porcelaine);
+  }
+  .surface-sombre .diagnostic__capture .champ__saisie:focus {
+    border-bottom-color: var(--color-porcelaine);
+  }
+  .surface-sombre .diagnostic__capture .champ__label {
+    color: var(--color-brume);
+  }
+  .surface-sombre .diagnostic__capture .champ__saisie:focus + .champ__label,
+  .surface-sombre .diagnostic__capture .champ__saisie:not(:placeholder-shown) + .champ__label {
+    color: var(--color-brume);
+  }
+  .surface-sombre .diagnostic__capture .choix input {
+    accent-color: var(--color-porcelaine);
+  }
+  .surface-sombre .diagnostic__capture .formulaire__message--succes,
+  .surface-sombre .diagnostic .formulaire__message--succes {
+    border-color: var(--color-brume);
+    background: color-mix(in oklab, #ffffff 8%, transparent);
+    color: var(--color-porcelaine);
+  }
+  .surface-sombre .diagnostic .formulaire__message--erreur {
+    border-color: var(--color-peau);
+    background: color-mix(in oklab, #ffffff 8%, transparent);
+    color: var(--color-peau);
+  }
+
+  /* Le message de succès prend la place du questionnaire : il n'a plus de
+     filet de séparation à porter. */
+  .diagnostic__scene > .formulaire__message {
+    margin: 0;
   }
 
   /* — Repli sans JavaScript — */

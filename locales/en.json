@@ -48,7 +48,12 @@
     "alternative": "Worth combining with",
     "reserver": "Book this protocol",
     "voir_page": "Read the full page",
-    "repli": "This guidance tool requires JavaScript. You can also browse the protocols listed below."
+    "repli": "This guidance tool requires JavaScript. You can also browse the protocols listed below.",
+    "rappel": "Your guidance: {{ protocole }}",
+    "aucun_protocole": "No online protocol retained — consultation to be scheduled",
+    "precision": "Anything you'd like to add",
+    "origine": "Website guidance tool",
+    "succes": "Sent. We have your guidance in front of us and will get back to you within one business day."
   },
   "formulaire": {
     "nom": "Full name",

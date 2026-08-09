@@ -66,6 +66,8 @@
           data-libelle-alternative="{{ 'diagnostic.alternative' | t }}"
           data-libelle-reserver="{{ section.settings.libelle_reserver | default: 'Réserver ce protocole' | escape }}"
           data-libelle-fiche="{{ 'diagnostic.voir_page' | t }}"
+          data-libelle-rappel="{{ 'diagnostic.rappel' | t: protocole: '%P%' }}"
+          data-libelle-aucun="{{ 'diagnostic.aucun_protocole' | t }}"
           data-url-rdv="{{ settings.rdv_url | escape }}"
         >
           {%- comment -%} — Données de questionnement — {%- endcomment -%}
@@ -170,6 +172,150 @@
               {%- endfor -%}
             </ul>
           </div>
+
+          {%- comment -%}
+            Capture des coordonnées à l'étape résultat.
+
+            C'est un formulaire de contact Shopify natif : la demande part par
+            e-mail à l'adresse de contact de la boutique, sans application ni
+            service tiers. Le protocole recommandé et les réponses au
+            questionnaire voyagent dans des champs cachés remplis par le script,
+            pour que le cabinet reçoive le contexte et pas seulement un nom.
+
+            Le formulaire est rendu côté serveur et masqué : il ne s'affiche
+            qu'une fois le résultat calculé. Après envoi, Shopify recharge la
+            page — l'accusé de réception est donc rendu ici, et le script saute
+            directement à cet état.
+          {%- endcomment -%}
+          {%- if section.settings.capture_activee -%}
+            {%- form 'contact', id: 'diagnostic-contact', class: 'diagnostic__capture' -%}
+              {%- if form.posted_successfully? -%}
+                <div
+                  class="formulaire__message formulaire__message--succes"
+                  role="status"
+                  tabindex="-1"
+                  data-diagnostic-succes
+                >
+                  {{ 'diagnostic.succes' | t }}
+                </div>
+              {%- else -%}
+                <div data-diagnostic-formulaire hidden>
+                  {%- if form.errors -%}
+                    <div class="formulaire__message formulaire__message--erreur" role="alert">
+                      {{ 'formulaire.erreurs_a_corriger' | t }}
+                    </div>
+                  {%- endif -%}
+
+                  <p class="diagnostic__capture-titre">{{ section.settings.capture_titre }}</p>
+                  {%- if section.settings.capture_intro != blank -%}
+                    <p class="diagnostic__capture-intro">{{ section.settings.capture_intro }}</p>
+                  {%- endif -%}
+
+                  {%- comment -%} Contexte transmis au cabinet. {%- endcomment -%}
+                  <input type="hidden" name="contact[Protocole recommandé]" value="" data-diagnostic-champ="protocole">
+                  <input type="hidden" name="contact[Protocole alternatif]" value="" data-diagnostic-champ="alternative">
+                  <input type="hidden" name="contact[Réponses au questionnaire]" value="" data-diagnostic-champ="reponses">
+                  <input type="hidden" name="contact[Origine]" value="{{ 'diagnostic.origine' | t }}">
+
+                  {%- comment -%} Rappel visible de ce qui sera transmis. {%- endcomment -%}
+                  <p class="diagnostic__capture-rappel" data-diagnostic-rappel hidden></p>
+
+                  <div class="formulaire__rangee formulaire__rangee--deux">
+                    <label class="champ">
+                      <input
+                        type="text"
+                        id="diag-nom"
+                        class="champ__saisie"
+                        name="contact[name]"
+                        autocomplete="name"
+                        placeholder=" "
+                        value="{{ form.name }}"
+                        required
+                      >
+                      <span class="champ__label">{{ 'formulaire.nom' | t }}</span>
+                    </label>
+
+                    <label class="champ">
+                      <input
+                        type="email"
+                        id="diag-email"
+                        class="champ__saisie"
+                        name="contact[email]"
+                        autocomplete="email"
+                        inputmode="email"
+                        placeholder=" "
+                        value="{{ form.email }}"
+                        required
+                      >
+                      <span class="champ__label">{{ 'formulaire.email' | t }}</span>
+                    </label>
+                  </div>
+
+                  <div class="formulaire__rangee formulaire__rangee--deux">
+                    <label class="champ">
+                      <input
+                        type="tel"
+                        id="diag-tel"
+                        class="champ__saisie"
+                        name="contact[phone]"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        placeholder=" "
+                      >
+                      <span class="champ__label">
+                        {{ 'formulaire.telephone' | t }} ({{ 'formulaire.facultatif' | t }})
+                      </span>
+                    </label>
+
+                    <label class="champ">
+                      <input
+                        type="text"
+                        id="diag-creneau"
+                        class="champ__saisie"
+                        name="contact[Disponibilités]"
+                        placeholder=" "
+                      >
+                      <span class="champ__label">
+                        {{ 'formulaire.creneau' | t }} ({{ 'formulaire.facultatif' | t }})
+                      </span>
+                    </label>
+                  </div>
+
+                  <label class="champ">
+                    <textarea
+                      id="diag-message"
+                      class="champ__saisie"
+                      name="contact[body]"
+                      rows="3"
+                      placeholder=" "
+                    >{{ form.body }}</textarea>
+                    <span class="champ__label">
+                      {{ 'diagnostic.precision' | t }} ({{ 'formulaire.facultatif' | t }})
+                    </span>
+                  </label>
+
+                  <label class="choix">
+                    <input type="checkbox" name="contact[Consentement]" value="Accordé" required>
+                    <span>{{ 'formulaire.consentement' | t }}</span>
+                  </label>
+
+                  {%- comment -%} Leurre anti-robot. {%- endcomment -%}
+                  <div class="formulaire__leurre" aria-hidden="true">
+                    <label for="diag-reference">Ne pas remplir ce champ</label>
+                    <input type="text" id="diag-reference" name="contact[reference-diagnostic]" tabindex="-1" autocomplete="off">
+                  </div>
+
+                  <div class="formulaire__actions">
+                    <button type="submit" class="btn btn--clair">{{ section.settings.capture_bouton }}</button>
+                  </div>
+
+                  {%- if section.settings.capture_mention != blank -%}
+                    <p class="diagnostic__capture-mention">{{ section.settings.capture_mention }}</p>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endform -%}
+          {%- endif -%}
         </ely-diagnostic>
       </div>
     </div>
@@ -219,6 +365,39 @@
       "id": "libelle_reserver",
       "label": "Libellé du bouton de réservation",
       "default": "Réserver un bilan"
+    },
+
+    { "type": "header", "content": "Prise de contact à l'étape résultat" },
+    {
+      "type": "checkbox",
+      "id": "capture_activee",
+      "label": "Proposer de laisser ses coordonnées",
+      "info": "La demande arrive par e-mail à l'adresse de contact de la boutique (Paramètres → Coordonnées), avec le protocole recommandé et les réponses au questionnaire.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "capture_titre",
+      "label": "Titre du formulaire",
+      "default": "Faire confirmer cette orientation"
+    },
+    {
+      "type": "textarea",
+      "id": "capture_intro",
+      "label": "Phrase d'introduction",
+      "default": "Laissez-nous vos coordonnées : nous reprenons votre résultat avant de vous rappeler, et le bilan part déjà avec le bon protocole en tête."
+    },
+    {
+      "type": "text",
+      "id": "capture_bouton",
+      "label": "Libellé du bouton",
+      "default": "Envoyer ma demande"
+    },
+    {
+      "type": "textarea",
+      "id": "capture_mention",
+      "label": "Mention sous le bouton",
+      "default": "Réponse sous 24 h ouvrées. Vos réponses servent uniquement à préparer le bilan et ne sont transmises à personne d'autre."
     },
 
     { "type": "header", "content": "Question 1 — objectif" },

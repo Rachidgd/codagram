@@ -48,7 +48,12 @@
     "alternative": "À envisager en complément",
     "reserver": "Réserver ce protocole",
     "voir_page": "Lire la fiche complète",
-    "repli": "Cet outil d'orientation nécessite JavaScript. Vous pouvez aussi parcourir directement la liste des protocoles ci-dessous."
+    "repli": "Cet outil d'orientation nécessite JavaScript. Vous pouvez aussi parcourir directement la liste des protocoles ci-dessous.",
+    "rappel": "Votre orientation : {{ protocole }}",
+    "aucun_protocole": "Aucun protocole retenu en ligne — bilan à programmer",
+    "precision": "Une précision à nous transmettre",
+    "origine": "Diagnostic interactif du site",
+    "succes": "C'est envoyé. Nous avons votre orientation sous les yeux et nous revenons vers vous sous 24 h ouvrées."
   },
   "formulaire": {
     "nom": "Nom et prénom",
