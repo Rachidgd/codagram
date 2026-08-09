@@ -1,0 +1,168 @@
+{%- comment -%}
+  Accès au cabinet.
+
+  Bloc décisif pour un commerce local : l'adresse, les horaires et le
+  chemin réel pour venir. Les coordonnées proviennent des réglages du
+  thème — elles restent donc cohérentes avec le pied de page et les
+  données structurées de l'établissement.
+{%- endcomment -%}
+
+<section
+  class="section {{ section.settings.surface }}"
+  id="{{ section.settings.ancre | default: 'acces' | handleize }}"
+  {% if section.settings.surface == 'surface-sombre' %}
+    data-entete-inverse
+  {% endif %}
+>
+  <div class="lisiere">
+    <div class="grille-12 gap-y-10">
+      <div class="col-span-12 lg:col-span-4">
+        {%- render 'entete-section',
+          index: section.settings.index,
+          surtitre: section.settings.surtitre,
+          titre: section.settings.titre,
+          niveau: 'h2'
+        -%}
+
+        <dl class="acces__coordonnees" data-reveal-groupe data-reveal-pas="70">
+          {%- if settings.cabinet_rue != blank or settings.cabinet_ville != blank -%}
+            <div class="acces__champ" data-reveal>
+              <dt class="surtitre">{{ 'cabinet.adresse' | t }}</dt>
+              <dd>
+                <address class="acces__adresse">
+                  {{ settings.cabinet_rue }}<br>
+                  {{ settings.cabinet_cp }} {{ settings.cabinet_ville }}
+                </address>
+                {%- if section.settings.lien_itineraire != blank -%}
+                  <a
+                    class="lien acces__itineraire"
+                    href="{{ section.settings.lien_itineraire }}"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    {{ 'cabinet.itineraire' | t }}
+                    <span class="lecteur-seul">{{ 'accessibilite.nouvel_onglet' | t }}</span>
+                  </a>
+                {%- endif -%}
+              </dd>
+            </div>
+          {%- endif -%}
+
+          {%- if settings.cabinet_horaires != blank -%}
+            <div class="acces__champ" data-reveal>
+              <dt class="surtitre">{{ 'cabinet.horaires' | t }}</dt>
+              <dd class="nombres-tabulaires">{{ settings.cabinet_horaires | newline_to_br }}</dd>
+            </div>
+          {%- endif -%}
+
+          {%- if settings.cabinet_tel != blank -%}
+            <div class="acces__champ" data-reveal>
+              <dt class="surtitre">{{ 'cabinet.telephone' | t }}</dt>
+              <dd>
+                <a class="lien nombres-tabulaires" href="tel:{{ settings.cabinet_tel | remove: ' ' | remove: '.' }}">
+                  {{ settings.cabinet_tel }}
+                </a>
+              </dd>
+            </div>
+          {%- endif -%}
+        </dl>
+
+        <div class="mt-9" data-reveal>
+          {%- if section.settings.surface == 'surface-sombre' -%}
+            {%- render 'bouton', rdv: true, style: 'clair', fleche: true -%}
+          {%- else -%}
+            {%- render 'bouton', rdv: true, style: 'plein', fleche: true -%}
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} — Repères pratiques : transports, étage, accessibilité — {%- endcomment -%}
+      <div class="col-span-12 lg:col-span-3 lg:col-start-6">
+        {%- if section.blocks.size > 0 -%}
+          <p class="surtitre" data-reveal>{{ section.settings.titre_reperes }}</p>
+          <ul role="list" class="acces__reperes" data-reveal-groupe data-reveal-pas="60">
+            {%- for bloc in section.blocks -%}
+              <li class="acces__repere" data-reveal {{ bloc.shopify_attributes }}>
+                <span class="acces__repere-cle">{{ bloc.settings.intitule }}</span>
+                <span class="acces__repere-valeur">{{ bloc.settings.detail }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%}
+        Média du lieu. Une carte interactive tierce n'est pas chargée ici :
+        elle coûterait un script bloquant et poserait un enjeu de consentement.
+        Une photo de la devanture aide davantage à trouver la porte.
+      {%- endcomment -%}
+      <div class="col-span-12 lg:col-span-4 lg:col-start-9" data-reveal>
+        {%- render 'image-reactive',
+          image: section.settings.image,
+          ratio: 'carre',
+          tailles: '(min-width: 64rem) 30vw, 92vw',
+          alt: section.settings.alt_image,
+          zoom: true
+        -%}
+        {%- if section.settings.legende != blank -%}
+          <p class="duo__legende">{{ section.settings.legende }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Accès",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "L'adresse, les horaires et le téléphone proviennent des réglages du thème, rubrique « Le cabinet ». Les renseigner alimente aussi le pied de page et les données structurées lues par Google."
+    },
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" },
+        { "value": "surface-sombre", "label": "Vert absolu" }
+      ]
+    },
+    { "type": "text", "id": "ancre", "label": "Ancre", "default": "acces" },
+    { "type": "text", "id": "index", "label": "Index", "default": "05" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Venir au cabinet" },
+    { "type": "textarea", "id": "titre", "label": "Titre", "default": "Où nous trouver." },
+    { "type": "url", "id": "lien_itineraire", "label": "Lien d'itinéraire" },
+    { "type": "text", "id": "titre_reperes", "label": "Titre des repères", "default": "Repères pratiques" },
+    { "type": "image_picker", "id": "image", "label": "Photo du lieu", "info": "La devanture aide davantage à trouver la porte qu'un plan." },
+    { "type": "text", "id": "alt_image", "label": "Texte alternatif" },
+    { "type": "text", "id": "legende", "label": "Légende" }
+  ],
+  "blocks": [
+    {
+      "type": "repere",
+      "name": "Repère pratique",
+      "limit": 8,
+      "settings": [
+        { "type": "text", "id": "intitule", "label": "Intitulé", "default": "Métro" },
+        { "type": "text", "id": "detail", "label": "Détail", "default": "À compléter" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accès",
+      "blocks": [
+        { "type": "repere", "settings": { "intitule": "Métro", "detail": "À renseigner" } },
+        { "type": "repere", "settings": { "intitule": "Bus", "detail": "À renseigner" } },
+        { "type": "repere", "settings": { "intitule": "Étage", "detail": "À renseigner" } },
+        { "type": "repere", "settings": { "intitule": "Accès", "detail": "À renseigner" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

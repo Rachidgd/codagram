@@ -1,0 +1,179 @@
+{%- comment -%}
+  Média et texte, en colonnes alternées.
+
+  Section de récit : sert à raconter le cabinet, le lieu, la démarche. Le
+  côté du média est un réglage, ce qui permet d'alterner d'une section à
+  l'autre sans dupliquer de code.
+{%- endcomment -%}
+
+{%- liquid
+  assign media_a_droite = false
+  if section.settings.cote == 'droite'
+    assign media_a_droite = true
+  endif
+-%}
+
+<section
+  class="section {{ section.settings.surface }}"
+  id="{{ section.settings.ancre | default: 'recit' | handleize }}"
+  {% if section.settings.surface == 'surface-sombre' %}
+    data-entete-inverse
+  {% endif %}
+>
+  <div class="lisiere">
+    <div class="grille-12 items-center gap-y-10">
+      {%- comment -%} — Média — {%- endcomment -%}
+      <div
+        class="col-span-12 md:col-span-6 {% if media_a_droite %}lg:col-span-5 lg:col-start-8 lg:order-2{% else %}lg:col-span-5{% endif %}"
+        data-reveal
+      >
+        {%- render 'image-reactive',
+          image: section.settings.image,
+          ratio: section.settings.ratio,
+          tailles: '(min-width: 64rem) 40vw, (min-width: 48rem) 46vw, 92vw',
+          alt: section.settings.alt_image,
+          zoom: true
+        -%}
+
+        {%- if section.settings.legende != blank -%}
+          <p class="duo__legende">{{ section.settings.legende }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} — Texte — {%- endcomment -%}
+      <div
+        class="col-span-12 md:col-span-6 {% if media_a_droite %}lg:col-span-6 lg:col-start-1 lg:order-1{% else %}lg:col-span-6 lg:col-start-7{% endif %}"
+      >
+        {%- if section.settings.surtitre != blank -%}
+          <p
+            class="surtitre"
+            {% if section.settings.index != blank %}
+              data-index="{{ section.settings.index }}"
+            {% endif %}
+            data-reveal
+          >
+            {{ section.settings.surtitre }}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.titre != blank -%}
+          <h2
+            class="mt-5 equilibre max-w-[18ch]"
+            data-reveal
+            style="--reveal-delay: 70ms"
+          >
+            {{ section.settings.titre }}
+          </h2>
+        {%- endif -%}
+
+        <span class="filet mt-7 mb-7 w-full max-w-25" data-reveal-rule aria-hidden="true"></span>
+
+        {%- if section.settings.texte != blank -%}
+          <div
+            class="duo__texte {% if section.settings.surface == 'surface-sombre' %}text-brume{% else %}text-grain{% endif %}"
+            data-reveal
+            style="--reveal-delay: 140ms"
+          >
+            {{ section.settings.texte }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul role="list" class="expertise__liste mt-8" data-reveal-groupe data-reveal-pas="70">
+            {%- for bloc in section.blocks -%}
+              <li class="expertise__item" data-reveal {{ bloc.shopify_attributes }}>
+                {%- render 'icone', nom: 'ui.coche', taille: 15 -%}
+                <span>{{ bloc.settings.texte }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.lien != blank and section.settings.libelle != blank -%}
+          <div class="mt-9" data-reveal style="--reveal-delay: 200ms">
+            {%- if section.settings.surface == 'surface-sombre' -%}
+              {%- render 'bouton',
+                libelle: section.settings.libelle,
+                lien: section.settings.lien,
+                style: 'fantome',
+                fleche: true
+              -%}
+            {%- else -%}
+              {%- render 'bouton',
+                libelle: section.settings.libelle,
+                lien: section.settings.lien,
+                style: 'ligne',
+                fleche: true
+              -%}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Média et texte",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "select",
+      "id": "surface",
+      "label": "Fond",
+      "options": [
+        { "value": "", "label": "Porcelaine" },
+        { "value": "surface-craie", "label": "Craie" },
+        { "value": "surface-peau", "label": "Peau pâle" },
+        { "value": "surface-sombre", "label": "Vert absolu" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "cote",
+      "label": "Côté du média",
+      "options": [
+        { "value": "gauche", "label": "À gauche" },
+        { "value": "droite", "label": "À droite" }
+      ],
+      "default": "gauche"
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Format du média",
+      "options": [
+        { "value": "portrait", "label": "Portrait" },
+        { "value": "paysage", "label": "Paysage" },
+        { "value": "carre", "label": "Carré" }
+      ],
+      "default": "portrait"
+    },
+    { "type": "text", "id": "ancre", "label": "Ancre", "default": "recit" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    {
+      "type": "text",
+      "id": "alt_image",
+      "label": "Texte alternatif",
+      "info": "Décrit ce que montre l'image pour les lecteurs d'écran et les moteurs."
+    },
+    { "type": "text", "id": "legende", "label": "Légende" },
+    { "type": "text", "id": "index", "label": "Index" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre" },
+    { "type": "textarea", "id": "titre", "label": "Titre (H2)" },
+    { "type": "richtext", "id": "texte", "label": "Texte" },
+    { "type": "text", "id": "libelle", "label": "Libellé du lien" },
+    { "type": "url", "id": "lien", "label": "Lien" }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Point",
+      "limit": 6,
+      "settings": [{ "type": "text", "id": "texte", "label": "Texte", "default": "Nouveau point" }]
+    }
+  ],
+  "presets": [{ "name": "Média et texte" }]
+}
+{% endschema %}

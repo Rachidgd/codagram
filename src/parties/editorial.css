@@ -1031,3 +1031,111 @@
     word-break: break-all;
   }
 }
+
+@layer components {
+  /* — En-tête de page intérieure — */
+  .entete-page {
+    padding-block: clamp(2.25rem, 1.8rem + 1.8vw, 3.5rem) clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+  }
+  .entete-page__reperes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 1.5rem 2rem;
+    margin-top: clamp(2rem, 1.6rem + 1.6vw, 3rem);
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-lisere);
+  }
+  .entete-page__repere {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4375rem;
+  }
+  .entete-page__valeur {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .entete-page__libelle {
+    font-size: var(--text-xs);
+    color: var(--color-grain);
+    max-width: 22ch;
+  }
+
+  /* — Média et texte — */
+  .duo__legende {
+    margin-top: 0.875rem;
+    font-size: var(--text-xs);
+    color: var(--color-grain);
+    max-width: 40ch;
+  }
+  .surface-sombre .duo__legende {
+    color: var(--color-brume);
+  }
+  .duo__texte {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    max-width: 46ch;
+  }
+  .duo__texte p + p {
+    margin-top: 1rem;
+  }
+
+  /* — Accès — */
+  .acces__coordonnees {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: clamp(2rem, 1.6rem + 1.6vw, 2.75rem);
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--color-lisere);
+  }
+  .surface-sombre .acces__coordonnees {
+    border-color: var(--color-lisere-clair);
+  }
+  .acces__champ {
+    display: grid;
+    gap: 0.5rem;
+    font-size: var(--text-sm);
+    line-height: 1.7;
+  }
+  .acces__adresse {
+    font-style: normal;
+  }
+  .acces__itineraire {
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+  .acces__reperes {
+    display: grid;
+    gap: 0;
+    margin-top: 1.5rem;
+  }
+  .acces__repere {
+    display: grid;
+    gap: 0.25rem;
+    padding-block: 0.875rem;
+    border-top: 1px solid var(--color-lisere);
+    font-size: var(--text-sm);
+  }
+  .acces__reperes li:last-child {
+    border-bottom: 1px solid var(--color-lisere);
+  }
+  .surface-sombre .acces__repere {
+    border-color: var(--color-lisere-clair);
+  }
+  .acces__repere-cle {
+    font-size: var(--text-eyebrow);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-grain);
+  }
+  .surface-sombre .acces__repere-cle {
+    color: var(--color-brume);
+  }
+  .acces__repere-valeur {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 400;
+  }
+}
