@@ -68,6 +68,25 @@ for (const fichier of lister('sections', '.liquid')) {
         if (saisieLibre.has(r.type) && r.default === '') {
           err(`sections/${type}.liquid — ${ou} « ${r.id} » : "default" vide, refusé par Shopify (retirer la clé)`);
         }
+
+        // Un curseur doit tomber juste : Shopify exige que l'amplitude soit
+        // un multiple du pas, et que la valeur par défaut soit atteignable.
+        // Là encore, l'API écrit… rien, sans rien dire.
+        if (r.type === 'range') {
+          const { min, max, step } = r;
+          if ([min, max, step].some((v) => typeof v !== 'number') || step <= 0) {
+            err(`sections/${type}.liquid — ${ou} « ${r.id} » : min, max et step doivent être des nombres, step > 0`);
+          } else {
+            if ((max - min) % step !== 0) {
+              err(
+                `sections/${type}.liquid — ${ou} « ${r.id} » : (max ${max} − min ${min}) n'est pas un multiple du pas ${step}, refusé par Shopify`
+              );
+            }
+            if (typeof r.default === 'number' && (r.default < min || r.default > max || (r.default - min) % step !== 0)) {
+              err(`sections/${type}.liquid — ${ou} « ${r.id} » : la valeur par défaut ${r.default} n'est pas atteignable`);
+            }
+          }
+        }
       }
     };
     parcourir(schema.settings, 'réglage');
