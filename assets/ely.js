@@ -580,6 +580,14 @@ class ElyFormulaire extends HTMLElement {
         { signal: s }
       );
       champ.addEventListener('blur', () => this.validerChamp(champ), { signal: s });
+
+      // Cocher n'importe quel bouton du groupe lève l'erreur portée par le
+      // premier — sans quoi le message resterait affiché après correction.
+      if (champ.type === 'radio' && champ.name) {
+        this.querySelectorAll(`input[type="radio"][name="${CSS.escape(champ.name)}"]`).forEach((frere) => {
+          frere.addEventListener('change', () => this.validerChamp(champ), { signal: s });
+        });
+      }
     });
 
     // Dernier filet : si le script a laissé passer quelque chose, on bloque
@@ -652,7 +660,15 @@ class ElyFormulaire extends HTMLElement {
   }
 
   validerChamp(champ) {
-    const valeur = champ.type === 'checkbox' ? champ.checked : champ.value.trim();
+    // Un groupe de boutons radio ne se juge pas bouton par bouton : c'est le
+    // groupe entier qui est rempli ou vide. Seul le premier bouton porte
+    // « data-requis », il répond pour tous.
+    const valeur =
+      champ.type === 'checkbox'
+        ? champ.checked
+        : champ.type === 'radio'
+          ? Boolean(this.querySelector(`input[type="radio"][name="${CSS.escape(champ.name)}"]:checked`))
+          : champ.value.trim();
     let message = '';
 
     if (champ.hasAttribute('data-requis') && !valeur) {
@@ -672,7 +688,17 @@ class ElyFormulaire extends HTMLElement {
   }
 
   afficherErreur(champ, message) {
-    const conteneur = champ.closest('.champ') || champ.closest('div');
+    // Un champ simple porte son message dans son propre `.champ`. Un groupe
+    // (cases à cocher, boutons radio) n'en a pas : on remonte jusqu'au
+    // premier ancêtre qui contient une zone d'erreur, sans jamais sortir du
+    // formulaire.
+    let conteneur = champ.closest('.champ');
+    if (!conteneur) {
+      conteneur = champ.parentElement;
+      while (conteneur && conteneur !== this && !conteneur.querySelector('[data-erreur]')) {
+        conteneur = conteneur.parentElement;
+      }
+    }
     const zone = conteneur?.querySelector('[data-erreur]');
 
     if (message) {

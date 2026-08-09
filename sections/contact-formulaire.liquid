@@ -241,6 +241,61 @@
               {%- endif -%}
             </fieldset>
 
+            {%- comment -%}
+              — Temps 4, optionnel : la ville —
+
+              Dernière étape volontairement : on ne demande pas à quelqu'un où
+              il habite avant de savoir ce qu'il veut. Placée ici, la réponse
+              est presque toujours donnée, et elle dit au cabinet quelle ville
+              justifie la prochaine ouverture.
+            {%- endcomment -%}
+            {%- if section.settings.ville_activee -%}
+              {%- assign villes = section.blocks | where: 'type', 'ville' -%}
+              {%- if villes.size > 0 -%}
+                <fieldset class="formulaire__panneau" data-panneau="4">
+                  <legend class="formulaire__legende">{{ section.settings.legende_ville }}</legend>
+
+                  {%- if section.settings.intro_ville != blank -%}
+                    <p class="text-sm text-grain texte-mesure">{{ section.settings.intro_ville }}</p>
+                  {%- endif -%}
+
+                  <div>
+                    <div class="formulaire__villes" role="group" aria-labelledby="contact-ville-titre">
+                      <span id="contact-ville-titre" class="sr-only">{{ section.settings.legende_ville }}</span>
+                      {%- for bloc in villes -%}
+                        <label class="choix" {{ bloc.shopify_attributes }}>
+                          <input
+                            type="radio"
+                            name="contact[Ville souhaitée]"
+                            value="{{ bloc.settings.libelle | escape }}"
+                            {% if forloop.first %}
+                              data-requis
+                            {% endif %}
+                          >
+                          <span>{{ bloc.settings.libelle }}</span>
+                        </label>
+                      {%- endfor -%}
+                    </div>
+                    <span class="champ__erreur" data-erreur hidden></span>
+                  </div>
+
+                  <label class="champ">
+                    <input
+                      type="text"
+                      id="contact-ville-autre"
+                      class="champ__saisie"
+                      name="contact[Autre ville]"
+                      autocomplete="address-level2"
+                      placeholder=" "
+                    >
+                    <span class="champ__label">
+                      {{ 'formulaire.ville_autre' | t }} ({{ 'formulaire.facultatif' | t }})
+                    </span>
+                  </label>
+                </fieldset>
+              {%- endif -%}
+            {%- endif -%}
+
             {%- comment -%} Leurre anti-robot : un humain ne le voit ni ne le remplit. {%- endcomment -%}
             <div class="formulaire__leurre" aria-hidden="true">
               <label for="contact-reference">Ne pas remplir ce champ</label>
@@ -303,6 +358,28 @@
     { "type": "text", "id": "legende_1", "label": "Légende — temps 1", "default": "Votre demande" },
     { "type": "text", "id": "legende_2", "label": "Légende — temps 2", "default": "Vos coordonnées" },
     { "type": "text", "id": "legende_3", "label": "Légende — temps 3", "default": "Votre message" },
+
+    { "type": "header", "content": "Étape « ville »" },
+    {
+      "type": "checkbox",
+      "id": "ville_activee",
+      "label": "Demander la ville en dernière étape",
+      "info": "Ajoute un quatrième temps au formulaire, alimenté par les blocs « Ville ». Utile pour mesurer la demande avant une ouverture.",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "legende_ville",
+      "label": "Légende — temps 4",
+      "default": "Où souhaitez-vous être reçue ?"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_ville",
+      "label": "Phrase d'introduction",
+      "default": "Nous ouvrons ville par ville, dans l'ordre des demandes reçues. Votre réponse compte directement dans ce choix."
+    },
+
     {
       "type": "textarea",
       "id": "mention_rgpd",
@@ -322,6 +399,12 @@
       "name": "Protocole proposé",
       "limit": 12,
       "settings": [{ "type": "text", "id": "nom", "label": "Nom", "default": "Protocole" }]
+    },
+    {
+      "type": "ville",
+      "name": "Ville",
+      "limit": 10,
+      "settings": [{ "type": "text", "id": "libelle", "label": "Libellé", "default": "Casablanca" }]
     }
   ],
   "presets": [

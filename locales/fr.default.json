@@ -74,7 +74,8 @@
     "erreur": "L'envoi n'a pas abouti. Vous pouvez réessayer ou nous appeler directement.",
     "erreurs_a_corriger": "Merci de vérifier les champs signalés.",
     "etape_sur": "Étape {{ courante }} sur {{ total }}",
-    "facultatif": "facultatif"
+    "facultatif": "facultatif",
+    "ville_autre": "Une autre ville"
   },
   "journal": {
     "titre": "Journal",

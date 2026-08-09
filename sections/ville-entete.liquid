@@ -1,0 +1,195 @@
+{%- comment -%}
+  En-tête de page « ville ».
+
+  Porte le H1 géolocalisé et, surtout, le statut du cabinet dans cette ville.
+  C'est le réglage important de cette section : tant que rien n'est ouvert sur
+  place, la page le dit. Une page qui laisse croire à une adresse inexistante
+  se fait sanctionner deux fois — par le visiteur qui cherche un plan d'accès,
+  et par Google qui compare la page à la fiche établissement.
+
+  Les données structurées suivent la même règle : on décrit un service rendu
+  pour une zone (areaServed), jamais un établissement local qui n'existe pas.
+{%- endcomment -%}
+
+<section class="protocole-heros" data-entete-inverse>
+  {%- if section.settings.image != blank -%}
+    <div class="protocole-heros__fond" aria-hidden="true">
+      <img
+        src="{{ section.settings.image | image_url: width: 2000 }}"
+        srcset="
+          {{ section.settings.image | image_url: width: 900 }} 900w,
+          {{ section.settings.image | image_url: width: 1400 }} 1400w,
+          {{ section.settings.image | image_url: width: 2000 }} 2000w
+        "
+        sizes="100vw"
+        alt=""
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+    </div>
+  {%- endif -%}
+
+  <div class="lisiere relative">
+    <nav class="ariane" aria-label="{{ 'referencement.accueil' | t }}">
+      <a href="{{ routes.root_url }}">{{ 'referencement.accueil' | t }}</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ section.settings.ville | default: page.title }}</span>
+    </nav>
+
+    <div class="grille-12 mt-9 gap-y-8">
+      <div class="col-span-12 lg:col-span-8">
+        {%- if section.settings.surtitre != blank -%}
+          <p class="surtitre heros__surtitre" data-reveal>{{ section.settings.surtitre }}</p>
+        {%- endif -%}
+
+        <h1 class="mt-6 equilibre max-w-[19ch]" data-reveal style="--reveal-delay: 70ms">
+          {{ section.settings.titre | default: page.title }}
+        </h1>
+
+        {%- if section.settings.mention_statut != blank -%}
+          <p class="ville-statut" data-reveal style="--reveal-delay: 110ms">
+            <span class="ville-statut__pastille" aria-hidden="true"></span>
+            {{ section.settings.mention_statut }}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.chapo != blank -%}
+          <p class="heros__chapo" data-reveal style="--reveal-delay: 160ms">
+            {{ section.settings.chapo }}
+          </p>
+        {%- endif -%}
+
+        <div class="heros__actions" data-reveal style="--reveal-delay: 220ms">
+          {%- render 'bouton',
+            libelle: section.settings.libelle_principal,
+            lien: section.settings.ancre_principale,
+            style: 'clair',
+            fleche: true
+          -%}
+          {%- if section.settings.ancre_secondaire != blank -%}
+            {%- render 'bouton',
+              libelle: section.settings.libelle_secondaire,
+              lien: section.settings.ancre_secondaire,
+              style: 'fantome'
+            -%}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <dl class="protocole-heros__fiche" data-reveal-groupe data-reveal-pas="70">
+        {%- for bloc in section.blocks -%}
+          <div class="protocole-heros__champ" data-reveal {{ bloc.shopify_attributes }}>
+            <dt class="protocole-heros__cle">{{ bloc.settings.cle }}</dt>
+            <dd class="protocole-heros__valeur">{{ bloc.settings.valeur }}</dd>
+          </div>
+        {%- endfor -%}
+      </dl>
+    {%- endif -%}
+  </div>
+</section>
+
+{%- comment -%}
+  Service rendu pour une zone géographique, rattaché à l'établissement déclaré
+  une seule fois dans le thème (@id stable). Aucune adresse locale n'est
+  inventée ici.
+{%- endcomment -%}
+{%- if section.settings.ville != blank -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": {{ section.settings.titre | default: page.title | json }},
+      "serviceType": {{ section.settings.type_service | default: 'Soin esthétique' | json }},
+      "provider": { "@id": {{ shop.url | append: '/#etablissement' | json }} },
+      "areaServed": {
+        "@type": "City",
+        "name": {{ section.settings.ville | json }}
+        {%- if section.settings.pays != blank -%}
+          , "containedInPlace": { "@type": "Country", "name": {{ section.settings.pays | json }} }
+        {%- endif -%}
+      }
+      {%- if section.settings.chapo != blank -%}
+        , "description": {{ section.settings.chapo | json }}
+      {%- endif -%}
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "En-tête de ville",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "ville", "label": "Ville", "default": "Casablanca" },
+    { "type": "text", "id": "pays", "label": "Pays", "default": "Maroc" },
+    { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Casablanca — Maroc" },
+    {
+      "type": "textarea",
+      "id": "titre",
+      "label": "Titre (H1)",
+      "info": "Doit contenir le soin phare et la ville. Exemple : Hydrafacial et soins esthétiques à Casablanca.",
+      "default": "Hydrafacial et soins esthétiques à Casablanca"
+    },
+    {
+      "type": "text",
+      "id": "type_service",
+      "label": "Type de service (données structurées)",
+      "default": "Soin esthétique du visage"
+    },
+    {
+      "type": "text",
+      "id": "mention_statut",
+      "label": "Statut affiché",
+      "info": "Dites la vérité sur l'implantation. Tant qu'aucune adresse n'existe sur place, annoncez une ouverture en préparation.",
+      "default": "Ouverture en préparation — les demandes reçues décident de l'ordre des villes"
+    },
+    {
+      "type": "textarea",
+      "id": "chapo",
+      "label": "Chapô",
+      "default": "Les mêmes protocoles qu'à Paris, le même bilan préalable, la même exigence de résultat. Dites-nous ce que vous cherchez à corriger : nous vous répondons avec un plan de soin, pas avec un tarif."
+    },
+    { "type": "image_picker", "id": "image", "label": "Image de fond" },
+    {
+      "type": "text",
+      "id": "libelle_principal",
+      "label": "Bouton principal",
+      "default": "Demander un bilan"
+    },
+    { "type": "text", "id": "ancre_principale", "label": "Lien du bouton principal", "default": "#contact" },
+    {
+      "type": "text",
+      "id": "libelle_secondaire",
+      "label": "Bouton secondaire",
+      "default": "Voir les protocoles"
+    },
+    { "type": "text", "id": "ancre_secondaire", "label": "Lien du bouton secondaire", "default": "#protocoles" }
+  ],
+  "blocks": [
+    {
+      "type": "repere",
+      "name": "Repère",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "cle", "label": "Intitulé", "default": "Protocoles" },
+        { "type": "text", "id": "valeur", "label": "Valeur", "default": "7" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "En-tête de ville",
+      "blocks": [
+        { "type": "repere", "settings": { "cle": "Protocoles proposés", "valeur": "7" } },
+        { "type": "repere", "settings": { "cle": "Bilan préalable", "valeur": "Systématique" } },
+        { "type": "repere", "settings": { "cle": "Réponse", "valeur": "Sous 24 h ouvrées" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

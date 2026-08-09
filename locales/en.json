@@ -74,7 +74,8 @@
     "erreur": "The message could not be sent. Please try again or call us directly.",
     "erreurs_a_corriger": "Please check the highlighted fields.",
     "etape_sur": "Step {{ courante }} of {{ total }}",
-    "facultatif": "optional"
+    "facultatif": "optional",
+    "ville_autre": "Another city"
   },
   "journal": {
     "titre": "Journal",
