@@ -242,12 +242,12 @@
             </fieldset>
 
             {%- comment -%}
-              — Temps 4, optionnel : la ville —
+              Temps 4, optionnel : la ville.
 
               Dernière étape volontairement : on ne demande pas à quelqu'un où
               il habite avant de savoir ce qu'il veut. Placée ici, la réponse
-              est presque toujours donnée, et elle dit au cabinet quelle ville
-              justifie la prochaine ouverture.
+              est presque toujours donnée, et elle dit au cabinet lequel de ses
+              deux lieux la personne attend.
             {%- endcomment -%}
             {%- if section.settings.ville_activee -%}
               {%- assign villes = section.blocks | where: 'type', 'ville' -%}
@@ -364,20 +364,20 @@
       "type": "checkbox",
       "id": "ville_activee",
       "label": "Demander la ville en dernière étape",
-      "info": "Ajoute un quatrième temps au formulaire, alimenté par les blocs « Ville ». Utile pour mesurer la demande avant une ouverture.",
+      "info": "Ajoute un quatrième temps au formulaire, alimenté par les blocs « Ville », pour savoir dans quel cabinet la personne souhaite être reçue.",
       "default": false
     },
     {
       "type": "text",
       "id": "legende_ville",
       "label": "Légende, temps 4",
-      "default": "Où souhaitez-vous être reçue ?"
+      "default": "Dans quel cabinet ?"
     },
     {
       "type": "textarea",
       "id": "intro_ville",
       "label": "Phrase d'introduction",
-      "default": "Nous ouvrons ville par ville, dans l'ordre des demandes reçues. Votre réponse compte directement dans ce choix."
+      "default": "Ély'Skin reçoit à Paris et à Casablanca. Indiquez-nous le cabinet qui vous arrange."
     },
 
     {

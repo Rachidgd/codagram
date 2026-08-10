@@ -1,14 +1,14 @@
 {%- comment -%}
   En-tête de page « ville ».
 
-  Porte le H1 géolocalisé et, surtout, le statut du cabinet dans cette ville.
-  C'est le réglage important de cette section : tant que rien n'est ouvert sur
-  place, la page le dit. Une page qui laisse croire à une adresse inexistante
-  se fait sanctionner deux fois — par le visiteur qui cherche un plan d'accès,
-  et par Google qui compare la page à la fiche établissement.
+  Porte le H1 géolocalisé et l'adresse du cabinet dans cette ville.
 
-  Les données structurées suivent la même règle : on décrit un service rendu
-  pour une zone (areaServed), jamais un établissement local qui n'existe pas.
+  Les données structurées suivent ce que la page déclare réellement. Quand
+  l'adresse est renseignée, la section publie un établissement local complet,
+  avec son propre identifiant, son adresse postale, son téléphone et ses
+  horaires : c'est ce qui permet à Google de rattacher la page à la fiche
+  établissement de la ville. Sans adresse, elle se limite à décrire un service
+  rendu pour une zone, plutôt que d'inventer un lieu.
 {%- endcomment -%}
 
 <section class="protocole-heros" data-entete-inverse>
@@ -80,6 +80,40 @@
       </div>
     </div>
 
+    {%- comment -%}
+      Adresse locale. Une page de ville sans plan d'accès envoie le visiteur
+      chercher ailleurs, et prive la page de son signal le plus fort.
+    {%- endcomment -%}
+    {%- if section.settings.rue != blank -%}
+      <div class="ville-adresse" data-reveal style="--reveal-delay: 280ms">
+        <p class="ville-adresse__ligne">
+          <span class="surtitre">{{ 'cabinet.adresse' | t }}</span>
+          {{ section.settings.rue }}, {{ section.settings.code_postal }} {{ section.settings.ville }}
+          {%- if section.settings.lien_itineraire != blank -%}
+            <a class="lien" href="{{ section.settings.lien_itineraire }}" target="_blank" rel="noopener">
+              {{ 'cabinet.itineraire' | t }}
+            </a>
+          {%- endif -%}
+        </p>
+
+        {%- if section.settings.telephone != blank -%}
+          <p class="ville-adresse__ligne">
+            <span class="surtitre">{{ 'cabinet.telephone' | t }}</span>
+            <a class="lien nombres-tabulaires" href="tel:{{ section.settings.telephone | remove: ' ' | remove: '.' }}">
+              {{ section.settings.telephone }}
+            </a>
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.horaires != blank -%}
+          <p class="ville-adresse__ligne">
+            <span class="surtitre">{{ 'cabinet.horaires' | t }}</span>
+            <span class="nombres-tabulaires">{{ section.settings.horaires }}</span>
+          </p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
     {%- if section.blocks.size > 0 -%}
       <dl class="protocole-heros__fiche" data-reveal-groupe data-reveal-pas="70">
         {%- for bloc in section.blocks -%}
@@ -94,30 +128,64 @@
 </section>
 
 {%- comment -%}
-  Service rendu pour une zone géographique, rattaché à l'établissement déclaré
-  une seule fois dans le thème (@id stable). Aucune adresse locale n'est
-  inventée ici.
+  Deux cas, deux déclarations.
+
+  Adresse renseignée : un établissement à part entière, avec son propre
+  identifiant, rattaché à la marque. C'est ce qui permet à Google de relier
+  cette page à la bonne fiche établissement plutôt qu'à celle du siège.
+
+  Pas d'adresse : un service rendu pour une zone. Aucun lieu n'est inventé.
 {%- endcomment -%}
 {%- if section.settings.ville != blank -%}
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": {{ section.settings.titre | default: page.title | json }},
-      "serviceType": {{ section.settings.type_service | default: 'Soin esthétique' | json }},
-      "provider": { "@id": {{ shop.url | append: '/#etablissement' | json }} },
-      "areaServed": {
-        "@type": "City",
-        "name": {{ section.settings.ville | json }}
-        {%- if section.settings.pays != blank -%}
-          , "containedInPlace": { "@type": "Country", "name": {{ section.settings.pays | json }} }
+  {%- if section.settings.rue != blank -%}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": {{ settings.seo_type_etablissement | default: 'HealthAndBeautyBusiness' | json }},
+        "@id": {{ shop.url | append: page.url | append: '#etablissement' | json }},
+        "name": {{ settings.cabinet_nom | default: shop.name | append: ' ' | append: section.settings.ville | json }},
+        "url": {{ shop.url | append: page.url | json }},
+        "parentOrganization": { "@id": {{ shop.url | append: '/#etablissement' | json }} },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": {{ section.settings.rue | json }},
+          "postalCode": {{ section.settings.code_postal | json }},
+          "addressLocality": {{ section.settings.ville | json }},
+          "addressCountry": {{ section.settings.code_pays | default: 'MA' | json }}
+        }
+        {%- if section.settings.telephone != blank -%}
+          , "telephone": {{ section.settings.telephone | json }}
+        {%- endif -%}
+        {%- if section.settings.horaires_donnees != blank -%}
+          , "openingHours": {{ section.settings.horaires_donnees | split: '
+' | json }}
+        {%- endif -%}
+        {%- if section.settings.chapo != blank -%}
+          , "description": {{ section.settings.chapo | json }}
         {%- endif -%}
       }
-      {%- if section.settings.chapo != blank -%}
-        , "description": {{ section.settings.chapo | json }}
-      {%- endif -%}
-    }
-  </script>
+    </script>
+  {%- else -%}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": {{ section.settings.titre | default: page.title | json }},
+        "serviceType": {{ section.settings.type_service | default: 'Soin esthétique' | json }},
+        "provider": { "@id": {{ shop.url | append: '/#etablissement' | json }} },
+        "areaServed": {
+          "@type": "City",
+          "name": {{ section.settings.ville | json }}
+          {%- if section.settings.pays != blank -%}
+            , "containedInPlace": { "@type": "Country", "name": {{ section.settings.pays | json }} }
+          {%- endif -%}
+        }
+        {%- if section.settings.chapo != blank -%}
+          , "description": {{ section.settings.chapo | json }}
+        {%- endif -%}
+      }
+    </script>
+  {%- endif -%}
 {%- endif -%}
 
 {% schema %}
@@ -145,16 +213,41 @@
       "type": "text",
       "id": "mention_statut",
       "label": "Statut affiché",
-      "info": "Dites la vérité sur l'implantation. Tant qu'aucune adresse n'existe sur place, annoncez une ouverture en préparation.",
-      "default": "Ouverture en préparation. Les demandes reçues décident de l'ordre des villes."
+      "info": "Ce que la page annonce sur cette implantation. Laissez vide pour ne rien afficher.",
+      "default": "Les sept protocoles sont disponibles sur place, sur rendez-vous."
     },
     {
       "type": "textarea",
       "id": "chapo",
       "label": "Chapô",
-      "default": "Les mêmes protocoles qu'à Paris, le même bilan préalable, la même exigence de résultat. Dites-nous ce que vous cherchez à corriger : nous vous répondons avec un plan de soin, pas avec un tarif."
+      "default": "Le même bilan avant tout soin, les mêmes protocoles, la même exigence de résultat qu'au cabinet parisien. Dites-nous ce que vous cherchez à corriger : vous recevez un plan de soin, pas une grille tarifaire."
     },
     { "type": "image_picker", "id": "image", "label": "Image de fond" },
+
+    { "type": "header", "content": "Adresse du cabinet" },
+    {
+      "type": "paragraph",
+      "content": "Renseignez la rue pour afficher le plan d'accès et publier un établissement local dans les données structurées. Laissée vide, la page décrit seulement un service rendu dans la ville."
+    },
+    { "type": "text", "id": "rue", "label": "Rue" },
+    { "type": "text", "id": "code_postal", "label": "Code postal" },
+    {
+      "type": "text",
+      "id": "code_pays",
+      "label": "Code pays",
+      "info": "Deux lettres. MA pour le Maroc, FR pour la France.",
+      "default": "MA"
+    },
+    { "type": "text", "id": "telephone", "label": "Téléphone" },
+    { "type": "text", "id": "horaires", "label": "Horaires affichés", "default": "Du mardi au samedi" },
+    {
+      "type": "textarea",
+      "id": "horaires_donnees",
+      "label": "Horaires pour les moteurs de recherche",
+      "info": "Une plage par ligne, au format Tu,We,Th,Fr 10:00-19:00",
+      "default": "Tu,We,Th,Fr 10:00-19:00\nSa 10:00-17:00"
+    },
+    { "type": "url", "id": "lien_itineraire", "label": "Lien d'itinéraire" },
     {
       "type": "text",
       "id": "libelle_principal",
