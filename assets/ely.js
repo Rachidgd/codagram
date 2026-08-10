@@ -934,7 +934,6 @@ compteurs();
 curseur();
 champs();
 moduleALaDemande('ely-diagnostic');
-moduleALaDemande('ely-agenda');
 progression();
 
 // Signale au filet de sécurité posé dans <head> que le thème a bien démarré.
@@ -946,5 +945,4 @@ document.addEventListener('shopify:section:load', () => {
   compteurs();
   champs();
   moduleALaDemande('ely-diagnostic');
-  moduleALaDemande('ely-agenda');
 });

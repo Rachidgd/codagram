@@ -7,7 +7,6 @@
     "theme_documentation_url": "https://github.com/rachidgd/codagram",
     "theme_support_url": "https://github.com/rachidgd/codagram/issues"
   },
-
   {
     "name": "Identité",
     "settings": [
@@ -58,7 +57,6 @@
       }
     ]
   },
-
   {
     "name": "Couleurs",
     "settings": [
@@ -145,7 +143,6 @@
       }
     ]
   },
-
   {
     "name": "Le cabinet",
     "settings": [
@@ -229,6 +226,13 @@
         "content": "Prise de rendez-vous"
       },
       {
+        "type": "text",
+        "id": "langue_site",
+        "label": "Code de langue du site",
+        "info": "Sert à l'attribut lang de la page. Laissez « fr » tant que la langue par défaut de la boutique n'est pas passée au français dans Paramètres, Langues.",
+        "default": "fr"
+      },
+      {
         "type": "url",
         "id": "rdv_url",
         "label": "Lien de réservation",
@@ -242,7 +246,6 @@
       }
     ]
   },
-
   {
     "name": "Réseaux",
     "settings": [
@@ -274,7 +277,6 @@
       }
     ]
   },
-
   {
     "name": "Mouvement",
     "settings": [
@@ -309,7 +311,6 @@
       }
     ]
   },
-
   {
     "name": "Référencement",
     "settings": [
@@ -328,9 +329,18 @@
         "id": "seo_type_etablissement",
         "label": "Type d'établissement déclaré",
         "options": [
-          { "value": "MedicalBusiness", "label": "Établissement de santé" },
-          { "value": "BeautySalon", "label": "Institut de beauté" },
-          { "value": "HealthAndBeautyBusiness", "label": "Santé et beauté" }
+          {
+            "value": "MedicalBusiness",
+            "label": "Établissement de santé"
+          },
+          {
+            "value": "BeautySalon",
+            "label": "Institut de beauté"
+          },
+          {
+            "value": "HealthAndBeautyBusiness",
+            "label": "Santé et beauté"
+          }
         ],
         "default": "HealthAndBeautyBusiness"
       },
@@ -342,7 +352,6 @@
       }
     ]
   },
-
   {
     "name": "Mentions",
     "settings": [

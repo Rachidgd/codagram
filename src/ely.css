@@ -18,7 +18,6 @@
 @import "./parties/entete.css";
 @import "./parties/sections.css";
 @import "./parties/diagnostic.css";
-@import "./parties/agenda.css";
 @import "./parties/editorial.css";
 
 @source "../layout/**/*.liquid";
@@ -614,6 +613,20 @@
     transform: translateY(-1.375rem) scale(0.72);
     color: var(--color-grain);
   }
+  /* Un champ date affiche toujours quelque chose, même vide : il ne déclenche
+     jamais `:placeholder-shown`. Son libellé doit donc rester en position
+     haute en permanence, sinon il se superpose à la date. */
+  .champ__label--fixe {
+    transform: translateY(-1.375rem) scale(0.72);
+  }
+  .champ:has(.champ__label--fixe) .champ__saisie {
+    padding-top: 1.5rem;
+  }
+  input[type="date"].champ__saisie {
+    /* Safari iOS aligne mal les champs date sans hauteur explicite. */
+    min-height: 3.25rem;
+  }
+
   .champ__saisie[aria-invalid="true"] {
     border-bottom-color: var(--color-alerte);
   }

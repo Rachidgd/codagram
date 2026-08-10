@@ -55,21 +55,17 @@
     "origine": "Diagnostic interactif du site",
     "succes": "C'est envoyé. Nous avons votre orientation sous les yeux et nous revenons vers vous sous 24 h ouvrées."
   },
-  "agenda": {
-    "quel_soin": "Quel soin souhaitez-vous ?",
-    "quel_jour": "Quel jour vous arrange ?",
-    "quelle_heure": "À quelle heure, le {{ jour }} ?",
-    "duree": "{{ minutes }} min",
-    "rappel": "{{ soin }} — {{ creneau }}",
-    "aucun_jour": "Aucun créneau disponible pour ce soin sur la période affichée. Écrivez-nous : nous ouvrons régulièrement des places qui ne figurent pas ici.",
-    "reprendre": "Demander un autre créneau",
+  "rdv": {
+    "soin": "Le soin qui vous intéresse",
+    "date": "Date souhaitée",
+    "date_repli": "Une autre date qui vous irait",
+    "moment": "Moment de la journée",
+    "peu_importe": "Peu importe",
+    "matin": "Matin",
+    "apres_midi": "Après-midi",
+    "fin_journee": "Fin de journée",
     "precision": "Une précision à nous transmettre",
-    "origine": "Prise de rendez-vous du site",
-    "succes": "Votre demande est arrivée. Nous confirmons ce créneau par téléphone ou par e-mail sous 24 h ouvrées.",
-    "repli": "La prise de rendez-vous en ligne nécessite JavaScript. Voici nos plages d'ouverture : indiquez-nous le créneau qui vous convient dans votre message.",
-    "a_configurer": "Aucun soin ni aucune plage d'ouverture n'est encore enregistré. Rendez-vous dans l'admin, sous Contenu → Métaobjets, pour les saisir.",
-    "creneau_repris": "Ce créneau vient d'être pris par quelqu'un d'autre. Les disponibilités ci-dessus sont à jour : choisissez-en un autre.",
-    "reserve": "C'est réservé. Vous recevez la confirmation par e-mail dans quelques instants."
+    "succes": "Votre demande est arrivée. Nous vous rappelons sous 24 h ouvrées pour confirmer la date ou vous proposer le créneau le plus proche."
   },
   "formulaire": {
     "nom": "Nom et prénom",

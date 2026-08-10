@@ -261,6 +261,24 @@
     align-items: center;
     gap: 0.75rem;
   }
+  /* — Colonne d'information de la demande de rendez-vous — */
+  .rdv__horaires {
+    margin-top: clamp(1.75rem, 1.4rem + 1.4vw, 2.75rem);
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-lisere);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+  }
+  .rdv__horaires .surtitre {
+    display: block;
+    margin-bottom: 0.625rem;
+  }
+  .rdv__appel {
+    margin-top: 1.25rem;
+    font-size: var(--text-sm);
+    color: var(--color-grain);
+  }
+
   /* Choix de ville : deux colonnes dès qu'il y a la place, une seule sinon.
      Les libellés sont courts, la lecture doit rester verticale et rapide. */
   .formulaire__villes {

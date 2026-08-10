@@ -2,9 +2,3 @@ node_modules/
 .DS_Store
 *.log
 .shopify/
-
-# App de rendez-vous
-apps/rendez-vous/node_modules
-apps/rendez-vous/build
-apps/rendez-vous/.env
-apps/rendez-vous/*.sqlite

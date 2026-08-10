@@ -1,6 +1,13 @@
 <!doctype html>
 <html
-  lang="{{ request.locale.iso_code }}"
+  {%- comment -%}
+    La langue déclarée ici est celle des textes réellement affichés. Tant que
+    la langue par défaut de la boutique n'est pas passée au français dans
+    Paramètres → Langues, `request.locale.iso_code` renvoie « en » alors que
+    la page est écrite en français : annoncer l'anglais tromperait à la fois
+    le lecteur d'écran et le moteur de recherche.
+  {%- endcomment -%}
+  lang="{{ settings.langue_site | default: request.locale.iso_code }}"
   data-js="off"
   class="no-js"
 >
