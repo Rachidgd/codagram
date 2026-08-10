@@ -46,7 +46,7 @@
     "resultat_titre": "Le protocole recommandé",
     "resultat_intro": "D'après vos réponses, voici la piste la plus cohérente. Elle reste à confirmer lors du bilan.",
     "alternative": "À envisager en complément",
-    "reserver": "Réserver ce protocole",
+    "reserver": "Prendre rendez-vous",
     "voir_page": "Lire la fiche complète",
     "repli": "Cet outil d'orientation nécessite JavaScript. Vous pouvez aussi parcourir directement la liste des protocoles ci-dessous.",
     "rappel": "Votre orientation : {{ protocole }}",

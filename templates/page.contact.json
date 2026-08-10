@@ -25,18 +25,18 @@
         "surtitre": "Nous écrire",
         "titre": "Une question précise appelle une réponse précise.",
         "niveau_titre": "h1",
-        "chapo": "<p>Nous répondons sous 24 heures ouvrées. Pour une prise de rendez-vous immédiate, le lien de réservation reste le chemin le plus court.</p>",
+        "chapo": "<p>Nous répondons sous 24 heures ouvrées. Pour un rendez-vous immédiat, le lien de prise de rendez-vous reste le chemin le plus court.</p>",
         "legende_1": "Votre demande",
         "legende_2": "Vos coordonnées",
         "legende_3": "Votre message",
-        "mention_rgpd": "Les informations transmises servent uniquement à traiter votre demande et ne sont ni cédées ni utilisées à des fins commerciales. Vous pouvez demander leur suppression à tout moment."
+        "mention_rgpd": "Les informations transmises servent uniquement à traiter votre demande et ne sont ni cédées ni utilisées à des fins de prospection. Vous pouvez demander leur suppression à tout moment."
       }
     },
     "questions": {
       "type": "faq",
       "blocks": {
-        "f1": { "type": "question", "settings": { "question": "Sous quel délai répondez-vous ?", "reponse": "<p>Sous vingt-quatre heures ouvrées pour les demandes écrites. Pour une réservation immédiate, le lien de prise de rendez-vous reste plus rapide que le formulaire.</p>" } },
-        "f2": { "type": "question", "settings": { "question": "Puis-je poser une question sans venir ?", "reponse": "<p>Oui. Beaucoup de questions se règlent en quelques lignes, et il arrive que la réponse soit qu'aucun rendez-vous n'est utile. Le formulaire n'est pas un tunnel de vente.</p>" } },
+        "f1": { "type": "question", "settings": { "question": "Sous quel délai répondez-vous ?", "reponse": "<p>Sous vingt-quatre heures ouvrées pour les demandes écrites. Pour un rendez-vous immédiat, le lien de prise de rendez-vous reste plus rapide que le formulaire.</p>" } },
+        "f2": { "type": "question", "settings": { "question": "Puis-je poser une question sans venir ?", "reponse": "<p>Oui. Beaucoup de questions se règlent en quelques lignes, et il arrive que la réponse soit qu'aucun rendez-vous n'est utile. Le formulaire ne sert pas à vous faire venir à tout prix.</p>" } },
         "f3": { "type": "question", "settings": { "question": "Comment annuler ou décaler un rendez-vous ?", "reponse": "<p>Par téléphone ou par e-mail, au moins vingt-quatre heures à l'avance. Un créneau libéré tardivement est un créneau perdu pour quelqu'un d'autre.</p>" } }
       },
       "block_order": ["f1", "f2", "f3"],

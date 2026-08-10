@@ -64,7 +64,7 @@
           data-libelle-resultat="{{ 'diagnostic.resultat_titre' | t }}"
           data-libelle-intro="{{ 'diagnostic.resultat_intro' | t }}"
           data-libelle-alternative="{{ 'diagnostic.alternative' | t }}"
-          data-libelle-reserver="{{ section.settings.libelle_reserver | default: 'Réserver ce protocole' | escape }}"
+          data-libelle-reserver="{{ section.settings.libelle_reserver | default: 'Prendre rendez-vous' | escape }}"
           data-libelle-fiche="{{ 'diagnostic.voir_page' | t }}"
           data-libelle-rappel="{{ 'diagnostic.rappel' | t: protocole: '%P%' }}"
           data-libelle-aucun="{{ 'diagnostic.aucun_protocole' | t }}"
@@ -363,8 +363,8 @@
     {
       "type": "text",
       "id": "libelle_reserver",
-      "label": "Libellé du bouton de réservation",
-      "default": "Réserver un bilan"
+      "label": "Libellé du bouton de rendez-vous",
+      "default": "Prendre rendez-vous"
     },
 
     { "type": "header", "content": "Prise de contact à l'étape résultat" },
@@ -547,7 +547,7 @@
           "settings": {
             "nom": "Diagnostic infirmier",
             "lien": "/pages/diagnostic-infirmier",
-            "argument": "Quand la peau est réactive ou qu'un traitement est en cours, on commence par lire avant d'agir. Vous repartez avec un plan écrit, pas avec une séance vendue.",
+            "argument": "Quand la peau est réactive ou qu'un traitement est en cours, on commence par lire avant d'agir. Vous repartez avec un plan écrit, pas avec une séance déjà engagée.",
             "duree": "40 min",
             "seances": "1",
             "o_eclat": true,

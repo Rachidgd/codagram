@@ -5,7 +5,7 @@
       "settings": {
         "index": "01",
         "surtitre": "Le journal",
-        "chapo": "Ce qu'on explique en cabinet, écrit une bonne fois. Aucun article n'est là pour vendre un protocole.",
+        "chapo": "Ce qu'on explique en cabinet, écrit une bonne fois. Ces articles servent à comprendre votre peau, pas à vous amener vers un soin.",
         "afficher_filtres": true,
         "par_page": 12
       }
