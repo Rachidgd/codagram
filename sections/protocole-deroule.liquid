@@ -53,7 +53,7 @@
 
 {% schema %}
 {
-  "name": "Protocole — déroulé",
+  "name": "Protocole, déroulé",
   "tag": "div",
   "settings": [
     {
@@ -84,7 +84,7 @@
       "name": "Temps",
       "limit": 8,
       "settings": [
-        { "type": "text", "id": "minute", "label": "Repère de temps", "default": "0 — 10 min" },
+        { "type": "text", "id": "minute", "label": "Repère de temps", "default": "0 à 10 min" },
         { "type": "text", "id": "titre", "label": "Titre", "default": "Nouvelle étape" },
         { "type": "textarea", "id": "texte", "label": "Description" }
       ]
@@ -92,12 +92,12 @@
   ],
   "presets": [
     {
-      "name": "Protocole — déroulé",
+      "name": "Protocole, déroulé",
       "blocks": [
         {
           "type": "temps",
           "settings": {
-            "minute": "0 — 10 min",
+            "minute": "0 à 10 min",
             "titre": "Point d'entrée",
             "texte": "Ce qu'a fait la peau depuis la dernière séance, ce qui a changé dans votre routine, ce qui vous gêne aujourd'hui. Le protocole du jour se décide ici."
           }
@@ -105,7 +105,7 @@
         {
           "type": "temps",
           "settings": {
-            "minute": "10 — 20 min",
+            "minute": "10 à 20 min",
             "titre": "Préparation",
             "texte": "Démaquillage complet, nettoyage, lecture de la peau à la lumière rasante. On repère les zones à traiter et celles à éviter."
           }
@@ -113,7 +113,7 @@
         {
           "type": "temps",
           "settings": {
-            "minute": "20 — 45 min",
+            "minute": "20 à 45 min",
             "titre": "Le soin",
             "texte": "Le geste technique à proprement parler, conduit zone par zone, avec un contrôle visuel entre chaque passage."
           }
@@ -121,7 +121,7 @@
         {
           "type": "temps",
           "settings": {
-            "minute": "45 — 60 min",
+            "minute": "45 à 60 min",
             "titre": "Apaisement et consignes",
             "texte": "Application des soins de sortie, protection solaire, et remise des consignes écrites pour les jours qui suivent."
           }

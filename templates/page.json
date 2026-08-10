@@ -2,7 +2,7 @@
   "sections": {
     "page": {
       "type": "page-principale",
-      "settings": { "index": "—", "surtitre": "Le cabinet" }
+      "settings": { "index": "01", "surtitre": "Le cabinet" }
     }
   },
   "order": ["page"]
