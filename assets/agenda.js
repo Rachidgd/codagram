@@ -125,6 +125,117 @@ class ElyAgenda extends HTMLElement {
 
     if (this.succes) this.dessinerEnvoi();
     else this.dessiner();
+
+    // L'app, si elle est installée, connaît les rendez-vous déjà pris. On
+    // affiche d'abord notre estimation — instantanée — puis on la corrige.
+    this.interrogerServeur();
+    this.brancherEnvoi();
+  }
+
+  /* Sans l'app, le formulaire part par e-mail : c'est une demande, et la
+     section le dit. Avec l'app, l'envoi passe d'abord par le proxy, qui pose
+     un vrai verrou sur le créneau. En cas de panne du proxy, on laisse
+     l'envoi natif se faire : mieux vaut une demande par e-mail qu'un
+     prospect perdu. */
+  brancherEnvoi() {
+    const proxy = this.dataset.proxy;
+    const formulaire = this.querySelector('.agenda__capture');
+    if (!proxy || !formulaire) return;
+
+    formulaire.addEventListener('submit', async (e) => {
+      if (formulaire.dataset.replier === 'oui') return;
+      if (!formulaire.reportValidity()) return;
+      e.preventDefault();
+
+      const champs = new FormData(formulaire);
+      const corps = new FormData();
+      corps.set('soin', champs.get('contact[Soin — identifiant]') || '');
+      corps.set('date', champs.get('contact[Date souhaitée]') || '');
+      corps.set('heure', champs.get('contact[Heure souhaitée]') || '');
+      corps.set('nom', champs.get('contact[name]') || '');
+      corps.set('email', champs.get('contact[email]') || '');
+      corps.set('telephone', champs.get('contact[phone]') || '');
+      corps.set('message', champs.get('contact[body]') || '');
+      corps.set('reference', champs.get('contact[reference-rdv]') || '');
+
+      let reponse;
+      try {
+        reponse = await fetch(`${proxy}/reserver`, { method: 'POST', body: corps });
+      } catch {
+        formulaire.dataset.replier = 'oui';
+        formulaire.submit();
+        return;
+      }
+
+      if (reponse.ok) {
+        this.confirmer();
+        return;
+      }
+
+      if (reponse.status === 409) {
+        // Quelqu'un a pris le créneau entre l'affichage et l'envoi.
+        this.creneau = null;
+        await this.interrogerServeur();
+        this.dessiner();
+        this.signaler(this.dataset.libelleRepris || '');
+        return;
+      }
+
+      formulaire.dataset.replier = 'oui';
+      formulaire.submit();
+    });
+  }
+
+  signaler(message) {
+    if (!message) return;
+    const zone = document.createElement('p');
+    zone.className = 'formulaire__message formulaire__message--erreur';
+    zone.setAttribute('role', 'alert');
+    zone.tabIndex = -1;
+    zone.textContent = message;
+    this.scene.prepend(zone);
+    zone.focus();
+  }
+
+  confirmer() {
+    this.masquerCapture();
+    this.scene.innerHTML = '';
+    const message = document.createElement('p');
+    message.className = 'formulaire__message formulaire__message--succes';
+    message.setAttribute('role', 'status');
+    message.tabIndex = -1;
+    message.textContent = this.dataset.libelleReserve || '';
+    this.scene.appendChild(message);
+    message.focus();
+  }
+
+  /* — Créneaux fermes, quand l'app est installée —
+     Le calcul local ignore les réservations : il ne peut pas les connaître.
+     Le proxy, lui, les déduit. Tant qu'il ne répond pas, la section reste
+     utilisable avec son estimation ; c'est ce qui la rend indépendante de
+     l'hébergement de l'app. */
+  async interrogerServeur() {
+    const proxy = this.dataset.proxy;
+    if (!proxy) return;
+
+    try {
+      const reponse = await fetch(`${proxy}/creneaux`, { headers: { Accept: 'application/json' } });
+      if (!reponse.ok) return;
+      const data = await reponse.json();
+      if (!Array.isArray(data?.soins) || !data.soins.length) return;
+
+      this.serveur = new Map(data.soins.map((s) => [s.handle, s.jours]));
+
+      // L'app répond : le créneau devient ferme, et la mention affichée doit
+      // le dire. Tant qu'elle n'a pas répondu, c'est la mention prudente qui
+      // reste — on ne promet pas une réservation qu'on ne peut pas tenir.
+      const mention = this.querySelector('[data-agenda-mention]');
+      if (mention && this.dataset.mentionFerme) mention.textContent = this.dataset.mentionFerme;
+
+      this.dessiner();
+    } catch {
+      // Hors ligne, app arrêtée, proxy mal configuré : on garde l'estimation.
+    }
   }
 
   /* — Calcul des créneaux — */
@@ -165,6 +276,15 @@ class ElyAgenda extends HTMLElement {
   }
 
   joursOuverts(soin) {
+    // Réponse du serveur : elle fait autorité, elle a déduit les rendez-vous
+    // déjà pris.
+    const ferme = this.serveur?.get(soin.handle);
+    if (ferme) {
+      return ferme
+        .map((j) => ({ iso: j.date, creneaux: j.creneaux.map(enMinutes).filter((m) => m !== null) }))
+        .filter((j) => j.creneaux.length);
+    }
+
     const liste = [];
     const curseur = jour(maintenantAuCabinet(this.fuseau).date);
     for (let i = 0; i < this.horizon; i += 1) {
@@ -354,6 +474,7 @@ class ElyAgenda extends HTMLElement {
     const libelle = `${this.formatJour.format(d)} — ${enHeure(this.creneau)}`;
 
     this.remplirChamp('soin', this.soin.nom);
+    this.remplirChamp('handle', this.soin.handle);
     this.remplirChamp('date', this.date);
     this.remplirChamp('heure', enHeure(this.creneau));
     this.remplirChamp('recap', `${this.soin.nom} — ${libelle} (${this.soin.duree} min)`);

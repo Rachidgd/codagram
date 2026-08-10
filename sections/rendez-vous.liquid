@@ -72,6 +72,12 @@
             data-libelle-rappel="{{ 'agenda.rappel' | t: soin: '%S%', creneau: '%Q%' }}"
             data-libelle-aucun-jour="{{ 'agenda.aucun_jour' | t }}"
             data-libelle-reprendre="{{ 'agenda.reprendre' | t }}"
+            data-libelle-repris="{{ 'agenda.creneau_repris' | t }}"
+            data-libelle-reserve="{{ 'agenda.reserve' | t }}"
+            data-mention-ferme="{{ section.settings.mention_ferme | escape }}"
+            {% if section.settings.proxy != blank %}
+              data-proxy="{{ section.settings.proxy }}"
+            {% endif %}
           >
             <script type="application/json" data-agenda-soins>
               [
@@ -165,6 +171,7 @@
                   <p class="agenda__capture-titre">{{ section.settings.capture_titre }}</p>
 
                   <input type="hidden" name="contact[Soin demandé]" value="" data-agenda-champ="soin">
+                  <input type="hidden" name="contact[Soin — identifiant]" value="" data-agenda-champ="handle">
                   <input type="hidden" name="contact[Date souhaitée]" value="" data-agenda-champ="date">
                   <input type="hidden" name="contact[Heure souhaitée]" value="" data-agenda-champ="heure">
                   <input type="hidden" name="contact[Créneau]" value="" data-agenda-champ="recap">
@@ -247,7 +254,7 @@
                     </button>
                   </div>
 
-                  <p class="agenda__mention">{{ section.settings.mention_confirmation }}</p>
+                  <p class="agenda__mention" data-agenda-mention>{{ section.settings.mention_confirmation }}</p>
                 </div>
               {%- endif -%}
             {%- endform -%}
@@ -338,6 +345,20 @@
       "step": 2,
       "unit": "h",
       "default": 24
+    },
+
+    {
+      "type": "text",
+      "id": "proxy",
+      "label": "Chemin de l'app de réservation",
+      "info": "À renseigner seulement si l'app « Rendez-vous » est installée : /apps/rendez-vous. Les créneaux deviennent alors fermes, les rendez-vous déjà pris étant déduits. Laisser vide fait fonctionner la section en mode demande."
+    },
+    {
+      "type": "textarea",
+      "id": "mention_ferme",
+      "label": "Mention quand l'app répond",
+      "info": "Remplace la mention ci-dessus uniquement si l'app confirme le créneau. Si l'app ne répond pas, c'est l'autre mention qui reste affichée.",
+      "default": "Ce créneau vous est réservé dès l'envoi. Vous recevez une confirmation par e-mail ; prévenez-nous dès que possible en cas d'empêchement."
     },
 
     { "type": "header", "content": "Formulaire" },

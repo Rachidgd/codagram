@@ -67,7 +67,9 @@
     "origine": "Prise de rendez-vous du site",
     "succes": "Votre demande est arrivée. Nous confirmons ce créneau par téléphone ou par e-mail sous 24 h ouvrées.",
     "repli": "La prise de rendez-vous en ligne nécessite JavaScript. Voici nos plages d'ouverture : indiquez-nous le créneau qui vous convient dans votre message.",
-    "a_configurer": "Aucun soin ni aucune plage d'ouverture n'est encore enregistré. Rendez-vous dans l'admin, sous Contenu → Métaobjets, pour les saisir."
+    "a_configurer": "Aucun soin ni aucune plage d'ouverture n'est encore enregistré. Rendez-vous dans l'admin, sous Contenu → Métaobjets, pour les saisir.",
+    "creneau_repris": "Ce créneau vient d'être pris par quelqu'un d'autre. Les disponibilités ci-dessus sont à jour : choisissez-en un autre.",
+    "reserve": "C'est réservé. Vous recevez la confirmation par e-mail dans quelques instants."
   },
   "formulaire": {
     "nom": "Nom et prénom",

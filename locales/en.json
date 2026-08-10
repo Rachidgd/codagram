@@ -67,7 +67,9 @@
     "origine": "Website booking",
     "succes": "Your request has arrived. We will confirm this slot by phone or email within one business day.",
     "repli": "Online booking requires JavaScript. Here are our opening hours — tell us which slot suits you in your message.",
-    "a_configurer": "No treatment or opening hours have been saved yet. Go to Content → Metaobjects in the admin to add them."
+    "a_configurer": "No treatment or opening hours have been saved yet. Go to Content → Metaobjects in the admin to add them.",
+    "creneau_repris": "Someone has just taken this slot. The times above are up to date — please pick another.",
+    "reserve": "Booked. You will receive the confirmation by email shortly."
   },
   "formulaire": {
     "nom": "Full name",
