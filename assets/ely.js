@@ -637,8 +637,7 @@ class ElyFormulaire extends HTMLElement {
 
     // Le focus suit la progression, mais pas au premier rendu.
     if (this.aDemarre) {
-      const cible = this.panneaux[this.courant].querySelector('input, select, textarea');
-      cible?.focus({ preventScroll: true });
+      this.focaliser(this.panneaux[this.courant].querySelector('input, select, textarea'));
     }
     this.aDemarre = true;
   }
@@ -655,8 +654,23 @@ class ElyFormulaire extends HTMLElement {
       }
     });
 
-    premierFautif?.focus({ preventScroll: true });
+    this.focaliser(premierFautif);
     return valide;
+  }
+
+  /* Un champ peut être remplacé à l'écran par un composant (calendrier) : il
+     désigne alors, par `data-focus-relais`, l'élément qui doit recevoir le
+     focus à sa place. Sans quoi l'erreur renverrait vers un champ invisible. */
+  focaliser(champ) {
+    if (!champ) return;
+    // `closest` s'arrêterait au `.champ` qui enveloppe le champ replié, et qui
+    // ne contient pas le composant. On remonte donc jusqu'à lui explicitement.
+    const relais = champ.dataset.focusRelais
+      ? (champ.closest('ely-calendrier') || champ.closest('fieldset'))?.querySelector(
+          champ.dataset.focusRelais
+        )
+      : null;
+    (relais || champ).focus({ preventScroll: true });
   }
 
   validerChamp(champ) {
@@ -693,7 +707,7 @@ class ElyFormulaire extends HTMLElement {
     // premier ancêtre qui contient une zone d'erreur, sans jamais sortir du
     // formulaire.
     let conteneur = champ.closest('.champ');
-    if (!conteneur) {
+    if (!conteneur || champ.dataset.focusRelais) {
       conteneur = champ.parentElement;
       while (conteneur && conteneur !== this && !conteneur.querySelector('[data-erreur]')) {
         conteneur = conteneur.parentElement;
@@ -920,7 +934,251 @@ function progression() {
 }
 
 /* --------------------------------------------------------------------------
-   8. DÉMARRAGE
+   8. CALENDRIER
+   Choisir une date en la désignant, pas en la tapant.
+
+   Amélioration progressive stricte : le champ date natif est la source de
+   vérité et reste seul en place sans JavaScript. Le script le replie et
+   dessine une grille de mois à sa place, en reprenant ses bornes `min` et
+   `max`. Rien n'est stocké ailleurs que dans le champ.
+
+   La grille est un vrai `role="grid"` : flèches pour se déplacer de jour en
+   jour, Origine et Fin pour les extrémités de semaine, Page précédente et
+   Page suivante pour changer de mois. Un seul jour est atteignable au clavier
+   à la fois, comme le veut le motif.
+
+   Les dates sont ancrées à midi UTC et manipulées avec les accesseurs UTC :
+   aucun passage à l'heure d'été ne peut décaler un jour.
+   -------------------------------------------------------------------------- */
+const JOUR_MS = 86400000;
+
+const versDate = (iso) => (iso ? new Date(`${iso}T12:00:00Z`) : null);
+const versISO = (d) => d.toISOString().slice(0, 10);
+
+class ElyCalendrier extends HTMLElement {
+  connectedCallback() {
+    this.champ = this.querySelector('input[type="date"]');
+    if (!this.champ || this.dataset.pret === 'oui') return;
+
+    this.signal = new AbortController();
+    this.min = versDate(this.champ.min);
+    this.max = versDate(this.champ.max);
+
+    const langue = document.documentElement.lang || 'fr';
+    this.fMois = new Intl.DateTimeFormat(langue, { month: 'long', year: 'numeric', timeZone: 'UTC' });
+    this.fJour = new Intl.DateTimeFormat(langue, {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      timeZone: 'UTC',
+    });
+    this.fChoix = new Intl.DateTimeFormat(langue, {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
+    });
+
+    // Semaine commençant le lundi, comme le veut l'usage français.
+    const court = new Intl.DateTimeFormat(langue, { weekday: 'narrow', timeZone: 'UTC' });
+    this.entetes = Array.from({ length: 7 }, (_, i) => court.format(new Date(Date.UTC(2024, 0, 1 + i))));
+
+    this.choisi = versDate(this.champ.value);
+    this.actif = this.choisi || this.min || new Date();
+    this.mois = new Date(Date.UTC(this.actif.getUTCFullYear(), this.actif.getUTCMonth(), 1, 12));
+
+    // Le champ natif reste dans le formulaire, hors du flux visuel et de
+    // l'ordre de tabulation : c'est lui qui porte la valeur envoyée.
+    const enveloppe = this.champ.closest('.champ') || this.champ;
+    enveloppe.classList.add('champ--replie');
+    this.champ.tabIndex = -1;
+    // Une erreur de validation doit rendre la main à la grille, pas au champ
+    // replié que personne ne voit.
+    this.champ.dataset.focusRelais = '[data-calendrier-jour][tabindex="0"]';
+
+    this.cadre = document.createElement('div');
+    this.cadre.className = 'calendrier';
+    this.appendChild(this.cadre);
+
+    this.annonce = document.createElement('p');
+    this.annonce.className = 'calendrier__choix';
+    this.annonce.setAttribute('role', 'status');
+    this.appendChild(this.annonce);
+
+    this.dataset.pret = 'oui';
+    this.dessiner();
+  }
+
+  disconnectedCallback() {
+    this.signal?.abort();
+  }
+
+  horsBornes(d) {
+    if (this.min && d < this.min) return true;
+    if (this.max && d > this.max) return true;
+    return false;
+  }
+
+  dessiner(focaliser = false) {
+    this.cadre.innerHTML = '';
+
+    const barre = document.createElement('div');
+    barre.className = 'calendrier__barre';
+
+    const precedent = this.bouton('‹', this.dataset.libellePrecedent || 'Mois précédent', () => {
+      this.mois = new Date(Date.UTC(this.mois.getUTCFullYear(), this.mois.getUTCMonth() - 1, 1, 12));
+      this.dessiner();
+    });
+    const suivant = this.bouton('›', this.dataset.libelleSuivant || 'Mois suivant', () => {
+      this.mois = new Date(Date.UTC(this.mois.getUTCFullYear(), this.mois.getUTCMonth() + 1, 1, 12));
+      this.dessiner();
+    });
+
+    // Un mois entièrement hors bornes n'est pas atteignable.
+    const finMoisPrec = new Date(Date.UTC(this.mois.getUTCFullYear(), this.mois.getUTCMonth(), 0, 12));
+    const debutMoisSuiv = new Date(Date.UTC(this.mois.getUTCFullYear(), this.mois.getUTCMonth() + 1, 1, 12));
+    precedent.disabled = Boolean(this.min && finMoisPrec < this.min);
+    suivant.disabled = Boolean(this.max && debutMoisSuiv > this.max);
+
+    const titre = document.createElement('p');
+    titre.className = 'calendrier__mois';
+    titre.setAttribute('aria-live', 'polite');
+    titre.textContent = this.fMois.format(this.mois);
+
+    barre.append(precedent, titre, suivant);
+
+    const grille = document.createElement('div');
+    grille.className = 'calendrier__grille';
+    grille.setAttribute('role', 'grid');
+    grille.setAttribute('aria-label', titre.textContent);
+
+    const entetes = document.createElement('div');
+    entetes.className = 'calendrier__entetes';
+    entetes.setAttribute('role', 'row');
+    this.entetes.forEach((lettre) => {
+      const c = document.createElement('span');
+      c.className = 'calendrier__entete';
+      c.setAttribute('role', 'columnheader');
+      c.textContent = lettre;
+      entetes.appendChild(c);
+    });
+
+    const jours = document.createElement('div');
+    jours.className = 'calendrier__jours';
+    jours.setAttribute('role', 'rowgroup');
+
+    // Décalage pour que la première colonne soit un lundi.
+    const premier = new Date(Date.UTC(this.mois.getUTCFullYear(), this.mois.getUTCMonth(), 1, 12));
+    const decalage = (premier.getUTCDay() + 6) % 7;
+    const debut = new Date(premier.getTime() - decalage * JOUR_MS);
+
+    let semaine = null;
+    for (let i = 0; i < 42; i += 1) {
+      if (i % 7 === 0) {
+        semaine = document.createElement('div');
+        semaine.className = 'calendrier__semaine';
+        semaine.setAttribute('role', 'row');
+        jours.appendChild(semaine);
+      }
+
+      const d = new Date(debut.getTime() + i * JOUR_MS);
+      const iso = versISO(d);
+      const dansLeMois = d.getUTCMonth() === this.mois.getUTCMonth();
+      const cellule = document.createElement('div');
+      cellule.setAttribute('role', 'gridcell');
+
+      if (!dansLeMois) {
+        cellule.className = 'calendrier__vide';
+        semaine.appendChild(cellule);
+        continue;
+      }
+
+      const jour = document.createElement('button');
+      jour.type = 'button';
+      jour.className = 'calendrier__jour';
+      jour.dataset.calendrierJour = iso;
+      jour.textContent = String(d.getUTCDate());
+      jour.setAttribute('aria-label', this.fJour.format(d));
+      jour.disabled = this.horsBornes(d);
+
+      const estChoisi = this.choisi && versISO(this.choisi) === iso;
+      if (estChoisi) {
+        jour.classList.add('est-choisi');
+        jour.setAttribute('aria-selected', 'true');
+      }
+      // Un seul jour dans l'ordre de tabulation : le motif « grid » veut que
+      // le clavier entre dans la grille puis se déplace aux flèches.
+      jour.tabIndex = versISO(this.actif) === iso ? 0 : -1;
+
+      jour.addEventListener('click', () => this.choisir(d), { signal: this.signal.signal });
+      jour.addEventListener('keydown', (e) => this.auClavier(e, d), { signal: this.signal.signal });
+
+      cellule.appendChild(jour);
+      semaine.appendChild(cellule);
+    }
+
+    grille.append(entetes, jours);
+    this.cadre.append(barre, grille);
+
+    // Si le jour actif est tombé hors du mois affiché, on rend la main au
+    // premier jour disponible pour ne pas piéger le clavier.
+    if (!this.cadre.querySelector('[data-calendrier-jour][tabindex="0"]')) {
+      const repli = this.cadre.querySelector('.calendrier__jour:not([disabled])');
+      if (repli) {
+        repli.tabIndex = 0;
+        this.actif = versDate(repli.dataset.calendrierJour);
+      }
+    }
+
+    if (focaliser) this.cadre.querySelector('[data-calendrier-jour][tabindex="0"]')?.focus();
+    this.annonce.textContent = this.choisi ? this.fChoix.format(this.choisi) : '';
+  }
+
+  bouton(signe, libelle, action) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'calendrier__nav';
+    b.setAttribute('aria-label', libelle);
+    b.innerHTML = `<span aria-hidden="true">${signe}</span>`;
+    b.addEventListener('click', action, { signal: this.signal.signal });
+    return b;
+  }
+
+  choisir(d) {
+    if (this.horsBornes(d)) return;
+    this.choisi = d;
+    this.actif = d;
+    this.champ.value = versISO(d);
+    // Le formulaire écoute `change` pour lever une erreur déjà affichée.
+    this.champ.dispatchEvent(new Event('change', { bubbles: true }));
+    this.champ.dispatchEvent(new Event('input', { bubbles: true }));
+    this.dessiner(true);
+  }
+
+  auClavier(e, d) {
+    const pas = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[e.key];
+    let cible = null;
+
+    if (pas) cible = new Date(d.getTime() + pas * JOUR_MS);
+    else if (e.key === 'Home') cible = new Date(d.getTime() - ((d.getUTCDay() + 6) % 7) * JOUR_MS);
+    else if (e.key === 'End') cible = new Date(d.getTime() + (6 - ((d.getUTCDay() + 6) % 7)) * JOUR_MS);
+    else if (e.key === 'PageUp') cible = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() - 1, d.getUTCDate(), 12));
+    else if (e.key === 'PageDown') cible = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, d.getUTCDate(), 12));
+    else return;
+
+    e.preventDefault();
+    if (this.min && cible < this.min) cible = this.min;
+    if (this.max && cible > this.max) cible = this.max;
+
+    this.actif = cible;
+    this.mois = new Date(Date.UTC(cible.getUTCFullYear(), cible.getUTCMonth(), 1, 12));
+    this.dessiner(true);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. DÉMARRAGE
    -------------------------------------------------------------------------- */
 if (!customElements.get('ely-entete')) customElements.define('ely-entete', ElyEntete);
 if (!customElements.get('ely-accordeon')) customElements.define('ely-accordeon', ElyAccordeon);
@@ -928,6 +1186,7 @@ if (!customElements.get('ely-index')) customElements.define('ely-index', ElyInde
 if (!customElements.get('ely-formulaire')) customElements.define('ely-formulaire', ElyFormulaire);
 if (!customElements.get('ely-sommaire')) customElements.define('ely-sommaire', ElySommaire);
 if (!customElements.get('ely-comparaison')) customElements.define('ely-comparaison', ElyComparaison);
+if (!customElements.get('ely-calendrier')) customElements.define('ely-calendrier', ElyCalendrier);
 
 apparitions();
 compteurs();

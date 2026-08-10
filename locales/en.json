@@ -67,6 +67,10 @@
     "precision": "Anything you would like to add",
     "succes": "Your request has arrived. We will call you back within one business day to confirm the date or offer the closest available slot."
   },
+  "calendrier": {
+    "mois_precedent": "Previous month",
+    "mois_suivant": "Next month"
+  },
   "formulaire": {
     "nom": "Full name",
     "email": "Email address",

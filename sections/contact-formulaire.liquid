@@ -196,19 +196,26 @@
                   <span class="champ__erreur" data-erreur hidden></span>
                 </label>
 
+              </div>
+
+              <ely-calendrier
+                data-libelle-precedent="{{ 'calendrier.mois_precedent' | t }}"
+                data-libelle-suivant="{{ 'calendrier.mois_suivant' | t }}"
+              >
                 <label class="champ">
                   <input
-                    type="text"
-                    id="contact-creneau"
+                    type="date"
+                    id="contact-date"
                     class="champ__saisie"
-                    name="contact[Disponibilités]"
-                    placeholder=" "
+                    name="contact[Date souhaitée]"
+                    min="{{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}"
+                    max="{{ 'now' | date: '%s' | plus: 7776000 | date: '%Y-%m-%d' }}"
                   >
-                  <span class="champ__label">
-                    {{ 'formulaire.creneau' | t }} ({{ 'formulaire.facultatif' | t }})
+                  <span class="champ__label champ__label--fixe">
+                    {{ 'rdv.date' | t }} ({{ 'formulaire.facultatif' | t }})
                   </span>
                 </label>
-              </div>
+              </ely-calendrier>
             </fieldset>
 
             {%- comment -%} — Temps 3 : le message — {%- endcomment -%}

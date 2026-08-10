@@ -16,6 +16,7 @@
  */
 
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
+import { gzipSync } from 'node:zlib';
 import { join, basename, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
@@ -264,11 +265,14 @@ for (const nom of ['theme.liquid', 'password.liquid']) {
   if (!existsSync(join(racine, 'layout', nom))) err(`layout/${nom} — manquant`);
 }
 
-/* -------------------------------------------------- 6. Budget des ressources */
+/* -------------------------------------------------- 6. Budget des ressources
+   Le budget porte sur la taille réellement transférée, pas sur le fichier au
+   repos : Shopify sert tout en gzip, et c'est ce poids-là que paie le
+   visiteur. Un commentaire de dix lignes ne coûte rien une fois compressé. */
 const budgets = [
-  ['assets/ely.css', 90_000],
-  ['assets/ely.js', 40_000],
-  ['assets/diagnostic.js', 20_000],
+  ['assets/ely.css', 18_000],
+  ['assets/ely.js', 14_000],
+  ['assets/diagnostic.js', 7_000],
 ];
 for (const [chemin, max] of budgets) {
   const complet = join(racine, chemin);
@@ -276,8 +280,10 @@ for (const [chemin, max] of budgets) {
     err(`${chemin} — absent (lancer « npm run build »)`);
     continue;
   }
-  const taille = statSync(complet).size;
-  if (taille > max) avert(`${chemin} — ${taille} octets, au-delà du budget de ${max}`);
+  const taille = gzipSync(readFileSync(complet), { level: 9 }).length;
+  if (taille > max) {
+    avert(`${chemin} — ${taille} octets une fois compressé, au-delà du budget de ${max}`);
+  }
 }
 
 /* ------------------------------------------------------------------ Rapport */

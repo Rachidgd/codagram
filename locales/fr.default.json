@@ -67,6 +67,10 @@
     "precision": "Une précision à nous transmettre",
     "succes": "Votre demande est arrivée. Nous vous rappelons sous 24 h ouvrées pour confirmer la date ou vous proposer le créneau le plus proche."
   },
+  "calendrier": {
+    "mois_precedent": "Mois précédent",
+    "mois_suivant": "Mois suivant"
+  },
   "formulaire": {
     "nom": "Nom et prénom",
     "email": "Adresse e-mail",

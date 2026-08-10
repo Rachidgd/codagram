@@ -298,6 +298,16 @@
   .diagnostic__capture-titre {
     margin: 0;
   }
+  /* Intertitre de bloc dans le formulaire : cabinet, date. Plus discret
+     qu'un titre, assez marqué pour découper la saisie. */
+  .diagnostic__capture-sous-titre {
+    margin-bottom: 0.75rem;
+    font-size: var(--text-xs);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--diag-attenue);
+  }
+
   /* Rappel de ce qui part avec la demande : le prospect voit le contenu du
      message avant de l'envoyer. */
   .diagnostic__capture-rappel {

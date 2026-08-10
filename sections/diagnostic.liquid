@@ -119,7 +119,8 @@
           {%- comment -%} — Données de scoring, une entrée par protocole — {%- endcomment -%}
           <script type="application/json" data-diagnostic-protocoles>
             [
-              {%- for bloc in section.blocks -%}
+              {%- assign protocoles = section.blocks | where: 'type', 'protocole' -%}
+              {%- for bloc in protocoles -%}
                 {
                   "nom": {{ bloc.settings.nom | json }},
                   "lien": {{ bloc.settings.lien | default: '' | json }},
@@ -160,7 +161,7 @@
           <div data-diagnostic-repli>
             <p class="diagnostic__repli-note">{{ 'diagnostic.repli' | t }}</p>
             <ul role="list" class="diagnostic__repli-liste">
-              {%- for bloc in section.blocks -%}
+              {%- for bloc in protocoles -%}
                 <li>
                   <a class="diagnostic__repli-item" href="{{ bloc.settings.lien | default: '#' }}">
                     <span class="diagnostic__repli-nom">{{ bloc.settings.nom }}</span>
@@ -267,18 +268,62 @@
                       </span>
                     </label>
 
-                    <label class="champ">
-                      <input
-                        type="text"
-                        id="diag-creneau"
-                        class="champ__saisie"
-                        name="contact[Disponibilités]"
-                        placeholder=" "
-                      >
-                      <span class="champ__label">
-                        {{ 'formulaire.creneau' | t }} ({{ 'formulaire.facultatif' | t }})
-                      </span>
-                    </label>
+                  </div>
+
+                  {%- comment -%}
+                    Le cabinet où la personne souhaite venir. Ce n'est pas une
+                    formalité : les deux adresses n'ont ni les mêmes horaires
+                    ni le même agenda.
+                  {%- endcomment -%}
+                  {%- assign villes = section.blocks | where: 'type', 'ville' -%}
+                  {%- if villes.size > 0 -%}
+                    <div>
+                      <p class="diagnostic__capture-sous-titre" id="diag-ville-titre">
+                        {{ section.settings.capture_ville }}
+                      </p>
+                      <div class="formulaire__villes" role="group" aria-labelledby="diag-ville-titre">
+                        {%- for bloc in villes -%}
+                          <label class="choix" {{ bloc.shopify_attributes }}>
+                            <input
+                              type="radio"
+                              name="contact[Cabinet souhaité]"
+                              value="{{ bloc.settings.libelle | escape }}"
+                              {% if forloop.first %}
+                                required
+                              {% endif %}
+                            >
+                            <span>{{ bloc.settings.libelle }}</span>
+                          </label>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+
+                  {%- comment -%}
+                    Date souhaitée. Le champ natif est la source de vérité ;
+                    `ely-calendrier` le replie et dessine une grille de mois à
+                    la place, pour qu'on désigne un jour au lieu de le taper.
+                  {%- endcomment -%}
+                  <div>
+                    <p class="diagnostic__capture-sous-titre">{{ section.settings.capture_date }}</p>
+                    <ely-calendrier
+                      data-libelle-precedent="{{ 'calendrier.mois_precedent' | t }}"
+                      data-libelle-suivant="{{ 'calendrier.mois_suivant' | t }}"
+                    >
+                      <label class="champ">
+                        <input
+                          type="date"
+                          id="diag-date"
+                          class="champ__saisie"
+                          name="contact[Date souhaitée]"
+                          min="{{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}"
+                          max="{{ 'now' | date: '%s' | plus: 7776000 | date: '%Y-%m-%d' }}"
+                        >
+                        <span class="champ__label champ__label--fixe">
+                          {{ 'rdv.date' | t }} ({{ 'formulaire.facultatif' | t }})
+                        </span>
+                      </label>
+                    </ely-calendrier>
                   </div>
 
                   <label class="champ">
@@ -394,6 +439,18 @@
       "default": "Envoyer ma demande"
     },
     {
+      "type": "text",
+      "id": "capture_ville",
+      "label": "Titre du choix de cabinet",
+      "default": "Dans quel cabinet ?"
+    },
+    {
+      "type": "text",
+      "id": "capture_date",
+      "label": "Titre du choix de date",
+      "default": "Une date qui vous arrangerait"
+    },
+    {
       "type": "textarea",
       "id": "capture_mention",
       "label": "Mention sous le bouton",
@@ -434,6 +491,14 @@
     { "type": "text", "id": "dispo_longue", "label": "Option : longue", "default": "Oui, plusieurs jours si nécessaire" }
   ],
   "blocks": [
+    {
+      "type": "ville",
+      "name": "Cabinet",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "libelle", "label": "Libellé", "default": "Paris Champs-Élysées" }
+      ]
+    },
     {
       "type": "protocole",
       "name": "Protocole",
@@ -612,7 +677,9 @@
             "reactivite": "adapte",
             "eviction": "aucune"
           }
-        }
+        },
+        { "type": "ville", "settings": { "libelle": "Paris Champs-Élysées" } },
+        { "type": "ville", "settings": { "libelle": "Casablanca" } }
       ]
     }
   ]

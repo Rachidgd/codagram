@@ -152,21 +152,28 @@
             <fieldset class="formulaire__panneau" data-panneau="3">
               <legend class="formulaire__legende">{{ section.settings.legende_date }}</legend>
 
-              <div class="formulaire__rangee formulaire__rangee--deux">
-                <label class="champ">
-                  <input
-                    type="date"
-                    id="rdv-date"
-                    class="champ__saisie"
-                    name="contact[Date souhaitée]"
-                    min="{{ date_min }}"
-                    max="{{ date_max }}"
-                    data-requis
-                  >
-                  <span class="champ__label champ__label--fixe">{{ 'rdv.date' | t }}</span>
-                  <span class="champ__erreur" data-erreur hidden></span>
-                </label>
+              <div>
+                <ely-calendrier
+                  data-libelle-precedent="{{ 'calendrier.mois_precedent' | t }}"
+                  data-libelle-suivant="{{ 'calendrier.mois_suivant' | t }}"
+                >
+                  <label class="champ">
+                    <input
+                      type="date"
+                      id="rdv-date"
+                      class="champ__saisie"
+                      name="contact[Date souhaitée]"
+                      min="{{ date_min }}"
+                      max="{{ date_max }}"
+                      data-requis
+                    >
+                    <span class="champ__label champ__label--fixe">{{ 'rdv.date' | t }}</span>
+                  </label>
+                </ely-calendrier>
+                <span class="champ__erreur" data-erreur hidden></span>
+              </div>
 
+              <div class="formulaire__rangee formulaire__rangee--deux">
                 <label class="champ">
                   <select id="rdv-moment" class="champ__saisie" name="contact[Moment de la journée]">
                     <option value="">{{ 'rdv.peu_importe' | t }}</option>
@@ -428,7 +435,7 @@
         { "type": "soin", "settings": { "nom": "HIFU et radiofréquence", "duree": "90 min" } },
         { "type": "soin", "settings": { "nom": "Luminothérapie LED", "duree": "30 min" } },
         { "type": "soin", "settings": { "nom": "Drainage lymphatique", "duree": "60 min" } },
-        { "type": "ville", "settings": { "libelle": "Paris" } },
+        { "type": "ville", "settings": { "libelle": "Paris Champs-Élysées" } },
         { "type": "ville", "settings": { "libelle": "Casablanca" } }
       ]
     }

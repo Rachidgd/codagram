@@ -645,6 +645,137 @@
     cursor: pointer;
   }
 
+  /* — Calendrier —
+     Le champ date natif reste dans le formulaire mais sort du flux : il porte
+     la valeur, la grille porte le geste. `clip-path` plutôt que `display:none`
+     pour que le navigateur continue de le valider. */
+  .champ--replie {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .calendrier {
+    border: 1px solid var(--color-lisere-fort);
+    padding: clamp(0.75rem, 0.6rem + 0.6vw, 1.125rem);
+    max-width: 22rem;
+  }
+  .calendrier__barre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.875rem;
+  }
+  .calendrier__mois {
+    flex: 1;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 400;
+  }
+  /* En français, un mois ne prend pas de majuscule au milieu d'une phrase.
+     `capitalize` en mettrait une à chaque mot : on ne relève que la première
+     lettre de la ligne. */
+  .calendrier__mois::first-letter,
+  .calendrier__choix::first-letter {
+    text-transform: uppercase;
+  }
+  .calendrier__nav {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid var(--color-lisere);
+    background: none;
+    color: inherit;
+    font-size: 1.125rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: border-color var(--dur-fast) var(--ease-ely);
+  }
+  .calendrier__nav:hover:not(:disabled) {
+    border-color: var(--color-lisere-fort);
+  }
+  .calendrier__nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .calendrier__entetes,
+  .calendrier__semaine {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 2px;
+  }
+  .calendrier__entete {
+    display: grid;
+    place-items: center;
+    height: 1.75rem;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    color: var(--color-grain);
+  }
+  .calendrier__jour {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    /* 40px : la cible tactile minimale, sur la plus petite largeur d'écran. */
+    aspect-ratio: 1;
+    min-height: 2.5rem;
+    border: 1px solid transparent;
+    background: none;
+    color: inherit;
+    font-size: var(--text-sm);
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+    transition:
+      border-color var(--dur-fast) var(--ease-ely),
+      background-color var(--dur-fast) var(--ease-ely);
+  }
+  .calendrier__jour:hover:not(:disabled) {
+    border-color: var(--color-lisere-fort);
+  }
+  .calendrier__jour:disabled {
+    color: color-mix(in oklab, var(--color-grain) 45%, transparent);
+    cursor: not-allowed;
+  }
+  .calendrier__jour.est-choisi {
+    background: var(--color-absolu);
+    color: var(--color-porcelaine);
+    border-color: var(--color-absolu);
+  }
+  .calendrier__choix {
+    margin-top: 0.75rem;
+    font-size: var(--text-sm);
+    color: var(--color-grain);
+    min-height: 1.4em;
+  }
+
+  /* Sur fond vert absolu, tout ce qui portait une couleur d'encre est repris. */
+  .surface-sombre .calendrier {
+    border-color: color-mix(in oklab, #ffffff 34%, transparent);
+  }
+  .surface-sombre .calendrier__nav {
+    border-color: var(--color-lisere-clair);
+  }
+  .surface-sombre .calendrier__entete,
+  .surface-sombre .calendrier__choix {
+    color: var(--color-brume);
+  }
+  .surface-sombre .calendrier__jour:disabled {
+    color: color-mix(in oklab, var(--color-brume) 50%, transparent);
+  }
+  .surface-sombre .calendrier__jour.est-choisi {
+    background: var(--color-porcelaine);
+    color: var(--color-absolu);
+    border-color: var(--color-porcelaine);
+  }
+
   /* — Case à cocher / radio dessinées — */
   .choix {
     display: flex;
