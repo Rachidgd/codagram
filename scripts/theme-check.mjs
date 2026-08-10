@@ -91,6 +91,16 @@ for (const fichier of lister('sections', '.liquid')) {
     };
     parcourir(schema.settings, 'réglage');
     for (const b of schema.blocks || []) parcourir(b.settings, `réglage du bloc « ${b.type} »`);
+
+    // Shopify tronque à 25 caractères le nom d'une section ou d'un bloc, et
+    // refuse le fichier au-delà. Comme pour le reste, sans le dire.
+    const nomTropLong = (nom, ou) => {
+      if (nom && [...nom].length > 25) {
+        err(`sections/${type}.liquid — ${ou} « ${nom} » : ${[...nom].length} caractères, 25 maximum`);
+      }
+    };
+    nomTropLong(schema.name, 'nom de section');
+    for (const b of schema.blocks || []) nomTropLong(b.name, `nom du bloc « ${b.type} »`);
   } catch (e) {
     err(`sections/${type}.liquid — schema JSON invalide : ${e.message}`);
   }
