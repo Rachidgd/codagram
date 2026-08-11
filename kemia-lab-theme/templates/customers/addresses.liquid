@@ -1,0 +1,78 @@
+<section class="k-section">
+  <div class="k-container">
+    <div class="k-section-head k-account__head">
+      <h1 class="k-h2">{{ 'customer.addresses.title' | t }}</h1>
+      <hr class="k-rule">
+    </div>
+
+    <div class="k-account__layout">
+      <div class="k-account__main">
+        {%- paginate customer.addresses by 6 -%}
+          <ul class="k-address-list">
+            {%- for address in customer.addresses -%}
+              <li class="k-card k-card--pad">
+                {%- if address == customer.default_address -%}
+                  <span class="k-badge k-badge--soft">{{ 'customer.addresses.default' | t }}</span>
+                {%- endif -%}
+                <div class="k-text">{{ address | format_address }}</div>
+                <div class="k-address-list__actions">
+                  <a class="k-link" href="{{ routes.account_addresses_url }}/{{ address.id }}">{{ 'customer.addresses.edit' | t }}</a>
+                  {% form 'customer_address', address %}
+                    <button class="k-link" type="submit" name="address[delete]" formmethod="post" data-confirm-message="{{ 'customer.addresses.confirm_delete' | t }}">
+                      {{ 'customer.addresses.delete' | t }}
+                    </button>
+                  {% endform %}
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endpaginate -%}
+      </div>
+
+      <aside class="k-account__side k-card k-card--pad">
+        <h2 class="k-h4">{{ 'customer.addresses.add' | t }}</h2>
+        {% form 'customer_address', customer.new_address, class: 'k-account__form' %}
+          <div class="k-contact__row">
+            <div class="k-field">
+              <label class="k-label" for="address-first">{{ 'customer.addresses.first_name' | t }}</label>
+              <input class="k-input" id="address-first" type="text" name="address[first_name]" autocomplete="given-name">
+            </div>
+            <div class="k-field">
+              <label class="k-label" for="address-last">{{ 'customer.addresses.last_name' | t }}</label>
+              <input class="k-input" id="address-last" type="text" name="address[last_name]" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="k-field">
+            <label class="k-label" for="address-1">{{ 'customer.addresses.address1' | t }}</label>
+            <input class="k-input" id="address-1" type="text" name="address[address1]" autocomplete="address-line1">
+          </div>
+          <div class="k-field">
+            <label class="k-label" for="address-2">{{ 'customer.addresses.address2' | t }}</label>
+            <input class="k-input" id="address-2" type="text" name="address[address2]" autocomplete="address-line2">
+          </div>
+          <div class="k-contact__row">
+            <div class="k-field">
+              <label class="k-label" for="address-zip">{{ 'customer.addresses.zip' | t }}</label>
+              <input class="k-input" id="address-zip" type="text" name="address[zip]" autocomplete="postal-code">
+            </div>
+            <div class="k-field">
+              <label class="k-label" for="address-city">{{ 'customer.addresses.city' | t }}</label>
+              <input class="k-input" id="address-city" type="text" name="address[city]" autocomplete="address-level2">
+            </div>
+          </div>
+          <div class="k-field">
+            <label class="k-label" for="address-country">{{ 'customer.addresses.country' | t }}</label>
+            <select class="k-select" id="address-country" name="address[country]" data-default="{{ form.country }}">
+              {{ country_option_tags }}
+            </select>
+          </div>
+          <div class="k-field">
+            <label class="k-label" for="address-phone">{{ 'customer.addresses.phone' | t }}</label>
+            <input class="k-input" id="address-phone" type="tel" name="address[phone]" autocomplete="tel">
+          </div>
+          <button class="k-btn k-btn--block" type="submit">{{ 'customer.addresses.save' | t }}</button>
+        {% endform %}
+      </aside>
+    </div>
+  </div>
+</section>

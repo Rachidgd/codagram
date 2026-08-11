@@ -1,0 +1,20 @@
+<section class="k-section">
+  <div class="k-container k-account">
+    <div class="k-card k-card--pad k-account__panel">
+      <h1 class="k-h3 k-account__title">{{ 'customer.activate.title' | t }}</h1>
+      {% form 'activate_customer_password', class: 'k-account__form' %}
+        {{ form.errors | default_errors }}
+        <div class="k-field">
+          <label class="k-label" for="activate-password">{{ 'customer.reset.password' | t }}</label>
+          <input class="k-input" id="activate-password" type="password" name="customer[password]" autocomplete="new-password" required>
+        </div>
+        <div class="k-field">
+          <label class="k-label" for="activate-confirm">{{ 'customer.reset.confirm' | t }}</label>
+          <input class="k-input" id="activate-confirm" type="password" name="customer[password_confirmation]" autocomplete="new-password" required>
+        </div>
+        <button class="k-btn k-btn--block" type="submit">{{ 'customer.activate.submit' | t }}</button>
+        <button class="k-btn k-btn--outline k-btn--block" type="submit" name="decline">{{ 'customer.activate.decline' | t }}</button>
+      {% endform %}
+    </div>
+  </div>
+</section>

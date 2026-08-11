@@ -1,0 +1,32 @@
+{
+  "current": {
+    "color_bg": "#FEFDFC",
+    "color_bg_soft": "#FBF8F5",
+    "color_bg_beige": "#F8F1E9",
+    "color_surface": "#FFFFFF",
+    "color_ink": "#12161C",
+    "color_body": "#63636A",
+    "color_gold": "#C47A17",
+    "color_gold_dark": "#A5640F",
+    "color_gold_soft": "#E5C89F",
+    "color_navy": "#011F4B",
+    "color_blue": "#002D9C",
+    "color_blue_tint": "#F6F7FD",
+    "color_border": "#EDE5DA",
+    "color_border_soft": "#E9E9ED",
+    "font_body": "montserrat_n4",
+    "font_heading": "montserrat_n7",
+    "font_display": "playfair_display_n7",
+    "font_body_size": 17,
+    "font_heading_scale": 100,
+    "layout_width": 1320,
+    "radius_card": 10,
+    "radius_button": 6,
+    "logo_width": 200,
+    "brand_name": "KEMIA LAB",
+    "brand_tagline": "SCIENCE & NATURE",
+    "show_sticky_atc": true,
+    "cart_drawer": true,
+    "money_suffix": "€"
+  }
+}

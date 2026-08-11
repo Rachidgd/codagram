@@ -1,0 +1,166 @@
+{%- liquid
+  assign show_featured = false
+  if section.settings.show_featured and current_tags == blank and blog.articles.size > 0
+    assign show_featured = true
+  endif
+  if show_featured
+    assign featured = blog.articles.first
+  endif
+  assign per_page = section.settings.per_page
+-%}
+
+<section class="k-section k-section--flush-top">
+  <div class="k-container">
+    {%- if section.settings.show_tabs and blog.all_tags.size > 0 -%}
+      <div class="k-tabs k-blog__tabs" aria-label="Catégories">
+        <a class="k-tab{% if current_tags == blank %} is-active{% endif %}" href="{{ blog.url }}">
+          {%- if section.settings.all_icon != 'none' -%}{% render 'icon', name: section.settings.all_icon, class: 'k-icon--sm' %}{%- endif -%}
+          {{ section.settings.all_label }}
+        </a>
+        {%- for tag in blog.all_tags -%}
+          {%- liquid
+            assign tag_icon = ''
+            for block in section.blocks
+              assign block_tag = block.settings.tag | downcase | strip
+              assign loop_tag = tag | downcase | strip
+              if block_tag == loop_tag
+                assign tag_icon = block.settings.icon
+                break
+              endif
+            endfor
+          -%}
+          <a class="k-tab{% if current_tags contains tag %} is-active{% endif %}" href="{{ blog.url }}/tagged/{{ tag | handle }}">
+            {%- if tag_icon != blank and tag_icon != 'none' -%}{% render 'icon', name: tag_icon, class: 'k-icon--sm' %}{%- endif -%}
+            {{ tag }}
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if show_featured -%}
+      <div class="k-blog__featured-wrap">
+        {%- if section.settings.featured_label != blank -%}
+          <h2 class="k-title-caps k-blog__label">{{ section.settings.featured_label }}</h2>
+        {%- endif -%}
+        <article class="k-featured">
+          <a class="k-featured__media" href="{{ featured.url }}" tabindex="-1" aria-hidden="true">
+            {% render 'image', image: featured.image, ratio: '64%', sizes: '(min-width: 990px) 55vw, 100vw', loading: 'eager', placeholder_icon: 'image' %}
+          </a>
+          <div class="k-featured__body">
+            {%- if featured.tags.first != blank -%}
+              <span class="k-eyebrow">{{ featured.tags.first }}</span>
+            {%- endif -%}
+            <h3 class="k-h3 k-featured__title"><a href="{{ featured.url }}">{{ featured.title }}</a></h3>
+            <p class="k-featured__excerpt">{{ featured.excerpt_or_content | strip_html | truncate: 220 }}</p>
+            <p class="k-article-card__meta">
+              <span>{{ featured.published_at | date: '%-d %B %Y' }}</span>
+              <span class="k-article-card__dot" aria-hidden="true">•</span>
+              {%- assign fwords = featured.content | strip_html | split: ' ' | size -%}
+              {%- assign fmin = fwords | divided_by: 200 -%}
+              {%- if fmin < 1 -%}{%- assign fmin = 1 -%}{%- endif -%}
+              <span>{{ 'blogs.reading_time' | t: count: fmin }}</span>
+            </p>
+            <a class="k-link" href="{{ featured.url }}">
+              {{ section.settings.read_label }}
+              {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+            </a>
+          </div>
+        </article>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.grid_label != blank -%}
+      <h2 class="k-title-caps k-blog__label k-blog__label--grid">{{ section.settings.grid_label }}</h2>
+    {%- endif -%}
+
+    {%- paginate blog.articles by per_page -%}
+      {%- if blog.articles.size > 0 -%}
+        <div class="k-blogrow__grid">
+          {%- for article in blog.articles -%}
+            {%- unless show_featured and forloop.first and paginate.current_page == 1 -%}
+              {% render 'article-card', article: article, show_excerpt: true %}
+            {%- endunless -%}
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="k-pagination k-blog__pagination" aria-label="{{ 'general.pagination.label' | t }}">
+            {%- if paginate.previous -%}
+              <a class="k-pagination__item" href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                {% render 'icon', name: 'chevron-left', class: 'k-icon--xs' %}
+              </a>
+            {%- endif -%}
+            {%- for part in paginate.parts -%}
+              {%- if part.is_link -%}
+                <a class="k-pagination__item" href="{{ part.url }}">{{ part.title }}</a>
+              {%- else -%}
+                <span class="k-pagination__item{% if part.title == paginate.current_page %} is-active{% endif %}">{{ part.title }}</span>
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if paginate.next -%}
+              <a class="k-pagination__item" href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                {% render 'icon', name: 'chevron-right', class: 'k-icon--xs' %}
+              </a>
+            {%- endif -%}
+          </nav>
+        {%- endif -%}
+      {%- else -%}
+        <p class="k-form-note">{{ 'blogs.empty' | t }}</p>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog",
+  "class": "k-blog-section",
+  "settings": [
+    { "type": "checkbox", "id": "show_tabs", "label": "Afficher les catégories", "default": true },
+    { "type": "text", "id": "all_label", "label": "Libellé toutes catégories", "default": "Tous les articles" },
+    {
+      "type": "select",
+      "id": "all_icon",
+      "label": "Pictogramme toutes catégories",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "bag", "label": "Sac" },
+        { "value": "sparkle", "label": "Étincelle" },
+        { "value": "calendar", "label": "Calendrier" }
+      ],
+      "default": "calendar"
+    },
+    { "type": "checkbox", "id": "show_featured", "label": "Article à la une", "default": true },
+    { "type": "text", "id": "featured_label", "label": "Titre article à la une", "default": "À la une" },
+    { "type": "text", "id": "read_label", "label": "Lien de lecture", "default": "Lire l'article" },
+    { "type": "text", "id": "grid_label", "label": "Titre de la grille", "default": "Tous les articles" },
+    { "type": "range", "id": "per_page", "label": "Articles par page", "min": 3, "max": 24, "step": 3, "default": 9 }
+  ],
+  "blocks": [
+    {
+      "type": "tag_icon",
+      "name": "Pictogramme de catégorie",
+      "settings": [
+        { "type": "text", "id": "tag", "label": "Étiquette d'article", "info": "Doit correspondre exactement à l'étiquette utilisée sur les articles." },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Pictogramme",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "brain", "label": "Cerveau" },
+            { "value": "muscle", "label": "Vitalité" },
+            { "value": "shield-star", "label": "Bien-être" },
+            { "value": "moon", "label": "Sommeil" },
+            { "value": "leaf", "label": "Nutrition" },
+            { "value": "molecule", "label": "Science" },
+            { "value": "capsule", "label": "Gélule" }
+          ],
+          "default": "bolt"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

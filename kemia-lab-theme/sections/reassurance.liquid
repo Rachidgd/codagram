@@ -1,0 +1,117 @@
+<section class="k-section k-section--tight{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}{% if section.settings.compact %} k-reassure-section--compact{% endif %}">
+  <div class="k-container">
+    <div class="k-reassure-wrap{% if section.settings.background == 'card' %} k-reassure-wrap--card{% elsif section.settings.background == 'navy' %} k-reassure-wrap--navy{% endif %}">
+      {%- if section.settings.heading != blank -%}
+        <p class="k-reassure__heading">{{ section.settings.heading }}</p>
+      {%- endif -%}
+      <ul class="k-reassure k-reassure--{{ section.settings.layout }}{% if section.settings.dividers %} k-reassure--dividers{% endif %}">
+      {%- for block in section.blocks -%}
+        <li class="k-reassure__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != 'none' -%}
+            <span class="k-reassure__icon">{% render 'icon', name: block.settings.icon, class: 'k-icon--lg' %}</span>
+          {%- endif -%}
+          <span class="k-reassure__body">
+            {%- if block.settings.title != blank -%}
+              <span class="k-trust__title">{{ block.settings.title }}</span>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <span class="k-trust__text">{{ block.settings.text }}</span>
+            {%- endif -%}
+          </span>
+        </li>
+      {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bandeau de réassurance",
+  "class": "k-reassure-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Phrase d'accroche",
+      "info": "Optionnelle. Affichée au-dessus des éléments."
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Disposition",
+      "options": [
+        { "value": "inline", "label": "Pictogramme à gauche" },
+        { "value": "stacked", "label": "Pictogramme au-dessus" }
+      ],
+      "default": "inline"
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "card", "label": "Carte blanche" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" },
+        { "value": "blue-tint", "label": "Bleu très clair" },
+        { "value": "navy", "label": "Bleu profond" }
+      ],
+      "default": "card"
+    },
+    { "type": "checkbox", "id": "dividers", "label": "Séparateurs verticaux", "default": true },
+    { "type": "checkbox", "id": "compact", "label": "Espacement réduit", "default": false }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Élément",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Pictogramme",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "truck", "label": "Livraison" },
+            { "value": "clock", "label": "Horloge" },
+            { "value": "lock", "label": "Cadenas" },
+            { "value": "headset", "label": "Service client" },
+            { "value": "shield-check", "label": "Bouclier" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "flask", "label": "Fiole" },
+            { "value": "hexagon", "label": "Hexagone" },
+            { "value": "award", "label": "Médaille" },
+            { "value": "package", "label": "Colis" },
+            { "value": "molecule", "label": "Molécule" },
+            { "value": "target", "label": "Cible" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "brain", "label": "Cerveau" },
+            { "value": "muscle", "label": "Vitalité" },
+            { "value": "shield-star", "label": "Bien-être" },
+            { "value": "sparkle", "label": "Étincelle" },
+            { "value": "beaker", "label": "Éprouvette" },
+            { "value": "check-circle", "label": "Validé" }
+          ],
+          "default": "truck"
+        },
+        { "type": "text", "id": "title", "label": "Titre", "default": "Livraison offerte" },
+        { "type": "text", "id": "text", "label": "Précision", "default": "dès 60€ d'achat" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bandeau de réassurance",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "truck", "title": "Livraison offerte", "text": "dès 60€ d'achat" } },
+        { "type": "item", "settings": { "icon": "clock", "title": "Expédition rapide", "text": "24 à 48h ouvrées" } },
+        { "type": "item", "settings": { "icon": "lock", "title": "Paiement sécurisé", "text": "100% sécurisé" } },
+        { "type": "item", "settings": { "icon": "headset", "title": "Service client", "text": "Réponse sous 48h" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

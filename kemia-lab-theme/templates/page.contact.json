@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "breadcrumb_label": "Contact",
+        "eyebrow": "Contact",
+        "heading": "Nous sommes là pour vous accompagner",
+        "heading_style": "sans",
+        "text": "<p>Une question, un conseil ou un besoin d'informations ? Notre équipe vous répond sous 48h.</p>",
+        "show_media": true,
+        "background": "soft"
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "blocks": {
+        "s1": { "type": "subject", "settings": { "label": "Question sur un produit" } },
+        "s2": { "type": "subject", "settings": { "label": "Suivi de commande" } },
+        "s3": { "type": "subject", "settings": { "label": "Livraison et retours" } },
+        "s4": { "type": "subject", "settings": { "label": "Autre demande" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"],
+      "settings": {
+        "form_heading": "Envoyez-nous un message",
+        "subject_placeholder": "Choisissez un sujet",
+        "message_placeholder": "Décrivez votre demande...",
+        "button_label": "Envoyer le message",
+        "aside_heading": "Autres moyens de contact",
+        "email_label": "Email",
+        "email": "contact@kemialab.com",
+        "phone_label": "Téléphone",
+        "phone": "",
+        "hours": "Du lundi au vendredi, 9h - 18h",
+        "social_label": "Réseaux sociaux",
+        "social_text": "Rejoignez-nous sur nos réseaux pour suivre nos actualités."
+      }
+    },
+    "promise": {
+      "type": "reassurance",
+      "blocks": {
+        "p1": { "type": "item", "settings": { "icon": "clock", "title": "Réponse rapide", "text": "Nous vous répondons sous 48h." } },
+        "p2": { "type": "item", "settings": { "icon": "headset", "title": "Écoute & conseil", "text": "Des conseils personnalisés adaptés à vos besoins." } },
+        "p3": { "type": "item", "settings": { "icon": "award", "title": "Satisfaction", "text": "Votre satisfaction est notre priorité." } }
+      },
+      "block_order": ["p1", "p2", "p3"],
+      "settings": {
+        "heading": "",
+        "layout": "stacked",
+        "background": "navy",
+        "dividers": true,
+        "compact": false
+      }
+    }
+  },
+  "order": ["hero", "form", "promise"]
+}

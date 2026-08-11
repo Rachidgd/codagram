@@ -1,0 +1,419 @@
+{%- liquid
+  assign benefits = product.metafields.kemia.benefits.value
+  assign rating = product.metafields.kemia.rating.value
+  assign review_count = product.metafields.kemia.review_count.value | plus: 0
+  assign reviews_data = product.metafields.kemia.reviews_json.value
+  assign current_variant = product.selected_or_first_available_variant
+
+  assign best_index = 0
+  assign best_discount = 0
+  for variant in product.variants
+    if variant.compare_at_price > variant.price
+      assign saved = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price
+      if saved > best_discount
+        assign best_discount = saved
+        assign best_index = forloop.index
+      endif
+    endif
+  endfor
+-%}
+
+<div class="k-pdp-hero" data-k-product data-money-format="{{ shop.money_format | strip_html | escape }}">
+  <div class="k-pdp-hero__gallery" data-k-gallery>
+    {%- if benefits != blank and section.settings.show_benefit_rail -%}
+      <ul class="k-pdp-rail">
+        {%- for benefit in benefits -%}
+          <li class="k-pdp-rail__item">
+            {% render 'icon', name: benefit.icon.value, class: 'k-icon--lg' %}
+            <span>{{ benefit.label.value }}</span>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    <div class="k-pdp-gallery">
+      <div class="k-pdp-gallery__stage" data-k-gallery-main data-active="1">
+        {%- if product.media.size > 0 -%}
+          {%- for media in product.media -%}
+            <div class="k-pdp-gallery__slide" data-k-gallery-slide="{{ forloop.index }}" {% unless forloop.first %}hidden{% endunless %}>
+              {% render 'image', image: media.preview_image, ratio: '112%', fit: 'contain', sizes: '(min-width: 990px) 46vw, 100vw', loading: 'eager', placeholder_icon: 'bottle' %}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <div class="k-pdp-gallery__slide" data-k-gallery-slide="1">
+            {% render 'image', ratio: '112%', placeholder_icon: 'bottle', loading: 'eager' %}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if product.media.size > 1 -%}
+        <div class="k-pdp-gallery__thumbs k-carousel" data-k-rail>
+          <button class="k-carousel__nav k-pdp-gallery__nav" type="button" data-k-rail-prev aria-label="{{ 'general.previous' | t }}">
+            {% render 'icon', name: 'chevron-left', class: 'k-icon--sm' %}
+          </button>
+          <div class="k-pdp-gallery__thumbs-track" data-k-rail-track>
+            {%- for media in product.media -%}
+              <button
+                class="k-pdp-gallery__thumb{% if forloop.first %} is-active{% endif %}"
+                type="button"
+                data-k-gallery-thumb="{{ forloop.index }}"
+                aria-label="{{ 'products.media.view_image' | t: index: forloop.index }}"
+                {% if forloop.first %}aria-current="true"{% endif %}
+              >
+                {% render 'image', image: media.preview_image, ratio: '100%', fit: 'contain', sizes: '90px', placeholder_icon: 'bottle' %}
+              </button>
+            {%- endfor -%}
+          </div>
+          <button class="k-carousel__nav k-pdp-gallery__nav" type="button" data-k-rail-next aria-label="{{ 'general.next' | t }}">
+            {% render 'icon', name: 'chevron-right', class: 'k-icon--sm' %}
+          </button>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="k-pdp-hero__info">
+    {%- assign added_message = 'products.added' | t -%}
+    {%- form 'product', product, id: 'buybox-form', class: 'k-buybox', data-k-atc-form: 'true', data-added-message: added_message -%}
+      <input type="hidden" name="id" value="{{ current_variant.id }}" data-k-variant-id>
+
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+
+          {%- when 'eyebrow' -%}
+            {%- assign eyebrow_text = block.settings.text | default: product.type -%}
+            {%- if eyebrow_text != blank -%}
+              <span class="k-eyebrow" {{ block.shopify_attributes }}>{{ eyebrow_text }}</span>
+            {%- endif -%}
+
+          {%- when 'title' -%}
+            <h1 class="k-h1 k-buybox__title" {{ block.shopify_attributes }}>{{ product.title }}</h1>
+
+          {%- when 'tagline' -%}
+            {%- assign tagline = product.metafields.kemia.tagline.value -%}
+            {%- if tagline != blank -%}
+              <p class="k-buybox__tagline" {{ block.shopify_attributes }}>{{ tagline }}</p>
+            {%- endif -%}
+
+          {%- when 'usp' -%}
+            {%- assign usp = product.metafields.kemia.short_usp.value -%}
+            {%- if usp != blank -%}
+              <div class="k-buybox__usp k-text" {{ block.shopify_attributes }}>{{ usp }}</div>
+            {%- endif -%}
+
+          {%- when 'trust' -%}
+            <ul class="k-buybox__trust" {{ block.shopify_attributes }}>
+              {%- for i in (1..4) -%}
+                {%- liquid
+                  assign icon_key = 'icon_' | append: i
+                  assign title_key = 'title_' | append: i
+                  assign text_key = 'text_' | append: i
+                  assign trust_title = block.settings[title_key]
+                -%}
+                {%- if trust_title != blank -%}
+                  <li class="k-buybox__trust-item">
+                    {% render 'icon', name: block.settings[icon_key], class: 'k-icon--lg' %}
+                    <span class="k-trust__title">{{ trust_title }}</span>
+                    {%- if block.settings[text_key] != blank -%}
+                      <span class="k-trust__text">{{ block.settings[text_key] }}</span>
+                    {%- endif -%}
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+
+          {%- when 'rating' -%}
+            {%- if rating != blank and review_count > 0 -%}
+              <div class="k-rating" {{ block.shopify_attributes }}>
+                {% render 'stars', rating: rating %}
+                <span class="k-rating__score">{{ rating | replace: '.', ',' }}/5</span>
+                <span class="k-rating__count">
+                  {{ block.settings.prefix }}
+                  <button class="k-rating__link" type="button" data-k-open="k-reviews-modal" data-k-track="review_modal_opened">{{ review_count }}</button>
+                  {{ block.settings.suffix }}
+                </span>
+              </div>
+            {%- endif -%}
+
+          {%- when 'price' -%}
+            <div class="k-price" {{ block.shopify_attributes }}>
+              <span class="k-price__current" data-k-price-current>{{ current_variant.price | money }}</span>
+              <span class="k-price__compare" data-k-price-compare {% unless current_variant.compare_at_price > current_variant.price %}hidden{% endunless %}>
+                {{ current_variant.compare_at_price | money }}
+              </span>
+            </div>
+
+          {%- when 'installment' -%}
+            {%- if block.settings.enabled -%}
+              <p class="k-buybox__installment" {{ block.shopify_attributes }}>
+                {{ block.settings.prefix }}
+                <span data-k-installment>{{ current_variant.price | divided_by: 3 | money }}</span>
+                {{ block.settings.suffix }}
+              </p>
+            {%- endif -%}
+
+          {%- when 'cures' -%}
+            {%- if product.variants.size > 1 -%}
+              <fieldset class="k-cures" {{ block.shopify_attributes }}>
+                {%- if block.settings.heading != blank -%}
+                  <legend class="k-cures__legend">{{ block.settings.heading }}</legend>
+                {%- endif -%}
+                <div class="k-cures__grid">
+                  {%- for variant in product.variants -%}
+                    {%- liquid
+                      assign is_best = false
+                      if forloop.index == best_index and block.settings.best_label != blank
+                        assign is_best = true
+                      endif
+                      assign percent = 0
+                      if variant.compare_at_price > variant.price
+                        assign percent = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price
+                      endif
+                      assign duration = variant.metafields.kemia.duration.value
+                      assign note = variant.metafields.kemia.note.value
+                    -%}
+                    <label
+                      class="k-cure{% if variant == current_variant %} is-selected{% endif %}{% unless variant.available %} is-unavailable{% endunless %}"
+                      data-k-cure-option
+                      data-variant-id="{{ variant.id }}"
+                      data-available="{{ variant.available }}"
+                      data-price-formatted="{{ variant.price | money }}"
+                      data-compare-formatted="{{ variant.compare_at_price | money }}"
+                      data-has-compare="{% if variant.compare_at_price > variant.price %}true{% else %}false{% endif %}"
+                      data-installment-formatted="{{ variant.price | divided_by: 3 | money }}"
+                    >
+                      <input
+                        class="k-visually-hidden"
+                        type="radio"
+                        name="cure-{{ section.id }}"
+                        value="{{ variant.id }}"
+                        {% if variant == current_variant %}checked{% endif %}
+                        {% unless variant.available %}disabled{% endunless %}
+                      >
+                      {%- if is_best -%}
+                        <span class="k-badge k-badge--blue k-cure__best">{{ block.settings.best_label }}</span>
+                      {%- endif -%}
+                      <span class="k-cure__check" aria-hidden="true">{% render 'icon', name: 'check', class: 'k-icon--xs' %}</span>
+                      <span class="k-cure__media">
+                        {% render 'image', image: variant.image, ratio: '100%', fit: 'contain', sizes: '120px', placeholder_icon: 'bottle' %}
+                      </span>
+                      <span class="k-cure__title">{{ variant.title }}</span>
+                      {%- if duration != blank -%}
+                        <span class="k-cure__duration">{{ duration }}</span>
+                      {%- endif -%}
+                      {%- if percent > 0 -%}
+                        <span class="k-cure__discount">-{{ percent }} %</span>
+                      {%- endif -%}
+                      <span class="k-cure__prices">
+                        <span class="k-cure__price">{{ variant.price | money }}</span>
+                        {%- if variant.compare_at_price > variant.price -%}
+                          <s class="k-cure__compare">{{ variant.compare_at_price | money }}</s>
+                        {%- endif -%}
+                      </span>
+                      {%- if note != blank -%}
+                        <span class="k-cure__note">{{ note }}</span>
+                      {%- endif -%}
+                    </label>
+                  {%- endfor -%}
+                </div>
+              </fieldset>
+            {%- endif -%}
+
+          {%- when 'quantity' -%}
+            <div class="k-buybox__quantity" {{ block.shopify_attributes }}>
+              <label class="k-label" for="quantity-{{ section.id }}">{{ block.settings.label }}</label>
+              <div class="k-quantity" data-k-quantity>
+                <button class="k-quantity__btn" type="button" data-k-qty-step="-1" aria-label="{{ 'products.decrease' | t }}">
+                  {% render 'icon', name: 'minus', class: 'k-icon--sm' %}
+                </button>
+                <input class="k-quantity__input" id="quantity-{{ section.id }}" type="number" name="quantity" value="1" min="1">
+                <button class="k-quantity__btn" type="button" data-k-qty-step="1" aria-label="{{ 'products.increase' | t }}">
+                  {% render 'icon', name: 'plus', class: 'k-icon--sm' %}
+                </button>
+              </div>
+            </div>
+
+          {%- when 'buy' -%}
+            <div class="k-buybox__actions" data-k-sticky-anchor {{ block.shopify_attributes }}>
+              <button
+                class="k-btn k-btn--block k-btn--lg"
+                type="submit"
+                name="add"
+                data-k-submit
+                data-label-available="{{ block.settings.label | escape }}"
+                data-label-soldout="{{ 'products.sold_out' | t | escape }}"
+                data-k-track="main_cta_clicked"
+                {% unless current_variant.available %}disabled{% endunless %}
+              >
+                {% render 'icon', name: 'bag', class: 'k-icon--sm' %}
+                <span data-k-submit-text>
+                  {%- if current_variant.available -%}{{ block.settings.label }}{%- else -%}{{ 'products.sold_out' | t }}{%- endif -%}
+                </span>
+              </button>
+              <p class="k-form-message k-form-message--error" data-k-atc-error hidden></p>
+            </div>
+
+          {%- when 'reassurance' -%}
+            <ul class="k-buybox__reassurance" {{ block.shopify_attributes }}>
+              {%- for i in (1..4) -%}
+                {%- liquid
+                  assign icon_key = 'icon_' | append: i
+                  assign text_key = 'text_' | append: i
+                -%}
+                {%- if block.settings[text_key] != blank -%}
+                  <li>
+                    {% render 'icon', name: block.settings[icon_key], class: 'k-icon--sm' %}
+                    <span>{{ block.settings[text_key] }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+
+          {%- when 'text' -%}
+            {%- if block.settings.content != blank -%}
+              <div class="k-buybox__text k-text" {{ block.shopify_attributes }}>{{ block.settings.content }}</div>
+            {%- endif -%}
+
+        {%- endcase -%}
+      {%- endfor -%}
+    {%- endform -%}
+  </div>
+</div>
+
+{%- if settings.show_sticky_atc -%}
+  <div class="k-sticky-atc" data-k-sticky-atc>
+    <div class="k-container k-sticky-atc__inner">
+      <div class="k-sticky-atc__info">
+        <span class="k-sticky-atc__title">{{ product.title }}</span>
+        <span class="k-sticky-atc__price" data-k-price-current>{{ current_variant.price | money }}</span>
+      </div>
+      <button class="k-btn k-sticky-atc__button" type="button" data-k-track="sticky_cta_used" data-k-sticky-submit>
+        {{ section.settings.sticky_label }}
+      </button>
+    </div>
+  </div>
+{%- endif -%}
+
+{%- if reviews_data != blank or review_count > 0 -%}
+  {% render 'reviews-modal', product: product, rating: rating, review_count: review_count %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Fiche produit",
+  "class": "k-pdp-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_benefit_rail",
+      "label": "Afficher les bénéfices à côté de la galerie",
+      "default": true,
+      "info": "Les bénéfices proviennent du champ méta kemia.benefits de la fiche produit."
+    },
+    {
+      "type": "text",
+      "id": "sticky_label",
+      "label": "Bouton de la barre mobile",
+      "default": "Ajouter"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "eyebrow",
+      "name": "Sur-titre",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "info": "Vide : le type de produit est utilisé."
+        }
+      ]
+    },
+    { "type": "title", "name": "Nom du produit", "limit": 1, "settings": [] },
+    { "type": "tagline", "name": "Accroche dorée", "limit": 1, "settings": [] },
+    { "type": "usp", "name": "Description courte", "limit": 1, "settings": [] },
+    {
+      "type": "trust",
+      "name": "Réassurance produit",
+      "limit": 1,
+      "settings": [
+        { "type": "select", "id": "icon_1", "label": "Pictogramme 1", "options": [{ "value": "shield-check", "label": "Bouclier" }, { "value": "leaf", "label": "Feuille" }, { "value": "hexagon", "label": "Hexagone" }, { "value": "award", "label": "Médaille" }, { "value": "flask", "label": "Fiole" }, { "value": "check-circle", "label": "Validé" }], "default": "hexagon" },
+        { "type": "text", "id": "title_1", "label": "Titre 1", "default": "Fabriqué" },
+        { "type": "text", "id": "text_1", "label": "Précision 1", "default": "en France" },
+        { "type": "select", "id": "icon_2", "label": "Pictogramme 2", "options": [{ "value": "leaf", "label": "Feuille" }, { "value": "shield-check", "label": "Bouclier" }, { "value": "hexagon", "label": "Hexagone" }, { "value": "award", "label": "Médaille" }, { "value": "flask", "label": "Fiole" }, { "value": "check-circle", "label": "Validé" }], "default": "leaf" },
+        { "type": "text", "id": "title_2", "label": "Titre 2", "default": "Ingrédients" },
+        { "type": "text", "id": "text_2", "label": "Précision 2", "default": "premium" },
+        { "type": "select", "id": "icon_3", "label": "Pictogramme 3", "options": [{ "value": "shield-check", "label": "Bouclier" }, { "value": "leaf", "label": "Feuille" }, { "value": "hexagon", "label": "Hexagone" }, { "value": "award", "label": "Médaille" }, { "value": "flask", "label": "Fiole" }, { "value": "check-circle", "label": "Validé" }], "default": "shield-check" },
+        { "type": "text", "id": "title_3", "label": "Titre 3", "default": "Qualité" },
+        { "type": "text", "id": "text_3", "label": "Précision 3", "default": "contrôlée" },
+        { "type": "select", "id": "icon_4", "label": "Pictogramme 4", "options": [{ "value": "award", "label": "Médaille" }, { "value": "shield-check", "label": "Bouclier" }, { "value": "leaf", "label": "Feuille" }, { "value": "hexagon", "label": "Hexagone" }, { "value": "flask", "label": "Fiole" }, { "value": "check-circle", "label": "Validé" }], "default": "award" },
+        { "type": "text", "id": "title_4", "label": "Titre 4", "default": "Normes" },
+        { "type": "text", "id": "text_4", "label": "Précision 4", "default": "strictes" }
+      ]
+    },
+    {
+      "type": "rating",
+      "name": "Note et avis",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "prefix", "label": "Texte avant le nombre", "default": "basé sur" },
+        { "type": "text", "id": "suffix", "label": "Texte après le nombre", "default": "avis clients" }
+      ]
+    },
+    { "type": "price", "name": "Prix", "limit": 1, "settings": [] },
+    {
+      "type": "installment",
+      "name": "Paiement fractionné",
+      "limit": 1,
+      "settings": [
+        { "type": "checkbox", "id": "enabled", "label": "Afficher", "default": false, "info": "À activer uniquement lorsque le service de paiement en plusieurs fois est réellement configuré." },
+        { "type": "text", "id": "prefix", "label": "Texte avant", "default": "ou 3x" },
+        { "type": "text", "id": "suffix", "label": "Texte après", "default": "sans frais" }
+      ]
+    },
+    {
+      "type": "cures",
+      "name": "Choix de la cure",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Titre", "default": "Choisissez votre offre" },
+        { "type": "text", "id": "best_label", "label": "Badge meilleure offre", "default": "Meilleure offre" }
+      ]
+    },
+    {
+      "type": "quantity",
+      "name": "Quantité",
+      "limit": 1,
+      "settings": [{ "type": "text", "id": "label", "label": "Libellé", "default": "Quantité" }]
+    },
+    {
+      "type": "buy",
+      "name": "Bouton d'achat",
+      "limit": 1,
+      "settings": [{ "type": "text", "id": "label", "label": "Libellé", "default": "Ajouter au panier" }]
+    },
+    {
+      "type": "reassurance",
+      "name": "Réassurance sous le CTA",
+      "limit": 1,
+      "settings": [
+        { "type": "select", "id": "icon_1", "label": "Pictogramme 1", "options": [{ "value": "truck", "label": "Livraison" }, { "value": "lock", "label": "Cadenas" }, { "value": "package", "label": "Colis" }, { "value": "headset", "label": "Service client" }, { "value": "clock", "label": "Horloge" }, { "value": "shield-check", "label": "Bouclier" }], "default": "truck" },
+        { "type": "text", "id": "text_1", "label": "Texte 1", "default": "Livraison 24/48h" },
+        { "type": "select", "id": "icon_2", "label": "Pictogramme 2", "options": [{ "value": "lock", "label": "Cadenas" }, { "value": "truck", "label": "Livraison" }, { "value": "package", "label": "Colis" }, { "value": "headset", "label": "Service client" }, { "value": "clock", "label": "Horloge" }, { "value": "shield-check", "label": "Bouclier" }], "default": "lock" },
+        { "type": "text", "id": "text_2", "label": "Texte 2", "default": "Paiement sécurisé" },
+        { "type": "select", "id": "icon_3", "label": "Pictogramme 3", "options": [{ "value": "package", "label": "Colis" }, { "value": "truck", "label": "Livraison" }, { "value": "lock", "label": "Cadenas" }, { "value": "headset", "label": "Service client" }, { "value": "clock", "label": "Horloge" }, { "value": "shield-check", "label": "Bouclier" }], "default": "package" },
+        { "type": "text", "id": "text_3", "label": "Texte 3", "default": "Expédition neutre" },
+        { "type": "select", "id": "icon_4", "label": "Pictogramme 4", "options": [{ "value": "headset", "label": "Service client" }, { "value": "truck", "label": "Livraison" }, { "value": "lock", "label": "Cadenas" }, { "value": "package", "label": "Colis" }, { "value": "clock", "label": "Horloge" }, { "value": "shield-check", "label": "Bouclier" }], "default": "headset" },
+        { "type": "text", "id": "text_4", "label": "Texte 4", "default": "Service client - réponse sous 48h" }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Texte libre",
+      "settings": [{ "type": "richtext", "id": "content", "label": "Contenu" }]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "show_breadcrumb": true,
+        "breadcrumb_label": "Blog",
+        "eyebrow": "Le blog Kemia Lab",
+        "heading": "Comprendre. Progresser. Prendre soin de soi.",
+        "heading_style": "sans",
+        "text": "<p>Des articles scientifiques et pratiques pour vous aider à améliorer votre énergie, votre concentration, votre vitalité et votre bien-être au quotidien.</p>",
+        "show_media": true,
+        "background": "soft"
+      }
+    },
+    "blog": {
+      "type": "blog-main",
+      "blocks": {
+        "t1": { "type": "tag_icon", "settings": { "tag": "Énergie", "icon": "bolt" } },
+        "t2": { "type": "tag_icon", "settings": { "tag": "Concentration", "icon": "brain" } },
+        "t3": { "type": "tag_icon", "settings": { "tag": "Vitalité", "icon": "muscle" } },
+        "t4": { "type": "tag_icon", "settings": { "tag": "Bien-être", "icon": "shield-star" } },
+        "t5": { "type": "tag_icon", "settings": { "tag": "Sommeil", "icon": "moon" } },
+        "t6": { "type": "tag_icon", "settings": { "tag": "Nutrition", "icon": "leaf" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4", "t5", "t6"],
+      "settings": {
+        "show_tabs": true,
+        "all_label": "Tous les articles",
+        "all_icon": "calendar",
+        "show_featured": true,
+        "featured_label": "À la une",
+        "read_label": "Lire l'article",
+        "grid_label": "Tous les articles",
+        "per_page": 9
+      }
+    },
+    "newsletter": {
+      "type": "newsletter-band",
+      "settings": {
+        "color_scheme": "navy",
+        "heading": "Des conseils exclusifs pour votre énergie et votre bien-être.",
+        "placeholder": "Votre email",
+        "button_label": "S'inscrire"
+      }
+    }
+  },
+  "order": ["hero", "blog", "newsletter"]
+}

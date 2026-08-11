@@ -1,0 +1,110 @@
+{%- liquid
+  assign n = icon | default: name
+  assign cls = class | default: ''
+-%}
+{%- case n -%}
+  {%- when 'truck' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 6.5h11v9H2z"/><path d="M13 9.5h4l3 3.2v2.8h-7z"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/><path d="M9 17.5h6M2 15.5h1M20 15.5h2"/></svg>
+  {%- when 'shield-check' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.8l7 2.6v6c0 4.4-2.9 8.2-7 9.8-4.1-1.6-7-5.4-7-9.8v-6z"/><path d="M8.8 11.9l2.3 2.3 4.1-4.4"/></svg>
+  {%- when 'shield' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.8l7 2.6v6c0 4.4-2.9 8.2-7 9.8-4.1-1.6-7-5.4-7-9.8v-6z"/></svg>
+  {%- when 'shield-star' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.8l7 2.6v6c0 4.4-2.9 8.2-7 9.8-4.1-1.6-7-5.4-7-9.8v-6z"/><path d="M12 8.4l1.2 2.4 2.6.4-1.9 1.8.5 2.6-2.4-1.3-2.4 1.3.5-2.6-1.9-1.8 2.6-.4z"/></svg>
+  {%- when 'lock' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2"/><path d="M8 10.5V7.6a4 4 0 018 0v2.9"/><path d="M12 14.6v2.4"/></svg>
+  {%- when 'clock' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 6.8V12l3.4 2"/></svg>
+  {%- when 'headset' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 14v-2a8 8 0 0116 0v2"/><rect x="2.6" y="13.4" width="4.4" height="6.2" rx="2.2"/><rect x="17" y="13.4" width="4.4" height="6.2" rx="2.2"/><path d="M21.4 18.2v.6a2.6 2.6 0 01-2.6 2.6H13"/></svg>
+  {%- when 'user' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8.2" r="3.9"/><path d="M4.6 20.4a7.6 7.6 0 0114.8 0"/></svg>
+  {%- when 'bag' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.2 7.6h13.6l1 12.6a1 1 0 01-1 1.1H5.2a1 1 0 01-1-1.1z"/><path d="M8.6 10V6.9a3.4 3.4 0 016.8 0V10"/></svg>
+  {%- when 'menu' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"/></svg>
+  {%- when 'search' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M16.2 16.2L21 21"/></svg>
+  {%- when 'chevron-right' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.5 5.5l6.5 6.5-6.5 6.5"/></svg>
+  {%- when 'chevron-left' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 5.5L8 12l6.5 6.5"/></svg>
+  {%- when 'chevron-down' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.5 9l6.5 6.5L18.5 9"/></svg>
+  {%- when 'arrow-right' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="M13.2 6l6 6-6 6"/></svg>
+  {%- when 'arrow-left' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H5"/><path d="M10.8 6l-6 6 6 6"/></svg>
+  {%- when 'plus' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg>
+  {%- when 'minus' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/></svg>
+  {%- when 'close' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  {%- when 'star' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.9l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.7l6.5-.9z"/></svg>
+  {%- when 'check' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 12.8l4.8 4.7L19.5 6.8"/></svg>
+  {%- when 'check-circle' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8.2 12.2l2.6 2.6 5-5.4"/></svg>
+  {%- when 'check-circle-solid' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="fill:currentColor;stroke:none"><path d="M12 2.6A9.4 9.4 0 1021.4 12 9.4 9.4 0 0012 2.6zm-1.2 13.6l-3.6-3.6 1.4-1.4 2.2 2.2 5-5.4 1.5 1.3z"/></svg>
+  {%- when 'x-circle' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"/></svg>
+  {%- when 'leaf' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4.2c0 8.4-4.2 12.6-9.4 12.6A5.4 5.4 0 015.2 11c0-5.2 5-6.8 14.8-6.8z"/><path d="M4 20.2c2.6-4.2 6-7.2 10.6-9.6"/></svg>
+  {%- when 'flask' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.6 3.2v6L4.8 18a2.4 2.4 0 002.1 3.6h10.2a2.4 2.4 0 002.1-3.6l-4.8-8.8v-6"/><path d="M8.4 3.2h7.2M7.1 14.4h9.8"/></svg>
+  {%- when 'beaker' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.2 3.4h7.6M10 3.4v5.2L5.4 19a2 2 0 001.8 2.6h9.6A2 2 0 0018.6 19L14 8.6V3.4"/><circle cx="10.4" cy="16.6" r="1"/><circle cx="13.8" cy="18.4" r="0.8"/></svg>
+  {%- when 'hexagon' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6l7.6 4.4v8.8L12 20.2 4.4 15.8V7z"/></svg>
+  {%- when 'bolt' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.4 2.4L5.2 13.4h5.6l-.8 8.2 8.4-11.2h-5.7z"/></svg>
+  {%- when 'brain' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4.4v15.2"/><path d="M9.6 4.4A3 3 0 006.7 6.6a2.7 2.7 0 00-2 3.9 3 3 0 00.4 4.2 3 3 0 002.3 4.3 2.8 2.8 0 002.2 1.6"/><path d="M14.4 4.4a3 3 0 012.9 2.2 2.7 2.7 0 012 3.9 3 3 0 01-.4 4.2 3 3 0 01-2.3 4.3 2.8 2.8 0 01-2.2 1.6"/></svg>
+  {%- when 'muscle' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 4.2c2 0 3 1.4 3.3 3 .3 1.7 1.2 2.4 3 2.4 3.4 0 5.4 2.3 5.4 5.5s-2.4 5.7-6 5.7c-4.6 0-7.6-2.7-7.6-6.6 0-1.6.4-2.6.4-4 0-1.4-.6-2-1.5-2.6a4.6 4.6 0 013-3.4z"/><path d="M9 14.2c1.6-1 3.6-1.1 5.2-.2"/></svg>
+  {%- when 'molecule' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="2.4"/><circle cx="12" cy="3.8" r="1.8"/><circle cx="12" cy="20.2" r="1.8"/><circle cx="4.9" cy="7.9" r="1.8"/><circle cx="19.1" cy="7.9" r="1.8"/><circle cx="4.9" cy="16.1" r="1.8"/><circle cx="19.1" cy="16.1" r="1.8"/><path d="M12 5.6v4M12 14.4v4M6.5 8.9l3.4 1.9M14.1 13.2l3.4 1.9M6.5 15.1l3.4-1.9M14.1 10.8l3.4-1.9"/></svg>
+  {%- when 'award' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9.6" r="6"/><path d="M12 6.6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L9 8.8l2.1-.3z"/><path d="M8.6 14.8L7 21.4l5-2.4 5 2.4-1.6-6.6"/></svg>
+  {%- when 'chart-up' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20.4h16"/><path d="M6.6 20.4v-5.2M11 20.4V11M15.4 20.4V13.6M19.8 20.4V7.4"/><path d="M5.4 10.6l4.6-4.4 3.2 2.4 5.4-4.8"/><path d="M15.4 3.6h3.2v3.2"/></svg>
+  {%- when 'quote' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="fill:currentColor;stroke:none"><path d="M9.4 5.6c-3 1.5-4.8 3.9-4.8 7.1 0 3.5 1.9 5.7 4.5 5.7 2 0 3.5-1.4 3.5-3.4 0-1.9-1.3-3.2-3.1-3.2h-.7c.2-1.7 1.3-3.1 3-4.1zm10 0c-3 1.5-4.8 3.9-4.8 7.1 0 3.5 1.9 5.7 4.5 5.7 2 0 3.5-1.4 3.5-3.4 0-1.9-1.3-3.2-3.1-3.2h-.7c.2-1.7 1.3-3.1 3-4.1z"/></svg>
+  {%- when 'mail' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.8" y="5.2" width="18.4" height="13.6" rx="2"/><path d="M3.4 6.6L12 13l8.6-6.4"/></svg>
+  {%- when 'phone' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.1 3.4l2.2 4-1.9 2a12.6 12.6 0 006.2 6.2l2-1.9 4 2.2v3.2a1.8 1.8 0 01-2 1.8C10.5 20.2 3.8 13.5 3.2 5.4a1.8 1.8 0 011.8-2z"/></svg>
+  {%- when 'package' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.8l8.4 4.4v9.6L12 21.2l-8.4-4.4V7.2z"/><path d="M3.8 7.3L12 11.6l8.2-4.3M12 11.6v9.6"/></svg>
+  {%- when 'capsule' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.6" y="8.2" width="18.8" height="7.6" rx="3.8" transform="rotate(-32 12 12)"/><path d="M9.2 7.4l5.6 9.2"/></svg>
+  {%- when 'droplet' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2c3.4 4 6 6.9 6 10.1a6 6 0 01-12 0c0-3.2 2.6-6.1 6-10.1z"/></svg>
+  {%- when 'calendar' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.4" y="5.2" width="17.2" height="16" rx="2"/><path d="M3.4 10h17.2M8.2 3v4.2M15.8 3v4.2"/></svg>
+  {%- when 'dna' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 2.6c0 6.4 10 8.4 10 14.8M17 2.6c0 6.4-10 8.4-10 14.8M7 21.4h10M7 2.6h10"/><path d="M8.4 7h7.2M8 16.6h8"/></svg>
+  {%- when 'moon' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 14.6A8.8 8.8 0 019.4 3.6a8.8 8.8 0 1011 11z"/></svg>
+  {%- when 'bottle' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 2.8h6v3H9z"/><path d="M7.6 5.8h8.8a1.6 1.6 0 011.6 1.6v12.4a1.6 1.6 0 01-1.6 1.6H7.6A1.6 1.6 0 016 19.8V7.4a1.6 1.6 0 011.6-1.6z"/><path d="M6 10.6h12"/></svg>
+  {%- when 'image' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.2" y="4.6" width="17.6" height="14.8" rx="2"/><circle cx="8.6" cy="9.8" r="1.6"/><path d="M3.6 17.2l4.8-4.4 3.6 3.2 3.4-2.8 5 4.4"/></svg>
+  {%- when 'target' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.2"/></svg>
+  {%- when 'sparkle' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18.4 15.4l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z"/></svg>
+  {%- when 'instagram' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.1" style="fill:currentColor;stroke:none"/></svg>
+  {%- when 'tiktok' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="fill:currentColor;stroke:none"><path d="M16.2 2.6h-2.9v12.2a2.5 2.5 0 11-2.5-2.5c.2 0 .4 0 .6.1V9.4a5.4 5.4 0 00-.6 0 5.5 5.5 0 105.5 5.5V8.6a6.3 6.3 0 003.6 1.2V6.9a3.6 3.6 0 01-3.7-3.5z"/></svg>
+  {%- when 'facebook' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="fill:currentColor;stroke:none"><path d="M13.5 21.6v-8.2h2.8l.4-3.2h-3.2V8.1c0-.9.3-1.6 1.6-1.6h1.7V3.6a22 22 0 00-2.5-.1c-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8v8.2z"/></svg>
+  {%- when 'youtube' -%}
+    <svg class="k-icon {{ cls }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="fill:currentColor;stroke:none"><path d="M21.6 8.2a2.6 2.6 0 00-1.8-1.8C18.2 6 12 6 12 6s-6.2 0-7.8.4a2.6 2.6 0 00-1.8 1.8A27 27 0 002 12a27 27 0 00.4 3.8 2.6 2.6 0 001.8 1.8C5.8 18 12 18 12 18s6.2 0 7.8-.4a2.6 2.6 0 001.8-1.8A27 27 0 0022 12a27 27 0 00-.4-3.8zM10.1 14.8V9.2L15 12z"/></svg>
+  {%- when 'logo-mark' -%}
+    <svg class="k-logo-mark {{ cls }}" viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="none"><path d="M32 3.6l24.6 14.2v28.4L32 60.4 7.4 46.2V17.8z" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/><path d="M23.4 17.6v28.8" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M41.6 17.6L23.8 33.4" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M31.2 26.8l11.4 19.6H36L28.4 33z" fill="currentColor"/></svg>
+{%- endcase -%}

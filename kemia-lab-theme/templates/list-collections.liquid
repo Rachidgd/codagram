@@ -1,0 +1,22 @@
+<section class="k-section">
+  <div class="k-container">
+    <div class="k-section-head">
+      <h1 class="k-h2">{{ 'collections.all_products' | t }}</h1>
+      <hr class="k-rule">
+    </div>
+
+    <div class="k-blogrow__grid">
+      {%- for item in collections -%}
+        <article class="k-article-card">
+          <a class="k-article-card__media" href="{{ item.url }}" tabindex="-1" aria-hidden="true">
+            {% render 'image', image: item.image, ratio: '62%', sizes: '(min-width: 990px) 33vw, 90vw', placeholder_icon: 'bottle' %}
+          </a>
+          <div class="k-article-card__body">
+            <h2 class="k-article-card__title"><a href="{{ item.url }}">{{ item.title }}</a></h2>
+            <p class="k-article-card__meta">{{ 'collections.product_count' | t: count: item.products_count }}</p>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

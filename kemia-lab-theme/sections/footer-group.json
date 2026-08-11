@@ -1,0 +1,62 @@
+{
+  "name": "Pied de page",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "produit": {
+          "type": "menu",
+          "settings": {
+            "heading": "Produit",
+            "menu": "footer-produit"
+          }
+        },
+        "science": {
+          "type": "menu",
+          "settings": {
+            "heading": "Science",
+            "menu": "footer-science"
+          }
+        },
+        "marque": {
+          "type": "menu",
+          "settings": {
+            "heading": "Kemia Lab",
+            "menu": "footer-kemia-lab"
+          }
+        },
+        "aide": {
+          "type": "menu",
+          "settings": {
+            "heading": "Aide",
+            "menu": "footer-aide"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Newsletter",
+            "text": "Recevez nos conseils et nouveautés.",
+            "placeholder": "Votre email",
+            "button_label": "S'inscrire"
+          }
+        }
+      },
+      "block_order": ["produit", "science", "marque", "aide", "newsletter"],
+      "settings": {
+        "background": "#F8F1E9",
+        "brand_text": "Des formules pensées avec la science et la nature pour révéler votre potentiel.",
+        "legal_menu": "footer",
+        "copyright": "© 2026 KEMIA LAB - Tous droits réservés"
+      }
+    },
+    "email-popup": {
+      "type": "email-popup",
+      "settings": {
+        "enabled": false
+      }
+    }
+  },
+  "order": ["footer", "email-popup"]
+}

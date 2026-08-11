@@ -1,0 +1,91 @@
+<section class="k-pagehero k-pagehero--{{ section.settings.background }}">
+  <div class="k-container">
+    {%- if section.settings.show_breadcrumb -%}
+      <nav class="k-breadcrumb" aria-label="Fil d'Ariane">
+        <a href="{{ routes.root_url }}">{{ 'general.home' | t }}</a>
+        {% render 'icon', name: 'chevron-right' %}
+        <span aria-current="page">{{ section.settings.breadcrumb_label | default: page.title }}</span>
+      </nav>
+    {%- endif -%}
+
+    <div class="k-pagehero__inner{% if section.settings.image != blank %} k-pagehero__inner--split{% endif %}">
+      <div class="k-pagehero__text">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h1 class="k-pagehero__heading{% if section.settings.heading_style == 'display' %} k-display{% endif %}">
+            {{ section.settings.heading }}{% if section.settings.highlight != blank %} <span class="k-gold">{{ section.settings.highlight }}</span>{% endif %}
+          </h1>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="k-pagehero__body k-text">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <a class="k-btn k-btn--outline k-pagehero__cta" href="{{ section.settings.button_link }}">
+            {{ section.settings.button_label }}
+            {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.image != blank or section.settings.show_media -%}
+        <div class="k-pagehero__media">
+          {% render 'image',
+            image: section.settings.image,
+            ratio: '68%',
+            sizes: '(min-width: 990px) 50vw, 100vw',
+            loading: 'eager',
+            placeholder_icon: 'image'
+          %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "En-tête de page",
+  "class": "k-pagehero-section",
+  "settings": [
+    { "type": "checkbox", "id": "show_breadcrumb", "label": "Fil d'Ariane", "default": true },
+    { "type": "text", "id": "breadcrumb_label", "label": "Libellé du fil d'Ariane" },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Titre de la page"
+    },
+    { "type": "text", "id": "highlight", "label": "Fin de titre en doré" },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "label": "Style du titre",
+      "options": [
+        { "value": "sans", "label": "Titres" },
+        { "value": "display", "label": "Éditorial" }
+      ],
+      "default": "sans"
+    },
+    { "type": "richtext", "id": "text", "label": "Texte" },
+    { "type": "text", "id": "button_label", "label": "Bouton" },
+    { "type": "url", "id": "button_link", "label": "Lien du bouton" },
+    { "type": "checkbox", "id": "show_media", "label": "Réserver l'emplacement du visuel", "default": true },
+    { "type": "image_picker", "id": "image", "label": "Visuel" },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "light", "label": "Dégradé clair" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "plain", "label": "Fond de page" }
+      ],
+      "default": "light"
+    }
+  ],
+  "presets": [{ "name": "En-tête de page" }]
+}
+{% endschema %}

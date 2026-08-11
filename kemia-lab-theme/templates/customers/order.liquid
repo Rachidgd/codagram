@@ -1,0 +1,38 @@
+<section class="k-section">
+  <div class="k-container">
+    <div class="k-section-head k-account__head">
+      <h1 class="k-h2">{{ 'customer.orders.order_number' | t }} {{ order.name }}</h1>
+      <hr class="k-rule">
+      <p class="k-form-note">{{ order.created_at | date: '%-d %B %Y' }}</p>
+    </div>
+
+    <div class="k-table-wrap">
+      <table class="k-table">
+        <thead>
+          <tr>
+            <th>{{ 'customer.orders.product' | t }}</th>
+            <th>{{ 'customer.orders.quantity' | t }}</th>
+            <th>{{ 'customer.orders.price' | t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for line in order.line_items -%}
+            <tr>
+              <td>{{ line.title }}</td>
+              <td>{{ line.quantity }}</td>
+              <td>{{ line.final_line_price | money }}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">{{ 'customer.orders.total' | t }}</td>
+            <td>{{ order.total_price | money }}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <a class="k-link" href="{{ routes.account_url }}">{{ 'customer.account.title' | t }}</a>
+  </div>
+</section>

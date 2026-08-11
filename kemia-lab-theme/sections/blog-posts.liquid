@@ -1,0 +1,42 @@
+{%- liquid
+  assign target = blogs[section.settings.blog]
+  assign count = section.settings.count
+-%}
+
+{%- if target.articles_count > 0 -%}
+  <section class="k-section">
+    <div class="k-container">
+      <div class="k-blogrow__head">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="k-title-caps k-h3">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.link_label != blank -%}
+          <a class="k-link k-link--caps" href="{{ target.url }}">
+            {{ section.settings.link_label }}
+            {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="k-blogrow__grid">
+        {%- for article in target.articles limit: count -%}
+          {% render 'article-card', article: article %}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Articles du blog",
+  "class": "k-blogrow-section",
+  "settings": [
+    { "type": "blog", "id": "blog", "label": "Blog" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Le blog Kemia Lab" },
+    { "type": "text", "id": "link_label", "label": "Lien", "default": "Voir tous les articles" },
+    { "type": "range", "id": "count", "label": "Nombre d'articles", "min": 2, "max": 6, "step": 1, "default": 3 }
+  ],
+  "presets": [{ "name": "Articles du blog" }]
+}
+{% endschema %}

@@ -1,0 +1,171 @@
+{%- liquid
+  assign source = section.settings.product
+  if source == blank and product != blank
+    assign source = product
+  endif
+  assign benefits = source.metafields.kemia.benefits.value
+  assign has_compare = false
+  if section.blocks.size > 0
+    assign has_compare = true
+  endif
+-%}
+
+<section class="k-section">
+  <div class="k-container">
+    <div class="k-pillars-layout{% unless has_compare %} k-pillars-layout--single{% endunless %}">
+      {%- if section.settings.show_pillars and benefits.size > 0 -%}
+        <div class="k-pillars">
+          <div class="k-pillars__head">
+            {%- if section.settings.heading != blank -%}
+              <h2 class="k-title-caps k-h3">{{ section.settings.heading }}</h2>
+            {%- endif -%}
+            {%- if section.settings.subheading != blank -%}
+              <p class="k-pillars__sub">{{ section.settings.subheading }}</p>
+            {%- endif -%}
+          </div>
+
+          <div class="k-pillars__diagram">
+            <svg class="k-pillars__hex" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+              <path d="M100 4l83 48v96l-83 48-83-48V52z" fill="none" stroke="currentColor" stroke-width="0.8" />
+            </svg>
+
+            <div class="k-pillars__center">
+              {% render 'image', image: section.settings.image, ratio: '118%', fit: 'contain', sizes: '(min-width: 990px) 260px, 70vw', placeholder_icon: 'bottle' %}
+            </div>
+
+            {%- for benefit in benefits limit: 4 -%}
+              <div class="k-pillars__item k-pillars__item--{{ forloop.index }}">
+                <span class="k-pillars__icon">{% render 'icon', name: benefit.icon.value, class: 'k-icon--lg' %}</span>
+                <div class="k-pillars__body">
+                  <h3 class="k-pillars__title">{{ benefit.label.value }}</h3>
+                  {%- if benefit.short_text.value != blank -%}
+                    <p class="k-pillars__text">{{ benefit.short_text.value }}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if has_compare -%}
+        <div class="k-compare">
+          {%- if section.settings.compare_heading != blank -%}
+            <h2 class="k-compare__heading">{{ section.settings.compare_heading }}</h2>
+          {%- endif -%}
+
+          <div class="k-compare__table">
+            <div class="k-compare__header k-compare__header--brand">{{ section.settings.column_brand }}</div>
+            <div class="k-compare__header k-compare__header--other">{{ section.settings.column_other }}</div>
+
+            {%- for block in section.blocks -%}
+              <div class="k-compare__cell k-compare__cell--brand" {{ block.shopify_attributes }}>
+                {% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}
+                <span>{{ block.settings.brand_text }}</span>
+              </div>
+              <div class="k-compare__cell k-compare__cell--other">
+                {% render 'icon', name: 'x-circle', class: 'k-icon--sm' %}
+                <span>{{ block.settings.other_text }}</span>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Piliers et comparaison",
+  "class": "k-pillars-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit source",
+      "info": "Les piliers proviennent du champ méta kemia.benefits. Sur une fiche produit, laisser vide."
+    },
+    {
+      "type": "header",
+      "content": "Piliers"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pillars",
+      "label": "Afficher les piliers",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Le pouvoir du 4"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sous-titre",
+      "default": "Quatre piliers essentiels, une seule formule."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Visuel central"
+    },
+    {
+      "type": "header",
+      "content": "Comparaison"
+    },
+    {
+      "type": "text",
+      "id": "compare_heading",
+      "label": "Titre",
+      "default": "Pourquoi choisir cette formule ?"
+    },
+    {
+      "type": "text",
+      "id": "column_brand",
+      "label": "Colonne marque",
+      "default": "4 Vitality System"
+    },
+    {
+      "type": "text",
+      "id": "column_other",
+      "label": "Colonne comparée",
+      "default": "Compléments classiques"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Ligne de comparaison",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "brand_text",
+          "label": "Colonne marque",
+          "default": "Une seule formule, 4 bénéfices essentiels"
+        },
+        {
+          "type": "textarea",
+          "id": "other_text",
+          "label": "Colonne comparée",
+          "default": "Plusieurs produits pour des bénéfices isolés"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Piliers et comparaison",
+      "blocks": [
+        { "type": "row", "settings": { "brand_text": "Une seule formule, 4 bénéfices essentiels", "other_text": "Plusieurs produits pour des bénéfices isolés" } },
+        { "type": "row", "settings": { "brand_text": "2 gélules par jour, routine simple et efficace", "other_text": "Plusieurs prises quotidiennes" } },
+        { "type": "row", "settings": { "brand_text": "Formule complète pensée pour agir en synergie", "other_text": "Ingrédients souvent pris séparément" } },
+        { "type": "row", "settings": { "brand_text": "Gain de temps et d'argent", "other_text": "Coût plus élevé au quotidien" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

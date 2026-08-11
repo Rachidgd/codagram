@@ -1,0 +1,132 @@
+{%- liquid
+  assign source = section.settings.product
+  if source == blank and product != blank
+    assign source = product
+  endif
+  assign data = source.metafields.kemia.reviews_json.value
+  assign items = data.reviews
+  assign rating = source.metafields.kemia.rating.value
+  assign review_count = source.metafields.kemia.review_count.value | plus: 0
+  assign limit = section.settings.limit
+-%}
+
+{%- if items.size > 0 -%}
+  <section class="k-section{% if section.settings.background != 'none' %} k-bg-{{ section.settings.background }}{% endif %}">
+    <div class="k-container">
+      <div class="k-section-head">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="k-title-caps k-h3">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        <hr class="k-rule">
+        {%- if section.settings.show_summary and review_count > 0 -%}
+          <div class="k-reviews__summary">
+            <span>{{ review_count }} {{ section.settings.summary_label }}</span>
+            {% render 'stars', rating: rating %}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="k-reviews k-carousel" data-k-rail>
+        <button class="k-carousel__nav k-reviews__nav k-reviews__nav--prev" type="button" data-k-rail-prev aria-label="{{ 'general.previous' | t }}">
+          {% render 'icon', name: 'chevron-left', class: 'k-icon--sm' %}
+        </button>
+
+        <div class="k-reviews__track k-rail k-rail--{{ section.settings.per_view }}" data-k-rail-track>
+          {%- for item in items limit: limit -%}
+            {% render 'review-card', review: item, show_score: section.settings.show_score, verified_label: section.settings.verified_label %}
+          {%- endfor -%}
+        </div>
+
+        <button class="k-carousel__nav k-reviews__nav k-reviews__nav--next" type="button" data-k-rail-next aria-label="{{ 'general.next' | t }}">
+          {% render 'icon', name: 'chevron-right', class: 'k-icon--sm' %}
+        </button>
+
+        {%- if section.settings.show_dots -%}
+          <div class="k-carousel__dots" data-k-rail-dots></div>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Avis clients",
+  "class": "k-reviews-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit source",
+      "info": "Les avis proviennent du champ méta kemia.reviews_json. Sur une fiche produit, laisser vide pour utiliser le produit affiché."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Ils nous font confiance"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_summary",
+      "label": "Afficher le nombre de clients et la note",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "summary_label",
+      "label": "Texte après le nombre",
+      "default": "clients satisfaits"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_score",
+      "label": "Afficher la note de chaque avis",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "verified_label",
+      "label": "Mention client vérifié",
+      "default": "Client vérifié"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Nombre d'avis affichés",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "select",
+      "id": "per_view",
+      "label": "Cartes visibles sur ordinateur",
+      "options": [
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Afficher les points de navigation",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" }
+      ],
+      "default": "none"
+    }
+  ],
+  "presets": [{ "name": "Avis clients" }]
+}
+{% endschema %}

@@ -1,0 +1,164 @@
+{%- if section.settings.enabled -%}
+  <div
+    class="k-modal k-popup{% unless section.settings.show_mobile %} k-popup--desktop-only{% endunless %}{% unless section.settings.show_desktop %} k-popup--mobile-only{% endunless %}"
+    id="k-email-popup"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-label="{{ section.settings.heading | escape }}"
+    data-k-popup="{{ section.id }}"
+    data-delay="{{ section.settings.delay }}"
+    data-frequency="{{ section.settings.frequency }}"
+  >
+    <div class="k-modal__overlay" data-k-close></div>
+    <div class="k-modal__dialog k-popup__dialog{% if section.settings.image != blank %} k-popup__dialog--with-image{% endif %}">
+      <button class="k-modal__close k-popup__close" type="button" data-k-close aria-label="{{ 'general.close' | t }}">
+        {% render 'icon', name: 'close' %}
+      </button>
+
+      {%- if section.settings.image != blank -%}
+        <div class="k-popup__media">
+          {% render 'image', image: section.settings.image, ratio: '120%', sizes: '(min-width: 750px) 300px, 100vw' %}
+        </div>
+      {%- endif -%}
+
+      <div class="k-popup__body">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="k-h3">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.offer != blank -%}
+          <p class="k-popup__offer">{{ section.settings.offer }}</p>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <p class="k-text">{{ section.settings.text }}</p>
+        {%- endif -%}
+
+        {% form 'customer', class: 'k-popup__form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter,popup">
+          <label class="k-visually-hidden" for="popup-email">{{ section.settings.placeholder }}</label>
+          <input
+            class="k-input"
+            id="popup-email"
+            type="email"
+            name="contact[email]"
+            placeholder="{{ section.settings.placeholder | escape }}"
+            autocomplete="email"
+            required
+            data-k-autofocus
+          >
+          <button class="k-btn k-btn--block" type="submit">{{ section.settings.button_label }}</button>
+          {%- if form.posted_successfully? -%}
+            <p class="k-form-message k-form-message--success">{{ 'general.newsletter.success' | t }}</p>
+          {%- elsif form.errors -%}
+            <p class="k-form-message k-form-message--error">{{ 'general.newsletter.error' | t }}</p>
+          {%- endif -%}
+        {% endform %}
+
+        {%- if section.settings.legal != blank -%}
+          <p class="k-popup__legal">{{ section.settings.legal }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Popup email",
+  "class": "k-popup-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Activer",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "Offre de bienvenue"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Rejoignez Kemia Lab"
+    },
+    {
+      "type": "text",
+      "id": "offer",
+      "label": "Offre",
+      "default": "-10 % sur votre première commande"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Texte",
+      "default": "Inscrivez-vous pour recevoir votre code et nos conseils sur l'énergie, la concentration et la vitalité."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Champ email",
+      "default": "Votre email"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Bouton",
+      "default": "Recevoir mon code"
+    },
+    {
+      "type": "textarea",
+      "id": "legal",
+      "label": "Mention légale",
+      "default": "En vous inscrivant, vous acceptez de recevoir nos emails. Désinscription possible à tout moment."
+    },
+    {
+      "type": "header",
+      "content": "Comportement"
+    },
+    {
+      "type": "range",
+      "id": "delay",
+      "label": "Délai avant affichage",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "unit": "s",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "frequency",
+      "label": "Ne pas réafficher pendant",
+      "min": 1,
+      "max": 60,
+      "step": 1,
+      "unit": "j",
+      "default": 14
+    },
+    {
+      "type": "checkbox",
+      "id": "show_desktop",
+      "label": "Afficher sur ordinateur",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile",
+      "label": "Afficher sur mobile",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

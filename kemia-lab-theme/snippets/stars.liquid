@@ -1,0 +1,16 @@
+{%- liquid
+  assign score = rating | default: 0 | times: 1.0
+  assign rounded = score | round
+  if rounded < 1 and score > 0
+    assign rounded = 1
+  endif
+-%}
+<span class="k-stars" role="img" aria-label="{{ score }} sur 5">
+  {%- for i in (1..5) -%}
+    {%- if i <= rounded -%}
+      {% render 'icon', name: 'star' %}
+    {%- else -%}
+      {% render 'icon', name: 'star', class: 'k-icon--empty' %}
+    {%- endif -%}
+  {%- endfor -%}
+</span>

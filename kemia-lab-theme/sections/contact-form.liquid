@@ -1,0 +1,149 @@
+<section class="k-section">
+  <div class="k-container">
+    <div class="k-contact">
+      <div class="k-contact__form k-card k-card--pad">
+        {%- if section.settings.form_heading != blank -%}
+          <h2 class="k-title-caps k-h4 k-contact__heading">{{ section.settings.form_heading }}</h2>
+        {%- endif -%}
+
+        {% form 'contact', class: 'k-contact__fields' %}
+          {%- if form.posted_successfully? -%}
+            <p class="k-form-message k-form-message--success">{{ 'contact.success' | t }}</p>
+          {%- elsif form.errors -%}
+            <p class="k-form-message k-form-message--error">{{ 'contact.error' | t }}</p>
+          {%- endif -%}
+
+          <div class="k-contact__row">
+            <div class="k-field">
+              <label class="k-label" for="contact-last">{{ 'contact.name' | t }}</label>
+              <input class="k-input" id="contact-last" type="text" name="contact[last_name]" autocomplete="family-name" required>
+            </div>
+            <div class="k-field">
+              <label class="k-label" for="contact-first">{{ 'contact.first_name' | t }}</label>
+              <input class="k-input" id="contact-first" type="text" name="contact[first_name]" autocomplete="given-name">
+            </div>
+          </div>
+
+          <div class="k-field">
+            <label class="k-label" for="contact-email">{{ 'contact.email' | t }}</label>
+            <input class="k-input" id="contact-email" type="email" name="contact[email]" autocomplete="email" required>
+          </div>
+
+          {%- if section.blocks.size > 0 -%}
+            <div class="k-field">
+              <label class="k-label" for="contact-subject">{{ 'contact.subject' | t }}</label>
+              <select class="k-select" id="contact-subject" name="contact[Sujet]">
+                <option value="">{{ section.settings.subject_placeholder }}</option>
+                {%- for block in section.blocks -%}
+                  <option value="{{ block.settings.label | escape }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</option>
+                {%- endfor -%}
+              </select>
+            </div>
+          {%- endif -%}
+
+          <div class="k-field">
+            <label class="k-label" for="contact-body">{{ 'contact.message' | t }}</label>
+            <textarea class="k-textarea" id="contact-body" name="contact[body]" placeholder="{{ section.settings.message_placeholder | escape }}" required></textarea>
+          </div>
+
+          <button class="k-btn k-btn--block" type="submit">{{ section.settings.button_label }}</button>
+        {% endform %}
+      </div>
+
+      <aside class="k-contact__aside k-card k-card--pad">
+        {%- if section.settings.aside_heading != blank -%}
+          <h2 class="k-title-caps k-h4 k-contact__heading">{{ section.settings.aside_heading }}</h2>
+        {%- endif -%}
+
+        <ul class="k-contact__list">
+          {%- if section.settings.email != blank -%}
+            <li class="k-contact__item">
+              <span class="k-contact__icon">{% render 'icon', name: 'mail', class: 'k-icon--sm' %}</span>
+              <div>
+                <span class="k-contact__label">{{ section.settings.email_label }}</span>
+                <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+              </div>
+            </li>
+          {%- endif -%}
+          {%- if section.settings.phone != blank -%}
+            <li class="k-contact__item">
+              <span class="k-contact__icon">{% render 'icon', name: 'phone', class: 'k-icon--sm' %}</span>
+              <div>
+                <span class="k-contact__label">{{ section.settings.phone_label }}</span>
+                <a href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone }}</a>
+                {%- if section.settings.hours != blank -%}
+                  <p class="k-contact__hours">{{ section.settings.hours }}</p>
+                {%- endif -%}
+              </div>
+            </li>
+          {%- endif -%}
+          {%- if section.settings.social_label != blank -%}
+            <li class="k-contact__item">
+              <span class="k-contact__icon">{% render 'icon', name: 'sparkle', class: 'k-icon--sm' %}</span>
+              <div>
+                <span class="k-contact__label">{{ section.settings.social_label }}</span>
+                {%- if section.settings.social_text != blank -%}
+                  <p class="k-contact__hours">{{ section.settings.social_text }}</p>
+                {%- endif -%}
+                <ul class="k-footer__social k-contact__social">
+                  {%- if settings.social_instagram != blank -%}
+                    <li><a href="{{ settings.social_instagram }}" aria-label="Instagram" rel="noopener" target="_blank">{% render 'icon', name: 'instagram', class: 'k-icon--sm' %}</a></li>
+                  {%- endif -%}
+                  {%- if settings.social_tiktok != blank -%}
+                    <li><a href="{{ settings.social_tiktok }}" aria-label="TikTok" rel="noopener" target="_blank">{% render 'icon', name: 'tiktok', class: 'k-icon--sm' %}</a></li>
+                  {%- endif -%}
+                  {%- if settings.social_facebook != blank -%}
+                    <li><a href="{{ settings.social_facebook }}" aria-label="Facebook" rel="noopener" target="_blank">{% render 'icon', name: 'facebook', class: 'k-icon--sm' %}</a></li>
+                  {%- endif -%}
+                  {%- if settings.social_youtube != blank -%}
+                    <li><a href="{{ settings.social_youtube }}" aria-label="YouTube" rel="noopener" target="_blank">{% render 'icon', name: 'youtube', class: 'k-icon--sm' %}</a></li>
+                  {%- endif -%}
+                </ul>
+              </div>
+            </li>
+          {%- endif -%}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Formulaire de contact",
+  "class": "k-contact-section",
+  "settings": [
+    { "type": "text", "id": "form_heading", "label": "Titre du formulaire", "default": "Envoyez-nous un message" },
+    { "type": "text", "id": "subject_placeholder", "label": "Choix par défaut du sujet", "default": "Choisissez un sujet" },
+    { "type": "text", "id": "message_placeholder", "label": "Aide du champ message", "default": "Décrivez votre demande..." },
+    { "type": "text", "id": "button_label", "label": "Bouton", "default": "Envoyer le message" },
+    { "type": "header", "content": "Autres moyens de contact" },
+    { "type": "text", "id": "aside_heading", "label": "Titre", "default": "Autres moyens de contact" },
+    { "type": "text", "id": "email_label", "label": "Libellé email", "default": "Email" },
+    { "type": "text", "id": "email", "label": "Adresse email" },
+    { "type": "text", "id": "phone_label", "label": "Libellé téléphone", "default": "Téléphone" },
+    { "type": "text", "id": "phone", "label": "Numéro de téléphone" },
+    { "type": "text", "id": "hours", "label": "Horaires", "default": "Du lundi au vendredi, 9h - 18h" },
+    { "type": "text", "id": "social_label", "label": "Libellé réseaux sociaux", "default": "Réseaux sociaux" },
+    { "type": "text", "id": "social_text", "label": "Texte réseaux sociaux", "default": "Rejoignez-nous sur nos réseaux pour suivre nos actualités." }
+  ],
+  "blocks": [
+    {
+      "type": "subject",
+      "name": "Sujet",
+      "settings": [{ "type": "text", "id": "label", "label": "Libellé", "default": "Question sur un produit" }]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Formulaire de contact",
+      "blocks": [
+        { "type": "subject", "settings": { "label": "Question sur un produit" } },
+        { "type": "subject", "settings": { "label": "Suivi de commande" } },
+        { "type": "subject", "settings": { "label": "Livraison et retours" } },
+        { "type": "subject", "settings": { "label": "Autre demande" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

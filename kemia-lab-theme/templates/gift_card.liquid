@@ -1,0 +1,19 @@
+<section class="k-section">
+  <div class="k-container k-container--narrow">
+    <div class="k-section-head">
+      <span class="k-eyebrow">{{ 'gift_cards.issued.title' | t }}</span>
+      <h1 class="k-h2">{{ 'gift_cards.issued.subtitle' | t }}</h1>
+      <hr class="k-rule">
+      <p class="k-price"><span class="k-price__current">{{ gift_card.balance | money }}</span></p>
+    </div>
+
+    <div class="k-card k-card--pad k-giftcard">
+      <img src="{{ gift_card.qr_identifier | img_url: '200x200' }}" alt="" width="200" height="200">
+      <p class="k-giftcard__code">{{ gift_card.code | format_code }}</p>
+      {%- if gift_card.expires_on -%}
+        <p class="k-form-note">{{ 'gift_cards.issued.expires' | t: expiry: gift_card.expires_on | date: '%-d %B %Y' }}</p>
+      {%- endif -%}
+      <a class="k-btn" href="{{ shop.url }}">{{ 'general.continue_shopping' | t }}</a>
+    </div>
+  </div>
+</section>

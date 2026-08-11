@@ -1,0 +1,229 @@
+<section class="k-hero k-hero--{{ section.settings.background }}">
+  <div class="k-container k-hero__inner">
+    <div class="k-hero__text">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        {%- capture heading_content -%}
+          {{- section.settings.heading | newline_to_br -}}
+          {%- if section.settings.highlight != blank -%}
+            {%- if section.settings.highlight_break -%}
+              <span class="k-hero__highlight k-gold">{{ section.settings.highlight }}</span>
+            {%- else -%}
+              <span class="k-gold"> {{ section.settings.highlight }}</span>
+            {%- endif -%}
+          {%- endif -%}
+          {{- section.settings.heading_suffix -}}
+        {%- endcapture -%}
+
+        {%- if section.settings.heading_tag == 'h1' -%}
+          <h1 class="k-hero__heading{% if section.settings.heading_style == 'display' %} k-display{% endif %}">{{ heading_content }}</h1>
+        {%- else -%}
+          <h2 class="k-hero__heading{% if section.settings.heading_style == 'display' %} k-display{% endif %}">{{ heading_content }}</h2>
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- if section.settings.show_rule -%}
+        <hr class="k-rule k-hero__rule">
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <div class="k-hero__body k-text">{{ section.settings.text }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <a
+          class="k-btn{% if section.settings.button_style == 'outline' %} k-btn--outline{% endif %} k-hero__cta"
+          href="{{ section.settings.button_link }}"
+          data-k-track="{{ section.settings.button_event }}"
+        >
+          {{ section.settings.button_label }}
+          {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+        </a>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="k-hero__trust">
+          {%- for block in section.blocks -%}
+            <li class="k-hero__trust-item" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != 'none' -%}
+                {% render 'icon', name: block.settings.icon, class: 'k-icon--lg' %}
+              {%- endif -%}
+              <span class="k-hero__trust-body">
+                <span class="k-trust__title">{{ block.settings.title }}</span>
+                {%- if block.settings.text != blank -%}
+                  <span class="k-trust__text">{{ block.settings.text }}</span>
+                {%- endif -%}
+              </span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    <div class="k-hero__media">
+      {% render 'image',
+        image: section.settings.image,
+        ratio: '104%',
+        fit: 'contain',
+        sizes: '(min-width: 990px) 50vw, 100vw',
+        loading: 'eager',
+        placeholder_icon: 'bottle'
+      %}
+
+      {%- if section.settings.badge_text != blank -%}
+        <span class="k-hero__badge">
+          <span class="k-hero__badge-text">{{ section.settings.badge_text }}</span>
+          {%- if section.settings.badge_icon != 'none' -%}
+            {% render 'icon', name: section.settings.badge_icon, class: 'k-icon--sm' %}
+          {%- endif -%}
+        </span>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "class": "k-hero-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Science au service de votre potentiel" },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Niveau de titre",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "label": "Style du titre",
+      "options": [
+        { "value": "sans", "label": "Titres" },
+        { "value": "display", "label": "Éditorial" }
+      ],
+      "default": "sans"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Votre énergie.\nVotre concentration.",
+      "info": "Chaque retour à la ligne saisi ici crée une ligne de titre."
+    },
+    {
+      "type": "text",
+      "id": "highlight",
+      "label": "Fin de titre en doré",
+      "default": "Votre équilibre."
+    },
+    {
+      "type": "checkbox",
+      "id": "highlight_break",
+      "label": "Partie dorée sur sa propre ligne",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading_suffix",
+      "label": "Texte après la partie dorée"
+    },
+    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Texte",
+      "default": "<p>Des formules développées avec rigueur scientifique pour accompagner votre vitalité au quotidien.</p>"
+    },
+    { "type": "text", "id": "button_label", "label": "Bouton", "default": "Découvrir 4 Vitality System" },
+    { "type": "url", "id": "button_link", "label": "Lien du bouton" },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Style du bouton",
+      "options": [
+        { "value": "solid", "label": "Doré plein" },
+        { "value": "outline", "label": "Doré contour" }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "text",
+      "id": "button_event",
+      "label": "Nom d'événement analytics",
+      "default": "home_hero_product_click"
+    },
+    { "type": "header", "content": "Visuel" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "textarea", "id": "badge_text", "label": "Pastille ronde", "default": "Formule exclusive avec des actifs sélectionnés" },
+    {
+      "type": "select",
+      "id": "badge_icon",
+      "label": "Pictogramme de la pastille",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "leaf", "label": "Feuille" },
+        { "value": "sparkle", "label": "Étincelle" },
+        { "value": "molecule", "label": "Molécule" }
+      ],
+      "default": "leaf"
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "light", "label": "Dégradé clair" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "plain", "label": "Fond de page" }
+      ],
+      "default": "light"
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "trust",
+      "name": "Repère de confiance",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Pictogramme",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "flask", "label": "Fiole" },
+            { "value": "shield-check", "label": "Bouclier" },
+            { "value": "hexagon", "label": "Hexagone" },
+            { "value": "award", "label": "Médaille" },
+            { "value": "molecule", "label": "Molécule" },
+            { "value": "beaker", "label": "Éprouvette" }
+          ],
+          "default": "leaf"
+        },
+        { "type": "text", "id": "title", "label": "Titre", "default": "Ingrédients" },
+        { "type": "text", "id": "text", "label": "Précision", "default": "de qualité" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "blocks": [
+        { "type": "trust", "settings": { "icon": "leaf", "title": "Ingrédients", "text": "de qualité" } },
+        { "type": "trust", "settings": { "icon": "flask", "title": "Formules", "text": "avancées" } },
+        { "type": "trust", "settings": { "icon": "shield-check", "title": "Qualité", "text": "contrôlée" } },
+        { "type": "trust", "settings": { "icon": "hexagon", "title": "Fabriqué", "text": "en France" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

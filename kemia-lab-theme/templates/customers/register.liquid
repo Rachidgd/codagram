@@ -1,0 +1,35 @@
+<section class="k-section">
+  <div class="k-container k-account">
+    <div class="k-card k-card--pad k-account__panel">
+      <h1 class="k-h3 k-account__title">{{ 'customer.register.title' | t }}</h1>
+
+      {% form 'create_customer', class: 'k-account__form' %}
+        {{ form.errors | default_errors }}
+        <div class="k-contact__row">
+          <div class="k-field">
+            <label class="k-label" for="register-first">{{ 'customer.register.first_name' | t }}</label>
+            <input class="k-input" id="register-first" type="text" name="customer[first_name]" autocomplete="given-name">
+          </div>
+          <div class="k-field">
+            <label class="k-label" for="register-last">{{ 'customer.register.last_name' | t }}</label>
+            <input class="k-input" id="register-last" type="text" name="customer[last_name]" autocomplete="family-name">
+          </div>
+        </div>
+        <div class="k-field">
+          <label class="k-label" for="register-email">{{ 'customer.register.email' | t }}</label>
+          <input class="k-input" id="register-email" type="email" name="customer[email]" autocomplete="email" required>
+        </div>
+        <div class="k-field">
+          <label class="k-label" for="register-password">{{ 'customer.register.password' | t }}</label>
+          <input class="k-input" id="register-password" type="password" name="customer[password]" autocomplete="new-password" required>
+        </div>
+        <button class="k-btn k-btn--block" type="submit">{{ 'customer.register.submit' | t }}</button>
+      {% endform %}
+
+      <p class="k-account__switch">
+        {{ 'customer.register.has_account' | t }}
+        <a class="k-link" href="{{ routes.account_login_url }}">{{ 'customer.login.submit' | t }}</a>
+      </p>
+    </div>
+  </div>
+</section>

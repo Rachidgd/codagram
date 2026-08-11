@@ -1,0 +1,25 @@
+{%- liquid
+  assign ratio = ratio | default: '100%'
+  assign wrapper_class = class | default: ''
+  assign loading_mode = loading | default: 'lazy'
+  assign sizes_attr = sizes | default: '(min-width: 990px) 50vw, 100vw'
+  assign fit = fit | default: 'cover'
+  assign icon_name = placeholder_icon | default: 'image'
+-%}
+<div class="k-media{% if fit == 'contain' %} k-media--contain{% endif %} {{ wrapper_class }}" style="--k-media-ratio: {{ ratio }}">
+  {%- if image != blank -%}
+    <img
+      src="{{ image | image_url: width: 1400 }}"
+      srcset="{{ image | image_url: width: 400 }} 400w, {{ image | image_url: width: 700 }} 700w, {{ image | image_url: width: 1000 }} 1000w, {{ image | image_url: width: 1400 }} 1400w, {{ image | image_url: width: 1800 }} 1800w"
+      sizes="{{ sizes_attr }}"
+      alt="{{ image.alt | default: alt | escape }}"
+      width="{{ image.width }}"
+      height="{{ image.height }}"
+      loading="{{ loading_mode }}"
+      {% if loading_mode == 'eager' %}fetchpriority="high"{% endif %}
+      decoding="async"
+    >
+  {%- else -%}
+    <span class="k-placeholder">{% render 'icon', name: icon_name %}</span>
+  {%- endif -%}
+</div>

@@ -1,0 +1,94 @@
+<div class="k-announcement" style="background: {{ section.settings.background }}; color: {{ section.settings.text_color }}">
+  <div class="k-container">
+    <ul class="k-announcement__list" data-k-rail-track>
+      {%- for block in section.blocks -%}
+        <li class="k-announcement__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != 'none' -%}
+            {% render 'icon', name: block.settings.icon, class: 'k-icon--sm' %}
+          {%- endif -%}
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}">{{ block.settings.text }}</a>
+          {%- else -%}
+            <span>{{ block.settings.text }}</span>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Barre d'annonce",
+  "class": "k-announcement-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Fond",
+      "default": "#F8F1E9"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texte",
+      "default": "#5C534A"
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Mention",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Pictogramme",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "truck", "label": "Livraison" },
+            { "value": "shield-check", "label": "Bouclier" },
+            { "value": "lock", "label": "Cadenas" },
+            { "value": "clock", "label": "Horloge" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "headset", "label": "Service client" },
+            { "value": "package", "label": "Colis" }
+          ],
+          "default": "truck"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Livraison offerte dès 60€ d'achat"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Lien"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barre d'annonce",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": { "icon": "truck", "text": "Livraison offerte dès 60€ d'achat" }
+        },
+        {
+          "type": "item",
+          "settings": { "icon": "shield-check", "text": "Qualité contrôlée" }
+        },
+        {
+          "type": "item",
+          "settings": { "icon": "lock", "text": "Paiement sécurisé" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

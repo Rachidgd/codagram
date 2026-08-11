@@ -1,0 +1,227 @@
+{%- liquid
+  assign source = section.settings.product
+  if source == blank and product != blank
+    assign source = product
+  endif
+  assign ingredients = source.metafields.kemia.ingredients.value
+  assign usage_dosage = source.metafields.kemia.usage_dosage.value
+  assign usage_timing = source.metafields.kemia.usage_timing.value
+  assign usage_duration = source.metafields.kemia.usage_duration.value
+  assign precautions = source.metafields.kemia.precautions_short.value
+  assign precautions_full = source.metafields.kemia.precautions_full
+  assign has_usage = false
+  if usage_dosage != blank or usage_timing != blank or usage_duration != blank
+    assign has_usage = true
+  endif
+-%}
+
+{%- if ingredients.size > 0 or has_usage or precautions.size > 0 -%}
+  <section class="k-section k-bg-soft">
+    <div class="k-container">
+      <div class="k-ingredients">
+        {%- if ingredients.size > 0 -%}
+          <div class="k-ingredients__col">
+            {%- if section.settings.list_eyebrow != blank -%}
+              <span class="k-eyebrow">{{ section.settings.list_eyebrow }}</span>
+            {%- endif -%}
+            <p class="k-ingredients__count">{{ ingredients.size }} {{ section.settings.count_label }}</p>
+
+            <ul class="k-ingredients__list">
+              {%- for item in ingredients -%}
+                <li class="k-ingredients__row">
+                  <span class="k-ingredients__name">{{ item.name.value }}</span>
+                  <span class="k-ingredients__dose">
+                    {{ item.amount.value }}{% if item.unit.value != blank %} {{ item.unit.value }}{% endif %}
+                  </span>
+                  {%- if item.detail.value != blank -%}
+                    <span class="k-ingredients__detail">{{ item.detail.value }}</span>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+
+            {%- if section.settings.composition_link != blank -%}
+              <button class="k-link" type="button" data-k-open="k-composition-modal" data-k-track="ingredient_interaction">
+                {{ section.settings.composition_link }}
+                {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+              </button>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if has_usage -%}
+          <div class="k-ingredients__col k-ingredients__col--center">
+            <div class="k-ingredients__media">
+              {% render 'image', image: section.settings.image, ratio: '78%', fit: 'contain', sizes: '(min-width: 990px) 260px, 60vw', placeholder_icon: 'capsule' %}
+            </div>
+            <ul class="k-list-check">
+              {%- if usage_dosage != blank -%}
+                <li class="k-list-check__item">{% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}<span>{{ usage_dosage }}</span></li>
+              {%- endif -%}
+              {%- if usage_duration != blank -%}
+                <li class="k-list-check__item">{% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}<span>{{ usage_duration }}</span></li>
+              {%- endif -%}
+              {%- if usage_timing != blank -%}
+                <li class="k-list-check__item">{% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}<span>{{ usage_timing }}</span></li>
+              {%- endif -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        {%- if precautions.size > 0 -%}
+          <div class="k-ingredients__col">
+            {%- if section.settings.advice_eyebrow != blank -%}
+              <span class="k-eyebrow">{{ section.settings.advice_eyebrow }}</span>
+            {%- endif -%}
+            <ul class="k-list-check k-ingredients__advice">
+              {%- for line in precautions -%}
+                <li class="k-list-check__item">
+                  {% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}
+                  <span>{{ line }}</span>
+                </li>
+              {%- endfor -%}
+            </ul>
+            {%- if precautions_full != blank and section.settings.advice_link != blank -%}
+              <button class="k-link" type="button" data-k-open="k-precautions-modal">
+                {{ section.settings.advice_link }}
+                {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+              </button>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+
+  {%- if ingredients.size > 0 -%}
+    <div class="k-modal" id="k-composition-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ section.settings.composition_link | escape }}">
+      <div class="k-modal__overlay" data-k-close></div>
+      <div class="k-modal__dialog">
+        <div class="k-modal__head">
+          <h2 class="k-h4">{{ section.settings.composition_title }}</h2>
+          <button class="k-modal__close" type="button" data-k-close aria-label="{{ 'general.close' | t }}" data-k-autofocus>
+            {% render 'icon', name: 'close' %}
+          </button>
+        </div>
+        <div class="k-modal__body">
+          <ul class="k-composition">
+            {%- for item in ingredients -%}
+              <li class="k-composition__item">
+                <div class="k-composition__media">
+                  {% render 'image', image: item.image.value, ratio: '100%', fit: 'contain', sizes: '72px', placeholder_icon: 'leaf' %}
+                </div>
+                <div class="k-composition__body">
+                  <div class="k-composition__head">
+                    <h3 class="k-composition__name">{{ item.name.value }}</h3>
+                    <span class="k-composition__dose">{{ item.amount.value }}{% if item.unit.value != blank %} {{ item.unit.value }}{% endif %}</span>
+                  </div>
+                  {%- if item.detail.value != blank -%}
+                    <p class="k-composition__detail">{{ item.detail.value }}</p>
+                  {%- endif -%}
+                  {%- if item.description.value != blank -%}
+                    <p class="k-composition__text">{{ item.description.value }}</p>
+                  {%- endif -%}
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+          {%- if section.settings.composition_note != blank -%}
+            <p class="k-form-note k-composition__note">{{ section.settings.composition_note }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if precautions_full != blank -%}
+    <div class="k-modal" id="k-precautions-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ section.settings.advice_link | escape }}">
+      <div class="k-modal__overlay" data-k-close></div>
+      <div class="k-modal__dialog">
+        <div class="k-modal__head">
+          <h2 class="k-h4">{{ section.settings.advice_title }}</h2>
+          <button class="k-modal__close" type="button" data-k-close aria-label="{{ 'general.close' | t }}" data-k-autofocus>
+            {% render 'icon', name: 'close' %}
+          </button>
+        </div>
+        <div class="k-modal__body k-text">{{ precautions_full }}</div>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Ingrédients & utilisation",
+  "class": "k-ingredients-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit source",
+      "info": "Les données proviennent des champs méta kemia de la fiche produit."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Visuel central"
+    },
+    {
+      "type": "header",
+      "content": "Colonne ingrédients"
+    },
+    {
+      "type": "text",
+      "id": "list_eyebrow",
+      "label": "Sur-titre",
+      "default": "Ingrédients scientifiquement sélectionnés"
+    },
+    {
+      "type": "text",
+      "id": "count_label",
+      "label": "Texte après le nombre",
+      "default": "actifs clés"
+    },
+    {
+      "type": "text",
+      "id": "composition_link",
+      "label": "Lien composition",
+      "default": "Voir la composition complète"
+    },
+    {
+      "type": "text",
+      "id": "composition_title",
+      "label": "Titre de la fenêtre composition",
+      "default": "Composition complète"
+    },
+    {
+      "type": "text",
+      "id": "composition_note",
+      "label": "Note sous la composition",
+      "default": "VNR : Valeurs Nutritionnelles de Référence."
+    },
+    {
+      "type": "header",
+      "content": "Colonne conseils"
+    },
+    {
+      "type": "text",
+      "id": "advice_eyebrow",
+      "label": "Sur-titre",
+      "default": "Conseils d'utilisation"
+    },
+    {
+      "type": "text",
+      "id": "advice_link",
+      "label": "Lien précautions",
+      "default": "En savoir plus"
+    },
+    {
+      "type": "text",
+      "id": "advice_title",
+      "label": "Titre de la fenêtre précautions",
+      "default": "Précautions d'emploi"
+    }
+  ],
+  "presets": [{ "name": "Ingrédients & utilisation" }]
+}
+{% endschema %}

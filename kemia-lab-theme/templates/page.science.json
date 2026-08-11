@@ -1,0 +1,168 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-split",
+      "settings": {
+        "eyebrow": "La science au service de votre potentiel",
+        "heading_tag": "h1",
+        "heading_style": "display",
+        "heading": "Une formule pensée, basée sur la",
+        "highlight": "science",
+        "heading_suffix": ".",
+        "show_rule": true,
+        "text": "<p>Chez Kemia Lab, chaque ingrédient est sélectionné avec exigence et chaque dosage est étudié pour créer des formules cohérentes, efficaces et simples à intégrer au quotidien.</p>",
+        "button_label": "Découvrir 4 Vitality System",
+        "button_link": "/products/4-vitality-system",
+        "button_style": "outline",
+        "button_event": "home_science_click",
+        "badge_text": "",
+        "badge_icon": "none",
+        "background": "light",
+        "highlight_break": false
+      }
+    },
+    "approach": {
+      "type": "features",
+      "blocks": {
+        "a1": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "title": "Sélection exigeante",
+            "text": "Nous sélectionnons uniquement des ingrédients de qualité, reconnus et sourcés avec soin."
+          }
+        },
+        "a2": {
+          "type": "item",
+          "settings": {
+            "icon": "flask",
+            "title": "Formulation réfléchie",
+            "text": "Chaque dosage est étudié pour assurer un équilibre cohérent entre les différents actifs."
+          }
+        },
+        "a3": {
+          "type": "item",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Fabrication contrôlée",
+            "text": "Nos formules sont produites selon des standards de qualité élevés et contrôlés."
+          }
+        }
+      },
+      "block_order": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "settings": {
+        "eyebrow": "Notre approche",
+        "heading": "",
+        "show_rule": true,
+        "icon_style": "circle",
+        "accent": "gold",
+        "style": "plain",
+        "dividers": true,
+        "background": "soft"
+      }
+    },
+    "actifs": {
+      "type": "science-ingredients",
+      "settings": {
+        "eyebrow": "La science derrière 4 Vitality System",
+        "heading": "actifs soigneusement sélectionnés",
+        "heading_style": "display",
+        "note": "VNR : Valeurs Nutritionnelles de Référence"
+      }
+    },
+    "formulas": {
+      "type": "science-formulas",
+      "blocks": {
+        "f1": {
+          "type": "formula",
+          "settings": {
+            "text": "7 actifs sélectionnés pour soutenir votre énergie, votre bien-être et vos performances au quotidien.",
+            "button_label": "Découvrir la formule"
+          }
+        },
+        "f2": {
+          "type": "upcoming",
+          "settings": {
+            "badge": "Bientôt",
+            "text": "De nouvelles formules scientifiquement élaborées arrivent bientôt. Restez connectés."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2"
+      ],
+      "settings": {
+        "eyebrow": "Découvrez la science derrière nos formules",
+        "heading": "",
+        "background": "soft"
+      }
+    },
+    "pillars": {
+      "type": "features",
+      "blocks": {
+        "p1": {
+          "type": "item",
+          "settings": {
+            "icon": "award",
+            "title": "Dosages transparents",
+            "text": "Des informations claires sur chaque ingrédient et son dosage."
+          }
+        },
+        "p2": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "title": "Matières premières sélectionnées",
+            "text": "Des ingrédients de qualité, choisis pour leur pureté et leur efficacité."
+          }
+        },
+        "p3": {
+          "type": "item",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Qualité contrôlée",
+            "text": "Formules testées et approuvées à chaque étape de production."
+          }
+        },
+        "p4": {
+          "type": "item",
+          "settings": {
+            "icon": "beaker",
+            "title": "Sources & études",
+            "text": "Nos choix sont basés sur des données scientifiques sérieuses et actualisées."
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "show_rule": false,
+        "icon_style": "plain",
+        "accent": "blue",
+        "style": "plain",
+        "dividers": false,
+        "background": "blue-tint",
+        "button_label": "Consulter nos sources scientifiques",
+        "button_link": "/pages/contact"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "approach",
+    "actifs",
+    "formulas",
+    "pillars"
+  ]
+}

@@ -1,0 +1,44 @@
+<section class="k-section">
+  <div class="k-container k-account">
+    <div class="k-card k-card--pad k-account__panel">
+      <h1 class="k-h3 k-account__title">{{ 'customer.login.title' | t }}</h1>
+
+      {% form 'customer_login', class: 'k-account__form' %}
+        {{ form.errors | default_errors }}
+        <div class="k-field">
+          <label class="k-label" for="login-email">{{ 'customer.login.email' | t }}</label>
+          <input class="k-input" id="login-email" type="email" name="customer[email]" autocomplete="email" required>
+        </div>
+        {%- if form.password_needed -%}
+          <div class="k-field">
+            <label class="k-label" for="login-password">{{ 'customer.login.password' | t }}</label>
+            <input class="k-input" id="login-password" type="password" name="customer[password]" autocomplete="current-password">
+          </div>
+          <a class="k-link" href="#recover" onclick="document.getElementById('recover-panel').hidden = false; return false;">{{ 'customer.login.forgot' | t }}</a>
+        {%- endif -%}
+        <button class="k-btn k-btn--block" type="submit">{{ 'customer.login.submit' | t }}</button>
+      {% endform %}
+
+      <div id="recover-panel" class="k-account__recover" hidden>
+        <h2 class="k-h4">{{ 'customer.recover.title' | t }}</h2>
+        <p class="k-form-note">{{ 'customer.recover.instructions' | t }}</p>
+        {% form 'recover_customer_password', class: 'k-account__form' %}
+          {{ form.errors | default_errors }}
+          {%- if form.posted_successfully? -%}
+            <p class="k-form-message k-form-message--success">{{ 'customer.recover.success' | t }}</p>
+          {%- endif -%}
+          <div class="k-field">
+            <label class="k-label" for="recover-email">{{ 'customer.login.email' | t }}</label>
+            <input class="k-input" id="recover-email" type="email" name="email" autocomplete="email" required>
+          </div>
+          <button class="k-btn k-btn--outline k-btn--block" type="submit">{{ 'customer.recover.submit' | t }}</button>
+        {% endform %}
+      </div>
+
+      <p class="k-account__switch">
+        {{ 'customer.login.no_account' | t }}
+        <a class="k-link" href="{{ routes.account_register_url }}">{{ 'customer.login.create' | t }}</a>
+      </p>
+    </div>
+  </div>
+</section>

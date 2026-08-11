@@ -1,0 +1,294 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Kemia Lab",
+    "theme_version": "0.1.0",
+    "theme_author": "Kemia Lab",
+    "theme_documentation_url": "https://kemialab.com",
+    "theme_support_url": "https://kemialab.com"
+  },
+  {
+    "name": "Couleurs",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Fonds"
+      },
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Fond de page",
+        "default": "#FEFDFC"
+      },
+      {
+        "type": "color",
+        "id": "color_bg_soft",
+        "label": "Beige clair (blocs et cartes)",
+        "default": "#FBF8F5"
+      },
+      {
+        "type": "color",
+        "id": "color_bg_beige",
+        "label": "Beige (barre d'annonce et pied de page)",
+        "default": "#F8F1E9"
+      },
+      {
+        "type": "color",
+        "id": "color_surface",
+        "label": "Cartes blanches",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "header",
+        "content": "Textes"
+      },
+      {
+        "type": "color",
+        "id": "color_ink",
+        "label": "Titres",
+        "default": "#12161C"
+      },
+      {
+        "type": "color",
+        "id": "color_body",
+        "label": "Texte courant",
+        "default": "#63636A"
+      },
+      {
+        "type": "header",
+        "content": "Accents"
+      },
+      {
+        "type": "color",
+        "id": "color_gold",
+        "label": "Doré champagne",
+        "default": "#C47A17",
+        "info": "Boutons, accents premium, séparateurs."
+      },
+      {
+        "type": "color",
+        "id": "color_gold_dark",
+        "label": "Doré survol",
+        "default": "#A5640F"
+      },
+      {
+        "type": "color",
+        "id": "color_gold_soft",
+        "label": "Doré clair (filets et bordures)",
+        "default": "#E5C89F"
+      },
+      {
+        "type": "color",
+        "id": "color_navy",
+        "label": "Bleu profond",
+        "default": "#011F4B",
+        "info": "Bandeaux scientifiques pleine largeur."
+      },
+      {
+        "type": "color",
+        "id": "color_blue",
+        "label": "Bleu scientifique",
+        "default": "#002D9C",
+        "info": "Pictogrammes, filets et blocs liés à la science."
+      },
+      {
+        "type": "color",
+        "id": "color_blue_tint",
+        "label": "Bleu très clair",
+        "default": "#F6F7FD"
+      },
+      {
+        "type": "header",
+        "content": "Bordures"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Filets chauds",
+        "default": "#EDE5DA"
+      },
+      {
+        "type": "color",
+        "id": "color_border_soft",
+        "label": "Filets neutres",
+        "default": "#E9E9ED"
+      }
+    ]
+  },
+  {
+    "name": "Typographie",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Police du texte",
+        "default": "montserrat_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Police des titres",
+        "default": "montserrat_n7"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_display",
+        "label": "Police éditoriale",
+        "default": "playfair_display_n7",
+        "info": "Utilisée sur les titres éditoriaux de la page Science."
+      },
+      {
+        "type": "range",
+        "id": "font_body_size",
+        "label": "Taille du texte",
+        "min": 15,
+        "max": 18,
+        "step": 1,
+        "unit": "px",
+        "default": 17
+      },
+      {
+        "type": "range",
+        "id": "font_heading_scale",
+        "label": "Échelle des titres",
+        "min": 90,
+        "max": 115,
+        "step": 5,
+        "unit": "%",
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "Mise en page",
+    "settings": [
+      {
+        "type": "range",
+        "id": "layout_width",
+        "label": "Largeur du contenu",
+        "min": 1160,
+        "max": 1440,
+        "step": 20,
+        "unit": "px",
+        "default": 1320
+      },
+      {
+        "type": "range",
+        "id": "radius_card",
+        "label": "Arrondi des cartes",
+        "min": 0,
+        "max": 20,
+        "step": 2,
+        "unit": "px",
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "radius_button",
+        "label": "Arrondi des boutons",
+        "min": 0,
+        "max": 32,
+        "step": 2,
+        "unit": "px",
+        "default": 6
+      }
+    ]
+  },
+  {
+    "name": "Marque",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo",
+        "info": "Si aucun logo n'est chargé, le monogramme et le nom de la boutique sont utilisés."
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "label": "Largeur du logo",
+        "min": 120,
+        "max": 320,
+        "step": 10,
+        "unit": "px",
+        "default": 200
+      },
+      {
+        "type": "text",
+        "id": "brand_name",
+        "label": "Nom de marque",
+        "default": "KEMIA LAB"
+      },
+      {
+        "type": "text",
+        "id": "brand_tagline",
+        "label": "Signature sous le logo",
+        "default": "SCIENCE & NATURE"
+      }
+    ]
+  },
+  {
+    "name": "Réseaux sociaux",
+    "settings": [
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram"
+      },
+      {
+        "type": "url",
+        "id": "social_tiktok",
+        "label": "TikTok"
+      },
+      {
+        "type": "url",
+        "id": "social_facebook",
+        "label": "Facebook"
+      },
+      {
+        "type": "url",
+        "id": "social_youtube",
+        "label": "YouTube"
+      }
+    ]
+  },
+  {
+    "name": "Produit",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_sticky_atc",
+        "label": "Barre d'achat mobile",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_drawer",
+        "label": "Ouvrir le panier en tiroir",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "money_suffix",
+        "label": "Symbole monétaire affiché",
+        "default": "€",
+        "info": "Laisser vide pour utiliser le format de la boutique."
+      }
+    ]
+  },
+  {
+    "name": "Réseaux et partage",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": "Image de partage par défaut"
+      }
+    ]
+  }
+]

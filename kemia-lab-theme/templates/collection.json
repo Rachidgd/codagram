@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "show_rule": true,
+        "show_price": true,
+        "cta_label": "Découvrir",
+        "per_page": 12
+      }
+    },
+    "reassurance": {
+      "type": "reassurance",
+      "blocks": {
+        "r1": { "type": "item", "settings": { "icon": "truck", "title": "Livraison offerte", "text": "dès 60€ d'achat" } },
+        "r2": { "type": "item", "settings": { "icon": "lock", "title": "Paiement sécurisé", "text": "100% sécurisé" } },
+        "r3": { "type": "item", "settings": { "icon": "shield-check", "title": "Qualité contrôlée", "text": "Formules testées et approuvées" } },
+        "r4": { "type": "item", "settings": { "icon": "headset", "title": "Service client", "text": "Réponse sous 48h" } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": {
+        "layout": "inline",
+        "background": "card",
+        "dividers": true,
+        "compact": true
+      }
+    }
+  },
+  "order": ["main", "reassurance"]
+}

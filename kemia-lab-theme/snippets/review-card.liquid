@@ -1,0 +1,31 @@
+<article class="k-review"{% if filter_value %} data-k-filter-item="{{ filter_value }}"{% endif %}>
+  <div class="k-review__head">
+    {% render 'stars', rating: review.rating %}
+    {%- if show_score and review.rating -%}
+      <span class="k-review__score">{{ review.rating | replace: '.', ',' }}/5</span>
+    {%- endif -%}
+    {% render 'icon', name: 'quote', class: 'k-review__quote' %}
+  </div>
+
+  {%- if review.title != blank -%}
+    <h3 class="k-review__title">{{ review.title }}</h3>
+  {%- endif -%}
+
+  {%- if review.body != blank -%}
+    <p class="k-review__body">{{ review.body }}</p>
+  {%- endif -%}
+
+  <footer class="k-review__foot">
+    {%- if review.author != blank -%}
+      <span class="k-review__author">{{ review.author }}</span>
+    {%- endif -%}
+    {%- if review.verified -%}
+      <span class="k-review__verified">
+        {{ verified_label | default: 'Client vérifié' }}
+        {% render 'icon', name: 'check-circle-solid', class: 'k-icon--xs' %}
+      </span>
+    {%- elsif review.date != blank -%}
+      <span class="k-review__date">{{ review.date }}</span>
+    {%- endif -%}
+  </footer>
+</article>

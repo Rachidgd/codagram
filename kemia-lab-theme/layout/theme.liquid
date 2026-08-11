@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_bg_beige }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 48, height: 48 }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; {{ 'general.meta.tags' | t: tags: current_tags | join: ', ' }}{% endif -%}
+      {%- if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {% render 'meta-tags' %}
+
+    {{ settings.font_body | font_face: font_display: 'swap' }}
+    {{ settings.font_body | font_modify: 'weight', '500' | font_face: font_display: 'swap' }}
+    {{ settings.font_body | font_modify: 'weight', '600' | font_face: font_display: 'swap' }}
+    {{ settings.font_heading | font_face: font_display: 'swap' }}
+    {{ settings.font_heading | font_modify: 'weight', '600' | font_face: font_display: 'swap' }}
+    {{ settings.font_display | font_face: font_display: 'swap' }}
+
+    {%- liquid
+      assign body_font = settings.font_body
+      assign heading_font = settings.font_heading
+      assign display_font = settings.font_display
+    -%}
+
+    <style>
+      :root {
+        --k-font-body: {{ body_font.family }}, {{ body_font.fallback_families }};
+        --k-font-heading: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+        --k-font-display: {{ display_font.family }}, {{ display_font.fallback_families }};
+
+        --k-bg: {{ settings.color_bg }};
+        --k-bg-soft: {{ settings.color_bg_soft }};
+        --k-bg-beige: {{ settings.color_bg_beige }};
+        --k-surface: {{ settings.color_surface }};
+        --k-ink: {{ settings.color_ink }};
+        --k-body: {{ settings.color_body }};
+        --k-gold: {{ settings.color_gold }};
+        --k-gold-dark: {{ settings.color_gold_dark }};
+        --k-gold-soft: {{ settings.color_gold_soft }};
+        --k-navy: {{ settings.color_navy }};
+        --k-blue: {{ settings.color_blue }};
+        --k-blue-tint: {{ settings.color_blue_tint }};
+        --k-border: {{ settings.color_border }};
+        --k-border-soft: {{ settings.color_border_soft }};
+
+        --k-layout-width: {{ settings.layout_width }}px;
+        --k-radius-card: {{ settings.radius_card }}px;
+        --k-radius-btn: {{ settings.radius_button }}px;
+
+        --k-h-scale: {{ settings.font_heading_scale | divided_by: 100.0 }};
+        --k-fs-body: {{ settings.font_body_size }}px;
+        --k-fs-h1: calc(clamp(1.875rem, 1.05rem + 3.4vw, 3.25rem) * var(--k-h-scale));
+        --k-fs-h2: calc(clamp(1.5rem, 1.05rem + 1.85vw, 2.25rem) * var(--k-h-scale));
+        --k-fs-h3: calc(clamp(1.1875rem, 1rem + 0.85vw, 1.5rem) * var(--k-h-scale));
+        --k-fs-h4: calc(clamp(1.0625rem, 0.98rem + 0.35vw, 1.1875rem) * var(--k-h-scale));
+        --k-fs-eyebrow: 12px;
+
+        --k-gutter: clamp(20px, 4vw, 40px);
+        --k-space-1: 4px;
+        --k-space-2: 8px;
+        --k-space-3: 12px;
+        --k-space-4: 16px;
+        --k-space-5: 24px;
+        --k-space-6: 32px;
+        --k-space-7: 40px;
+        --k-space-8: 48px;
+        --k-space-9: 64px;
+        --k-space-10: 80px;
+        --k-space-section: clamp(44px, 5.5vw, 84px);
+      }
+
+      @media screen and (max-width: 749px) {
+        :root {
+          --k-fs-body: {{ settings.font_body_size | minus: 1 }}px;
+        }
+      }
+    </style>
+
+    {{ 'kemia.css' | asset_url | stylesheet_tag }}
+    {{ 'kemia-sections.css' | asset_url | stylesheet_tag }}
+
+    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+    <script src="{{ 'kemia.js' | asset_url }}" defer></script>
+
+    {{ content_for_header }}
+  </head>
+
+  <body class="template-{{ request.page_type | handle }}">
+    <a class="k-skip" href="#main">{{ 'accessibility.skip_to_content' | t }}</a>
+
+    {% sections 'header-group' %}
+
+    <main id="main" role="main">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    {%- if settings.cart_drawer -%}
+      {% section 'cart-drawer' %}
+    {%- endif -%}
+
+    <div id="k-a11y-status" class="k-visually-hidden" role="status" aria-live="polite"></div>
+  </body>
+</html>

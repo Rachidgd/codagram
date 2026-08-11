@@ -1,0 +1,26 @@
+{%- liquid
+  assign width = logo_width | default: settings.logo_width
+  assign tone = tone | default: 'gold'
+-%}
+{%- if settings.logo != blank -%}
+  <img
+    class="k-logo__image"
+    src="{{ settings.logo | image_url: width: 600 }}"
+    srcset="{{ settings.logo | image_url: width: 300 }} 300w, {{ settings.logo | image_url: width: 600 }} 600w"
+    sizes="{{ width }}px"
+    alt="{{ shop.name | escape }}"
+    width="{{ settings.logo.width }}"
+    height="{{ settings.logo.height }}"
+    style="width: {{ width }}px"
+  >
+{%- else -%}
+  <span class="k-logo k-logo--{{ tone }}" style="--k-logo-width: {{ width }}px">
+    {% render 'icon', name: 'logo-mark' %}
+    <span class="k-logo__type">
+      <span class="k-logo__name">{{ settings.brand_name | default: shop.name }}</span>
+      {%- if settings.brand_tagline != blank -%}
+        <span class="k-logo__tagline">{{ settings.brand_tagline }}</span>
+      {%- endif -%}
+    </span>
+  </span>
+{%- endif -%}

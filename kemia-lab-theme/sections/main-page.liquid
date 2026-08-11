@@ -1,0 +1,22 @@
+<section class="k-section">
+  <div class="k-container k-container--narrow">
+    {%- if section.settings.show_title -%}
+      <div class="k-section-head k-page__head">
+        <h1 class="k-h2">{{ page.title }}</h1>
+        {%- if section.settings.show_rule -%}<hr class="k-rule">{%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="k-page__content k-text">{{ page.content }}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contenu de page",
+  "class": "k-page-section",
+  "settings": [
+    { "type": "checkbox", "id": "show_title", "label": "Afficher le titre", "default": true },
+    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true }
+  ]
+}
+{% endschema %}

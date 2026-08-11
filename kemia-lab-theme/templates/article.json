@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "main": {
+      "type": "article-main",
+      "settings": {
+        "show_image": true,
+        "show_back": true
+      }
+    },
+    "cta": {
+      "type": "cta-card",
+      "settings": {
+        "heading": "Prêt à révéler votre potentiel ?",
+        "text": "Découvrez 4 Vitality System, notre première formule.",
+        "button_label": "Découvrir le produit",
+        "button_link": "/products/4-vitality-system",
+        "button_event": "home_final_product_click",
+        "background": "soft"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter-band",
+      "settings": {
+        "color_scheme": "navy",
+        "heading": "Des conseils exclusifs pour votre énergie et votre bien-être.",
+        "placeholder": "Votre email",
+        "button_label": "S'inscrire"
+      }
+    }
+  },
+  "order": ["main", "cta", "newsletter"]
+}

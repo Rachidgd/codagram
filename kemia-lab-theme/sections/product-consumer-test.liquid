@@ -1,0 +1,95 @@
+{%- liquid
+  assign source = section.settings.product
+  if source == blank and product != blank
+    assign source = product
+  endif
+  assign enabled = source.metafields.kemia.consumer_test_enabled.value
+  assign participants = source.metafields.kemia.consumer_test_participants.value
+  assign duration = source.metafields.kemia.consumer_test_duration.value
+  assign results = source.metafields.kemia.consumer_test_results.value
+  assign methodology = source.metafields.kemia.consumer_test_methodology
+-%}
+
+{%- if enabled and participants != blank -%}
+  <section class="k-section k-bg-blue-tint">
+    <div class="k-container">
+      <div class="k-section-head">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="k-eyebrow k-eyebrow--blue">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="k-h2">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        <p class="k-section-head__text k-text">
+          {{ section.settings.intro | replace: '[participants]', participants | replace: '[duree]', duration | replace: '[produit]', source.title }}
+        </p>
+      </div>
+
+      {%- if results.size > 0 -%}
+        <ul class="k-testresults">
+          {%- for result in results limit: 3 -%}
+            <li class="k-testresults__item">
+              {%- if result.percentage.value != blank -%}
+                <span class="k-testresults__value">{{ result.percentage.value }}</span>
+              {%- endif -%}
+              {%- if result.label.value != blank -%}
+                <span class="k-testresults__label">{{ result.label.value }}</span>
+              {%- endif -%}
+              {%- if result.description.value != blank -%}
+                <span class="k-testresults__text">{{ result.description.value }}</span>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if methodology != blank and section.settings.method_label != blank -%}
+        <div class="k-testresults__cta">
+          <button class="k-btn k-btn--blue" type="button" data-k-open="k-methodology-modal" data-k-track="test_methodology_opened">
+            {{ section.settings.method_label }}
+          </button>
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  {%- if methodology != blank -%}
+    <div class="k-modal" id="k-methodology-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ section.settings.method_label | escape }}">
+      <div class="k-modal__overlay" data-k-close></div>
+      <div class="k-modal__dialog">
+        <div class="k-modal__head">
+          <h2 class="k-h4">{{ section.settings.method_label }}</h2>
+          <button class="k-modal__close" type="button" data-k-close aria-label="{{ 'general.close' | t }}" data-k-autofocus>
+            {% render 'icon', name: 'close' %}
+          </button>
+        </div>
+        <div class="k-modal__body k-text">{{ methodology }}</div>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Test utilisateurs",
+  "class": "k-testresults-section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Cette section reste invisible tant que le test utilisateurs n'est pas activé et documenté dans les champs méta de la fiche produit."
+    },
+    { "type": "product", "id": "product", "label": "Produit source" },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Testé auprès d'utilisateurs" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Une formule testée dans la vraie vie" },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Phrase d'introduction",
+      "default": "[produit] a été testé auprès de [participants] utilisateurs pendant [duree], selon la posologie recommandée de 2 gélules par jour.",
+      "info": "Les repères [produit], [participants] et [duree] sont remplacés par les données de la fiche produit."
+    },
+    { "type": "text", "id": "method_label", "label": "Bouton méthodologie", "default": "Voir la méthodologie" }
+  ],
+  "presets": [{ "name": "Test utilisateurs" }]
+}
+{% endschema %}

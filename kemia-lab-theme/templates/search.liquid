@@ -1,0 +1,59 @@
+<section class="k-section">
+  <div class="k-container">
+    <div class="k-section-head">
+      <h1 class="k-h2">{{ 'general.search.title' | t }}</h1>
+      <hr class="k-rule">
+    </div>
+
+    <form class="k-search-form" action="{{ routes.search_url }}" method="get" role="search">
+      <label class="k-visually-hidden" for="search-input">{{ 'general.search.placeholder' | t }}</label>
+      <input
+        class="k-input"
+        id="search-input"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'general.search.placeholder' | t }}"
+      >
+      <button class="k-btn" type="submit">{{ 'general.search.submit' | t }}</button>
+    </form>
+
+    {%- if search.performed -%}
+      <p class="k-search-count">{{ 'general.search.results_with_count' | t: count: search.results_count }}</p>
+
+      {%- if search.results_count > 0 -%}
+        {%- paginate search.results by 12 -%}
+          <div class="k-product-grid">
+            {%- for item in search.results -%}
+              {%- if item.object_type == 'product' -%}
+                {% render 'product-card', card_product: item, show_price: true %}
+              {%- elsif item.object_type == 'article' -%}
+                {% render 'article-card', article: item, show_excerpt: true %}
+              {%- else -%}
+                <article class="k-article-card">
+                  <div class="k-article-card__body">
+                    <h2 class="k-article-card__title"><a href="{{ item.url }}">{{ item.title }}</a></h2>
+                  </div>
+                </article>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          {%- if paginate.pages > 1 -%}
+            <nav class="k-pagination k-collection__pagination" aria-label="{{ 'general.pagination.label' | t }}">
+              {%- for part in paginate.parts -%}
+                {%- if part.is_link -%}
+                  <a class="k-pagination__item" href="{{ part.url }}">{{ part.title }}</a>
+                {%- else -%}
+                  <span class="k-pagination__item{% if part.title == paginate.current_page %} is-active{% endif %}">{{ part.title }}</span>
+                {%- endif -%}
+              {%- endfor -%}
+            </nav>
+          {%- endif -%}
+        {%- endpaginate -%}
+      {%- else -%}
+        <p class="k-form-note">{{ 'general.search.no_results' | t: terms: search.terms }}</p>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>

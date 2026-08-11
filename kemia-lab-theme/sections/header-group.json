@@ -1,0 +1,49 @@
+{
+  "name": "En-tête",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "shipping": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "text": "Livraison offerte dès 60€ d'achat"
+          }
+        },
+        "quality": {
+          "type": "item",
+          "settings": {
+            "icon": "shield-check",
+            "text": "Qualité contrôlée"
+          }
+        },
+        "payment": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "text": "Paiement sécurisé"
+          }
+        }
+      },
+      "block_order": ["shipping", "quality", "payment"],
+      "settings": {
+        "background": "#F8F1E9",
+        "text_color": "#5C534A"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "background": "#FEFDFC",
+        "sticky": true,
+        "show_search": false,
+        "drawer_cta_label": "Découvrir 4 Vitality System",
+        "drawer_cta_link": "/products/4-vitality-system"
+      }
+    }
+  },
+  "order": ["announcement-bar", "header"]
+}

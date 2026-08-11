@@ -1,0 +1,93 @@
+{%- liquid
+  if page_description
+    assign og_description = page_description
+  else
+    assign og_description = shop.description | default: shop.name
+  endif
+
+  if template.name == 'product'
+    assign og_type = 'product'
+  elsif template.name == 'article'
+    assign og_type = 'article'
+  else
+    assign og_type = 'website'
+  endif
+
+  assign og_image = settings.share_image
+  if template.name == 'product' and product.featured_image
+    assign og_image = product.featured_image
+  elsif template.name == 'article' and article.image
+    assign og_image = article.image
+  endif
+-%}
+<meta property="og:site_name" content="{{ shop.name }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:description" content="{{ og_description | strip_html | truncate: 200 | escape }}">
+{%- if og_image -%}
+  <meta property="og:image" content="http:{{ og_image | image_url: width: 1200 }}">
+  <meta property="og:image:secure_url" content="https:{{ og_image | image_url: width: 1200 }}">
+{%- endif -%}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title | escape }}">
+<meta name="twitter:description" content="{{ og_description | strip_html | truncate: 200 | escape }}">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    "url": {{ shop.url | json }}
+    {%- if settings.logo %},
+      "logo": {{ settings.logo | image_url: width: 480 | prepend: "https:" | json }}
+    {%- endif -%}
+  }
+</script>
+
+{%- if template.name == 'product' and product -%}
+  {%- liquid
+    assign product_rating = product.metafields.kemia.rating.value
+    assign product_reviews = product.metafields.kemia.review_count.value | plus: 0
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": {{ product.title | json }},
+      "url": {{ product.url | prepend: shop.url | json }},
+      "description": {{ product.description | strip_html | truncate: 400 | json }},
+      "sku": {{ product.selected_or_first_available_variant.sku | json }},
+      "brand": { "@type": "Brand", "name": {{ product.vendor | default: shop.name | json }} },
+      {%- if product_rating and product_reviews > 0 %}
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": {{ product_rating | json }},
+          "reviewCount": {{ product_reviews | json }}
+        },
+      {%- endif %}
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": {{ cart.currency.iso_code | json }},
+        "lowPrice": {{ product.price_min | divided_by: 100.0 | json }},
+        "highPrice": {{ product.price_max | divided_by: 100.0 | json }},
+        "availability": "https://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+        "url": {{ product.url | prepend: shop.url | json }}
+      }
+    }
+  </script>
+{%- endif -%}
+
+{%- if template.name == 'article' and article -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": {{ article.title | json }},
+      "datePublished": {{ article.published_at | date: '%Y-%m-%d' | json }},
+      "author": { "@type": "Organization", "name": {{ shop.name | json }} },
+      "publisher": { "@type": "Organization", "name": {{ shop.name | json }} },
+      "mainEntityOfPage": {{ article.url | prepend: shop.url | json }}
+    }
+  </script>
+{%- endif -%}

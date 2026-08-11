@@ -1,0 +1,90 @@
+<div class="k-section k-section--tight">
+  <div class="k-container">
+    <div class="k-newsletter-band k-newsletter-band--{{ section.settings.color_scheme }}{% if section.settings.image != blank %} k-newsletter-band--with-image{% endif %}">
+      {%- if section.settings.image != blank -%}
+        <div class="k-newsletter-band__media">
+          {% render 'image', image: section.settings.image, ratio: '62%', sizes: '(min-width: 990px) 280px, 100vw', fit: 'cover' %}
+        </div>
+      {%- endif -%}
+
+      <div class="k-newsletter-band__text">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <p class="k-newsletter-band__heading">{{ section.settings.heading }}</p>
+        {%- endif -%}
+      </div>
+
+      <div class="k-newsletter-band__form">
+        {% form 'customer' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <label class="k-visually-hidden" for="band-email-{{ section.id }}">{{ section.settings.placeholder }}</label>
+          <input
+            class="k-input"
+            id="band-email-{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            placeholder="{{ section.settings.placeholder | escape }}"
+            autocomplete="email"
+            required
+          >
+          <button class="k-btn" type="submit" data-k-track="email_submitted">{{ section.settings.button_label }}</button>
+          {%- if form.posted_successfully? -%}
+            <p class="k-form-message k-form-message--success">{{ 'general.newsletter.success' | t }}</p>
+          {%- elsif form.errors -%}
+            <p class="k-form-message k-form-message--error">{{ 'general.newsletter.error' | t }}</p>
+          {%- endif -%}
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bandeau newsletter",
+  "class": "k-newsletter-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Fond",
+      "options": [
+        { "value": "beige", "label": "Beige clair" },
+        { "value": "navy", "label": "Bleu profond" }
+      ],
+      "default": "beige"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Restez informé de nos cures et nouveautés."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Champ email",
+      "default": "Votre email"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Bouton",
+      "default": "S'inscrire"
+    }
+  ],
+  "presets": [{ "name": "Bandeau newsletter" }]
+}
+{% endschema %}

@@ -1,0 +1,34 @@
+{%- liquid
+  assign tagline = card_product.metafields.kemia.tagline.value
+  assign rating = card_product.metafields.kemia.rating.value
+  assign review_count = card_product.metafields.kemia.review_count.value | plus: 0
+-%}
+<article class="k-product-card">
+  <a class="k-product-card__media" href="{{ card_product.url }}" tabindex="-1" aria-hidden="true">
+    {% render 'image', image: card_product.featured_image, ratio: '104%', fit: 'contain', sizes: '(min-width: 990px) 30vw, 90vw', placeholder_icon: 'bottle' %}
+  </a>
+  <div class="k-product-card__body">
+    <h3 class="k-product-card__title"><a href="{{ card_product.url }}">{{ card_product.title }}</a></h3>
+    {%- if tagline != blank -%}
+      <p class="k-product-card__tagline">{{ tagline }}</p>
+    {%- endif -%}
+    {%- if rating != blank and review_count > 0 -%}
+      <div class="k-rating k-product-card__rating">
+        {% render 'stars', rating: rating %}
+        <span class="k-rating__count">{{ review_count }}</span>
+      </div>
+    {%- endif -%}
+    {%- if show_price -%}
+      <div class="k-price k-price--sm">
+        <span class="k-price__current">{{ card_product.price | money }}</span>
+        {%- if card_product.compare_at_price > card_product.price -%}
+          <span class="k-price__compare">{{ card_product.compare_at_price | money }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <a class="k-link k-link--caps k-product-card__cta" href="{{ card_product.url }}">
+      {{ cta_label | default: 'Découvrir' }}
+      {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+    </a>
+  </div>
+</article>

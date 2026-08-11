@@ -1,0 +1,197 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "eyebrow": { "type": "eyebrow", "settings": {} },
+        "title": { "type": "title", "settings": {} },
+        "tagline": { "type": "tagline", "settings": {} },
+        "usp": { "type": "usp", "settings": {} },
+        "trust": {
+          "type": "trust",
+          "settings": {
+            "icon_1": "hexagon",
+            "title_1": "Fabriqué",
+            "text_1": "en France",
+            "icon_2": "leaf",
+            "title_2": "Ingrédients",
+            "text_2": "premium",
+            "icon_3": "shield-check",
+            "title_3": "Qualité",
+            "text_3": "contrôlée",
+            "icon_4": "award",
+            "title_4": "Normes",
+            "text_4": "strictes"
+          }
+        },
+        "rating": { "type": "rating", "settings": { "prefix": "basé sur", "suffix": "avis clients" } },
+        "price": { "type": "price", "settings": {} },
+        "installment": { "type": "installment", "settings": { "enabled": false } },
+        "cures": { "type": "cures", "settings": { "heading": "Choisissez votre offre", "best_label": "Meilleure offre" } },
+        "quantity": { "type": "quantity", "settings": { "label": "Quantité" } },
+        "buy": { "type": "buy", "settings": { "label": "Ajouter au panier" } },
+        "reassurance": {
+          "type": "reassurance",
+          "settings": {
+            "icon_1": "truck",
+            "text_1": "Livraison 24/48h",
+            "icon_2": "lock",
+            "text_2": "Paiement sécurisé",
+            "icon_3": "package",
+            "text_3": "Expédition neutre",
+            "icon_4": "headset",
+            "text_4": "Service client - réponse sous 48h"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow",
+        "title",
+        "tagline",
+        "usp",
+        "trust",
+        "rating",
+        "price",
+        "installment",
+        "cures",
+        "quantity",
+        "buy",
+        "reassurance"
+      ],
+      "settings": {
+        "show_benefit_rail": true,
+        "sticky_label": "Ajouter"
+      }
+    },
+    "pillars": {
+      "type": "product-pillars",
+      "blocks": {
+        "row-1": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Une seule formule, 4 bénéfices essentiels",
+            "other_text": "Plusieurs produits pour des bénéfices isolés"
+          }
+        },
+        "row-2": {
+          "type": "row",
+          "settings": {
+            "brand_text": "2 gélules par jour, une routine simple",
+            "other_text": "Plusieurs prises quotidiennes"
+          }
+        },
+        "row-3": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Une formule complète pensée pour agir en synergie",
+            "other_text": "Des ingrédients souvent pris séparément"
+          }
+        },
+        "row-4": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Un gain de temps au quotidien",
+            "other_text": "Un budget réparti sur plusieurs produits"
+          }
+        }
+      },
+      "block_order": ["row-1", "row-2", "row-3", "row-4"],
+      "settings": {
+        "show_pillars": true,
+        "heading": "Le pouvoir du 4",
+        "subheading": "Quatre piliers essentiels, une seule formule.",
+        "compare_heading": "Pourquoi choisir 4 Vitality System ?",
+        "column_brand": "4 Vitality System",
+        "column_other": "Compléments classiques"
+      }
+    },
+    "ingredients": {
+      "type": "product-ingredients",
+      "settings": {
+        "list_eyebrow": "Ingrédients scientifiquement sélectionnés",
+        "count_label": "actifs clés",
+        "composition_link": "Voir la composition complète",
+        "composition_title": "Composition complète",
+        "composition_note": "VNR : Valeurs Nutritionnelles de Référence.",
+        "advice_eyebrow": "Conseils d'utilisation",
+        "advice_link": "En savoir plus",
+        "advice_title": "Précautions d'emploi"
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+        "heading": "Ils ont choisi 4 Vitality System",
+        "show_summary": true,
+        "summary_label": "clients satisfaits",
+        "show_score": true,
+        "verified_label": "Client vérifié",
+        "limit": 8,
+        "per_view": "4",
+        "show_dots": true,
+        "background": "none"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Quand vais-je ressentir les effets ?",
+            "answer": "<p>4 Vitality System s'utilise en programme de 30 jours, à raison de 2 gélules par jour. La perception varie d'une personne à l'autre : nous recommandons de suivre la cure complète avant de faire le point.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Ce complément convient-il à tout le monde ?",
+            "answer": "<p>La formule est réservée aux adultes. Elle est déconseillée aux femmes enceintes ou allaitantes. En cas de traitement médical, demandez l'avis de votre médecin ou de votre pharmacien.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "La formule contient-elle de la caféine ?",
+            "answer": "<p>Oui. L'extrait de kola apporte 25 mg de caféine par dose journalière de 2 gélules, soit environ un quart d'un café filtre. C'est pourquoi la prise est recommandée le matin et/ou le midi.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Peut-on associer 4 Vitality System à d'autres compléments ?",
+            "answer": "<p>La formule réunit 7 actifs et se suffit à elle-même dans la plupart des routines. Si vous prenez déjà d'autres compléments, vérifiez les apports cumulés, en particulier en zinc et en vitamine D3.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "heading": "Vos questions, nos réponses",
+        "show_rule": true,
+        "style": "card",
+        "show_tabs": false,
+        "link_label": "Voir toutes les questions fréquentes",
+        "link_url": "/pages/faq",
+        "background": "none"
+      }
+    },
+    "reassurance": {
+      "type": "reassurance",
+      "blocks": {
+        "r1": { "type": "item", "settings": { "icon": "truck", "title": "Livraison offerte", "text": "dès 60€ d'achat" } },
+        "r2": { "type": "item", "settings": { "icon": "lock", "title": "Paiement sécurisé", "text": "100% sécurisé" } },
+        "r3": { "type": "item", "settings": { "icon": "shield-check", "title": "Qualité contrôlée", "text": "Formules testées et approuvées" } },
+        "r4": { "type": "item", "settings": { "icon": "leaf", "title": "Ingrédients premium", "text": "sélectionnés avec exigence" } },
+        "r5": { "type": "item", "settings": { "icon": "flask", "title": "Formules pensées", "text": "efficacité et sécurité" } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5"],
+      "settings": {
+        "layout": "inline",
+        "background": "soft",
+        "dividers": false,
+        "compact": true
+      }
+    }
+  },
+  "order": ["main", "pillars", "ingredients", "reviews", "faq", "reassurance"]
+}

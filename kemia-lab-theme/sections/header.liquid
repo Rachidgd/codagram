@@ -1,0 +1,150 @@
+<header class="k-header{% if section.settings.sticky %} k-header--sticky{% endif %}" data-k-header style="background: {{ section.settings.background }}">
+  <div class="k-container k-header__inner">
+    <a class="k-header__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">
+      {% render 'logo' %}
+    </a>
+
+    <nav class="k-header__nav" aria-label="Navigation principale">
+      <ul class="k-header__menu">
+        {%- for link in section.settings.menu.links -%}
+          <li class="k-header__item{% if link.links.size > 0 %} k-header__item--has-children{% endif %}">
+            <a
+              class="k-header__link{% if link.active or link.child_active %} is-active{% endif %}"
+              href="{{ link.url }}"
+              {% if link.active %}aria-current="page"{% endif %}
+            >
+              {{ link.title }}
+              {%- if link.links.size > 0 -%}
+                {% render 'icon', name: 'chevron-down', class: 'k-icon--xs' %}
+              {%- endif -%}
+            </a>
+            {%- if link.links.size > 0 -%}
+              <ul class="k-header__submenu">
+                {%- for child in link.links -%}
+                  <li>
+                    <a class="k-header__sublink{% if child.active %} is-active{% endif %}" href="{{ child.url }}">{{ child.title }}</a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <div class="k-header__actions">
+      {%- if section.settings.show_search -%}
+        <a class="k-header__action" href="{{ routes.search_url }}" aria-label="{{ 'accessibility.search' | t }}">
+          {% render 'icon', name: 'search' %}
+        </a>
+      {%- endif -%}
+
+      <a class="k-header__action" href="{{ routes.account_url }}" aria-label="{{ 'accessibility.account' | t }}">
+        {% render 'icon', name: 'user' %}
+      </a>
+
+      <a
+        class="k-header__action k-header__cart"
+        href="{{ routes.cart_url }}"
+        {% if settings.cart_drawer %}data-k-open="k-cart-drawer"{% endif %}
+        aria-label="{{ 'accessibility.open_cart' | t }}"
+      >
+        {% render 'icon', name: 'bag' %}
+        <span class="k-header__cart-count" data-k-cart-count>{{ cart.item_count }}</span>
+      </a>
+
+      <button class="k-header__action k-header__burger" type="button" data-k-open="k-menu-drawer" aria-label="{{ 'accessibility.open_menu' | t }}">
+        {% render 'icon', name: 'menu' %}
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="k-drawer k-drawer--menu" id="k-menu-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="k-drawer__overlay" data-k-close></div>
+  <div class="k-drawer__panel">
+    <div class="k-drawer__head">
+      <span class="k-header__logo">{% render 'logo', logo_width: 150 %}</span>
+      <button class="k-modal__close" type="button" data-k-close aria-label="{{ 'accessibility.close_menu' | t }}">
+        {% render 'icon', name: 'close' %}
+      </button>
+    </div>
+    <div class="k-drawer__body">
+      <ul class="k-menu-list">
+        {%- for link in section.settings.menu.links -%}
+          <li>
+            {%- if link.links.size > 0 -%}
+              <details class="k-menu-list__group">
+                <summary class="k-menu-list__link">
+                  {{ link.title }}
+                  <span class="k-accordion__icon" aria-hidden="true"></span>
+                </summary>
+                <ul class="k-menu-list__children">
+                  {%- for child in link.links -%}
+                    <li><a class="k-menu-list__child" href="{{ child.url }}">{{ child.title }}</a></li>
+                  {%- endfor -%}
+                </ul>
+              </details>
+            {%- else -%}
+              <a class="k-menu-list__link{% if link.active %} is-active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    {%- if section.settings.drawer_cta_label != blank -%}
+      <div class="k-drawer__foot">
+        <a class="k-btn k-btn--block" href="{{ section.settings.drawer_cta_link }}">{{ section.settings.drawer_cta_label }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "En-tête",
+  "class": "k-header-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu",
+      "info": "Modifiable dans Boutique en ligne, Navigation."
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Fond",
+      "default": "#FEFDFC"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "En-tête fixe au défilement",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Afficher la recherche",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Menu mobile"
+    },
+    {
+      "type": "text",
+      "id": "drawer_cta_label",
+      "label": "Bouton bas de menu",
+      "default": "Découvrir 4 Vitality System"
+    },
+    {
+      "type": "url",
+      "id": "drawer_cta_link",
+      "label": "Lien du bouton"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,74 @@
+{%- liquid
+  assign item = section.settings.product
+  assign benefits = item.metafields.kemia.benefits.value
+  assign tagline = item.metafields.kemia.tagline.value
+  assign usp = item.metafields.kemia.short_usp.value
+-%}
+
+{%- if item != blank -%}
+  <section class="k-section">
+    <div class="k-container">
+      <div class="k-spotlight">
+        <div class="k-spotlight__media">
+          {% render 'image',
+            image: section.settings.image,
+            ratio: '100%',
+            fit: 'contain',
+            sizes: '(min-width: 990px) 280px, 70vw',
+            placeholder_icon: 'bottle'
+          %}
+        </div>
+
+        <div class="k-spotlight__body">
+          {%- if section.settings.eyebrow != blank -%}
+            <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+          {%- endif -%}
+          <h2 class="k-h3 k-spotlight__title">{{ item.title }}</h2>
+          {%- if tagline != blank -%}
+            <p class="k-spotlight__tagline">{{ tagline }}</p>
+          {%- endif -%}
+          {%- if usp != blank -%}
+            <div class="k-spotlight__text k-text">{{ usp }}</div>
+          {%- endif -%}
+          {%- if section.settings.button_label != blank -%}
+            <a class="k-btn k-btn--outline k-spotlight__cta" href="{{ item.url }}" data-k-track="{{ section.settings.button_event }}">
+              {{ section.settings.button_label }}
+              {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+            </a>
+          {%- endif -%}
+        </div>
+
+        {%- if benefits.size > 0 -%}
+          <ul class="k-spotlight__benefits">
+            {%- for benefit in benefits -%}
+              <li>
+                <span class="k-spotlight__benefit-icon">{% render 'icon', name: benefit.icon.value, class: 'k-icon--lg' %}</span>
+                <span>{{ benefit.label.value }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Mise en avant produit",
+  "class": "k-spotlight-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit",
+      "info": "Le nom, l'accroche, la description et les bénéfices proviennent de la fiche produit. Aucun prix n'est affiché."
+    },
+    { "type": "image_picker", "id": "image", "label": "Visuel" },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Notre première formule" },
+    { "type": "text", "id": "button_label", "label": "Bouton", "default": "Découvrir le produit" },
+    { "type": "text", "id": "button_event", "label": "Nom d'événement analytics", "default": "home_formula_product_click" }
+  ],
+  "presets": [{ "name": "Mise en avant produit" }]
+}
+{% endschema %}

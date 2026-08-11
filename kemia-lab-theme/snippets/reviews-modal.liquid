@@ -1,0 +1,56 @@
+{%- liquid
+  assign data = product.metafields.kemia.reviews_json.value
+  assign items = data.reviews
+-%}
+<div class="k-modal" id="k-reviews-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Avis clients">
+  <div class="k-modal__overlay" data-k-close></div>
+  <div class="k-modal__dialog k-reviews-modal" data-k-filter>
+    <div class="k-modal__head">
+      <div class="k-reviews-modal__summary">
+        <h2 class="k-h4">Avis clients</h2>
+        {%- if rating != blank -%}
+          <div class="k-rating">
+            {% render 'stars', rating: rating %}
+            <span class="k-rating__score">{{ rating | replace: '.', ',' }}/5</span>
+            {%- if review_count > 0 -%}
+              <span class="k-rating__count">{{ review_count }} avis</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+      <button class="k-modal__close" type="button" data-k-close aria-label="{{ 'general.close' | t }}" data-k-autofocus>
+        {% render 'icon', name: 'close' %}
+      </button>
+    </div>
+
+    <div class="k-modal__body">
+      {%- if items.size > 4 -%}
+        <div class="k-reviews-modal__filters">
+          <button class="k-chip is-active" type="button" data-k-filter-value="*" aria-pressed="true">Tous</button>
+          {%- for score in (1..5) reversed -%}
+            {%- assign has_score = false -%}
+            {%- for item in items -%}
+              {%- if item.rating == score -%}{%- assign has_score = true -%}{%- break -%}{%- endif -%}
+            {%- endfor -%}
+            {%- if has_score -%}
+              <button class="k-chip" type="button" data-k-filter-value="{{ score }}" aria-pressed="false">
+                {{ score }} {% render 'icon', name: 'star', class: 'k-icon--xs' %}
+              </button>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if items.size > 0 -%}
+        <div class="k-reviews-modal__list">
+          {%- for item in items -%}
+            {% render 'review-card', review: item, show_score: true, filter_value: item.rating %}
+          {%- endfor -%}
+        </div>
+        <p class="k-form-note" data-k-filter-empty hidden>Aucun avis pour ce filtre.</p>
+      {%- else -%}
+        <p class="k-form-note">Les avis clients seront affichés ici dès qu'ils seront disponibles.</p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

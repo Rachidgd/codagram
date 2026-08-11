@@ -1,0 +1,63 @@
+{%- liquid
+  assign words = article.content | strip_html | split: ' ' | size
+  assign minutes = words | divided_by: 200
+  if minutes < 1
+    assign minutes = 1
+  endif
+-%}
+
+<article class="k-article">
+  <div class="k-container k-container--narrow">
+    <nav class="k-breadcrumb k-article__breadcrumb" aria-label="Fil d'Ariane">
+      <a href="{{ routes.root_url }}">{{ 'general.home' | t }}</a>
+      {% render 'icon', name: 'chevron-right' %}
+      <a href="{{ blog.url }}">{{ blog.title }}</a>
+      {% render 'icon', name: 'chevron-right' %}
+      <span aria-current="page">{{ article.title }}</span>
+    </nav>
+
+    <header class="k-article__head">
+      {%- if article.tags.first != blank -%}
+        <span class="k-eyebrow">{{ article.tags.first }}</span>
+      {%- endif -%}
+      <h1 class="k-h1 k-article__title">{{ article.title }}</h1>
+      <p class="k-article-card__meta">
+        <span>{{ article.published_at | date: '%-d %B %Y' }}</span>
+        <span class="k-article-card__dot" aria-hidden="true">•</span>
+        <span>{{ 'blogs.reading_time' | t: count: minutes }}</span>
+      </p>
+    </header>
+  </div>
+
+  {%- if section.settings.show_image -%}
+    <div class="k-container">
+      <div class="k-article__media">
+        {% render 'image', image: article.image, ratio: '46%', sizes: '100vw', loading: 'eager', placeholder_icon: 'image' %}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="k-container k-container--narrow">
+    <div class="k-article__content k-text">{{ article.content }}</div>
+
+    {%- if section.settings.show_back -%}
+      <div class="k-article__back">
+        <a class="k-link" href="{{ blog.url }}">
+          {% render 'icon', name: 'arrow-left', class: 'k-icon--sm' %}
+          {{ 'blogs.back_to_blog' | t }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Article",
+  "class": "k-article-section",
+  "settings": [
+    { "type": "checkbox", "id": "show_image", "label": "Afficher l'image principale", "default": true },
+    { "type": "checkbox", "id": "show_back", "label": "Lien retour au blog", "default": true }
+  ]
+}
+{% endschema %}
