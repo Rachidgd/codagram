@@ -47,6 +47,8 @@
       </div>
     </div>
   </section>
+{%- else -%}
+  {% render 'section-empty', message: "Section Avis clients : aucun avis n'est encore renseigné. Renseignez kemia.rating, kemia.review_count et kemia.reviews_json sur la fiche produit pour l'activer." %}
 {%- endif -%}
 
 {% schema %}

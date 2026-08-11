@@ -51,6 +51,8 @@
       </div>
     </div>
   </section>
+{%- else -%}
+  {% render 'section-empty', message: "Section Mise en avant produit : sélectionnez le produit à mettre en avant." %}
 {%- endif -%}
 
 {% schema %}

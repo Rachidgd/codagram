@@ -125,9 +125,13 @@ Aucune intervention dans le code n'est nécessaire.
 | Débordement horizontal à 390, 820 et 1440 px | 0 px sur la homepage et la fiche produit |
 | Rendu comparé à la maquette | Homepage et fiche produit conformes |
 
-Deux anomalies ont été trouvées et corrigées pendant la recette :
+Anomalies trouvées et corrigées :
 1. Débordement horizontal de 148 px sur la fiche produit à 390 px, causé par des enfants de grille et de flex non contraints. Corrigé par `min-width: 0` sur les conteneurs concernés.
 2. Le titre de la homepage se répartissait mal sur trois lignes. Les lignes du titre sont désormais pilotées par le marchand depuis le Theme Builder.
+3. Les déclarations `@font-face` étaient générées en dehors de toute balise `<style>` et s'affichaient donc en clair en haut de chaque page. Corrigé dans `layout/theme.liquid` et `layout/password.liquid`.
+4. Erreur Liquid sur la section Articles du blog quand aucun blog n'était sélectionné. La comparaison a été fiabilisée et le blog est désormais rattaché dans le template.
+5. Sections invisibles sur la homepage et la page Science : la mise en avant produit, les avis et les actifs n'avaient pas de source renseignée. Les templates pointent désormais sur le produit et le blog.
+6. Quand une section reste vide faute de données, un message d'explication s'affiche maintenant dans le Theme Builder uniquement, jamais sur le site.
 
 ### Non couvert par cette recette
 La prévisualisation du thème sur le domaine `myshopify.com` est bloquée par le proxy réseau de l'environnement de développement. La recette visuelle a donc été faite sur un rendu local utilisant les feuilles de style réelles du thème et la structure HTML réelle des sections. **Il reste à ouvrir l'aperçu du thème dans Shopify pour valider le rendu avec les données réelles**, en particulier : ajout au panier, tiroir panier, sélection de cure, barre d'achat mobile, fenêtre des avis et formulaire de contact.

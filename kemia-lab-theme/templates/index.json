@@ -114,7 +114,9 @@
       "settings": {
         "eyebrow": "Notre première formule",
         "button_label": "Découvrir le produit",
-        "button_event": "home_formula_product_click"
+        "button_event": "home_formula_product_click",
+        "product": "4-vitality-system",
+        "image": ""
       }
     },
     "features": {
@@ -180,7 +182,8 @@
         "limit": 6,
         "per_view": "3",
         "show_dots": true,
-        "background": "none"
+        "background": "none",
+        "product": "4-vitality-system"
       }
     },
     "blog": {
@@ -188,7 +191,8 @@
       "settings": {
         "heading": "Le blog Kemia Lab",
         "link_label": "Voir tous les articles",
-        "count": 3
+        "count": 3,
+        "blog": "blog"
       }
     },
     "newsletter": {

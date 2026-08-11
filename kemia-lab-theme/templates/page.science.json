@@ -71,7 +71,8 @@
         "eyebrow": "La science derrière 4 Vitality System",
         "heading": "actifs soigneusement sélectionnés",
         "heading_style": "display",
-        "note": "VNR : Valeurs Nutritionnelles de Référence"
+        "note": "VNR : Valeurs Nutritionnelles de Référence",
+        "product": "4-vitality-system"
       }
     },
     "formulas": {
@@ -81,7 +82,8 @@
           "type": "formula",
           "settings": {
             "text": "7 actifs sélectionnés pour soutenir votre énergie, votre bien-être et vos performances au quotidien.",
-            "button_label": "Découvrir la formule"
+            "button_label": "Découvrir la formule",
+            "product": "4-vitality-system"
           }
         },
         "f2": {

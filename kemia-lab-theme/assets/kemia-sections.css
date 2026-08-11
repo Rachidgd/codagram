@@ -3000,3 +3000,13 @@
 .k-hero__highlight {
   display: block;
 }
+
+.k-empty-note {
+  padding: 18px 20px;
+  border: 1px dashed var(--k-gold-soft);
+  border-radius: var(--k-radius-card);
+  background: var(--k-bg-soft);
+  color: var(--k-body);
+  font-size: 13.5px;
+  line-height: 1.5;
+}

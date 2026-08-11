@@ -37,6 +37,8 @@
       {%- endif -%}
     </div>
   </section>
+{%- else -%}
+  {% render 'section-empty', message: "Section Actifs : sélectionnez un produit dont le champ méta kemia.ingredients est renseigné." %}
 {%- endif -%}
 
 {% schema %}

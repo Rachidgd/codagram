@@ -25,13 +25,6 @@
 
     {% render 'meta-tags' %}
 
-    {{ settings.font_body | font_face: font_display: 'swap' }}
-    {{ settings.font_body | font_modify: 'weight', '500' | font_face: font_display: 'swap' }}
-    {{ settings.font_body | font_modify: 'weight', '600' | font_face: font_display: 'swap' }}
-    {{ settings.font_heading | font_face: font_display: 'swap' }}
-    {{ settings.font_heading | font_modify: 'weight', '600' | font_face: font_display: 'swap' }}
-    {{ settings.font_display | font_face: font_display: 'swap' }}
-
     {%- liquid
       assign body_font = settings.font_body
       assign heading_font = settings.font_heading
@@ -39,6 +32,13 @@
     -%}
 
     <style>
+      {{ settings.font_body | font_face: font_display: 'swap' }}
+      {{ settings.font_body | font_modify: 'weight', '500' | font_face: font_display: 'swap' }}
+      {{ settings.font_body | font_modify: 'weight', '600' | font_face: font_display: 'swap' }}
+      {{ settings.font_heading | font_face: font_display: 'swap' }}
+      {{ settings.font_heading | font_modify: 'weight', '600' | font_face: font_display: 'swap' }}
+      {{ settings.font_display | font_face: font_display: 'swap' }}
+
       :root {
         --k-font-body: {{ body_font.family }}, {{ body_font.fallback_families }};
         --k-font-heading: {{ heading_font.family }}, {{ heading_font.fallback_families }};
