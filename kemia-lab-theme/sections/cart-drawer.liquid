@@ -17,6 +17,43 @@
     endif
   endif
   assign missing_money = missing | money
+
+  assign up_line = 0
+  assign up_id = 0
+  assign up_title = ''
+  assign up_qty = 1
+  assign up_delta = 0
+  if section.settings.upgrade_enabled and show_progress and missing > 0
+    for line in cart.items
+      if up_id != 0
+        break
+      endif
+      assign candidate_price = 0
+      assign candidate_id = 0
+      assign candidate_title = ''
+      for variant in line.product.variants
+        if variant.available and variant.price > line.variant.price
+          if candidate_id == 0 or variant.price < candidate_price
+            assign candidate_price = variant.price
+            assign candidate_id = variant.id
+            assign candidate_title = variant.title
+          endif
+        endif
+      endfor
+      if candidate_id != 0
+        assign delta = candidate_price | minus: line.variant.price | times: line.quantity
+        assign projected = cart.total_price | plus: delta
+        if projected >= threshold_cents
+          assign up_line = forloop.index
+          assign up_id = candidate_id
+          assign up_title = candidate_title
+          assign up_qty = line.quantity
+          assign up_delta = delta
+        endif
+      endif
+    endfor
+  endif
+  assign up_delta_money = up_delta | money
 -%}
 
 <div class="k-drawer k-drawer--cart" id="k-cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ 'cart.title' | t }}">
@@ -53,6 +90,26 @@
               <div class="k-shipbar__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ percent }}">
                 <span class="k-shipbar__fill" style="width: {{ percent }}%"></span>
               </div>
+
+              {%- if up_id != 0 -%}
+                <div class="k-upsell">
+                  {%- if section.settings.upgrade_text != blank -%}
+                    <p class="k-upsell__text">
+                      {{ section.settings.upgrade_text | replace: '[cure]', up_title | replace: '[montant]', up_delta_money }}
+                    </p>
+                  {%- endif -%}
+                  <button
+                    class="k-btn k-btn--outline k-upsell__btn"
+                    type="button"
+                    data-k-cart-upgrade="{{ up_line }}"
+                    data-k-upgrade-id="{{ up_id }}"
+                    data-k-upgrade-qty="{{ up_qty }}"
+                    data-k-track="cart_upgrade_clicked"
+                  >
+                    {{ section.settings.upgrade_button | replace: '[cure]', up_title | replace: '[montant]', up_delta_money }}
+                  </button>
+                </div>
+              {%- endif -%}
             </div>
           {%- endif -%}
 
@@ -175,6 +232,22 @@
     { "type": "text", "id": "progress_done", "label": "Texte une fois le seuil atteint", "default": "Félicitations, la livraison vous est offerte" },
     { "type": "text", "id": "shipping_label", "label": "Libellé de la ligne frais de port", "default": "Frais de port" },
     { "type": "text", "id": "shipping_free", "label": "Valeur affichée", "default": "offerts" },
+    { "type": "header", "content": "Proposition de cure supérieure" },
+    {
+      "type": "checkbox",
+      "id": "upgrade_enabled",
+      "label": "Proposer la cure supérieure",
+      "default": true,
+      "info": "La proposition n'apparaît que si le passage à la cure supérieure fait réellement franchir le seuil de livraison offerte."
+    },
+    {
+      "type": "text",
+      "id": "upgrade_text",
+      "label": "Texte de la proposition",
+      "default": "Passez à la [cure] pour [montant] de plus : la livraison vous est offerte.",
+      "info": "[cure] est remplacé par le nom de la cure supérieure, [montant] par le supplément."
+    },
+    { "type": "text", "id": "upgrade_button", "label": "Libellé du bouton", "default": "Passer à la [cure]" },
     { "type": "header", "content": "Urgence" },
     {
       "type": "select",
@@ -199,7 +272,7 @@
       "type": "text",
       "id": "promise",
       "label": "Message",
-      "default": "Plus qu'une étape avant de commencer votre programme de 30 jours."
+      "default": "Plus qu'une étape pour retrouver votre énergie au quotidien."
     },
     { "type": "header", "content": "Réassurance" },
     {

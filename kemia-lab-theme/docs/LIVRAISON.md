@@ -1,6 +1,6 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.3.0 | Thème `KEMIA LAB - v1.3.0` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.3.1 | Thème `KEMIA LAB - v1.3.1` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
@@ -124,6 +124,7 @@ Aucune intervention dans le code n'est nécessaire.
 
 - *Barre de livraison offerte.* Le seuil est un réglage en euros, **à tenir aligné manuellement avec Paramètres > Expédition**. Le thème ne lit pas la configuration de livraison de Shopify : si le seuil réel change, il faut le reporter ici, sinon la barre annonce un avantage qui ne sera pas appliqué au paiement. Le repère `[montant]` du texte est remplacé par la somme restante.
 - *Urgence.* Reprend exactement le calcul de la fiche produit, via le snippet partagé `delivery-eta` : heure limite, jours ouvrés, exclusion des week-ends. Une seule implémentation pour les deux emplacements.
+- *Proposition de cure supérieure.* Un bouton qui remplace la cure du panier par la cure immédiatement supérieure. Il n'apparaît que si ce remplacement fait réellement franchir le seuil de livraison offerte, et jamais si le seuil est déjà atteint ou si la cure la plus longue est déjà au panier. La variante proposée est toujours la moins chère parmi les supérieures disponibles : le pas le plus court possible. Aucune référence produit n'est codée en dur, le mécanisme fonctionnera tel quel pour les futures gammes.
 - *Message avant paiement.* Texte libre affiché au-dessus du bouton Commander.
 
 **Barre d'annonce.** Trois modes : une info à la fois sur mobile (par défaut), une info à la fois partout, ou toutes côte à côte. La rotation s'arrête si le visiteur a activé la réduction des animations.
@@ -143,6 +144,7 @@ Aucune intervention dans le code n'est nécessaire.
 | Rendu des champs texte enrichi | Testé sur moteur Liquid local : contenu réel, gras, italique, liens, listes, titres, injection HTML, champ vide |
 | Comparaisons numériques sur données optionnelles | 0 comparaison non gardée sur l'ensemble du thème |
 | Panier tiroir | Testé sur moteur Liquid : panier vide, sous le seuil, seuil exact, au-dessus du seuil |
+| Proposition de cure supérieure | Testée sur moteur Liquid : cure 1 mois, cure 2 mois, cure 3 mois, quantité multiple |
 
 Anomalies trouvées et corrigées :
 1. Débordement horizontal de 148 px sur la fiche produit à 390 px, causé par des enfants de grille et de flex non contraints. Corrigé par `min-width: 0` sur les conteneurs concernés.
@@ -385,12 +387,23 @@ Seuil actuel 60 €, cure 1 mois à 49,90 €. Un client qui ajoute une cure d'u
 
 Trois options, à trancher côté client :
 
-1. **Garder 60 €.** La barre devient un argument d'upgrade vers la cure 2 mois, qui est déjà la meilleure offre et qui débloque la livraison. C'est le choix actuel.
+1. **Garder 60 €.** La barre devient un argument d'upgrade vers la cure 2 mois, qui est déjà la meilleure offre et qui débloque la livraison. C'est le choix actuel, et le bouton de passage à la cure supérieure rend ce palier franchissable en un clic au lieu de laisser le client chercher quoi ajouter.
 2. **Descendre le seuil à 49,90 €** ou moins. La cure 1 mois part alors en livraison offerte : moins de friction, mais le levier de panier moyen disparaît.
 3. **Créer un produit d'appoint** entre 10 et 15 € (pilulier, format découverte). C'est ce qui rend la barre réellement actionnable, mais cela suppose une référence que Kemia Lab n'a pas encore.
 
 ### Message avant paiement
 
-Le message par défaut est une formulation de progression, « Plus qu'une étape avant de commencer votre programme de 30 jours », et non une promesse de bénéfice.
+Message retenu : **« Plus qu'une étape pour retrouver votre énergie au quotidien. »**
 
-À l'étape du panier, le visiteur a déjà arbitré : ce qui fait avancer, c'est la réduction de l'inquiétude et le sentiment d'avancement, pas un argument de vente supplémentaire. Une formulation du type « à une étape de retrouver votre énergie » ajouterait par ailleurs une allégation de santé à un endroit qui n'en porte aucune aujourd'hui. Le champ est libre : il se modifie depuis le Theme Builder si l'arbitrage est différent.
+Il combine la mécanique de progression, qui rassure à l'étape du panier, et le bénéfice attendu, qui rappelle pourquoi le visiteur est là. Le verbe « retrouver » suppose un état antérieur à reconquérir plutôt qu'une transformation, ce qui correspond à la cible : des personnes qui savent ce que c'est que d'avoir de l'énergie et qui constatent qu'elle manque. « Au quotidien » ancre la promesse dans la durée d'usage réelle, un programme de 30 jours, au lieu de laisser croire à un effet immédiat.
+
+Formulations écartées et raisons :
+
+| Formulation | Écartée parce que |
+|---|---|
+| Plus qu'une étape avant de commencer votre programme de 30 jours | Décrit la logistique, pas le bénéfice. Ne donne aucune raison d'aller au bout. |
+| Plus qu'une étape pour dire adieu à la fatigue | « Dire adieu » est une promesse d'éradication. Aucune formulation disponible ne le permet, et cela promet plus que ce que le produit peut tenir. |
+| Plus qu'une étape avant d'en finir avec les coups de barre de 15h | La plus incarnée, mais elle réduit la promesse à un seul moment de la journée alors que la formule est positionnée sur le physique **et** le mental. |
+| Plus qu'une étape vers la meilleure version de vous-même | Formulation creuse, interchangeable avec n'importe quelle marque. |
+
+Ce message porte une allégation de bénéfice. Il reprend la promesse déjà affichée sous le titre produit et n'introduit donc pas de risque nouveau, mais il relève du même arbitrage assumé le 12/08/2026. Le champ est libre depuis le Theme Builder.

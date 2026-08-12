@@ -4017,3 +4017,29 @@
     transition: none;
   }
 }
+
+.k-upsell {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--k-border);
+}
+
+.k-upsell__text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--k-body);
+}
+
+.k-upsell__btn {
+  width: 100%;
+  min-height: 42px;
+  font-size: 13px;
+  padding-inline: 14px;
+}
+
+.k-upsell__btn[disabled] {
+  opacity: 0.55;
+  pointer-events: none;
+}

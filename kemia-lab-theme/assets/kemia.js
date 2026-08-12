@@ -337,6 +337,19 @@
       if (remove) {
         event.preventDefault();
         changeCart(remove.getAttribute('data-k-cart-remove'), 0);
+        return;
+      }
+      var upgrade = event.target.closest('[data-k-cart-upgrade]');
+      if (upgrade) {
+        event.preventDefault();
+        if (upgrade.disabled) return;
+        upgrade.disabled = true;
+        upgrade.classList.add('is-loading');
+        upgradeCart(
+          upgrade.getAttribute('data-k-cart-upgrade'),
+          upgrade.getAttribute('data-k-upgrade-id'),
+          upgrade.getAttribute('data-k-upgrade-qty')
+        );
       }
     });
 
@@ -355,6 +368,39 @@
       .then(function (response) { return response.json(); })
       .then(function (data) {
         refreshCart(data.sections && data.sections['cart-drawer'], true);
+      });
+  }
+
+  function upgradeCart(line, variantId, quantity) {
+    var root = window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : '/';
+    var headers = { 'Content-Type': 'application/json', Accept: 'application/json' };
+
+    fetch(root + 'cart/change.js', {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify({ line: parseInt(line, 10), quantity: 0 })
+    })
+      .then(function (response) {
+        if (!response.ok) throw new Error('change');
+        return fetch(root + 'cart/add.js', {
+          method: 'POST',
+          headers: headers,
+          body: JSON.stringify({
+            items: [{ id: parseInt(variantId, 10), quantity: parseInt(quantity, 10) || 1 }],
+            sections: 'cart-drawer'
+          })
+        });
+      })
+      .then(function (response) {
+        if (!response.ok) throw new Error('add');
+        return response.json();
+      })
+      .then(function (data) {
+        document.dispatchEvent(new CustomEvent('k:analytics', { detail: { event: 'cart_upgraded' } }));
+        refreshCart(data.sections && data.sections['cart-drawer'], true);
+      })
+      .catch(function () {
+        window.location.href = root + 'cart';
       });
   }
 
