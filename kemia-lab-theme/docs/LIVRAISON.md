@@ -183,48 +183,80 @@ Ces textes sont modifiables dans Contenu > Métaobjets > Bénéfice Kemia. Toute
 
 ## 8bis. Matrice des allégations
 
-**Décision client du 12/08/2026 : la formule reste inchangée.** Aucun nutriment porteur d'une allégation « fatigue » n'est ajouté. Le site ne doit donc jamais affirmer, directement ou indirectement, que le produit réduit la fatigue ou apporte un regain d'énergie.
+Deux régimes coexistent et ne portent pas le même risque.
 
-### Ce que la formule autorise
+- **Allégation autorisée** : inscrite au règlement (UE) 432/2012, utilisable sans réserve dès lors que le dosage minimal est atteint.
+- **Allégation en attente** : les allégations relatives aux plantes n'ont jamais été évaluées par l'EFSA et bénéficient d'une période transitoire au titre de l'article 28 du règlement 1924/2006. Elles sont utilisables, mais **sous la responsabilité de l'exploitant**, et pourraient être retirées si l'évaluation aboutissait à un refus. La DGCCRF publie un outil recensant l'ensemble des allégations utilisables, dont celles en attente.
 
-| Allégation | Actif support | Dosage présent | Statut | Texte autorisé |
-|---|---|---|---|---|
-| Fonction cognitive normale | Zinc | 10 mg, 100 % VNR | VERT | Le zinc contribue à une fonction cognitive normale. |
-| Protection contre le stress oxydatif | Zinc | 10 mg, 100 % VNR | VERT | Le zinc contribue à la protection des cellules contre le stress oxydatif. |
-| Taux normal de testostérone | Zinc | 10 mg, 100 % VNR | VERT | Le zinc contribue au maintien d'un taux normal de testostérone dans le sang. |
-| Fertilité et reproduction normales | Zinc | 10 mg, 100 % VNR | VERT | Non utilisé actuellement, disponible si besoin. |
-| Fonction musculaire normale | Vitamine D3 | 50 µg | VERT | La vitamine D contribue au maintien d'une fonction musculaire normale. |
-| Fonctionnement normal du système immunitaire | Vitamine D3 | 50 µg | VERT | Non utilisé actuellement, disponible si besoin. |
+### Allégations autorisées, portées par la formule
 
-### Ce que la formule n'autorise pas
+| Allégation | Actif | Dosage | Statut |
+|---|---|---|---|
+| Fonction cognitive normale | Zinc | 10 mg, 100 % VNR | VERT |
+| Maintien d'un taux normal de testostérone | Zinc | 10 mg, 100 % VNR | VERT |
+| Protection des cellules contre le stress oxydatif | Zinc | 10 mg, 100 % VNR | VERT |
+| Fertilité et reproduction normales | Zinc | 10 mg, 100 % VNR | VERT, non utilisée |
+| Maintien d'une fonction musculaire normale | Vitamine D3 | 50 µg | VERT |
+| Fonctionnement normal du système immunitaire | Vitamine D3 | 50 µg | VERT |
 
-| Allégation | Statut | Raison |
+### Allégations en attente, portées par les plantes
+
+| Allégation | Plante | Dosage | Statut |
+|---|---|---|---|
+| Aide à réduire la fatigue | Extrait de kola | 208,3 mg, 25 mg de caféine | ORANGE |
+| Tonus et vitalité | Extrait de ginseng | 200 mg, 10 % ginsénosides | ORANGE |
+| Équilibre émotionnel, relaxation (ID 2038) | Extrait de safran | 30 mg titré | ORANGE |
+
+La monographie EMA du Panax ginseng retient l'usage traditionnel contre les symptômes d'asthénie, fatigue et faiblesse. La Commission E allemande reconnaît l'action du kola contre la fatigue physique et intellectuelle.
+
+### Actifs sans allégation disponible
+
+| Actif | Raison | Libellé retenu |
 |---|---|---|
-| Réduit la fatigue, anti-fatigue, regain d'énergie | ROUGE | Allégation réservée à la vitamine C, aux vitamines B2, B3, B5, B6, B9, B12, au magnésium et au fer. Aucun n'est présent dans la formule. |
-| Métabolisme énergétique normal | ROUGE | Même liste de nutriments, aucun présent. |
-| Améliore la concentration, augmente la mémoire | ROUGE | Formulation d'amélioration non autorisée. La formulation autorisée est « contribue à une fonction cognitive normale ». |
-| Sans nervosité, sans effet rebond | ROUGE | Allégation d'absence d'effet indésirable, non autorisée. |
-| Cliniquement prouvé, efficacité clinique | ROUGE | Aucun protocole d'étude ne le justifie à ce jour. |
-| Unique sur le marché, seule formule du marché | ROUGE | Aucun benchmark ne le démontre. |
+| L-Tyrosine | Aucune allégation autorisée ni en attente | Acide aminé précurseur |
+| CDP-Choline | Les allégations choline exigent 82,5 mg de choline par portion. 200 mg de CDP-Choline en apportent environ 43 mg, seuil non atteint | Source de choline |
 
-### Formulations retenues sur le site
+### Formulations interdites
 
-- Accroche produit : « Énergie. Concentration. Vitalité. » Positionnement de territoire, sans promesse d'effet.
-- Promesse produit : « Une seule formule pour les journées qui demandent de l'énergie et de la concentration. » Décrit le besoin du client, pas un effet du produit, puis enchaîne sur les deux allégations autorisées.
-- Les quatre bénéfices affichés sur la fiche produit et la homepage reprennent uniquement des allégations autorisées.
+| Allégation | Raison |
+|---|---|
+| Réduit la fatigue attribué au produit dans son ensemble | L'allégation appartient au kola et au ginseng, pas à la formule. Elle doit rester rattachée à la plante. |
+| Métabolisme énergétique normal | Réservé aux vitamines B, à la vitamine C, au magnésium et au fer. Aucun n'est présent. |
+| Améliore la concentration, augmente la mémoire, stimule la testostérone | Verbes d'amélioration ou de stimulation non autorisés. Les formulations autorisées parlent de fonction normale ou de maintien. |
+| Allégations liées à la caféine (vigilance, concentration) | Avis EFSA favorable mais **non repris** par la Commission. Non autorisées. |
+| Sans nervosité, sans effet rebond | Allégation d'absence d'effet indésirable. |
+| Cliniquement prouvé, efficacité clinique | Aucun protocole ne le justifie à ce jour. |
+| Unique sur le marché, seule formule du marché | Aucun benchmark ne le démontre. |
+
+### Bénéfices courts du carrousel des actifs
+
+| Actif | Bénéfice affiché | Base |
+|---|---|---|
+| L-Tyrosine | Acide aminé précurseur | Descriptif |
+| CDP-Choline | Source de choline | Descriptif |
+| Extrait de kola | Aide à réduire la fatigue | En attente |
+| Extrait de ginseng | Tonus et vitalité | En attente |
+| Extrait de safran | Équilibre émotionnel | En attente, ID 2038 |
+| Zinc | Taux de testostérone normal | Autorisée |
+| Vitamine D3 | Fonction immunitaire normale | Autorisée |
+
+La justification de chaque libellé est enregistrée dans le champ `source_text` du métaobjet Actif correspondant. Ce champ est interne et n'apparaît jamais sur le site.
 
 ### Point de vigilance : les témoignages
 
-Un avis client ne permet pas d'affirmer indirectement ce qui serait interdit dans le texte de la marque. Deux témoignages de démonstration actuellement en ligne portent ce risque :
+Un avis client ne permet pas d'affirmer indirectement ce qui serait interdit dans le texte de la marque. Deux témoignages de démonstration portent ce risque :
 
 - « j'ai retrouvé de l'énergie tout au long de la journée » (Thomas D.)
 - « une vraie différence sur ma vitalité et ma concentration » (Yassine K.)
 
-Ces textes proviennent de la maquette et sont destinés à être remplacés. Lors du chargement des avis réels, écarter ceux qui affirment un effet que la formule ne peut pas revendiquer, ou les publier sans les mettre en avant dans les blocs de tête.
+Ces textes proviennent de la maquette et sont destinés à être remplacés. Lors du chargement des avis réels, écarter ceux qui affirment un effet que la formule ne peut pas revendiquer.
 
-### Si la décision évolue
+### Marge de manoeuvre restante
 
-Ajouter à la formule un seul des nutriments suivants, au dosage minimal requis, débloque immédiatement « contribue à réduire la fatigue » : vitamine C, B2, B3, B5, B6, B9, B12, magnésium ou fer. Aucune modification du thème ne serait nécessaire, seulement la réécriture des champs méta concernés.
+La communication sur la fatigue est possible **par la plante**, sans reformuler le produit. Elle doit rester rattachée au kola ou au ginseng et ne pas être présentée comme un effet global du produit.
+
+Pour porter une allégation fatigue **autorisée**, attribuable à la formule entière et sans réserve, il faudrait ajouter un seul des nutriments suivants au dosage minimal : vitamine C, B2, B3, B5, B6, B9, B12, magnésium ou fer. Décision client du 12/08/2026 : la formule reste inchangée.
+
 
 ---
 
