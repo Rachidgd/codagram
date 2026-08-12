@@ -53,12 +53,8 @@
             <h3 class="k-h3 k-featured__title"><a href="{{ featured.url }}">{{ featured.title }}</a></h3>
             <p class="k-featured__excerpt">{{ featured.excerpt_or_content | strip_html | truncate: 220 }}</p>
             <p class="k-article-card__meta">
-              <span>{{ featured.published_at | date: '%-d %B %Y' }}</span>
-              <span class="k-article-card__dot" aria-hidden="true">•</span>
-              {%- assign fwords = featured.content | strip_html | split: ' ' | size -%}
-              {%- assign fmin = fwords | divided_by: 200 -%}
-              {%- if fmin < 1 -%}{%- assign fmin = 1 -%}{%- endif -%}
-              <span>{{ 'blogs.reading_time' | t: count: fmin }}</span>
+              <span>{% render 'date', date: featured.published_at %}</span>
+              {% render 'reading-time', article: featured %}
             </p>
             <a class="k-link" href="{{ featured.url }}">
               {{ section.settings.read_label }}

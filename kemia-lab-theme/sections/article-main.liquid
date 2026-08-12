@@ -1,11 +1,3 @@
-{%- liquid
-  assign words = article.content | strip_html | split: ' ' | size
-  assign minutes = words | divided_by: 200
-  if minutes < 1
-    assign minutes = 1
-  endif
--%}
-
 <article class="k-article">
   <div class="k-container k-container--narrow">
     <nav class="k-breadcrumb k-article__breadcrumb" aria-label="Fil d'Ariane">
@@ -22,9 +14,8 @@
       {%- endif -%}
       <h1 class="k-h1 k-article__title">{{ article.title }}</h1>
       <p class="k-article-card__meta">
-        <span>{{ article.published_at | date: '%-d %B %Y' }}</span>
-        <span class="k-article-card__dot" aria-hidden="true">•</span>
-        <span>{{ 'blogs.reading_time' | t: count: minutes }}</span>
+        <span>{% render 'date', date: article.published_at %}</span>
+        {% render 'reading-time', article: article %}
       </p>
     </header>
   </div>

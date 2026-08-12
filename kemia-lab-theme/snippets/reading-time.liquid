@@ -1,0 +1,12 @@
+{%- liquid
+  assign source = article.content | default: article.excerpt_or_content
+  assign word_count = source | strip_html | split: ' ' | size
+  assign rounded = word_count | plus: 100 | divided_by: 200
+  if rounded < 1
+    assign rounded = 1
+  endif
+-%}
+{%- if word_count > 0 -%}
+  <span class="k-article-card__dot" aria-hidden="true">•</span>
+  <span>{{ 'blogs.reading_time' | t: count: rounded }}</span>
+{%- endif -%}

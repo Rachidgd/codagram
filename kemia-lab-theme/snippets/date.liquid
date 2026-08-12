@@ -1,0 +1,7 @@
+{%- liquid
+  assign months = 'date.month_names' | t | split: ','
+  assign month_index = date | date: '%-m' | minus: 1
+  assign day_number = date | date: '%-d'
+  assign year_number = date | date: '%Y'
+-%}
+{{- day_number }} {{ months[month_index] }} {{ year_number -}}

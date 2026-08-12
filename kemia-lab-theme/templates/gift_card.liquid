@@ -11,7 +11,7 @@
       <img src="{{ gift_card.qr_identifier | img_url: '200x200' }}" alt="" width="200" height="200">
       <p class="k-giftcard__code">{{ gift_card.code | format_code }}</p>
       {%- if gift_card.expires_on -%}
-        <p class="k-form-note">{{ 'gift_cards.issued.expires' | t: expiry: gift_card.expires_on | date: '%-d %B %Y' }}</p>
+        <p class="k-form-note">{%- capture expiry_date -%}{% render 'date', date: gift_card.expires_on %}{%- endcapture -%}{{ 'gift_cards.issued.expires' | t: expiry: expiry_date }}</p>
       {%- endif -%}
       <a class="k-btn" href="{{ shop.url }}">{{ 'general.continue_shopping' | t }}</a>
     </div>

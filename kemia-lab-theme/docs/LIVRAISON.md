@@ -60,11 +60,17 @@ Champs méta variante : `kemia.duration` (« 30 jours ») et `kemia.note` (sous-
 
 ---
 
-## 3. Avis clients : structure attendue
+## 3. Avis clients
 
-Les blocs d'avis de la homepage et de la fiche produit sont **volontairement masqués** : aucun avis n'a été inventé.
+**État actuel : contenu de démonstration.** Les six avis renseignés sont les témoignages figurant dans la maquette fournie par Kemia Lab. Ils ne proviennent pas de clients réels et **doivent être remplacés par des avis authentiques avant la mise en ligne**.
 
-Pour les activer, renseigner sur la fiche produit :
+Deux points à traiter avant publication :
+- L'authenticité. La réglementation européenne impose de ne publier que des avis réellement émis par des acheteurs, et de décrire le processus de vérification. La mention « Client vérifié » ne doit être conservée que si un contrôle existe réellement.
+- Les allégations contenues dans les témoignages. Un avis ne permet pas d'affirmer indirectement ce qui serait interdit dans le texte commercial. Les six textes retenus ont été gardés proches de la maquette mais volontairement sans promesse de santé.
+
+Le compteur affiche 6, soit exactement le nombre d'avis présents dans le jeu de données. La maquette affichait 320 : ce chiffre ne doit être remis qu'avec 320 avis réels derrière, sous peine d'incohérence entre le nombre annoncé et le contenu affichable.
+
+Pour remplacer les avis, renseigner sur la fiche produit :
 - `kemia.rating` : la note réelle, par exemple `4.8`
 - `kemia.review_count` : le nombre réel d'avis
 - `kemia.reviews_json` :

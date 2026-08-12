@@ -196,5 +196,8 @@
       "expires": "Expire le {{ expiry }}",
       "print": "Imprimer"
     }
+  },
+  "date": {
+    "month_names": "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre"
   }
 }

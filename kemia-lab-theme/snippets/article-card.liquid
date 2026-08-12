@@ -1,9 +1,4 @@
 {%- liquid
-  assign words = article.content | strip_html | split: ' ' | size
-  assign minutes = words | divided_by: 200
-  if minutes < 1
-    assign minutes = 1
-  endif
   assign category = article.tags.first
   assign filter_tags = article.tags | join: '|'
 -%}
@@ -22,9 +17,8 @@
       <p class="k-article-card__excerpt">{{ article.excerpt_or_content | strip_html | truncate: 140 }}</p>
     {%- endif -%}
     <p class="k-article-card__meta">
-      <span>{{ article.published_at | date: '%-d %B %Y' }}</span>
-      <span class="k-article-card__dot" aria-hidden="true">•</span>
-      <span>{{ 'blogs.reading_time' | t: count: minutes }}</span>
+      <span>{% render 'date', date: article.published_at %}</span>
+      {% render 'reading-time', article: article %}
     </p>
   </div>
 </article>

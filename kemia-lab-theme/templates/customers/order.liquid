@@ -3,7 +3,7 @@
     <div class="k-section-head k-account__head">
       <h1 class="k-h2">{{ 'customer.orders.order_number' | t }} {{ order.name }}</h1>
       <hr class="k-rule">
-      <p class="k-form-note">{{ order.created_at | date: '%-d %B %Y' }}</p>
+      <p class="k-form-note">{% render 'date', date: order.created_at %}</p>
     </div>
 
     <div class="k-table-wrap">
