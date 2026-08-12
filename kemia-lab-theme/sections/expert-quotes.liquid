@@ -77,8 +77,8 @@
     {
       "type": "text",
       "id": "note",
-      "label": "Mention sous les avis",
-      "info": "Doit indiquer si l'avis est rémunéré ou non. Obligatoire dès qu'il existe une contrepartie."
+      "label": "Mention sous la section",
+      "info": "Doit préciser la portée des références affichées, et l'existence d'une contrepartie si un professionnel rémunéré est cité."
     },
     {
       "type": "select",
@@ -93,16 +93,16 @@
       "default": "none"
     }
   ],
-  "max_blocks": 3,
+  "max_blocks": 6,
   "blocks": [
     {
       "type": "quote",
       "name": "Avis",
       "settings": [
-        { "type": "textarea", "id": "quote", "label": "Citation", "info": "Reprendre les mots exacts du professionnel. La section reste invisible tant que ce champ est vide." },
-        { "type": "text", "id": "name", "label": "Nom" },
-        { "type": "text", "id": "role", "label": "Fonction", "info": "Par exemple : pharmacien, diététicien-nutritionniste." },
-        { "type": "text", "id": "detail", "label": "Précision", "info": "Par exemple : ville, numéro d'ordre, structure." },
+        { "type": "textarea", "id": "quote", "label": "Texte affiché", "info": "Indication, conclusion ou citation. La section reste invisible tant que ce champ est vide." },
+        { "type": "text", "id": "name", "label": "Actif concerné", "info": "Par exemple : Extrait de ginseng. C'est ce qui s'affiche en gras." },
+        { "type": "text", "id": "role", "label": "Source", "info": "Par exemple : Agence européenne des médicaments, ou le nom du professionnel cité." },
+        { "type": "text", "id": "detail", "label": "Précision", "info": "Référence du document, de l'étude ou de la structure." },
         { "type": "image_picker", "id": "image", "label": "Photo" },
         { "type": "text", "id": "source_label", "label": "Libellé de la source", "info": "Par exemple : Voir la monographie, Lire l'article." },
         { "type": "url", "id": "source_url", "label": "Lien vers la source", "info": "Obligatoire dès qu'une citation est reprise d'un tiers : le lecteur doit pouvoir la vérifier." }

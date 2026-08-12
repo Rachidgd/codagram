@@ -3831,11 +3831,14 @@
 }
 
 @media (min-width: 750px) {
-  .k-experts--2 {
+  .k-experts--2,
+  .k-experts--4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .k-experts--3 {
+  .k-experts--3,
+  .k-experts--5,
+  .k-experts--6 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

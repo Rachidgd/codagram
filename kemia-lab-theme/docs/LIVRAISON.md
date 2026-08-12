@@ -1,6 +1,6 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.4.1 | Thème `KEMIA LAB - v1.4.1` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.4.2 | Thème `KEMIA LAB - v1.4.2` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
@@ -451,29 +451,35 @@ Remonter la note augmente l'exposition d'une moyenne calculée sur **six avis de
 
 ---
 
-## 13. Citations et références de la fiche produit
+## 13. Références par actif, sur la fiche produit
+
+La section porte sur **les actifs pris isolément**, jamais sur 4 Vitality System. C'est ce qui la rend publiable : personne n'a évalué le produit fini, mais les plantes et les nutriments qui le composent sont documentés.
 
 ### Ce qui est affiché
 
-Deux références, chacune avec son lien de vérification :
-
-| Source | Contenu affiché | Lien |
+| Actif | Contenu | Source et lien |
 |---|---|---|
-| Agence européenne des médicaments, comité des médicaments à base de plantes | Indication retenue par la monographie Panax ginseng : usage traditionnel pour les symptômes d'asthénie tels que la fatigue et la faiblesse | Monographie Ginseng radix |
-| Commission européenne, règlement (UE) n° 432/2012 | Libellés officiels des allégations autorisées pour le zinc et la vitamine D | EUR-Lex, version consolidée |
+| Extrait de ginseng | Indication d'usage traditionnel : symptômes d'asthénie tels que la fatigue et la faiblesse | Agence européenne des médicaments, monographie Panax ginseng C.A. Meyer, radix |
+| Extrait de kola | Indication d'usage traditionnel : soulagement des symptômes de fatigue et de sensation de faiblesse | Agence européenne des médicaments, monographie Colae semen |
+| Extrait de safran | Description du protocole : 30 mg par jour d'extrait standardisé, huit semaines, adultes en bonne santé rapportant humeur basse, anxiété ou stress | Frontiers in Nutrition, 2021, Kell G. et coll. |
+| Zinc et vitamine D3 | Libellés officiels des allégations autorisées | Commission européenne, règlement (UE) n° 432/2012 |
 
-Le texte de l'EMA est traduit de l'anglais ; la mention sous la section le précise et le lien renvoie à l'original.
+### Degré de vérification, source par source
 
-### Pourquoi ce ne sont pas des avis de professionnels
+Ce point conditionne ce qui peut être écrit à l'écran.
 
-La demande initiale était de reprendre des citations de professionnels trouvées en ligne. Cela n'a pas été fait, pour une raison de fond : **aucun professionnel ne s'est prononcé sur 4 Vitality System**. Reprendre la citation d'un pharmacien ou d'un nutritionniste parlant du ginseng en général, et l'afficher sur la fiche d'un produit qu'il n'a jamais évalué, revient à lui faire endosser ce produit. Trois problèmes s'y ajoutent : le droit au nom et à l'image de la personne citée, le droit d'auteur sur le texte repris, et la qualification de pratique commerciale trompeuse si le lecteur comprend qu'il s'agit d'un avis rendu sur le produit.
+- **Règlement 432/2012** : libellés officiels en français, reproduits mot pour mot. Aucune réserve.
+- **Monographies européennes** : le texte d'origine est en anglais. Les indications sont **restituées en français**, pas citées mot pour mot. La mention sous la section le dit, et le lien renvoie à l'original.
+- **Étude sur le safran** : le protocole est **décrit**, aucune conclusion n'est reprise entre guillemets. Décrire ce qui a été testé engage moins que d'annoncer ce qui aurait été démontré, et cela reste exact.
 
-Les institutions, elles, se citent : leurs documents sont publics, leur portée est explicite, et le lien permet à chacun de vérifier. C'est aussi une caution plus forte qu'un avis individuel anonyme.
+Le proxy réseau de l'environnement de développement bloque `ema.europa.eu`, `anses.fr`, `ncbi.nlm.nih.gov` et `frontiersin.org`. Aucun de ces textes n'a donc pu être relu au mot près. C'est la raison pour laquelle rien n'est présenté comme une citation littérale en dehors du règlement. **Avant mise en ligne, faire relire ces quatre entrées par quelqu'un ayant accès aux documents d'origine.**
 
-### Une troisième référence a été retirée
+### Ce qui n'est volontairement pas cité
 
-Une citation de l'Anses avait été préparée. Le proxy réseau de l'environnement de développement bloque `anses.fr`, et le texte n'a donc pas pu être vérifié au mot près. Une reformulation présentée entre guillemets n'est pas une citation : l'entrée a été supprimée plutôt que publiée non vérifiée. À rajouter par le client s'il souhaite, en reprenant le texte exact depuis le site de l'Anses.
+L'étude sur le safran porte sur des adultes en bonne santé avec des symptômes infracliniques. Les méta-analyses portant sur le trouble dépressif caractérisé ont été écartées : un complément alimentaire ne peut pas se prévaloir d'un effet sur une maladie, et afficher une étude sur la dépression sur une fiche produit reviendrait à le suggérer.
 
-### Pour passer à de vrais avis de professionnels
+La L-Tyrosine et la CDP-Choline ne figurent pas dans la section : les avis européens qui les concernent sont défavorables, les citer desservirait le produit.
 
-Le bloc dispose désormais des champs `source_label` et `source_url`. Pour chaque avis à publier, réunir : la citation exacte, le nom, la fonction, le lieu ou la structure, l'autorisation écrite d'utilisation commerciale, et le lien vers la publication d'origine. Le champ « Mention sous les avis » doit indiquer l'existence d'une contrepartie éventuelle.
+### Pour ajouter de vrais avis de professionnels
+
+Le bloc accepte jusqu'à six entrées et dispose des champs de source. Pour un professionnel nommé, réunir : la citation exacte, le nom, la fonction, l'autorisation écrite d'utilisation commerciale, le lien vers la publication d'origine, et la mention d'une éventuelle contrepartie.
