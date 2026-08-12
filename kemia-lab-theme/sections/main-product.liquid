@@ -332,6 +332,8 @@
               assign panel = block.settings.content
               if block.settings.source == 'description'
                 assign panel = product.description
+              elsif block.settings.source == 'precautions'
+                assign panel = product.metafields.kemia.precautions_full
               endif
             -%}
             {%- if panel != blank -%}
@@ -514,10 +516,11 @@
           "label": "Contenu affiché",
           "options": [
             { "value": "custom", "label": "Texte ci-dessous" },
-            { "value": "description", "label": "Description du produit" }
+            { "value": "description", "label": "Description du produit" },
+            { "value": "precautions", "label": "Précautions d'emploi" }
           ],
           "default": "custom",
-          "info": "La description du produit se modifie depuis la fiche produit Shopify."
+          "info": "Description et précautions se modifient depuis la fiche produit Shopify, pas depuis le thème."
         },
         { "type": "richtext", "id": "content", "label": "Texte" },
         { "type": "checkbox", "id": "open", "label": "Ouvert par défaut", "default": false }

@@ -1,13 +1,13 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.1.4 | Thème `KEMIA LAB - v1.1.4` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.2.0 | Thème `KEMIA LAB - v1.2.0` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
 ## 1. Ce qui a été livré
 
 ### Thème
-28 sections, 9 snippets, 20 templates, 2 feuilles de style, 1 fichier JavaScript sans dépendance externe.
+35 sections, 13 snippets, 20 templates, 2 feuilles de style, 1 fichier JavaScript sans dépendance externe.
 
 ### Pages construites d'après la maquette
 | Page | Template | Statut |
@@ -129,7 +129,7 @@ Aucune intervention dans le code n'est nécessaire.
 | Contrôle | Résultat |
 |---|---|
 | Import Shopify | 70 fichiers sur 70, sans erreur de traitement |
-| Validation des schémas de section | 28 sections, 0 erreur |
+| Validation des schémas de section | 35 sections, 0 erreur |
 | Validation JSON des templates | 20 templates, 0 erreur |
 | Références croisées sections / snippets / blocs / réglages | 0 référence manquante |
 | Débordement horizontal à 390, 820 et 1440 px | 0 px sur la homepage et la fiche produit |
@@ -288,6 +288,7 @@ Ces points ne bloquent pas le thème mais conditionnent certaines publications.
 **Bloquant pour afficher des blocs entiers**
 - Avis clients réels (note, nombre, textes, autorisations)
 - Dossier de test utilisateurs : nombre de testeurs, durée, résultats agrégés, méthodologie
+- **Avis de professionnels** : la section existe sur la fiche produit avec deux blocs vides. Elle reste invisible sur le site tant qu'aucune citation n'est saisie. Il faut, pour chaque avis : les mots exacts du professionnel, son nom, sa fonction, et l'indication d'une éventuelle contrepartie (le champ « Mention sous les avis » est prévu pour ça, et il est obligatoire dès qu'il existe une rémunération).
 
 **Bloquant pour la mise en ligne**
 - Visuels : packshots haute définition, photos d'ambiance, visuels d'actifs, images d'articles
@@ -303,3 +304,52 @@ Ces points ne bloquent pas le thème mais conditionnent certaines publications.
 - Cinq thèmes intermédiaires nommés « ZZ A SUPPRIMER » sont présents dans la boutique. La suppression de thème est bloquée par la politique de l'outil, elle doit être faite depuis l'admin Shopify.
 - Le thème `Kemia Lab 1.0.0` est **non publié**. Aucune modification n'a été faite sur le thème en ligne.
 - Le menu de pied de page « Aide » et le menu des mentions ne référencent que la politique de confidentialité, seule politique existante à ce jour.
+
+---
+
+## 10. Structure des pages
+
+Chaque section porte une seule idée. C'est la règle qui a présidé au découpage, pour éviter les blocs trop denses sur ordinateur et tablette.
+
+### Fiche produit
+
+| Ordre | Section | Rôle |
+|---|---|---|
+| 1 | Fiche produit | Achat : promesse, offres, urgence, panier. Description, conseils d'utilisation et précautions sont repliés en accordéons sous le bouton. |
+| 2 | Storytelling | Le problème : la fatigue physique **et** mentale. |
+| 3 | Bandeau bénéfices | Les 4 bénéfices, précédés d'une introduction sur les deux dimensions de la fatigue. |
+| 4 | Actifs autour du produit | Le visuel du produit au centre, les 7 actifs disposés autour avec leur bénéfice et leur dosage. Lien vers la composition complète. |
+| 5 | Comparatif | Une formule plutôt qu'une pile de pots. |
+| 6 | Avis de professionnels | Vide tant que le client n'a pas fourni de citations réelles. |
+| 7 | Avis clients | Preuve sociale. |
+| 8 | FAQ | Questions formulées comme des recherches réelles, balisées FAQPage. |
+| 9 | Réassurance | Rappel livraison, paiement, qualité. |
+
+Deux sections ont été retirées du gabarit parce qu'elles faisaient doublon : « Le pouvoir du 4 » (les 4 piliers, redondant avec le bandeau bénéfices) et « Ingrédients & utilisation » (la composition est désormais accessible depuis la section Actifs, les conseils d'utilisation depuis l'accordéon de la buy box). Les deux sections restent disponibles dans le Theme Builder si besoin.
+
+### Accueil
+
+Ordre en entonnoir, une étape par section.
+
+| Ordre | Section | Étape |
+|---|---|---|
+| 1 | Hero | Attention : la promesse et le premier appel à l'action. |
+| 2 | Réassurance | Lever le doute logistique immédiatement sous le pli. |
+| 3 | Storytelling | Intérêt : le constat, fatigue physique et mentale. |
+| 4 | Bandeau bénéfices | Intérêt : ce que la formule apporte. |
+| 5 | Actifs autour du produit | Désir : ce qu'il y a réellement dedans, dosages affichés. |
+| 6 | Produit à la une | Désir : le produit, le prix, l'appel à l'action. |
+| 7 | Comparatif | Lever l'objection concurrentielle. |
+| 8 | Mode d'emploi | Lever l'objection de contrainte : la routine tient en trois gestes. |
+| 9 | Avis clients | Preuve sociale avant la décision. |
+| 10 | Pourquoi Kemia Lab | Crédibilité de la marque. |
+| 11 | Questions fréquentes | Dernières objections, balisées FAQPage. |
+| 12 | Appel à l'action final | Action. |
+| 13 | Blog | Contenu et référencement. |
+| 14 | Newsletter | Récupérer les visiteurs qui n'achètent pas aujourd'hui. |
+
+Trois sections ont été ajoutées par rapport à la version précédente : les actifs, le comparatif et le mode d'emploi. Les trois répondent à une objection que la page ne traitait pas : ce qu'il y a dans le produit, pourquoi lui plutôt qu'un autre, et ce que ça change au quotidien.
+
+### Point non traité
+
+Le hero ne porte aucune preuve sociale. C'est l'ajout qui a le plus d'effet sur ce type de page, mais il suppose d'afficher une note et un nombre d'avis. Les six avis actuels étant des textes de maquette, l'afficher aujourd'hui reviendrait à mettre en avant un chiffre non authentique. À faire dès que les avis réels seront chargés.

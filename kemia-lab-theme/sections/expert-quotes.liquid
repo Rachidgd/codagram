@@ -1,0 +1,111 @@
+{%- liquid
+  assign filled = 0
+  for block in section.blocks
+    unless block.settings.quote == blank
+      assign filled = filled | plus: 1
+    endunless
+  endfor
+-%}
+
+{%- if filled > 0 -%}
+  <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
+    <div class="k-container">
+      {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
+        <div class="k-section-head">
+          {%- if section.settings.eyebrow != blank -%}
+            <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+          {%- endif -%}
+          {%- if section.settings.heading != blank -%}
+            <h2 class="k-title-caps k-h3">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.show_rule -%}<hr class="k-rule">{%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="k-experts k-experts--{{ filled }}">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.quote != blank -%}
+            <figure class="k-expert" {{ block.shopify_attributes }}>
+              <span class="k-expert__mark" aria-hidden="true">{% render 'icon', name: 'quote' %}</span>
+              <blockquote class="k-expert__quote">{{ block.settings.quote }}</blockquote>
+              <figcaption class="k-expert__author">
+                {%- if block.settings.image != blank -%}
+                  <span class="k-expert__avatar">
+                    {% render 'image', image: block.settings.image, ratio: '100%', sizes: '56px', placeholder_icon: 'user' %}
+                  </span>
+                {%- endif -%}
+                <span class="k-expert__identity">
+                  {%- if block.settings.name != blank -%}
+                    <span class="k-expert__name">{{ block.settings.name }}</span>
+                  {%- endif -%}
+                  {%- if block.settings.role != blank -%}
+                    <span class="k-expert__role">{{ block.settings.role }}</span>
+                  {%- endif -%}
+                  {%- if block.settings.detail != blank -%}
+                    <span class="k-expert__detail">{{ block.settings.detail }}</span>
+                  {%- endif -%}
+                </span>
+              </figcaption>
+            </figure>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.note != blank -%}
+        <p class="k-experts__note">{{ section.settings.note }}</p>
+      {%- endif -%}
+    </div>
+  </section>
+{%- else -%}
+  {% render 'section-empty', message: "Avis de professionnels : ajoutez un bloc Avis et renseignez la citation. Tant qu'aucune citation n'est saisie, la section reste invisible sur le site." %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Avis de professionnels",
+  "class": "k-experts-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Regards de professionnels" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Ce qu'en disent les professionnels" },
+    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Mention sous les avis",
+      "info": "Doit indiquer si l'avis est rémunéré ou non. Obligatoire dès qu'il existe une contrepartie."
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" },
+        { "value": "blue-tint", "label": "Bleu très clair" }
+      ],
+      "default": "none"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Avis",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Citation", "info": "Reprendre les mots exacts du professionnel. La section reste invisible tant que ce champ est vide." },
+        { "type": "text", "id": "name", "label": "Nom" },
+        { "type": "text", "id": "role", "label": "Fonction", "info": "Par exemple : pharmacien, diététicien-nutritionniste." },
+        { "type": "text", "id": "detail", "label": "Précision", "info": "Par exemple : ville, numéro d'ordre, structure." },
+        { "type": "image_picker", "id": "image", "label": "Photo" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avis de professionnels",
+      "blocks": [{ "type": "quote" }, { "type": "quote" }]
+    }
+  ]
+}
+{% endschema %}

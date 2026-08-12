@@ -17,6 +17,9 @@
           {%- if section.settings.heading != blank -%}
             <h2 class="k-benefitsband__heading">{{ section.settings.heading }}</h2>
           {%- endif -%}
+          {%- if section.settings.intro != blank -%}
+            <div class="k-benefitsband__intro">{{ section.settings.intro }}</div>
+          {%- endif -%}
         </div>
 
         <ul class="k-benefitsband__list">
@@ -68,6 +71,7 @@
     },
     { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Quatre bénéfices, une seule formule" },
     { "type": "textarea", "id": "heading", "label": "Titre", "default": "Ce que 4 Vitality System vous apporte au quotidien" },
+    { "type": "richtext", "id": "intro", "label": "Introduction" },
     { "type": "checkbox", "id": "show_text", "label": "Afficher le texte sous chaque bénéfice", "default": true },
     {
       "type": "select",

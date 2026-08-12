@@ -115,6 +115,15 @@
             "content": "<p>2 gélules par jour, avec un grand verre d'eau.</p><p>Prenez les 2 gélules ensemble le matin, au cours du petit-déjeuner. Si vous êtes sensible à la caféine, répartissez la prise : 1 gélule le matin et 1 gélule le midi.</p><p>Évitez la prise après 16h : la formule apporte 25 mg de caféine par dose journalière, soit environ un quart d'un café filtre.</p><p>À suivre sur un programme de 30 jours, sans interruption.</p>",
             "open": false
           }
+        },
+        "acc-precautions": {
+          "type": "accordion",
+          "settings": {
+            "title": "Précautions d'emploi",
+            "source": "precautions",
+            "content": "",
+            "open": false
+          }
         }
       },
       "block_order": [
@@ -132,11 +141,54 @@
         "buy",
         "reassurance",
         "acc-description",
-        "acc-usage"
+        "acc-usage",
+        "acc-precautions"
       ],
       "settings": {
         "show_benefit_rail": true,
         "sticky_label": "Ajouter"
+      }
+    },
+    "story": {
+      "type": "storytelling",
+      "blocks": {
+        "p1": {
+          "type": "point",
+          "settings": {
+            "icon": "bolt",
+            "text": "Le corps qui suit moins bien en fin de journée"
+          }
+        },
+        "p2": {
+          "type": "point",
+          "settings": {
+            "icon": "brain",
+            "text": "La concentration qui décroche en milieu d'après-midi"
+          }
+        },
+        "p3": {
+          "type": "point",
+          "settings": {
+            "icon": "capsule",
+            "text": "Une routine qui s'allonge, sans savoir ce qui agit"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "eyebrow": "Pourquoi cette formule",
+        "heading": "La fatigue n'est pas qu'une question d'énergie",
+        "text": "<p>Elle est physique : le corps qui traîne au réveil, l'entraînement qu'on repousse, la fin de journée qui coûte plus cher qu'elle ne devrait. Elle est aussi mentale : l'attention qui s'effrite, les tâches qui prennent le double de temps, la sensation de subir sa journée au lieu de la mener.</p><p>La plupart des routines traitent l'une ou l'autre. Rarement les deux, et rarement dans le même geste.</p>",
+        "transition": "C'est le point de départ de 4 Vitality System.",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "outline",
+        "button_event": "pdp_story_view",
+        "background": "soft"
       }
     },
     "benefits": {
@@ -171,19 +223,26 @@
       ],
       "settings": {
         "eyebrow": "Quatre bénéfices, une seule formule",
-        "heading": "Ce que la formule vous apporte au quotidien",
+        "heading": "Physique et mental, dans le même geste",
+        "intro": "<p>Une journée exigeante tire sur les deux tableaux : le corps et la tête. 4 Vitality System a été construit pour couvrir les deux en une seule prise quotidienne, plutôt que d'empiler un produit par besoin.</p>",
         "show_text": true,
         "color_scheme": "navy",
         "button_label": ""
       }
     },
-    "pillars": {
-      "type": "product-pillars",
+    "actifs": {
+      "type": "actifs-constellation",
       "settings": {
-        "heading": "Le pouvoir du 4",
-        "subheading": "Quatre piliers essentiels, une seule formule.",
-        "note": "",
-        "background": "soft"
+        "eyebrow": "La formule en détail",
+        "heading": "actifs autour d'une seule formule",
+        "show_count": true,
+        "show_rule": true,
+        "intro": "Chaque actif a été retenu pour un rôle précis, à un dosage affiché.",
+        "center_label": "2 gélules par jour",
+        "show_dosage": true,
+        "composition_link": "Voir la composition complète",
+        "composition_title": "Composition complète",
+        "background": "none"
       }
     },
     "comparison": {
@@ -230,23 +289,41 @@
         "show_rule": true,
         "column_brand": "4 Vitality System",
         "column_other": "Compléments classiques",
-        "background": "none"
+        "background": "soft"
       }
     },
-    "ingredients": {
-      "type": "product-ingredients",
+    "experts": {
+      "type": "expert-quotes",
+      "blocks": {
+        "e1": {
+          "type": "quote",
+          "settings": {
+            "quote": "",
+            "name": "",
+            "role": "",
+            "detail": ""
+          }
+        },
+        "e2": {
+          "type": "quote",
+          "settings": {
+            "quote": "",
+            "name": "",
+            "role": "",
+            "detail": ""
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2"
+      ],
       "settings": {
-        "heading": "La composition, sans zone d'ombre",
+        "eyebrow": "Regards de professionnels",
+        "heading": "Ce qu'en disent les professionnels",
         "show_rule": true,
-        "list_eyebrow": "Ingrédients scientifiquement sélectionnés",
-        "count_label": "actifs clés",
-        "composition_link": "Voir la composition complète",
-        "composition_title": "Composition complète",
-        "composition_note": "",
-        "advice_eyebrow": "Conseils d'utilisation",
-        "advice_link": "En savoir plus",
-        "advice_title": "Précautions d'emploi",
-        "background": "soft"
+        "note": "",
+        "background": "none"
       }
     },
     "reviews": {
@@ -260,7 +337,7 @@
         "limit": 8,
         "per_view": "3",
         "show_dots": true,
-        "background": "none"
+        "background": "soft"
       }
     },
     "faq": {
@@ -269,28 +346,42 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Quand vais-je ressentir les effets ?",
+            "question": "Au bout de combien de temps ressent-on les effets de 4 Vitality System ?",
             "answer": "<p>4 Vitality System s'utilise en programme de 30 jours, à raison de 2 gélules par jour. La perception varie d'une personne à l'autre : nous recommandons de suivre la cure complète avant de faire le point.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Ce complément convient-il à tout le monde ?",
-            "answer": "<p>La formule est réservée aux adultes. Elle est déconseillée aux femmes enceintes ou allaitantes. En cas de traitement médical, demandez l'avis de votre médecin ou de votre pharmacien.</p>"
+            "question": "Quand faut-il prendre les gélules, le matin ou le soir ?",
+            "answer": "<p>Le matin, au cours du petit-déjeuner, les 2 gélules ensemble. Si vous êtes sensible à la caféine, répartissez la prise : 1 gélule le matin et 1 gélule le midi. Évitez la prise après 16h, la formule apportant 25 mg de caféine par dose journalière.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "La formule contient-elle de la caféine ?",
-            "answer": "<p>Oui. L'extrait de kola apporte 25 mg de caféine par dose journalière de 2 gélules, soit environ un quart d'un café filtre. C'est pourquoi la prise est recommandée le matin et/ou le midi.</p>"
+            "question": "4 Vitality System contient-il de la caféine ?",
+            "answer": "<p>Oui. L'extrait de kola apporte 25 mg de caféine par dose journalière de 2 gélules, soit environ un quart d'un café filtre.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "question": "Peut-on associer 4 Vitality System à d'autres compléments ?",
+            "question": "Ce complément alimentaire convient-il à tout le monde ?",
+            "answer": "<p>La formule est réservée aux adultes. Elle est déconseillée aux femmes enceintes ou allaitantes. En cas de traitement médical, demandez l'avis de votre médecin ou de votre pharmacien.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "La formule est-elle vegan et sans OGM ?",
+            "answer": "<p>Oui. 4 Vitality System est formulé sans ingrédient d'origine animale et sans OGM, et fabriqué en France.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Peut-on associer 4 Vitality System à d'autres compléments alimentaires ?",
             "answer": "<p>La formule réunit 7 actifs et se suffit à elle-même dans la plupart des routines. Si vous prenez déjà d'autres compléments, vérifiez les apports cumulés, en particulier en zinc et en vitamine D3.</p>"
           }
         }
@@ -299,12 +390,15 @@
         "q1",
         "q2",
         "q3",
-        "q4"
+        "q4",
+        "q5",
+        "q6"
       ],
       "settings": {
         "eyebrow": "",
         "heading": "Vos questions, nos réponses",
         "show_rule": true,
+        "seo_schema": true,
         "style": "card",
         "show_tabs": false,
         "link_label": "Voir toutes les questions fréquentes",
@@ -360,30 +454,15 @@
         "dividers": false,
         "compact": true
       }
-    },
-    "actifs": {
-      "type": "ingredients-slider",
-      "settings": {
-        "eyebrow": "Les actifs de la formule",
-        "heading": "actifs, un rôle pour chacun",
-        "show_count": true,
-        "heading_style": "sans",
-        "show_rule": true,
-        "show_dosage": true,
-        "per_view": "5",
-        "show_dots": true,
-        "note": "",
-        "background": "none"
-      }
     }
   },
   "order": [
     "main",
+    "story",
     "benefits",
-    "pillars",
-    "comparison",
     "actifs",
-    "ingredients",
+    "comparison",
+    "experts",
     "reviews",
     "faq",
     "reassurance"

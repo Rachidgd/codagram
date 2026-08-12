@@ -41,30 +41,21 @@
     "story": {
       "type": "storytelling",
       "blocks": {
-        "p1": { "type": "point", "settings": { "icon": "bolt", "text": "Une énergie qui varie d'un jour à l'autre" } },
-        "p2": { "type": "point", "settings": { "icon": "brain", "text": "Une concentration qui décroche en fin de journée" } },
+        "p1": { "type": "point", "settings": { "icon": "bolt", "text": "Le corps qui suit moins bien en fin de journée" } },
+        "p2": { "type": "point", "settings": { "icon": "brain", "text": "La concentration qui décroche en milieu d'après-midi" } },
         "p3": { "type": "point", "settings": { "icon": "capsule", "text": "Une routine qui s'allonge, sans savoir ce qui agit" } }
       },
       "block_order": ["p1", "p2", "p3"],
       "settings": {
         "eyebrow": "Le constat",
-        "heading": "Quand le quotidien en demande plus",
-        "text": "<p>Des journées qui s'enchaînent, une énergie moins constante, une concentration qui décroche en fin d'après-midi. Et pour y répondre, une routine qui s'allonge : un pot pour l'énergie, un autre pour la concentration, un troisième pour le reste.</p>",
+        "heading": "La fatigue n'est pas qu'une question d'énergie",
+        "text": "<p>Elle est physique : le corps qui traîne au réveil, l'entraînement qu'on repousse, la fin de journée qui coûte plus cher qu'elle ne devrait. Elle est aussi mentale : l'attention qui s'effrite, les tâches qui prennent le double de temps.</p><p>Et pour y répondre, une routine qui s'allonge : un pot pour l'énergie, un autre pour la concentration, un troisième pour le reste.</p>",
         "transition": "Nous avons voulu aller à l'essentiel.",
         "button_label": "Voir notre réponse",
         "button_link": "/products/4-vitality-system",
         "button_style": "outline",
         "button_event": "home_story_click",
         "background": "soft"
-      }
-    },
-    "spotlight": {
-      "type": "product-spotlight",
-      "settings": {
-        "product": "4-vitality-system",
-        "eyebrow": "Notre première formule",
-        "button_label": "Découvrir le produit",
-        "button_event": "home_formula_product_click"
       }
     },
     "benefits": {
@@ -78,11 +69,104 @@
       "settings": {
         "product": "4-vitality-system",
         "eyebrow": "Quatre bénéfices, une seule formule",
-        "heading": "Ce que 4 Vitality System vous apporte au quotidien",
+        "heading": "Physique et mental, dans le même geste",
+        "intro": "<p>Une journée exigeante tire sur les deux tableaux : le corps et la tête. 4 Vitality System couvre les deux en une seule prise quotidienne, plutôt que d'empiler un produit par besoin.</p>",
         "show_text": true,
         "color_scheme": "navy",
         "button_label": "Découvrir la formule",
         "button_event": "home_benefits_click"
+      }
+    },
+    "actifs": {
+      "type": "actifs-constellation",
+      "settings": {
+        "product": "4-vitality-system",
+        "eyebrow": "Ce qu'il y a dedans",
+        "heading": "actifs, un rôle pour chacun",
+        "show_count": true,
+        "show_rule": true,
+        "intro": "Aucun mélange caché : chaque actif est affiché avec son dosage.",
+        "center_label": "2 gélules par jour",
+        "show_dosage": true,
+        "composition_link": "Voir la composition complète",
+        "composition_title": "Composition complète",
+        "background": "none"
+      }
+    },
+    "spotlight": {
+      "type": "product-spotlight",
+      "settings": {
+        "product": "4-vitality-system",
+        "eyebrow": "Notre première formule",
+        "button_label": "Découvrir le produit",
+        "button_event": "home_formula_product_click"
+      }
+    },
+    "comparison": {
+      "type": "product-comparison",
+      "blocks": {
+        "row-1": { "type": "row", "settings": { "brand_text": "Une seule formule, 4 bénéfices essentiels", "other_text": "Plusieurs produits pour des bénéfices isolés" } },
+        "row-2": { "type": "row", "settings": { "brand_text": "2 gélules par jour, une routine simple", "other_text": "Plusieurs prises quotidiennes" } },
+        "row-3": { "type": "row", "settings": { "brand_text": "Des dosages affichés pour chaque actif", "other_text": "Des compositions difficiles à comparer" } },
+        "row-4": { "type": "row", "settings": { "brand_text": "Un seul budget à suivre", "other_text": "Un budget réparti sur plusieurs produits" } }
+      },
+      "block_order": ["row-1", "row-2", "row-3", "row-4"],
+      "settings": {
+        "eyebrow": "Comparatif",
+        "heading": "Une formule plutôt qu'une pile de pots",
+        "show_rule": true,
+        "column_brand": "4 Vitality System",
+        "column_other": "Compléments classiques",
+        "background": "soft"
+      }
+    },
+    "steps": {
+      "type": "how-to-use",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Le matin",
+            "text": "2 gélules au petit-déjeuner, avec un grand verre d'eau. Rien d'autre à prévoir dans la journée."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Pendant 30 jours",
+            "text": "Une boîte couvre un programme complet. C'est la durée que nous recommandons avant de faire le point."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Puis vous décidez",
+            "text": "Vous poursuivez avec une cure de 2 ou 3 mois, ou vous vous arrêtez. Pas d'abonnement, pas de reconduction."
+          }
+        }
+      },
+      "block_order": ["s1", "s2", "s3"],
+      "settings": {
+        "eyebrow": "En pratique",
+        "heading": "Une routine qui tient en trois gestes",
+        "show_rule": true,
+        "intro": "",
+        "note": "",
+        "background": "none"
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+        "product": "4-vitality-system",
+        "heading": "Ils nous font confiance",
+        "show_summary": false,
+        "show_score": false,
+        "verified_label": "Client vérifié",
+        "limit": 6,
+        "per_view": "3",
+        "show_dots": true,
+        "background": "soft"
       }
     },
     "features": {
@@ -102,20 +186,6 @@
         "accent": "gold",
         "style": "plain",
         "dividers": true,
-        "background": "none"
-      }
-    },
-    "reviews": {
-      "type": "reviews",
-      "settings": {
-        "product": "4-vitality-system",
-        "heading": "Ils nous font confiance",
-        "show_summary": false,
-        "show_score": false,
-        "verified_label": "Client vérifié",
-        "limit": 6,
-        "per_view": "3",
-        "show_dots": true,
         "background": "none"
       }
     },
@@ -156,6 +226,7 @@
         "eyebrow": "Avant de commencer",
         "heading": "Les questions que vous vous posez",
         "show_rule": true,
+        "seo_schema": true,
         "style": "card",
         "show_tabs": false,
         "link_label": "Voir toutes les questions fréquentes",
@@ -172,7 +243,7 @@
         "button_label": "Découvrir 4 Vitality System",
         "button_link": "/products/4-vitality-system",
         "button_event": "home_final_product_click",
-        "background": "soft"
+        "background": "none"
       }
     },
     "blog": {
@@ -198,10 +269,13 @@
     "hero",
     "reassurance",
     "story",
-    "spotlight",
     "benefits",
-    "features",
+    "actifs",
+    "spotlight",
+    "comparison",
+    "steps",
     "reviews",
+    "features",
     "objections",
     "closing",
     "blog",

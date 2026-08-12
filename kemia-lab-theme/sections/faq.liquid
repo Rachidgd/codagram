@@ -122,6 +122,32 @@
   </div>
 </section>
 
+{%- if section.settings.seo_schema and section.blocks.size > 0 -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- assign faq_rendered = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.settings.question != blank and block.settings.answer != blank -%}
+            {%- if faq_rendered > 0 %},{% endif -%}
+            {%- assign faq_rendered = faq_rendered | plus: 1 -%}
+            {
+              "@type": "Question",
+              "name": {{ block.settings.question | strip_html | json }},
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ block.settings.answer | strip_html | strip_newlines | json }}
+              }
+            }
+          {%- endif -%}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "FAQ",
@@ -130,6 +156,13 @@
     { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
     { "type": "text", "id": "heading", "label": "Titre", "default": "Vos questions, nos réponses" },
     { "type": "checkbox", "id": "show_rule", "label": "Filet doré sous le titre", "default": true },
+    {
+      "type": "checkbox",
+      "id": "seo_schema",
+      "label": "Balisage SEO des questions",
+      "default": true,
+      "info": "Publie les questions au format FAQPage pour les moteurs de recherche. À n'activer que sur une seule section FAQ par page."
+    },
     {
       "type": "select",
       "id": "style",
