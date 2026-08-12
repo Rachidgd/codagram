@@ -327,6 +327,23 @@
               {%- endfor -%}
             </ul>
 
+          {%- when 'accordion' -%}
+            {%- liquid
+              assign panel = block.settings.content
+              if block.settings.source == 'description'
+                assign panel = product.description
+              endif
+            -%}
+            {%- if panel != blank -%}
+              <details class="k-accordion__item k-buybox__panel"{% if block.settings.open %} open{% endif %} {{ block.shopify_attributes }}>
+                <summary class="k-accordion__summary">
+                  <span>{{ block.settings.title }}</span>
+                  <span class="k-accordion__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="k-accordion__panel k-text">{{ panel }}</div>
+              </details>
+            {%- endif -%}
+
           {%- when 'text' -%}
             {%- if block.settings.content != blank -%}
               <div class="k-buybox__text k-text" {{ block.shopify_attributes }}>{{ block.settings.content }}</div>
@@ -484,6 +501,26 @@
         { "type": "text", "id": "text_3", "label": "Texte 3", "default": "Expédition neutre" },
         { "type": "select", "id": "icon_4", "label": "Pictogramme 4", "options": [{ "value": "headset", "label": "Service client" }, { "value": "truck", "label": "Livraison" }, { "value": "lock", "label": "Cadenas" }, { "value": "package", "label": "Colis" }, { "value": "clock", "label": "Horloge" }, { "value": "shield-check", "label": "Bouclier" }], "default": "headset" },
         { "type": "text", "id": "text_4", "label": "Texte 4", "default": "Service client - réponse sous 48h" }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordéon",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titre", "default": "Description" },
+        {
+          "type": "select",
+          "id": "source",
+          "label": "Contenu affiché",
+          "options": [
+            { "value": "custom", "label": "Texte ci-dessous" },
+            { "value": "description", "label": "Description du produit" }
+          ],
+          "default": "custom",
+          "info": "La description du produit se modifie depuis la fiche produit Shopify."
+        },
+        { "type": "richtext", "id": "content", "label": "Texte" },
+        { "type": "checkbox", "id": "open", "label": "Ouvert par défaut", "default": false }
       ]
     },
     {

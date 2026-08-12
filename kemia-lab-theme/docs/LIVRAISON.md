@@ -1,6 +1,6 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.1.2 | Thème `KEMIA LAB - v1.1.2` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.1.3 | Thème `KEMIA LAB - v1.1.3` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
@@ -213,8 +213,10 @@ La monographie EMA du Panax ginseng retient l'usage traditionnel contre les symp
 
 | Actif | Raison | Libellé retenu |
 |---|---|---|
-| L-Tyrosine | Aucune allégation autorisée ni en attente | Acide aminé précurseur |
-| CDP-Choline | Les allégations choline exigent 82,5 mg de choline par portion. 200 mg de CDP-Choline en apportent environ 43 mg, seuil non atteint | Source de choline |
+| L-Tyrosine | Avis EFSA 2011 : la relation avec la synthèse de dopamine est établie, mais l'allégation n'a pas été autorisée, l'apport protéique alimentaire étant jugé suffisant. Les allégations attention (ID 440, 1672, 1930) et fonction musculaire (ID 1929) ont reçu un avis défavorable | L'acide aminé le plus dosé |
+| CDP-Choline | Les allégations choline exigent 82,5 mg de choline par portion. 200 mg de CDP-Choline en apportent environ 43 mg, seuil non atteint. L'allégation mémoire de la citicoline a été formellement refusée par le règlement (UE) 2025/2223, applicable depuis le 25 novembre 2025 | Choline sous forme citicoline |
+
+Ces deux actifs ne relèvent pas du régime transitoire des plantes : leurs allégations ont été évaluées puis écartées. Leur attribuer un effet reprendrait une allégation explicitement non autorisée, ce qui expose davantage que le régime en attente. Seul un libellé factuel est utilisable en l'état.
 
 ### Formulations interdites
 
@@ -223,6 +225,8 @@ La monographie EMA du Panax ginseng retient l'usage traditionnel contre les symp
 | Réduit la fatigue attribué au produit dans son ensemble | L'allégation appartient au kola et au ginseng, pas à la formule. Elle doit rester rattachée à la plante. |
 | Métabolisme énergétique normal | Réservé aux vitamines B, à la vitamine C, au magnésium et au fer. Aucun n'est présent. |
 | Améliore la concentration, augmente la mémoire, stimule la testostérone | Verbes d'amélioration ou de stimulation non autorisés. Les formulations autorisées parlent de fonction normale ou de maintien. |
+| Effet mémoire attribué à la CDP-Choline | Refusé par le règlement (UE) 2025/2223 depuis le 25 novembre 2025. |
+| Effet dopamine, vigilance ou concentration attribué à la L-Tyrosine | Allégations évaluées et non autorisées. |
 | Allégations liées à la caféine (vigilance, concentration) | Avis EFSA favorable mais **non repris** par la Commission. Non autorisées. |
 | Sans nervosité, sans effet rebond | Allégation d'absence d'effet indésirable. |
 | Cliniquement prouvé, efficacité clinique | Aucun protocole ne le justifie à ce jour. |
@@ -232,8 +236,8 @@ La monographie EMA du Panax ginseng retient l'usage traditionnel contre les symp
 
 | Actif | Bénéfice affiché | Base |
 |---|---|---|
-| L-Tyrosine | Acide aminé précurseur | Descriptif |
-| CDP-Choline | Source de choline | Descriptif |
+| L-Tyrosine | L'acide aminé le plus dosé | Factuel |
+| CDP-Choline | Choline sous forme citicoline | Factuel |
 | Extrait de kola | Aide à réduire la fatigue | En attente |
 | Extrait de ginseng | Tonus et vitalité | En attente |
 | Extrait de safran | Équilibre émotionnel | En attente, ID 2038 |
@@ -254,6 +258,8 @@ Ces textes proviennent de la maquette et sont destinés à être remplacés. Lor
 ### Marge de manoeuvre restante
 
 La communication sur la fatigue est possible **par la plante**, sans reformuler le produit. Elle doit rester rattachée au kola ou au ginseng et ne pas être présentée comme un effet global du produit.
+
+La promesse sous le titre produit porte désormais cette communication : « Plus d'énergie, moins de fatigue, jour après jour. » Le paragraphe qui la suit rattache explicitement la réduction de la fatigue au kola et le tonus au ginseng, comme l'exige le rattachement à la plante.
 
 Pour porter une allégation fatigue **autorisée**, attribuable à la formule entière et sans réserve, il faudrait ajouter un seul des nutriments suivants au dosage minimal : vitamine C, B2, B3, B5, B6, B9, B12, magnésium ou fer. Décision client du 12/08/2026 : la formule reste inchangée.
 
