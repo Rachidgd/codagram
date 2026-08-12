@@ -298,10 +298,10 @@
         "e1": {
           "type": "quote",
           "settings": {
-            "quote": "Médicament à base de plantes d'usage traditionnel, utilisé pour les symptômes d'asthénie tels que la fatigue et la faiblesse.",
+            "quote": "Le ginseng est traditionnellement utilisé contre la fatigue et la sensation de faiblesse. L'Agence européenne des médicaments reconnaît cet usage et retient l'indication des symptômes d'asthénie.",
             "name": "Extrait de ginseng",
             "role": "Agence européenne des médicaments",
-            "detail": "Indication de la monographie Panax ginseng C.A. Meyer, radix",
+            "detail": "Monographie Panax ginseng C.A. Meyer, radix",
             "source_label": "Voir la monographie",
             "source_url": "https://www.ema.europa.eu/en/medicines/herbal/ginseng-radix",
             "image": ""
@@ -310,10 +310,10 @@
         "e2": {
           "type": "quote",
           "settings": {
-            "quote": "Médicament à base de plantes d'usage traditionnel, utilisé pour soulager les symptômes de fatigue et de sensation de faiblesse.",
+            "quote": "Le kola est traditionnellement utilisé contre la fatigue physique et intellectuelle. L'Agence européenne des médicaments retient l'indication du soulagement des symptômes de fatigue et de sensation de faiblesse.",
             "name": "Extrait de kola",
             "role": "Agence européenne des médicaments",
-            "detail": "Indication de la monographie Colae semen",
+            "detail": "Monographie Colae semen",
             "source_label": "Voir la monographie",
             "source_url": "https://www.ema.europa.eu/en/medicines/herbal/colae-semen",
             "image": ""
@@ -322,10 +322,10 @@
         "e3": {
           "type": "quote",
           "settings": {
-            "quote": "Un essai randomisé en double aveugle contre placebo a évalué 30 mg par jour d'extrait de safran standardisé pendant huit semaines chez des adultes en bonne santé rapportant une humeur basse, de l'anxiété ou du stress au quotidien.",
+            "quote": "Le safran est étudié pour son action sur l'humeur et sur la gestion du stress. Un essai randomisé en double aveugle contre placebo a évalué 30 mg par jour pendant huit semaines chez des adultes en bonne santé rapportant une humeur basse, de l'anxiété ou du stress.",
             "name": "Extrait de safran",
             "role": "Frontiers in Nutrition, 2021",
-            "detail": "Kell G. et coll., essai clinique randomisé en double aveugle",
+            "detail": "Kell G. et coll., essai randomisé en double aveugle",
             "source_label": "Voir l'étude",
             "source_url": "https://pubmed.ncbi.nlm.nih.gov/33598475/",
             "image": ""
@@ -334,7 +334,7 @@
         "e4": {
           "type": "quote",
           "settings": {
-            "quote": "Le zinc contribue à une fonction cognitive normale. Le zinc contribue au maintien d'un taux normal de testostérone dans le sang. La vitamine D contribue au fonctionnement normal du système immunitaire.",
+            "quote": "Le zinc contribue à une fonction cognitive normale et au maintien d'un taux normal de testostérone dans le sang. La vitamine D contribue au fonctionnement normal du système immunitaire.",
             "name": "Zinc et vitamine D3",
             "role": "Commission européenne",
             "detail": "Libellés officiels du règlement (UE) n° 432/2012",
@@ -351,10 +351,10 @@
         "e4"
       ],
       "settings": {
-        "eyebrow": "Ce que disent les sources",
-        "heading": "Les actifs dans les référentiels",
+        "eyebrow": "Ce que disent les référentiels",
+        "heading": "Les actifs, un par un",
         "show_rule": true,
-        "note": "Ces références portent sur les actifs pris isolément, et non sur 4 Vitality System. Les indications des monographies européennes sont restituées en français et les travaux cités sont résumés ; chaque texte d'origine est accessible par son lien.",
+        "note": "Chaque énoncé renvoie à la source qui le fonde. Les mentions du zinc et de la vitamine D3 sont les libellés officiels du règlement européen. Les autres reprennent la position de la source citée, restituée en français.",
         "background": "none"
       }
     },

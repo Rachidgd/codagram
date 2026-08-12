@@ -1,6 +1,6 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.4.2 | Thème `KEMIA LAB - v1.4.2` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.4.3 | Thème `KEMIA LAB - v1.4.3` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
@@ -457,29 +457,36 @@ La section porte sur **les actifs pris isolément**, jamais sur 4 Vitality Syste
 
 ### Ce qui est affiché
 
-| Actif | Contenu | Source et lien |
+| Actif | Énoncé | Source |
 |---|---|---|
-| Extrait de ginseng | Indication d'usage traditionnel : symptômes d'asthénie tels que la fatigue et la faiblesse | Agence européenne des médicaments, monographie Panax ginseng C.A. Meyer, radix |
-| Extrait de kola | Indication d'usage traditionnel : soulagement des symptômes de fatigue et de sensation de faiblesse | Agence européenne des médicaments, monographie Colae semen |
-| Extrait de safran | Description du protocole : 30 mg par jour d'extrait standardisé, huit semaines, adultes en bonne santé rapportant humeur basse, anxiété ou stress | Frontiers in Nutrition, 2021, Kell G. et coll. |
+| Extrait de ginseng | Usage traditionnel contre la fatigue et la sensation de faiblesse, indication des symptômes d'asthénie | Agence européenne des médicaments, monographie Panax ginseng |
+| Extrait de kola | Usage traditionnel contre la fatigue physique et intellectuelle, soulagement des symptômes de fatigue et de sensation de faiblesse | Agence européenne des médicaments, monographie Colae semen |
+| Extrait de safran | Action étudiée sur l'humeur et la gestion du stress, avec le protocole de l'essai | Frontiers in Nutrition, 2021, Kell G. et coll. |
 | Zinc et vitamine D3 | Libellés officiels des allégations autorisées | Commission européenne, règlement (UE) n° 432/2012 |
 
-### Degré de vérification, source par source
+### Statut exact de ces textes
 
-Ce point conditionne ce qui peut être écrit à l'écran.
+**Aucun de ces énoncés n'est une citation littérale, à l'exception du règlement 432/2012.** Ce sont des restitutions en français de la position de chaque source, chacune assortie de son lien de vérification.
 
-- **Règlement 432/2012** : libellés officiels en français, reproduits mot pour mot. Aucune réserve.
-- **Monographies européennes** : le texte d'origine est en anglais. Les indications sont **restituées en français**, pas citées mot pour mot. La mention sous la section le dit, et le lien renvoie à l'original.
-- **Étude sur le safran** : le protocole est **décrit**, aucune conclusion n'est reprise entre guillemets. Décrire ce qui a été testé engage moins que d'annoncer ce qui aurait été démontré, et cela reste exact.
+La raison est matérielle : le proxy réseau de l'environnement de développement bloque `ema.europa.eu`, `anses.fr`, `ncbi.nlm.nih.gov`, `frontiersin.org`, `fitoterapia.net` et `vidal.fr`. Aucun texte d'origine n'a pu être ouvert et relu. Publier entre guillemets des phrases reconstituées de mémoire ou d'après un résumé de moteur de recherche reviendrait à attribuer à l'EMA ou à une revue des mots qu'elles n'ont peut-être pas écrits.
 
-Le proxy réseau de l'environnement de développement bloque `ema.europa.eu`, `anses.fr`, `ncbi.nlm.nih.gov` et `frontiersin.org`. Aucun de ces textes n'a donc pu être relu au mot près. C'est la raison pour laquelle rien n'est présenté comme une citation littérale en dehors du règlement. **Avant mise en ligne, faire relire ces quatre entrées par quelqu'un ayant accès aux documents d'origine.**
+### Ce qu'il reste à faire pour de vraies citations
 
-### Ce qui n'est volontairement pas cité
+Le travail est court et ne demande aucune intervention sur le thème : ouvrir chaque lien, copier la phrase exacte, la coller dans le champ « Texte affiché » du bloc correspondant, et remplacer « restituée » par des guillemets dans la mention sous la section.
 
-L'étude sur le safran porte sur des adultes en bonne santé avec des symptômes infracliniques. Les méta-analyses portant sur le trouble dépressif caractérisé ont été écartées : un complément alimentaire ne peut pas se prévaloir d'un effet sur une maladie, et afficher une étude sur la dépression sur une fiche produit reviendrait à le suggérer.
+| Bloc | Document à ouvrir | Ce qu'il faut y copier |
+|---|---|---|
+| Ginseng | Monographie EMA Panax ginseng, section Therapeutic indication | La phrase d'indication, traduite ou laissée en anglais |
+| Kola | Monographie EMA Colae semen, section Therapeutic indication | La phrase d'indication |
+| Safran | Résumé de l'article Frontiers in Nutrition 2021 | La phrase de conclusion, à condition qu'elle ne porte pas sur une pathologie |
+| Zinc et vitamine D3 | Déjà littéral, rien à faire | — |
 
-La L-Tyrosine et la CDP-Choline ne figurent pas dans la section : les avis européens qui les concernent sont défavorables, les citer desservirait le produit.
+### Ce qui est volontairement écarté
 
-### Pour ajouter de vrais avis de professionnels
+Les méta-analyses du safran portant sur le trouble dépressif caractérisé : un complément alimentaire ne peut pas se prévaloir d'un effet sur une maladie, et afficher une telle étude sur une fiche produit reviendrait à le suggérer. L'essai retenu porte sur des adultes en bonne santé.
+
+La L-Tyrosine et la CDP-Choline : les avis européens qui les concernent sont défavorables, les citer desservirait le produit.
+
+### Avis de professionnels nommés
 
 Le bloc accepte jusqu'à six entrées et dispose des champs de source. Pour un professionnel nommé, réunir : la citation exacte, le nom, la fonction, l'autorisation écrite d'utilisation commerciale, le lien vers la publication d'origine, et la mention d'une éventuelle contrepartie.
