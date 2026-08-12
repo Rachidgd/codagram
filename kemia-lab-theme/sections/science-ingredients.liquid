@@ -1,9 +1,10 @@
 {%- liquid
   assign source = section.settings.product
   assign ingredients = source.metafields.kemia.ingredients.value
+  assign total = ingredients.size | plus: 0
 -%}
 
-{%- if ingredients.size > 0 -%}
+{%- if total > 0 -%}
   <section class="k-section">
     <div class="k-container">
       <div class="k-section-head">

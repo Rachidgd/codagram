@@ -7,6 +7,7 @@
   assign participants = source.metafields.kemia.consumer_test_participants.value
   assign duration = source.metafields.kemia.consumer_test_duration.value
   assign results = source.metafields.kemia.consumer_test_results.value
+  assign result_count = results.size | plus: 0
   assign methodology = source.metafields.kemia.consumer_test_methodology
 -%}
 
@@ -25,7 +26,7 @@
         </p>
       </div>
 
-      {%- if results.size > 0 -%}
+      {%- if result_count > 0 -%}
         <ul class="k-testresults">
           {%- for result in results limit: 3 -%}
             <li class="k-testresults__item">
@@ -63,7 +64,7 @@
             {% render 'icon', name: 'close' %}
           </button>
         </div>
-        <div class="k-modal__body k-text">{{ methodology }}</div>
+        <div class="k-modal__body k-text">{% render 'rich-text-field', field: methodology %}</div>
       </div>
     </div>
   {%- endif -%}

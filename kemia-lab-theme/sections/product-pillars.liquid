@@ -4,9 +4,10 @@
     assign source = product
   endif
   assign benefits = source.metafields.kemia.benefits.value
+  assign benefit_count = benefits.size | plus: 0
 -%}
 
-{%- if benefits.size > 0 -%}
+{%- if benefit_count > 0 -%}
   <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% endif %}">
     <div class="k-container">
       <div class="k-pillars">

@@ -1,13 +1,13 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.2.0 | Thème `KEMIA LAB - v1.2.0` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.2.1 | Thème `KEMIA LAB - v1.2.1` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
 ## 1. Ce qui a été livré
 
 ### Thème
-35 sections, 13 snippets, 20 templates, 2 feuilles de style, 1 fichier JavaScript sans dépendance externe.
+35 sections, 16 snippets, 20 templates, 2 feuilles de style, 1 fichier JavaScript sans dépendance externe.
 
 ### Pages construites d'après la maquette
 | Page | Template | Statut |
@@ -134,6 +134,8 @@ Aucune intervention dans le code n'est nécessaire.
 | Références croisées sections / snippets / blocs / réglages | 0 référence manquante |
 | Débordement horizontal à 390, 820 et 1440 px | 0 px sur la homepage et la fiche produit |
 | Rendu comparé à la maquette | Homepage et fiche produit conformes |
+| Rendu des champs texte enrichi | Testé sur moteur Liquid local : contenu réel, gras, italique, liens, listes, titres, injection HTML, champ vide |
+| Comparaisons numériques sur données optionnelles | 0 comparaison non gardée sur l'ensemble du thème |
 
 Anomalies trouvées et corrigées :
 1. Débordement horizontal de 148 px sur la fiche produit à 390 px, causé par des enfants de grille et de flex non contraints. Corrigé par `min-width: 0` sur les conteneurs concernés.
@@ -142,6 +144,8 @@ Anomalies trouvées et corrigées :
 4. Erreur Liquid sur la section Articles du blog quand aucun blog n'était sélectionné. La comparaison a été fiabilisée et le blog est désormais rattaché dans le template.
 5. Sections invisibles sur la homepage et la page Science : la mise en avant produit, les avis et les actifs n'avaient pas de source renseignée. Les templates pointent désormais sur le produit et le blog.
 6. Quand une section reste vide faute de données, un message d'explication s'affiche maintenant dans le Theme Builder uniquement, jamais sur le site.
+7. Les champs méta de type texte enrichi s'affichaient en JSON brut au lieu du texte. Trois emplacements étaient concernés : l'accordéon Précautions d'emploi, la fenêtre Précautions de la section Ingrédients et la fenêtre Méthodologie du test utilisateurs. Le rendu passe désormais par le snippet `rich-text-field`, qui parcourt la structure et produit du HTML sémantique. Le texte est échappé au passage.
+8. Une comparaison numérique sur un champ méta non renseigné provoque une erreur Liquid visible sur la page (« comparison of Nil with 0 failed »). Le cas se produit dès qu'une section est ajoutée sans sélectionner de produit source. Onze occurrences corrigées dans neuf sections et un snippet, par normalisation avec `| plus: 0`.
 
 ### Non couvert par cette recette
 La prévisualisation du thème sur le domaine `myshopify.com` est bloquée par le proxy réseau de l'environnement de développement. La recette visuelle a donc été faite sur un rendu local utilisant les feuilles de style réelles du thème et la structure HTML réelle des sections. **Il reste à ouvrir l'aperçu du thème dans Shopify pour valider le rendu avec les données réelles**, en particulier : ajout au panier, tiroir panier, sélection de cure, barre d'achat mobile, fenêtre des avis et formulaire de contact.

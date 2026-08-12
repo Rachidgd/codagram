@@ -8,6 +8,8 @@
   assign usage_timing = source.metafields.kemia.usage_timing.value
   assign usage_duration = source.metafields.kemia.usage_duration.value
   assign precautions = source.metafields.kemia.precautions_short.value
+  assign total = ingredients.size | plus: 0
+  assign precaution_count = precautions.size | plus: 0
   assign precautions_full = source.metafields.kemia.precautions_full
   assign has_usage = false
   if usage_dosage != blank or usage_timing != blank or usage_duration != blank
@@ -15,7 +17,7 @@
   endif
 -%}
 
-{%- if ingredients.size > 0 or has_usage or precautions.size > 0 -%}
+{%- if total > 0 or has_usage or precaution_count > 0 -%}
   <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% endif %}">
     <div class="k-container">
       {%- if section.settings.heading != blank -%}
@@ -26,7 +28,7 @@
       {%- endif -%}
 
       <div class="k-ingredients">
-        {%- if ingredients.size > 0 -%}
+        {%- if total > 0 -%}
           <div class="k-ingredients__panel">
             {%- if section.settings.list_eyebrow != blank -%}
               <span class="k-eyebrow">{{ section.settings.list_eyebrow }}</span>
@@ -56,7 +58,7 @@
           </div>
         {%- endif -%}
 
-        {%- if has_usage or precautions.size > 0 -%}
+        {%- if has_usage or precaution_count > 0 -%}
           <div class="k-ingredients__panel k-ingredients__panel--usage">
             {%- if has_usage -%}
               <div class="k-ingredients__usage">
@@ -77,7 +79,7 @@
               </div>
             {%- endif -%}
 
-            {%- if precautions.size > 0 -%}
+            {%- if precaution_count > 0 -%}
               <div class="k-ingredients__advice">
                 {%- if section.settings.advice_eyebrow != blank -%}
                   <span class="k-eyebrow">{{ section.settings.advice_eyebrow }}</span>
@@ -104,7 +106,7 @@
     </div>
   </section>
 
-  {%- if ingredients.size > 0 -%}
+  {%- if total > 0 -%}
     <div class="k-modal" id="k-composition-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ section.settings.composition_link | escape }}">
       <div class="k-modal__overlay" data-k-close></div>
       <div class="k-modal__dialog">
@@ -154,7 +156,7 @@
             {% render 'icon', name: 'close' %}
           </button>
         </div>
-        <div class="k-modal__body k-text">{{ precautions_full }}</div>
+        <div class="k-modal__body k-text">{% render 'rich-text-field', field: precautions_full %}</div>
       </div>
     </div>
   {%- endif -%}

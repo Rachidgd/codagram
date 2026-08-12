@@ -1,6 +1,7 @@
 {%- liquid
   assign item = section.settings.product
   assign benefits = item.metafields.kemia.benefits.value
+  assign benefit_count = benefits.size | plus: 0
   assign tagline = item.metafields.kemia.tagline.value
   assign usp = item.metafields.kemia.short_usp.value
 -%}
@@ -38,7 +39,7 @@
           {%- endif -%}
         </div>
 
-        {%- if benefits.size > 0 -%}
+        {%- if benefit_count > 0 -%}
           <ul class="k-spotlight__benefits">
             {%- for benefit in benefits -%}
               <li>

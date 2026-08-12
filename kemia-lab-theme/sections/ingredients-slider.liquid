@@ -4,9 +4,10 @@
     assign source = product
   endif
   assign ingredients = source.metafields.kemia.ingredients.value
+  assign total = ingredients.size | plus: 0
 -%}
 
-{%- if ingredients.size > 0 -%}
+{%- if total > 0 -%}
   <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
     <div class="k-container">
       <div class="k-section-head k-actifs__head">

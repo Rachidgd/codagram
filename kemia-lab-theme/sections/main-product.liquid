@@ -329,11 +329,13 @@
 
           {%- when 'accordion' -%}
             {%- liquid
+              assign is_rich = false
               assign panel = block.settings.content
               if block.settings.source == 'description'
                 assign panel = product.description
               elsif block.settings.source == 'precautions'
                 assign panel = product.metafields.kemia.precautions_full
+                assign is_rich = true
               endif
             -%}
             {%- if panel != blank -%}
@@ -342,7 +344,13 @@
                   <span>{{ block.settings.title }}</span>
                   <span class="k-accordion__icon" aria-hidden="true"></span>
                 </summary>
-                <div class="k-accordion__panel k-text">{{ panel }}</div>
+                <div class="k-accordion__panel k-text">
+                  {%- if is_rich -%}
+                    {% render 'rich-text-field', field: product.metafields.kemia.precautions_full %}
+                  {%- else -%}
+                    {{ panel }}
+                  {%- endif -%}
+                </div>
               </details>
             {%- endif -%}
 

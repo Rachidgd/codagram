@@ -5,12 +5,13 @@
   endif
   assign data = source.metafields.kemia.reviews_json.value
   assign items = data.reviews
+  assign item_count = items.size | plus: 0
   assign rating = source.metafields.kemia.rating.value
   assign review_count = source.metafields.kemia.review_count.value | plus: 0
   assign limit = section.settings.limit
 -%}
 
-{%- if items.size > 0 -%}
+{%- if item_count > 0 -%}
   <section class="k-section{% if section.settings.background != 'none' %} k-bg-{{ section.settings.background }}{% endif %}">
     <div class="k-container">
       <div class="k-section-head">

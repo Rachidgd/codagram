@@ -1,0 +1,29 @@
+{%- liquid
+  assign root = field.value
+  assign node_count = root.children.size | plus: 0
+-%}
+{%- if node_count > 0 -%}
+  {%- for node in root.children -%}
+    {%- case node.type -%}
+      {%- when 'paragraph' -%}
+        <p>{%- for child in node.children -%}{% render 'rich-text-node', node: child %}{%- endfor -%}</p>
+
+      {%- when 'heading' -%}
+        {%- assign level = node.level | default: 3 -%}
+        <h{{ level }}>{%- for child in node.children -%}{% render 'rich-text-node', node: child %}{%- endfor -%}</h{{ level }}>
+
+      {%- when 'list' -%}
+        {%- if node.listType == 'ordered' -%}<ol>{%- else -%}<ul>{%- endif -%}
+        {%- for item in node.children -%}
+          <li>{%- for child in item.children -%}{% render 'rich-text-node', node: child %}{%- endfor -%}</li>
+        {%- endfor -%}
+        {%- if node.listType == 'ordered' -%}</ol>{%- else -%}</ul>{%- endif -%}
+
+      {%- else -%}
+        {%- assign child_count = node.children.size | plus: 0 -%}
+        {%- if child_count > 0 -%}
+          <p>{%- for child in node.children -%}{% render 'rich-text-node', node: child %}{%- endfor -%}</p>
+        {%- endif -%}
+    {%- endcase -%}
+  {%- endfor -%}
+{%- endif -%}

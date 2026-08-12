@@ -4,7 +4,7 @@
     assign source = product
   endif
   assign ingredients = source.metafields.kemia.ingredients.value
-  assign total = ingredients.size
+  assign total = ingredients.size | plus: 0
   assign left_count = total | plus: 1 | divided_by: 2
   assign modal_id = 'k-orbit-composition-' | append: section.id
   assign center_image = section.settings.image
