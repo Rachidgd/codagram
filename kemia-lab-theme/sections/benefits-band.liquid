@@ -1,0 +1,108 @@
+{%- liquid
+  assign source = section.settings.product
+  if source == blank and product != blank
+    assign source = product
+  endif
+  assign benefits = source.metafields.kemia.benefits.value
+-%}
+
+{%- if benefits.size > 0 -%}
+  <section class="k-section k-benefitsband-section">
+    <div class="k-container">
+      <div class="k-benefitsband k-benefitsband--{{ section.settings.color_scheme }}">
+        <div class="k-benefitsband__head">
+          {%- if section.settings.eyebrow != blank -%}
+            <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+          {%- endif -%}
+          {%- if section.settings.heading != blank -%}
+            <h2 class="k-benefitsband__heading">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+        </div>
+
+        <ul class="k-benefitsband__list">
+          {%- for benefit in benefits -%}
+            <li class="k-benefitsband__item">
+              <span class="k-benefitsband__icon">{% render 'icon', name: benefit.icon.value, class: 'k-icon--lg' %}</span>
+              <span class="k-benefitsband__label">{{ benefit.label.value }}</span>
+              {%- if section.settings.show_text and benefit.short_text.value != blank -%}
+                <span class="k-benefitsband__text">{{ benefit.short_text.value }}</span>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        {%- if section.blocks.size > 0 -%}
+          <ul class="k-benefitsband__figures">
+            {%- for block in section.blocks -%}
+              <li {{ block.shopify_attributes }}>
+                <span class="k-benefitsband__value">{{ block.settings.value }}</span>
+                <span class="k-benefitsband__unit">{{ block.settings.label }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <a class="k-btn k-btn--light k-benefitsband__cta" href="{{ section.settings.button_link | default: source.url }}" data-k-track="{{ section.settings.button_event }}">
+            {{ section.settings.button_label }}
+            {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{%- else -%}
+  {% render 'section-empty', message: "Bandeau bénéfices : sélectionnez un produit dont le champ méta kemia.benefits est renseigné." %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Bandeau bénéfices",
+  "class": "k-benefitsband-wrap",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit source",
+      "info": "Les bénéfices proviennent du champ méta kemia.benefits. Sur une fiche produit, laisser vide."
+    },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Quatre bénéfices, une seule formule" },
+    { "type": "textarea", "id": "heading", "label": "Titre", "default": "Ce que 4 Vitality System vous apporte au quotidien" },
+    { "type": "checkbox", "id": "show_text", "label": "Afficher le texte sous chaque bénéfice", "default": true },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Fond",
+      "options": [
+        { "value": "navy", "label": "Bleu profond" },
+        { "value": "blue-tint", "label": "Bleu très clair" }
+      ],
+      "default": "navy"
+    },
+    { "type": "text", "id": "button_label", "label": "Bouton", "default": "Découvrir la formule" },
+    { "type": "url", "id": "button_link", "label": "Lien du bouton", "info": "Vide : la fiche du produit source." },
+    { "type": "text", "id": "button_event", "label": "Nom d'événement analytics", "default": "home_benefits_click" }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "figure",
+      "name": "Chiffre clé",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Chiffre", "default": "7" },
+        { "type": "text", "id": "label", "label": "Libellé", "default": "actifs" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bandeau bénéfices",
+      "blocks": [
+        { "type": "figure", "settings": { "value": "7", "label": "actifs" } },
+        { "type": "figure", "settings": { "value": "2", "label": "gélules par jour" } },
+        { "type": "figure", "settings": { "value": "30", "label": "jours" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -16,11 +16,18 @@
 -%}
 
 {%- if ingredients.size > 0 or has_usage or precautions.size > 0 -%}
-  <section class="k-section k-bg-soft">
+  <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% endif %}">
     <div class="k-container">
+      {%- if section.settings.heading != blank -%}
+        <div class="k-section-head k-ingredients__head">
+          <h2 class="k-title-caps k-h3">{{ section.settings.heading }}</h2>
+          {%- if section.settings.show_rule -%}<hr class="k-rule">{%- endif -%}
+        </div>
+      {%- endif -%}
+
       <div class="k-ingredients">
         {%- if ingredients.size > 0 -%}
-          <div class="k-ingredients__col">
+          <div class="k-ingredients__panel">
             {%- if section.settings.list_eyebrow != blank -%}
               <span class="k-eyebrow">{{ section.settings.list_eyebrow }}</span>
             {%- endif -%}
@@ -49,43 +56,47 @@
           </div>
         {%- endif -%}
 
-        {%- if has_usage -%}
-          <div class="k-ingredients__col k-ingredients__col--center">
-            <div class="k-ingredients__media">
-              {% render 'image', image: section.settings.image, ratio: '78%', fit: 'contain', sizes: '(min-width: 990px) 260px, 60vw', placeholder_icon: 'capsule' %}
-            </div>
-            <ul class="k-list-check">
-              {%- if usage_dosage != blank -%}
-                <li class="k-list-check__item">{% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}<span>{{ usage_dosage }}</span></li>
-              {%- endif -%}
-              {%- if usage_duration != blank -%}
-                <li class="k-list-check__item">{% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}<span>{{ usage_duration }}</span></li>
-              {%- endif -%}
-              {%- if usage_timing != blank -%}
-                <li class="k-list-check__item">{% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}<span>{{ usage_timing }}</span></li>
-              {%- endif -%}
-            </ul>
-          </div>
-        {%- endif -%}
-
-        {%- if precautions.size > 0 -%}
-          <div class="k-ingredients__col">
-            {%- if section.settings.advice_eyebrow != blank -%}
-              <span class="k-eyebrow">{{ section.settings.advice_eyebrow }}</span>
+        {%- if has_usage or precautions.size > 0 -%}
+          <div class="k-ingredients__panel k-ingredients__panel--usage">
+            {%- if has_usage -%}
+              <div class="k-ingredients__usage">
+                <div class="k-ingredients__media">
+                  {% render 'image', image: section.settings.image, ratio: '64%', fit: 'contain', sizes: '(min-width: 990px) 200px, 50vw', placeholder_icon: 'capsule' %}
+                </div>
+                <ul class="k-list-check">
+                  {%- if usage_dosage != blank -%}
+                    <li class="k-list-check__item">{% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}<span>{{ usage_dosage }}</span></li>
+                  {%- endif -%}
+                  {%- if usage_duration != blank -%}
+                    <li class="k-list-check__item">{% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}<span>{{ usage_duration }}</span></li>
+                  {%- endif -%}
+                  {%- if usage_timing != blank -%}
+                    <li class="k-list-check__item">{% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}<span>{{ usage_timing }}</span></li>
+                  {%- endif -%}
+                </ul>
+              </div>
             {%- endif -%}
-            <ul class="k-list-check k-ingredients__advice">
-              {%- for line in precautions -%}
-                <li class="k-list-check__item">
-                  {% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}
-                  <span>{{ line }}</span>
-                </li>
-              {%- endfor -%}
-            </ul>
-            {%- if precautions_full != blank and section.settings.advice_link != blank -%}
-              <button class="k-link" type="button" data-k-open="k-precautions-modal">
-                {{ section.settings.advice_link }}
-                {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
-              </button>
+
+            {%- if precautions.size > 0 -%}
+              <div class="k-ingredients__advice">
+                {%- if section.settings.advice_eyebrow != blank -%}
+                  <span class="k-eyebrow">{{ section.settings.advice_eyebrow }}</span>
+                {%- endif -%}
+                <ul class="k-list-check">
+                  {%- for line in precautions -%}
+                    <li class="k-list-check__item">
+                      {% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}
+                      <span>{{ line }}</span>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+                {%- if precautions_full != blank and section.settings.advice_link != blank -%}
+                  <button class="k-link" type="button" data-k-open="k-precautions-modal">
+                    {{ section.settings.advice_link }}
+                    {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+                  </button>
+                {%- endif -%}
+              </div>
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -147,6 +158,8 @@
       </div>
     </div>
   {%- endif -%}
+{%- else -%}
+  {% render 'section-empty', message: "Section Ingrédients : renseignez kemia.ingredients et le bloc utilisation sur la fiche produit." %}
 {%- endif -%}
 
 {% schema %}
@@ -160,66 +173,29 @@
       "label": "Produit source",
       "info": "Les données proviennent des champs méta kemia de la fiche produit."
     },
+    { "type": "text", "id": "heading", "label": "Titre de section", "default": "La composition, sans zone d'ombre" },
+    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true },
+    { "type": "image_picker", "id": "image", "label": "Visuel des gélules" },
+    { "type": "header", "content": "Colonne ingrédients" },
+    { "type": "text", "id": "list_eyebrow", "label": "Sur-titre", "default": "Ingrédients scientifiquement sélectionnés" },
+    { "type": "text", "id": "count_label", "label": "Texte après le nombre", "default": "actifs clés" },
+    { "type": "text", "id": "composition_link", "label": "Lien composition", "default": "Voir la composition complète" },
+    { "type": "text", "id": "composition_title", "label": "Titre de la fenêtre composition", "default": "Composition complète" },
+    { "type": "text", "id": "composition_note", "label": "Note sous la composition", "default": "VNR : Valeurs Nutritionnelles de Référence." },
+    { "type": "header", "content": "Colonne utilisation" },
+    { "type": "text", "id": "advice_eyebrow", "label": "Sur-titre", "default": "Conseils d'utilisation" },
+    { "type": "text", "id": "advice_link", "label": "Lien précautions", "default": "En savoir plus" },
+    { "type": "text", "id": "advice_title", "label": "Titre de la fenêtre précautions", "default": "Précautions d'emploi" },
     {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Visuel central"
-    },
-    {
-      "type": "header",
-      "content": "Colonne ingrédients"
-    },
-    {
-      "type": "text",
-      "id": "list_eyebrow",
-      "label": "Sur-titre",
-      "default": "Ingrédients scientifiquement sélectionnés"
-    },
-    {
-      "type": "text",
-      "id": "count_label",
-      "label": "Texte après le nombre",
-      "default": "actifs clés"
-    },
-    {
-      "type": "text",
-      "id": "composition_link",
-      "label": "Lien composition",
-      "default": "Voir la composition complète"
-    },
-    {
-      "type": "text",
-      "id": "composition_title",
-      "label": "Titre de la fenêtre composition",
-      "default": "Composition complète"
-    },
-    {
-      "type": "text",
-      "id": "composition_note",
-      "label": "Note sous la composition",
-      "default": "VNR : Valeurs Nutritionnelles de Référence."
-    },
-    {
-      "type": "header",
-      "content": "Colonne conseils"
-    },
-    {
-      "type": "text",
-      "id": "advice_eyebrow",
-      "label": "Sur-titre",
-      "default": "Conseils d'utilisation"
-    },
-    {
-      "type": "text",
-      "id": "advice_link",
-      "label": "Lien précautions",
-      "default": "En savoir plus"
-    },
-    {
-      "type": "text",
-      "id": "advice_title",
-      "label": "Titre de la fenêtre précautions",
-      "default": "Précautions d'emploi"
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" }
+      ],
+      "default": "soft"
     }
   ],
   "presets": [{ "name": "Ingrédients & utilisation" }]

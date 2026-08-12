@@ -1,0 +1,136 @@
+<section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
+  <div class="k-container">
+    <div class="k-story{% if section.settings.image != blank %} k-story--with-media{% endif %}">
+      <div class="k-story__text">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="k-h2 k-story__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="k-story__body k-text">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul class="k-story__points">
+            {%- for block in section.blocks -%}
+              <li class="k-story__point" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon != 'none' -%}
+                  <span class="k-story__point-icon">{% render 'icon', name: block.settings.icon, class: 'k-icon--sm' %}</span>
+                {%- endif -%}
+                <span>{{ block.settings.text }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.transition != blank -%}
+          <p class="k-story__transition">{{ section.settings.transition }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <a class="k-btn{% if section.settings.button_style == 'outline' %} k-btn--outline{% endif %} k-story__cta" href="{{ section.settings.button_link }}" data-k-track="{{ section.settings.button_event }}">
+            {{ section.settings.button_label }}
+            {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.image != blank -%}
+        <div class="k-story__media">
+          {% render 'image', image: section.settings.image, ratio: '92%', sizes: '(min-width: 990px) 45vw, 100vw' %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Storytelling",
+  "class": "k-story-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Le constat" },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Quand le quotidien en demande plus"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Texte",
+      "default": "<p>Des journées qui s'enchaînent, une énergie moins constante, une concentration qui décroche en fin d'après-midi. Et pour y répondre, une routine qui s'allonge : un pot pour l'énergie, un autre pour la concentration, un troisième pour le reste.</p>"
+    },
+    {
+      "type": "text",
+      "id": "transition",
+      "label": "Phrase de transition",
+      "default": "Nous avons voulu aller à l'essentiel."
+    },
+    { "type": "image_picker", "id": "image", "label": "Visuel" },
+    { "type": "text", "id": "button_label", "label": "Bouton" },
+    { "type": "url", "id": "button_link", "label": "Lien du bouton" },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Style du bouton",
+      "options": [
+        { "value": "solid", "label": "Doré plein" },
+        { "value": "outline", "label": "Doré contour" }
+      ],
+      "default": "outline"
+    },
+    { "type": "text", "id": "button_event", "label": "Nom d'événement analytics", "default": "home_story_click" },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" },
+        { "value": "blue-tint", "label": "Bleu très clair" }
+      ],
+      "default": "soft"
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Friction",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Pictogramme",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "clock", "label": "Horloge" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "brain", "label": "Cerveau" },
+            { "value": "capsule", "label": "Gélule" },
+            { "value": "moon", "label": "Sommeil" },
+            { "value": "target", "label": "Cible" }
+          ],
+          "default": "bolt"
+        },
+        { "type": "text", "id": "text", "label": "Texte", "default": "Une énergie qui varie d'un jour à l'autre" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Storytelling",
+      "blocks": [
+        { "type": "point", "settings": { "icon": "bolt", "text": "Une énergie qui varie d'un jour à l'autre" } },
+        { "type": "point", "settings": { "icon": "brain", "text": "Une concentration qui décroche en fin de journée" } },
+        { "type": "point", "settings": { "icon": "capsule", "text": "Une routine qui s'allonge, sans savoir ce qui agit" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

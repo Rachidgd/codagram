@@ -1,0 +1,87 @@
+{%- if section.blocks.size > 0 -%}
+  <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% endif %}">
+    <div class="k-container">
+      <div class="k-section-head">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="k-title-caps k-h3">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.show_rule -%}<hr class="k-rule">{%- endif -%}
+      </div>
+
+      <div class="k-compare k-compare--standalone">
+        <div class="k-compare__table">
+          <div class="k-compare__header k-compare__header--brand">{{ section.settings.column_brand }}</div>
+          <div class="k-compare__header k-compare__header--other">{{ section.settings.column_other }}</div>
+
+          {%- for block in section.blocks -%}
+            <div class="k-compare__cell k-compare__cell--brand" {{ block.shopify_attributes }}>
+              {% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}
+              <span>{{ block.settings.brand_text }}</span>
+            </div>
+            <div class="k-compare__cell k-compare__cell--other">
+              {% render 'icon', name: 'x-circle', class: 'k-icon--sm' %}
+              <span>{{ block.settings.other_text }}</span>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        {%- if section.settings.button_label != blank -%}
+          <div class="k-compare__cta">
+            <a class="k-btn" href="{{ section.settings.button_link }}" data-k-track="comparison_cta_clicked">{{ section.settings.button_label }}</a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Tableau comparatif",
+  "class": "k-comparison-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Pourquoi choisir cette formule ?" },
+    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true },
+    { "type": "text", "id": "column_brand", "label": "Colonne marque", "default": "4 Vitality System" },
+    { "type": "text", "id": "column_other", "label": "Colonne comparée", "default": "Compléments classiques" },
+    { "type": "text", "id": "button_label", "label": "Bouton sous le tableau" },
+    { "type": "url", "id": "button_link", "label": "Lien du bouton" },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" }
+      ],
+      "default": "none"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Ligne",
+      "settings": [
+        { "type": "textarea", "id": "brand_text", "label": "Colonne marque", "default": "Une seule formule, 4 bénéfices essentiels" },
+        { "type": "textarea", "id": "other_text", "label": "Colonne comparée", "default": "Plusieurs produits pour des bénéfices isolés" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tableau comparatif",
+      "blocks": [
+        { "type": "row", "settings": { "brand_text": "Une seule formule, 4 bénéfices essentiels", "other_text": "Plusieurs produits pour des bénéfices isolés" } },
+        { "type": "row", "settings": { "brand_text": "2 gélules par jour, une routine simple", "other_text": "Plusieurs prises quotidiennes" } },
+        { "type": "row", "settings": { "brand_text": "Des dosages affichés pour chaque actif", "other_text": "Des compositions difficiles à comparer" } },
+        { "type": "row", "settings": { "brand_text": "Un seul budget à suivre", "other_text": "Un budget réparti sur plusieurs produits" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

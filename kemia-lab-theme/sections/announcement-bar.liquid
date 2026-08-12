@@ -1,8 +1,15 @@
-<div class="k-announcement" style="background: {{ section.settings.background }}; color: {{ section.settings.text_color }}">
+<div
+  class="k-announcement k-announcement--rotate-{{ section.settings.rotate }}"
+  style="background: {{ section.settings.background }}; color: {{ section.settings.text_color }}"
+>
   <div class="k-container">
-    <ul class="k-announcement__list" data-k-rail-track>
+    <ul
+      class="k-announcement__list"
+      data-k-announce="{{ section.settings.rotate }}"
+      data-interval="{{ section.settings.interval | times: 1000 }}"
+    >
       {%- for block in section.blocks -%}
-        <li class="k-announcement__item" {{ block.shopify_attributes }}>
+        <li class="k-announcement__item{% if forloop.first %} is-active{% endif %}" {{ block.shopify_attributes }}>
           {%- if block.settings.icon != 'none' -%}
             {% render 'icon', name: block.settings.icon, class: 'k-icon--sm' %}
           {%- endif -%}
@@ -23,6 +30,28 @@
   "class": "k-announcement-section",
   "settings": [
     {
+      "type": "select",
+      "id": "rotate",
+      "label": "Affichage",
+      "options": [
+        { "value": "mobile", "label": "Une info à la fois sur mobile" },
+        { "value": "always", "label": "Une info à la fois partout" },
+        { "value": "never", "label": "Toutes les infos côte à côte" }
+      ],
+      "default": "mobile",
+      "info": "Sur mobile, afficher les trois mentions côte à côte tronque les textes."
+    },
+    {
+      "type": "range",
+      "id": "interval",
+      "label": "Durée d'affichage",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "unit": "s",
+      "default": 3
+    },
+    {
       "type": "color",
       "id": "background",
       "label": "Fond",
@@ -35,7 +64,7 @@
       "default": "#5C534A"
     }
   ],
-  "max_blocks": 4,
+  "max_blocks": 5,
   "blocks": [
     {
       "type": "item",
@@ -53,7 +82,8 @@
             { "value": "clock", "label": "Horloge" },
             { "value": "leaf", "label": "Feuille" },
             { "value": "headset", "label": "Service client" },
-            { "value": "package", "label": "Colis" }
+            { "value": "package", "label": "Colis" },
+            { "value": "hexagon", "label": "Hexagone" }
           ],
           "default": "truck"
         },
@@ -75,18 +105,9 @@
     {
       "name": "Barre d'annonce",
       "blocks": [
-        {
-          "type": "item",
-          "settings": { "icon": "truck", "text": "Livraison offerte dès 60€ d'achat" }
-        },
-        {
-          "type": "item",
-          "settings": { "icon": "shield-check", "text": "Qualité contrôlée" }
-        },
-        {
-          "type": "item",
-          "settings": { "icon": "lock", "text": "Paiement sécurisé" }
-        }
+        { "type": "item", "settings": { "icon": "truck", "text": "Livraison offerte dès 60€ d'achat" } },
+        { "type": "item", "settings": { "icon": "shield-check", "text": "Qualité contrôlée" } },
+        { "type": "item", "settings": { "icon": "lock", "text": "Paiement sécurisé" } }
       ]
     }
   ]

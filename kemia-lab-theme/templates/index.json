@@ -3,164 +3,97 @@
     "hero": {
       "type": "hero-split",
       "blocks": {
-        "t1": {
-          "type": "trust",
-          "settings": {
-            "icon": "leaf",
-            "title": "Ingrédients",
-            "text": "de qualité"
-          }
-        },
-        "t2": {
-          "type": "trust",
-          "settings": {
-            "icon": "flask",
-            "title": "Formules",
-            "text": "avancées"
-          }
-        },
-        "t3": {
-          "type": "trust",
-          "settings": {
-            "icon": "shield-check",
-            "title": "Qualité",
-            "text": "contrôlée"
-          }
-        },
-        "t4": {
-          "type": "trust",
-          "settings": {
-            "icon": "hexagon",
-            "title": "Fabriqué",
-            "text": "en France"
-          }
-        }
+        "t1": { "type": "trust", "settings": { "icon": "leaf", "title": "Ingrédients", "text": "de qualité" } },
+        "t2": { "type": "trust", "settings": { "icon": "flask", "title": "Formules", "text": "avancées" } },
+        "t3": { "type": "trust", "settings": { "icon": "shield-check", "title": "Qualité", "text": "contrôlée" } },
+        "t4": { "type": "trust", "settings": { "icon": "hexagon", "title": "Fabriqué", "text": "en France" } }
       },
-      "block_order": [
-        "t1",
-        "t2",
-        "t3",
-        "t4"
-      ],
+      "block_order": ["t1", "t2", "t3", "t4"],
       "settings": {
         "eyebrow": "Science au service de votre potentiel",
         "heading_tag": "h1",
         "heading_style": "sans",
         "heading": "Votre énergie.\nVotre concentration.",
         "highlight": "Votre équilibre.",
+        "highlight_break": true,
         "show_rule": true,
-        "text": "<p>Des formules développées avec rigueur scientifique pour accompagner votre vitalité et vous aider à atteindre vos objectifs.</p>",
+        "text": "<p>7 actifs réunis dans une seule formule, en 2 gélules par jour. Une routine simple, pensée pour les journées qui demandent de l'énergie et de la concentration.</p>",
         "button_label": "Découvrir 4 Vitality System",
         "button_link": "/products/4-vitality-system",
         "button_style": "solid",
         "button_event": "home_hero_product_click",
         "badge_text": "Formule exclusive avec des actifs sélectionnés",
         "badge_icon": "leaf",
-        "background": "light",
-        "highlight_break": true
+        "background": "light"
       }
     },
     "reassurance": {
       "type": "reassurance",
       "blocks": {
-        "r1": {
-          "type": "item",
-          "settings": {
-            "icon": "truck",
-            "title": "Livraison offerte",
-            "text": "dès 60€ d'achat"
-          }
-        },
-        "r2": {
-          "type": "item",
-          "settings": {
-            "icon": "clock",
-            "title": "Expédition rapide",
-            "text": "24 à 48h ouvrées"
-          }
-        },
-        "r3": {
-          "type": "item",
-          "settings": {
-            "icon": "lock",
-            "title": "Paiement sécurisé",
-            "text": "100% sécurisé"
-          }
-        },
-        "r4": {
-          "type": "item",
-          "settings": {
-            "icon": "headset",
-            "title": "Service client",
-            "text": "Réponse sous 48h"
-          }
-        }
+        "r1": { "type": "item", "settings": { "icon": "truck", "title": "Livraison offerte", "text": "dès 60€ d'achat" } },
+        "r2": { "type": "item", "settings": { "icon": "clock", "title": "Expédition rapide", "text": "24 à 48h ouvrées" } },
+        "r3": { "type": "item", "settings": { "icon": "lock", "title": "Paiement sécurisé", "text": "100% sécurisé" } },
+        "r4": { "type": "item", "settings": { "icon": "headset", "title": "Service client", "text": "Réponse sous 48h" } }
       },
-      "block_order": [
-        "r1",
-        "r2",
-        "r3",
-        "r4"
-      ],
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": { "layout": "inline", "background": "card", "dividers": true, "compact": true }
+    },
+    "story": {
+      "type": "storytelling",
+      "blocks": {
+        "p1": { "type": "point", "settings": { "icon": "bolt", "text": "Une énergie qui varie d'un jour à l'autre" } },
+        "p2": { "type": "point", "settings": { "icon": "brain", "text": "Une concentration qui décroche en fin de journée" } },
+        "p3": { "type": "point", "settings": { "icon": "capsule", "text": "Une routine qui s'allonge, sans savoir ce qui agit" } }
+      },
+      "block_order": ["p1", "p2", "p3"],
       "settings": {
-        "layout": "inline",
-        "background": "card",
-        "dividers": true,
-        "compact": true
+        "eyebrow": "Le constat",
+        "heading": "Quand le quotidien en demande plus",
+        "text": "<p>Des journées qui s'enchaînent, une énergie moins constante, une concentration qui décroche en fin d'après-midi. Et pour y répondre, une routine qui s'allonge : un pot pour l'énergie, un autre pour la concentration, un troisième pour le reste.</p>",
+        "transition": "Nous avons voulu aller à l'essentiel.",
+        "button_label": "Voir notre réponse",
+        "button_link": "/products/4-vitality-system",
+        "button_style": "outline",
+        "button_event": "home_story_click",
+        "background": "soft"
       }
     },
     "spotlight": {
       "type": "product-spotlight",
       "settings": {
+        "product": "4-vitality-system",
         "eyebrow": "Notre première formule",
         "button_label": "Découvrir le produit",
-        "button_event": "home_formula_product_click",
+        "button_event": "home_formula_product_click"
+      }
+    },
+    "benefits": {
+      "type": "benefits-band",
+      "blocks": {
+        "f1": { "type": "figure", "settings": { "value": "7", "label": "actifs" } },
+        "f2": { "type": "figure", "settings": { "value": "2", "label": "gélules par jour" } },
+        "f3": { "type": "figure", "settings": { "value": "30", "label": "jours" } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
         "product": "4-vitality-system",
-        "image": ""
+        "eyebrow": "Quatre bénéfices, une seule formule",
+        "heading": "Ce que 4 Vitality System vous apporte au quotidien",
+        "show_text": true,
+        "color_scheme": "navy",
+        "button_label": "Découvrir la formule",
+        "button_event": "home_benefits_click"
       }
     },
     "features": {
       "type": "features",
       "blocks": {
-        "f1": {
-          "type": "item",
-          "settings": {
-            "icon": "molecule",
-            "title": "Science & expertise",
-            "text": "Nos formules sont élaborées à partir d'études scientifiques et d'une expertise pointue."
-          }
-        },
-        "f2": {
-          "type": "item",
-          "settings": {
-            "icon": "leaf",
-            "title": "Ingrédients premium",
-            "text": "Nous sélectionnons des ingrédients de la plus haute qualité pour leur pureté, leur traçabilité et leur efficacité."
-          }
-        },
-        "f3": {
-          "type": "item",
-          "settings": {
-            "icon": "shield-check",
-            "title": "Qualité contrôlée",
-            "text": "De la sélection des matières premières à la fabrication, chaque étape est contrôlée."
-          }
-        },
-        "f4": {
-          "type": "item",
-          "settings": {
-            "icon": "chart-up",
-            "title": "Pensé pour progresser",
-            "text": "Des formules pensées pour soutenir votre vitalité au quotidien et vos performances."
-          }
-        }
+        "f1": { "type": "item", "settings": { "icon": "molecule", "title": "Science & expertise", "text": "Nos formules sont élaborées à partir d'études scientifiques et d'une expertise pointue." } },
+        "f2": { "type": "item", "settings": { "icon": "leaf", "title": "Ingrédients premium", "text": "Nous sélectionnons des ingrédients de la plus haute qualité pour leur pureté, leur traçabilité et leur efficacité." } },
+        "f3": { "type": "item", "settings": { "icon": "shield-check", "title": "Qualité contrôlée", "text": "De la sélection des matières premières à la fabrication, chaque étape est contrôlée." } },
+        "f4": { "type": "item", "settings": { "icon": "chart-up", "title": "Pensé pour progresser", "text": "Des formules pensées pour soutenir votre vitalité au quotidien et vos performances." } }
       },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4"
-      ],
+      "block_order": ["f1", "f2", "f3", "f4"],
       "settings": {
         "heading": "Pourquoi choisir Kemia Lab ?",
         "heading_style": "caps",
@@ -175,6 +108,7 @@
     "reviews": {
       "type": "reviews",
       "settings": {
+        "product": "4-vitality-system",
         "heading": "Ils nous font confiance",
         "show_summary": false,
         "show_score": false,
@@ -182,17 +116,72 @@
         "limit": 6,
         "per_view": "3",
         "show_dots": true,
-        "background": "none",
-        "product": "4-vitality-system"
+        "background": "none"
+      }
+    },
+    "objections": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Pourquoi 2 gélules par jour seulement ?",
+            "answer": "<p>Parce que les 7 actifs sont dosés pour être répartis sur une seule prise quotidienne. C'est ce qui rend la routine tenable dans la durée, et c'est souvent là que les routines de compléments échouent.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Pourquoi 7 actifs plutôt qu'un seul ?",
+            "answer": "<p>Chaque actif couvre un aspect différent : L-Tyrosine, CDP-Choline, kola, ginseng, safran, zinc et vitamine D3. Les dosages complets sont affichés sur la fiche produit, sans mélange caché.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de temps dure une cure ?",
+            "answer": "<p>Une boîte correspond à 30 jours. C'est la durée que nous recommandons avant de faire le point. Les cures de 2 et 3 mois permettent de poursuivre sans interruption.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "La formule contient-elle de la caféine ?",
+            "answer": "<p>Oui, 25 mg par dose journalière, apportés par l'extrait de kola, soit environ un quart d'un café filtre. C'est pourquoi la prise est recommandée le matin et/ou le midi.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "eyebrow": "Avant de commencer",
+        "heading": "Les questions que vous vous posez",
+        "show_rule": true,
+        "style": "card",
+        "show_tabs": false,
+        "link_label": "Voir toutes les questions fréquentes",
+        "link_url": "/pages/faq",
+        "background": "soft"
+      }
+    },
+    "closing": {
+      "type": "cta-card",
+      "settings": {
+        "eyebrow": "Prêt à commencer",
+        "heading": "Une formule, une routine, 30 jours.",
+        "text": "7 actifs réunis en 2 gélules par jour. Commencez par une cure d'un mois et faites le point à la fin.",
+        "button_label": "Découvrir 4 Vitality System",
+        "button_link": "/products/4-vitality-system",
+        "button_event": "home_final_product_click",
+        "background": "soft"
       }
     },
     "blog": {
       "type": "blog-posts",
       "settings": {
+        "blog": "blog",
         "heading": "Le blog Kemia Lab",
         "link_label": "Voir tous les articles",
-        "count": 3,
-        "blog": "blog"
+        "count": 3
       }
     },
     "newsletter": {
@@ -208,9 +197,13 @@
   "order": [
     "hero",
     "reassurance",
+    "story",
     "spotlight",
+    "benefits",
     "features",
     "reviews",
+    "objections",
+    "closing",
     "blog",
     "newsletter"
   ]

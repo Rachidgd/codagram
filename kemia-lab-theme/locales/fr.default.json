@@ -198,6 +198,7 @@
     }
   },
   "date": {
-    "month_names": "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre"
+    "month_names": "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre",
+    "day_names": "dimanche,lundi,mardi,mercredi,jeudi,vendredi,samedi"
   }
 }

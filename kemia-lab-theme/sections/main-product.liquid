@@ -152,6 +152,64 @@
               </p>
             {%- endif -%}
 
+          {%- when 'urgency' -%}
+            {%- if block.settings.enabled -%}
+              {%- liquid
+                assign cutoff_total = block.settings.cutoff_hour | times: 3600
+                assign cutoff_minutes = block.settings.cutoff_minute | times: 60
+                assign cutoff_total = cutoff_total | plus: cutoff_minutes
+
+                assign now_total = 'now' | date: '%H' | times: 3600
+                assign now_minutes = 'now' | date: '%M' | times: 60
+                assign now_seconds = 'now' | date: '%S' | plus: 0
+                assign now_total = now_total | plus: now_minutes | plus: now_seconds
+
+                assign seconds_left = cutoff_total | minus: now_total
+                assign start_offset = 0
+                if seconds_left <= 0
+                  assign seconds_left = seconds_left | plus: 86400
+                  assign start_offset = 86400
+                endif
+
+                assign cursor = 'now' | date: '%s' | plus: start_offset
+                assign remaining = block.settings.transit_days
+                for i in (1..20)
+                  if remaining <= 0
+                    break
+                  endif
+                  assign cursor = cursor | plus: 86400
+                  assign weekday = cursor | date: '%w' | plus: 0
+                  if block.settings.skip_weekend and weekday == 0
+                    continue
+                  endif
+                  if block.settings.skip_weekend and weekday == 6
+                    continue
+                  endif
+                  assign remaining = remaining | minus: 1
+                endfor
+
+                assign delivery_weekday = cursor | date: '%w' | plus: 0
+                assign day_names = 'date.day_names' | t | split: ','
+                assign delivery_day = day_names[delivery_weekday]
+              -%}
+
+              <div class="k-urgency" data-k-countdown="{{ seconds_left }}" {{ block.shopify_attributes }}>
+                <span class="k-urgency__live">
+                  {% render 'icon', name: 'clock', class: 'k-icon--sm' %}
+                  <span>
+                    {{ block.settings.text_before }}
+                    <strong data-k-countdown-value>&nbsp;</strong>
+                    {{ block.settings.text_after }}
+                    <strong class="k-urgency__date">{{ delivery_day }} {% render 'date', date: cursor %}</strong>
+                  </span>
+                </span>
+                <span class="k-urgency__fallback">
+                  {% render 'icon', name: 'truck', class: 'k-icon--sm' %}
+                  <span>{{ block.settings.fallback }}</span>
+                </span>
+              </div>
+            {%- endif -%}
+
           {%- when 'cures' -%}
             {%- if product.variants.size > 1 -%}
               <fieldset class="k-cures" {{ block.shopify_attributes }}>
@@ -371,6 +429,25 @@
         { "type": "checkbox", "id": "enabled", "label": "Afficher", "default": false, "info": "À activer uniquement lorsque le service de paiement en plusieurs fois est réellement configuré." },
         { "type": "text", "id": "prefix", "label": "Texte avant", "default": "ou 3x" },
         { "type": "text", "id": "suffix", "label": "Texte après", "default": "sans frais" }
+      ]
+    },
+    {
+      "type": "urgency",
+      "name": "Urgence livraison",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "N'activer que si le délai annoncé est réellement tenu par la logistique."
+        },
+        { "type": "checkbox", "id": "enabled", "label": "Afficher", "default": true },
+        { "type": "range", "id": "cutoff_hour", "label": "Heure limite de commande", "min": 0, "max": 23, "step": 1, "unit": "h", "default": 23 },
+        { "type": "range", "id": "cutoff_minute", "label": "Minute limite", "min": 0, "max": 59, "step": 1, "unit": "min", "default": 59 },
+        { "type": "range", "id": "transit_days", "label": "Délai de livraison", "min": 1, "max": 7, "step": 1, "unit": "j", "default": 2, "info": "En jours ouvrés à partir de la commande." },
+        { "type": "checkbox", "id": "skip_weekend", "label": "Exclure les week-ends", "default": true },
+        { "type": "text", "id": "text_before", "label": "Texte avant le compteur", "default": "Commandez dans" },
+        { "type": "text", "id": "text_after", "label": "Texte avant la date", "default": "pour être livré le" },
+        { "type": "text", "id": "fallback", "label": "Texte de repli", "default": "Expédition sous 24 à 48h ouvrées", "info": "Affiché une fois l'heure limite dépassée, sans remise à zéro du compteur." }
       ]
     },
     {

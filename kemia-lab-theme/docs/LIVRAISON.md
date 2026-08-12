@@ -118,6 +118,10 @@ Aucune intervention dans le code n'est nécessaire.
 
 **Paiement fractionné.** Le bloc « ou 3x ... sans frais » de la buy box est présent mais désactivé. À n'activer qu'une fois le service de paiement en plusieurs fois réellement installé.
 
+**Urgence livraison.** Bloc « Urgence livraison » de la fiche produit. Le compte à rebours et la date sont calculés côté serveur, dans le fuseau de la boutique. Réglages : heure et minute limites (23h59 par défaut), délai en jours ouvrés (2 par défaut), exclusion des week-ends, textes. Une fois l'heure limite passée, le compteur ne se réinitialise pas : le texte de repli le remplace. **À n'activer que si la logistique tient réellement le délai annoncé.**
+
+**Barre d'annonce.** Trois modes : une info à la fois sur mobile (par défaut), une info à la fois partout, ou toutes côte à côte. La rotation s'arrête si le visiteur a activé la réduction des animations.
+
 ---
 
 ## 6. Recette effectuée
@@ -148,6 +152,8 @@ La prévisualisation du thème sur le domaine `myshopify.com` est bloquée par l
 
 | Sujet | Décision | Source |
 |---|---|---|
+| Structure homepage | Entonnoir AIDA : accroche, réassurance, constat, produit, bénéfices, crédibilité, preuve, objections, closing | Master Spec §8 |
+| Piliers et comparatif | Séparés en deux sections pleine largeur au lieu d'une colonne double dense | Demande client (lisibilité) |
 | Nombre d'actifs | 7 actifs, et non les 10 de la maquette | Dossier V2 §5 |
 | Pied de page de la fiche produit | Beige clair, et non noir | Dossier V2 §4 |
 | Service client | « Réponse sous 48h », et non « 7j/7 » | Instruction client la plus récente |
