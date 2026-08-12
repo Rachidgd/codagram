@@ -3900,3 +3900,120 @@
     gap: 20px;
   }
 }
+
+.k-shipbar {
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  background: var(--k-bg-soft);
+  border: 1px solid var(--k-border);
+  border-radius: var(--k-radius-card);
+}
+
+.k-shipbar__text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--k-ink);
+}
+
+.k-shipbar__text .k-icon {
+  flex: 0 0 auto;
+  color: var(--k-gold-dark);
+}
+
+.k-shipbar__track {
+  position: relative;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--k-border);
+  overflow: hidden;
+}
+
+.k-shipbar__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--k-gold);
+  transition: width 0.35s ease;
+}
+
+.k-shipbar.is-reached {
+  background: var(--k-blue-tint);
+  border-color: var(--k-blue);
+}
+
+.k-shipbar.is-reached .k-shipbar__text {
+  font-weight: 600;
+  color: var(--k-blue);
+}
+
+.k-shipbar.is-reached .k-shipbar__text .k-icon {
+  color: var(--k-blue);
+}
+
+.k-shipbar.is-reached .k-shipbar__fill {
+  background: var(--k-blue);
+}
+
+.k-urgency--cart {
+  margin-top: 18px;
+}
+
+.k-cart-drawer__promise {
+  margin-bottom: 12px;
+  font-family: var(--k-font-heading);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--k-ink);
+  text-align: center;
+}
+
+.k-cart-drawer__line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--k-body);
+}
+
+.k-cart-drawer__free {
+  color: var(--k-blue);
+  font-weight: 600;
+}
+
+.k-cart-drawer__reassurance {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 16px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--k-border);
+}
+
+.k-cart-drawer__reassurance li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--k-body);
+}
+
+.k-cart-drawer__reassurance .k-icon {
+  color: var(--k-blue);
+  width: 14px;
+  height: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .k-shipbar__fill {
+    transition: none;
+  }
+}

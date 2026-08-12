@@ -1,13 +1,13 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.2.1 | Thème `KEMIA LAB - v1.2.1` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.3.0 | Thème `KEMIA LAB - v1.3.0` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
 ## 1. Ce qui a été livré
 
 ### Thème
-35 sections, 16 snippets, 20 templates, 2 feuilles de style, 1 fichier JavaScript sans dépendance externe.
+35 sections, 17 snippets, 20 templates, 2 feuilles de style, 1 fichier JavaScript sans dépendance externe.
 
 ### Pages construites d'après la maquette
 | Page | Template | Statut |
@@ -120,6 +120,12 @@ Aucune intervention dans le code n'est nécessaire.
 
 **Urgence livraison.** Bloc « Urgence livraison » de la fiche produit. Le compte à rebours et la date sont calculés côté serveur, dans le fuseau de la boutique. Réglages : heure et minute limites (23h59 par défaut), délai en jours ouvrés (2 par défaut), exclusion des week-ends, textes. Une fois l'heure limite passée, le compteur ne se réinitialise pas : le texte de repli le remplace. **À n'activer que si la logistique tient réellement le délai annoncé.**
 
+**Panier tiroir.** Personnaliser > Panier tiroir. Trois leviers réglables.
+
+- *Barre de livraison offerte.* Le seuil est un réglage en euros, **à tenir aligné manuellement avec Paramètres > Expédition**. Le thème ne lit pas la configuration de livraison de Shopify : si le seuil réel change, il faut le reporter ici, sinon la barre annonce un avantage qui ne sera pas appliqué au paiement. Le repère `[montant]` du texte est remplacé par la somme restante.
+- *Urgence.* Reprend exactement le calcul de la fiche produit, via le snippet partagé `delivery-eta` : heure limite, jours ouvrés, exclusion des week-ends. Une seule implémentation pour les deux emplacements.
+- *Message avant paiement.* Texte libre affiché au-dessus du bouton Commander.
+
 **Barre d'annonce.** Trois modes : une info à la fois sur mobile (par défaut), une info à la fois partout, ou toutes côte à côte. La rotation s'arrête si le visiteur a activé la réduction des animations.
 
 ---
@@ -136,6 +142,7 @@ Aucune intervention dans le code n'est nécessaire.
 | Rendu comparé à la maquette | Homepage et fiche produit conformes |
 | Rendu des champs texte enrichi | Testé sur moteur Liquid local : contenu réel, gras, italique, liens, listes, titres, injection HTML, champ vide |
 | Comparaisons numériques sur données optionnelles | 0 comparaison non gardée sur l'ensemble du thème |
+| Panier tiroir | Testé sur moteur Liquid : panier vide, sous le seuil, seuil exact, au-dessus du seuil |
 
 Anomalies trouvées et corrigées :
 1. Débordement horizontal de 148 px sur la fiche produit à 390 px, causé par des enfants de grille et de flex non contraints. Corrigé par `min-width: 0` sur les conteneurs concernés.
@@ -357,3 +364,33 @@ Trois sections ont été ajoutées par rapport à la version précédente : les 
 ### Point non traité
 
 Le hero ne porte aucune preuve sociale. C'est l'ajout qui a le plus d'effet sur ce type de page, mais il suppose d'afficher une note et un nombre d'avis. Les six avis actuels étant des textes de maquette, l'afficher aujourd'hui reviendrait à mettre en avant un chiffre non authentique. À faire dès que les avis réels seront chargés.
+
+---
+
+## 11. Panier tiroir : arbitrages
+
+### Urgence : pourquoi pas « panier réservé 5 minutes »
+
+Le compte à rebours retenu est celui de la **livraison**, pas celui d'une réservation de panier.
+
+Un compteur « votre panier est réservé pendant 5 minutes » annonce une contrainte qui n'existe pas : Shopify ne bloque aucun stock tant que la commande n'est pas passée, et rien ne se produit à l'expiration. C'est une pratique commerciale trompeuse au sens des articles L.121-1 et suivants du code de la consommation, et les faux comptes à rebours font partie des motifs de sanction identifiés par la DGCCRF. Le risque est plus direct que celui des allégations : il se constate d'un simple rechargement de page.
+
+Le compte à rebours de livraison remplit la même fonction — créer une échéance — mais il est vrai, vérifiable, et il porte une information utile : la date à laquelle le client sera livré. C'est aussi le seul des deux qui reste crédible quand le client revient sur le site le lendemain.
+
+Si la décision est prise d'afficher malgré tout une réservation de panier, elle doit s'appuyer sur un mécanisme réel de mise en réserve, pas sur un simple compteur d'affichage.
+
+### Barre de livraison offerte : le seuil crée un palier inatteignable
+
+Seuil actuel 60 €, cure 1 mois à 49,90 €. Un client qui ajoute une cure d'un mois voit « Plus que 10,10 € », **mais aucun produit du catalogue ne coûte 10,10 €**. Les seules issues sont une seconde boîte (+49,90 €) ou la cure 2 mois (+39,90 €).
+
+Trois options, à trancher côté client :
+
+1. **Garder 60 €.** La barre devient un argument d'upgrade vers la cure 2 mois, qui est déjà la meilleure offre et qui débloque la livraison. C'est le choix actuel.
+2. **Descendre le seuil à 49,90 €** ou moins. La cure 1 mois part alors en livraison offerte : moins de friction, mais le levier de panier moyen disparaît.
+3. **Créer un produit d'appoint** entre 10 et 15 € (pilulier, format découverte). C'est ce qui rend la barre réellement actionnable, mais cela suppose une référence que Kemia Lab n'a pas encore.
+
+### Message avant paiement
+
+Le message par défaut est une formulation de progression, « Plus qu'une étape avant de commencer votre programme de 30 jours », et non une promesse de bénéfice.
+
+À l'étape du panier, le visiteur a déjà arbitré : ce qui fait avancer, c'est la réduction de l'inquiétude et le sentiment d'avancement, pas un argument de vente supplémentaire. Une formulation du type « à une étape de retrouver votre énergie » ajouterait par ailleurs une allégation de santé à un endroit qui n'en porte aucune aujourd'hui. Le champ est libre : il se modifie depuis le Theme Builder si l'arbitrage est différent.

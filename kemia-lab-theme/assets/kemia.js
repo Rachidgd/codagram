@@ -371,6 +371,7 @@
         });
       }
       initQuantity(document);
+      initCountdown(current || document);
     }
     if (!silent && document.getElementById('k-cart-drawer') && document.body.getAttribute('data-cart-drawer') !== 'false') {
       Overlay.open('k-cart-drawer');

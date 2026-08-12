@@ -1,8 +1,29 @@
+{%- liquid
+  assign drawer_title = section.settings.heading
+  if drawer_title == blank
+    assign drawer_title = 'cart.title' | t
+  endif
+
+  assign threshold_cents = section.settings.threshold | default: 0 | times: 100
+  assign show_progress = false
+  assign missing = 0
+  assign percent = 0
+  if section.settings.free_shipping and threshold_cents > 0
+    assign show_progress = true
+    assign missing = threshold_cents | minus: cart.total_price
+    assign percent = cart.total_price | times: 100 | divided_by: threshold_cents
+    if percent > 100
+      assign percent = 100
+    endif
+  endif
+  assign missing_money = missing | money
+-%}
+
 <div class="k-drawer k-drawer--cart" id="k-cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ 'cart.title' | t }}">
   <div class="k-drawer__overlay" data-k-close></div>
   <div class="k-drawer__panel">
     <div class="k-drawer__head">
-      <h2 class="k-h4">{{ 'cart.title' | t }}</h2>
+      <h2 class="k-h4">{{ drawer_title }}</h2>
       <button class="k-modal__close" type="button" data-k-close aria-label="{{ 'general.close' | t }}">
         {% render 'icon', name: 'close' %}
       </button>
@@ -18,6 +39,23 @@
         </div>
       {%- else -%}
         <div class="k-drawer__body">
+          {%- if show_progress -%}
+            <div class="k-shipbar{% if missing <= 0 %} is-reached{% endif %}">
+              <p class="k-shipbar__text">
+                {%- if missing > 0 -%}
+                  {% render 'icon', name: 'truck', class: 'k-icon--sm' %}
+                  <span>{{ section.settings.progress_text | replace: '[montant]', missing_money }}</span>
+                {%- else -%}
+                  {% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}
+                  <span>{{ section.settings.progress_done }}</span>
+                {%- endif -%}
+              </p>
+              <div class="k-shipbar__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ percent }}">
+                <span class="k-shipbar__fill" style="width: {{ percent }}%"></span>
+              </div>
+            </div>
+          {%- endif -%}
+
           <ul class="k-cart-lines">
             {%- for line in cart.items -%}
               <li class="k-cart-line">
@@ -46,18 +84,67 @@
               </li>
             {%- endfor -%}
           </ul>
+
+          {%- if section.settings.urgency_mode == 'delivery' -%}
+            {% render 'delivery-eta',
+              class: 'k-urgency--cart',
+              cutoff_hour: section.settings.cutoff_hour,
+              cutoff_minute: section.settings.cutoff_minute,
+              transit_days: section.settings.transit_days,
+              skip_weekend: section.settings.skip_weekend,
+              text_before: section.settings.text_before,
+              text_after: section.settings.text_after,
+              fallback: section.settings.fallback
+            %}
+          {%- endif -%}
         </div>
 
         <div class="k-drawer__foot">
+          {%- if section.settings.promise != blank -%}
+            <p class="k-cart-drawer__promise">{{ section.settings.promise }}</p>
+          {%- endif -%}
+
           <div class="k-cart-drawer__total">
             <span>{{ 'cart.subtotal' | t }}</span>
             <strong>{{ cart.total_price | money }}</strong>
           </div>
+
+          {%- if show_progress and missing <= 0 -%}
+            <div class="k-cart-drawer__line">
+              <span>{{ section.settings.shipping_label }}</span>
+              <strong class="k-cart-drawer__free">{{ section.settings.shipping_free }}</strong>
+            </div>
+          {%- endif -%}
+
           <p class="k-form-note">{{ 'cart.taxes_and_shipping' | t }}</p>
+
           <form action="{{ routes.cart_url }}" method="post">
             <button class="k-btn k-btn--block k-btn--lg" type="submit" name="checkout" data-k-track="checkout_started">{{ 'cart.checkout' | t }}</button>
           </form>
+
           <a class="k-link k-cart-drawer__view" href="{{ routes.cart_url }}">{{ 'cart.view_cart' | t }}</a>
+
+          {%- assign has_reassurance = false -%}
+          {%- for i in (1..3) -%}
+            {%- assign key = 'reassurance_' | append: i -%}
+            {%- if section.settings[key] != blank -%}{%- assign has_reassurance = true -%}{%- endif -%}
+          {%- endfor -%}
+          {%- if has_reassurance -%}
+            <ul class="k-cart-drawer__reassurance">
+              {%- for i in (1..3) -%}
+                {%- liquid
+                  assign text_key = 'reassurance_' | append: i
+                  assign icon_key = 'reassurance_icon_' | append: i
+                -%}
+                {%- if section.settings[text_key] != blank -%}
+                  <li>
+                    {% render 'icon', name: section.settings[icon_key], class: 'k-icon--sm' %}
+                    <span>{{ section.settings[text_key] }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
         </div>
       {%- endif -%}
     </div>
@@ -67,6 +154,96 @@
 {% schema %}
 {
   "name": "Panier tiroir",
-  "settings": []
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Titre du tiroir", "default": "Votre panier" },
+    { "type": "header", "content": "Livraison offerte" },
+    { "type": "checkbox", "id": "free_shipping", "label": "Afficher la barre de progression", "default": true },
+    {
+      "type": "number",
+      "id": "threshold",
+      "label": "Seuil de livraison offerte",
+      "default": 60,
+      "info": "En euros. Doit correspondre au seuil réellement configuré dans Paramètres > Expédition."
+    },
+    {
+      "type": "text",
+      "id": "progress_text",
+      "label": "Texte avant le seuil",
+      "default": "Plus que [montant] pour bénéficier de la livraison offerte",
+      "info": "[montant] est remplacé par la somme restante."
+    },
+    { "type": "text", "id": "progress_done", "label": "Texte une fois le seuil atteint", "default": "Félicitations, la livraison vous est offerte" },
+    { "type": "text", "id": "shipping_label", "label": "Libellé de la ligne frais de port", "default": "Frais de port" },
+    { "type": "text", "id": "shipping_free", "label": "Valeur affichée", "default": "offerts" },
+    { "type": "header", "content": "Urgence" },
+    {
+      "type": "select",
+      "id": "urgency_mode",
+      "label": "Type d'urgence",
+      "options": [
+        { "value": "delivery", "label": "Compte à rebours livraison" },
+        { "value": "none", "label": "Aucune" }
+      ],
+      "default": "delivery",
+      "info": "Le compte à rebours reprend l'heure limite d'expédition réelle. Il s'arrête une fois l'heure passée et laisse place au texte de repli."
+    },
+    { "type": "range", "id": "cutoff_hour", "label": "Heure limite", "min": 0, "max": 23, "step": 1, "default": 23 },
+    { "type": "range", "id": "cutoff_minute", "label": "Minute limite", "min": 0, "max": 59, "step": 1, "default": 59 },
+    { "type": "range", "id": "transit_days", "label": "Délai en jours ouvrés", "min": 1, "max": 10, "step": 1, "default": 2 },
+    { "type": "checkbox", "id": "skip_weekend", "label": "Exclure les week-ends", "default": true },
+    { "type": "text", "id": "text_before", "label": "Texte avant le compteur", "default": "Commandez dans" },
+    { "type": "text", "id": "text_after", "label": "Texte après le compteur", "default": "pour être livré le" },
+    { "type": "text", "id": "fallback", "label": "Texte de repli", "default": "Expédition sous 24 à 48h ouvrées" },
+    { "type": "header", "content": "Message avant le paiement" },
+    {
+      "type": "text",
+      "id": "promise",
+      "label": "Message",
+      "default": "Plus qu'une étape avant de commencer votre programme de 30 jours."
+    },
+    { "type": "header", "content": "Réassurance" },
+    {
+      "type": "select",
+      "id": "reassurance_icon_1",
+      "label": "Pictogramme 1",
+      "options": [
+        { "value": "lock", "label": "Cadenas" },
+        { "value": "truck", "label": "Livraison" },
+        { "value": "shield-check", "label": "Bouclier" },
+        { "value": "headset", "label": "Service client" },
+        { "value": "hexagon", "label": "Hexagone" }
+      ],
+      "default": "lock"
+    },
+    { "type": "text", "id": "reassurance_1", "label": "Texte 1", "default": "Paiement sécurisé" },
+    {
+      "type": "select",
+      "id": "reassurance_icon_2",
+      "label": "Pictogramme 2",
+      "options": [
+        { "value": "truck", "label": "Livraison" },
+        { "value": "lock", "label": "Cadenas" },
+        { "value": "shield-check", "label": "Bouclier" },
+        { "value": "headset", "label": "Service client" },
+        { "value": "hexagon", "label": "Hexagone" }
+      ],
+      "default": "truck"
+    },
+    { "type": "text", "id": "reassurance_2", "label": "Texte 2", "default": "Expédition 24/48h" },
+    {
+      "type": "select",
+      "id": "reassurance_icon_3",
+      "label": "Pictogramme 3",
+      "options": [
+        { "value": "hexagon", "label": "Hexagone" },
+        { "value": "truck", "label": "Livraison" },
+        { "value": "lock", "label": "Cadenas" },
+        { "value": "shield-check", "label": "Bouclier" },
+        { "value": "headset", "label": "Service client" }
+      ],
+      "default": "hexagon"
+    },
+    { "type": "text", "id": "reassurance_3", "label": "Texte 3", "default": "Fabriqué en France" }
+  ]
 }
 {% endschema %}

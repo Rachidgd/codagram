@@ -1,0 +1,58 @@
+{%- liquid
+  assign eta_transit = transit_days | default: 2
+  assign eta_hour = cutoff_hour | default: 23
+  assign eta_minute = cutoff_minute | default: 59
+
+  assign cutoff_total = eta_hour | times: 3600
+  assign cutoff_minutes = eta_minute | times: 60
+  assign cutoff_total = cutoff_total | plus: cutoff_minutes
+
+  assign now_total = 'now' | date: '%H' | times: 3600
+  assign now_minutes = 'now' | date: '%M' | times: 60
+  assign now_seconds = 'now' | date: '%S' | plus: 0
+  assign now_total = now_total | plus: now_minutes | plus: now_seconds
+
+  assign seconds_left = cutoff_total | minus: now_total
+  assign start_offset = 0
+  if seconds_left <= 0
+    assign seconds_left = seconds_left | plus: 86400
+    assign start_offset = 86400
+  endif
+
+  assign cursor = 'now' | date: '%s' | plus: start_offset
+  assign remaining = eta_transit
+  for i in (1..20)
+    if remaining <= 0
+      break
+    endif
+    assign cursor = cursor | plus: 86400
+    assign weekday = cursor | date: '%w' | plus: 0
+    if skip_weekend and weekday == 0
+      continue
+    endif
+    if skip_weekend and weekday == 6
+      continue
+    endif
+    assign remaining = remaining | minus: 1
+  endfor
+
+  assign delivery_weekday = cursor | date: '%w' | plus: 0
+  assign day_names = 'date.day_names' | t | split: ','
+  assign delivery_day = day_names[delivery_weekday]
+-%}
+
+<div class="k-urgency{% if class %} {{ class }}{% endif %}" data-k-countdown="{{ seconds_left }}">
+  <span class="k-urgency__live">
+    {% render 'icon', name: 'clock', class: 'k-icon--sm' %}
+    <span>
+      {{ text_before }}
+      <strong data-k-countdown-value>&nbsp;</strong>
+      {{ text_after }}
+      <strong class="k-urgency__date">{{ delivery_day }} {% render 'date', date: cursor %}</strong>
+    </span>
+  </span>
+  <span class="k-urgency__fallback">
+    {% render 'icon', name: 'truck', class: 'k-icon--sm' %}
+    <span>{{ fallback }}</span>
+  </span>
+</div>
