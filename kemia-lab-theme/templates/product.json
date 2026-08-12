@@ -352,7 +352,7 @@
         "show_dosage": true,
         "per_view": "5",
         "show_dots": true,
-        "note": "VNR : Valeurs Nutritionnelles de Référence. Les mentions affichées sous le zinc et la vitamine D3 sont des allégations autorisées ; les autres actifs portent une information factuelle.",
+        "note": "VNR : Valeurs Nutritionnelles de Référence. Les mentions affichées sous le zinc et la vitamine D3 correspondent à des allégations de santé autorisées.",
         "background": "none"
       }
     }

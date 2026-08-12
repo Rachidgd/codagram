@@ -1,6 +1,6 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.0.0 | Thème `Kemia Lab 1.0.0` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.1.2 | Thème `KEMIA LAB - v1.1.2` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
