@@ -12,7 +12,7 @@
 <section class="k-section k-section--flush-top">
   <div class="k-container">
     {%- if section.settings.show_tabs and blog.all_tags.size > 0 -%}
-      <div class="k-tabs k-blog__tabs" aria-label="Catégories">
+      <div class="k-tabs k-blog__tabs" aria-label="Catégories" data-k-blog-tabs>
         <a class="k-tab{% if current_tags == blank %} is-active{% endif %}" href="{{ blog.url }}">
           {%- if section.settings.all_icon != 'none' -%}{% render 'icon', name: section.settings.all_icon, class: 'k-icon--sm' %}{%- endif -%}
           {{ section.settings.all_label }}
@@ -37,6 +37,7 @@
       </div>
     {%- endif -%}
 
+    <div data-k-blog-results>
     {%- if show_featured -%}
       <div class="k-blog__featured-wrap">
         {%- if section.settings.featured_label != blank -%}
@@ -104,6 +105,7 @@
         <p class="k-form-note">{{ 'blogs.empty' | t }}</p>
       {%- endif -%}
     {%- endpaginate -%}
+    </div>
   </div>
 </section>
 

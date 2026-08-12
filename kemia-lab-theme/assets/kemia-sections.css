@@ -2670,6 +2670,21 @@
   margin-bottom: 34px;
 }
 
+[data-k-blog-results] {
+  transition: opacity 0.18s ease;
+}
+
+[data-k-blog-results].is-loading {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-k-blog-results] {
+    transition: none;
+  }
+}
+
 .k-blog__label {
   font-size: 13px;
   letter-spacing: 0.09em;

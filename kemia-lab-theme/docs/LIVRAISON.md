@@ -1,6 +1,6 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.1.3 | Thème `KEMIA LAB - v1.1.3` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.1.4 | Thème `KEMIA LAB - v1.1.4` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
@@ -114,7 +114,7 @@ Aucune intervention dans le code n'est nécessaire.
 
 **Test utilisateurs.** La section existe mais n'est pas placée dans le template produit tant que les données n'existent pas. Quand le dossier de test sera disponible : ajouter la section « Test utilisateurs » sur la fiche produit, puis renseigner les champs `kemia.consumer_test_*`. Tant que `consumer_test_enabled` est faux, la section reste invisible.
 
-**Catégories du blog.** Les onglets du blog sont générés à partir des étiquettes des articles et pointent vers de vraies URL (`/blogs/blog/tagged/energie`), ce qui reste indexable. Les pictogrammes se règlent dans la section Blog, un bloc par étiquette.
+**Catégories du blog.** Les onglets du blog sont générés à partir des étiquettes des articles et pointent vers de vraies URL (`/blogs/blog/tagged/energie`), ce qui reste indexable. Le clic remplace la liste des articles sans recharger la page ni remonter en haut : l'adresse et le titre du document sont mis à jour, le bouton Précédent du navigateur fonctionne. Sans JavaScript, ou pour un robot d'indexation, les onglets restent de simples liens qui chargent la page normalement. Les pictogrammes se règlent dans la section Blog, un bloc par étiquette.
 
 **Paiement fractionné.** Le bloc « ou 3x ... sans frais » de la buy box est présent mais désactivé. À n'activer qu'une fois le service de paiement en plusieurs fois réellement installé.
 
