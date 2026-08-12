@@ -1,6 +1,6 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.4.0 | Thème `KEMIA LAB - v1.4.0` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.4.1 | Thème `KEMIA LAB - v1.4.1` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
@@ -304,7 +304,7 @@ Ces points ne bloquent pas le thème mais conditionnent certaines publications.
 **Bloquant pour afficher des blocs entiers**
 - Avis clients réels (note, nombre, textes, autorisations)
 - Dossier de test utilisateurs : nombre de testeurs, durée, résultats agrégés, méthodologie
-- **Avis de professionnels** : la section existe sur la fiche produit avec deux blocs vides. Elle reste invisible sur le site tant qu'aucune citation n'est saisie. Il faut, pour chaque avis : les mots exacts du professionnel, son nom, sa fonction, et l'indication d'une éventuelle contrepartie (le champ « Mention sous les avis » est prévu pour ça, et il est obligatoire dès qu'il existe une rémunération).
+- **Avis de professionnels sur le produit** : la section « Citations et références » affiche aujourd'hui deux références réglementaires portant sur les actifs. Pour la transformer en véritables avis de professionnels, il faut, pour chaque avis : les mots exacts du professionnel, son nom, sa fonction, son autorisation écrite d'être cité à des fins commerciales, et l'indication d'une éventuelle contrepartie (le champ « Mention sous les avis » est prévu pour ça, obligatoire dès qu'il existe une rémunération). Voir §13.
 
 **Bloquant pour la mise en ligne**
 - Visuels : packshots haute définition, photos d'ambiance, visuels d'actifs, images d'articles
@@ -448,3 +448,32 @@ Ce qui est mesuré, c'est une **position**, pas un taux de conversion. Le fait d
 ### Effet de bord à traiter
 
 Remonter la note augmente l'exposition d'une moyenne calculée sur **six avis de démonstration**. Le remplacement par des avis réels devient d'autant plus prioritaire, voir §3.
+
+---
+
+## 13. Citations et références de la fiche produit
+
+### Ce qui est affiché
+
+Deux références, chacune avec son lien de vérification :
+
+| Source | Contenu affiché | Lien |
+|---|---|---|
+| Agence européenne des médicaments, comité des médicaments à base de plantes | Indication retenue par la monographie Panax ginseng : usage traditionnel pour les symptômes d'asthénie tels que la fatigue et la faiblesse | Monographie Ginseng radix |
+| Commission européenne, règlement (UE) n° 432/2012 | Libellés officiels des allégations autorisées pour le zinc et la vitamine D | EUR-Lex, version consolidée |
+
+Le texte de l'EMA est traduit de l'anglais ; la mention sous la section le précise et le lien renvoie à l'original.
+
+### Pourquoi ce ne sont pas des avis de professionnels
+
+La demande initiale était de reprendre des citations de professionnels trouvées en ligne. Cela n'a pas été fait, pour une raison de fond : **aucun professionnel ne s'est prononcé sur 4 Vitality System**. Reprendre la citation d'un pharmacien ou d'un nutritionniste parlant du ginseng en général, et l'afficher sur la fiche d'un produit qu'il n'a jamais évalué, revient à lui faire endosser ce produit. Trois problèmes s'y ajoutent : le droit au nom et à l'image de la personne citée, le droit d'auteur sur le texte repris, et la qualification de pratique commerciale trompeuse si le lecteur comprend qu'il s'agit d'un avis rendu sur le produit.
+
+Les institutions, elles, se citent : leurs documents sont publics, leur portée est explicite, et le lien permet à chacun de vérifier. C'est aussi une caution plus forte qu'un avis individuel anonyme.
+
+### Une troisième référence a été retirée
+
+Une citation de l'Anses avait été préparée. Le proxy réseau de l'environnement de développement bloque `anses.fr`, et le texte n'a donc pas pu être vérifié au mot près. Une reformulation présentée entre guillemets n'est pas une citation : l'entrée a été supprimée plutôt que publiée non vérifiée. À rajouter par le client s'il souhaite, en reprenant le texte exact depuis le site de l'Anses.
+
+### Pour passer à de vrais avis de professionnels
+
+Le bloc dispose désormais des champs `source_label` et `source_url`. Pour chaque avis à publier, réunir : la citation exacte, le nom, la fonction, le lieu ou la structure, l'autorisation écrite d'utilisation commerciale, et le lien vers la publication d'origine. Le champ « Mention sous les avis » doit indiquer l'existence d'une contrepartie éventuelle.

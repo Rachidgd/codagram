@@ -298,19 +298,25 @@
         "e1": {
           "type": "quote",
           "settings": {
-            "quote": "",
-            "name": "",
-            "role": "",
-            "detail": ""
+            "quote": "Médicament à base de plantes d'usage traditionnel, utilisé pour les symptômes d'asthénie tels que la fatigue et la faiblesse.",
+            "name": "Agence européenne des médicaments",
+            "role": "Comité des médicaments à base de plantes",
+            "detail": "Indication retenue par la monographie Panax ginseng C.A. Meyer, radix",
+            "source_label": "Voir la monographie",
+            "source_url": "https://www.ema.europa.eu/en/medicines/herbal/ginseng-radix",
+            "image": ""
           }
         },
         "e2": {
           "type": "quote",
           "settings": {
-            "quote": "",
-            "name": "",
-            "role": "",
-            "detail": ""
+            "quote": "Le zinc contribue à une fonction cognitive normale. Le zinc contribue au maintien d'un taux normal de testostérone dans le sang. La vitamine D contribue au fonctionnement normal du système immunitaire.",
+            "name": "Commission européenne",
+            "role": "Règlement (UE) n° 432/2012",
+            "detail": "Libellés officiels des allégations de santé autorisées",
+            "source_label": "Consulter le règlement",
+            "source_url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:02012R0432-20170822",
+            "image": ""
           }
         }
       },
@@ -319,10 +325,10 @@
         "e2"
       ],
       "settings": {
-        "eyebrow": "Regards de professionnels",
-        "heading": "Ce qu'en disent les professionnels",
+        "eyebrow": "Sources et références",
+        "heading": "Ce que retiennent les référentiels",
         "show_rule": true,
-        "note": "",
+        "note": "Références portant sur les actifs de la formule et sur les allégations qui leur sont associées. Elles ne constituent pas un avis rendu sur 4 Vitality System. L'indication de la monographie européenne est traduite de l'anglais ; le texte d'origine est accessible par le lien.",
         "background": "none"
       }
     },

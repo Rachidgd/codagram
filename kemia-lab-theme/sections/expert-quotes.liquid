@@ -46,6 +46,12 @@
                   {%- endif -%}
                 </span>
               </figcaption>
+              {%- if block.settings.source_url != blank and block.settings.source_label != blank -%}
+                <a class="k-expert__source" href="{{ block.settings.source_url }}" target="_blank" rel="noopener nofollow">
+                  {{ block.settings.source_label }}
+                  {% render 'icon', name: 'arrow-right', class: 'k-icon--xs' %}
+                </a>
+              {%- endif -%}
             </figure>
           {%- endif -%}
         {%- endfor -%}
@@ -57,16 +63,16 @@
     </div>
   </section>
 {%- else -%}
-  {% render 'section-empty', message: "Avis de professionnels : ajoutez un bloc Avis et renseignez la citation. Tant qu'aucune citation n'est saisie, la section reste invisible sur le site." %}
+  {% render 'section-empty', message: "Citations et références : ajoutez un bloc et renseignez la citation. Toute citation reprise d'un tiers doit porter son lien de source. Tant qu'aucune citation n'est saisie, la section reste invisible sur le site." %}
 {%- endif -%}
 
 {% schema %}
 {
-  "name": "Avis de professionnels",
+  "name": "Citations et références",
   "class": "k-experts-section",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Regards de professionnels" },
-    { "type": "text", "id": "heading", "label": "Titre", "default": "Ce qu'en disent les professionnels" },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Sources et références" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Ce que disent les référentiels" },
     { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true },
     {
       "type": "text",
@@ -97,13 +103,15 @@
         { "type": "text", "id": "name", "label": "Nom" },
         { "type": "text", "id": "role", "label": "Fonction", "info": "Par exemple : pharmacien, diététicien-nutritionniste." },
         { "type": "text", "id": "detail", "label": "Précision", "info": "Par exemple : ville, numéro d'ordre, structure." },
-        { "type": "image_picker", "id": "image", "label": "Photo" }
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "source_label", "label": "Libellé de la source", "info": "Par exemple : Voir la monographie, Lire l'article." },
+        { "type": "url", "id": "source_url", "label": "Lien vers la source", "info": "Obligatoire dès qu'une citation est reprise d'un tiers : le lecteur doit pouvoir la vérifier." }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Avis de professionnels",
+      "name": "Citations et références",
       "blocks": [{ "type": "quote" }, { "type": "quote" }]
     }
   ]

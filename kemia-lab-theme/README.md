@@ -51,3 +51,7 @@ Le thème s'importe sous forme d'archive ZIP contenant les dossiers ci-dessus à
 Contrainte Shopify à connaître : **les valeurs `name` des schémas de section, de bloc et de preset sont limitées à 25 caractères.** Au-delà, Shopify écarte silencieusement le fichier à l'import.
 
 Voir `docs/LIVRAISON.md` pour la recette complète et les éléments encore attendus du client.
+
+## Attributions
+
+L'icône « bras fléchi » du jeu de pictogrammes est dérivée de Lucide (licence ISC).
