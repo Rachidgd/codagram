@@ -209,14 +209,21 @@ Deux régimes coexistent et ne portent pas le même risque.
 
 La monographie EMA du Panax ginseng retient l'usage traditionnel contre les symptômes d'asthénie, fatigue et faiblesse. La Commission E allemande reconnaît l'action du kola contre la fatigue physique et intellectuelle.
 
-### Actifs sans allégation disponible
+### Allégations sous risque assumé
 
-| Actif | Raison | Libellé retenu |
-|---|---|---|
-| L-Tyrosine | Avis EFSA 2011 : la relation avec la synthèse de dopamine est établie, mais l'allégation n'a pas été autorisée, l'apport protéique alimentaire étant jugé suffisant. Les allégations attention (ID 440, 1672, 1930) et fonction musculaire (ID 1929) ont reçu un avis défavorable | L'acide aminé le plus dosé |
-| CDP-Choline | Les allégations choline exigent 82,5 mg de choline par portion. 200 mg de CDP-Choline en apportent environ 43 mg, seuil non atteint. L'allégation mémoire de la citicoline a été formellement refusée par le règlement (UE) 2025/2223, applicable depuis le 25 novembre 2025 | Choline sous forme citicoline |
+**Décision client du 12/08/2026.** Ces deux libellés sont affichés en connaissance de cause, à revalider avec le fournisseur de matières premières, qui dispose des dossiers de substantiation.
 
-Ces deux actifs ne relèvent pas du régime transitoire des plantes : leurs allégations ont été évaluées puis écartées. Leur attribuer un effet reprendrait une allégation explicitement non autorisée, ce qui expose davantage que le régime en attente. Seul un libellé factuel est utilisable en l'état.
+| Libellé affiché | Actif | Statut réglementaire réel | Repli conforme |
+|---|---|---|---|
+| Concentration et vigilance | L-Tyrosine | Avis EFSA 2011 : la relation avec la synthèse de dopamine est établie, mais l'allégation n'a pas été autorisée, l'apport protéique alimentaire étant jugé suffisant. Les allégations attention (ID 440, 1672, 1930) et fonction musculaire (ID 1929) ont reçu un avis défavorable | L'acide aminé le plus dosé |
+| Mémoire et clarté mentale | CDP-Choline | Allégation mémoire **formellement refusée** par le règlement (UE) 2025/2223, applicable depuis le 25 novembre 2025, après avis EFSA défavorable de juillet 2024. Les allégations choline du 432/2012 exigent 82,5 mg par portion, la formule en apporte environ 43 mg | Choline sous forme citicoline |
+
+Ces deux actifs **ne relèvent pas du régime transitoire de l'article 28** dont bénéficient les plantes. La différence de nature du risque :
+
+- Kola, ginseng, safran : allégations jamais évaluées, utilisables pendant la période transitoire. Un contrôle porterait sur la substantiation du dossier.
+- L-Tyrosine, CDP-Choline : allégations évaluées puis écartées. Un contrôle opposerait un texte réglementaire daté, sans débat possible sur le fond. Le cas de la CDP-Choline est le plus exposé de la fiche, le refus étant récent et nominatif.
+
+Les deux libellés de repli sont prêts et enregistrés dans le champ `source_text` de chaque métaobjet Actif. Leur remise en place est une modification de contenu, sans intervention sur le thème.
 
 ### Formulations interdites
 
@@ -225,8 +232,8 @@ Ces deux actifs ne relèvent pas du régime transitoire des plantes : leurs all�
 | Réduit la fatigue attribué au produit dans son ensemble | L'allégation appartient au kola et au ginseng, pas à la formule. Elle doit rester rattachée à la plante. |
 | Métabolisme énergétique normal | Réservé aux vitamines B, à la vitamine C, au magnésium et au fer. Aucun n'est présent. |
 | Améliore la concentration, augmente la mémoire, stimule la testostérone | Verbes d'amélioration ou de stimulation non autorisés. Les formulations autorisées parlent de fonction normale ou de maintien. |
-| Effet mémoire attribué à la CDP-Choline | Refusé par le règlement (UE) 2025/2223 depuis le 25 novembre 2025. |
-| Effet dopamine, vigilance ou concentration attribué à la L-Tyrosine | Allégations évaluées et non autorisées. |
+| Effet mémoire attribué à la CDP-Choline | Refusé par le règlement (UE) 2025/2223 depuis le 25 novembre 2025. **Affiché malgré tout, décision client du 12/08/2026.** |
+| Effet dopamine, vigilance ou concentration attribué à la L-Tyrosine | Allégations évaluées et non autorisées. **Affiché malgré tout, décision client du 12/08/2026.** |
 | Allégations liées à la caféine (vigilance, concentration) | Avis EFSA favorable mais **non repris** par la Commission. Non autorisées. |
 | Sans nervosité, sans effet rebond | Allégation d'absence d'effet indésirable. |
 | Cliniquement prouvé, efficacité clinique | Aucun protocole ne le justifie à ce jour. |
@@ -236,8 +243,8 @@ Ces deux actifs ne relèvent pas du régime transitoire des plantes : leurs all�
 
 | Actif | Bénéfice affiché | Base |
 |---|---|---|
-| L-Tyrosine | L'acide aminé le plus dosé | Factuel |
-| CDP-Choline | Choline sous forme citicoline | Factuel |
+| L-Tyrosine | Concentration et vigilance | Risque assumé |
+| CDP-Choline | Mémoire et clarté mentale | Risque assumé |
 | Extrait de kola | Aide à réduire la fatigue | En attente |
 | Extrait de ginseng | Tonus et vitalité | En attente |
 | Extrait de safran | Équilibre émotionnel | En attente, ID 2038 |
