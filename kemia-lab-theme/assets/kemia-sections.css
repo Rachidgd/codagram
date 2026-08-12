@@ -3404,3 +3404,113 @@
 .k-ingredients__advice .k-link {
   margin-top: 4px;
 }
+
+.k-media--plain {
+  background: transparent;
+}
+
+.k-actifs__head {
+  margin-bottom: 34px;
+}
+
+.k-actifs {
+  position: relative;
+}
+
+.k-actifs__track {
+  align-items: start;
+}
+
+.k-actif {
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  text-align: center;
+  padding: 0 6px;
+}
+
+.k-actif__media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 168px);
+  margin-bottom: 12px;
+}
+
+.k-actif__media::before {
+  content: '';
+  position: absolute;
+  inset: 6%;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 45%, var(--k-bg-beige) 0%, rgba(248, 241, 233, 0) 72%);
+}
+
+.k-actif__media .k-media {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.k-actif__name {
+  font-family: var(--k-font-heading);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--k-ink);
+  line-height: 1.3;
+}
+
+.k-actif__benefit {
+  font-family: var(--k-font-heading);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  color: var(--k-gold);
+  max-width: 20ch;
+}
+
+.k-actif__dose {
+  margin-top: 2px;
+  font-size: 12.5px;
+  color: var(--k-body);
+  font-variant-numeric: tabular-nums;
+}
+
+.k-actifs__nav {
+  display: none;
+  position: absolute;
+  top: calc(50% - 44px);
+  z-index: 2;
+}
+
+.k-actifs__nav--prev {
+  left: -18px;
+}
+
+.k-actifs__nav--next {
+  right: -18px;
+}
+
+.k-actifs__note {
+  margin-top: 24px;
+  font-size: 11.5px;
+  color: var(--k-body);
+  text-align: center;
+}
+
+.k-actifs__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+@media screen and (min-width: 990px) {
+  .k-actifs__nav {
+    display: flex;
+  }
+
+  .k-rail--5 {
+    --k-rail-item: 18.4%;
+  }
+}

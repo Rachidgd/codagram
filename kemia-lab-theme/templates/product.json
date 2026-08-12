@@ -3,10 +3,22 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "eyebrow": { "type": "eyebrow", "settings": {} },
-        "title": { "type": "title", "settings": {} },
-        "tagline": { "type": "tagline", "settings": {} },
-        "usp": { "type": "usp", "settings": {} },
+        "eyebrow": {
+          "type": "eyebrow",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "tagline": {
+          "type": "tagline",
+          "settings": {}
+        },
+        "usp": {
+          "type": "usp",
+          "settings": {}
+        },
         "trust": {
           "type": "trust",
           "settings": {
@@ -24,10 +36,30 @@
             "text_4": "strictes"
           }
         },
-        "rating": { "type": "rating", "settings": { "prefix": "basé sur", "suffix": "avis clients" } },
-        "price": { "type": "price", "settings": {} },
-        "installment": { "type": "installment", "settings": { "enabled": false } },
-        "cures": { "type": "cures", "settings": { "heading": "Choisissez votre offre", "best_label": "Meilleure offre" } },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "prefix": "basé sur",
+            "suffix": "avis clients"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "installment": {
+          "type": "installment",
+          "settings": {
+            "enabled": false
+          }
+        },
+        "cures": {
+          "type": "cures",
+          "settings": {
+            "heading": "Choisissez votre offre",
+            "best_label": "Meilleure offre"
+          }
+        },
         "urgency": {
           "type": "urgency",
           "settings": {
@@ -41,8 +73,18 @@
             "fallback": "Expédition sous 24 à 48h ouvrées"
           }
         },
-        "quantity": { "type": "quantity", "settings": { "label": "Quantité" } },
-        "buy": { "type": "buy", "settings": { "label": "Ajouter au panier" } },
+        "quantity": {
+          "type": "quantity",
+          "settings": {
+            "label": "Quantité"
+          }
+        },
+        "buy": {
+          "type": "buy",
+          "settings": {
+            "label": "Ajouter au panier"
+          }
+        },
         "reassurance": {
           "type": "reassurance",
           "settings": {
@@ -80,11 +122,33 @@
     "benefits": {
       "type": "benefits-band",
       "blocks": {
-        "f1": { "type": "figure", "settings": { "value": "7", "label": "actifs" } },
-        "f2": { "type": "figure", "settings": { "value": "2", "label": "gélules par jour" } },
-        "f3": { "type": "figure", "settings": { "value": "30", "label": "jours" } }
+        "f1": {
+          "type": "figure",
+          "settings": {
+            "value": "7",
+            "label": "actifs"
+          }
+        },
+        "f2": {
+          "type": "figure",
+          "settings": {
+            "value": "2",
+            "label": "gélules par jour"
+          }
+        },
+        "f3": {
+          "type": "figure",
+          "settings": {
+            "value": "30",
+            "label": "jours"
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3"
+      ],
       "settings": {
         "eyebrow": "Quatre bénéfices, une seule formule",
         "heading": "Ce que la formule vous apporte au quotidien",
@@ -105,12 +169,41 @@
     "comparison": {
       "type": "product-comparison",
       "blocks": {
-        "row-1": { "type": "row", "settings": { "brand_text": "Une seule formule, 4 bénéfices essentiels", "other_text": "Plusieurs produits pour des bénéfices isolés" } },
-        "row-2": { "type": "row", "settings": { "brand_text": "2 gélules par jour, une routine simple", "other_text": "Plusieurs prises quotidiennes" } },
-        "row-3": { "type": "row", "settings": { "brand_text": "Des dosages affichés pour chaque actif", "other_text": "Des compositions difficiles à comparer" } },
-        "row-4": { "type": "row", "settings": { "brand_text": "Un seul budget à suivre", "other_text": "Un budget réparti sur plusieurs produits" } }
+        "row-1": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Une seule formule, 4 bénéfices essentiels",
+            "other_text": "Plusieurs produits pour des bénéfices isolés"
+          }
+        },
+        "row-2": {
+          "type": "row",
+          "settings": {
+            "brand_text": "2 gélules par jour, une routine simple",
+            "other_text": "Plusieurs prises quotidiennes"
+          }
+        },
+        "row-3": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Des dosages affichés pour chaque actif",
+            "other_text": "Des compositions difficiles à comparer"
+          }
+        },
+        "row-4": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Un seul budget à suivre",
+            "other_text": "Un budget réparti sur plusieurs produits"
+          }
+        }
       },
-      "block_order": ["row-1", "row-2", "row-3", "row-4"],
+      "block_order": [
+        "row-1",
+        "row-2",
+        "row-3",
+        "row-4"
+      ],
       "settings": {
         "eyebrow": "Comparatif",
         "heading": "Pourquoi choisir 4 Vitality System ?",
@@ -182,7 +275,12 @@
           }
         }
       },
-      "block_order": ["q1", "q2", "q3", "q4"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
       "settings": {
         "eyebrow": "",
         "heading": "Vos questions, nos réponses",
@@ -197,13 +295,66 @@
     "reassurance": {
       "type": "reassurance",
       "blocks": {
-        "r1": { "type": "item", "settings": { "icon": "truck", "title": "Livraison offerte", "text": "dès 60€ d'achat" } },
-        "r2": { "type": "item", "settings": { "icon": "lock", "title": "Paiement sécurisé", "text": "100% sécurisé" } },
-        "r3": { "type": "item", "settings": { "icon": "shield-check", "title": "Qualité contrôlée", "text": "Formules testées et approuvées" } },
-        "r4": { "type": "item", "settings": { "icon": "leaf", "title": "Ingrédients premium", "text": "sélectionnés avec exigence" } }
+        "r1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Livraison offerte",
+            "text": "dès 60€ d'achat"
+          }
+        },
+        "r2": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "title": "Paiement sécurisé",
+            "text": "100% sécurisé"
+          }
+        },
+        "r3": {
+          "type": "item",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Qualité contrôlée",
+            "text": "Formules testées et approuvées"
+          }
+        },
+        "r4": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "title": "Ingrédients premium",
+            "text": "sélectionnés avec exigence"
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3", "r4"],
-      "settings": { "layout": "inline", "background": "soft", "dividers": false, "compact": true }
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "settings": {
+        "layout": "inline",
+        "background": "soft",
+        "dividers": false,
+        "compact": true
+      }
+    },
+    "actifs": {
+      "type": "ingredients-slider",
+      "settings": {
+        "eyebrow": "Les actifs de la formule",
+        "heading": "actifs, un rôle pour chacun",
+        "show_count": true,
+        "heading_style": "sans",
+        "show_rule": true,
+        "show_dosage": true,
+        "per_view": "5",
+        "show_dots": true,
+        "note": "VNR : Valeurs Nutritionnelles de Référence. Les mentions affichées sous le zinc et la vitamine D3 sont des allégations autorisées ; les autres actifs portent une information factuelle.",
+        "background": "none"
+      }
     }
   },
   "order": [
@@ -211,6 +362,7 @@
     "benefits",
     "pillars",
     "comparison",
+    "actifs",
     "ingredients",
     "reviews",
     "faq",
