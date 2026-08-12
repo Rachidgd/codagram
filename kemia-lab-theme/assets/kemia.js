@@ -400,7 +400,10 @@
         refreshCart(data.sections && data.sections['cart-drawer'], true);
       })
       .catch(function () {
-        window.location.href = root + 'cart';
+        fetch(root + '?section_id=cart-drawer')
+          .then(function (response) { return response.text(); })
+          .then(function (markup) { refreshCart(markup, true); })
+          .catch(function () {});
       });
   }
 

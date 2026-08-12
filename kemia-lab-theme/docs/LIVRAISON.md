@@ -1,6 +1,6 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.3.1 | Thème `KEMIA LAB - v1.3.1` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.4.0 | Thème `KEMIA LAB - v1.4.0` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
@@ -145,6 +145,8 @@ Aucune intervention dans le code n'est nécessaire.
 | Comparaisons numériques sur données optionnelles | 0 comparaison non gardée sur l'ensemble du thème |
 | Panier tiroir | Testé sur moteur Liquid : panier vide, sous le seuil, seuil exact, au-dessus du seuil |
 | Proposition de cure supérieure | Testée sur moteur Liquid : cure 1 mois, cure 2 mois, cure 3 mois, quantité multiple |
+| Blocs déclarés au schéma sans rendu | 0 sur les 35 sections, contrôle ajouté à la recette |
+| Position des blocs de la buy box | Mesurée sous Chromium à 390, 820 et 1440 px |
 
 Anomalies trouvées et corrigées :
 1. Débordement horizontal de 148 px sur la fiche produit à 390 px, causé par des enfants de grille et de flex non contraints. Corrigé par `min-width: 0` sur les conteneurs concernés.
@@ -155,6 +157,7 @@ Anomalies trouvées et corrigées :
 6. Quand une section reste vide faute de données, un message d'explication s'affiche maintenant dans le Theme Builder uniquement, jamais sur le site.
 7. Les champs méta de type texte enrichi s'affichaient en JSON brut au lieu du texte. Trois emplacements étaient concernés : l'accordéon Précautions d'emploi, la fenêtre Précautions de la section Ingrédients et la fenêtre Méthodologie du test utilisateurs. Le rendu passe désormais par le snippet `rich-text-field`, qui parcourt la structure et produit du HTML sémantique. Le texte est échappé au passage.
 8. Une comparaison numérique sur un champ méta non renseigné provoque une erreur Liquid visible sur la page (« comparison of Nil with 0 failed »). Le cas se produit dès qu'une section est ajoutée sans sélectionner de produit source. Onze occurrences corrigées dans neuf sections et un snippet, par normalisation avec `| plus: 0`.
+9. Le sélecteur de cure avait disparu de la fiche produit. En factorisant le calcul de livraison dans un snippet partagé, la plage de code remplacée débordait sur le bloc voisin et emportait tout le rendu du sélecteur de variantes. Le bloc restait déclaré au schéma et présent dans le gabarit, donc toutes les validations passaient : seul le rendu manquait. Restauré depuis l'historique. **Un contrôle a été ajouté à la recette : tout type de bloc déclaré dans un schéma doit avoir un cas de rendu correspondant.**
 
 ### Non couvert par cette recette
 La prévisualisation du thème sur le domaine `myshopify.com` est bloquée par le proxy réseau de l'environnement de développement. La recette visuelle a donc été faite sur un rendu local utilisant les feuilles de style réelles du thème et la structure HTML réelle des sections. **Il reste à ouvrir l'aperçu du thème dans Shopify pour valider le rendu avec les données réelles**, en particulier : ajout au panier, tiroir panier, sélection de cure, barre d'achat mobile, fenêtre des avis et formulaire de contact.
@@ -407,3 +410,41 @@ Formulations écartées et raisons :
 | Plus qu'une étape vers la meilleure version de vous-même | Formulation creuse, interchangeable avec n'importe quelle marque. |
 
 Ce message porte une allégation de bénéfice. Il reprend la promesse déjà affichée sous le titre produit et n'introduit donc pas de risque nouveau, mais il relève du même arbitrage assumé le 12/08/2026. Le champ est libre depuis le Theme Builder.
+
+---
+
+## 12. Ordre des blocs de la fiche produit
+
+Question posée : faut-il remonter le prix et la note sous le titre ?
+
+### Mesures
+
+Position du haut de chaque bloc, en pixels depuis le haut du document, mesurée sous Chromium sur le rendu réel.
+
+| Bloc | Ordre initial | Ordre retenu | Pli mobile (844 px) |
+|---|---|---|---|
+| Titre | 573 | 573 | visible dans les deux cas |
+| Note et avis | 1026 | 634 | passait 182 px sous le pli, désormais visible |
+| Prix | 1087 | 763 | passait 243 px sous le pli, désormais visible |
+| Sélecteur de cure | 1146 | 1025 | reste sous le pli, remonté de 121 px |
+| Bouton d'ajout | 1557 | 1436 | reste sous le pli, remonté de 121 px |
+
+Sur tablette (820 × 1180) le constat est identique : la note passait 7 px sous le pli, le prix 68 px. Sur ordinateur (1440 × 900) les deux étaient déjà visibles : **la question ne se posait que sur mobile et tablette**.
+
+### Ordre retenu
+
+`sur-titre > titre > note > accroche > prix > paiement fractionné > paragraphe > sélecteur de cure > urgence > quantité > ajout au panier > réassurance > repères qualité > accordéons`
+
+Trois déplacements :
+
+- **La note remonte sous le titre.** C'est la convention de la quasi-totalité des sites marchands, et la preuve sociale se lit mieux collée à l'identité du produit qu'isolée au-dessus du prix.
+- **Le prix remonte sous l'accroche.** Il pose le point de référence avant que le sélecteur n'affiche les cures 2 et 3 mois, qui apparaissent alors comme des économies plutôt que comme des prix plus élevés.
+- **Le paragraphe descriptif et les repères qualité descendent.** Ce sont eux qui repoussaient le prix hors de l'écran. Les repères qualité passent sous le bouton d'achat, où ils soutiennent la décision au moment de l'hésitation.
+
+### Limite de l'analyse
+
+Ce qui est mesuré, c'est une **position**, pas un taux de conversion. Le fait d'être au-dessus du pli est un indicateur solide et documenté, pas une preuve. Cet ordre est le meilleur pari par défaut ; il devra être confirmé par un test A/B quand le trafic le permettra.
+
+### Effet de bord à traiter
+
+Remonter la note augmente l'exposition d'une moyenne calculée sur **six avis de démonstration**. Le remplacement par des avis réels devient d'autant plus prioritaire, voir §3.

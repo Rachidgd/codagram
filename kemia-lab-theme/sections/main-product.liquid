@@ -167,6 +167,73 @@
               </div>
             {%- endif -%}
 
+          {%- when 'cures' -%}
+            {%- if product.variants.size > 1 -%}
+              <fieldset class="k-cures" {{ block.shopify_attributes }}>
+                {%- if block.settings.heading != blank -%}
+                  <legend class="k-cures__legend">{{ block.settings.heading }}</legend>
+                {%- endif -%}
+                <div class="k-cures__grid">
+                  {%- for variant in product.variants -%}
+                    {%- liquid
+                      assign is_best = false
+                      if forloop.index == best_index and block.settings.best_label != blank
+                        assign is_best = true
+                      endif
+                      assign percent = 0
+                      if variant.compare_at_price > variant.price
+                        assign percent = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price
+                      endif
+                      assign duration = variant.metafields.kemia.duration.value
+                      assign note = variant.metafields.kemia.note.value
+                    -%}
+                    <label
+                      class="k-cure{% if variant == current_variant %} is-selected{% endif %}{% unless variant.available %} is-unavailable{% endunless %}"
+                      data-k-cure-option
+                      data-variant-id="{{ variant.id }}"
+                      data-available="{{ variant.available }}"
+                      data-price-formatted="{{ variant.price | money }}"
+                      data-compare-formatted="{{ variant.compare_at_price | money }}"
+                      data-has-compare="{% if variant.compare_at_price > variant.price %}true{% else %}false{% endif %}"
+                      data-installment-formatted="{{ variant.price | divided_by: 3 | money }}"
+                    >
+                      <input
+                        class="k-visually-hidden"
+                        type="radio"
+                        name="cure-{{ section.id }}"
+                        value="{{ variant.id }}"
+                        {% if variant == current_variant %}checked{% endif %}
+                        {% unless variant.available %}disabled{% endunless %}
+                      >
+                      {%- if is_best -%}
+                        <span class="k-badge k-badge--blue k-cure__best">{{ block.settings.best_label }}</span>
+                      {%- endif -%}
+                      <span class="k-cure__check" aria-hidden="true">{% render 'icon', name: 'check', class: 'k-icon--xs' %}</span>
+                      <span class="k-cure__media">
+                        {% render 'image', image: variant.image, ratio: '100%', fit: 'contain', sizes: '120px', placeholder_icon: 'bottle' %}
+                      </span>
+                      <span class="k-cure__title">{{ variant.title }}</span>
+                      {%- if duration != blank -%}
+                        <span class="k-cure__duration">{{ duration }}</span>
+                      {%- endif -%}
+                      {%- if percent > 0 -%}
+                        <span class="k-cure__discount">-{{ percent }} %</span>
+                      {%- endif -%}
+                      <span class="k-cure__prices">
+                        <span class="k-cure__price">{{ variant.price | money }}</span>
+                        {%- if variant.compare_at_price > variant.price -%}
+                          <s class="k-cure__compare">{{ variant.compare_at_price | money }}</s>
+                        {%- endif -%}
+                      </span>
+                      {%- if note != blank -%}
+                        <span class="k-cure__note">{{ note }}</span>
+                      {%- endif -%}
+                    </label>
+                  {%- endfor -%}
+                </div>
+              </fieldset>
+            {%- endif -%}
+
           {%- when 'quantity' -%}
             <div class="k-buybox__quantity" {{ block.shopify_attributes }}>
               <label class="k-label" for="quantity-{{ section.id }}">{{ block.settings.label }}</label>

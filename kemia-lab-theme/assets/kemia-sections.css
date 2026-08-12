@@ -402,12 +402,6 @@
   margin-top: 14px;
 }
 
-.k-cart-drawer__view {
-  display: flex;
-  justify-content: center;
-  margin-top: 14px;
-  color: var(--k-body);
-}
 
 .k-footer {
   padding-block: clamp(40px, 5vw, 64px) 0;
