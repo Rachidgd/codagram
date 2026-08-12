@@ -181,6 +181,53 @@ Ces textes sont modifiables dans Contenu > Métaobjets > Bénéfice Kemia. Toute
 
 ---
 
+## 8bis. Matrice des allégations
+
+**Décision client du 12/08/2026 : la formule reste inchangée.** Aucun nutriment porteur d'une allégation « fatigue » n'est ajouté. Le site ne doit donc jamais affirmer, directement ou indirectement, que le produit réduit la fatigue ou apporte un regain d'énergie.
+
+### Ce que la formule autorise
+
+| Allégation | Actif support | Dosage présent | Statut | Texte autorisé |
+|---|---|---|---|---|
+| Fonction cognitive normale | Zinc | 10 mg, 100 % VNR | VERT | Le zinc contribue à une fonction cognitive normale. |
+| Protection contre le stress oxydatif | Zinc | 10 mg, 100 % VNR | VERT | Le zinc contribue à la protection des cellules contre le stress oxydatif. |
+| Taux normal de testostérone | Zinc | 10 mg, 100 % VNR | VERT | Le zinc contribue au maintien d'un taux normal de testostérone dans le sang. |
+| Fertilité et reproduction normales | Zinc | 10 mg, 100 % VNR | VERT | Non utilisé actuellement, disponible si besoin. |
+| Fonction musculaire normale | Vitamine D3 | 50 µg | VERT | La vitamine D contribue au maintien d'une fonction musculaire normale. |
+| Fonctionnement normal du système immunitaire | Vitamine D3 | 50 µg | VERT | Non utilisé actuellement, disponible si besoin. |
+
+### Ce que la formule n'autorise pas
+
+| Allégation | Statut | Raison |
+|---|---|---|
+| Réduit la fatigue, anti-fatigue, regain d'énergie | ROUGE | Allégation réservée à la vitamine C, aux vitamines B2, B3, B5, B6, B9, B12, au magnésium et au fer. Aucun n'est présent dans la formule. |
+| Métabolisme énergétique normal | ROUGE | Même liste de nutriments, aucun présent. |
+| Améliore la concentration, augmente la mémoire | ROUGE | Formulation d'amélioration non autorisée. La formulation autorisée est « contribue à une fonction cognitive normale ». |
+| Sans nervosité, sans effet rebond | ROUGE | Allégation d'absence d'effet indésirable, non autorisée. |
+| Cliniquement prouvé, efficacité clinique | ROUGE | Aucun protocole d'étude ne le justifie à ce jour. |
+| Unique sur le marché, seule formule du marché | ROUGE | Aucun benchmark ne le démontre. |
+
+### Formulations retenues sur le site
+
+- Accroche produit : « Énergie. Concentration. Vitalité. » Positionnement de territoire, sans promesse d'effet.
+- Promesse produit : « Une seule formule pour les journées qui demandent de l'énergie et de la concentration. » Décrit le besoin du client, pas un effet du produit, puis enchaîne sur les deux allégations autorisées.
+- Les quatre bénéfices affichés sur la fiche produit et la homepage reprennent uniquement des allégations autorisées.
+
+### Point de vigilance : les témoignages
+
+Un avis client ne permet pas d'affirmer indirectement ce qui serait interdit dans le texte de la marque. Deux témoignages de démonstration actuellement en ligne portent ce risque :
+
+- « j'ai retrouvé de l'énergie tout au long de la journée » (Thomas D.)
+- « une vraie différence sur ma vitalité et ma concentration » (Yassine K.)
+
+Ces textes proviennent de la maquette et sont destinés à être remplacés. Lors du chargement des avis réels, écarter ceux qui affirment un effet que la formule ne peut pas revendiquer, ou les publier sans les mettre en avant dans les blocs de tête.
+
+### Si la décision évolue
+
+Ajouter à la formule un seul des nutriments suivants, au dosage minimal requis, débloque immédiatement « contribue à réduire la fatigue » : vitamine C, B2, B3, B5, B6, B9, B12, magnésium ou fer. Aucune modification du thème ne serait nécessaire, seulement la réécriture des champs méta concernés.
+
+---
+
 ## 9. Éléments encore attendus du client
 
 Ces points ne bloquent pas le thème mais conditionnent certaines publications.
