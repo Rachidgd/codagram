@@ -1,6 +1,6 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.5.1 | Thème `KEMIA LAB - v1.5.1` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.6.0 | Thème `KEMIA LAB - v1.6.0` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
@@ -570,3 +570,80 @@ Le mode retenu sur l'accueil est **Bulles animées**. Les pastilles ont un rayon
 L'apparition repose sur un `IntersectionObserver` et l'attribut `data-k-reveal`, réutilisable sur n'importe quel élément. Sans `IntersectionObserver`, le contenu s'affiche directement. Si le visiteur a activé la réduction des animations dans son système, ni l'apparition ni le flottement ne se déclenchent : le contenu est visible d'emblée.
 
 Le texte a été réduit de deux paragraphes à une phrase, et les trois constats de phrases complètes à des fragments de quatre à six mots. Le mode deux colonnes reste disponible dans le builder si le format long est préféré.
+
+---
+
+## 15. Structure de la page d'accueil
+
+### Ce que l'audit a montré
+
+Mesure faite sur le contenu réel, pas à l'œil : 911 mots répartis sur 15 sections, et les mêmes faits produit répétés d'une section à l'autre.
+
+| Expression | Sections concernées, avant |
+|---|---|
+| 2 gélules par jour | 5 |
+| 7 actifs | 4 |
+| une seule formule | 3 |
+| 30 jours | 3 |
+
+L'argument « ne pas empiler plusieurs pots » était développé trois fois : dans le constat, dans l'introduction du bandeau bénéfices, et dans le comparatif. La section « Pourquoi choisir Kemia Lab » reprenait par ailleurs, en phrases longues, trois des quatre repères déjà affichés en pictogrammes dans le hero.
+
+### Règle appliquée
+
+**Un fait, une section propriétaire.** Chaque information n'est développée qu'à un seul endroit ; les autres sections y renvoient sans la redire.
+
+| Fait | Section propriétaire |
+|---|---|
+| 7 actifs, 2 gélules, 30 jours | Bandeau bénéfices, sous forme de chiffres |
+| Le rituel quotidien | Mode d'emploi |
+| Les noms d'actifs et leurs rôles | Composition |
+| L'argument contre l'empilement de produits | Comparatif |
+| Les réponses détaillées | FAQ |
+
+### Ordre retenu, par étape AIDA
+
+| # | Section | Étape | Rôle unique |
+|---|---|---|---|
+| 1 | Hero | Attention | La promesse, le mot-clé, le premier appel à l'action |
+| 2 | Réassurance | Attention | Lever le doute logistique sous le pli |
+| 3 | Le constat | Intérêt | Nommer le problème, sans encore parler du produit |
+| 4 | Bandeau bénéfices | Désir | Ce que la cure apporte, et les trois chiffres |
+| 5 | Composition | Désir | Ce qu'il y a dedans, la preuve |
+| 6 | Paroles de professionnels | Désir | Caution externe |
+| 7 | Comparatif | Désir | Pourquoi celle-ci plutôt qu'une autre |
+| 8 | Produit à la une | Désir vers Action | Le produit, le prix, l'appel à l'action |
+| 9 | Mode d'emploi | Action | Lever l'objection de contrainte |
+| 10 | Avis clients | Action | Preuve sociale |
+| 11 | Questions fréquentes | Action | Dernières objections et longue traîne |
+| 12 | Appel à l'action final | Action | Conclure |
+| 13 | Blog | — | Contenu et référencement |
+| 14 | Newsletter | — | Récupérer les visiteurs qui n'achètent pas |
+
+Deux corrections de fond par rapport à l'ordre précédent : le constat passe de la 7e à la 3e position, et le comparatif remonte avant le produit à la une, pour que le visiteur arrive sur le prix en ayant déjà écarté les alternatives.
+
+**Section supprimée : « Pourquoi choisir Kemia Lab ».** Quatre-vingt-deux mots qui reformulaient les pictogrammes du hero, placés après le comparatif, à un endroit du parcours où le visiteur cherche à décider et non à découvrir la marque. Le discours de marque reste accessible par la page À propos, présente au menu. La section reste disponible dans le Theme Builder.
+
+### Répartition du texte
+
+| | Avant | Après |
+|---|---|---|
+| Argumentaire commercial | 679 mots | 561 mots |
+| FAQ, contenu de référencement | 232 mots | 355 mots |
+
+L'argumentaire perd 118 mots, la FAQ en gagne 123. Le volume total est stable, mais il a changé de nature : moins de phrases qui redisent, plus de réponses qui couvrent des requêtes réelles.
+
+### Mot-clé et champ sémantique
+
+Le mot-clé principal apparaît dans cinq titres, chaque fois avec une formulation différente, jamais deux fois à l'identique.
+
+| Section | Titre | Angle |
+|---|---|---|
+| Hero | Le complément alimentaire contre la fatigue physique et mentale | Requête exacte, H1 |
+| Le constat | La fatigue attaque sur deux fronts | Problème |
+| Composition | Ce que contient une cure contre la fatigue | Composition |
+| Comparatif | Quel complément alimentaire choisir contre la fatigue ? | Requête d'intention commerciale |
+| FAQ | Complément alimentaire et fatigue : ce qu'il faut savoir | Informationnel |
+
+Le champ sémantique est réparti plutôt que concentré : *coup de barre*, *baisse d'énergie* et *réveil* dans le constat ; *énergie*, *concentration*, *vitalité*, *immunité* dans les bénéfices ; *ginseng*, *safran*, *kola*, *zinc*, *vitamine D3* dans la composition ; *cure*, *gélules*, *prise quotidienne* dans le mode d'emploi ; *fatigue passagère*, *fatigue installée*, *anti-fatigue* dans la FAQ.
+
+Deux questions ont été ajoutées à la FAQ sur des intentions de recherche réelles : la distinction entre fatigue passagère et fatigue installée, et la prise au long cours. La première précise qu'une fatigue persistante relève d'un avis médical, ce qui est à la fois exact et protecteur.

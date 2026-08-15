@@ -43,20 +43,20 @@
         "t4"
       ],
       "settings": {
-        "eyebrow": "La science au service de votre bien-être",
+        "eyebrow": "Fabriqué en France, vegan et sans OGM",
         "heading_tag": "h1",
         "heading_style": "sans",
         "heading": "Le complément alimentaire contre la fatigue physique et mentale",
         "highlight": "",
         "highlight_break": true,
         "show_rule": true,
-        "text": "<p>7 actifs réunis dans une seule formule, en 2 gélules par jour. Une routine simple, pensée pour les journées qui demandent de l'énergie et de la concentration.</p>",
+        "text": "<p>Pensé pour les journées qui tirent sur le corps et sur la tête.</p>",
         "button_label": "Découvrir 4 Vitality System",
         "button_link": "/products/4-vitality-system",
         "button_style": "solid",
         "button_event": "home_hero_product_click",
         "image": "shopify://shop_images/8EE624E9-E3F8-4147-9488-4CBA0B10D70A.png",
-        "badge_text": "Formule exclusive avec des actifs sélectionnés",
+        "badge_text": "Formule exclusive à 7 actifs",
         "badge_icon": "leaf",
         "background": "light"
       }
@@ -125,14 +125,14 @@
           "type": "point",
           "settings": {
             "icon": "brain",
-            "text": "L'attention qui lâche à 15h"
+            "text": "Le coup de barre de 15h"
           }
         },
         "p3": {
           "type": "point",
           "settings": {
             "icon": "capsule",
-            "text": "Trois pots pour un seul besoin"
+            "text": "L'énergie qui ne tient pas la journée"
           }
         }
       },
@@ -143,11 +143,11 @@
       ],
       "settings": {
         "eyebrow": "Le constat",
-        "heading": "Fatigue physique et mentale : une seule routine",
-        "text": "<p>Elles n'arrivent jamais séparément. La plupart des routines n'en traitent qu'une.</p>",
-        "transition": "Nous avons choisi de couvrir les deux.",
+        "heading": "La fatigue attaque sur deux fronts",
+        "text": "<p>Le corps décroche, la tête suit. Une baisse d'énergie s'accompagne presque toujours d'une baisse de concentration.</p>",
+        "transition": "Traiter l'un sans l'autre, c'est traiter à moitié.",
         "layout": "bubbles",
-        "button_label": "Je commence ma routine",
+        "button_label": "Voir notre réponse",
         "button_link": "/products/4-vitality-system",
         "button_style": "outline",
         "button_event": "home_story_click",
@@ -186,9 +186,9 @@
       ],
       "settings": {
         "product": "4-vitality-system",
-        "eyebrow": "Quatre bénéfices, une seule formule",
-        "heading": "Physique et mental, dans le même geste",
-        "intro": "<p>Une journée exigeante tire sur les deux tableaux : le corps et la tête. 4 Vitality System couvre les deux en une seule prise quotidienne, plutôt que d'empiler un produit par besoin.</p>",
+        "eyebrow": "Ce que la cure vous apporte",
+        "heading": "Énergie, concentration, vitalité, immunité",
+        "intro": "<p>Quatre bénéfices couverts par une seule prise quotidienne.</p>",
         "show_text": true,
         "color_scheme": "navy",
         "button_label": "Découvrir la formule",
@@ -200,11 +200,11 @@
       "type": "actifs-constellation",
       "settings": {
         "product": "4-vitality-system",
-        "eyebrow": "Ce qu'il y a dedans",
-        "heading": "1 complément alimentaire, 7 actifs, un rôle pour chacun",
+        "eyebrow": "La composition",
+        "heading": "Ce que contient une cure contre la fatigue",
         "show_count": false,
         "show_rule": true,
-        "intro": "",
+        "intro": "Ginseng, safran, kola, zinc, vitamine D3 : chaque actif a un rôle et un dosage affiché.",
         "image": "shopify://shop_images/8EE624E9-E3F8-4147-9488-4CBA0B10D70A.png",
         "center_label": "2 gélules par jour",
         "show_dosage": false,
@@ -258,8 +258,8 @@
       "settings": {
         "product": "4-vitality-system",
         "image": "shopify://shop_images/8EE624E9-E3F8-4147-9488-4CBA0B10D70A.png",
-        "eyebrow": "Notre première formule",
-        "button_label": "Découvrir le produit",
+        "eyebrow": "La formule",
+        "button_label": "Voir le produit et les cures",
         "button_event": "home_formula_product_click"
       }
     },
@@ -283,8 +283,8 @@
         "row-2": {
           "type": "row",
           "settings": {
-            "brand_text": "2 gélules par jour, une routine simple",
-            "other_text": "Plusieurs prises quotidiennes"
+            "brand_text": "Une prise le matin, et c'est réglé",
+            "other_text": "Plusieurs prises à répartir dans la journée"
           }
         },
         "row-3": {
@@ -311,7 +311,7 @@
       ],
       "settings": {
         "eyebrow": "Comparatif",
-        "heading": "Une formule plutôt qu'une pile de pots",
+        "heading": "Quel complément alimentaire choisir contre la fatigue ?",
         "show_rule": true,
         "column_brand": "4 Vitality System",
         "column_other": "Compléments classiques",
@@ -352,7 +352,7 @@
       ],
       "settings": {
         "eyebrow": "En pratique",
-        "heading": "Une routine qui tient en trois gestes",
+        "heading": "Trois gestes, trente jours",
         "show_rule": true,
         "intro": "",
         "note": "",
@@ -363,7 +363,7 @@
       "type": "reviews",
       "settings": {
         "product": "4-vitality-system",
-        "heading": "Ils nous font confiance",
+        "heading": "Ils ont commencé leur cure",
         "show_summary": false,
         "summary_label": "clients satisfaits",
         "show_score": false,
@@ -372,63 +372,6 @@
         "per_view": "3",
         "show_dots": true,
         "background": "soft"
-      }
-    },
-    "features": {
-      "type": "features",
-      "blocks": {
-        "f1": {
-          "type": "item",
-          "settings": {
-            "icon": "molecule",
-            "title": "Science & expertise",
-            "text": "Nos formules sont élaborées à partir d'études scientifiques et d'une expertise pointue."
-          }
-        },
-        "f2": {
-          "type": "item",
-          "settings": {
-            "icon": "leaf",
-            "title": "Ingrédients premium",
-            "text": "Nous sélectionnons des ingrédients de la plus haute qualité pour leur pureté, leur traçabilité et leur efficacité."
-          }
-        },
-        "f3": {
-          "type": "item",
-          "settings": {
-            "icon": "shield-check",
-            "title": "Qualité contrôlée",
-            "text": "De la sélection des matières premières à la fabrication, chaque étape est contrôlée."
-          }
-        },
-        "f4": {
-          "type": "item",
-          "settings": {
-            "icon": "chart-up",
-            "title": "Pensé pour progresser",
-            "text": "Des formules pensées pour soutenir votre vitalité au quotidien et vos performances."
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4"
-      ],
-      "settings": {
-        "eyebrow": "",
-        "heading": "Pourquoi choisir Kemia Lab ?",
-        "heading_style": "caps",
-        "show_rule": true,
-        "text": "",
-        "icon_style": "plain",
-        "accent": "gold",
-        "style": "plain",
-        "dividers": true,
-        "button_label": "",
-        "button_link": "",
-        "background": "none"
       }
     },
     "objections": {
@@ -469,17 +412,37 @@
             "question": "La formule contient-elle de la caféine ?",
             "answer": "<p>Oui, 25 mg par dose journalière, apportés par l'extrait de kola, soit environ un quart d'un café filtre. C'est pourquoi la prise est recommandée le matin et/ou le midi.</p>"
           }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "category": "",
+            "icon": "none",
+            "question": "Fatigue passagère ou fatigue installée : dans quel cas une cure est-elle utile ?",
+            "answer": "<p>Une cure de complément alimentaire s'adresse aux baisses d'énergie du quotidien, liées au rythme, au manque de sommeil ou aux périodes chargées. Une fatigue qui s'installe sans raison apparente, ou qui s'accompagne d'autres symptômes, relève d'un avis médical : un complément ne remplace ni un diagnostic ni un traitement.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "category": "",
+            "icon": "none",
+            "question": "Peut-on prendre un complément anti-fatigue toute l'année ?",
+            "answer": "<p>Nous recommandons de fonctionner par cures plutôt qu'en continu : un programme de 30 jours, puis un point sur ce que vous ressentez. Les cures de 2 et 3 mois existent pour les périodes qui le demandent, comme une reprise intense ou un changement de saison.</p>"
+          }
         }
       },
       "block_order": [
         "q1",
         "q2",
+        "q5",
         "q3",
+        "q6",
         "q4"
       ],
       "settings": {
-        "eyebrow": "Avant de commencer",
-        "heading": "Les questions que vous vous posez",
+        "eyebrow": "Vos questions",
+        "heading": "Complément alimentaire et fatigue : ce qu'il faut savoir",
         "show_rule": true,
         "seo_schema": true,
         "style": "card",
@@ -500,9 +463,9 @@
       "type": "cta-card",
       "settings": {
         "eyebrow": "Prêt à commencer",
-        "heading": "Une formule, une routine, 30 jours.",
-        "text": "7 actifs réunis en 2 gélules par jour. Commencez par une cure d'un mois et faites le point à la fin.",
-        "button_label": "Découvrir 4 Vitality System",
+        "heading": "Votre première cure commence aujourd'hui",
+        "text": "Faites le point dans un mois.",
+        "button_label": "Choisir ma cure",
         "button_link": "/products/4-vitality-system",
         "button_event": "home_final_product_click",
         "background": "none"
@@ -535,11 +498,10 @@
     "benefits",
     "actifs",
     "expert_quotes_nVzbPk",
-    "spotlight",
     "comparison",
+    "spotlight",
     "steps",
     "reviews",
-    "features",
     "objections",
     "closing",
     "blog",
