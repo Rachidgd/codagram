@@ -1,6 +1,6 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.5.0 | Thème `KEMIA LAB - v1.5.0` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.5.1 | Thème `KEMIA LAB - v1.5.1` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
@@ -555,6 +555,18 @@ Deux questions de la FAQ ont été reformulées sur des requêtes réelles, ce q
 
 La requête est commerciale et concurrentielle. Aucune optimisation de page d'accueil ne suffit à la gagner sur un domaine neuf sans historique ni lien entrant. Les leviers réels, par ordre d'impact : des articles de fond sur le blog couvrant le champ sémantique (causes de la fatigue, plantes adaptogènes, carences fréquentes, différence fatigue physique et mentale), le maillage interne de ces articles vers la fiche produit, et l'acquisition de liens entrants. Le blog compte 6 articles ; c'est le chantier à prioriser après la mise en ligne.
 
-### Section constat : nouvelle disposition
+### Section constat : trois dispositions au choix
 
-Le récit occupe la colonne de gauche, les trois constats deviennent des cartes dans la colonne de droite. Un réglage « Disposition » a été ajouté à la section : colonne centrée, ou deux colonnes. Le mode deux colonnes s'annule si un visuel est renseigné, l'image reprenant alors la colonne de droite. En dessous de 990 px, les deux colonnes s'empilent.
+Un réglage « Disposition » a été ajouté à la section Storytelling.
+
+| Mode | Rendu |
+|---|---|
+| Colonne centrée | Comportement d'origine, texte et liste empilés |
+| Deux colonnes | Récit à gauche, constats en cartes à droite ; s'empile sous 990 px |
+| **Bulles animées** | Tout centré, constats en pastilles décalées qui apparaissent au défilement |
+
+Le mode retenu sur l'accueil est **Bulles animées**. Les pastilles ont un rayon plein, une ombre portée douce et un décalage horizontal alterné sur ordinateur. Elles apparaissent l'une après l'autre à 120 ms d'intervalle quand la section entre dans l'écran, puis flottent en boucle très lentement. Sur mobile elles s'empilent sans décalage.
+
+L'apparition repose sur un `IntersectionObserver` et l'attribut `data-k-reveal`, réutilisable sur n'importe quel élément. Sans `IntersectionObserver`, le contenu s'affiche directement. Si le visiteur a activé la réduction des animations dans son système, ni l'apparition ni le flottement ne se déclenchent : le contenu est visible d'emblée.
+
+Le texte a été réduit de deux paragraphes à une phrase, et les trois constats de phrases complètes à des fragments de quatre à six mots. Le mode deux colonnes reste disponible dans le builder si le format long est préféré.

@@ -1,6 +1,6 @@
 <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
   <div class="k-container">
-    <div class="k-story{% if section.settings.image != blank %} k-story--with-media{% elsif section.settings.layout == 'split' and section.blocks.size > 0 %} k-story--split{% endif %}">
+    <div class="k-story{% if section.settings.image != blank %} k-story--with-media{% elsif section.settings.layout == 'split' and section.blocks.size > 0 %} k-story--split{% elsif section.settings.layout == 'bubbles' and section.blocks.size > 0 %} k-story--bubbles{% endif %}">
       <div class="k-story__text">
         {%- if section.settings.eyebrow != blank -%}
           <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
@@ -12,7 +12,7 @@
           <div class="k-story__body k-text">{{ section.settings.text }}</div>
         {%- endif -%}
 
-        {%- if section.blocks.size > 0 and section.settings.layout != 'split' -%}
+        {%- if section.blocks.size > 0 and section.settings.layout != 'split' and section.settings.layout != 'bubbles' -%}
           <ul class="k-story__points">
             {%- for block in section.blocks -%}
               <li class="k-story__point" {{ block.shopify_attributes }}>
@@ -20,6 +20,19 @@
                   <span class="k-story__point-icon">{% render 'icon', name: block.settings.icon, class: 'k-icon--sm' %}</span>
                 {%- endif -%}
                 <span>{{ block.settings.text }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.layout == 'bubbles' and section.blocks.size > 0 -%}
+          <ul class="k-bubbles" data-k-reveal>
+            {%- for block in section.blocks -%}
+              <li class="k-bubble" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon != 'none' -%}
+                  <span class="k-bubble__icon">{% render 'icon', name: block.settings.icon, class: 'k-icon--sm' %}</span>
+                {%- endif -%}
+                <span class="k-bubble__text">{{ block.settings.text }}</span>
               </li>
             {%- endfor -%}
           </ul>
@@ -41,7 +54,7 @@
         <div class="k-story__media">
           {% render 'image', image: section.settings.image, ratio: '92%', sizes: '(min-width: 990px) 45vw, 100vw' %}
         </div>
-      {%- elsif section.settings.layout == 'split' and section.blocks.size > 0 -%}
+      {%- elsif section.settings.layout == 'split' and section.blocks.size > 0 and section.settings.layout != 'bubbles' -%}
         <ul class="k-story__cards">
           {%- for block in section.blocks -%}
             <li class="k-story__card" {{ block.shopify_attributes }}>
@@ -87,10 +100,11 @@
       "label": "Disposition",
       "options": [
         { "value": "centered", "label": "Colonne centrée" },
-        { "value": "split", "label": "Deux colonnes" }
+        { "value": "split", "label": "Deux colonnes" },
+        { "value": "bubbles", "label": "Bulles animées" }
       ],
       "default": "centered",
-      "info": "Deux colonnes : le récit à gauche, les constats en cartes à droite. Sans effet si un visuel est choisi."
+      "info": "Deux colonnes : récit à gauche, constats en cartes à droite. Bulles animées : tout centré, les constats en pastilles qui apparaissent au défilement. Sans effet si un visuel est choisi."
     },
     { "type": "image_picker", "id": "image", "label": "Visuel", "info": "S'il est renseigné, il remplace la colonne de cartes." },
     { "type": "text", "id": "button_label", "label": "Bouton" },

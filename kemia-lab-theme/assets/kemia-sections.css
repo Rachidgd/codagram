@@ -4123,3 +4123,140 @@
     max-width: 48ch;
   }
 }
+
+.k-story--bubbles {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.k-story--bubbles .k-story__text {
+  align-items: center;
+  text-align: center;
+}
+
+.k-story--bubbles .k-story__heading {
+  max-width: 30ch;
+}
+
+.k-story--bubbles .k-story__body {
+  max-width: 54ch;
+}
+
+.k-story--bubbles .k-story__transition {
+  max-width: 40ch;
+}
+
+.k-bubbles {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.k-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  padding: 10px 24px 10px 10px;
+  background: var(--k-surface);
+  border: 1px solid var(--k-border);
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(1, 31, 75, 0.06);
+}
+
+.k-bubble__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: var(--k-bg-beige);
+  color: var(--k-gold-dark);
+}
+
+.k-bubble__text {
+  font-family: var(--k-font-heading);
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--k-ink);
+  min-width: 0;
+}
+
+.k-bubbles > .k-bubble {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.k-bubbles.is-in > .k-bubble {
+  opacity: 1;
+  transform: none;
+}
+
+.k-bubbles.is-in > .k-bubble:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.k-bubbles.is-in > .k-bubble:nth-child(3) {
+  transition-delay: 0.24s;
+}
+
+.k-bubbles.is-in > .k-bubble:nth-child(4) {
+  transition-delay: 0.36s;
+}
+
+@media (min-width: 750px) {
+  .k-bubble {
+    font-size: 15px;
+    padding: 11px 28px 11px 11px;
+  }
+
+  .k-bubbles > .k-bubble:nth-child(3n + 1) {
+    margin-right: 14%;
+  }
+
+  .k-bubbles > .k-bubble:nth-child(3n + 2) {
+    margin-left: 16%;
+  }
+
+  .k-bubbles > .k-bubble:nth-child(3n + 3) {
+    margin-right: 7%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .k-bubbles.is-in > .k-bubble {
+    animation: k-bubble-float 6.5s ease-in-out infinite;
+  }
+
+  .k-bubbles.is-in > .k-bubble:nth-child(2) {
+    animation-delay: -2.2s;
+  }
+
+  .k-bubbles.is-in > .k-bubble:nth-child(3) {
+    animation-delay: -4.4s;
+  }
+}
+
+@keyframes k-bubble-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .k-bubbles > .k-bubble {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

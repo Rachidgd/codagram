@@ -3,12 +3,45 @@
     "hero": {
       "type": "hero-split",
       "blocks": {
-        "t1": { "type": "trust", "settings": { "icon": "leaf", "title": "Ingrédients", "text": "de qualité" } },
-        "t2": { "type": "trust", "settings": { "icon": "flask", "title": "Formules", "text": "avancées" } },
-        "t3": { "type": "trust", "settings": { "icon": "shield-check", "title": "Qualité", "text": "contrôlée" } },
-        "t4": { "type": "trust", "settings": { "icon": "hexagon", "title": "Fabriqué", "text": "en France" } }
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "leaf",
+            "title": "Ingrédients",
+            "text": "de qualité"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "flask",
+            "title": "Formules",
+            "text": "avancées"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Qualité",
+            "text": "contrôlée"
+          }
+        },
+        "t4": {
+          "type": "trust",
+          "settings": {
+            "icon": "hexagon",
+            "title": "Fabriqué",
+            "text": "en France"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
       "settings": {
         "eyebrow": "La science au service de votre bien-être",
         "heading_tag": "h1",
@@ -31,28 +64,89 @@
     "reassurance": {
       "type": "reassurance",
       "blocks": {
-        "r1": { "type": "item", "settings": { "icon": "truck", "title": "Livraison offerte", "text": "dès 60€ d'achat" } },
-        "r2": { "type": "item", "settings": { "icon": "clock", "title": "Expédition rapide", "text": "24 à 48h ouvrées" } },
-        "r3": { "type": "item", "settings": { "icon": "lock", "title": "Paiement sécurisé", "text": "100% sécurisé" } },
-        "r4": { "type": "item", "settings": { "icon": "headset", "title": "Service client", "text": "Réponse sous 48h" } }
+        "r1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Livraison offerte",
+            "text": "dès 60€ d'achat"
+          }
+        },
+        "r2": {
+          "type": "item",
+          "settings": {
+            "icon": "clock",
+            "title": "Expédition rapide",
+            "text": "24 à 48h ouvrées"
+          }
+        },
+        "r3": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "title": "Paiement sécurisé",
+            "text": "100% sécurisé"
+          }
+        },
+        "r4": {
+          "type": "item",
+          "settings": {
+            "icon": "headset",
+            "title": "Service client",
+            "text": "Réponse sous 48h"
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3", "r4"],
-      "settings": { "heading": "", "layout": "inline", "background": "card", "dividers": true, "compact": true }
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "settings": {
+        "heading": "",
+        "layout": "inline",
+        "background": "card",
+        "dividers": true,
+        "compact": true
+      }
     },
     "story": {
       "type": "storytelling",
       "blocks": {
-        "p1": { "type": "point", "settings": { "icon": "bolt", "text": "Un réveil qui demande plus d'efforts qu'avant" } },
-        "p2": { "type": "point", "settings": { "icon": "brain", "text": "L'attention qui décroche en milieu d'après-midi" } },
-        "p3": { "type": "point", "settings": { "icon": "capsule", "text": "Une routine qui s'allonge, sans savoir ce qui agit" } }
+        "p1": {
+          "type": "point",
+          "settings": {
+            "icon": "bolt",
+            "text": "Le réveil qui coûte plus cher"
+          }
+        },
+        "p2": {
+          "type": "point",
+          "settings": {
+            "icon": "brain",
+            "text": "L'attention qui lâche à 15h"
+          }
+        },
+        "p3": {
+          "type": "point",
+          "settings": {
+            "icon": "capsule",
+            "text": "Trois pots pour un seul besoin"
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3"],
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
       "settings": {
         "eyebrow": "Le constat",
-        "heading": "Fatigue physique, fatigue mentale : deux fronts, une seule routine",
-        "text": "<p>Le réveil qui coûte plus cher qu'avant. La séance qu'on repousse. L'après-midi où l'attention s'effrite et où chaque tâche prend le double de temps.</p><p>Les deux fatigues n'arrivent jamais séparément. La plupart des routines n'en traitent pourtant qu'une : un pot pour l'énergie, un autre pour la concentration, un troisième pour le reste.</p>",
-        "transition": "Nous avons choisi de couvrir les deux dans le même geste.",
-        "layout": "split",
+        "heading": "Fatigue physique et mentale : une seule routine",
+        "text": "<p>Elles n'arrivent jamais séparément. La plupart des routines n'en traitent qu'une.</p>",
+        "transition": "Nous avons choisi de couvrir les deux.",
+        "layout": "bubbles",
         "button_label": "Je commence ma routine",
         "button_link": "/products/4-vitality-system",
         "button_style": "outline",
@@ -63,11 +157,33 @@
     "benefits": {
       "type": "benefits-band",
       "blocks": {
-        "f1": { "type": "figure", "settings": { "value": "7", "label": "actifs" } },
-        "f2": { "type": "figure", "settings": { "value": "2", "label": "gélules par jour" } },
-        "f3": { "type": "figure", "settings": { "value": "30", "label": "jours" } }
+        "f1": {
+          "type": "figure",
+          "settings": {
+            "value": "7",
+            "label": "actifs"
+          }
+        },
+        "f2": {
+          "type": "figure",
+          "settings": {
+            "value": "2",
+            "label": "gélules par jour"
+          }
+        },
+        "f3": {
+          "type": "figure",
+          "settings": {
+            "value": "30",
+            "label": "jours"
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3"
+      ],
       "settings": {
         "product": "4-vitality-system",
         "eyebrow": "Quatre bénéfices, une seule formule",
@@ -125,7 +241,10 @@
           }
         }
       },
-      "block_order": ["quote_HwJKQA", "quote_bW4qpV"],
+      "block_order": [
+        "quote_HwJKQA",
+        "quote_bW4qpV"
+      ],
       "settings": {
         "eyebrow": "Paroles de professionnels",
         "heading": "Ce que disent les spécialistes des actifs",
@@ -147,13 +266,49 @@
     "comparison": {
       "type": "product-comparison",
       "blocks": {
-        "row_eRkPbf": { "type": "row", "settings": { "brand_text": "Vegan et sans OGM", "other_text": "Gélules d'origine animale, ingrédients transformés" } },
-        "row-1": { "type": "row", "settings": { "brand_text": "Une seule formule, 4 bénéfices essentiels", "other_text": "Plusieurs produits pour des bénéfices isolés" } },
-        "row-2": { "type": "row", "settings": { "brand_text": "2 gélules par jour, une routine simple", "other_text": "Plusieurs prises quotidiennes" } },
-        "row-3": { "type": "row", "settings": { "brand_text": "Des dosages affichés pour chaque actif", "other_text": "Des compositions difficiles à comparer" } },
-        "row-4": { "type": "row", "settings": { "brand_text": "Un seul budget à suivre", "other_text": "Un budget réparti sur plusieurs produits" } }
+        "row_eRkPbf": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Vegan et sans OGM",
+            "other_text": "Gélules d'origine animale, ingrédients transformés"
+          }
+        },
+        "row-1": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Une seule formule, 4 bénéfices essentiels",
+            "other_text": "Plusieurs produits pour des bénéfices isolés"
+          }
+        },
+        "row-2": {
+          "type": "row",
+          "settings": {
+            "brand_text": "2 gélules par jour, une routine simple",
+            "other_text": "Plusieurs prises quotidiennes"
+          }
+        },
+        "row-3": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Des dosages affichés pour chaque actif",
+            "other_text": "Des compositions difficiles à comparer"
+          }
+        },
+        "row-4": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Un seul budget à suivre",
+            "other_text": "Un budget réparti sur plusieurs produits"
+          }
+        }
       },
-      "block_order": ["row_eRkPbf", "row-1", "row-2", "row-3", "row-4"],
+      "block_order": [
+        "row_eRkPbf",
+        "row-1",
+        "row-2",
+        "row-3",
+        "row-4"
+      ],
       "settings": {
         "eyebrow": "Comparatif",
         "heading": "Une formule plutôt qu'une pile de pots",
@@ -168,11 +323,33 @@
     "steps": {
       "type": "how-to-use",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Le matin", "text": "2 gélules au petit-déjeuner, avec un grand verre d'eau. Rien d'autre à prévoir dans la journée." } },
-        "s2": { "type": "step", "settings": { "title": "Pendant 30 jours", "text": "Une boîte couvre un programme complet. C'est la durée que nous recommandons avant de faire le point." } },
-        "s3": { "type": "step", "settings": { "title": "Puis vous décidez", "text": "Vous poursuivez avec une cure de 2 ou 3 mois, ou vous vous arrêtez. Pas d'abonnement, pas de reconduction." } }
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Le matin",
+            "text": "2 gélules au petit-déjeuner, avec un grand verre d'eau. Rien d'autre à prévoir dans la journée."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Pendant 30 jours",
+            "text": "Une boîte couvre un programme complet. C'est la durée que nous recommandons avant de faire le point."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Puis vous décidez",
+            "text": "Vous poursuivez avec une cure de 2 ou 3 mois, ou vous vous arrêtez. Pas d'abonnement, pas de reconduction."
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {
         "eyebrow": "En pratique",
         "heading": "Une routine qui tient en trois gestes",
@@ -200,12 +377,45 @@
     "features": {
       "type": "features",
       "blocks": {
-        "f1": { "type": "item", "settings": { "icon": "molecule", "title": "Science & expertise", "text": "Nos formules sont élaborées à partir d'études scientifiques et d'une expertise pointue." } },
-        "f2": { "type": "item", "settings": { "icon": "leaf", "title": "Ingrédients premium", "text": "Nous sélectionnons des ingrédients de la plus haute qualité pour leur pureté, leur traçabilité et leur efficacité." } },
-        "f3": { "type": "item", "settings": { "icon": "shield-check", "title": "Qualité contrôlée", "text": "De la sélection des matières premières à la fabrication, chaque étape est contrôlée." } },
-        "f4": { "type": "item", "settings": { "icon": "chart-up", "title": "Pensé pour progresser", "text": "Des formules pensées pour soutenir votre vitalité au quotidien et vos performances." } }
+        "f1": {
+          "type": "item",
+          "settings": {
+            "icon": "molecule",
+            "title": "Science & expertise",
+            "text": "Nos formules sont élaborées à partir d'études scientifiques et d'une expertise pointue."
+          }
+        },
+        "f2": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "title": "Ingrédients premium",
+            "text": "Nous sélectionnons des ingrédients de la plus haute qualité pour leur pureté, leur traçabilité et leur efficacité."
+          }
+        },
+        "f3": {
+          "type": "item",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Qualité contrôlée",
+            "text": "De la sélection des matières premières à la fabrication, chaque étape est contrôlée."
+          }
+        },
+        "f4": {
+          "type": "item",
+          "settings": {
+            "icon": "chart-up",
+            "title": "Pensé pour progresser",
+            "text": "Des formules pensées pour soutenir votre vitalité au quotidien et vos performances."
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3", "f4"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
       "settings": {
         "eyebrow": "",
         "heading": "Pourquoi choisir Kemia Lab ?",
@@ -261,7 +471,12 @@
           }
         }
       },
-      "block_order": ["q1", "q2", "q3", "q4"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
       "settings": {
         "eyebrow": "Avant de commencer",
         "heading": "Les questions que vous vous posez",
