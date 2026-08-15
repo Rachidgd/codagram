@@ -663,7 +663,7 @@ La fiche produit ne réexplique donc jamais le problème : elle le nomme en une 
 | 1 | Fiche produit | — | Bloc d'achat. Non modifié. |
 | 2 | Storytelling | Attention | Décrit les conséquences sur la journée du lecteur, pas les symptômes de la fatigue. Mise en page en deux colonnes, là où l'accueil utilise des bulles. |
 | 3 | Bandeau bénéfices | Intérêt | Porte la promesse de cure : sept actifs, une prise, trente jours, aucune reconduction. |
-| 4 | Est-ce pour vous ? | Désir | Nouvelle section. Qualifie le lecteur en deux colonnes. |
+| 4 | Fait pour vous | Désir | Nouvelle section. Met en face de chaque situation du lecteur la réponse de la formule. |
 | 5 | Actifs autour du produit | Désir | **Dosages affichés**, ce que l'accueil masque volontairement. C'est le premier vrai différenciateur de la page. |
 | 6 | Références | Désir | Monographies européennes et étude clinique. L'accueil cite des praticiens : registre différent, sources différentes. |
 | 7 | Comparatif | Désir | Cinq axes inédits, aucun repris de l'accueil. |
@@ -672,15 +672,17 @@ La fiche produit ne réexplique donc jamais le problème : elle le nomme en une 
 | 10 | Appel à l'action | Action | Ancre vers le bloc d'achat. |
 | 11 | Réassurance | Action | Livraison, paiement, qualité. |
 
-### « Est-ce pour vous ? » : pourquoi cette section
+### « Fait pour vous » : pourquoi cette section
 
-C'est la section qui travaille le plus la décision, pour trois raisons.
+C'est la section qui travaille le plus la décision. Cinq lignes, chacune en deux temps : à gauche une situation que le lecteur reconnaît, à droite ce que la formule y apporte. Rien d'autre.
 
-1. **Elle fait dire oui.** Quatre situations décrites à la deuxième personne, que le lecteur reconnaît ou non. Reconnaître sa propre journée dans une liste engage plus qu'une promesse générique.
-2. **Elle désamorce la méfiance.** Une page qui explique à qui elle ne convient *pas* est lue comme plus honnête qu'une page qui promet à tout le monde. La colonne « non » n'est pas une concession, c'est l'argument.
-3. **Elle place les précautions au bon endroit.** Les mentions obligatoires — moins de 18 ans, grossesse, allaitement, traitement médical, sensibilité à la caféine — devaient figurer quelque part. Placées ici, elles cessent d'être une contrainte réglementaire reléguée en accordéon et deviennent une preuve de sérieux, lue au moment où elle rassure.
+1. **Elle affirme au lieu de demander.** La page ne demande pas au lecteur s'il est le bon client, elle lui dit que le produit a été construit pour ses journées. Un titre en question laisse une porte de sortie ; un titre affirmatif n'en laisse pas.
+2. **Elle fait le lien problème-solution ligne à ligne.** Le lecteur n'a pas à faire le raisonnement lui-même : sa situation et la réponse sont côte à côte, sur la même ligne, séparées seulement par un changement de fond.
+3. **Elle reste vérifiable.** Chaque réponse est un fait contrôlable — une formule, un dosage affiché, deux gélules, trente jours sans reconduction — ou un libellé d'allégation autorisée pour le zinc. Aucune ligne ne promet un résultat.
 
-La colonne « oui » est cerclée d'or et posée sur fond blanc ; la colonne « non » est en pointillés, sans fond, en gris. La hiérarchie visuelle dit laquelle des deux le lecteur est censé se voir attribuer.
+Visuellement, la situation est posée sur fond blanc en caractères gras, la réponse sur fond beige avec une coche dorée. Sur mobile les deux se superposent, la réponse toujours sous la situation : l'ordre de lecture porte le sens.
+
+**Version précédente écartée.** Une première version qualifiait le lecteur en deux colonnes, « oui c'est pour vous » et « non, dans ces cas ». Elle a été abandonnée : dire à un prospect que le produit pourrait ne pas lui convenir introduit un doute au moment exact où la page doit lever les doutes. Les mentions qui figuraient dans la colonne « non » — âge, grossesse, allaitement, traitement médical, sensibilité à la caféine — sont toutes présentes, en intégralité, dans l'accordéon « Précautions d'emploi » du bloc d'achat, alimenté par le champ méta `kemia.precautions_full`. Rien n'a été perdu en les retirant de cette section.
 
 ### Comparatif : les axes retenus
 
@@ -705,5 +707,7 @@ Un contrôle automatique compare chaque phrase de la fiche produit à chaque phr
 - Les rapprochements résiduels portent tous sur des faits qui ne peuvent pas varier d'une page à l'autre : la posologie, les 25 mg de caféine, le seuil de livraison offerte, les mentions vegan et sans OGM. Les faire diverger reviendrait à écrire deux vérités différentes sur le même produit.
 
 ### Champ sémantique
+
+La section « Fait pour vous » place le vocabulaire de l'avatar (*travail*, *trajets*, *entraînement*, *attention*, *après-midi*) au contact direct du vocabulaire produit (*formule*, *fatigue physique*, *fatigue mentale*, *zinc*, *ginseng*, *kola*, *dosage*, *cure de 30 jours*). C'est la seule section de la page où les deux registres se touchent sur la même ligne.
 
 L'accueil capte les requêtes larges. La fiche produit prend les requêtes en aval, celles qui se posent une fois le produit trouvé : *dosage*, *quantité par actif*, *caféine*, *à jeun ou pendant le repas*, *oubli de prise*, *association avec d'autres compléments*, *durée de cure*, *sans abonnement*, *fabriqué en France*, *délai de livraison*. Les sept questions de la FAQ sont toutes distinctes de celles de l'accueil et restent balisées FAQPage.

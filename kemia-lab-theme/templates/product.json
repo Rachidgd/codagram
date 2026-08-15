@@ -237,81 +237,60 @@
     "fit": {
       "type": "product-fit",
       "blocks": {
-        "y1": {
+        "r1": {
           "type": "item",
           "settings": {
-            "side": "fit",
-            "text": "Vos journées enchaînent le travail, les trajets et le sport, et vous le sentez passer"
+            "situation": "Vos journées enchaînent le travail, les trajets et l'entraînement.",
+            "outcome": "Une seule formule qui vise les deux fatigues à la fois : la physique et la mentale."
           }
         },
-        "y2": {
+        "r2": {
           "type": "item",
           "settings": {
-            "side": "fit",
-            "text": "Vous décrochez en milieu d'après-midi plus souvent qu'avant"
+            "situation": "Votre attention baisse en milieu d'après-midi, au pire moment.",
+            "outcome": "Le zinc contribue à une fonction cognitive normale ; le ginseng et le kola sont traditionnellement utilisés contre la fatigue intellectuelle."
           }
         },
-        "y3": {
+        "r3": {
           "type": "item",
           "settings": {
-            "side": "fit",
-            "text": "Vous voulez une routine courte : une prise le matin, pas trois pots à gérer"
+            "situation": "Vous n'avez pas le temps d'une routine à trois pots.",
+            "outcome": "Deux gélules au petit-déjeuner, et la journée est couverte."
           }
         },
-        "y4": {
+        "r4": {
           "type": "item",
           "settings": {
-            "side": "fit",
-            "text": "Vous voulez savoir ce que vous avalez, dosage de chaque actif compris"
+            "situation": "Vous voulez savoir exactement ce que vous prenez.",
+            "outcome": "La quantité de chaque actif est affichée ici, comme sur la boîte."
           }
         },
-        "n1": {
+        "r5": {
           "type": "item",
           "settings": {
-            "side": "unfit",
-            "text": "Vous avez moins de 18 ans, ou vous êtes enceinte ou allaitante"
-          }
-        },
-        "n2": {
-          "type": "item",
-          "settings": {
-            "side": "unfit",
-            "text": "Vous êtes sensible à la caféine : la dose journalière en apporte 25 mg"
-          }
-        },
-        "n3": {
-          "type": "item",
-          "settings": {
-            "side": "unfit",
-            "text": "Vous suivez un traitement médical sans en avoir parlé à votre médecin"
-          }
-        },
-        "n4": {
-          "type": "item",
-          "settings": {
-            "side": "unfit",
-            "text": "Vous attendez un effet dès la première gélule : c'est un programme de 30 jours"
+            "situation": "Vous préférez juger sur pièces avant de vous engager.",
+            "outcome": "Une boîte couvre 30 jours. Aucun abonnement, aucune reconduction."
           }
         }
       },
       "block_order": [
-        "y1",
-        "y2",
-        "y3",
-        "y4",
-        "n1",
-        "n2",
-        "n3",
-        "n4"
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
       ],
       "settings": {
-        "eyebrow": "Avant de commander",
-        "heading": "Cette cure est-elle faite pour vous ?",
+        "eyebrow": "Fait pour vous",
+        "heading": "Conçu pour des journées comme les vôtres",
         "show_rule": true,
-        "intro": "Autant le dire tout de suite : 4 Vitality System ne convient pas à tout le monde.",
-        "fit_title": "Oui, si vous vous reconnaissez ici",
-        "unfit_title": "Non, dans ces cas précis",
-        "note": "Un complément alimentaire ne remplace ni une alimentation variée ni un mode de vie sain. En cas de fatigue inhabituelle ou qui dure, parlez-en à un professionnel de santé.",
+        "intro": "Cinq situations du quotidien, et la réponse de la formule pour chacune.",
+        "col_situation": "Votre quotidien",
+        "col_outcome": "Ce que 4 Vitality System y apporte",
+        "note": "",
+        "button_label": "",
+        "button_link": "",
+        "button_event": "pdp_fit_click",
         "background": "none"
       }
     },
