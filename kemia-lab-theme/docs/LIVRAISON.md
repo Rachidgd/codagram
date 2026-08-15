@@ -1,6 +1,6 @@
 # Kemia Lab - Dossier de livraison
 
-Version 1.4.3 | Thème `KEMIA LAB - v1.4.3` (non publié) | Boutique `pcmxbb-83.myshopify.com`
+Version 1.5.0 | Thème `KEMIA LAB - v1.5.0` (non publié) | Boutique `pcmxbb-83.myshopify.com`
 
 ---
 
@@ -490,3 +490,71 @@ La L-Tyrosine et la CDP-Choline : les avis européens qui les concernent sont d�
 ### Avis de professionnels nommés
 
 Le bloc accepte jusqu'à six entrées et dispose des champs de source. Pour un professionnel nommé, réunir : la citation exacte, le nom, la fonction, l'autorisation écrite d'utilisation commerciale, le lien vers la publication d'origine, et la mention d'une éventuelle contrepartie.
+
+---
+
+## 14. Revue de la page d'accueil
+
+Analyse faite sur la version réellement en ligne dans le thème v1.4.3, récupérée depuis Shopify, et non sur la version du dépôt : les modifications faites dans le Theme Builder y avaient été apportées.
+
+### Trois points bloquants relevés
+
+**1. Photo générée attribuée à une personne réelle.** Le bloc citant Julia Zumpano, diététicienne à la Cleveland Clinic, portait une image nommée `une-experte-en-nutrion-dans-son-bureau-qui-pose-pour-sa-photo-dans-un-magazine.png`. C'est une image générée, et le visage affiché n'est pas celui de la personne nommée. Publier le portrait fabriqué d'une professionnelle identifiable revient à usurper son identité : atteinte au droit à l'image et au nom, et risque de qualification de pratique commerciale trompeuse. **L'image a été retirée.** La citation et son lien vers l'article de la Cleveland Clinic sont conservés : la citation est vérifiable, la photo ne l'était pas. Pour afficher un portrait, il faut la photo réelle et l'autorisation écrite de la personne.
+
+**2. Allégation « n°1 ».** Le titre H1 annonçait « Complément alimentaire n°1 contre la fatigue physique et mentale ». Une allégation de premier rang doit pouvoir être étayée par une donnée objective et vérifiable, faute de quoi elle constitue une pratique commerciale trompeuse au sens de l'article L.121-2 du code de la consommation. Le produit n'est pas encore commercialisé. **La mention a été retirée**, le reste du titre est conservé à l'identique : la couverture du mot-clé est intacte.
+
+**3. Citation sans source.** Le bloc ginseng attribué à Maxime Mességué ne porte ni lien ni référence. Le champ existe et reste vide. Sans source vérifiable, cette citation est à documenter ou à retirer avant publication.
+
+### Corrections rédactionnelles
+
+- « 1 complément Alimentaire » : majuscule parasite corrigée.
+- « Gellule animale, produits transformé » : corrigé en « Gélules d'origine animale, ingrédients transformés ».
+- « Certifié Végan & sans OGM » : le mot « certifié » suppose un organisme certificateur et un numéro de certificat. Ramené à « Vegan et sans OGM » tant que le justificatif attendu au §9 n'est pas fourni.
+
+### Entonnoir : le constat était placé après la solution
+
+Ordre constaté : accueil, réassurance, **actifs**, bénéfices, mode d'emploi, citations, **constat**, produit, comparatif, avis…
+
+Le problème arrivait en septième position, après le détail des actifs, la liste des bénéfices et le mode d'emploi. Le visiteur recevait la réponse avant d'avoir vu la question, ce qui prive les sections de leur raison d'être. Le premier prix n'apparaissait qu'en huitième position.
+
+Ordre retenu :
+
+| # | Section | Rôle |
+|---|---|---|
+| 1 | Accueil | La promesse et le premier appel à l'action |
+| 2 | Réassurance | Lever le doute logistique sous le pli |
+| 3 | **Le constat** | Le problème, remonté de la 7e à la 3e place |
+| 4 | Bandeau bénéfices | Ce que la formule apporte |
+| 5 | Actifs | Ce qu'il y a dedans |
+| 6 | Paroles de professionnels | Caution externe |
+| 7 | Produit à la une | Le produit, le prix, l'appel à l'action |
+| 8 | Comparatif | Lever l'objection concurrentielle |
+| 9 | Mode d'emploi | Lever l'objection de contrainte |
+| 10 | Avis clients | Preuve sociale |
+| 11 | Pourquoi Kemia Lab | Crédibilité de la marque |
+| 12 | Questions fréquentes | Dernières objections, balisées FAQPage |
+| 13 | Appel à l'action final | Action |
+| 14 | Blog | Contenu et référencement |
+| 15 | Newsletter | Récupérer les visiteurs qui n'achètent pas |
+
+### Référencement sur « complément alimentaire fatigue »
+
+**Ce qui bloque tout, avant toute optimisation :**
+
+- La boutique est **protégée par mot de passe**. Aucune page n'est accessible aux robots : aucun positionnement n'est possible tant que la protection n'est pas levée.
+- Le nom de la boutique est resté **« My Store »**. Il apparaît dans la balise titre de chaque page et dans le balisage Organization. À corriger dans Paramètres > Détails de la boutique.
+- Aucune **balise titre ni méta description** n'est définie pour la page d'accueil. C'est le premier levier de la requête visée, et il est vide. Proposition : titre « Complément alimentaire fatigue physique et mentale | Kemia Lab » (59 caractères) ; méta description « 7 actifs en 2 gélules par jour contre la fatigue physique et mentale. Fabriqué en France, vegan et sans OGM. Livraison offerte dès 60 €. » (137 caractères). À saisir dans Boutique en ligne > Préférences.
+
+**Ce qui a été corrigé sur la page :**
+
+Le mot-clé était répété presque à l'identique dans le H1, dans le H2 du constat et dans celui des actifs. Une répétition littérale n'apporte rien et dégrade la lecture. Le H2 du constat couvre désormais les deux facettes de la requête avec une formulation différente : « Fatigue physique, fatigue mentale : deux fronts, une seule routine ».
+
+Deux questions de la FAQ ont été reformulées sur des requêtes réelles, ce qui alimente le balisage FAQPage déjà en place : « Quel complément alimentaire prendre contre la fatigue ? » et « Au bout de combien de temps un complément contre la fatigue fait-il effet ? ».
+
+**Ce qui reste à faire, et qui pèse plus que la page elle-même :**
+
+La requête est commerciale et concurrentielle. Aucune optimisation de page d'accueil ne suffit à la gagner sur un domaine neuf sans historique ni lien entrant. Les leviers réels, par ordre d'impact : des articles de fond sur le blog couvrant le champ sémantique (causes de la fatigue, plantes adaptogènes, carences fréquentes, différence fatigue physique et mentale), le maillage interne de ces articles vers la fiche produit, et l'acquisition de liens entrants. Le blog compte 6 articles ; c'est le chantier à prioriser après la mise en ligne.
+
+### Section constat : nouvelle disposition
+
+Le récit occupe la colonne de gauche, les trois constats deviennent des cartes dans la colonne de droite. Un réglage « Disposition » a été ajouté à la section : colonne centrée, ou deux colonnes. Le mode deux colonnes s'annule si un visuel est renseigné, l'image reprenant alors la colonne de droite. En dessous de 990 px, les deux colonnes s'empilent.

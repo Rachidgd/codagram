@@ -10,11 +10,11 @@
       },
       "block_order": ["t1", "t2", "t3", "t4"],
       "settings": {
-        "eyebrow": "Science au service de votre potentiel",
+        "eyebrow": "La science au service de votre bien-être",
         "heading_tag": "h1",
         "heading_style": "sans",
-        "heading": "Votre énergie.\nVotre concentration.",
-        "highlight": "Votre équilibre.",
+        "heading": "Le complément alimentaire contre la fatigue physique et mentale",
+        "highlight": "",
         "highlight_break": true,
         "show_rule": true,
         "text": "<p>7 actifs réunis dans une seule formule, en 2 gélules par jour. Une routine simple, pensée pour les journées qui demandent de l'énergie et de la concentration.</p>",
@@ -22,6 +22,7 @@
         "button_link": "/products/4-vitality-system",
         "button_style": "solid",
         "button_event": "home_hero_product_click",
+        "image": "shopify://shop_images/8EE624E9-E3F8-4147-9488-4CBA0B10D70A.png",
         "badge_text": "Formule exclusive avec des actifs sélectionnés",
         "badge_icon": "leaf",
         "background": "light"
@@ -36,22 +37,23 @@
         "r4": { "type": "item", "settings": { "icon": "headset", "title": "Service client", "text": "Réponse sous 48h" } }
       },
       "block_order": ["r1", "r2", "r3", "r4"],
-      "settings": { "layout": "inline", "background": "card", "dividers": true, "compact": true }
+      "settings": { "heading": "", "layout": "inline", "background": "card", "dividers": true, "compact": true }
     },
     "story": {
       "type": "storytelling",
       "blocks": {
-        "p1": { "type": "point", "settings": { "icon": "bolt", "text": "Le corps qui suit moins bien en fin de journée" } },
-        "p2": { "type": "point", "settings": { "icon": "brain", "text": "La concentration qui décroche en milieu d'après-midi" } },
+        "p1": { "type": "point", "settings": { "icon": "bolt", "text": "Un réveil qui demande plus d'efforts qu'avant" } },
+        "p2": { "type": "point", "settings": { "icon": "brain", "text": "L'attention qui décroche en milieu d'après-midi" } },
         "p3": { "type": "point", "settings": { "icon": "capsule", "text": "Une routine qui s'allonge, sans savoir ce qui agit" } }
       },
       "block_order": ["p1", "p2", "p3"],
       "settings": {
         "eyebrow": "Le constat",
-        "heading": "La fatigue n'est pas qu'une question d'énergie",
-        "text": "<p>Elle est physique : le corps qui traîne au réveil, l'entraînement qu'on repousse, la fin de journée qui coûte plus cher qu'elle ne devrait. Elle est aussi mentale : l'attention qui s'effrite, les tâches qui prennent le double de temps.</p><p>Et pour y répondre, une routine qui s'allonge : un pot pour l'énergie, un autre pour la concentration, un troisième pour le reste.</p>",
-        "transition": "Nous avons voulu aller à l'essentiel.",
-        "button_label": "Voir notre réponse",
+        "heading": "Fatigue physique, fatigue mentale : deux fronts, une seule routine",
+        "text": "<p>Le réveil qui coûte plus cher qu'avant. La séance qu'on repousse. L'après-midi où l'attention s'effrite et où chaque tâche prend le double de temps.</p><p>Les deux fatigues n'arrivent jamais séparément. La plupart des routines n'en traitent pourtant qu'une : un pot pour l'énergie, un autre pour la concentration, un troisième pour le reste.</p>",
+        "transition": "Nous avons choisi de couvrir les deux dans le même geste.",
+        "layout": "split",
+        "button_label": "Je commence ma routine",
         "button_link": "/products/4-vitality-system",
         "button_style": "outline",
         "button_event": "home_story_click",
@@ -74,6 +76,7 @@
         "show_text": true,
         "color_scheme": "navy",
         "button_label": "Découvrir la formule",
+        "button_link": "",
         "button_event": "home_benefits_click"
       }
     },
@@ -82,14 +85,52 @@
       "settings": {
         "product": "4-vitality-system",
         "eyebrow": "Ce qu'il y a dedans",
-        "heading": "actifs, un rôle pour chacun",
-        "show_count": true,
+        "heading": "1 complément alimentaire, 7 actifs, un rôle pour chacun",
+        "show_count": false,
         "show_rule": true,
-        "intro": "Aucun mélange caché : chaque actif est affiché avec son dosage.",
+        "intro": "",
+        "image": "shopify://shop_images/8EE624E9-E3F8-4147-9488-4CBA0B10D70A.png",
         "center_label": "2 gélules par jour",
-        "show_dosage": true,
+        "show_dosage": false,
         "composition_link": "Voir la composition complète",
         "composition_title": "Composition complète",
+        "background": "none"
+      }
+    },
+    "expert_quotes_nVzbPk": {
+      "type": "expert-quotes",
+      "blocks": {
+        "quote_HwJKQA": {
+          "type": "quote",
+          "settings": {
+            "quote": "Lors de fatigue chronique et de fort stress je recommande 200 à 300 mg d'extrait de ginseng. Pour renforcer le système immunitaire 100 à 200 mg sont suffisants. Attention à choisir un ginseng titré à au moins 5 % de ginsénosides pour une efficacité optimale. Le ginseng se prend de préférence le matin à jeun avant le petit déjeuner.",
+            "name": "Extrait de ginseng",
+            "role": "Maxime Mességué",
+            "detail": "Diététicien nutritionniste",
+            "image": "shopify://shop_images/maxime-messegue.jpg",
+            "source_label": "",
+            "source_url": ""
+          }
+        },
+        "quote_bW4qpV": {
+          "type": "quote",
+          "settings": {
+            "quote": "Le kola est naturellement riche en caféine, un stimulant associé à l'éveil et à l'énergie.",
+            "name": "Extrait de kola",
+            "role": "Julia Zumpano",
+            "detail": "Diététicienne, Cleveland Clinic",
+            "image": "",
+            "source_label": "Voir l'article",
+            "source_url": "https://health.clevelandclinic.org/kola-nut"
+          }
+        }
+      },
+      "block_order": ["quote_HwJKQA", "quote_bW4qpV"],
+      "settings": {
+        "eyebrow": "Paroles de professionnels",
+        "heading": "Ce que disent les spécialistes des actifs",
+        "show_rule": true,
+        "note": "Ces avis portent sur les actifs pris isolément et non sur 4 Vitality System. Aucun de ces professionnels n'a de lien commercial avec Kemia Lab.",
         "background": "none"
       }
     },
@@ -97,6 +138,7 @@
       "type": "product-spotlight",
       "settings": {
         "product": "4-vitality-system",
+        "image": "shopify://shop_images/8EE624E9-E3F8-4147-9488-4CBA0B10D70A.png",
         "eyebrow": "Notre première formule",
         "button_label": "Découvrir le produit",
         "button_event": "home_formula_product_click"
@@ -105,45 +147,30 @@
     "comparison": {
       "type": "product-comparison",
       "blocks": {
+        "row_eRkPbf": { "type": "row", "settings": { "brand_text": "Vegan et sans OGM", "other_text": "Gélules d'origine animale, ingrédients transformés" } },
         "row-1": { "type": "row", "settings": { "brand_text": "Une seule formule, 4 bénéfices essentiels", "other_text": "Plusieurs produits pour des bénéfices isolés" } },
         "row-2": { "type": "row", "settings": { "brand_text": "2 gélules par jour, une routine simple", "other_text": "Plusieurs prises quotidiennes" } },
         "row-3": { "type": "row", "settings": { "brand_text": "Des dosages affichés pour chaque actif", "other_text": "Des compositions difficiles à comparer" } },
         "row-4": { "type": "row", "settings": { "brand_text": "Un seul budget à suivre", "other_text": "Un budget réparti sur plusieurs produits" } }
       },
-      "block_order": ["row-1", "row-2", "row-3", "row-4"],
+      "block_order": ["row_eRkPbf", "row-1", "row-2", "row-3", "row-4"],
       "settings": {
         "eyebrow": "Comparatif",
         "heading": "Une formule plutôt qu'une pile de pots",
         "show_rule": true,
         "column_brand": "4 Vitality System",
         "column_other": "Compléments classiques",
+        "button_label": "",
+        "button_link": "",
         "background": "soft"
       }
     },
     "steps": {
       "type": "how-to-use",
       "blocks": {
-        "s1": {
-          "type": "step",
-          "settings": {
-            "title": "Le matin",
-            "text": "2 gélules au petit-déjeuner, avec un grand verre d'eau. Rien d'autre à prévoir dans la journée."
-          }
-        },
-        "s2": {
-          "type": "step",
-          "settings": {
-            "title": "Pendant 30 jours",
-            "text": "Une boîte couvre un programme complet. C'est la durée que nous recommandons avant de faire le point."
-          }
-        },
-        "s3": {
-          "type": "step",
-          "settings": {
-            "title": "Puis vous décidez",
-            "text": "Vous poursuivez avec une cure de 2 ou 3 mois, ou vous vous arrêtez. Pas d'abonnement, pas de reconduction."
-          }
-        }
+        "s1": { "type": "step", "settings": { "title": "Le matin", "text": "2 gélules au petit-déjeuner, avec un grand verre d'eau. Rien d'autre à prévoir dans la journée." } },
+        "s2": { "type": "step", "settings": { "title": "Pendant 30 jours", "text": "Une boîte couvre un programme complet. C'est la durée que nous recommandons avant de faire le point." } },
+        "s3": { "type": "step", "settings": { "title": "Puis vous décidez", "text": "Vous poursuivez avec une cure de 2 ou 3 mois, ou vous vous arrêtez. Pas d'abonnement, pas de reconduction." } }
       },
       "block_order": ["s1", "s2", "s3"],
       "settings": {
@@ -161,6 +188,7 @@
         "product": "4-vitality-system",
         "heading": "Ils nous font confiance",
         "show_summary": false,
+        "summary_label": "clients satisfaits",
         "show_score": false,
         "verified_label": "Client vérifié",
         "limit": 6,
@@ -179,13 +207,17 @@
       },
       "block_order": ["f1", "f2", "f3", "f4"],
       "settings": {
+        "eyebrow": "",
         "heading": "Pourquoi choisir Kemia Lab ?",
         "heading_style": "caps",
         "show_rule": true,
+        "text": "",
         "icon_style": "plain",
         "accent": "gold",
         "style": "plain",
         "dividers": true,
+        "button_label": "",
+        "button_link": "",
         "background": "none"
       }
     },
@@ -195,27 +227,35 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Pourquoi 2 gélules par jour seulement ?",
-            "answer": "<p>Parce que les 7 actifs sont dosés pour être répartis sur une seule prise quotidienne. C'est ce qui rend la routine tenable dans la durée, et c'est souvent là que les routines de compléments échouent.</p>"
+            "category": "",
+            "icon": "none",
+            "question": "Quel complément alimentaire prendre contre la fatigue ?",
+            "answer": "<p>Contre une fatigue à la fois physique et mentale, une formule qui couvre les deux dimensions évite d'empiler les produits. 4 Vitality System réunit 7 actifs en 2 gélules par jour : L-Tyrosine, CDP-Choline, kola, ginseng, safran, zinc et vitamine D3. L'extrait de kola aide à réduire la fatigue, le ginseng soutient le tonus, le zinc contribue à une fonction cognitive normale.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Pourquoi 7 actifs plutôt qu'un seul ?",
-            "answer": "<p>Chaque actif couvre un aspect différent : L-Tyrosine, CDP-Choline, kola, ginseng, safran, zinc et vitamine D3. Les dosages complets sont affichés sur la fiche produit, sans mélange caché.</p>"
+            "category": "",
+            "icon": "none",
+            "question": "Au bout de combien de temps un complément contre la fatigue fait-il effet ?",
+            "answer": "<p>Une cure se juge sur 30 jours, à raison de 2 gélules par jour sans interruption. La perception varie d'une personne à l'autre : nous recommandons d'aller au bout du programme avant de faire le point.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Combien de temps dure une cure ?",
-            "answer": "<p>Une boîte correspond à 30 jours. C'est la durée que nous recommandons avant de faire le point. Les cures de 2 et 3 mois permettent de poursuivre sans interruption.</p>"
+            "category": "",
+            "icon": "none",
+            "question": "Pourquoi 7 actifs plutôt qu'un seul ?",
+            "answer": "<p>Chaque actif couvre un aspect différent de la fatigue, physique ou mentale. Les dosages complets sont affichés sur la fiche produit, sans mélange caché.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
+            "category": "",
+            "icon": "none",
             "question": "La formule contient-elle de la caféine ?",
             "answer": "<p>Oui, 25 mg par dose journalière, apportés par l'extrait de kola, soit environ un quart d'un café filtre. C'est pourquoi la prise est recommandée le matin et/ou le midi.</p>"
           }
@@ -229,8 +269,15 @@
         "seo_schema": true,
         "style": "card",
         "show_tabs": false,
+        "show_all_tab": false,
+        "all_tab_label": "Toutes",
         "link_label": "Voir toutes les questions fréquentes",
         "link_url": "/pages/faq",
+        "show_contact_card": false,
+        "contact_heading": "Vous ne trouvez pas la réponse à votre question ?",
+        "contact_text": "Notre service client est là pour vous aider.",
+        "contact_label": "Nous contacter",
+        "contact_url": "",
         "background": "soft"
       }
     },
@@ -259,6 +306,7 @@
       "type": "newsletter-band",
       "settings": {
         "color_scheme": "beige",
+        "eyebrow": "",
         "heading": "Restez informé de nos cures et nouveautés.",
         "placeholder": "Votre email",
         "button_label": "S'inscrire"
@@ -271,6 +319,7 @@
     "story",
     "benefits",
     "actifs",
+    "expert_quotes_nVzbPk",
     "spotlight",
     "comparison",
     "steps",

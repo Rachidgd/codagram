@@ -1,6 +1,6 @@
 <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
   <div class="k-container">
-    <div class="k-story{% if section.settings.image != blank %} k-story--with-media{% endif %}">
+    <div class="k-story{% if section.settings.image != blank %} k-story--with-media{% elsif section.settings.layout == 'split' and section.blocks.size > 0 %} k-story--split{% endif %}">
       <div class="k-story__text">
         {%- if section.settings.eyebrow != blank -%}
           <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
@@ -12,7 +12,7 @@
           <div class="k-story__body k-text">{{ section.settings.text }}</div>
         {%- endif -%}
 
-        {%- if section.blocks.size > 0 -%}
+        {%- if section.blocks.size > 0 and section.settings.layout != 'split' -%}
           <ul class="k-story__points">
             {%- for block in section.blocks -%}
               <li class="k-story__point" {{ block.shopify_attributes }}>
@@ -41,6 +41,17 @@
         <div class="k-story__media">
           {% render 'image', image: section.settings.image, ratio: '92%', sizes: '(min-width: 990px) 45vw, 100vw' %}
         </div>
+      {%- elsif section.settings.layout == 'split' and section.blocks.size > 0 -%}
+        <ul class="k-story__cards">
+          {%- for block in section.blocks -%}
+            <li class="k-story__card" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != 'none' -%}
+                <span class="k-story__card-icon">{% render 'icon', name: block.settings.icon %}</span>
+              {%- endif -%}
+              <span class="k-story__card-text">{{ block.settings.text }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
       {%- endif -%}
     </div>
   </div>
@@ -70,7 +81,18 @@
       "label": "Phrase de transition",
       "default": "Nous avons voulu aller à l'essentiel."
     },
-    { "type": "image_picker", "id": "image", "label": "Visuel" },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Disposition",
+      "options": [
+        { "value": "centered", "label": "Colonne centrée" },
+        { "value": "split", "label": "Deux colonnes" }
+      ],
+      "default": "centered",
+      "info": "Deux colonnes : le récit à gauche, les constats en cartes à droite. Sans effet si un visuel est choisi."
+    },
+    { "type": "image_picker", "id": "image", "label": "Visuel", "info": "S'il est renseigné, il remplace la colonne de cartes." },
     { "type": "text", "id": "button_label", "label": "Bouton" },
     { "type": "url", "id": "button_link", "label": "Lien du bouton" },
     {
