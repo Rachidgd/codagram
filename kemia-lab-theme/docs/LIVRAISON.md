@@ -323,23 +323,13 @@ Ces points ne bloquent pas le thème mais conditionnent certaines publications.
 
 ---
 
-## 10. Structure des pages
+## 10bis. Structure des pages
 
 Chaque section porte une seule idée. C'est la règle qui a présidé au découpage, pour éviter les blocs trop denses sur ordinateur et tablette.
 
 ### Fiche produit
 
-| Ordre | Section | Rôle |
-|---|---|---|
-| 1 | Fiche produit | Achat : promesse, offres, urgence, panier. Description, conseils d'utilisation et précautions sont repliés en accordéons sous le bouton. |
-| 2 | Storytelling | Le problème : la fatigue physique **et** mentale. |
-| 3 | Bandeau bénéfices | Les 4 bénéfices, précédés d'une introduction sur les deux dimensions de la fatigue. |
-| 4 | Actifs autour du produit | Le visuel du produit au centre, les 7 actifs disposés autour avec leur bénéfice et leur dosage. Lien vers la composition complète. |
-| 5 | Comparatif | Une formule plutôt qu'une pile de pots. |
-| 6 | Avis de professionnels | Vide tant que le client n'a pas fourni de citations réelles. |
-| 7 | Avis clients | Preuve sociale. |
-| 8 | FAQ | Questions formulées comme des recherches réelles, balisées FAQPage. |
-| 9 | Réassurance | Rappel livraison, paiement, qualité. |
+Cet ordre a été revu, voir le paragraphe 16. Le tableau à jour s'y trouve.
 
 Deux sections ont été retirées du gabarit parce qu'elles faisaient doublon : « Le pouvoir du 4 » (les 4 piliers, redondant avec le bandeau bénéfices) et « Ingrédients & utilisation » (la composition est désormais accessible depuis la section Actifs, les conseils d'utilisation depuis l'accordéon de la buy box). Les deux sections restent disponibles dans le Theme Builder si besoin.
 
@@ -647,3 +637,73 @@ Le mot-clé principal apparaît dans cinq titres, chaque fois avec une formulati
 Le champ sémantique est réparti plutôt que concentré : *coup de barre*, *baisse d'énergie* et *réveil* dans le constat ; *énergie*, *concentration*, *vitalité*, *immunité* dans les bénéfices ; *ginseng*, *safran*, *kola*, *zinc*, *vitamine D3* dans la composition ; *cure*, *gélules*, *prise quotidienne* dans le mode d'emploi ; *fatigue passagère*, *fatigue installée*, *anti-fatigue* dans la FAQ.
 
 Deux questions ont été ajoutées à la FAQ sur des intentions de recherche réelles : la distinction entre fatigue passagère et fatigue installée, et la prise au long cours. La première précise qu'une fatigue persistante relève d'un avis médical, ce qui est à la fois exact et protecteur.
+
+
+---
+
+## 16. Structure de la fiche produit
+
+### Le problème constaté
+
+Sept sections de la fiche produit reprenaient la page d'accueil : storytelling, bandeau bénéfices, actifs, comparatif, avis de professionnels, avis clients, FAQ. Un visiteur qui arrivait par l'accueil lisait deux fois le même argumentaire, avec les mêmes phrases. La fiche produit ne faisait pas avancer la décision, elle la répétait.
+
+### Le principe retenu
+
+Les deux pages ne s'adressent pas au même moment de la décision.
+
+- **L'accueil** parle au marché : il explique ce qu'est la fatigue physique et mentale, et pourquoi une cure peut y répondre. Registre général, vocabulaire de recherche.
+- **La fiche produit** parle à quelqu'un qui a déjà cliqué : il n'a plus besoin qu'on lui explique la fatigue, il a besoin de savoir si *ce* produit est pour *lui*, ce qu'il y a dedans, en quoi il diffère, et ce qui se passe s'il commande. Registre personnel, deuxième personne, détail vérifiable.
+
+La fiche produit ne réexplique donc jamais le problème : elle le nomme en une phrase pour créer la reconnaissance, puis passe immédiatement à la qualification et à la preuve.
+
+### Ordre appliqué
+
+| Ordre | Section | Étape AIDA | Ce qu'elle fait, et que l'accueil ne fait pas |
+|---|---|---|---|
+| 1 | Fiche produit | — | Bloc d'achat. Non modifié. |
+| 2 | Storytelling | Attention | Décrit les conséquences sur la journée du lecteur, pas les symptômes de la fatigue. Mise en page en deux colonnes, là où l'accueil utilise des bulles. |
+| 3 | Bandeau bénéfices | Intérêt | Porte la promesse de cure : sept actifs, une prise, trente jours, aucune reconduction. |
+| 4 | Est-ce pour vous ? | Désir | Nouvelle section. Qualifie le lecteur en deux colonnes. |
+| 5 | Actifs autour du produit | Désir | **Dosages affichés**, ce que l'accueil masque volontairement. C'est le premier vrai différenciateur de la page. |
+| 6 | Références | Désir | Monographies européennes et étude clinique. L'accueil cite des praticiens : registre différent, sources différentes. |
+| 7 | Comparatif | Désir | Cinq axes inédits, aucun repris de l'accueil. |
+| 8 | Avis clients | Désir | Après la cure, là où l'accueil parle du démarrage. |
+| 9 | Questions pratiques | Action | Objections d'avant-commande, pas de requêtes de recherche. |
+| 10 | Appel à l'action | Action | Ancre vers le bloc d'achat. |
+| 11 | Réassurance | Action | Livraison, paiement, qualité. |
+
+### « Est-ce pour vous ? » : pourquoi cette section
+
+C'est la section qui travaille le plus la décision, pour trois raisons.
+
+1. **Elle fait dire oui.** Quatre situations décrites à la deuxième personne, que le lecteur reconnaît ou non. Reconnaître sa propre journée dans une liste engage plus qu'une promesse générique.
+2. **Elle désamorce la méfiance.** Une page qui explique à qui elle ne convient *pas* est lue comme plus honnête qu'une page qui promet à tout le monde. La colonne « non » n'est pas une concession, c'est l'argument.
+3. **Elle place les précautions au bon endroit.** Les mentions obligatoires — moins de 18 ans, grossesse, allaitement, traitement médical, sensibilité à la caféine — devaient figurer quelque part. Placées ici, elles cessent d'être une contrainte réglementaire reléguée en accordéon et deviennent une preuve de sérieux, lue au moment où elle rassure.
+
+La colonne « oui » est cerclée d'or et posée sur fond blanc ; la colonne « non » est en pointillés, sans fond, en gris. La hiérarchie visuelle dit laquelle des deux le lecteur est censé se voir attribuer.
+
+### Comparatif : les axes retenus
+
+Aucun axe de l'accueil n'est repris. L'accueil compare une cure à une étagère de pots ; la fiche produit compare deux étiquettes.
+
+| 4 Vitality System | La plupart des compléments anti-fatigue |
+|---|---|
+| 25 mg de caféine annoncés | Des plantes stimulantes rarement quantifiées |
+| 7 actifs à des quantités utiles | Une liste à rallonge, quelques milligrammes chacun |
+| Fabriqué en France, contrôlé lot par lot | Lieu de fabrication rarement précisé |
+| Une boîte = 30 jours, sans reconduction | Abonnement reconduit par défaut |
+| Chaque énoncé renvoie à sa source | Des promesses fortes sans référence vérifiable |
+
+Le dernier axe est le seul qui se vérifie sur la page elle-même : la section Références placée juste au-dessus lui sert de preuve. C'est aussi le seul qui ne peut pas être copié par un concurrent sans qu'il fasse réellement le travail.
+
+### Contrôle anti-doublon
+
+Un contrôle automatique compare chaque phrase de la fiche produit à chaque phrase de l'accueil, à la fois en identité exacte et en proximité lexicale.
+
+- **0 phrase de vente identique.** Les treize chaînes communes restantes sont des libellés qui *doivent* l'être : le nom du produit, « Client vérifié », le bandeau de réassurance, les noms d'actifs, les libellés de boutons.
+- **0 titre de section commun.** Les dix titres diffèrent deux à deux.
+- Les rapprochements résiduels portent tous sur des faits qui ne peuvent pas varier d'une page à l'autre : la posologie, les 25 mg de caféine, le seuil de livraison offerte, les mentions vegan et sans OGM. Les faire diverger reviendrait à écrire deux vérités différentes sur le même produit.
+
+### Champ sémantique
+
+L'accueil capte les requêtes larges. La fiche produit prend les requêtes en aval, celles qui se posent une fois le produit trouvé : *dosage*, *quantité par actif*, *caféine*, *à jeun ou pendant le repas*, *oubli de prise*, *association avec d'autres compléments*, *durée de cure*, *sans abonnement*, *fabriqué en France*, *délai de livraison*. Les sept questions de la FAQ sont toutes distinctes de celles de l'accueil et restent balisées FAQPage.
