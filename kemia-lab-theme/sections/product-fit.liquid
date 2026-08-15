@@ -1,0 +1,134 @@
+{%- liquid
+  assign fit_count = 0
+  assign unfit_count = 0
+  for block in section.blocks
+    unless block.settings.text == blank
+      if block.settings.side == 'unfit'
+        assign unfit_count = unfit_count | plus: 1
+      else
+        assign fit_count = fit_count | plus: 1
+      endif
+    endunless
+  endfor
+  assign total = fit_count | plus: unfit_count
+-%}
+
+{%- if total > 0 -%}
+  <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
+    <div class="k-container">
+      {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
+        <div class="k-section-head">
+          {%- if section.settings.eyebrow != blank -%}
+            <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+          {%- endif -%}
+          {%- if section.settings.heading != blank -%}
+            <h2 class="k-h2">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.show_rule -%}<hr class="k-rule">{%- endif -%}
+          {%- if section.settings.intro != blank -%}
+            <p class="k-section-head__text">{{ section.settings.intro }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="k-fit">
+        {%- if fit_count > 0 -%}
+          <div class="k-fit__col k-fit__col--yes">
+            {%- if section.settings.fit_title != blank -%}
+              <h3 class="k-fit__title">
+                {% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}
+                {{ section.settings.fit_title }}
+              </h3>
+            {%- endif -%}
+            <ul class="k-fit__list" data-k-reveal>
+              {%- for block in section.blocks -%}
+                {%- if block.settings.text != blank and block.settings.side != 'unfit' -%}
+                  <li class="k-fit__item" {{ block.shopify_attributes }}>
+                    {% render 'icon', name: 'check', class: 'k-icon--sm' %}
+                    <span>{{ block.settings.text }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        {%- if unfit_count > 0 -%}
+          <div class="k-fit__col k-fit__col--no">
+            {%- if section.settings.unfit_title != blank -%}
+              <h3 class="k-fit__title">
+                {% render 'icon', name: 'x-circle', class: 'k-icon--sm' %}
+                {{ section.settings.unfit_title }}
+              </h3>
+            {%- endif -%}
+            <ul class="k-fit__list" data-k-reveal>
+              {%- for block in section.blocks -%}
+                {%- if block.settings.text != blank and block.settings.side == 'unfit' -%}
+                  <li class="k-fit__item" {{ block.shopify_attributes }}>
+                    {% render 'icon', name: 'minus', class: 'k-icon--sm' %}
+                    <span>{{ block.settings.text }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.note != blank -%}
+        <p class="k-fit__note">{{ section.settings.note }}</p>
+      {%- endif -%}
+    </div>
+  </section>
+{%- else -%}
+  {% render 'section-empty', message: "Est-ce pour vous : ajoutez des blocs et choisissez leur colonne." %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Est-ce pour vous ?",
+  "class": "k-fit-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Avant de commander" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Cette cure est-elle faite pour vous ?" },
+    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true },
+    { "type": "text", "id": "intro", "label": "Introduction" },
+    { "type": "text", "id": "fit_title", "label": "Titre de la colonne oui", "default": "Oui, si vous vous reconnaissez ici" },
+    { "type": "text", "id": "unfit_title", "label": "Titre de la colonne non", "default": "Non, dans ces cas" },
+    { "type": "text", "id": "note", "label": "Mention sous les colonnes" },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" },
+        { "value": "blue-tint", "label": "Bleu très clair" }
+      ],
+      "default": "none"
+    }
+  ],
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Ligne",
+      "settings": [
+        {
+          "type": "select",
+          "id": "side",
+          "label": "Colonne",
+          "options": [
+            { "value": "fit", "label": "Oui, c'est pour vous" },
+            { "value": "unfit", "label": "Non, pas dans ce cas" }
+          ],
+          "default": "fit"
+        },
+        { "type": "text", "id": "text", "label": "Texte" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Est-ce pour vous ?" }]
+}
+{% endschema %}
