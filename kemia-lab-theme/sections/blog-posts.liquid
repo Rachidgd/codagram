@@ -1,7 +1,11 @@
 {%- liquid
   assign target = blogs[section.settings.blog]
-  assign count = section.settings.count
+  assign count = section.settings.slides_count
   assign available = target.articles.size | plus: 0
+  assign shown = count
+  if available < count
+    assign shown = available
+  endif
 -%}
 
 {%- if available > 0 -%}
@@ -19,10 +23,28 @@
         {%- endif -%}
       </div>
 
-      <div class="k-blogrow__grid">
-        {%- for article in target.articles limit: count -%}
-          {% render 'article-card', article: article %}
-        {%- endfor -%}
+      <div class="k-blogrow k-carousel" data-k-rail>
+        {%- if shown > 1 -%}
+          <button class="k-carousel__nav k-blogrow__nav k-blogrow__nav--prev" type="button" data-k-rail-prev aria-label="{{ 'general.previous' | t }}">
+            {% render 'icon', name: 'chevron-left', class: 'k-icon--sm' %}
+          </button>
+        {%- endif -%}
+
+        <div class="k-blogrow__track k-rail k-rail--{{ section.settings.per_view }}" data-k-rail-track>
+          {%- for article in target.articles limit: count -%}
+            {% render 'article-card', article: article %}
+          {%- endfor -%}
+        </div>
+
+        {%- if shown > 1 -%}
+          <button class="k-carousel__nav k-blogrow__nav k-blogrow__nav--next" type="button" data-k-rail-next aria-label="{{ 'general.next' | t }}">
+            {% render 'icon', name: 'chevron-right', class: 'k-icon--sm' %}
+          </button>
+        {%- endif -%}
+
+        {%- if section.settings.show_dots and shown > 1 -%}
+          <div class="k-carousel__dots" data-k-rail-dots></div>
+        {%- endif -%}
       </div>
     </div>
   </section>
@@ -38,7 +60,18 @@
     { "type": "blog", "id": "blog", "label": "Blog" },
     { "type": "text", "id": "heading", "label": "Titre", "default": "Le blog Kemia Lab" },
     { "type": "text", "id": "link_label", "label": "Lien", "default": "Voir tous les articles" },
-    { "type": "range", "id": "count", "label": "Nombre d'articles", "min": 2, "max": 6, "step": 1, "default": 3 }
+    { "type": "range", "id": "slides_count", "label": "Nombre d'articles dans le slider", "min": 2, "max": 12, "step": 1, "default": 6 },
+    {
+      "type": "select",
+      "id": "per_view",
+      "label": "Articles visibles sur ordinateur",
+      "options": [
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3"
+    },
+    { "type": "checkbox", "id": "show_dots", "label": "Afficher les points", "default": true }
   ],
   "presets": [{ "name": "Articles du blog" }]
 }

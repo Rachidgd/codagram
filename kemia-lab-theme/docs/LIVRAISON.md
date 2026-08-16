@@ -711,3 +711,22 @@ Un contrôle automatique compare chaque phrase de la fiche produit à chaque phr
 La section « Fait pour vous » place le vocabulaire de l'avatar (*travail*, *trajets*, *entraînement*, *attention*, *après-midi*) au contact direct du vocabulaire produit (*formule*, *fatigue physique*, *fatigue mentale*, *zinc*, *ginseng*, *kola*, *dosage*, *cure de 30 jours*). C'est la seule section de la page où les deux registres se touchent sur la même ligne.
 
 L'accueil capte les requêtes larges. La fiche produit prend les requêtes en aval, celles qui se posent une fois le produit trouvé : *dosage*, *quantité par actif*, *caféine*, *à jeun ou pendant le repas*, *oubli de prise*, *association avec d'autres compléments*, *durée de cure*, *sans abonnement*, *fabriqué en France*, *délai de livraison*. Les sept questions de la FAQ sont toutes distinctes de celles de l'accueil et restent balisées FAQPage.
+
+---
+
+## 17. Le thème fait autorité sur les textes
+
+À partir de la v1.7.1, les textes ont été modifiés directement dans le Theme Builder. `templates/index.json` et `templates/product.json` du dépôt sont donc **en retard** sur le thème : notes vidées, réassurance en carte, avis limités à 6, image ajoutée sur l'appel à l'action, tirets remplacés par des virgules.
+
+**Règle à tenir :** avant tout déploiement complet, récupérer les deux gabarits depuis le thème et les réintégrer au dépôt. Un envoi de thème complet écraserait sinon les modifications faites dans le Builder.
+
+Les mises à jour de code seules (sections, extraits, CSS, JS) se poussent fichier par fichier avec `themeFilesUpsert` sur le thème non publié : les gabarits ne sont pas dans la charge utile, donc rien ne peut être écrasé. C'est la méthode retenue pour la v1.7.1.
+
+### Quatre corrections livrées sur la v1.7.1
+
+| Demande | Traitement |
+|---|---|
+| Images des actifs modifiables | 8 champs d'image dans les réglages de la section « Ce qu'il y a dans la gélule », un par actif dans l'ordre d'affichage. Vide, l'image de la fiche actif sert de repli. Cadre carré fixe, image entière, donc rendu identique quelle que soit la source. |
+| Vide autour du visuel produit | Mesuré : au-delà de 990 px le bandeau faisait 1355 px de haut pour une image de 576 px, soit 386 px de vide au-dessus et 394 px en dessous, parce que la colonne image se centrait sur la hauteur du bloc d'achat. Le visuel et le rail des bénéfices sont désormais collants à 108 px, sous l'en-tête fixe de 88 px : ils suivent le défilement au lieu de flotter. En dessous de 990 px il n'y avait que 24 et 30 px, rien n'a été touché. |
+| Accroche modifiable | Le bloc « Accroche dorée » n'avait aucun réglage. Il a un champ texte, qui l'emporte sur le champ méta `kemia.tagline` quand il est rempli. |
+| Blog en slider | La section utilise le carrousel déjà en place sur les avis : flèches à partir de 990 px, points, défilement tactile. Le réglage a changé d'identifiant (`count` devient `slides_count`) parce qu'il a changé de sens, ce qui écarte l'ancienne valeur de 3 au profit de 6 : les 6 articles du blog défilent 3 par 3. |

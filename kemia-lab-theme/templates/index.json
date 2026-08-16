@@ -477,7 +477,9 @@
         "blog": "blog",
         "heading": "Le blog Kemia Lab",
         "link_label": "Voir tous les articles",
-        "count": 3
+        "slides_count": 6,
+        "per_view": "3",
+        "show_dots": true
       }
     },
     "newsletter": {

@@ -90,7 +90,10 @@
             <h1 class="k-h1 k-buybox__title" {{ block.shopify_attributes }}>{{ product.title }}</h1>
 
           {%- when 'tagline' -%}
-            {%- assign tagline = product.metafields.kemia.tagline.value -%}
+            {%- assign tagline = block.settings.text -%}
+            {%- if tagline == blank -%}
+              {%- assign tagline = product.metafields.kemia.tagline.value -%}
+            {%- endif -%}
             {%- if tagline != blank -%}
               <p class="k-buybox__tagline" {{ block.shopify_attributes }}>{{ tagline }}</p>
             {%- endif -%}
@@ -374,7 +377,19 @@
       ]
     },
     { "type": "title", "name": "Nom du produit", "limit": 1, "settings": [] },
-    { "type": "tagline", "name": "Accroche dorée", "limit": 1, "settings": [] },
+    {
+      "type": "tagline",
+      "name": "Accroche dorée",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Accroche",
+          "info": "Laissez vide pour reprendre l'accroche de la fiche produit."
+        }
+      ]
+    },
     { "type": "usp", "name": "Description courte", "limit": 1, "settings": [] },
     {
       "type": "trust",

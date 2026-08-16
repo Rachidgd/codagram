@@ -39,7 +39,7 @@
           {%- for item in ingredients limit: left_count -%}
             <li class="k-orbit__item">
               <span class="k-orbit__media">
-                {% render 'image', image: item.image.value, ratio: '100%', fit: 'contain', class: 'k-media--plain', sizes: '96px', placeholder_icon: 'leaf' %}
+                {% render 'actif-media', position: forloop.index, fallback: item.image.value, settings: section.settings %}
               </span>
               <span class="k-orbit__body">
                 <span class="k-orbit__name">{{ item.name.value }}</span>
@@ -65,9 +65,10 @@
 
         <ul class="k-orbit__col k-orbit__col--right">
           {%- for item in ingredients offset: left_count -%}
+            {%- assign position = forloop.index | plus: left_count -%}
             <li class="k-orbit__item">
               <span class="k-orbit__media">
-                {% render 'image', image: item.image.value, ratio: '100%', fit: 'contain', class: 'k-media--plain', sizes: '96px', placeholder_icon: 'leaf' %}
+                {% render 'actif-media', position: position, fallback: item.image.value, settings: section.settings %}
               </span>
               <span class="k-orbit__body">
                 <span class="k-orbit__name">{{ item.name.value }}</span>
@@ -145,33 +146,154 @@
       "label": "Produit source",
       "info": "Les actifs et leurs bénéfices proviennent du champ méta kemia.ingredients. Sur une fiche produit, laisser vide."
     },
-    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "La formule en détail" },
-    { "type": "text", "id": "heading", "label": "Titre", "default": "actifs autour d'une seule formule" },
-    { "type": "checkbox", "id": "show_count", "label": "Préfixer le titre par le nombre d'actifs", "default": true },
-    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true },
-    { "type": "text", "id": "intro", "label": "Introduction" },
-    { "type": "header", "content": "Visuel central" },
-    { "type": "image_picker", "id": "image", "label": "Image du produit", "info": "Vide : l'image principale du produit." },
-    { "type": "text", "id": "center_label", "label": "Légende sous le visuel" },
-    { "type": "header", "content": "Actifs" },
-    { "type": "checkbox", "id": "show_dosage", "label": "Afficher le dosage", "default": true },
-    { "type": "header", "content": "Composition complète" },
-    { "type": "text", "id": "composition_link", "label": "Libellé du lien", "default": "Voir la composition complète" },
-    { "type": "text", "id": "composition_title", "label": "Titre de la fenêtre", "default": "Composition complète" },
-    { "type": "header", "content": "Apparence" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "La formule en détail"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "actifs autour d'une seule formule"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_count",
+      "label": "Préfixer le titre par le nombre d'actifs",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rule",
+      "label": "Filet doré",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "intro",
+      "label": "Introduction"
+    },
+    {
+      "type": "header",
+      "content": "Visuel central"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image du produit",
+      "info": "Vide : l'image principale du produit."
+    },
+    {
+      "type": "text",
+      "id": "center_label",
+      "label": "Légende sous le visuel"
+    },
+    {
+      "type": "header",
+      "content": "Actifs"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dosage",
+      "label": "Afficher le dosage",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Composition complète"
+    },
+    {
+      "type": "text",
+      "id": "composition_link",
+      "label": "Libellé du lien",
+      "default": "Voir la composition complète"
+    },
+    {
+      "type": "text",
+      "id": "composition_title",
+      "label": "Titre de la fenêtre",
+      "default": "Composition complète"
+    },
+    {
+      "type": "header",
+      "content": "Apparence"
+    },
+    {
+      "type": "header",
+      "content": "Images des actifs",
+      "info": "Une image par actif, dans l'ordre d'affichage. Vide, l'image de la fiche actif est utilisée."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Actif 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Actif 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Actif 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Actif 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "Actif 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_6",
+      "label": "Actif 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_7",
+      "label": "Actif 7"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_8",
+      "label": "Actif 8"
+    },
     {
       "type": "select",
       "id": "background",
       "label": "Fond",
       "options": [
-        { "value": "none", "label": "Aucun" },
-        { "value": "soft", "label": "Beige clair" },
-        { "value": "beige", "label": "Beige" },
-        { "value": "blue-tint", "label": "Bleu très clair" }
+        {
+          "value": "none",
+          "label": "Aucun"
+        },
+        {
+          "value": "soft",
+          "label": "Beige clair"
+        },
+        {
+          "value": "beige",
+          "label": "Beige"
+        },
+        {
+          "value": "blue-tint",
+          "label": "Bleu très clair"
+        }
       ],
       "default": "soft"
     }
   ],
-  "presets": [{ "name": "Actifs autour du produit" }]
+  "presets": [
+    {
+      "name": "Actifs autour du produit"
+    }
+  ]
 }
 {% endschema %}
