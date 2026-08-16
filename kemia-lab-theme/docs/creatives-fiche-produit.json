@@ -1,0 +1,230 @@
+{
+  "produit": "4 VITALITY SYSTEM — Kemia Lab",
+  "usage": "8 créatives carrées pour la galerie de la fiche produit et la publicité payante. Chaque entrée est autonome : le champ prompt peut être collé seul dans un générateur d'images.",
+
+  "consignes_globales": {
+    "image_de_reference": "Une image de référence du produit est fournie avec chaque prompt. Le produit qui apparaît dans la créative doit être EXACTEMENT celui de l'image de référence. Interdiction de redessiner, restyler, réétiqueter, reproportionner ou recolorer le flacon, l'étiquette, le bouchon, le logo ou tout texte imprimé dessus. Le produit est un élément à compositer, pas à générer.",
+    "ce_qui_peut_changer": "Uniquement l'échelle, la rotation légère (±8°), la position dans le cadre, l'ombre portée et l'éclairage d'ambiance qui se pose sur le produit.",
+    "texte_dans_l_image": "N'écrire que les chaînes listées dans texte_a_afficher, au caractère près, accents compris. N'inventer aucun mot, aucun chiffre, aucune mention légale.",
+    "palette": {
+      "navy": "#011F4B",
+      "bleu": "#002D9C",
+      "or": "#C47A17",
+      "or_fonce": "#A5640F",
+      "or_clair": "#E5C89F",
+      "beige": "#F8F1E9",
+      "beige_clair": "#FBF8F5",
+      "encre": "#12161C",
+      "blanc_casse": "#FEFDFC"
+    },
+    "typographie": "Montserrat (600 et 700) pour tous les textes. Playfair Display uniquement si un mot doit être mis en exergue en serif.",
+    "format": "1:1, 1600 × 1600 px minimum, lisible à 300 px de large.",
+    "direction_artistique": "Studio sobre et haut de gamme, lumière douce et directionnelle, ombres franches mais courtes, fonds unis ou dégradés très légers. Pas de collage désordonné, pas de reflets plastiques, pas de rendu 3D brillant.",
+    "interdits_transverses": [
+      "Aucune allégation de perte de poids, de silhouette, de ventre plat, de rétention d'eau, de dégonflement, d'équilibre hormonal.",
+      "Aucune promesse de guérison, de traitement, de suppression du stress ou de la fatigue.",
+      "Aucun logo, label, certification, écusson, note ou badge d'avis inventé.",
+      "Aucun personnage en blouse blanche, stéthoscope, ni décor médical.",
+      "Aucun texte fantaisiste généré par le modèle."
+    ]
+  },
+
+  "faits_produit_verifies": {
+    "composition": "7 actifs pour 2 gélules par jour",
+    "actifs": [
+      "L-Tyrosine 280 mg",
+      "CDP-Choline 200 mg",
+      "Extrait de kola 208,3 mg (dont caféine 25 mg)",
+      "Extrait de ginseng 200 mg (dont ginsénosides 20 mg)",
+      "Extrait de safran 30 mg",
+      "Zinc 10 mg (100 % VNR)",
+      "Vitamine D3 50 µg / 2000 UI (1000 % VNR)"
+    ],
+    "cure": "30 jours par boîte, sans abonnement",
+    "attributs": "Vegan, sans OGM, fabriqué en France",
+    "accroche": "Plus d'énergie, moins de fatigue, jour après jour."
+  },
+
+  "creatives": [
+    {
+      "id": 1,
+      "nom": "Packshot d'ouverture",
+      "objectif": "Arrêter le défilement et faire identifier le produit et sa catégorie en moins d'une seconde. C'est la vignette qui décide si la fiche est ouverte.",
+      "position_conseillee": "Visuel 1 de la galerie, et visuel principal des annonces.",
+      "prompt": "Photographie produit de studio, format carré. Le produit fourni en image de référence est posé au centre, légèrement de trois quarts, sur un plan horizontal. IMPORTANT : le produit doit être exactement celui de l'image de référence, sans aucune modification de sa forme, de son étiquette, de ses couleurs ni des textes imprimés dessus ; il est compositer tel quel, seules son échelle, sa position et son ombre peuvent être ajustées. Fond en dégradé vertical très doux du beige clair #FBF8F5 vers le beige #F8F1E9. Lumière principale douce venant du haut à gauche, ombre portée courte et nette vers la droite, léger halo lumineux derrière le produit pour le détacher. En bas du cadre, trois gélules disposées avec soin près du flacon. Dans le coin supérieur gauche, un bloc de preuve sociale sobre : la note en gros chiffres, les étoiles, puis le libellé, en encre #12161C. Dans le coin supérieur droit, un écusson hexagonal fin au trait or #C47A17 sur fond transparent contenant deux lignes de texte. Aucun autre élément, aucune plante, aucun fruit. Composition aérée, marges généreuses.",
+      "texte_a_afficher": [
+        "{{NOTE}}/5",
+        "sur {{NB_AVIS}} avis clients",
+        "7 actifs",
+        "2 gélules par jour"
+      ],
+      "variables_a_remplir": {
+        "NOTE": "Note réelle au moment de la publication. Valeur actuelle en base : 4,8",
+        "NB_AVIS": "Nombre d'avis réels vérifiés. Valeur actuelle en base : 6"
+      },
+      "negative_prompt": "produit redessiné, étiquette modifiée, texte inventé sur l'emballage, logo Trustpilot ou tout autre logo tiers, badge de certification, note ou nombre d'avis inventé, fruits, feuillage, éclaboussures, rendu 3D brillant, fond blanc pur",
+      "note": "Ne pas publier tant que NOTE et NB_AVIS ne correspondent pas à des avis réels vérifiés. Afficher une note appuyée sur des textes de démonstration est une pratique commerciale trompeuse."
+    },
+
+    {
+      "id": 2,
+      "nom": "La promesse",
+      "objectif": "Donner la raison d'acheter en une phrase. C'est le visuel qui transforme la reconnaissance du produit en intérêt.",
+      "position_conseillee": "Visuel 2 de la galerie. Créative d'accroche en acquisition froide.",
+      "prompt": "Composition graphique carrée, moitié haute typographique, moitié basse photographique. IMPORTANT : le produit visible en bas du cadre doit être exactement celui de l'image de référence fournie, sans aucune retouche de forme, d'étiquette, de couleur ni des textes imprimés ; il est intégré tel quel, seules son échelle, sa position et son ombre peuvent varier. Fond en dégradé diagonal du navy #011F4B en haut vers le bleu #002D9C en bas. Dans la moitié haute, un titre sur deux lignes en Montserrat 700 blanc, très grand, calé à gauche avec une large marge. Sous le titre, trois puces alignées à gauche, chacune précédée d'un petit carré or #C47A17, en Montserrat 600 blanc, taille moyenne. Dans la moitié basse à droite, le produit posé sur une surface sombre réfléchissante, éclairé par une lumière latérale froide qui souligne son contour. Ombre longue vers la gauche. Beaucoup d'espace négatif entre le texte et le produit.",
+      "texte_a_afficher": [
+        "Plus d'énergie,",
+        "moins de fatigue.",
+        "7 actifs dosés",
+        "2 gélules le matin",
+        "30 jours, sans abonnement"
+      ],
+      "negative_prompt": "produit redessiné, étiquette modifiée, texte inventé, promesse de guérison, mention de perte de poids ou de silhouette, personnage, décor médical, fond blanc",
+      "note": "Les trois puces sont des faits vérifiables, pas des bénéfices. C'est ce qui rend la promesse tenable."
+    },
+
+    {
+      "id": 3,
+      "nom": "La reconnaissance",
+      "objectif": "Faire dire « c'est moi » au prospect. Reprend le principe des étiquettes-questions du concurrent, en décrivant des moments de journée plutôt que des symptômes.",
+      "position_conseillee": "Visuel 3 de la galerie. Excellente créative de ciblage large.",
+      "prompt": "Composition graphique carrée sur fond en dégradé chaud du beige #F8F1E9 en haut vers l'or clair #E5C89F en bas. Dans la moitié haute, quatre étiquettes arrondies de tailles différentes, disposées en quinconce sur deux rangées, façon nuage. Chaque étiquette a un fond blanc légèrement translucide, un contour fin or #C47A17 et une ombre portée très douce ; le texte à l'intérieur est en Montserrat 600, encre #12161C, centré. Dans la moitié basse, le produit fourni en image de référence est posé debout, décalé à gauche, vu de face. IMPORTANT : ce produit doit être exactement celui de l'image de référence, sans modification de sa forme, de son étiquette, de ses couleurs ni de ses textes imprimés ; il est intégré tel quel. À droite du produit, une seule phrase de conclusion en Montserrat 700, navy #011F4B, sur deux lignes. Lumière naturelle chaude, ombre douce sous le produit.",
+      "texte_a_afficher": [
+        "Le réveil qui coûte un effort ?",
+        "Le coup de barre de 15h ?",
+        "La séance repoussée à demain ?",
+        "Les soirées où il ne reste rien ?",
+        "Une seule formule pour les deux fatigues, la physique et la mentale."
+      ],
+      "negative_prompt": "produit redessiné, étiquette modifiée, texte inventé, visage triste ou souffrant, imagerie de maladie, mention d'anxiété ou de dépression, mention de sommeil comme promesse, fond rouge agressif",
+      "note": "Les questions portent sur des moments de la journée, jamais sur un état pathologique. « Anxiété » et « mauvais sommeil », présents chez le concurrent, sont écartés : ce sont des revendications de santé."
+    },
+
+    {
+      "id": 4,
+      "nom": "La chronologie de cure",
+      "objectif": "Fixer l'attente et justifier la durée. Réduit la déception à court terme et prépare le rachat. C'est le visuel le plus fort du concurrent, repris avec des jalons honnêtes.",
+      "position_conseillee": "Visuel 4 de la galerie. Créative de retargeting.",
+      "prompt": "Composition graphique carrée, mise en page en deux colonnes. IMPORTANT : le produit doit être exactement celui de l'image de référence fournie, aucune modification de forme, d'étiquette, de couleur ou de texte imprimé ; il est intégré tel quel. Colonne de gauche, occupant un tiers du cadre : le produit debout, vu de face, sur un fond en dégradé vertical du navy #011F4B vers le bleu #002D9C, avec un reflet net sous sa base. Colonne de droite, occupant deux tiers : une frise verticale composée de trois jalons reliés par une ligne fine blanche ponctuée de trois pastilles rondes or #C47A17. Pour chaque jalon, un intitulé en Montserrat 700 blanc souligné d'un trait or, et en dessous une ligne de description en Montserrat 400 blanc cassé, plus petite. Espacement régulier et généreux entre les jalons. En bas du cadre, une ligne de mention en très petits caractères, blanc à 70 % d'opacité, centrée.",
+      "texte_a_afficher": [
+        "Jour 1 — La routine se met en place",
+        "2 gélules au petit-déjeuner. Rien d'autre à prévoir.",
+        "Jour 30 — Le programme est complet",
+        "Une boîte couvre la cure entière. C'est le moment de faire le point.",
+        "Jour 90 — Vous décidez de la suite",
+        "Vous prolongez avec un format 2 ou 3 mois, ou vous vous arrêtez.",
+        "La perception varie d'une personne à l'autre."
+      ],
+      "negative_prompt": "produit redessiné, étiquette modifiée, texte inventé, promesse de résultat daté, mention de perte de poids, de silhouette, de rétention d'eau, de ventre dégonflé, d'équilibre hormonal, de stress maîtrisé, corps avant-après",
+      "note": "Différence volontaire avec le concurrent : ses jalons promettent un résultat physiologique à date fixe, ce qui n'est ni démontrable ni autorisé. Les nôtres décrivent le déroulé de la cure, pas ses effets. La mention finale est ce qui rend la frise défendable."
+    },
+
+    {
+      "id": 5,
+      "nom": "Les 7 actifs et leurs dosages",
+      "objectif": "Prouver le mécanisme et installer la différenciation centrale de la marque : les quantités sont affichées. C'est l'argument qu'un concurrent ne peut pas copier sans faire le travail.",
+      "position_conseillee": "Visuel 5 de la galerie. Créative de considération, forte sur audiences averties.",
+      "prompt": "Composition graphique carrée sur fond bleu très clair #F6F7FD. IMPORTANT : le produit doit être exactement celui de l'image de référence fournie, sans aucune modification de forme, d'étiquette, de couleur ou de texte imprimé ; il est intégré tel quel. Au centre exact du cadre, le produit debout, vu de face, avec une ombre douce et un cercle lumineux blanc derrière lui. Autour de lui, sept blocs de texte disposés en couronne, quatre à gauche et trois à droite, chacun relié au centre par une fine ligne or #C47A17 se terminant par un point. Chaque bloc contient le nom de l'actif en Montserrat 700 navy #011F4B, et juste en dessous la quantité en Montserrat 600 or foncé #A5640F, plus petite. Alignement du texte à droite pour la colonne de gauche, à gauche pour la colonne de droite. En haut du cadre, un titre court centré en Montserrat 700 navy. Aucune illustration d'ingrédient, aucune plante, aucune poudre : uniquement de la typographie et le produit.",
+      "texte_a_afficher": [
+        "Chaque quantité est affichée",
+        "L-Tyrosine — 280 mg",
+        "CDP-Choline — 200 mg",
+        "Extrait de kola — 208,3 mg",
+        "Extrait de ginseng — 200 mg",
+        "Extrait de safran — 30 mg",
+        "Zinc — 10 mg",
+        "Vitamine D3 — 50 µg",
+        "pour 2 gélules par jour"
+      ],
+      "negative_prompt": "produit redessiné, étiquette modifiée, dosage inventé ou arrondi, actif ajouté ou retiré, illustration d'ingrédient, plante, racine, poudre, gélule ouverte, schéma scientifique, molécule",
+      "note": "Les sept quantités sont celles du dossier produit, au chiffre près. Ne jamais les arrondir dans une créative : le visuel entier repose sur leur exactitude."
+    },
+
+    {
+      "id": 6,
+      "nom": "Le mode d'emploi",
+      "objectif": "Lever l'objection de contrainte. Montre qu'adopter le produit ne demande aucun effort d'organisation.",
+      "position_conseillee": "Visuel 6 de la galerie.",
+      "prompt": "Composition carrée en grille de quatre cases égales, séparées par des filets blancs de 8 px. Case en haut à gauche : fond navy #011F4B, uniquement du texte en Montserrat 700 blanc sur trois lignes, calé à gauche, très grand. Case en haut à droite : photographie de studio en lumière naturelle, une main verse deux gélules dans le creux de l'autre main, plan serré, arrière-plan de cuisine claire et floue. Case en bas à gauche : photographie du produit fourni en image de référence posé sur un plan de travail clair à côté d'un verre d'eau et d'un bol de petit-déjeuner ; IMPORTANT, ce produit doit être exactement celui de l'image de référence, sans modification de sa forme, de son étiquette, de ses couleurs ou de ses textes imprimés. Case en bas à droite : photographie d'une femme de 30 à 40 ans, de trois quarts, qui boit un verre d'eau devant une fenêtre lumineuse, expression détendue et naturelle, sans sourire forcé. Dans chaque case photographique, une petite étiquette arrondie or #C47A17 en bas, texte blanc en Montserrat 600. Colorimétrie chaude et homogène sur les trois photographies.",
+      "texte_a_afficher": [
+        "2 gélules.",
+        "Le matin.",
+        "C'est tout.",
+        "1. doser",
+        "2. au petit-déjeuner",
+        "3. pendant 30 jours"
+      ],
+      "negative_prompt": "produit redessiné, étiquette modifiée, texte inventé, gélule ouverte ou coupée, main en gros plan déformée, doigts surnuméraires, sourire exagéré, décor médical, pilulier de médicaments",
+      "note": "Le modèle photographié ne doit évoquer ni performance sportive extrême ni convalescence. Une personne active ordinaire."
+    },
+
+    {
+      "id": 7,
+      "nom": "Ce que l'étiquette dit",
+      "objectif": "Différenciation concurrentielle frontale. Positionne la marque sur la transparence plutôt que sur la promesse, terrain sur lequel elle gagne.",
+      "position_conseillee": "Visuel 7 de la galerie. Créative de conquête face aux marques concurrentes.",
+      "prompt": "Composition graphique carrée en deux colonnes verticales de largeur égale, séparées par un filet fin. Colonne de gauche sur fond beige clair #FBF8F5, surmontée d'un bandeau navy #011F4B contenant un intitulé en Montserrat 700 blanc centré. Colonne de droite sur fond gris très clair, surmontée d'un bandeau gris moyen contenant un intitulé en Montserrat 700 gris foncé centré. Sous les bandeaux, quatre lignes en vis-à-vis, séparées par des filets horizontaux très fins. Chaque ligne de gauche commence par une coche or #C47A17 et un texte en encre #12161C ; chaque ligne de droite commence par un tiret gris clair et un texte en gris moyen, visiblement moins contrasté. En bas du cadre, sur toute la largeur, le produit fourni en image de référence, couché à plat de trois quarts, en débord partiel hors du cadre par le bas, avec une ombre douce. IMPORTANT : ce produit doit être exactement celui de l'image de référence, sans aucune modification de forme, d'étiquette, de couleur ou de texte imprimé.",
+      "texte_a_afficher": [
+        "4 Vitality System",
+        "La plupart des compléments",
+        "25 mg de caféine annoncés",
+        "Des stimulants rarement quantifiés",
+        "7 actifs à des quantités utiles",
+        "Une liste à rallonge, quelques mg chacun",
+        "Fabriqué en France, contrôlé lot par lot",
+        "Lieu de fabrication rarement précisé",
+        "Une boîte = 30 jours, sans reconduction",
+        "Abonnement reconduit par défaut"
+      ],
+      "negative_prompt": "produit redessiné, étiquette modifiée, texte inventé, marque concurrente nommée, logo concurrent, emballage concurrent reconnaissable, produit barré ou tourné en dérision",
+      "note": "La colonne de droite ne doit désigner aucune marque, ni par le nom, ni par une forme d'emballage reconnaissable. Comparer à une catégorie est licite, dénigrer un concurrent identifiable ne l'est pas."
+    },
+
+    {
+      "id": 8,
+      "nom": "L'avis client",
+      "objectif": "Preuve sociale. Apporter la caution d'un tiers au moment où le doute est le plus fort.",
+      "position_conseillee": "Visuel 8 de la galerie. À décliner en plusieurs versions, une par avis, pour tester en publicité.",
+      "parti_pris": "Un seul avis mis en grand plutôt qu'un montage de trois. À l'échelle d'une vignette de galerie ou d'un fil d'actualité, trois avis empilés deviennent illisibles et se ressemblent tous ; un avis précis et concret porte davantage. L'avis retenu est le plus spécifique du jeu : il nomme une situation vécue plutôt qu'un ressenti général. Une variante en montage est décrite plus bas si vous voulez la tester en A/B.",
+      "prompt": "Composition carrée, mise en page en deux zones horizontales. Zone haute, deux tiers du cadre : fond en dégradé doux du beige #F8F1E9 vers le blanc cassé #FEFDFC ; au centre, une carte blanche à coins arrondis avec une ombre portée large et très douce, occupant la majeure partie de la zone. Dans la carte, du haut vers le bas : cinq étoiles pleines or #C47A17 alignées à gauche, puis le texte de l'avis en Montserrat 400 encre #12161C sur quatre lignes, interligne aéré, avec un guillemet ouvrant surdimensionné en or clair #E5C89F placé en filigrane derrière le début du texte ; enfin, en bas de la carte, le prénom en Montserrat 700 navy #011F4B suivi sur la même ligne d'une étiquette arrondie discrète, fond vert très pâle, texte vert foncé en Montserrat 600. Zone basse, un tiers du cadre : le produit fourni en image de référence, debout, décalé à droite, dépassant légèrement derrière la carte blanche pour créer de la profondeur. IMPORTANT : ce produit doit être exactement celui de l'image de référence, sans aucune modification de sa forme, de son étiquette, de ses couleurs ni de ses textes imprimés ; il est intégré tel quel, seules son échelle, sa position et son ombre peuvent être ajustées. À gauche du produit, la note globale en très gros chiffres navy et, en dessous, le nombre d'avis en petits caractères gris.",
+      "texte_a_afficher": [
+        "Une routine simple à tenir : 2 gélules le matin et c'est réglé. C'est ce que je cherchais après avoir accumulé trois pots différents.",
+        "Karim B.",
+        "Achat vérifié",
+        "{{NOTE}}/5",
+        "sur {{NB_AVIS}} avis"
+      ],
+      "variables_a_remplir": {
+        "NOTE": "Note réelle au moment de la publication. Valeur actuelle en base : 4,8",
+        "NB_AVIS": "Nombre d'avis réels vérifiés. Valeur actuelle en base : 6"
+      },
+      "variante_montage": {
+        "quand_l_utiliser": "Uniquement au-delà de 30 avis réels, quand le volume devient lui-même un argument.",
+        "prompt": "Même direction artistique et même consigne sur l'image de référence du produit. Trois cartes blanches à coins arrondis se chevauchant légèrement en éventail, décalées verticalement, la carte centrale au premier plan et un peu plus grande. Chaque carte contient cinq étoiles or, deux lignes d'avis maximum en Montserrat 400, et un prénom en Montserrat 700 navy. Le produit fourni en image de référence est posé derrière l'éventail, sur la droite, partiellement masqué par les cartes, intégré tel quel sans aucune modification. En haut à gauche, la note globale en très gros chiffres navy et le nombre d'avis en dessous.",
+        "texte_a_afficher": [
+          "Ingrédients bien dosés et effets ressentis.",
+          "Julien M.",
+          "2 gélules le matin et c'est réglé.",
+          "Karim B.",
+          "Fabriqué en France, dosages affichés clairement.",
+          "Sofiane L.",
+          "{{NOTE}}/5",
+          "sur {{NB_AVIS}} avis"
+        ]
+      },
+      "negative_prompt": "produit redessiné, étiquette modifiée, avis inventé, prénom inventé, note ou nombre d'avis inventé, logo Trustpilot ou Avis Vérifiés ou Google, photo de client générée, visage de témoin, badge de certification",
+      "note": "Bloquant avant publication : les six avis en base portent la mention « contenu de démonstration à remplacer par des avis réels vérifiés ». Publier un témoignage fabriqué avec un prénom et une mention d'achat vérifié est une pratique commerciale trompeuse au sens de l'article L.121-2 du code de la consommation. Ce visuel ne part qu'une fois les avis réels collectés, et le texte affiché doit être la citation exacte du client, sans réécriture."
+    }
+  ],
+
+  "recapitulatif_objectifs": [
+    { "id": 1, "etape": "Attention", "objectif": "Identifier le produit en moins d'une seconde" },
+    { "id": 2, "etape": "Intérêt", "objectif": "Donner la raison d'acheter en une phrase" },
+    { "id": 3, "etape": "Intérêt", "objectif": "Faire dire « c'est moi »" },
+    { "id": 4, "etape": "Désir", "objectif": "Fixer l'attente et justifier la durée de cure" },
+    { "id": 5, "etape": "Désir", "objectif": "Prouver le mécanisme par les quantités affichées" },
+    { "id": 6, "etape": "Désir", "objectif": "Lever l'objection de contrainte" },
+    { "id": 7, "etape": "Désir", "objectif": "Différencier face à la catégorie" },
+    { "id": 8, "etape": "Action", "objectif": "Apporter la caution d'un tiers" }
+  ]
+}
