@@ -826,12 +826,22 @@
   right: 4px;
 }
 
-/* Les logos de paiement sont injectes par une application : ils n heritent
-   pas de l alignement a gauche des blocs de la buy box. */
+/* Les logos de paiement sont injectes par une application, toujours en fin
+   de formulaire et alignes a gauche comme les blocs du theme. On les centre
+   et on les remonte sous le bouton d achat par l ordre flex, ce qui evite
+   le saut visuel qu un deplacement en JavaScript provoquerait. */
 .k-buybox > *:not([class^="k-"]):not([class*=" k-"]) {
+  order: 1;
   align-self: stretch;
   width: 100%;
+  margin-top: 4px;
   text-align: center;
+}
+
+.k-buybox > .k-buybox__reassurance,
+.k-buybox > .k-buybox__trust,
+.k-buybox > .k-buybox__panel {
+  order: 2;
 }
 
 .k-pdp-rail {
