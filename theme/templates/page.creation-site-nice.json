@@ -61,7 +61,7 @@
         "reverse": false,
         "eyebrow": "Notre lecture",
         "title": "Un client qui réserve à distance a besoin de tout savoir avant d’écrire.",
-        "text": "<p>Sur place, une question se pose au téléphone. À distance, elle reste sans réponse et le prospect passe au concurrent qui, lui, a tout expliqué : ce qui est compris, les délais, les modalités de paiement, ce qui se passe s’il annule.</p><p>Un site pensé pour cette clientèle est plus explicite que la moyenne, et c’est ce qui le fait convertir.</p>"
+        "text": "<p>Sur place, une question se pose au téléphone. À distance, elle reste sans réponse, et le prospect passe au concurrent qui a tout expliqué. Ce qui est compris, les délais, le paiement, ce qui se passe s’il annule.</p><p>Un site pensé pour cette clientèle est plus explicite que la moyenne, et c’est ce qui le fait convertir.</p>"
       },
       "blocks": {
         "b1": {

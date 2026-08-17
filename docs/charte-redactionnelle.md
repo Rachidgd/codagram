@@ -153,3 +153,104 @@ charge utile en cas d'infraction :
 - `build/typographie.py` — apostrophes et espaces insécables
 
 Le reste est de la relecture humaine, et elle ne se délègue pas à un outil.
+
+---
+
+## 7. Les règles de métier, d'après Lucie Rondelet
+
+*« Le guide du rédacteur web SEO freelance », chapitres 4, 5 et 7.*
+
+La section 1 dit ce qu'on refuse. Celle-ci dit comment on écrit. La différence
+compte : on peut éviter tous les tics de l'IA et produire un texte illisible.
+
+### La longueur de phrase : 23 mots
+
+Le seuil n'est pas esthétique, il est physiologique. Le lecteur d'écran est mal
+assis, éclairé par une lumière bleue, interrompu par ses notifications, souvent
+debout dans un transport. Une phrase de 40 mots lui demande un effort qu'il ne
+fournira pas : il revient en arrière, ou il part.
+
+Le livre en fait la démonstration en coupant une dépêche de 43 mots en deux
+phrases de 23, sans rien perdre. C'est presque toujours possible.
+
+`build/redaction_controle.py` mesure chaque phrase du site. Au-delà de 30 mots,
+la phrase est à couper ; entre 24 et 30, elle est à relire.
+
+### La voix active
+
+« La bombe atomique a touché Nagasaki » plutôt que « Nagasaki a été touchée par
+la bombe atomique ». Le passif éloigne l'acteur de son action et ajoute des
+mots. Il reste légitime quand l'acteur n'a pas d'importance — « le devis
+détaille ce qui est inclus » — mais c'est l'exception, pas le réglage par
+défaut.
+
+### Le mot le plus précis disponible
+
+Le livre distingue l'hyperonyme du terme spécifique : dès qu'un mot plus précis
+existe, on l'emploie. « Berline » plutôt que « voiture ». Un mot générique ne
+permet pas au lecteur de se représenter la chose ; il l'oublie aussitôt.
+
+Le test du livre, applicable en dix secondes : si un mot compte beaucoup de
+synonymes, il est trop vague. « Avoir » en a soixante-dix, « détenir » vingt et
+un. Le second dit quelque chose.
+
+Sont proscrits les mots sans signification propre — « truc », « machin », « des
+choses », « certains éléments », « divers aspects », « un certain nombre de ».
+
+### Les expressions toutes faites
+
+Le livre en donne la liste : « pour petits et grands », « qui a su se
+démarquer », « ravira toute la famille », « notre objectif est de vous
+satisfaire », « la qualité est notre priorité ». S'y ajoutent celles de notre
+secteur : « à votre écoute », « au service de votre réussite », « fort de notre
+expérience », « à la pointe de », « acteur incontournable », « équipe de
+passionnés ».
+
+Elles n'apportent aucune information. Elles se déplacent d'un site à l'autre
+sans être modifiées — c'est exactement le test de la section 3.
+
+### Les formules de doute
+
+« Il est possible que », « il se pourrait », « il semblerait », « peut-être
+que », « en quelque sorte ». Le rédacteur transmet son hésitation au lecteur.
+La bonne réponse au doute n'est pas de l'écrire, c'est de vérifier sa source.
+
+### Les temps
+
+Le présent domine. L'impératif pour les appels à l'action — c'est sa fonction.
+Le passé composé et l'imparfait pour raconter. **Le passé simple et le
+subjonctif passé sont écartés** : « bien qu'elles fussent fraîchement
+diplômées, nous préférâmes » n'a pas sa place sur un écran.
+
+### L'introduction, écrite en dernier
+
+Le lecteur lit l'introduction en diagonale, puis balaie les sous-titres avant
+de décider. L'introduction doit donc : aller droit au but, montrer qu'on a
+compris son problème, annoncer ce qu'il obtient. Pas de préambule.
+
+Et elle se rédige **après** le reste : on ne peut pas annoncer proprement un
+texte qu'on n'a pas encore écrit.
+
+### La pyramide inversée
+
+L'essentiel d'abord, le détail ensuite, le contexte en dernier. C'est l'inverse
+de la dissertation scolaire, et c'est la seule structure qui survit à une
+lecture interrompue.
+
+### Le vocabulaire du client
+
+Le livre insiste sur un point que nous avons déjà appris à nos dépens : le
+vocabulaire d'une agence n'est pas celui de son client. Un dirigeant de PME ne
+dit pas « leads qualifiés », ni « acquisition organique », ni « CRO ». Il dit
+des appels, des devis, des clients. On écrit dans ses mots, pas dans les
+nôtres.
+
+### Ce que le contrôle a donné
+
+Premier passage sur les 1 802 phrases des gabarits : zéro expression toute
+faite, zéro formule de doute, zéro pantonyme, zéro temps lourd. Cinq phrases
+dépassaient 30 mots — trois sur des pages publiées, corrigées ; les deux autres
+sont dans un gabarit orphelin. Soixante-neuf phrases restent entre 24 et 30
+mots : à relire au fil des prochaines passes, sans urgence.
+
+Le corpus passe donc le test du livre. C'était à vérifier plutôt qu'à supposer.
