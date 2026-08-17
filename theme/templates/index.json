@@ -30,7 +30,7 @@
         "t3": {
           "type": "trust",
           "settings": {
-            "text": "Vos accès restent les vôtres"
+            "text": "Réponse sous 48 h ouvrées"
           }
         },
         "c1": {
@@ -74,7 +74,7 @@
             "prefix": "+",
             "count_to": "236",
             "suffix": " %",
-            "label": "affichages sur Google"
+            "label": "affichages Google — Maison Ayla"
           }
         },
         "r2": {
@@ -83,16 +83,16 @@
             "prefix": "+",
             "count_to": "350",
             "suffix": " %",
-            "label": "visites depuis Google"
+            "label": "clics Google — Maison Ayla"
           }
         },
         "r3": {
           "type": "readout",
           "settings": {
-            "prefix": "",
-            "count_to": "48",
-            "suffix": " h",
-            "label": "pour vous répondre"
+            "prefix": "+",
+            "count_to": "169",
+            "suffix": " %",
+            "label": "affichages Google — Noza & Co"
           }
         }
       },

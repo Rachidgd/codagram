@@ -79,11 +79,11 @@
           "spotlight": {
             "type": "nav_spotlight",
             "settings": {
-              "parent": "Services",
+              "parent": "Prestations",
               "eyebrow": "Dernier résultat",
               "title": "Maison Ayla — reprise de l'architecture SEO.",
               "metric": "+350 %",
-              "metric_label": "clics organiques en 3 mois",
+              "metric_label": "clics organiques · avril → juin 2026",
               "text": "Trois mois de travail sur la structure des pages et la couverture des recherches qui déclenchent un contact.",
               "cta_label": "Voir les résultats",
               "cta_url": "/pages/resultats"
@@ -107,7 +107,7 @@
           "cta_title": "Découvrez ce que vous laissez à vos concurrents.",
           "cta_text": "Quatre questions, une réponse argumentée sous 48 h. Vous repartez avec vos trois priorités chiffrées, que nous travaillions ensemble ou non.",
           "cta_label": "Demander mon diagnostic",
-          "availability": "Nous ouvrons 2 places d'accompagnement ce mois-ci",
+          "availability": "Nous refusons une mission plutôt que d'allonger vos délais.",
           "wordmark": "clickscreation",
           "baseline": "SEO, sites sur mesure, boutiques Shopify, conversion et publicité Meta — pour que votre site vous amène des clients.",
           "email": "contact@clickscreation.com",

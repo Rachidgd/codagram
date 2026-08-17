@@ -8,8 +8,8 @@
         "title": "Repartez avec trois priorités chiffrées et un ordre d’exécution.",
         "lead": "Nous analysons la technique, la structure sémantique et la concurrence de votre site, puis nous vous remettons trois priorités argumentées et chiffrées. Pas une liste de deux cents points classés par couleur.",
         "cta_primary": "Demander l’audit",
-        "parent_label": "Audits",
-        "parent_url": "/pages/audit-ecommerce",
+        "parent_label": "",
+        "parent_url": "",
         "cta_secondary": "Voir la prestation SEO",
         "cta_secondary_url": "/pages/agence-seo"
       },

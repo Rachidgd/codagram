@@ -5,11 +5,11 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Luxembourg",
-        "title": "Un marché petit, riche, et multilingue par nécessité.",
+        "title": "Agence SEO au Luxembourg, sur un marché petit, riche et multilingue",
         "lead": "Le Grand-Duché concentre un pouvoir d’achat élevé sur un territoire réduit, avec une main-d'œuvre frontalière massive venue de France, de Belgique et d’Allemagne. Les volumes de recherche y sont faibles, mais la valeur de chaque demande est sans commune mesure.",
         "cta_primary": "Évaluer ma visibilité",
-        "parent_label": "SEO local",
-        "parent_url": "/pages/seo-local",
+        "parent_label": "Référencement par ville",
+        "parent_url": "/pages/seo-par-ville",
         "cta_secondary": "Voir toutes les zones",
         "cta_secondary_url": "/pages/seo-par-ville"
       }

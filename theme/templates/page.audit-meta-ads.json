@@ -8,8 +8,8 @@
         "title": "Savoir où part votre budget avant d’en dépenser plus.",
         "lead": "Nous reprenons l’historique complet de votre compte : structure, audiences, créations, suivi des conversions et rentabilité réelle par campagne. Vous saurez ce qui produit, ce qui coûte, et ce qui devrait être arrêté aujourd’hui.",
         "cta_primary": "Demander l’audit",
-        "parent_label": "Audits",
-        "parent_url": "/pages/audit-seo",
+        "parent_label": "",
+        "parent_url": "",
         "cta_secondary": "Voir la prestation Meta Ads",
         "cta_secondary_url": "/pages/expert-meta-ads"
       }

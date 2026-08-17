@@ -8,8 +8,8 @@
         "title": "Sachez ce qui fonctionne chez vos concurrents avant de dépenser.",
         "lead": "Toutes les publicités actives sur Facebook et Instagram sont consultables publiquement. Nous en tirons ce qui est réellement exploitable : les angles qu’ils tiennent dans la durée, ceux qu’ils abandonnent, et l’espace qu’ils vous laissent.",
         "cta_primary": "Demander l’analyse",
-        "parent_label": "Audits",
-        "parent_url": "/pages/audit-seo",
+        "parent_label": "",
+        "parent_url": "",
         "cta_secondary": "Voir l’audit de mon compte",
         "cta_secondary_url": "/pages/audit-meta-ads"
       }

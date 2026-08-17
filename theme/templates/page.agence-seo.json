@@ -4,8 +4,8 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "parent_label": "Expertises",
-        "parent_url": "/pages/agence-shopify",
+        "parent_label": "",
+        "parent_url": "",
         "eyebrow": "Référencement naturel",
         "title": "Recevez chaque mois des demandes venues de Google.",
         "lead": "Vos clients cherchent votre service chaque jour. Le référencement naturel consiste à être la réponse qu’ils trouvent — pas à publier plus de contenu que vos concurrents.",

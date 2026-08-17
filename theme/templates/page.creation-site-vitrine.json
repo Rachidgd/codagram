@@ -5,11 +5,11 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Création de site vitrine",
-        "title": "Un site vitrine qui vous amène des demandes chaque semaine.",
+        "title": "Création de site vitrine : un site conçu pour déclencher la demande",
         "lead": "Votre site est écrit et développé pour votre activité. Il charge vite, il explique votre offre, et vous le modifiez sans nous. Aucun constructeur de pages, aucun abonnement caché.",
         "cta_primary": "Cadrer mon projet",
-        "parent_label": "Expertises",
-        "parent_url": "/pages/agence-seo",
+        "parent_label": "",
+        "parent_url": "",
         "cta_secondary": "Voir des réalisations",
         "cta_secondary_url": "/pages/resultats"
       },

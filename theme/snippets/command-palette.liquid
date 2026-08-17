@@ -28,7 +28,7 @@
 {%- endfor -%}
 
 {%- if settings.palette_blog != blank -%}
-  {%- for article in settings.palette_blog.articles limit: 12 -%}
+  {%- for article in settings.palette_blog.articles limit: 40 -%}
     {{ sep }}{"t":{{ article.title | json }},"u":{{ article.url | json }},"g":"Guides","k":"blog guide article ressource"}
     {%- assign sep = ',' -%}
   {%- endfor -%}

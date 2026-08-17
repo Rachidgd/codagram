@@ -8,8 +8,8 @@
         "title": "Un flux produit refusé, c’est un catalogue invisible.",
         "lead": "Google Merchant Center conditionne l’affichage de vos produits dans les résultats et les comparateurs. Refus silencieux, attributs manquants, prix désynchronisés : nous reprenons le flux ligne par ligne pour rouvrir la diffusion.",
         "cta_primary": "Demander l’audit",
-        "parent_label": "Audits",
-        "parent_url": "/pages/audit-seo",
+        "parent_label": "",
+        "parent_url": "",
         "cta_secondary": "Voir le SEO e-commerce",
         "cta_secondary_url": "/pages/seo-ecommerce"
       }

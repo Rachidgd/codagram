@@ -8,8 +8,8 @@
         "title": "Apparaître quand un client cherche un professionnel près de chez lui.",
         "lead": "Sur une recherche de proximité, Google ne classe pas les sites comme ailleurs : il pondère la distance, la cohérence de vos informations et votre réputation. Nous travaillons ces trois signaux ensemble, zone par zone.",
         "cta_primary": "Demander un relevé de position",
-        "parent_label": "SEO local",
-        "parent_url": "/pages/seo-local",
+        "parent_label": "Référencement par ville",
+        "parent_url": "/pages/seo-par-ville",
         "cta_secondary": "Voir toutes les zones",
         "cta_secondary_url": "/pages/seo-par-ville"
       }

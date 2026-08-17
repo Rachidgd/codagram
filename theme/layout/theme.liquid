@@ -34,12 +34,34 @@
       endif
 
     when 'blog'
-      assign blog_tag = current_tags.first | handle
+      # Le réglage blog_meta_title n'est jamais vide, donc seo_title_is_custom
+      # était toujours vrai et le suffixe d'étiquette ci-dessous ne s'ajoutait
+      # jamais : l'index, ses 3 pages de pagination et les 37 archives
+      # d'étiquettes partageaient un seul titre et une seule description.
+      # Les archives et les pages 2+ passent en noindex : 17 d'entre elles ne
+      # portent qu'un article et concurrencent donc cet article.
       assign seo_title = settings.blog_meta_title | default: page_title
       assign seo_description = settings.blog_meta_description | default: page_description
-      if seo_title != blank
-        assign seo_title_is_custom = true
+      assign seo_title_is_custom = true
+      if current_tags
+        assign tag_courant = current_tags | join: ', '
+        assign seo_title = tag_courant | append: ' | Guides Clickscreation'
+        assign seo_description = 'Nos guides sur ' | append: tag_courant | append: ' : méthode, exemples et corrections à appliquer sur votre site.'
+        assign seo_noindex = true
       endif
+      if current_page != 1
+        assign seo_title = seo_title | append: ' — Page ' | append: current_page
+        assign seo_noindex = true
+      endif
+
+    # Aucune de ces trois pages n'a de valeur dans un index de recherche, et
+    # le robots.txt de Shopify ne bloque pas /search.
+    when 'search'
+      assign seo_noindex = true
+    when 'cart'
+      assign seo_noindex = true
+    when '404'
+      assign seo_noindex = true
   endcase
 
   assign og_title = seo_title

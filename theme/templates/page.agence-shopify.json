@@ -4,8 +4,8 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "parent_label": "Expertises",
-        "parent_url": "/pages/agence-seo",
+        "parent_label": "",
+        "parent_url": "",
         "eyebrow": "Agence Shopify",
         "title": "Une boutique qui charge vite et qui vend mieux sur mobile.",
         "lead": "Création, refonte et optimisation de boutiques Shopify en Liquid natif. Nous écrivons le thème pour votre catalogue et votre marge, sans empiler d’applications qui ralentissent le site et grignotent votre rentabilité.",

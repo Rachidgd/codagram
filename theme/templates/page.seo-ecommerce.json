@@ -8,8 +8,8 @@
         "title": "Vos catégories rapportent plus que vos fiches produit.",
         "lead": "Vos acheteurs arrivent presque toujours par les pages de catégorie. Nous construisons d’abord cette architecture : c’est elle qui capte le trafic qui achète.",
         "cta_primary": "Auditer ma boutique",
-        "parent_label": "Expertises",
-        "parent_url": "/pages/agence-seo",
+        "parent_label": "",
+        "parent_url": "",
         "cta_secondary": "Voir l’agence Shopify",
         "cta_secondary_url": "/pages/agence-shopify"
       },

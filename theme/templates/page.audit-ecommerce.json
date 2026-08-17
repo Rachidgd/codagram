@@ -8,8 +8,8 @@
         "title": "Retrouver les commandes que votre tunnel perd en route.",
         "lead": "Nous suivons le trajet complet de vos visiteurs, de l’arrivée au paiement, et nous chiffrons chaque marche perdue. L’objectif n’est pas de lister des anomalies mais de dire où se trouve l’argent laissé sur la table.",
         "cta_primary": "Demander l’audit",
-        "parent_label": "Audits",
-        "parent_url": "/pages/audit-seo",
+        "parent_label": "",
+        "parent_url": "",
         "cta_secondary": "Voir l’agence Shopify",
         "cta_secondary_url": "/pages/agence-shopify"
       },

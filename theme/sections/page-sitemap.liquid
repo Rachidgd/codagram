@@ -36,7 +36,7 @@
         <nav class="cc-map__col" aria-label="Guides publiés" data-reveal>
           <h3 class="cc-map__title">{{ section.settings.blog_title | default: 'Guides' }}</h3>
           <ul role="list">
-            {%- for article in section.settings.blog.articles limit: 30 -%}
+            {%- for article in section.settings.blog.articles limit: 60 -%}
               <li><a href="{{ article.url }}">{{ article.title }}</a></li>
             {%- endfor -%}
             <li><a class="cc-map__all" href="{{ section.settings.blog.url }}">Tous les guides{%- render 'icon', name: 'arrow', size: 13 -%}</a></li>
