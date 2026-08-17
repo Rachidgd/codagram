@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+/* La regle navigateur pour hidden est display:none, mais toute regle
+   d auteur posant un display la bat. Sans ceci, masquer un element
+   deja en flex ou en grid reste sans effet. */
+[hidden] {
+  display: none !important;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
