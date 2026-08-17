@@ -43,7 +43,15 @@ SEUIL_PHRASE = 23          # le seuil du livre
 SEUIL_ALERTE = 30          # au-delà, la phrase est illisible sur mobile
 
 BALISE = re.compile(r"<[^>]+>")
-FIN_PHRASE = re.compile(r"(?<=[.!?…])\s+")
+FIN_PHRASE = re.compile(r"(?<=[.!?…])\s+|\n+")
+
+# Une cellule de tableau, une puce ou un titre ne se prolonge pas dans la
+# suivante. Sans cette frontière, aplatir le HTML produit des « phrases » de
+# cent mots qui sont en réalité un tableau entier, et le contrôle devient
+# inexploitable : c'est ce qui gonflait le relevé des articles de 247 à 44.
+FRONTIERE = re.compile(
+    r"</(?:p|li|td|th|tr|h[1-6]|div|summary|details|blockquote|figcaption|"
+    r"caption|dt|dd|option)>|<br\s*/?>", re.I)
 
 # Forme passive : auxiliaire être suivi d'un participe passé. Le français ne
 # se laisse pas analyser par une expression régulière, donc on écarte
@@ -112,12 +120,14 @@ def texte_des_gabarits():
 
 def texte_des_articles():
     for chemin in sorted(ARTICLES.glob("*.html")):
-        brut = html.unescape(BALISE.sub(" ", chemin.read_text(encoding="utf-8")))
-        yield chemin.name, " ".join(brut.split())
+        yield chemin.name, chemin.read_text(encoding="utf-8")
 
 
 def phrases(chaine):
-    plat = " ".join(html.unescape(BALISE.sub(" ", chaine)).split())
+    marque = FRONTIERE.sub("\n", chaine)
+    plat = html.unescape(BALISE.sub(" ", marque))
+    plat = re.sub(r"[ \t]+", " ", plat)
+    plat = re.sub(r"\s*\n\s*", "\n", plat).strip()
     for p in FIN_PHRASE.split(plat):
         p = p.strip()
         if p:
