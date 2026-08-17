@@ -3,11 +3,21 @@
   if source == blank and product != blank
     assign source = product
   endif
-  assign data = source.metafields.kemia.reviews_json.value
-  assign items = data.reviews
-  assign item_count = items.size | plus: 0
-  assign rating = source.metafields.kemia.rating.value
-  assign review_count = source.metafields.kemia.review_count.value | plus: 0
+  assign reviews_data = source.metafields.kemia.reviews_json.value
+  assign review_list = reviews_data.reviews
+  assign review_count = review_list.size | plus: 0
+  if review_count > 0
+    assign rating_total = 0
+    for entry in review_list
+      assign rating_total = rating_total | plus: entry.rating
+    endfor
+    assign rating = rating_total | times: 10 | divided_by: review_count | divided_by: 10.0
+  else
+    assign review_count = source.metafields.kemia.review_count.value | plus: 0
+    assign rating = source.metafields.kemia.rating.value
+  endif
+  assign items = review_list
+  assign item_count = review_list.size | plus: 0
   assign limit = section.settings.limit
 -%}
 

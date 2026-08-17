@@ -62,7 +62,12 @@
           }
         }
       },
-      "block_order": ["c1", "c2", "c3", "c4"],
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
       "settings": {
         "eyebrow": "",
         "heading": "Nos engagements",
@@ -78,12 +83,45 @@
     "statement": {
       "type": "reassurance",
       "blocks": {
-        "s1": { "type": "item", "settings": { "icon": "bolt", "title": "Énergie", "text": "" } },
-        "s2": { "type": "item", "settings": { "icon": "brain", "title": "Concentration", "text": "" } },
-        "s3": { "type": "item", "settings": { "icon": "muscle", "title": "Vitalité", "text": "" } },
-        "s4": { "type": "item", "settings": { "icon": "shield-star", "title": "Bien-être", "text": "" } }
+        "s1": {
+          "type": "item",
+          "settings": {
+            "icon": "bolt",
+            "title": "Énergie",
+            "text": ""
+          }
+        },
+        "s2": {
+          "type": "item",
+          "settings": {
+            "icon": "brain",
+            "title": "Concentration",
+            "text": ""
+          }
+        },
+        "s3": {
+          "type": "item",
+          "settings": {
+            "icon": "muscle",
+            "title": "Vitalité",
+            "text": ""
+          }
+        },
+        "s4": {
+          "type": "item",
+          "settings": {
+            "icon": "shield-star",
+            "title": "Bien-être",
+            "text": ""
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3", "s4"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
       "settings": {
         "heading": "Kemia Lab, c'est plus qu'une marque, c'est un partenaire de votre progression.",
         "layout": "stacked",
@@ -99,10 +137,15 @@
         "text": "Découvrez 4 Vitality System, notre première formule.",
         "button_label": "Découvrir le produit",
         "button_link": "/products/4-vitality-system",
-        "button_event": "home_final_product_click",
         "background": "soft"
       }
     }
   },
-  "order": ["hero", "approach", "commitments", "statement", "cta"]
+  "order": [
+    "hero",
+    "approach",
+    "commitments",
+    "statement",
+    "cta"
+  ]
 }

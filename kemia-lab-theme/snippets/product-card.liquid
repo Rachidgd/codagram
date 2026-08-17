@@ -1,7 +1,18 @@
 {%- liquid
   assign tagline = card_product.metafields.kemia.tagline.value
-  assign rating = card_product.metafields.kemia.rating.value
-  assign review_count = card_product.metafields.kemia.review_count.value | plus: 0
+  assign reviews_data = card_product.metafields.kemia.reviews_json.value
+  assign review_list = reviews_data.reviews
+  assign review_count = review_list.size | plus: 0
+  if review_count > 0
+    assign rating_total = 0
+    for entry in review_list
+      assign rating_total = rating_total | plus: entry.rating
+    endfor
+    assign rating = rating_total | times: 10 | divided_by: review_count | divided_by: 10.0
+  else
+    assign review_count = card_product.metafields.kemia.review_count.value | plus: 0
+    assign rating = card_product.metafields.kemia.rating.value
+  endif
 -%}
 <article class="k-product-card">
   <a class="k-product-card__media" href="{{ card_product.url }}" tabindex="-1" aria-hidden="true">

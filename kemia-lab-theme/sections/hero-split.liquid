@@ -37,7 +37,6 @@
         <a
           class="k-btn{% if section.settings.button_style == 'outline' %} k-btn--outline{% endif %} k-hero__cta"
           href="{{ section.settings.button_link }}"
-          data-k-track="{{ section.settings.button_event }}"
         >
           {{ section.settings.button_label }}
           {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
@@ -153,12 +152,6 @@
         { "value": "outline", "label": "Doré contour" }
       ],
       "default": "solid"
-    },
-    {
-      "type": "text",
-      "id": "button_event",
-      "label": "Nom d'événement analytics",
-      "default": "home_hero_product_click"
     },
     { "type": "header", "content": "Visuel" },
     { "type": "image_picker", "id": "image", "label": "Image" },

@@ -730,3 +730,33 @@ Les mises à jour de code seules (sections, extraits, CSS, JS) se poussent fichi
 | Vide autour du visuel produit | Mesuré : au-delà de 990 px le bandeau faisait 1355 px de haut pour une image de 576 px, soit 386 px de vide au-dessus et 394 px en dessous, parce que la colonne image se centrait sur la hauteur du bloc d'achat. Le visuel et le rail des bénéfices sont désormais collants à 108 px, sous l'en-tête fixe de 88 px : ils suivent le défilement au lieu de flotter. En dessous de 990 px il n'y avait que 24 et 30 px, rien n'a été touché. |
 | Accroche modifiable | Le bloc « Accroche dorée » n'avait aucun réglage. Il a un champ texte, qui l'emporte sur le champ méta `kemia.tagline` quand il est rempli. |
 | Blog en slider | La section utilise le carrousel déjà en place sur les avis : flèches à partir de 990 px, points, défilement tactile. Le réglage a changé d'identifiant (`count` devient `slides_count`) parce qu'il a changé de sens, ce qui écarte l'ancienne valeur de 3 au profit de 6 : les 6 articles du blog défilent 3 par 3. |
+
+---
+
+## 18. Galerie produit, avis et suivi
+
+### Le champ « Nom d'événement analytics » a été retiré
+
+Il était présent sur six sections et servait à nommer le clic du bouton pour Google Tag Manager. Aucun tag manager n'étant installé, il ne produisait aucune donnée. Le champ a été supprimé des réglages.
+
+Les événements internes restent en place et se déclenchent seuls : `cure_selected`, `product_added_to_cart`, `cart_upgraded`, `email_submitted`, `checkout_started`. Ils partent dans `window.dataLayer` et seront exploitables le jour où un tag manager sera branché, sans rien avoir à recâbler.
+
+### Galerie de la fiche produit
+
+Elle basculait d'une image à l'autre en masquant les autres, et les flèches faisaient défiler la bande de vignettes au lieu de changer l'image.
+
+Elle est désormais construite sur une piste défilable avec accrochage : le glissement tactile, la molette horizontale et les flèches passent tous par le même défilement, qui fait autorité sur l'état affiché. Les flèches sont posées sur l'image principale et se désactivent en butée. Les vignettes restent cliquables et la vignette active suit l'image visible, quelle que soit la manière dont on a navigué.
+
+### Nombre d'avis et note calculés depuis le JSON
+
+Le nombre d'avis et la note étaient trois champs indépendants : coller un nouveau JSON n'actualisait ni l'un ni l'autre, et les trois pouvaient se contredire.
+
+Désormais, dès que `kemia.reviews_json` contient au moins un avis, le nombre affiché est le nombre réel d'entrées et la note est leur moyenne. Les champs `kemia.review_count` et `kemia.rating` ne servent plus que de repli quand le JSON est vide. Le calcul s'applique partout : bloc d'achat, fenêtre des avis, section avis, fiche de collection et données structurées.
+
+La moyenne est tronquée à la décimale inférieure, jamais arrondie au-dessus : une note affichée ne peut pas être supérieure à la réalité.
+
+Les trois champs méta sont maintenant épinglés, ils apparaissent donc directement sur la fiche produit dans l'admin.
+
+### Logos de paiement
+
+L'application qui les injecte pose son bloc dans le formulaire d'achat, où tous les éléments sont alignés à gauche. Une règle centre les éléments du formulaire qui ne portent pas de classe du thème, c'est-à-dire uniquement ceux venant d'une application. Le bloc d'urgence, seul élément du thème sans classe, en a reçu une pour rester à l'écart de cette règle.

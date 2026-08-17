@@ -43,7 +43,7 @@
         {%- endif -%}
 
         {%- if section.settings.button_label != blank -%}
-          <a class="k-btn{% if section.settings.button_style == 'outline' %} k-btn--outline{% endif %} k-story__cta" href="{{ section.settings.button_link }}" data-k-track="{{ section.settings.button_event }}">
+          <a class="k-btn{% if section.settings.button_style == 'outline' %} k-btn--outline{% endif %} k-story__cta" href="{{ section.settings.button_link }}">
             {{ section.settings.button_label }}
             {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
           </a>
@@ -119,7 +119,6 @@
       ],
       "default": "outline"
     },
-    { "type": "text", "id": "button_event", "label": "Nom d'événement analytics", "default": "home_story_click" },
     {
       "type": "select",
       "id": "background",

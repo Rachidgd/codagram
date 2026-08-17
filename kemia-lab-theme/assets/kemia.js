@@ -248,24 +248,69 @@
       });
 
       var gallery = root.querySelector('[data-k-gallery]');
-      if (gallery) {
-        var main = gallery.querySelector('[data-k-gallery-main]');
-        var thumbs = gallery.querySelectorAll('[data-k-gallery-thumb]');
-        thumbs.forEach(function (thumb) {
-          thumb.addEventListener('click', function () {
-            var index = thumb.getAttribute('data-k-gallery-thumb');
-            gallery.querySelectorAll('[data-k-gallery-slide]').forEach(function (slide) {
-              slide.hidden = slide.getAttribute('data-k-gallery-slide') !== index;
-            });
-            thumbs.forEach(function (other) {
-              other.classList.toggle('is-active', other === thumb);
-              other.setAttribute('aria-current', other === thumb ? 'true' : 'false');
-            });
-            if (main) main.setAttribute('data-active', index);
-          });
-        });
-      }
+      if (gallery) initGallery(gallery);
     });
+  }
+
+  function initGallery(gallery) {
+    if (gallery.__galleryReady) return;
+    gallery.__galleryReady = true;
+
+    var main = gallery.querySelector('[data-k-gallery-main]');
+    var track = gallery.querySelector('[data-k-gallery-track]');
+    if (!track) return;
+
+    var slides = Array.prototype.slice.call(track.querySelectorAll('[data-k-gallery-slide]'));
+    var thumbs = Array.prototype.slice.call(gallery.querySelectorAll('[data-k-gallery-thumb]'));
+    var prev = gallery.querySelector('[data-k-gallery-prev]');
+    var next = gallery.querySelector('[data-k-gallery-next]');
+    if (slides.length < 2) return;
+
+    var current = 0;
+
+    function goTo(index, smooth) {
+      var target = Math.max(0, Math.min(index, slides.length - 1));
+      track.scrollTo({
+        left: slides[target].offsetLeft - track.offsetLeft,
+        behavior: smooth === false ? 'auto' : 'smooth'
+      });
+    }
+
+    // Le défilement fait autorité : la molette, le geste tactile et les flèches
+    // passent tous par lui, l'état s'aligne donc sur une seule source.
+    function sync() {
+      var width = track.clientWidth || 1;
+      var index = Math.round(track.scrollLeft / width);
+      index = Math.max(0, Math.min(index, slides.length - 1));
+      if (index !== current) current = index;
+
+      thumbs.forEach(function (thumb, i) {
+        var active = i === index;
+        thumb.classList.toggle('is-active', active);
+        thumb.setAttribute('aria-current', active ? 'true' : 'false');
+      });
+      if (main) main.setAttribute('data-active', index + 1);
+      if (prev) prev.disabled = index === 0;
+      if (next) next.disabled = index === slides.length - 1;
+    }
+
+    if (prev) prev.addEventListener('click', function () { goTo(current - 1); });
+    if (next) next.addEventListener('click', function () { goTo(current + 1); });
+
+    thumbs.forEach(function (thumb, i) {
+      thumb.addEventListener('click', function () { goTo(i); });
+    });
+
+    track.addEventListener('scroll', function () {
+      window.clearTimeout(gallery.__galleryTimer);
+      gallery.__galleryTimer = window.setTimeout(sync, 60);
+    });
+    window.addEventListener('resize', function () {
+      window.clearTimeout(gallery.__galleryResize);
+      gallery.__galleryResize = window.setTimeout(function () { goTo(current, false); }, 120);
+    });
+
+    sync();
   }
 
   function initStickyBar() {

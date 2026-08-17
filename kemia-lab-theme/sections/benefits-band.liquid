@@ -47,7 +47,7 @@
         {%- endif -%}
 
         {%- if section.settings.button_label != blank -%}
-          <a class="k-btn k-btn--light k-benefitsband__cta" href="{{ section.settings.button_link | default: source.url }}" data-k-track="{{ section.settings.button_event }}">
+          <a class="k-btn k-btn--light k-benefitsband__cta" href="{{ section.settings.button_link | default: source.url }}">
             {{ section.settings.button_label }}
             {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
           </a>
@@ -85,8 +85,7 @@
       "default": "navy"
     },
     { "type": "text", "id": "button_label", "label": "Bouton", "default": "Découvrir la formule" },
-    { "type": "url", "id": "button_link", "label": "Lien du bouton", "info": "Vide : la fiche du produit source." },
-    { "type": "text", "id": "button_event", "label": "Nom d'événement analytics", "default": "home_benefits_click" }
+    { "type": "url", "id": "button_link", "label": "Lien du bouton", "info": "Vide : la fiche du produit source." }
   ],
   "max_blocks": 4,
   "blocks": [

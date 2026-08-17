@@ -15,7 +15,7 @@
           <p class="k-ctacard__text">{{ section.settings.text }}</p>
         {%- endif -%}
         {%- if section.settings.button_label != blank -%}
-          <a class="k-btn k-btn--outline" href="{{ section.settings.button_link }}" data-k-track="{{ section.settings.button_event }}">
+          <a class="k-btn k-btn--outline" href="{{ section.settings.button_link }}">
             {{ section.settings.button_label }}
             {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
           </a>
@@ -36,7 +36,6 @@
     { "type": "textarea", "id": "text", "label": "Texte", "default": "Découvrez 4 Vitality System, notre première formule." },
     { "type": "text", "id": "button_label", "label": "Bouton", "default": "Découvrir le produit" },
     { "type": "url", "id": "button_link", "label": "Lien du bouton" },
-    { "type": "text", "id": "button_event", "label": "Nom d'événement analytics", "default": "home_final_product_click" },
     {
       "type": "select",
       "id": "background",

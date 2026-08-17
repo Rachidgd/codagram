@@ -189,7 +189,6 @@
         "button_label": "",
         "button_link": "",
         "button_style": "outline",
-        "button_event": "pdp_story_view",
         "background": "soft"
       }
     },
@@ -230,8 +229,7 @@
         "show_text": true,
         "color_scheme": "navy",
         "button_label": "",
-        "button_link": "",
-        "button_event": "pdp_benefits_view"
+        "button_link": ""
       }
     },
     "fit": {
@@ -290,7 +288,6 @@
         "note": "",
         "button_label": "",
         "button_link": "",
-        "button_event": "pdp_fit_click",
         "background": "none"
       }
     },
@@ -530,7 +527,6 @@
         "text": "Sans abonnement ni reconduction : vous choisissez votre format, et vous décidez seul de la suite.",
         "button_label": "Commander ma cure",
         "button_link": "/products/4-vitality-system#shopify-section-main",
-        "button_event": "pdp_final_cta_click",
         "background": "beige"
       }
     },

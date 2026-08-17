@@ -32,7 +32,7 @@
             <div class="k-spotlight__text k-text">{{ usp }}</div>
           {%- endif -%}
           {%- if section.settings.button_label != blank -%}
-            <a class="k-btn k-btn--outline k-spotlight__cta" href="{{ item.url }}" data-k-track="{{ section.settings.button_event }}">
+            <a class="k-btn k-btn--outline k-spotlight__cta" href="{{ item.url }}">
               {{ section.settings.button_label }}
               {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
             </a>
@@ -69,8 +69,7 @@
     },
     { "type": "image_picker", "id": "image", "label": "Visuel" },
     { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Notre première formule" },
-    { "type": "text", "id": "button_label", "label": "Bouton", "default": "Découvrir le produit" },
-    { "type": "text", "id": "button_event", "label": "Nom d'événement analytics", "default": "home_formula_product_click" }
+    { "type": "text", "id": "button_label", "label": "Bouton", "default": "Découvrir le produit" }
   ],
   "presets": [{ "name": "Mise en avant produit" }]
 }

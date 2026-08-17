@@ -47,8 +47,21 @@
 
 {%- if template.name == 'product' and product -%}
   {%- liquid
-    assign product_rating = product.metafields.kemia.rating.value
-    assign product_reviews = product.metafields.kemia.review_count.value | plus: 0
+    assign reviews_data = product.metafields.kemia.reviews_json.value
+    assign review_list = reviews_data.reviews
+    assign review_count = review_list.size | plus: 0
+    if review_count > 0
+      assign rating_total = 0
+      for entry in review_list
+        assign rating_total = rating_total | plus: entry.rating
+      endfor
+      assign rating = rating_total | times: 10 | divided_by: review_count | divided_by: 10.0
+    else
+      assign review_count = product.metafields.kemia.review_count.value | plus: 0
+      assign rating = product.metafields.kemia.rating.value
+    endif
+    assign product_rating = rating
+    assign product_reviews = review_count
   -%}
   <script type="application/ld+json">
     {

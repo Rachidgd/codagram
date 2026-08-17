@@ -14,7 +14,6 @@
         "button_label": "Découvrir 4 Vitality System",
         "button_link": "/products/4-vitality-system",
         "button_style": "outline",
-        "button_event": "home_science_click",
         "badge_text": "",
         "badge_icon": "none",
         "background": "light",

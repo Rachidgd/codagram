@@ -54,7 +54,6 @@
         "button_label": "Découvrir 4 Vitality System",
         "button_link": "/products/4-vitality-system",
         "button_style": "solid",
-        "button_event": "home_hero_product_click",
         "image": "shopify://shop_images/8EE624E9-E3F8-4147-9488-4CBA0B10D70A.png",
         "badge_text": "Formule exclusive à 7 actifs",
         "badge_icon": "leaf",
@@ -150,7 +149,6 @@
         "button_label": "Voir notre réponse",
         "button_link": "/products/4-vitality-system",
         "button_style": "outline",
-        "button_event": "home_story_click",
         "background": "soft"
       }
     },
@@ -192,8 +190,7 @@
         "show_text": true,
         "color_scheme": "navy",
         "button_label": "Découvrir la formule",
-        "button_link": "",
-        "button_event": "home_benefits_click"
+        "button_link": ""
       }
     },
     "actifs": {
@@ -259,8 +256,7 @@
         "product": "4-vitality-system",
         "image": "shopify://shop_images/8EE624E9-E3F8-4147-9488-4CBA0B10D70A.png",
         "eyebrow": "La formule",
-        "button_label": "Voir le produit et les cures",
-        "button_event": "home_formula_product_click"
+        "button_label": "Voir le produit et les cures"
       }
     },
     "comparison": {
@@ -467,7 +463,6 @@
         "text": "Faites le point dans un mois.",
         "button_label": "Choisir ma cure",
         "button_link": "/products/4-vitality-system",
-        "button_event": "home_final_product_click",
         "background": "none"
       }
     },
