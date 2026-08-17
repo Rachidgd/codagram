@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Création de site — Strasbourg",
         "title": "Création de site internet à Strasbourg, sur mesure et référencé",
-        "lead": "Beaucoup d'entreprises strasbourgeoises travaillent des deux côtés du Rhin sans que leur site le dise. Un prospect allemand qui arrive sur une page uniquement française referme l'onglet, même quand l'entreprise le sert très bien au téléphone.",
+        "lead": "Beaucoup d’entreprises strasbourgeoises travaillent des deux côtés du Rhin sans que leur site le dise. Un prospect allemand qui arrive sur une page uniquement française referme l’onglet, même quand l’entreprise le sert très bien au téléphone.",
         "cta_primary": "Cadrer mon projet",
         "parent_label": "Création de site vitrine",
         "parent_url": "/pages/creation-site-vitrine",
@@ -36,7 +36,7 @@
           "settings": {
             "value": "Institutions",
             "label": "un tissu B2B particulier",
-            "note": "Parlement, agences, cabinets : un public qui juge le sérieux d'une structure sur son site avant tout contact."
+            "note": "Parlement, agences, cabinets : un public qui juge le sérieux d’une structure sur son site avant tout contact."
           }
         },
         "s3": {
@@ -44,7 +44,7 @@
           "settings": {
             "value": "Artisanat",
             "label": "une tradition installée",
-            "note": "Des métiers où la réputation existe déjà localement, mais reste invisible pour qui arrive de l'extérieur."
+            "note": "Des métiers où la réputation existe déjà localement, mais reste invisible pour qui arrive de l’extérieur."
           }
         }
       },
@@ -61,7 +61,7 @@
         "reverse": false,
         "eyebrow": "Notre lecture",
         "title": "Traduire son site ne suffit pas, encore faut-il traduire ses preuves.",
-        "text": "<p>La version allemande d'un site strasbourgeois s'arrête souvent aux pages de présentation. Les mentions légales, les conditions, les témoignages et le formulaire restent en français — c'est-à-dire précisément ce que lit un prospect au moment de s'engager.</p><p>Nous traitons donc la seconde langue comme un parcours complet, pas comme une page d'accueil traduite.</p>"
+        "text": "<p>La version allemande d’un site strasbourgeois s’arrête souvent aux pages de présentation. Les mentions légales, les conditions, les témoignages et le formulaire restent en français — c’est-à-dire précisément ce que lit un prospect au moment de s’engager.</p><p>Nous traitons donc la seconde langue comme un parcours complet, pas comme une page d’accueil traduite.</p>"
       },
       "blocks": {
         "b1": {
@@ -75,14 +75,14 @@
           "type": "point",
           "settings": {
             "title": "Les mentions qui rassurent",
-            "text": "Statut, TVA, conditions : ce qu'un client d'outre-Rhin vérifie avant d'appeler."
+            "text": "Statut, TVA, conditions : ce qu’un client d’outre-Rhin vérifie avant d’appeler."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
             "title": "Vérifier avant de tout traduire",
-            "text": "Sur certains métiers la demande allemande est nulle. On mesure d'abord, on traduit ensuite."
+            "text": "Sur certains métiers la demande allemande est nulle. On mesure d’abord, on traduit ensuite."
           }
         }
       },
@@ -105,7 +105,7 @@
           "type": "step",
           "settings": {
             "title": "Cadrage",
-            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d'échange, pas un questionnaire.",
+            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d’échange, pas un questionnaire.",
             "duration": "Semaine 1"
           }
         },
@@ -113,7 +113,7 @@
           "type": "step",
           "settings": {
             "title": "Structure et contenus",
-            "text": "L'arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
+            "text": "L’arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
             "duration": "Semaines 2-3"
           }
         },
@@ -146,7 +146,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Ce qu'on nous demande sur ce marché.",
+        "title": "Ce qu’on nous demande sur ce marché.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -157,15 +157,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il vraiment un site en allemand à Strasbourg ?",
-            "answer": "<p>Cela dépend entièrement de votre métier, et cela se mesure. Sur l'hôtellerie, la santé ou les services aux entreprises, la demande germanophone est réelle. Sur beaucoup d'activités de proximité, elle est marginale — et traduire coûterait plus qu'elle ne rapporte.</p>"
+            "question": "Faut-il vraiment un site en allemand à Strasbourg ?",
+            "answer": "<p>Cela dépend entièrement de votre métier, et cela se mesure. Sur l’hôtellerie, la santé ou les services aux entreprises, la demande germanophone est réelle. Sur beaucoup d’activités de proximité, elle est marginale — et traduire coûterait plus qu’elle ne rapporte.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Une traduction automatique peut-elle suffire pour démarrer ?",
-            "answer": "<p>Non, et c'est contre-productif sur ce marché précis. Un public habitué à la langue repère immédiatement une traduction machine, et en tire une conclusion sur le sérieux de l'entreprise. Mieux vaut trois pages traduites correctement que trente approximatives.</p>"
+            "question": "Une traduction automatique peut-elle suffire pour démarrer ?",
+            "answer": "<p>Non, et c’est contre-productif sur ce marché précis. Un public habitué à la langue repère immédiatement une traduction machine, et en tire une conclusion sur le sérieux de l’entreprise. Mieux vaut trois pages traduites correctement que trente approximatives.</p>"
           }
         }
       },
@@ -188,7 +188,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Prix d'un site vitrine en 2026",
+            "title": "Prix d’un site vitrine en 2026",
             "text": "Les vraies fourchettes, poste par poste",
             "link": "/blogs/ressources/prix-site-vitrine-2026",
             "link_label": "Lire le guide"
@@ -225,7 +225,7 @@
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Regardons si votre site parle à vos clients d'outre-Rhin.",
+        "title": "Regardons si votre site parle à vos clients d’outre-Rhin.",
         "text": "Dites-nous votre métier et votre zone réelle. Nous estimons la part de demande germanophone avant de vous proposer quoi que ce soit.",
         "cta_label": "Demander un diagnostic",
         "note": "Réponse sous 48 h",

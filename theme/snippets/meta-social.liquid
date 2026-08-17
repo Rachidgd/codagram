@@ -9,9 +9,11 @@
         assign share_image = article.image
       endif
     when 'page'
-      if page.metafields.seo_release.share_image.value != blank
-        assign share_image = page.metafields.seo_release.share_image.value
-      endif
+      {%- comment -%}
+        Le namespace « seo_release » a été supprimé le 6 août au profit du
+        champ SEO natif. Cette branche était le dernier résidu : elle rouvrait
+        la porte au double namespace qu'on venait de fermer.
+      {%- endcomment -%}
     when 'product'
       assign og_type = 'product'
       if product.featured_image != blank
@@ -43,8 +45,12 @@
 
 {%- if request.page_type == 'article' %}
   <meta property="article:published_time" content="{{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' }}">
-  {%- if article.metafields.editorial.updated_at.value != blank %}
-    <meta property="article:modified_time" content="{{ article.metafields.editorial.updated_at.value | date: '%Y-%m-%dT%H:%M:%SZ' }}">
+  {%- comment -%}
+    La clé écrite par build/ est « updated_date ». « updated_at » n'existe
+    nulle part : la balise n'a jamais été émise sur aucun des 40 articles.
+  {%- endcomment -%}
+  {%- if article.metafields.editorial.updated_date.value != blank %}
+    <meta property="article:modified_time" content="{{ article.metafields.editorial.updated_date.value | date: '%Y-%m-%dT%H:%M:%SZ' }}">
   {%- endif %}
   {%- if article.author != blank %}<meta property="article:author" content="{{ article.author | escape }}">{% endif %}
 {%- endif %}

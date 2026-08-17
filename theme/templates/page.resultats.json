@@ -8,7 +8,7 @@
         "title": "Ce que nous avons obtenu, avec les dates.",
         "lead": "Chaque cas indique le point de départ, le travail réalisé et la période observée. Un chiffre sans contexte ne prouve rien — nous préférons en montrer moins et les documenter.",
         "cta_primary": "Demander un diagnostic",
-        "cta_secondary": "Voir l'agence Shopify",
+        "cta_secondary": "Voir l’agence Shopify",
         "cta_secondary_url": "/pages/agence-shopify"
       },
       "blocks": {
@@ -52,7 +52,7 @@
         "eyebrow": "Trajectoires observées",
         "title": "Deux missions, documentées du point de départ à la période observée.",
         "link_label": "",
-        "disclaimer": "Les résultats dépendent du marché, de l'historique du site, de la concurrence et de la capacité d'exécution. Ils ne constituent pas une garantie de performance. Les données proviennent de la Search Console des comptes concernés, sur les périodes indiquées."
+        "disclaimer": "Les résultats dépendent du marché, de l’historique du site, de la concurrence et de la capacité d’exécution. Ils ne constituent pas une garantie de performance. Les données proviennent de la Search Console des comptes concernés, sur les périodes indiquées."
       },
       "blocks": {
         "c1": {
@@ -62,7 +62,7 @@
             "sector": "SEO",
             "period": "Mi-mai → juin 2026",
             "context": "Site en ligne depuis deux ans, structure de pages illisible pour les moteurs et intentions de recherche non couvertes.",
-            "action": "Restructuration de l'arborescence, reprise des signaux techniques et réécriture des pages prioritaires.",
+            "action": "Restructuration de l’arborescence, reprise des signaux techniques et réécriture des pages prioritaires.",
             "metric_1": "on",
             "prefix_1": "+",
             "value_1": "169",
@@ -82,7 +82,7 @@
             "sector": "SEO",
             "period": "Avril → juin 2026",
             "context": "Pages nombreuses mais concurrentes entre elles, aucune ne ressortant clairement sur les requêtes visées.",
-            "action": "Clarification du rôle de chaque page dans l'architecture, optimisation technique et éditoriale.",
+            "action": "Clarification du rôle de chaque page dans l’architecture, optimisation technique et éditoriale.",
             "metric_1": "on",
             "prefix_1": "+",
             "value_1": "236",
@@ -108,7 +108,7 @@
         "reverse": false,
         "eyebrow": "Méthode de lecture",
         "title": "Comment lire ces chiffres.",
-        "text": "<p>Un pourcentage impressionne d'autant plus que le point de départ est bas. C'est pourquoi nous indiquons systématiquement la situation initiale et la période : sans ces deux informations, un chiffre de croissance ne veut rien dire.</p><p>Nous ne publions pas les cas sans effet mesurable. Nous en parlons volontiers pendant un échange : ce sont eux qui expliquent le mieux notre méthode.</p>",
+        "text": "<p>Un pourcentage impressionne d’autant plus que le point de départ est bas. C’est pourquoi nous indiquons systématiquement la situation initiale et la période : sans ces deux informations, un chiffre de croissance ne veut rien dire.</p><p>Nous ne publions pas les cas sans effet mesurable. Nous en parlons volontiers pendant un échange : ce sont eux qui expliquent le mieux notre méthode.</p>",
         "cta_label": "Comprendre notre méthode",
         "cta_url": "/pages/a-propos"
       },
@@ -124,14 +124,14 @@
           "type": "point",
           "settings": {
             "title": "Le point de départ est décrit",
-            "text": "Passer de 100 à 300 impressions et de 100 000 à 300 000 n'engage pas le même travail."
+            "text": "Passer de 100 à 300 impressions et de 100 000 à 300 000 n’engage pas le même travail."
           }
         },
         "l3": {
           "type": "point",
           "settings": {
-            "title": "L'action est nommée",
-            "text": "Nous précisons ce qui a été fait, pour que le lien entre le travail et l'effet soit vérifiable."
+            "title": "L’action est nommée",
+            "text": "Nous précisons ce qui a été fait, pour que le lien entre le travail et l’effet soit vérifiable."
           }
         }
       },
@@ -146,7 +146,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Vous êtes là où ces deux clients étaient il y a six mois.",
-        "text": "Décrivez votre situation en quatre questions. Nous revenons avec une lecture argumentée de ce qui limite aujourd'hui votre acquisition.",
+        "text": "Décrivez votre situation en quatre questions. Nous revenons avec une lecture argumentée de ce qui limite aujourd’hui votre acquisition.",
         "cta_label": "Demander un diagnostic",
         "note": "Réponse sous 48 h"
       },
@@ -254,7 +254,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Search Console : les 5 rapports utiles",
+            "title": "Search Console : les 5 rapports utiles",
             "text": "Et comment les lire",
             "link": "/blogs/ressources/search-console-rapports-essentiels",
             "link_label": "Lire le guide"

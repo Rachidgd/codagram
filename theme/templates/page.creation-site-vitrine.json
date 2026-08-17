@@ -52,7 +52,7 @@
       "type": "content-quote",
       "settings": {
         "eyebrow": "Notre parti pris",
-        "quote": "Un site vitrine se juge à une seule chose : le nombre de personnes qui vous écrivent après l'avoir lu. Animations, distinctions, effets de style : tout le reste n'est utile que s'il sert ce chiffre-là.",
+        "quote": "Un site vitrine se juge à une seule chose : le nombre de personnes qui vous écrivent après l’avoir lu. Animations, distinctions, effets de style : tout le reste n’est utile que s’il sert ce chiffre-là.",
         "attribution": "Clickscreation"
       }
     },
@@ -63,7 +63,7 @@
         "reverse": false,
         "eyebrow": "Ce qui fait la différence",
         "title": "Votre visiteur balaie la page et décide en dix secondes.",
-        "text": "<p>En moyenne, un visiteur accorde quelques secondes à une page avant de décider s'il continue. Il ne cherche pas votre histoire, il cherche à savoir si vous résolvez son problème, si vous êtes crédible et combien ça coûte.</p><p>Nous construisons donc chaque page dans cet ordre-là : le problème d'abord, la preuve ensuite, la demande de contact quand la valeur est comprise — jamais avant.</p>",
+        "text": "<p>En moyenne, un visiteur accorde quelques secondes à une page avant de décider s’il continue. Il ne cherche pas votre histoire, il cherche à savoir si vous résolvez son problème, si vous êtes crédible et combien ça coûte.</p><p>Nous construisons donc chaque page dans cet ordre-là : le problème d’abord, la preuve ensuite, la demande de contact quand la valeur est comprise — jamais avant.</p>",
         "cta_label": "Faire cadrer mon projet",
         "cta_url": "/pages/reserver"
       },
@@ -79,7 +79,7 @@
           "type": "point",
           "settings": {
             "title": "Des preuves à la place des adjectifs",
-            "text": "Réalisations datées, chiffres vérifiables, avis identifiables. « Expert reconnu » ne convainc personne ; un cas client précis, oui."
+            "text": "Réalisations datées, chiffres vérifiables, avis identifiables. « Expert reconnu » ne convainc personne ; un cas client précis, oui."
           }
         },
         "b3": {
@@ -102,7 +102,7 @@
         "surface": "dark",
         "eyebrow": "Déroulé du projet",
         "title": "Cinq étapes, un interlocuteur unique.",
-        "text": "Vous validez à chaque étape. Rien ne part en développement tant que la structure et les textes ne sont pas arrêtés — c'est ce qui évite les reprises coûteuses en fin de projet."
+        "text": "Vous validez à chaque étape. Rien ne part en développement tant que la structure et les textes ne sont pas arrêtés — c’est ce qui évite les reprises coûteuses en fin de projet."
       },
       "blocks": {
         "s1": {
@@ -117,7 +117,7 @@
           "type": "step",
           "settings": {
             "title": "Architecture",
-            "text": "Arborescence, rôle de chaque page, parcours de contact, plan de rédaction. Vous voyez le site avant qu'il existe.",
+            "text": "Arborescence, rôle de chaque page, parcours de contact, plan de rédaction. Vous voyez le site avant qu’il existe.",
             "duration": "3 à 5 jours"
           }
         },
@@ -141,7 +141,7 @@
           "type": "step",
           "settings": {
             "title": "Mise en ligne",
-            "text": "Bascule, redirections, suivi des conversions, formation à l'administration. Vous repartez autonome.",
+            "text": "Bascule, redirections, suivi des conversions, formation à l’administration. Vous repartez autonome.",
             "duration": "2 jours"
           }
         }
@@ -160,8 +160,8 @@
         "surface": "dark",
         "density": "comfortable",
         "eyebrow": "Selon votre activité",
-        "title": "Ce qui change d'un métier à l'autre.",
-        "text": "Le site d'un artisan et celui d'un cabinet de conseil n'ont ni le même parcours, ni les mêmes preuves, ni le même déclencheur de contact. Chaque page ci-dessous détaille ce qui change."
+        "title": "Ce qui change d’un métier à l’autre.",
+        "text": "Le site d’un artisan et celui d’un cabinet de conseil n’ont ni le même parcours, ni les mêmes preuves, ni le même déclencheur de contact. Chaque page ci-dessous détaille ce qui change."
       },
       "blocks": {
         "g1": {
@@ -169,7 +169,7 @@
           "settings": {
             "icon": "layers",
             "title": "PME et TPE",
-            "text": "Une vente à cycle long où le site prépare le rendez-vous et fait circuler l'information en interne.",
+            "text": "Une vente à cycle long où le site prépare le rendez-vous et fait circuler l’information en interne.",
             "link": "/pages/site-vitrine-pme-tpe",
             "link_label": "Voir cette page"
           }
@@ -179,7 +179,7 @@
           "settings": {
             "icon": "check",
             "title": "Indépendant et freelance",
-            "text": "On vous choisit vous avant de choisir votre offre : le site doit installer la confiance.",
+            "text": "On vous choisit vous avant de choisir votre offre : le site doit installer la confiance.",
             "link": "/pages/site-vitrine-freelance",
             "link_label": "Voir cette page"
           }
@@ -199,7 +199,7 @@
           "settings": {
             "icon": "target",
             "title": "Artisan et BTP",
-            "text": "Le problème n'est pas le nombre d'appels mais leur qualité : le site filtre en amont.",
+            "text": "Le problème n’est pas le nombre d’appels mais leur qualité : le site filtre en amont.",
             "link": "/pages/site-vitrine-artisan",
             "link_label": "Voir cette page"
           }
@@ -217,7 +217,7 @@
       "settings": {
         "surface": "paper",
         "eyebrow": "Faire le bon choix",
-        "title": "Site sur mesure, gabarit ou constructeur : lequel pour vous ?",
+        "title": "Site sur mesure, gabarit ou constructeur : lequel pour vous ?",
         "text": "Un site sur mesure ne se justifie pas toujours. Voici comment nous en discutons avant de vous vendre quoi que ce soit.",
         "col_criteria": "Critère",
         "col_a": "Développement sur mesure",
@@ -237,7 +237,7 @@
           "type": "row",
           "settings": {
             "criteria": "Coût sur trois ans",
-            "value_a": "Stable, aucun abonnement d'outil",
+            "value_a": "Stable, aucun abonnement d’outil",
             "value_b": "Abonnements cumulés, souvent supérieur"
           }
         },
@@ -254,7 +254,7 @@
           "settings": {
             "criteria": "Référencement technique",
             "value_a": "Structure et balisage contrôlés",
-            "value_b": "Dépend de ce que l'outil autorise"
+            "value_b": "Dépend de ce que l’outil autorise"
           }
         },
         "r5": {
@@ -277,7 +277,7 @@
           "type": "row",
           "settings": {
             "criteria": "Pertinent si",
-            "value_a": "Le site est un canal d'acquisition",
+            "value_a": "Le site est un canal d’acquisition",
             "value_b": "Vous testez une activité naissante"
           }
         }
@@ -297,7 +297,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Ce qu'on nous demande sur la création de site.",
+        "title": "Ce qu’on nous demande sur la création de site.",
         "text": "Des réponses précises, y compris quand elles ne vont pas dans notre sens.",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -308,36 +308,36 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Combien coûte un site vitrine sur mesure ?",
-            "answer": "<p>Le budget dépend du nombre de pages, du volume de rédaction et des fonctionnalités. Un site de présentation à cinq pages n'a rien à voir avec un site de services couvrant douze métiers et trois zones géographiques. Nous chiffrons après le cadrage, sur un périmètre écrit, et le devis détaille chaque poste.</p>"
+            "question": "Combien coûte un site vitrine sur mesure ?",
+            "answer": "<p>Le budget dépend du nombre de pages, du volume de rédaction et des fonctionnalités. Un site de présentation à cinq pages n’a rien à voir avec un site de services couvrant douze métiers et trois zones géographiques. Nous chiffrons après le cadrage, sur un périmètre écrit, et le devis détaille chaque poste.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Qui écrit les textes ?",
-            "answer": "<p>Nous, à partir d'un entretien avec vous et d'une analyse de ce que cherchent vos clients. Vous relisez, corrigez et validez. Beaucoup de projets échouent parce que le prestataire attend des contenus que le client n'a pas le temps d'écrire — nous préférons prendre cette charge.</p>"
+            "question": "Qui écrit les textes ?",
+            "answer": "<p>Nous, à partir d’un entretien avec vous et d’une analyse de ce que cherchent vos clients. Vous relisez, corrigez et validez. Beaucoup de projets échouent parce que le prestataire attend des contenus que le client n’a pas le temps d’écrire — nous préférons prendre cette charge.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Le site sera-t-il visible sur Google ?",
-            "answer": "<p>Il sera techniquement irréprochable : structure, balisage, vitesse, données structurées, indexation. Cela ne suffit pas à se positionner sur des requêtes concurrentielles, qui demandent un travail de référencement dans la durée. Nous distinguons toujours les deux, et nous ne facturons pas du SEO déguisé en création de site.</p>"
+            "question": "Le site sera-t-il visible sur Google ?",
+            "answer": "<p>Il sera techniquement irréprochable : structure, balisage, vitesse, données structurées, indexation. Cela ne suffit pas à se positionner sur des requêtes concurrentielles, qui demandent un travail de référencement dans la durée. Nous distinguons toujours les deux, et nous ne facturons pas du SEO déguisé en création de site.</p>"
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
-            "question": "Puis-je modifier le site sans vous ?",
-            "answer": "<p>Oui. Chaque bloc est éditable depuis l'interface d'administration : textes, images, ordre des sections. Nous formons une personne de votre équipe à la mise en ligne et livrons une documentation. Vous ne dépendez de nous que pour les évolutions structurelles.</p>"
+            "question": "Puis-je modifier le site sans vous ?",
+            "answer": "<p>Oui. Chaque bloc est éditable depuis l’interface d’administration : textes, images, ordre des sections. Nous formons une personne de votre équipe à la mise en ligne et livrons une documentation. Vous ne dépendez de nous que pour les évolutions structurelles.</p>"
           }
         },
         "q5": {
           "type": "qa",
           "settings": {
-            "question": "Que se passe-t-il si je veux changer de prestataire ensuite ?",
-            "answer": "<p>Vous partez avec tout : hébergement à votre nom, nom de domaine à votre nom, accès complets, code livré. Nous ne conservons aucune clé qui vous rendrait captif. C'est un choix commercial assumé.</p>"
+            "question": "Que se passe-t-il si je veux changer de prestataire ensuite ?",
+            "answer": "<p>Vous partez avec tout : hébergement à votre nom, nom de domaine à votre nom, accès complets, code livré. Nous ne conservons aucune clé qui vous rendrait captif. C’est un choix commercial assumé.</p>"
           }
         }
       },
@@ -393,7 +393,7 @@
           "type": "item",
           "settings": {
             "icon": "signal",
-            "title": "Cahier des charges d'un site vitrine",
+            "title": "Cahier des charges d’un site vitrine",
             "text": "Le modèle à remplir",
             "link": "/blogs/ressources/cahier-des-charges-site-vitrine",
             "link_label": "Lire le guide"
@@ -432,8 +432,8 @@
         "surface": "paper",
         "density": "comfortable",
         "eyebrow": "Selon votre ville",
-        "title": "Ce qui change d'un marché local à l'autre.",
-        "text": "Les objections d'un client ne sont pas les mêmes à Strasbourg et à Nice. Chaque page ci-dessous part de ce que votre marché attend d'un site, pas d'un argumentaire générique."
+        "title": "Ce qui change d’un marché local à l’autre.",
+        "text": "Les objections d’un client ne sont pas les mêmes à Strasbourg et à Nice. Chaque page ci-dessous part de ce que votre marché attend d’un site, pas d’un argumentaire générique."
       },
       "blocks": {
         "v1": {
@@ -451,7 +451,7 @@
           "settings": {
             "icon": "target",
             "title": "Marseille",
-            "text": "Des zones d'intervention écrites, pas suggérées.",
+            "text": "Des zones d’intervention écrites, pas suggérées.",
             "link": "/pages/creation-site-internet-marseille",
             "link_label": "Voir cette page"
           }
@@ -481,7 +481,7 @@
           "settings": {
             "icon": "check",
             "title": "Nice",
-            "text": "Convaincre des clients qui réservent avant d'arriver.",
+            "text": "Convaincre des clients qui réservent avant d’arriver.",
             "link": "/pages/creation-site-internet-nice",
             "link_label": "Voir cette page"
           }

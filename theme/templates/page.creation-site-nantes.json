@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Création de site — Nantes",
         "title": "Création de site internet à Nantes, dont vous gardez tous les accès",
-        "lead": "Nantes accueille chaque année des milliers de nouveaux habitants et de nouvelles entreprises. Ces clients n'ont ni recommandation ni habitude : ils choisissent sur ce qu'ils lisent, et ils lisent avec attention.",
+        "lead": "Nantes accueille chaque année des milliers de nouveaux habitants et de nouvelles entreprises. Ces clients n’ont ni recommandation ni habitude : ils choisissent sur ce qu’ils lisent, et ils lisent avec attention.",
         "cta_primary": "Cadrer mon projet",
         "parent_label": "Création de site vitrine",
         "parent_url": "/pages/creation-site-vitrine",
@@ -61,28 +61,28 @@
         "reverse": false,
         "eyebrow": "Notre lecture",
         "title": "Sans bouche-à-oreille, le site porte seul la confiance.",
-        "text": "<p>Un client installé depuis vingt ans vous choisit sur recommandation, et votre site n'a qu'à ne pas lui faire peur. Un nouvel arrivant, lui, n'a que le site : il y cherche depuis quand vous existez, qui vous êtes, ce que d'autres en ont pensé.</p><p>Ces trois informations manquent sur la majorité des sites que nous auditons.</p>"
+        "text": "<p>Un client installé depuis vingt ans vous choisit sur recommandation, et votre site n’a qu’à ne pas lui faire peur. Un nouvel arrivant, lui, n’a que le site : il y cherche depuis quand vous existez, qui vous êtes, ce que d’autres en ont pensé.</p><p>Ces trois informations manquent sur la majorité des sites que nous auditons.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
             "title": "Une ancienneté visible",
-            "text": "Depuis quand vous exercez : l'information la plus simple et la plus rassurante."
+            "text": "Depuis quand vous exercez : l’information la plus simple et la plus rassurante."
           }
         },
         "b2": {
           "type": "point",
           "settings": {
             "title": "Des visages",
-            "text": "Une photo réelle de l'équipe convainc davantage qu'une page « à propos » abstraite."
+            "text": "Une photo réelle de l’équipe convainc davantage qu’une page « à propos » abstraite."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
             "title": "Des avis accessibles",
-            "text": "Visibles sur le site, pas seulement sur une fiche qu'il faudra aller chercher."
+            "text": "Visibles sur le site, pas seulement sur une fiche qu’il faudra aller chercher."
           }
         }
       },
@@ -105,7 +105,7 @@
           "type": "step",
           "settings": {
             "title": "Cadrage",
-            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d'échange, pas un questionnaire.",
+            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d’échange, pas un questionnaire.",
             "duration": "Semaine 1"
           }
         },
@@ -113,7 +113,7 @@
           "type": "step",
           "settings": {
             "title": "Structure et contenus",
-            "text": "L'arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
+            "text": "L’arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
             "duration": "Semaines 2-3"
           }
         },
@@ -146,7 +146,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Ce qu'on nous demande sur ce marché.",
+        "title": "Ce qu’on nous demande sur ce marché.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -157,15 +157,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Comment inspirer confiance quand on vient de s'installer ?",
-            "answer": "<p>En étant précis plutôt qu'ancien. Décrire exactement ce que vous faites, montrer les premiers travaux même peu nombreux, afficher un vrai visage et un vrai numéro. La transparence compense l'absence d'historique mieux que n'importe quel argument.</p>"
+            "question": "Comment inspirer confiance quand on vient de s’installer ?",
+            "answer": "<p>En étant précis plutôt qu’ancien. Décrire exactement ce que vous faites, montrer les premiers travaux même peu nombreux, afficher un vrai visage et un vrai numéro. La transparence compense l’absence d’historique mieux que n’importe quel argument.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Les avis sont-ils indispensables au démarrage ?",
-            "answer": "<p>Quelques avis authentiques changent beaucoup, et cinq suffisent pour lever le doute initial. L'important est qu'ils soient réels et récents : un client nantais habitué au numérique repère les faux immédiatement.</p>"
+            "question": "Les avis sont-ils indispensables au démarrage ?",
+            "answer": "<p>Quelques avis authentiques changent beaucoup, et cinq suffisent pour lever le doute initial. L’important est qu’ils soient réels et récents : un client nantais habitué au numérique repère les faux immédiatement.</p>"
           }
         }
       },
@@ -188,7 +188,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Prix d'un site vitrine en 2026",
+            "title": "Prix d’un site vitrine en 2026",
             "text": "Les vraies fourchettes, poste par poste",
             "link": "/blogs/ressources/prix-site-vitrine-2026",
             "link_label": "Lire le guide"
@@ -226,7 +226,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Voyons ce que comprend un Nantais qui découvre votre entreprise.",
-        "text": "Nous regardons votre site comme quelqu'un qui n'a jamais entendu parler de vous et vous disons ce qui manque pour déclencher le contact.",
+        "text": "Nous regardons votre site comme quelqu’un qui n’a jamais entendu parler de vous et vous disons ce qui manque pour déclencher le contact.",
         "cta_label": "Demander un diagnostic",
         "note": "Réponse sous 48 h",
         "link_label": "Voir le référencement à Nantes",

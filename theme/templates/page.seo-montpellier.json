@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Montpellier",
         "title": "Agence SEO à Montpellier et dans les communes voisines",
-        "lead": "Montpellier fait partie des métropoles françaises les plus dynamiques démographiquement. Cette croissance crée une demande nouvelle chaque année, et beaucoup d'entreprises locales n'ont pas encore adapté leur visibilité à ce rythme.",
+        "lead": "Montpellier fait partie des métropoles françaises les plus dynamiques démographiquement. Cette croissance crée une demande nouvelle chaque année, et beaucoup d’entreprises locales n’ont pas encore adapté leur visibilité à ce rythme.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -36,7 +36,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Fiche d'établissement",
+            "title": "Fiche d’établissement",
             "text": "Le premier point de contact pour un nouvel arrivant sans recommandation."
           }
         },
@@ -44,8 +44,8 @@
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Contenus d'installation",
-            "text": "Répondre aux questions de quelqu'un qui vient d'arriver capte une demande à faible concurrence."
+            "title": "Contenus d’installation",
+            "text": "Répondre aux questions de quelqu’un qui vient d’arriver capte une demande à faible concurrence."
           }
         },
         "g4": {
@@ -53,7 +53,7 @@
           "settings": {
             "icon": "gauge",
             "title": "Avis récents",
-            "text": "Sans bouche-à-oreille local, l'avis en ligne devient le seul repère disponible."
+            "text": "Sans bouche-à-oreille local, l’avis en ligne devient le seul repère disponible."
           }
         }
       },
@@ -71,14 +71,14 @@
         "reverse": true,
         "eyebrow": "Notre lecture",
         "title": "Les communes voisines coûtent moins cher que la ville-centre.",
-        "text": "<p>Se positionner sur « Montpellier » demande du temps et de l'autorité. Se positionner sur Lattes, Castelnau-le-Lez ou Saint-Jean-de-Védas demande une page correcte et quelques semaines.</p><p>Ces communes concentrent pourtant une population aisée et une demande réelle. C'est le raccourci le plus sous-exploité de la métropole.</p>"
+        "text": "<p>Se positionner sur « Montpellier » demande du temps et de l’autorité. Se positionner sur Lattes, Castelnau-le-Lez ou Saint-Jean-de-Védas demande une page correcte et quelques semaines.</p><p>Ces communes concentrent pourtant une population aisée et une demande réelle. C’est le raccourci le plus sous-exploité de la métropole.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
             "title": "Une page par commune servie",
-            "text": "Avec un contenu propre : ce qu'on y fait, pour qui, avec quelles références."
+            "text": "Avec un contenu propre : ce qu’on y fait, pour qui, avec quelles références."
           }
         },
         "b2": {
@@ -132,7 +132,7 @@
           "settings": {
             "value": "Littoral",
             "label": "communes périphériques",
-            "note": "Palavas, Lattes, Castelnau : des recherches distinctes et peu disputées."
+            "note": "Palavas, Lattes, Castelnau : des recherches distinctes et peu disputées."
           }
         }
       },
@@ -158,14 +158,14 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Dois-je commencer par Montpellier ou par ma commune ?",
-            "answer": "<p>Par votre commune, presque toujours. Le résultat arrive en quelques semaines au lieu de plusieurs mois, il génère des demandes immédiates, et l'autorité gagnée profite ensuite à la page Montpellier. C'est l'ordre inverse de celui que choisissent la plupart des entreprises.</p>"
+            "question": "Dois-je commencer par Montpellier ou par ma commune ?",
+            "answer": "<p>Par votre commune, presque toujours. Le résultat arrive en quelques semaines au lieu de plusieurs mois, il génère des demandes immédiates, et l’autorité gagnée profite ensuite à la page Montpellier. C’est l’ordre inverse de celui que choisissent la plupart des entreprises.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Le secteur santé impose-t-il des précautions ?",
+            "question": "Le secteur santé impose-t-il des précautions ?",
             "answer": "<p>Oui, sur deux plans. Les moteurs appliquent une exigence de fiabilité renforcée aux contenus de santé. Et les professions réglementées ont des règles strictes sur leur communication. Nous travaillons dans ce cadre plutôt que de vous exposer.</p>"
           }
         }
@@ -239,7 +239,7 @@
           "type": "item",
           "settings": {
             "icon": "layers",
-            "title": "Checklist d'audit SEO",
+            "title": "Checklist d’audit SEO",
             "text": "Les 12 points vérifiés en premier",
             "link": "/blogs/ressources/checklist-audit-seo",
             "link_label": "Lire le guide"

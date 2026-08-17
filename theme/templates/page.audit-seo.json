@@ -5,9 +5,9 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Audit de référencement",
-        "title": "Repartez avec trois priorités chiffrées et un ordre d'exécution.",
+        "title": "Repartez avec trois priorités chiffrées et un ordre d’exécution.",
         "lead": "Nous analysons la technique, la structure sémantique et la concurrence de votre site, puis nous vous remettons trois priorités argumentées et chiffrées. Pas une liste de deux cents points classés par couleur.",
-        "cta_primary": "Demander l'audit",
+        "cta_primary": "Demander l’audit",
         "parent_label": "Audits",
         "parent_url": "/pages/audit-ecommerce",
         "cta_secondary": "Voir la prestation SEO",
@@ -20,7 +20,7 @@
             "prefix": "",
             "value": "3",
             "suffix": " priorités",
-            "label": "au lieu d'une liste"
+            "label": "au lieu d’une liste"
           }
         },
         "p2": {
@@ -85,7 +85,7 @@
           "type": "step",
           "settings": {
             "title": "Restitution",
-            "text": "Document écrit puis échange d'une heure. Vous posez vos questions, nous justifions chaque priorité.",
+            "text": "Document écrit puis échange d’une heure. Vous posez vos questions, nous justifions chaque priorité.",
             "duration": "Jour 10"
           }
         }
@@ -128,7 +128,7 @@
           "settings": {
             "icon": "layers",
             "title": "Correctifs techniques",
-            "text": "Liste actionnable, formulée pour un développeur, avec le niveau d'urgence réel de chaque point."
+            "text": "Liste actionnable, formulée pour un développeur, avec le niveau d’urgence réel de chaque point."
           }
         },
         "g4": {
@@ -151,7 +151,7 @@
       "type": "content-quote",
       "settings": {
         "eyebrow": "Notre engagement",
-        "quote": "Si l'audit conclut que le référencement n'est pas votre levier prioritaire, nous vous le disons et nous vous orientons ailleurs. Un audit dont la conclusion est connue d'avance n'est pas un audit, c'est une plaquette commerciale.",
+        "quote": "Si l’audit conclut que le référencement n’est pas votre levier prioritaire, nous vous le disons et nous vous orientons ailleurs. Un audit dont la conclusion est connue d’avance n’est pas un audit, c’est une plaquette commerciale.",
         "attribution": "",
         "link_label": "Voir nos autres leviers",
         "link_url": "/pages/optimisation-cro"
@@ -162,7 +162,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Questions fréquentes sur l'audit SEO.",
+        "title": "Questions fréquentes sur l’audit SEO.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -173,28 +173,28 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "L'audit est-il payant ?",
-            "answer": "<p>Le pré-diagnostic est gratuit : quelques questions, un premier relevé, et notre avis sur l'existence d'un enjeu réel. L'audit complet, qui mobilise plusieurs jours de travail, est facturé. Nous vous annonçons le montant avant de commencer, et il est déduit si vous poursuivez avec un accompagnement.</p>"
+            "question": "L’audit est-il payant ?",
+            "answer": "<p>Le pré-diagnostic est gratuit : quelques questions, un premier relevé, et notre avis sur l’existence d’un enjeu réel. L’audit complet, qui mobilise plusieurs jours de travail, est facturé. Nous vous annonçons le montant avant de commencer, et il est déduit si vous poursuivez avec un accompagnement.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "De quels accès avez-vous besoin ?",
-            "answer": "<p>Un accès en lecture à vos statistiques d'audience et à votre console de recherche, l'adresse du site, et si possible un accès en consultation à l'administration. Nous ne modifions rien pendant l'audit — la phase d'analyse est strictement passive.</p>"
+            "question": "De quels accès avez-vous besoin ?",
+            "answer": "<p>Un accès en lecture à vos statistiques d’audience et à votre console de recherche, l’adresse du site, et si possible un accès en consultation à l’administration. Nous ne modifions rien pendant l’audit — la phase d’analyse est strictement passive.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "En quoi diffère-t-il d'un audit automatique gratuit ?",
-            "answer": "<p>Un outil automatique liste des anomalies sans les hiérarchiser. Il signale au même niveau une balise manquante sans effet et un blocage d'indexation qui vous coûte la moitié de votre trafic. Le travail que nous facturons, c'est précisément cet arbitrage.</p>"
+            "question": "En quoi diffère-t-il d’un audit automatique gratuit ?",
+            "answer": "<p>Un outil automatique liste des anomalies sans les hiérarchiser. Il signale au même niveau une balise manquante sans effet et un blocage d’indexation qui vous coûte la moitié de votre trafic. Le travail que nous facturons, c’est précisément cet arbitrage.</p>"
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
-            "question": "Que se passe-t-il après ?",
+            "question": "Que se passe-t-il après ?",
             "answer": "<p>Vous appliquez vous-même, vous faites appliquer par votre prestataire, ou vous nous confiez la mise en œuvre. Les trois options sont légitimes et le document est écrit pour rester exploitable sans nous.</p>"
           }
         }
@@ -248,7 +248,7 @@
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Checklist d'audit SEO",
+            "title": "Checklist d’audit SEO",
             "text": "Les 12 points vérifiés en premier",
             "link": "/blogs/ressources/checklist-audit-seo",
             "link_label": "Lire le guide"
@@ -268,7 +268,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Search Console : les 5 rapports utiles",
+            "title": "Search Console : les 5 rapports utiles",
             "text": "Et comment les lire",
             "link": "/blogs/ressources/search-console-rapports-essentiels",
             "link_label": "Lire le guide"

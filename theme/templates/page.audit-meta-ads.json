@@ -5,9 +5,9 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Audit publicitaire Meta",
-        "title": "Savoir où part votre budget avant d'en dépenser plus.",
-        "lead": "Nous reprenons l'historique complet de votre compte : structure, audiences, créations, suivi des conversions et rentabilité réelle par campagne. Vous saurez ce qui produit, ce qui coûte, et ce qui devrait être arrêté aujourd'hui.",
-        "cta_primary": "Demander l'audit",
+        "title": "Savoir où part votre budget avant d’en dépenser plus.",
+        "lead": "Nous reprenons l’historique complet de votre compte : structure, audiences, créations, suivi des conversions et rentabilité réelle par campagne. Vous saurez ce qui produit, ce qui coûte, et ce qui devrait être arrêté aujourd’hui.",
+        "cta_primary": "Demander l’audit",
         "parent_label": "Audits",
         "parent_url": "/pages/audit-seo",
         "cta_secondary": "Voir la prestation Meta Ads",
@@ -20,8 +20,8 @@
         "surface": "dark",
         "density": "comfortable",
         "eyebrow": "Ce que nous examinons",
-        "title": "Six angles d'analyse.",
-        "text": "L'ordre n'est pas neutre : un problème de suivi rend l'analyse des créations inexploitable, on commence donc par là."
+        "title": "Six angles d’analyse.",
+        "text": "L’ordre n’est pas neutre : un problème de suivi rend l’analyse des créations inexploitable, on commence donc par là."
       },
       "blocks": {
         "g1": {
@@ -29,7 +29,7 @@
           "settings": {
             "icon": "signal",
             "title": "Fiabilité du suivi",
-            "text": "Pixel, conversions serveur, doublons d'événements, correspondance avec vos ventes réelles. Le point de départ obligatoire."
+            "text": "Pixel, conversions serveur, doublons d’événements, correspondance avec vos ventes réelles. Le point de départ obligatoire."
           }
         },
         "g2": {
@@ -37,7 +37,7 @@
           "settings": {
             "icon": "layers",
             "title": "Structure du compte",
-            "text": "Chevauchement d'audiences, campagnes qui s'enchérissent entre elles, budgets fragmentés."
+            "text": "Chevauchement d’audiences, campagnes qui s’enchérissent entre elles, budgets fragmentés."
           }
         },
         "g3": {
@@ -45,7 +45,7 @@
           "settings": {
             "icon": "megaphone",
             "title": "Angles créatifs",
-            "text": "Combien d'idées réellement différentes sont testées, et depuis combien de temps elles tournent."
+            "text": "Combien d’idées réellement différentes sont testées, et depuis combien de temps elles tournent."
           }
         },
         "g4": {
@@ -69,7 +69,7 @@
           "settings": {
             "icon": "check",
             "title": "Rentabilité réelle",
-            "text": "Coût par acquisition rapporté à votre marge, pas au chiffre d'affaires affiché dans l'interface."
+            "text": "Coût par acquisition rapporté à votre marge, pas au chiffre d’affaires affiché dans l’interface."
           }
         }
       },
@@ -103,7 +103,7 @@
           "type": "step",
           "settings": {
             "title": "Analyse",
-            "text": "Reprise de l'historique disponible, croisement avec vos données de vente, identification des écarts.",
+            "text": "Reprise de l’historique disponible, croisement avec vos données de vente, identification des écarts.",
             "duration": "Jours 2-5"
           }
         },
@@ -111,7 +111,7 @@
           "type": "step",
           "settings": {
             "title": "Restitution",
-            "text": "Document commenté et échange. Vous repartez avec ce qu'il faut arrêter, garder et tester en priorité.",
+            "text": "Document commenté et échange. Vous repartez avec ce qu’il faut arrêter, garder et tester en priorité.",
             "duration": "Jour 7"
           }
         }
@@ -127,13 +127,13 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Deux suites possibles",
-        "title": "Après l'audit, vous choisissez qui reprend la main.",
-        "text": "L'audit ne vous engage à rien. Voici les deux suites que nous proposons.",
+        "title": "Après l’audit, vous choisissez qui reprend la main.",
+        "text": "L’audit ne vous engage à rien. Voici les deux suites que nous proposons.",
         "col_criteria": "Critère",
         "col_a": "Nous pilotons",
         "col_b": "Vous ou votre équipe pilotez",
         "verdict": "Sur un budget média limité, des honoraires de pilotage peuvent représenter une part disproportionnée de la dépense. Nous vous le dirons plutôt que de vous vendre un accompagnement.",
-        "cta_label": "Demander l'audit",
+        "cta_label": "Demander l’audit",
         "cta_url": "/pages/reserver"
       },
       "blocks": {
@@ -173,15 +173,15 @@
           "type": "row",
           "settings": {
             "criteria": "Pertinent si",
-            "value_a": "Personne en interne n'a le temps ni l'habitude",
-            "value_b": "Vous avez déjà quelqu'un de compétent"
+            "value_a": "Personne en interne n’a le temps ni l’habitude",
+            "value_b": "Vous avez déjà quelqu’un de compétent"
           }
         },
         "r6": {
           "type": "row",
           "settings": {
             "criteria": "Notre avis",
-            "value_a": "Recommandé au-delà d'un certain budget média",
+            "value_a": "Recommandé au-delà d’un certain budget média",
             "value_b": "Suffisant sur des budgets modestes"
           }
         }
@@ -200,7 +200,7 @@
       "settings": {
         "surface": "paper",
         "eyebrow": "Questions fréquentes",
-        "title": "Questions fréquentes sur l'audit Meta Ads.",
+        "title": "Questions fréquentes sur l’audit Meta Ads.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -211,22 +211,22 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il un historique long pour que l'audit soit utile ?",
-            "answer": "<p>Trois mois de diffusion continue constituent une base confortable. En dessous, l'analyse porte surtout sur la structure, le suivi et les angles créatifs. Elle reste utile, et nous vous le disons avant de commencer.</p>"
+            "question": "Faut-il un historique long pour que l’audit soit utile ?",
+            "answer": "<p>Trois mois de diffusion continue constituent une base confortable. En dessous, l’analyse porte surtout sur la structure, le suivi et les angles créatifs. Elle reste utile, et nous vous le disons avant de commencer.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Allez-vous modifier mes campagnes pendant l'audit ?",
+            "question": "Allez-vous modifier mes campagnes pendant l’audit ?",
             "answer": "<p>Non. Nous demandons un accès en lecture seule et nous ne touchons à rien. Toute modification serait faite après restitution, avec votre accord explicite, et seulement si vous nous confiez le pilotage.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "L'audit couvre-t-il Instagram ?",
-            "answer": "<p>Oui : Facebook et Instagram partagent le même gestionnaire et les mêmes campagnes. Nous analysons la répartition des placements, qui est souvent laissée en automatique alors qu'elle mérite un arbitrage selon votre offre.</p>"
+            "question": "L’audit couvre-t-il Instagram ?",
+            "answer": "<p>Oui : Facebook et Instagram partagent le même gestionnaire et les mêmes campagnes. Nous analysons la répartition des placements, qui est souvent laissée en automatique alors qu’elle mérite un arbitrage selon votre offre.</p>"
           }
         }
       },
@@ -241,8 +241,8 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Donnez-nous un accès en lecture.",
-        "text": "Une semaine plus tard, vous savez précisément ce que produit chaque euro dépensé — et ce qu'il faudrait arrêter dès demain.",
-        "cta_label": "Demander l'audit Meta Ads",
+        "text": "Une semaine plus tard, vous savez précisément ce que produit chaque euro dépensé — et ce qu’il faudrait arrêter dès demain.",
+        "cta_label": "Demander l’audit Meta Ads",
         "note": "Réponse sous 48 h",
         "link_label": "Analyser mes concurrents",
         "link_url": "/pages/analyse-concurrentielle-meta-ads"
@@ -291,7 +291,7 @@
           "settings": {
             "icon": "check",
             "title": "Structurer un compte Meta Ads",
-            "text": "Le setup qui laisse l'algo travailler",
+            "text": "Le setup qui laisse l’algo travailler",
             "link": "/blogs/ressources/structure-compte-meta-ads-2026",
             "link_label": "Lire le guide"
           }
@@ -301,7 +301,7 @@
           "settings": {
             "icon": "signal",
             "title": "Pixel Meta et API de conversion",
-            "text": "L'installation propre sur Shopify",
+            "text": "L’installation propre sur Shopify",
             "link": "/blogs/ressources/pixel-meta-api-conversion-shopify",
             "link_label": "Lire le guide"
           }

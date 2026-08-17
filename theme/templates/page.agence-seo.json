@@ -8,7 +8,7 @@
         "parent_url": "/pages/agence-shopify",
         "eyebrow": "Référencement naturel",
         "title": "Recevez chaque mois des demandes venues de Google.",
-        "lead": "Vos clients cherchent votre service chaque jour. Le référencement naturel consiste à être la réponse qu'ils trouvent — pas à publier plus de contenu que vos concurrents.",
+        "lead": "Vos clients cherchent votre service chaque jour. Le référencement naturel consiste à être la réponse qu’ils trouvent — pas à publier plus de contenu que vos concurrents.",
         "cta_primary": "Demander un diagnostic SEO",
         "cta_secondary": "Voir les résultats",
         "cta_secondary_url": "/pages/resultats"
@@ -55,7 +55,7 @@
         "reverse": false,
         "eyebrow": "Le constat",
         "title": "Une page qui répond mieux que celle du concurrent passe devant.",
-        "text": "<p>La plupart des sites que nous reprenons ne manquent pas de contenu : ils manquent de structure. Plusieurs pages visent la même requête et se neutralisent, les intentions d'achat ne sont couvertes par aucune page, et les signaux techniques empêchent Google de comprendre la hiérarchie.</p><p>Nous commençons donc par cartographier ce que votre marché cherche réellement, puis nous donnons à chaque page un rôle unique.</p>",
+        "text": "<p>La plupart des sites que nous reprenons ne manquent pas de contenu : ils manquent de structure. Plusieurs pages visent la même requête et se neutralisent, les intentions d’achat ne sont couvertes par aucune page, et les signaux techniques empêchent Google de comprendre la hiérarchie.</p><p>Nous commençons donc par cartographier ce que votre marché cherche réellement, puis nous donnons à chaque page un rôle unique.</p>",
         "cta_label": "Voir notre méthode",
         "cta_url": "/pages/a-propos"
       },
@@ -70,15 +70,15 @@
         "b2": {
           "type": "point",
           "settings": {
-            "title": "L'intention avant le volume",
-            "text": "Une requête à 100 recherches mensuelles avec une intention d'achat vaut mieux qu'une requête à 5 000 purement informative."
+            "title": "L’intention avant le volume",
+            "text": "Une requête à 100 recherches mensuelles avec une intention d’achat vaut mieux qu’une requête à 5 000 purement informative."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
             "title": "La technique conditionne le reste",
-            "text": "Indexation, vitesse, structure et données structurées : sans cette base, le meilleur contenu reste invisible."
+            "text": "Indexation, vitesse, structure et données structurées : sans cette base, le meilleur contenu reste invisible."
           }
         }
       },
@@ -95,7 +95,7 @@
         "density": "comfortable",
         "eyebrow": "Ce que couvre la prestation",
         "title": "Six chantiers, activés selon votre situation.",
-        "text": "Un site jeune et un site installé depuis dix ans n'ont pas les mêmes priorités. Le diagnostic détermine l'ordre."
+        "text": "Un site jeune et un site installé depuis dix ans n’ont pas les mêmes priorités. Le diagnostic détermine l’ordre."
       },
       "blocks": {
         "g1": {
@@ -119,7 +119,7 @@
           "settings": {
             "icon": "layers",
             "title": "Architecture des pages",
-            "text": "Arborescence, rôle de chaque page, maillage interne et fils d'Ariane. C'est ce qui fait comprendre le site aux moteurs."
+            "text": "Arborescence, rôle de chaque page, maillage interne et fils d’Ariane. C’est ce qui fait comprendre le site aux moteurs."
           }
         },
         "g4": {
@@ -135,7 +135,7 @@
           "settings": {
             "icon": "gauge",
             "title": "SEO local",
-            "text": "Pages par zone, fiche établissement, signaux de proximité et cohérence des informations sur l'ensemble du web."
+            "text": "Pages par zone, fiche établissement, signaux de proximité et cohérence des informations sur l’ensemble du web."
           }
         },
         "g6": {
@@ -143,7 +143,7 @@
           "settings": {
             "icon": "megaphone",
             "title": "Suivi et arbitrages",
-            "text": "Positions, impressions, clics et demandes entrantes. Nous suivons ce qui se transforme en chiffre d'affaires, pas seulement en trafic."
+            "text": "Positions, impressions, clics et demandes entrantes. Nous suivons ce qui se transforme en chiffre d’affaires, pas seulement en trafic."
           }
         }
       },
@@ -163,7 +163,7 @@
         "reverse": true,
         "eyebrow": "Déroulé",
         "title": "Comptez trois mois pour les premiers gains, un an pour les vrais.",
-        "text": "<p>Nous préférons l'annoncer clairement : les premiers mouvements sont généralement visibles entre six et douze semaines, et les effets composés arrivent plus tard. Toute agence qui vous promet la première position en un mois vous vend autre chose que du référencement.</p>",
+        "text": "<p>Nous préférons l’annoncer clairement : les premiers mouvements sont généralement visibles entre six et douze semaines, et les effets composés arrivent plus tard. Toute agence qui vous promet la première position en un mois vous vend autre chose que du référencement.</p>",
         "cta_label": "Demander un relevé de position",
         "cta_url": "/pages/reserver"
       },
@@ -179,14 +179,14 @@
           "type": "point",
           "settings": {
             "title": "Semaines 3 à 6 — Fondations",
-            "text": "Correctifs techniques, arbitrage des pages concurrentes, refonte de l'architecture et du maillage."
+            "text": "Correctifs techniques, arbitrage des pages concurrentes, refonte de l’architecture et du maillage."
           }
         },
         "s3": {
           "type": "point",
           "settings": {
             "title": "Semaines 6 à 12 — Contenus",
-            "text": "Rédaction et publication des pages prioritaires, dans l'ordre de valeur commerciale décroissante."
+            "text": "Rédaction et publication des pages prioritaires, dans l’ordre de valeur commerciale décroissante."
           }
         },
         "s4": {
@@ -209,8 +209,8 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Ce que l'on nous demande avant de démarrer.",
-        "text": "Si votre question ne figure pas ici, posez-la : nous répondons précisément, même quand la réponse ne nous arrange pas.",
+        "title": "Ce que l’on nous demande avant de démarrer.",
+        "text": "Si votre question ne figure pas ici, posez-la : nous répondons précisément, même quand la réponse ne nous arrange pas.",
         "cta_label": "Poser une autre question",
         "open_first": true,
         "single_open": false,
@@ -220,36 +220,36 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "En combien de temps voit-on des résultats en SEO ?",
-            "answer": "<p>Les premiers mouvements d'impressions apparaissent généralement entre six et douze semaines après les correctifs techniques et la restructuration. Les gains de clics suivent, puis se composent. Le délai dépend fortement de l'ancienneté du domaine, de la concurrence sur vos requêtes et de l'état de départ du site. Un site installé qui a un problème de structure remonte plus vite qu'un domaine créé le mois dernier.</p>"
+            "question": "En combien de temps voit-on des résultats en SEO ?",
+            "answer": "<p>Les premiers mouvements d’impressions apparaissent généralement entre six et douze semaines après les correctifs techniques et la restructuration. Les gains de clics suivent, puis se composent. Le délai dépend fortement de l’ancienneté du domaine, de la concurrence sur vos requêtes et de l’état de départ du site. Un site installé qui a un problème de structure remonte plus vite qu’un domaine créé le mois dernier.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Garantissez-vous une position sur Google ?",
-            "answer": "<p>Non, et personne ne le peut honnêtement : le classement dépend d'un algorithme que nous ne contrôlons pas, de vos concurrents et de l'évolution de la demande. Ce que nous garantissons, c'est la méthode, la transparence sur ce qui est fait et la mesure de l'effet réel. Si une action ne produit rien, nous le disons et nous changeons d'approche.</p>"
+            "question": "Garantissez-vous une position sur Google ?",
+            "answer": "<p>Non, et personne ne le peut honnêtement : le classement dépend d’un algorithme que nous ne contrôlons pas, de vos concurrents et de l’évolution de la demande. Ce que nous garantissons, c’est la méthode, la transparence sur ce qui est fait et la mesure de l’effet réel. Si une action ne produit rien, nous le disons et nous changeons d’approche.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il un engagement de longue durée ?",
-            "answer": "<p>Le diagnostic est ponctuel et sans suite obligatoire. Ensuite, nous travaillons par cycles de trois mois. C'est la durée minimale pour observer un effet, et c'est assez court pour que vous puissiez arrêter sans être bloqué. Vos accès et vos contenus restent les vôtres dans tous les cas.</p>"
+            "question": "Faut-il un engagement de longue durée ?",
+            "answer": "<p>Le diagnostic est ponctuel et sans suite obligatoire. Ensuite, nous travaillons par cycles de trois mois. C’est la durée minimale pour observer un effet, et c’est assez court pour que vous puissiez arrêter sans être bloqué. Vos accès et vos contenus restent les vôtres dans tous les cas.</p>"
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
-            "question": "Travaillez-vous sur Shopify, WordPress ou un site sur mesure ?",
-            "answer": "<p>Les trois. Le référencement obéit aux mêmes principes quelle que soit la plateforme ; seule la façon d'appliquer les correctifs change. Nous intervenons directement dans le code quand c'est nécessaire, ce qui évite les allers-retours avec un prestataire technique.</p>"
+            "question": "Travaillez-vous sur Shopify, WordPress ou un site sur mesure ?",
+            "answer": "<p>Les trois. Le référencement obéit aux mêmes principes quelle que soit la plateforme ; seule la façon d’appliquer les correctifs change. Nous intervenons directement dans le code quand c’est nécessaire, ce qui évite les allers-retours avec un prestataire technique.</p>"
           }
         },
         "q5": {
           "type": "qa",
           "settings": {
-            "question": "Achetez-vous des liens ?",
-            "answer": "<p>Non. Nous travaillons la structure, le contenu et les signaux locaux, et nous construisons la notoriété par des moyens qui ne peuvent pas être sanctionnés du jour au lendemain. Les réseaux de liens achetés produisent des gains rapides puis des pertes brutales — ce n'est pas un service que nous rendons.</p>"
+            "question": "Achetez-vous des liens ?",
+            "answer": "<p>Non. Nous travaillons la structure, le contenu et les signaux locaux, et nous construisons la notoriété par des moyens qui ne peuvent pas être sanctionnés du jour au lendemain. Les réseaux de liens achetés produisent des gains rapides puis des pertes brutales — ce n’est pas un service que nous rendons.</p>"
           }
         }
       },
@@ -266,7 +266,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Commençons par savoir ce qui bloque.",
-        "text": "Décrivez votre site et votre marché. Nous revenons avec les trois priorités que nous identifions — et si le SEO n'est pas votre priorité, nous vous le dirons.",
+        "text": "Décrivez votre site et votre marché. Nous revenons avec les trois priorités que nous identifions — et si le SEO n’est pas votre priorité, nous vous le dirons.",
         "cta_label": "Demander un diagnostic SEO",
         "note": "Réponse sous 48 h",
         "link_label": "Voir les résultats obtenus",

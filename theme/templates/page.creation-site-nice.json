@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Création de site — Nice",
         "title": "Création de site internet à Nice, conçu pour amener des demandes",
-        "lead": "Une partie de votre clientèle décide avant d'arriver sur la Côte d'Azur, parfois depuis un autre pays. Elle ne peut ni passer vous voir ni vous croiser : le site est le seul élément sur lequel elle vous juge.",
+        "lead": "Une partie de votre clientèle décide avant d’arriver sur la Côte d’Azur, parfois depuis un autre pays. Elle ne peut ni passer vous voir ni vous croiser : le site est le seul élément sur lequel elle vous juge.",
         "cta_primary": "Cadrer mon projet",
         "parent_label": "Création de site vitrine",
         "parent_url": "/pages/creation-site-vitrine",
@@ -28,7 +28,7 @@
           "settings": {
             "value": "Saison",
             "label": "des écarts très marqués",
-            "note": "Une activité qui double puis retombe impose un site utile toute l'année, pas seulement l'été."
+            "note": "Une activité qui double puis retombe impose un site utile toute l’année, pas seulement l’été."
           }
         },
         "s2": {
@@ -44,7 +44,7 @@
           "settings": {
             "value": "Haut de gamme",
             "label": "des attentes élevées",
-            "note": "Sur l'immobilier et les services premium, un site approximatif élimine avant le premier échange."
+            "note": "Sur l’immobilier et les services premium, un site approximatif élimine avant le premier échange."
           }
         }
       },
@@ -60,29 +60,29 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Notre lecture",
-        "title": "Un client qui réserve à distance a besoin de tout savoir avant d'écrire.",
-        "text": "<p>Sur place, une question se pose au téléphone. À distance, elle reste sans réponse et le prospect passe au concurrent qui, lui, a tout expliqué : ce qui est compris, les délais, les modalités de paiement, ce qui se passe s'il annule.</p><p>Un site pensé pour cette clientèle est plus explicite que la moyenne, et c'est ce qui le fait convertir.</p>"
+        "title": "Un client qui réserve à distance a besoin de tout savoir avant d’écrire.",
+        "text": "<p>Sur place, une question se pose au téléphone. À distance, elle reste sans réponse et le prospect passe au concurrent qui, lui, a tout expliqué : ce qui est compris, les délais, les modalités de paiement, ce qui se passe s’il annule.</p><p>Un site pensé pour cette clientèle est plus explicite que la moyenne, et c’est ce qui le fait convertir.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
             "title": "Tout dire avant la question",
-            "text": "Périmètre, délais, paiement, annulation : chaque zone d'ombre coûte un contact."
+            "text": "Périmètre, délais, paiement, annulation : chaque zone d’ombre coûte un contact."
           }
         },
         "b2": {
           "type": "point",
           "settings": {
             "title": "Une réservation sans friction",
-            "text": "Un formulaire ou un créneau, pas un numéro qu'il faudra appeler depuis l'étranger."
+            "text": "Un formulaire ou un créneau, pas un numéro qu’il faudra appeler depuis l’étranger."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
             "title": "Une preuve datée",
-            "text": "Des réalisations récentes valent mieux qu'une galerie sans repère de temps."
+            "text": "Des réalisations récentes valent mieux qu’une galerie sans repère de temps."
           }
         }
       },
@@ -105,7 +105,7 @@
           "type": "step",
           "settings": {
             "title": "Cadrage",
-            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d'échange, pas un questionnaire.",
+            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d’échange, pas un questionnaire.",
             "duration": "Semaine 1"
           }
         },
@@ -113,7 +113,7 @@
           "type": "step",
           "settings": {
             "title": "Structure et contenus",
-            "text": "L'arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
+            "text": "L’arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
             "duration": "Semaines 2-3"
           }
         },
@@ -146,7 +146,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Ce qu'on nous demande sur ce marché.",
+        "title": "Ce qu’on nous demande sur ce marché.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -157,15 +157,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Mon activité est saisonnière, le site sert-il hors saison ?",
-            "answer": "<p>C'est même sa principale utilité : la haute saison se prépare des mois à l'avance. Les recherches et les réservations arrivent bien avant l'été, et un site actif toute l'année capte cette anticipation.</p>"
+            "question": "Mon activité est saisonnière, le site sert-il hors saison ?",
+            "answer": "<p>C’est même sa principale utilité : la haute saison se prépare des mois à l’avance. Les recherches et les réservations arrivent bien avant l’été, et un site actif toute l’année capte cette anticipation.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il une version anglaise ?",
-            "answer": "<p>Cela se vérifie plutôt que cela ne se suppose. Sur l'hébergement, la conciergerie ou l'immobilier de prestige, la demande anglophone est réelle. Sur beaucoup de services de proximité, elle est négligeable — et trois pages bien traduites suffisent souvent.</p>"
+            "question": "Faut-il une version anglaise ?",
+            "answer": "<p>Cela se vérifie plutôt que cela ne se suppose. Sur l’hébergement, la conciergerie ou l’immobilier de prestige, la demande anglophone est réelle. Sur beaucoup de services de proximité, elle est négligeable — et trois pages bien traduites suffisent souvent.</p>"
           }
         }
       },
@@ -188,7 +188,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Prix d'un site vitrine en 2026",
+            "title": "Prix d’un site vitrine en 2026",
             "text": "Les vraies fourchettes, poste par poste",
             "link": "/blogs/ressources/prix-site-vitrine-2026",
             "link_label": "Lire le guide"
@@ -225,8 +225,8 @@
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Regardons votre site avec l'œil d'un client qui ne peut pas passer.",
-        "text": "Nous listons les questions qu'il se pose et auxquelles votre site ne répond pas encore, dans l'ordre où elles le font renoncer.",
+        "title": "Regardons votre site avec l'œil d’un client qui ne peut pas passer.",
+        "text": "Nous listons les questions qu’il se pose et auxquelles votre site ne répond pas encore, dans l’ordre où elles le font renoncer.",
         "cta_label": "Demander un diagnostic",
         "note": "Réponse sous 48 h",
         "link_label": "Voir le référencement à Nice",

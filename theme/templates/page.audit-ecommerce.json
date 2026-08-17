@@ -6,11 +6,11 @@
         "show_breadcrumb": true,
         "eyebrow": "Audit de boutique en ligne",
         "title": "Retrouver les commandes que votre tunnel perd en route.",
-        "lead": "Nous suivons le trajet complet de vos visiteurs, de l'arrivée au paiement, et nous chiffrons chaque marche perdue. L'objectif n'est pas de lister des anomalies mais de dire où se trouve l'argent laissé sur la table.",
-        "cta_primary": "Demander l'audit",
+        "lead": "Nous suivons le trajet complet de vos visiteurs, de l’arrivée au paiement, et nous chiffrons chaque marche perdue. L’objectif n’est pas de lister des anomalies mais de dire où se trouve l’argent laissé sur la table.",
+        "cta_primary": "Demander l’audit",
         "parent_label": "Audits",
         "parent_url": "/pages/audit-seo",
-        "cta_secondary": "Voir l'agence Shopify",
+        "cta_secondary": "Voir l’agence Shopify",
         "cta_secondary_url": "/pages/agence-shopify"
       },
       "blocks": {
@@ -43,10 +43,10 @@
       "settings": {
         "surface": "paper",
         "reverse": false,
-        "eyebrow": "L'approche",
-        "title": "Un taux de conversion global ne dit rien d'exploitable.",
-        "text": "<p>Savoir que votre boutique convertit à 1,4 % ne permet aucune décision. Ce qui compte, c'est de savoir que 60 % des visiteurs quittent la fiche produit sans faire défiler. Ou que la moitié des paniers se perdent à l'étape de livraison.</p><p>Nous découpons donc le parcours en marches et nous mesurons chacune séparément. Sur mobile et sur ordinateur : les points de rupture n'y sont jamais les mêmes.</p>",
-        "cta_label": "Demander l'audit",
+        "eyebrow": "L’approche",
+        "title": "Un taux de conversion global ne dit rien d’exploitable.",
+        "text": "<p>Savoir que votre boutique convertit à 1,4 % ne permet aucune décision. Ce qui compte, c’est de savoir que 60 % des visiteurs quittent la fiche produit sans faire défiler. Ou que la moitié des paniers se perdent à l’étape de livraison.</p><p>Nous découpons donc le parcours en marches et nous mesurons chacune séparément. Sur mobile et sur ordinateur : les points de rupture n’y sont jamais les mêmes.</p>",
+        "cta_label": "Demander l’audit",
         "cta_url": "/pages/reserver"
       },
       "blocks": {
@@ -54,14 +54,14 @@
           "type": "point",
           "settings": {
             "title": "Arrivée",
-            "text": "Adéquation entre la source de trafic et la page d'atterrissage. Beaucoup de pertes se jouent avant le premier clic."
+            "text": "Adéquation entre la source de trafic et la page d’atterrissage. Beaucoup de pertes se jouent avant le premier clic."
           }
         },
         "b2": {
           "type": "point",
           "settings": {
             "title": "Catégorie et fiche",
-            "text": "Lisibilité de l'offre, réassurance, éléments manquants au moment précis du doute."
+            "text": "Lisibilité de l’offre, réassurance, éléments manquants au moment précis du doute."
           }
         },
         "b3": {
@@ -109,7 +109,7 @@
           "settings": {
             "icon": "cart",
             "title": "Analyse de la fiche produit",
-            "text": "Ce qui manque au moment de la décision : preuve, délai, garantie, alternative."
+            "text": "Ce qui manque au moment de la décision : preuve, délai, garantie, alternative."
           }
         },
         "g4": {
@@ -124,8 +124,8 @@
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Plan d'action",
-            "text": "Les correctifs classés en trois vagues : immédiat, à programmer, à arbitrer."
+            "title": "Plan d’action",
+            "text": "Les correctifs classés en trois vagues : immédiat, à programmer, à arbitrer."
           }
         }
       },
@@ -150,7 +150,7 @@
           "type": "step",
           "settings": {
             "title": "Instrumentation",
-            "text": "Vérification de votre suivi. Si les données sont fausses, l'audit commence par les fiabiliser.",
+            "text": "Vérification de votre suivi. Si les données sont fausses, l’audit commence par les fiabiliser.",
             "duration": "Jours 1-2"
           }
         },
@@ -158,7 +158,7 @@
           "type": "step",
           "settings": {
             "title": "Observation",
-            "text": "Analyse quantitative croisée avec l'examen manuel du parcours sur plusieurs appareils.",
+            "text": "Analyse quantitative croisée avec l’examen manuel du parcours sur plusieurs appareils.",
             "duration": "Jours 3-7"
           }
         },
@@ -166,7 +166,7 @@
           "type": "step",
           "settings": {
             "title": "Restitution",
-            "text": "Document chiffré et échange d'une heure pour prioriser ensemble.",
+            "text": "Document chiffré et échange d’une heure pour prioriser ensemble.",
             "duration": "Jour 10"
           }
         }
@@ -182,7 +182,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Questions fréquentes sur l'audit e-commerce.",
+        "title": "Questions fréquentes sur l’audit e-commerce.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -193,22 +193,22 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il beaucoup de commandes pour que ce soit pertinent ?",
-            "answer": "<p>Une centaine de commandes mensuelles permet une lecture statistique confortable. En dessous, l'audit s'appuie sur l'examen manuel du parcours et sur les enregistrements de sessions. C'est très instructif : les blocages graves se voient à l'œil nu.</p>"
+            "question": "Faut-il beaucoup de commandes pour que ce soit pertinent ?",
+            "answer": "<p>Une centaine de commandes mensuelles permet une lecture statistique confortable. En dessous, l’audit s’appuie sur l’examen manuel du parcours et sur les enregistrements de sessions. C’est très instructif : les blocages graves se voient à l'œil nu.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Est-ce réservé à Shopify ?",
-            "answer": "<p>Non. La méthode s'applique à toute boutique en ligne. Sur Shopify, nous allons plus loin parce que nous pouvons examiner le thème et les applications installées directement.</p>"
+            "question": "Est-ce réservé à Shopify ?",
+            "answer": "<p>Non. La méthode s’applique à toute boutique en ligne. Sur Shopify, nous allons plus loin parce que nous pouvons examiner le thème et les applications installées directement.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Appliquez-vous les correctifs ?",
-            "answer": "<p>C'est une prestation distincte, que vous êtes libre de nous confier ou non. Le plan d'action est rédigé pour être exécutable par votre équipe ou par un autre prestataire, sans dépendance à nous.</p>"
+            "question": "Appliquez-vous les correctifs ?",
+            "answer": "<p>C’est une prestation distincte, que vous êtes libre de nous confier ou non. Le plan d’action est rédigé pour être exécutable par votre équipe ou par un autre prestataire, sans dépendance à nous.</p>"
           }
         }
       },
@@ -223,8 +223,8 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Chiffrons ce que perd votre tunnel.",
-        "text": "Donnez-nous l'adresse de votre boutique et un accès en lecture à vos statistiques. Nous vous montrons où partent les commandes.",
-        "cta_label": "Demander l'audit e-commerce",
+        "text": "Donnez-nous l’adresse de votre boutique et un accès en lecture à vos statistiques. Nous vous montrons où partent les commandes.",
+        "cta_label": "Demander l’audit e-commerce",
         "note": "Réponse sous 48 h",
         "link_label": "Voir le SEO e-commerce",
         "link_url": "/pages/seo-ecommerce"
@@ -262,7 +262,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Abandon de panier : 9 corrections",
+            "title": "Abandon de panier : 9 corrections",
             "text": "À faire avant les emails",
             "link": "/blogs/ressources/abandon-panier-corrections",
             "link_label": "Lire le guide"

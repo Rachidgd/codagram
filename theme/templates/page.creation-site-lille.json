@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Création de site — Lille",
         "title": "Création de site internet à Lille, référencé dès la mise en ligne",
-        "lead": "La frontière est à vingt minutes et une partie réelle de la demande vient de Belgique. Un site qui raisonne en réflexes strictement français perd ces prospects sur des détails — un numéro non international, une TVA qui n'est pas la leur, un vocabulaire qui n'est pas le même.",
+        "lead": "La frontière est à vingt minutes et une partie réelle de la demande vient de Belgique. Un site qui raisonne en réflexes strictement français perd ces prospects sur des détails — un numéro non international, une TVA qui n’est pas la leur, un vocabulaire qui n’est pas le même.",
         "cta_primary": "Cadrer mon projet",
         "parent_label": "Création de site vitrine",
         "parent_url": "/pages/creation-site-vitrine",
@@ -28,7 +28,7 @@
           "settings": {
             "value": "Transfrontalier",
             "label": "une clientèle qui traverse",
-            "note": "Tournai, Mouscron, Courtrai : des prospects à moins d'une heure que la plupart des sites lillois ignorent."
+            "note": "Tournai, Mouscron, Courtrai : des prospects à moins d’une heure que la plupart des sites lillois ignorent."
           }
         },
         "s2": {
@@ -61,7 +61,7 @@
         "reverse": false,
         "eyebrow": "Notre lecture",
         "title": "Les détails qui font renoncer un prospect belge tiennent en trois lignes.",
-        "text": "<p>Un numéro écrit sans indicatif international, une adresse sans pays, des conditions qui ne mentionnent que la TVA française : chacun de ces détails est un petit doute. Mis bout à bout, ils suffisent à faire préférer un concurrent qui, lui, a levé l'ambiguïté.</p><p>Ce sont des corrections de quelques minutes, à condition d'y avoir pensé à la conception.</p>"
+        "text": "<p>Un numéro écrit sans indicatif international, une adresse sans pays, des conditions qui ne mentionnent que la TVA française : chacun de ces détails est un petit doute. Mis bout à bout, ils suffisent à faire préférer un concurrent qui, lui, a levé l’ambiguïté.</p><p>Ce sont des corrections de quelques minutes, à condition d’y avoir pensé à la conception.</p>"
       },
       "blocks": {
         "b1": {
@@ -74,7 +74,7 @@
         "b2": {
           "type": "point",
           "settings": {
-            "title": "Le pays dans l'adresse",
+            "title": "Le pays dans l’adresse",
             "text": "Une évidence côté français, une information manquante vue de Belgique."
           }
         },
@@ -82,7 +82,7 @@
           "type": "point",
           "settings": {
             "title": "Le vocabulaire vérifié",
-            "text": "Certains termes métier diffèrent d'un pays à l'autre : le site doit employer les deux."
+            "text": "Certains termes métier diffèrent d’un pays à l’autre : le site doit employer les deux."
           }
         }
       },
@@ -105,7 +105,7 @@
           "type": "step",
           "settings": {
             "title": "Cadrage",
-            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d'échange, pas un questionnaire.",
+            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d’échange, pas un questionnaire.",
             "duration": "Semaine 1"
           }
         },
@@ -113,7 +113,7 @@
           "type": "step",
           "settings": {
             "title": "Structure et contenus",
-            "text": "L'arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
+            "text": "L’arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
             "duration": "Semaines 2-3"
           }
         },
@@ -146,7 +146,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Ce qu'on nous demande sur ce marché.",
+        "title": "Ce qu’on nous demande sur ce marché.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -157,15 +157,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "La clientèle belge vaut-elle l'effort ?",
-            "answer": "<p>Sur beaucoup de métiers lillois, oui : le bassin est proche, solvable, et la concurrence y pense rarement. Cela dit, si votre activité impose un déplacement long ou une contrainte réglementaire, la question mérite d'être tranchée avant d'investir.</p>"
+            "question": "La clientèle belge vaut-elle l’effort ?",
+            "answer": "<p>Sur beaucoup de métiers lillois, oui : le bassin est proche, solvable, et la concurrence y pense rarement. Cela dit, si votre activité impose un déplacement long ou une contrainte réglementaire, la question mérite d’être tranchée avant d’investir.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il un site distinct pour la Belgique ?",
-            "answer": "<p>Presque jamais. Un site unique qui lève les ambiguïtés — indicatif, pays, conditions, zones — suffit dans l'immense majorité des cas. Deux sites doublent le travail et divisent la visibilité.</p>"
+            "question": "Faut-il un site distinct pour la Belgique ?",
+            "answer": "<p>Presque jamais. Un site unique qui lève les ambiguïtés — indicatif, pays, conditions, zones — suffit dans l’immense majorité des cas. Deux sites doublent le travail et divisent la visibilité.</p>"
           }
         }
       },
@@ -188,7 +188,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Prix d'un site vitrine en 2026",
+            "title": "Prix d’un site vitrine en 2026",
             "text": "Les vraies fourchettes, poste par poste",
             "link": "/blogs/ressources/prix-site-vitrine-2026",
             "link_label": "Lire le guide"
@@ -226,7 +226,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Regardons ce qui bloque un prospect belge sur votre site.",
-        "text": "Nous relisons votre site avec l'œil d'un client venu de l'autre côté de la frontière et listons ce qui l'empêche de vous contacter.",
+        "text": "Nous relisons votre site avec l'œil d’un client venu de l’autre côté de la frontière et listons ce qui l’empêche de vous contacter.",
         "cta_label": "Demander un diagnostic",
         "note": "Réponse sous 48 h",
         "link_label": "Voir le référencement à Lille",

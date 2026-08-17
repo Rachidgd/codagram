@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Site pour artisan et entreprise du bâtiment",
         "title": "Recevez des demandes de devis dans votre métier et votre zone.",
-        "lead": "Le problème d'un artisan visible n'est pas le nombre d'appels, c'est leur qualité : hors zone, hors métier, hors budget. Un site bien construit filtre en amont et vous fait gagner les heures que vous passez à décliner.",
+        "lead": "Le problème d’un artisan visible n’est pas le nombre d’appels, c’est leur qualité : hors zone, hors métier, hors budget. Un site bien construit filtre en amont et vous fait gagner les heures que vous passez à décliner.",
         "cta_primary": "Parler de mon activité",
         "parent_label": "Création de site",
         "parent_url": "/pages/creation-site-vitrine",
@@ -20,8 +20,8 @@
         "surface": "paper",
         "reverse": true,
         "eyebrow": "Le vrai enjeu",
-        "title": "Un bon site vous fait recevoir moins d'appels, et de meilleurs.",
-        "text": "<p>Beaucoup d'artisans nous décrivent la même journée : quinze appels, dont trois dans la zone, deux dans le métier, et un seul avec un budget réaliste. Le temps perdu ne se rattrape pas le soir.</p><p>Nous rendons donc explicites les trois critères qui écartent les demandes non pertinentes — sans faire fuir les bonnes.</p>",
+        "title": "Un bon site vous fait recevoir moins d’appels, et de meilleurs.",
+        "text": "<p>Beaucoup d’artisans nous décrivent la même journée : quinze appels, dont trois dans la zone, deux dans le métier, et un seul avec un budget réaliste. Le temps perdu ne se rattrape pas le soir.</p><p>Nous rendons donc explicites les trois critères qui écartent les demandes non pertinentes — sans faire fuir les bonnes.</p>",
         "cta_label": "Recevoir mes priorités",
         "cta_url": "/pages/reserver"
       },
@@ -30,21 +30,21 @@
           "type": "point",
           "settings": {
             "title": "La zone, écrite noir sur blanc",
-            "text": "Communes couvertes et rayon d'intervention. Le flou géographique génère l'essentiel des appels inutiles."
+            "text": "Communes couvertes et rayon d’intervention. Le flou géographique génère l’essentiel des appels inutiles."
           }
         },
         "b2": {
           "type": "point",
           "settings": {
             "title": "Le périmètre de métier",
-            "text": "Ce que vous prenez, ce que vous ne prenez pas. Un refus clair vaut mieux qu'un devis jamais envoyé."
+            "text": "Ce que vous prenez, ce que vous ne prenez pas. Un refus clair vaut mieux qu’un devis jamais envoyé."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
-            "title": "L'ordre de grandeur",
-            "text": "Une fourchette ou un montant minimum d'intervention. C'est l'information la plus évitée et la plus efficace."
+            "title": "L’ordre de grandeur",
+            "text": "Une fourchette ou un montant minimum d’intervention. C’est l’information la plus évitée et la plus efficace."
           }
         }
       },
@@ -60,7 +60,7 @@
         "surface": "dark",
         "eyebrow": "Comment ça se passe",
         "title": "Un projet calé sur votre disponibilité.",
-        "text": "Vous êtes sur les chantiers la journée. Nous organisons le projet pour qu'il n'exige jamais votre présence en pleine semaine."
+        "text": "Vous êtes sur les chantiers la journée. Nous organisons le projet pour qu’il n’exige jamais votre présence en pleine semaine."
       },
       "blocks": {
         "s1": {
@@ -83,7 +83,7 @@
           "type": "step",
           "settings": {
             "title": "Vos photos de chantier",
-            "text": "Nous vous disons quoi photographier avec votre téléphone. L'avant-après vaut tous les arguments.",
+            "text": "Nous vous disons quoi photographier avec votre téléphone. L’avant-après vaut tous les arguments.",
             "duration": "À votre rythme"
           }
         },
@@ -91,7 +91,7 @@
           "type": "step",
           "settings": {
             "title": "Mise en ligne",
-            "text": "Site, fiche d'établissement, demande de devis. Vous recevez les demandes par courriel et par SMS.",
+            "text": "Site, fiche d’établissement, demande de devis. Vous recevez les demandes par courriel et par SMS.",
             "duration": "2 semaines"
           }
         }
@@ -109,7 +109,7 @@
         "surface": "paper",
         "density": "comfortable",
         "eyebrow": "Ce que comprend le site",
-        "title": "Six éléments, et l'ordre compte.",
+        "title": "Six éléments, et l’ordre compte.",
         "text": ""
       },
       "blocks": {
@@ -118,7 +118,7 @@
           "settings": {
             "icon": "layers",
             "title": "Une page par métier",
-            "text": "Chaque prestation a sa page : c'est ce qui vous rend trouvable sur des recherches précises plutôt que génériques."
+            "text": "Chaque prestation a sa page : c’est ce qui vous rend trouvable sur des recherches précises plutôt que génériques."
           }
         },
         "g2": {
@@ -126,7 +126,7 @@
           "settings": {
             "icon": "signal",
             "title": "Pages par commune",
-            "text": "Vos villes d'intervention réellement travaillées, pas une liste dupliquée."
+            "text": "Vos villes d’intervention réellement travaillées, pas une liste dupliquée."
           }
         },
         "g3": {
@@ -187,22 +187,22 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Je n'ai pas le temps de m'occuper d'un site.",
-            "answer": "<p>C'est la remarque la plus fréquente et elle est légitime. Concrètement, votre contribution se limite à un entretien téléphonique et à des photos prises au téléphone entre deux chantiers. Nous nous chargeons de tout le reste, y compris de la rédaction.</p>"
+            "question": "Je n’ai pas le temps de m’occuper d’un site.",
+            "answer": "<p>C’est la remarque la plus fréquente et elle est légitime. Concrètement, votre contribution se limite à un entretien téléphonique et à des photos prises au téléphone entre deux chantiers. Nous nous chargeons de tout le reste, y compris de la rédaction.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il afficher mes prix ?",
-            "answer": "<p>Pas nécessairement un tarif exact, mais un ordre de grandeur ou un montant minimum d'intervention, oui. C'est ce qui écarte les demandes irréalistes avant qu'elles ne vous coûtent un déplacement. C'est le point sur lequel nous insistons le plus, et celui sur lequel on nous résiste le plus.</p>"
+            "question": "Faut-il afficher mes prix ?",
+            "answer": "<p>Pas nécessairement un tarif exact, mais un ordre de grandeur ou un montant minimum d’intervention, oui. C’est ce qui écarte les demandes irréalistes avant qu’elles ne vous coûtent un déplacement. C’est le point sur lequel nous insistons le plus, et celui sur lequel on nous résiste le plus.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Est-ce que ça remplace les plateformes de mise en relation ?",
-            "answer": "<p>À terme, cela réduit fortement votre dépendance. Une demande arrivée par votre site ne se paie pas au lead et ne vous met pas en concurrence immédiate avec trois confrères. Mais cela demande quelques mois de référencement local avant de produire un volume régulier — nous ne promettons pas l'inverse.</p>"
+            "question": "Est-ce que ça remplace les plateformes de mise en relation ?",
+            "answer": "<p>À terme, cela réduit fortement votre dépendance. Une demande arrivée par votre site ne se paie pas au lead et ne vous met pas en concurrence immédiate avec trois confrères. Mais cela demande quelques mois de référencement local avant de produire un volume régulier — nous ne promettons pas l’inverse.</p>"
           }
         }
       },
@@ -217,7 +217,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Un appel en fin de journée suffit pour démarrer.",
-        "text": "Dites-nous vos métiers, vos communes et le type de chantiers que vous cherchez. Nous vous dirons ce qu'un site peut vous apporter et sous quel délai.",
+        "text": "Dites-nous vos métiers, vos communes et le type de chantiers que vous cherchez. Nous vous dirons ce qu’un site peut vous apporter et sous quel délai.",
         "cta_label": "Être rappelé",
         "note": "Réponse sous 48 h",
         "link_label": "Voir le référencement local",
@@ -266,7 +266,7 @@
           "type": "item",
           "settings": {
             "icon": "gauge",
-            "title": "Obtenir plus d'avis Google",
+            "title": "Obtenir plus d’avis Google",
             "text": "8 façons sans enfreindre les règles",
             "link": "/blogs/ressources/obtenir-plus-avis-google",
             "link_label": "Lire le guide"

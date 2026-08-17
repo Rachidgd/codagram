@@ -6,11 +6,11 @@
         "show_breadcrumb": true,
         "eyebrow": "Publicité Meta",
         "title": "La publicité amplifie une offre. Elle ne la répare pas.",
-        "lead": "Facebook et Instagram peuvent multiplier vos demandes — à condition que l'offre, la page de destination et le suivi des conversions tiennent déjà debout. Vous ne dépensez rien tant que ces trois points ne tiennent pas.",
+        "lead": "Facebook et Instagram peuvent multiplier vos demandes — à condition que l’offre, la page de destination et le suivi des conversions tiennent déjà debout. Vous ne dépensez rien tant que ces trois points ne tiennent pas.",
         "cta_primary": "Faire auditer mes campagnes",
         "parent_label": "Expertises",
         "parent_url": "/pages/agence-seo",
-        "cta_secondary": "Voir l'audit Meta Ads",
+        "cta_secondary": "Voir l’audit Meta Ads",
         "cta_secondary_url": "/pages/audit-meta-ads"
       }
     },
@@ -19,7 +19,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Ce que nous voyons en audit",
-        "title": "Les trois causes les plus fréquentes d'un budget qui part sans retour.",
+        "title": "Les trois causes les plus fréquentes d’un budget qui part sans retour.",
         "source": "Constats récurrents sur les comptes que nous auditons. Ils ne préjugent pas de votre situation."
       },
       "blocks": {
@@ -28,7 +28,7 @@
           "settings": {
             "value": "Suivi",
             "label": "Conversions mal configurées",
-            "note": "Des achats ou des formulaires non remontés faussent l'optimisation : l'algorithme apprend sur des données incomplètes."
+            "note": "Des achats ou des formulaires non remontés faussent l’optimisation : l’algorithme apprend sur des données incomplètes."
           }
         },
         "s2": {
@@ -36,7 +36,7 @@
           "settings": {
             "value": "Créations",
             "label": "Une seule idée déclinée",
-            "note": "Cinq visuels issus du même concept ne testent qu'une hypothèse. La lassitude publicitaire arrive vite."
+            "note": "Cinq visuels issus du même concept ne testent qu’une hypothèse. La lassitude publicitaire arrive vite."
           }
         },
         "s3": {
@@ -61,7 +61,7 @@
         "reverse": true,
         "eyebrow": "Notre méthode",
         "title": "Nous pilotons sur la marge, jamais sur le coût par clic.",
-        "text": "<p>Un coût par clic qui baisse peut parfaitement accompagner une rentabilité qui s'effondre. Le seul indicateur qui décide, c'est ce que rapporte un euro investi une fois toutes les charges déduites.</p><p>Nous remontons donc la chaîne complète : impression, clic, page de destination, formulaire ou panier, puis valeur réelle du client. Chaque décision d'augmentation de budget s'appuie sur ce trajet entier.</p>",
+        "text": "<p>Un coût par clic qui baisse peut parfaitement accompagner une rentabilité qui s’effondre. Le seul indicateur qui décide, c’est ce que rapporte un euro investi une fois toutes les charges déduites.</p><p>Nous remontons donc la chaîne complète : impression, clic, page de destination, formulaire ou panier, puis valeur réelle du client. Chaque décision d’augmentation de budget s’appuie sur ce trajet entier.</p>",
         "cta_label": "Faire auditer mon compte",
         "cta_url": "/pages/audit-meta-ads"
       },
@@ -77,7 +77,7 @@
           "type": "point",
           "settings": {
             "title": "Créations testées par angle",
-            "text": "On ne teste pas cinq couleurs de bouton mais cinq raisons d'acheter. Les écarts de performance viennent de là."
+            "text": "On ne teste pas cinq couleurs de bouton mais cinq raisons d’acheter. Les écarts de performance viennent de là."
           }
         },
         "b3": {
@@ -99,9 +99,9 @@
       "settings": {
         "surface": "dark",
         "density": "comfortable",
-        "eyebrow": "Périmètre d'intervention",
+        "eyebrow": "Périmètre d’intervention",
         "title": "Ce que nous prenons en charge.",
-        "text": "Selon votre situation, tout n'est pas nécessaire. Le diagnostic fixe le périmètre avant le devis."
+        "text": "Selon votre situation, tout n’est pas nécessaire. Le diagnostic fixe le périmètre avant le devis."
       },
       "blocks": {
         "g1": {
@@ -117,7 +117,7 @@
           "settings": {
             "icon": "megaphone",
             "title": "Stratégie de campagne",
-            "text": "Objectifs, segmentation, budgets et calendrier définis à partir de votre marge, pas d'un standard sectoriel."
+            "text": "Objectifs, segmentation, budgets et calendrier définis à partir de votre marge, pas d’un standard sectoriel."
           }
         },
         "g3": {
@@ -141,7 +141,7 @@
           "settings": {
             "icon": "signal",
             "title": "Suivi et attribution",
-            "text": "Pixel, conversions côté serveur, événements personnalisés. Sans données fiables, aucune optimisation n'est possible."
+            "text": "Pixel, conversions côté serveur, événements personnalisés. Sans données fiables, aucune optimisation n’est possible."
           }
         },
         "g6": {
@@ -149,7 +149,7 @@
           "settings": {
             "icon": "check",
             "title": "Pilotage mensuel",
-            "text": "Lecture des résultats, arbitrages de budget, renouvellement des créations avant l'essoufflement."
+            "text": "Lecture des résultats, arbitrages de budget, renouvellement des créations avant l’essoufflement."
           }
         }
       },
@@ -166,7 +166,7 @@
       "type": "content-quote",
       "settings": {
         "eyebrow": "Ce que nous refusons",
-        "quote": "Nous n'acceptons pas de mission publicitaire sur une offre qui ne convertit pas encore. Dépenser du budget média pour masquer un problème de proposition de valeur revient à faire payer au client une erreur que nous aurions dû signaler.",
+        "quote": "Nous n’acceptons pas de mission publicitaire sur une offre qui ne convertit pas encore. Dépenser du budget média pour masquer un problème de proposition de valeur revient à faire payer au client une erreur que nous aurions dû signaler.",
         "attribution": "",
         "link_label": "Commencer par un audit",
         "link_url": "/pages/audit-meta-ads"
@@ -188,29 +188,29 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Quel budget média minimum faut-il prévoir ?",
-            "answer": "<p>En dessous d'un certain volume quotidien, l'algorithme ne sort jamais de sa phase d'apprentissage et les résultats restent erratiques. L'ordre de grandeur dépend de votre secteur et de votre prix. Une prestation à 3 000 € et un produit à 40 € n'ont pas le même seuil. Nous le calculons pendant l'audit, avant de vous engager.</p>"
+            "question": "Quel budget média minimum faut-il prévoir ?",
+            "answer": "<p>En dessous d’un certain volume quotidien, l’algorithme ne sort jamais de sa phase d’apprentissage et les résultats restent erratiques. L’ordre de grandeur dépend de votre secteur et de votre prix. Une prestation à 3 000 € et un produit à 40 € n’ont pas le même seuil. Nous le calculons pendant l’audit, avant de vous engager.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Gérez-vous aussi Google Ads ?",
-            "answer": "<p>Non. Nous intervenons sur Meta et sur Google Merchant Center pour les flux produits. Google Ads en recherche est un métier distinct, et nous préférons vous orienter vers quelqu'un dont c'est la spécialité plutôt que de facturer un apprentissage.</p>"
+            "question": "Gérez-vous aussi Google Ads ?",
+            "answer": "<p>Non. Nous intervenons sur Meta et sur Google Merchant Center pour les flux produits. Google Ads en recherche est un métier distinct, et nous préférons vous orienter vers quelqu’un dont c’est la spécialité plutôt que de facturer un apprentissage.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Qui est propriétaire du compte publicitaire ?",
-            "answer": "<p>Vous. Nous travaillons sur votre gestionnaire d'entreprise avec un accès délégué. À la fin de la mission, nous retirons nos accès et vous conservez l'historique, les audiences et les créations. Un compte publicitaire détenu par une agence est un point de dépendance que nous refusons de créer.</p>"
+            "question": "Qui est propriétaire du compte publicitaire ?",
+            "answer": "<p>Vous. Nous travaillons sur votre gestionnaire d’entreprise avec un accès délégué. À la fin de la mission, nous retirons nos accès et vous conservez l’historique, les audiences et les créations. Un compte publicitaire détenu par une agence est un point de dépendance que nous refusons de créer.</p>"
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
-            "question": "Combien de temps avant de voir des résultats ?",
-            "answer": "<p>Comptez deux à trois semaines de diffusion continue. C'est le temps qu'il faut aux campagnes pour sortir de l'apprentissage et réunir assez de conversions. Toute lecture faite avant relève de l'interprétation de bruit statistique.</p>"
+            "question": "Combien de temps avant de voir des résultats ?",
+            "answer": "<p>Comptez deux à trois semaines de diffusion continue. C’est le temps qu’il faut aux campagnes pour sortir de l’apprentissage et réunir assez de conversions. Toute lecture faite avant relève de l’interprétation de bruit statistique.</p>"
           }
         }
       },
@@ -226,7 +226,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Commençons par regarder ce que disent vos données.",
-        "text": "Donnez-nous un accès en lecture à votre compte publicitaire. Nous revenons avec ce qui fonctionne, ce qui coûte sans rapporter, et si la publicité est vraiment votre priorité aujourd'hui.",
+        "text": "Donnez-nous un accès en lecture à votre compte publicitaire. Nous revenons avec ce qui fonctionne, ce qui coûte sans rapporter, et si la publicité est vraiment votre priorité aujourd’hui.",
         "cta_label": "Demander un audit Meta Ads",
         "note": "Réponse sous 48 h",
         "link_label": "Analyser mes concurrents",
@@ -266,7 +266,7 @@
           "settings": {
             "icon": "layers",
             "title": "Structurer un compte Meta Ads",
-            "text": "Le setup qui laisse l'algo travailler",
+            "text": "Le setup qui laisse l’algo travailler",
             "link": "/blogs/ressources/structure-compte-meta-ads-2026",
             "link_label": "Lire le guide"
           }
@@ -286,7 +286,7 @@
           "settings": {
             "icon": "check",
             "title": "Pixel Meta et API de conversion",
-            "text": "L'installation propre sur Shopify",
+            "text": "L’installation propre sur Shopify",
             "link": "/blogs/ressources/pixel-meta-api-conversion-shopify",
             "link_label": "Lire le guide"
           }

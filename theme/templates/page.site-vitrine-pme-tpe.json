@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Site vitrine pour PME et TPE",
         "title": "Un site qui travaille pour vos commerciaux entre deux rendez-vous.",
-        "lead": "Dans une vente à cycle long, le site n'est presque jamais le point de contact final : il prépare, rassure et fait circuler l'information entre plusieurs interlocuteurs. Nous le concevons pour ce rôle-là.",
+        "lead": "Dans une vente à cycle long, le site n’est presque jamais le point de contact final : il prépare, rassure et fait circuler l’information entre plusieurs interlocuteurs. Nous le concevons pour ce rôle-là.",
         "cta_primary": "Cadrer mon projet",
         "parent_label": "Création de site",
         "parent_url": "/pages/creation-site-vitrine",
@@ -20,8 +20,8 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "La réalité de votre cycle",
-        "title": "Votre acheteur n'est pas seul à décider.",
-        "text": "<p>Dans une PME, une décision d'achat passe par plusieurs mains : celui qui cherche, celui qui valide techniquement, celui qui signe. Ces trois personnes n'ont pas les mêmes questions et ne visitent pas votre site au même moment.</p><p>Un site qui ne parle qu'au premier laisse les deux autres sans réponse — et c'est souvent là que le dossier s'enlise.</p>",
+        "title": "Votre acheteur n’est pas seul à décider.",
+        "text": "<p>Dans une PME, une décision d’achat passe par plusieurs mains : celui qui cherche, celui qui valide techniquement, celui qui signe. Ces trois personnes n’ont pas les mêmes questions et ne visitent pas votre site au même moment.</p><p>Un site qui ne parle qu’au premier laisse les deux autres sans réponse — et c’est souvent là que le dossier s’enlise.</p>",
         "cta_label": "Cadrer mon projet",
         "cta_url": "/pages/reserver"
       },
@@ -30,7 +30,7 @@
           "type": "point",
           "settings": {
             "title": "Pour celui qui cherche",
-            "text": "Compréhension rapide de l'offre, des cas traités et de l'ordre de grandeur budgétaire."
+            "text": "Compréhension rapide de l’offre, des cas traités et de l’ordre de grandeur budgétaire."
           }
         },
         "b2": {
@@ -44,7 +44,7 @@
           "type": "point",
           "settings": {
             "title": "Pour celui qui signe",
-            "text": "Solidité de l'entreprise, ancienneté, conformité, capacité à assumer l'engagement."
+            "text": "Solidité de l’entreprise, ancienneté, conformité, capacité à assumer l’engagement."
           }
         }
       },
@@ -60,8 +60,8 @@
         "surface": "dark",
         "density": "comfortable",
         "eyebrow": "Ce que nous construisons",
-        "title": "Un site structuré par métier et par cas d'usage.",
-        "text": "L'architecture prime sur le nombre de pages : mieux vaut six pages précises que vingt pages vagues."
+        "title": "Un site structuré par métier et par cas d’usage.",
+        "text": "L’architecture prime sur le nombre de pages : mieux vaut six pages précises que vingt pages vagues."
       },
       "blocks": {
         "g1": {
@@ -69,7 +69,7 @@
           "settings": {
             "icon": "layers",
             "title": "Une page par métier",
-            "text": "Chaque prestation a sa page, avec son vocabulaire et ses objections propres. C'est aussi ce qui la rend référençable."
+            "text": "Chaque prestation a sa page, avec son vocabulaire et ses objections propres. C’est aussi ce qui la rend référençable."
           }
         },
         "g2": {
@@ -85,7 +85,7 @@
           "settings": {
             "icon": "target",
             "title": "Documents téléchargeables",
-            "text": "Plaquette, méthodologie, attestations. Ce qui circule en interne quand vous n'êtes pas dans la pièce."
+            "text": "Plaquette, méthodologie, attestations. Ce qui circule en interne quand vous n’êtes pas dans la pièce."
           }
         },
         "g4": {
@@ -93,7 +93,7 @@
           "settings": {
             "icon": "gauge",
             "title": "Formulaire qualifiant",
-            "text": "Quelques questions qui permettent à vos commerciaux d'arriver préparés au premier échange."
+            "text": "Quelques questions qui permettent à vos commerciaux d’arriver préparés au premier échange."
           }
         },
         "g5": {
@@ -101,7 +101,7 @@
           "settings": {
             "icon": "signal",
             "title": "Preuves de solidité",
-            "text": "Ancienneté, effectifs, certifications, assurances. Rassure le signataire, pas l'utilisateur."
+            "text": "Ancienneté, effectifs, certifications, assurances. Rassure le signataire, pas l’utilisateur."
           }
         },
         "g6": {
@@ -109,7 +109,7 @@
           "settings": {
             "icon": "megaphone",
             "title": "Actualités et recrutement",
-            "text": "Un site d'entreprise sert aussi la marque employeur, souvent négligée."
+            "text": "Un site d’entreprise sert aussi la marque employeur, souvent négligée."
           }
         }
       },
@@ -127,12 +127,12 @@
       "settings": {
         "surface": "paper",
         "eyebrow": "Dimensionner le projet",
-        "title": "Ce qui sépare un site qui présente d'un site qui fait vendre.",
-        "text": "Les deux sont légitimes, mais ils n'ont ni le même coût ni le même effet.",
+        "title": "Ce qui sépare un site qui présente d’un site qui fait vendre.",
+        "text": "Les deux sont légitimes, mais ils n’ont ni le même coût ni le même effet.",
         "col_criteria": "Critère",
         "col_a": "Site de génération de demandes",
         "col_b": "Site de présentation",
-        "verdict": "Si vos affaires viennent uniquement de la recommandation et que cela vous suffit, un site de présentation est le bon choix. Nous ne vous vendrons pas l'autre."
+        "verdict": "Si vos affaires viennent uniquement de la recommandation et que cela vous suffit, un site de présentation est le bon choix. Nous ne vous vendrons pas l’autre."
       },
       "blocks": {
         "r1": {
@@ -209,22 +209,22 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Combien de temps mes équipes devront-elles y consacrer ?",
-            "answer": "<p>Comptez environ deux demi-journées d'entretien au cadrage, puis des relectures ponctuelles. Nous rédigeons à partir de ces échanges plutôt que d'attendre des textes de votre part — c'est le principal facteur de retard sur ce type de projet.</p>"
+            "question": "Combien de temps mes équipes devront-elles y consacrer ?",
+            "answer": "<p>Comptez environ deux demi-journées d’entretien au cadrage, puis des relectures ponctuelles. Nous rédigeons à partir de ces échanges plutôt que d’attendre des textes de votre part — c’est le principal facteur de retard sur ce type de projet.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Peut-on démarrer par une seule page métier ?",
-            "answer": "<p>Oui, et c'est souvent la bonne approche : on traite d'abord le métier le plus stratégique, on mesure l'effet sur les demandes entrantes, puis on étend. Cela répartit l'investissement et valide la méthode avant de l'industrialiser.</p>"
+            "question": "Peut-on démarrer par une seule page métier ?",
+            "answer": "<p>Oui, et c’est souvent la bonne approche : on traite d’abord le métier le plus stratégique, on mesure l’effet sur les demandes entrantes, puis on étend. Cela répartit l’investissement et valide la méthode avant de l’industrialiser.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Que devient notre référencement existant ?",
-            "answer": "<p>Il est protégé. Nous relevons vos pages positionnées avant toute refonte et nous établissons un plan de redirections complet. Une refonte sans ce travail préalable fait chuter le trafic pendant des mois — c'est l'accident le plus courant et le plus évitable.</p>"
+            "question": "Que devient notre référencement existant ?",
+            "answer": "<p>Il est protégé. Nous relevons vos pages positionnées avant toute refonte et nous établissons un plan de redirections complet. Une refonte sans ce travail préalable fait chuter le trafic pendant des mois — c’est l’accident le plus courant et le plus évitable.</p>"
           }
         }
       },
@@ -239,7 +239,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Parlons de votre cycle de vente.",
-        "text": "Décrivez comment vos clients vous trouvent aujourd'hui et où le processus se bloque. Nous vous dirons ce qu'un site peut réellement y changer.",
+        "text": "Décrivez comment vos clients vous trouvent aujourd’hui et où le processus se bloque. Nous vous dirons ce qu’un site peut réellement y changer.",
         "cta_label": "Cadrer mon projet",
         "note": "Réponse sous 48 h"
       },
@@ -276,7 +276,7 @@
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Cahier des charges d'un site vitrine",
+            "title": "Cahier des charges d’un site vitrine",
             "text": "Le modèle à remplir",
             "link": "/blogs/ressources/cahier-des-charges-site-vitrine",
             "link_label": "Lire le guide"
@@ -286,7 +286,7 @@
           "type": "item",
           "settings": {
             "icon": "signal",
-            "title": "Anatomie d'une page contact qui convertit",
+            "title": "Anatomie d’une page contact qui convertit",
             "text": "7 éléments souvent absents",
             "link": "/blogs/ressources/page-contact-qui-convertit",
             "link_label": "Lire le guide"

@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement local",
         "title": "Apparaître quand un client cherche un professionnel près de chez lui.",
-        "lead": "Sur une recherche de proximité, Google ne classe pas les sites comme ailleurs : il pondère la distance, la cohérence de vos informations et votre réputation. Nous travaillons ces trois signaux ensemble, zone par zone.",
+        "lead": "Sur une recherche de proximité, Google ne classe pas les sites comme ailleurs : il pondère la distance, la cohérence de vos informations et votre réputation. Nous travaillons ces trois signaux ensemble, zone par zone.",
         "cta_primary": "Demander un relevé de position",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -21,13 +21,13 @@
         "reverse": false,
         "eyebrow": "Comment ça marche",
         "title": "Trois signaux décident, et deux sont sous votre contrôle.",
-        "text": "<p>La distance entre le chercheur et votre établissement, vous ne la maîtrisez pas. En revanche, la qualité de votre fiche et la cohérence de vos informations sur l'ensemble du web dépendent entièrement de vous — et ce sont elles qui font la différence entre deux concurrents également proches.</p><p>C'est pourquoi une mission locale commence presque toujours par ces deux chantiers avant de toucher au site.</p>"
+        "text": "<p>La distance entre le chercheur et votre établissement, vous ne la maîtrisez pas. En revanche, la qualité de votre fiche et la cohérence de vos informations sur l’ensemble du web dépendent entièrement de vous — et ce sont elles qui font la différence entre deux concurrents également proches.</p><p>C’est pourquoi une mission locale commence presque toujours par ces deux chantiers avant de toucher au site.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
-            "title": "Votre fiche d'établissement",
+            "title": "Votre fiche d’établissement",
             "text": "Catégories, description, horaires, photos, zones desservies. Le levier le plus rapide et le plus souvent négligé."
           }
         },
@@ -59,7 +59,7 @@
         "density": "comfortable",
         "eyebrow": "Notre intervention",
         "title": "Ce que nous mettons en place sur une zone.",
-        "text": "L'ordre dépend de votre point de départ : une fiche inexistante et une fiche mal renseignée n'appellent pas le même effort."
+        "text": "L’ordre dépend de votre point de départ : une fiche inexistante et une fiche mal renseignée n’appellent pas le même effort."
       },
       "blocks": {
         "g1": {
@@ -75,7 +75,7 @@
           "settings": {
             "icon": "signal",
             "title": "Page de zone rédigée",
-            "text": "Un contenu propre au territoire : tissu local, références situées, demandes spécifiques. Jamais une copie avec un nom changé."
+            "text": "Un contenu propre au territoire : tissu local, références situées, demandes spécifiques. Jamais une copie avec un nom changé."
           }
         },
         "g3": {
@@ -90,8 +90,8 @@
           "type": "item",
           "settings": {
             "icon": "gauge",
-            "title": "Collecte d'avis",
-            "text": "Une méthode simple pour obtenir des avis en continu plutôt qu'une campagne isolée sans lendemain."
+            "title": "Collecte d’avis",
+            "text": "Une méthode simple pour obtenir des avis en continu plutôt qu’une campagne isolée sans lendemain."
           }
         },
         "g5": {
@@ -99,7 +99,7 @@
           "settings": {
             "icon": "layers",
             "title": "Balisage local",
-            "text": "Données structurées d'établissement, horaires et zone d'intervention, lisibles sans ambiguïté par les moteurs."
+            "text": "Données structurées d’établissement, horaires et zone d’intervention, lisibles sans ambiguïté par les moteurs."
           }
         },
         "g6": {
@@ -107,7 +107,7 @@
           "settings": {
             "icon": "megaphone",
             "title": "Suivi géolocalisé",
-            "text": "Positions relevées depuis plusieurs points de la zone : un classement local varie fortement d'un quartier à l'autre."
+            "text": "Positions relevées depuis plusieurs points de la zone : un classement local varie fortement d’un quartier à l’autre."
           }
         }
       },
@@ -136,22 +136,22 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Combien de temps avant d'apparaître dans le bloc cartographique ?",
-            "answer": "<p>Sur une fiche existante mais mal renseignée, les premiers mouvements arrivent souvent en trois à six semaines après reprise. Sur une fiche nouvellement créée, comptez plus longtemps : l'ancienneté et le volume d'avis pèsent, et ils ne se rattrapent pas en quelques jours.</p>"
+            "question": "Combien de temps avant d’apparaître dans le bloc cartographique ?",
+            "answer": "<p>Sur une fiche existante mais mal renseignée, les premiers mouvements arrivent souvent en trois à six semaines après reprise. Sur une fiche nouvellement créée, comptez plus longtemps : l’ancienneté et le volume d’avis pèsent, et ils ne se rattrapent pas en quelques jours.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Puis-je apparaître dans plusieurs villes ?",
-            "answer": "<p>Dans le bloc cartographique, uniquement là où vous avez une adresse vérifiable — les adresses de complaisance sont détectées et sanctionnées. Dans les résultats classiques en revanche, une page de service dédiée à une zone peut se positionner sans y être implanté, à condition d'avoir un contenu réellement pertinent pour ce territoire.</p>"
+            "question": "Puis-je apparaître dans plusieurs villes ?",
+            "answer": "<p>Dans le bloc cartographique, uniquement là où vous avez une adresse vérifiable — les adresses de complaisance sont détectées et sanctionnées. Dans les résultats classiques en revanche, une page de service dédiée à une zone peut se positionner sans y être implanté, à condition d’avoir un contenu réellement pertinent pour ce territoire.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il répondre aux avis négatifs ?",
-            "answer": "<p>Oui, systématiquement et sans agressivité. La réponse n'est pas écrite pour l'auteur de l'avis mais pour les dizaines de prospects qui la liront ensuite. Une réponse posée à une critique dure rassure souvent plus que dix avis élogieux sans commentaire.</p>"
+            "question": "Faut-il répondre aux avis négatifs ?",
+            "answer": "<p>Oui, systématiquement et sans agressivité. La réponse n’est pas écrite pour l’auteur de l’avis mais pour les dizaines de prospects qui la liront ensuite. Une réponse posée à une critique dure rassure souvent plus que dix avis élogieux sans commentaire.</p>"
           }
         }
       },
@@ -166,7 +166,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Un relevé de position sur votre zone.",
-        "text": "Indiquez-nous votre activité et vos communes d'intervention. Nous mesurons où vous apparaissez aujourd'hui depuis chacune d'elles, et l'état réel de votre fiche.",
+        "text": "Indiquez-nous votre activité et vos communes d’intervention. Nous mesurons où vous apparaissez aujourd’hui depuis chacune d’elles, et l’état réel de votre fiche.",
         "cta_label": "Demander le relevé",
         "note": "Réponse sous 48 h",
         "link_label": "Voir la prestation SEO local",

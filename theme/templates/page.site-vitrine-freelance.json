@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Site pour indépendant et freelance",
         "title": "Vos clients vous choisissent vous, avant de choisir votre offre.",
-        "lead": "Quand vous êtes seul face au client, votre site vend une personne en qui on peut avoir confiance avant de l'avoir rencontrée. Cela change tout ce qu'il faut y mettre.",
+        "lead": "Quand vous êtes seul face au client, votre site vend une personne en qui on peut avoir confiance avant de l’avoir rencontrée. Cela change tout ce qu’il faut y mettre.",
         "cta_primary": "Parler de mon site",
         "parent_label": "Création de site",
         "parent_url": "/pages/creation-site-vitrine",
@@ -18,7 +18,7 @@
       "type": "content-quote",
       "settings": {
         "eyebrow": "Le contresens fréquent",
-        "quote": "Beaucoup d'indépendants écrivent « nous » pour paraître plus gros. C'est exactement l'inverse qu'il faut faire : votre avantage sur une agence, c'est qu'on sait qui fera le travail. Le masquer revient à effacer votre seul argument imbattable.",
+        "quote": "Beaucoup d’indépendants écrivent « nous » pour paraître plus gros. C’est exactement l’inverse qu’il faut faire : votre avantage sur une agence, c’est qu’on sait qui fera le travail. Le masquer revient à effacer votre seul argument imbattable.",
         "attribution": "Clickscreation"
       }
     },
@@ -28,8 +28,8 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Ce qui construit la confiance",
-        "title": "Quatre éléments décident, et ils sont rarement ceux qu'on soigne.",
-        "text": "<p>Les sites d'indépendants consacrent souvent l'essentiel de leur surface à la liste des compétences. Or personne ne choisit un prestataire sur une liste de compétences : on choisit sur la capacité perçue à comprendre son problème.</p><p>Nous réorganisons donc la page autour de ce que le client cherche à vérifier avant de vous écrire.</p>",
+        "title": "Quatre éléments décident, et ils sont rarement ceux qu’on soigne.",
+        "text": "<p>Les sites d’indépendants consacrent souvent l’essentiel de leur surface à la liste des compétences. Or personne ne choisit un prestataire sur une liste de compétences : on choisit sur la capacité perçue à comprendre son problème.</p><p>Nous réorganisons donc la page autour de ce que le client cherche à vérifier avant de vous écrire.</p>",
         "cta_label": "Cadrer mon projet",
         "cta_url": "/pages/reserver"
       },
@@ -38,7 +38,7 @@
           "type": "point",
           "settings": {
             "title": "Un visage et un nom",
-            "text": "Une photo réelle et une présentation directe. L'anonymat coûte plus cher qu'il ne protège."
+            "text": "Une photo réelle et une présentation directe. L’anonymat coûte plus cher qu’il ne protège."
           }
         },
         "b2": {
@@ -75,7 +75,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Comment nous procédons",
-        "title": "Un format court, adapté à un budget d'indépendant.",
+        "title": "Un format court, adapté à un budget d’indépendant.",
         "text": "Nous savons que ce projet sort de votre poche. Le déroulé est resserré pour rester finançable sans sacrifier ce qui compte."
       },
       "blocks": {
@@ -107,7 +107,7 @@
           "type": "step",
           "settings": {
             "title": "Mise en ligne",
-            "text": "Bascule, fiche d'établissement si pertinent, prise en main de l'administration.",
+            "text": "Bascule, fiche d’établissement si pertinent, prise en main de l’administration.",
             "duration": "2 jours"
           }
         }
@@ -135,22 +135,22 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Ai-je vraiment besoin d'un site si j'ai LinkedIn ?",
-            "answer": "<p>LinkedIn vous rend visible auprès de qui vous cherche déjà par votre nom. Votre site vous rend trouvable auprès de gens qui cherchent votre compétence sans vous connaître. Et il vous appartient : un réseau social peut changer ses règles du jour au lendemain. Les deux se complètent plus qu'ils ne se remplacent.</p>"
+            "question": "Ai-je vraiment besoin d’un site si j’ai LinkedIn ?",
+            "answer": "<p>LinkedIn vous rend visible auprès de qui vous cherche déjà par votre nom. Votre site vous rend trouvable auprès de gens qui cherchent votre compétence sans vous connaître. Et il vous appartient : un réseau social peut changer ses règles du jour au lendemain. Les deux se complètent plus qu’ils ne se remplacent.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Combien coûte un site d'indépendant ?",
-            "answer": "<p>Nettement moins qu'un site d'entreprise multi-métiers, parce que le périmètre est plus court : moins de pages, une seule cible, pas de fonctionnalité complexe. Nous chiffrons après l'entretien et le devis reste ferme.</p>"
+            "question": "Combien coûte un site d’indépendant ?",
+            "answer": "<p>Nettement moins qu’un site d’entreprise multi-métiers, parce que le périmètre est plus court : moins de pages, une seule cible, pas de fonctionnalité complexe. Nous chiffrons après l’entretien et le devis reste ferme.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Puis-je le faire évoluer si mon activité change ?",
-            "answer": "<p>Oui, c'est même prévu : les sections sont modulaires et vous ajoutez ou réorganisez les blocs vous-même. Une activité d'indépendant bouge souvent dans les deux premières années, le site doit suivre sans nous solliciter à chaque fois.</p>"
+            "question": "Puis-je le faire évoluer si mon activité change ?",
+            "answer": "<p>Oui, c’est même prévu : les sections sont modulaires et vous ajoutez ou réorganisez les blocs vous-même. Une activité d’indépendant bouge souvent dans les deux premières années, le site doit suivre sans nous solliciter à chaque fois.</p>"
           }
         }
       },
@@ -165,7 +165,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Racontez-nous ce que vous faites.",
-        "text": "Un échange d'une heure suffit pour savoir ce que votre site devrait dire — et si vous avez besoin de nous pour l'écrire.",
+        "text": "Un échange d’une heure suffit pour savoir ce que votre site devrait dire — et si vous avez besoin de nous pour l’écrire.",
         "cta_label": "Prendre contact",
         "note": "Réponse sous 48 h"
       },
@@ -212,7 +212,7 @@
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Anatomie d'une page contact qui convertit",
+            "title": "Anatomie d’une page contact qui convertit",
             "text": "7 éléments souvent absents",
             "link": "/blogs/ressources/page-contact-qui-convertit",
             "link_label": "Lire le guide"

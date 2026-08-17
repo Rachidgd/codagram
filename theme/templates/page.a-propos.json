@@ -4,9 +4,9 @@
       "type": "page-hero",
       "settings": {
         "show_breadcrumb": true,
-        "eyebrow": "L'agence",
+        "eyebrow": "L’agence",
         "title": "Une petite structure qui assume de refuser des projets.",
-        "lead": "Clickscreation est une agence d'acquisition à taille volontairement réduite. Les personnes qui vous répondent sont celles qui font le travail. Nous préférons décliner une mission plutôt que de la sous-traiter à quelqu'un que vous n'auriez jamais rencontré.",
+        "lead": "Clickscreation est une agence d’acquisition à taille volontairement réduite. Les personnes qui vous répondent sont celles qui font le travail. Nous préférons décliner une mission plutôt que de la sous-traiter à quelqu’un que vous n’auriez jamais rencontré.",
         "cta_primary": "Prendre contact",
         "cta_secondary": "Voir les résultats",
         "cta_secondary_url": "/pages/resultats"
@@ -19,15 +19,15 @@
         "density": "comfortable",
         "eyebrow": "Comment nous travaillons",
         "title": "Quatre principes qui nous coûtent des contrats.",
-        "text": "Ils ne sont pas là pour faire joli : chacun nous a déjà fait perdre une affaire, et nous les gardons."
+        "text": "Ils ne sont pas là pour faire joli : chacun nous a déjà fait perdre une affaire, et nous les gardons."
       },
       "blocks": {
         "g1": {
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Nous disons quand ce n'est pas nous",
-            "text": "Si votre problème relève d'un autre métier, nous vous orientons ailleurs. Une mission mal ciblée ne finit jamais bien, pour personne."
+            "title": "Nous disons quand ce n’est pas nous",
+            "text": "Si votre problème relève d’un autre métier, nous vous orientons ailleurs. Une mission mal ciblée ne finit jamais bien, pour personne."
           }
         },
         "g2": {
@@ -35,7 +35,7 @@
           "settings": {
             "icon": "target",
             "title": "Nous chiffrons un périmètre écrit",
-            "text": "Pas de forfait vague. Le devis détaille ce qui est inclus, ce qui ne l'est pas, et ce qui déclencherait un avenant."
+            "text": "Pas de forfait vague. Le devis détaille ce qui est inclus, ce qui ne l’est pas, et ce qui déclencherait un avenant."
           }
         },
         "g3": {
@@ -43,7 +43,7 @@
           "settings": {
             "icon": "signal",
             "title": "Vos accès restent les vôtres",
-            "text": "Domaine, hébergement, comptes publicitaires, données : tout est à votre nom. Nous retirons nos accès en fin de mission."
+            "text": "Domaine, hébergement, comptes publicitaires, données : tout est à votre nom. Nous retirons nos accès en fin de mission."
           }
         },
         "g4": {
@@ -51,7 +51,7 @@
           "settings": {
             "icon": "gauge",
             "title": "Nous montrons les échecs",
-            "text": "Certaines missions ne produisent pas l'effet espéré. Nous en parlons pendant les échanges commerciaux, parce que c'est ce qui explique notre méthode."
+            "text": "Certaines missions ne produisent pas l’effet espéré. Nous en parlons pendant les échanges commerciaux, parce que c’est ce qui explique notre méthode."
           }
         }
       },
@@ -69,9 +69,9 @@
         "reverse": false,
         "eyebrow": "Notre fonctionnement",
         "title": "Vous parlez directement à ceux qui font le travail.",
-        "text": "<p>Dans beaucoup d'agences, la personne qui vend n'est pas celle qui exécute, et l'information se dégrade à chaque transmission. Nous avons choisi l'inverse : vous parlez directement à ceux qui produisent.</p><p>Cela limite mécaniquement le nombre de projets que nous pouvons prendre. C'est une contrainte assumée, pas un argument marketing.</p>",
+        "text": "<p>Dans beaucoup d’agences, la personne qui vend n’est pas celle qui exécute, et l’information se dégrade à chaque transmission. Nous avons choisi l’inverse : vous parlez directement à ceux qui produisent.</p><p>Cela limite mécaniquement le nombre de projets que nous pouvons prendre. C’est une contrainte assumée, pas un argument marketing.</p>",
         "image": "shopify://shop_images/equipe-clickscreation.webp",
-        "image_alt": "L'équipe de Clickscreation au travail dans ses bureaux parisiens"
+        "image_alt": "L’équipe de Clickscreation au travail dans ses bureaux parisiens"
       },
       "blocks": {
         "b1": {
@@ -85,14 +85,14 @@
           "type": "point",
           "settings": {
             "title": "Peu de projets en parallèle",
-            "text": "Nous refusons des missions quand le calendrier est plein plutôt que d'allonger les délais."
+            "text": "Nous refusons des missions quand le calendrier est plein plutôt que d’allonger les délais."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
             "title": "Aucune sous-traitance cachée",
-            "text": "Si nous faisons appel à un spécialiste externe, vous le savez et vous savez qui c'est."
+            "text": "Si nous faisons appel à un spécialiste externe, vous le savez et vous savez qui c’est."
           }
         }
       },
@@ -106,7 +106,7 @@
       "type": "content-quote",
       "settings": {
         "eyebrow": "Ce que nous ne vendons pas",
-        "quote": "Nous ne vendons ni garantie de position, ni « pack visibilité » mensuel sans périmètre, ni audit dont la conclusion est écrite avant d'avoir regardé le site. Ces trois offres existent parce qu'elles se vendent bien, pas parce qu'elles fonctionnent.",
+        "quote": "Nous ne vendons ni garantie de position, ni « pack visibilité » mensuel sans périmètre, ni audit dont la conclusion est écrite avant d’avoir regardé le site. Ces trois offres existent parce qu’elles se vendent bien, pas parce qu’elles fonctionnent.",
         "attribution": "Clickscreation"
       }
     },
@@ -115,7 +115,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Questions qu'on nous pose avant de travailler ensemble.",
+        "title": "Questions qu’on nous pose avant de travailler ensemble.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -126,22 +126,22 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Combien de personnes travaillent sur mon projet ?",
-            "answer": "<p>Une à deux, selon le périmètre, et toujours les mêmes du début à la fin — sans réunion de passation ni changement d'interlocuteur en cours de route. C'est aussi ce qui limite le nombre de clients que nous prenons en même temps.</p>"
+            "question": "Combien de personnes travaillent sur mon projet ?",
+            "answer": "<p>Une à deux, selon le périmètre, et toujours les mêmes du début à la fin — sans réunion de passation ni changement d’interlocuteur en cours de route. C’est aussi ce qui limite le nombre de clients que nous prenons en même temps.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Travaillez-vous avec des entreprises de ma taille ?",
-            "answer": "<p>Nous accompagnons aussi bien des indépendants que des PME de cinquante personnes. Le critère est la clarté de l'objectif, pas la taille. Une entreprise qui sait ce qu'elle veut obtenir avance plus vite qu'un grand compte sans décision arrêtée.</p>"
+            "question": "Travaillez-vous avec des entreprises de ma taille ?",
+            "answer": "<p>Nous accompagnons aussi bien des indépendants que des PME de cinquante personnes. Le critère est la clarté de l’objectif, pas la taille. Une entreprise qui sait ce qu’elle veut obtenir avance plus vite qu’un grand compte sans décision arrêtée.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Que se passe-t-il si les résultats ne viennent pas ?",
-            "answer": "<p>Nous en parlons ouvertement lors des points de suivi, avec les données. Selon la cause, nous réorientons le travail, nous réduisons le périmètre, ou nous vous disons que le canal n'est pas le bon. Nous n'avons aucun intérêt à faire durer une mission qui ne produit rien.</p>"
+            "question": "Que se passe-t-il si les résultats ne viennent pas ?",
+            "answer": "<p>Nous en parlons ouvertement lors des points de suivi, avec les données. Selon la cause, nous réorientons le travail, nous réduisons le périmètre, ou nous vous disons que le canal n’est pas le bon. Nous n’avons aucun intérêt à faire durer une mission qui ne produit rien.</p>"
           }
         }
       },
@@ -156,7 +156,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Le plus simple reste de nous décrire votre situation.",
-        "text": "Nous vous dirons franchement si c'est un sujet pour nous, et sinon vers qui vous tourner.",
+        "text": "Nous vous dirons franchement si c’est un sujet pour nous, et sinon vers qui vous tourner.",
         "cta_label": "Prendre contact",
         "note": "Réponse sous 48 h"
       },
@@ -170,7 +170,7 @@
         "r2": {
           "type": "point",
           "settings": {
-            "text": "Orientation même si ce n'est pas nous"
+            "text": "Orientation même si ce n’est pas nous"
           }
         }
       },

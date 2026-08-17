@@ -8,7 +8,7 @@
         "parent_url": "/pages/agence-seo",
         "eyebrow": "Agence Shopify",
         "title": "Une boutique qui charge vite et qui vend mieux sur mobile.",
-        "lead": "Création, refonte et optimisation de boutiques Shopify en Liquid natif. Nous écrivons le thème pour votre catalogue et votre marge, sans empiler d'applications qui ralentissent le site et grignotent votre rentabilité.",
+        "lead": "Création, refonte et optimisation de boutiques Shopify en Liquid natif. Nous écrivons le thème pour votre catalogue et votre marge, sans empiler d’applications qui ralentissent le site et grignotent votre rentabilité.",
         "cta_primary": "Demander un diagnostic",
         "cta_secondary": "Voir les résultats",
         "cta_secondary_url": "/pages/resultats"
@@ -55,7 +55,7 @@
         "reverse": false,
         "eyebrow": "Le constat",
         "title": "Vos ventes se perdent avant le paiement, pas pendant.",
-        "text": "<p>La plupart des boutiques cherchent le problème au moment du paiement. Il est presque toujours en amont, entre l'arrivée sur la fiche produit et le panier. Une page lente, un message flou, et rien pour rassurer à l'instant où le doute apparaît.</p><p>Nous reprenons ce trajet dans l'ordre où le client le vit — et nous supprimons ce qui l'interrompt.</p>",
+        "text": "<p>La plupart des boutiques cherchent le problème au moment du paiement. Il est presque toujours en amont, entre l’arrivée sur la fiche produit et le panier. Une page lente, un message flou, et rien pour rassurer à l’instant où le doute apparaît.</p><p>Nous reprenons ce trajet dans l’ordre où le client le vit — et nous supprimons ce qui l’interrompt.</p>",
         "cta_label": "Voir la méthode complète",
         "cta_url": "/pages/a-propos"
       },
@@ -64,21 +64,21 @@
           "type": "point",
           "settings": {
             "title": "Le mobile décide",
-            "text": "L'essentiel du trafic arrive sur mobile. Nous concevons la fiche produit d'abord pour cet écran, pas comme une réduction du desktop."
+            "text": "L’essentiel du trafic arrive sur mobile. Nous concevons la fiche produit d’abord pour cet écran, pas comme une réduction du desktop."
           }
         },
         "b2": {
           "type": "point",
           "settings": {
             "title": "La vitesse est une marge",
-            "text": "Chaque application ajoute du script. Nous développons la fonctionnalité nativement quand elle est simple, plutôt que de l'acheter."
+            "text": "Chaque application ajoute du script. Nous développons la fonctionnalité nativement quand elle est simple, plutôt que de l’acheter."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
             "title": "La réassurance arrive au bon moment",
-            "text": "Livraison, retours, paiement : ces informations doivent être présentes là où le doute naît, pas reléguées en pied de page."
+            "text": "Livraison, retours, paiement : ces informations doivent être présentes là où le doute naît, pas reléguées en pied de page."
           }
         }
       },
@@ -95,7 +95,7 @@
         "density": "comfortable",
         "eyebrow": "Ce que couvre la prestation",
         "title": "Du cadrage à la mise en ligne.",
-        "text": "Chaque projet ne mobilise pas tous ces chantiers. Nous cadrons d'abord ce qui aura un effet mesurable sur votre chiffre."
+        "text": "Chaque projet ne mobilise pas tous ces chantiers. Nous cadrons d’abord ce qui aura un effet mesurable sur votre chiffre."
       },
       "blocks": {
         "g1": {
@@ -103,7 +103,7 @@
           "settings": {
             "icon": "target",
             "title": "Cadrage et architecture",
-            "text": "Catalogue, collections, variantes, navigation et parcours d'achat définis avant la première ligne de code."
+            "text": "Catalogue, collections, variantes, navigation et parcours d’achat définis avant la première ligne de code."
           }
         },
         "g2": {
@@ -111,7 +111,7 @@
           "settings": {
             "icon": "layers",
             "title": "Thème sur mesure",
-            "text": "Sections et blocs Liquid modifiables depuis l'éditeur Shopify, sans dépendre de nous pour changer un texte."
+            "text": "Sections et blocs Liquid modifiables depuis l’éditeur Shopify, sans dépendre de nous pour changer un texte."
           }
         },
         "g3": {
@@ -163,7 +163,7 @@
         "reverse": true,
         "eyebrow": "Déroulé",
         "title": "Quatre phases, des points de validation à chacune.",
-        "text": "<p>Vous voyez le travail avancer et vous validez à chaque étape. Aucun projet ne part en développement sans que la structure et les contenus soient arrêtés — c'est ce qui évite les refontes en cours de route.</p>",
+        "text": "<p>Vous voyez le travail avancer et vous validez à chaque étape. Aucun projet ne part en développement sans que la structure et les contenus soient arrêtés — c’est ce qui évite les refontes en cours de route.</p>",
         "cta_label": "Faire auditer ma boutique",
         "cta_url": "/pages/audit-ecommerce"
       },
@@ -179,14 +179,14 @@
           "type": "point",
           "settings": {
             "title": "Conception",
-            "text": "Architecture, contenus et maquettes des gabarits clés : accueil, collection, fiche produit, panier."
+            "text": "Architecture, contenus et maquettes des gabarits clés : accueil, collection, fiche produit, panier."
           }
         },
         "s3": {
           "type": "point",
           "settings": {
             "title": "Développement",
-            "text": "Thème Liquid écrit pour votre boutique, testé au fil de l'eau sur un thème de préproduction."
+            "text": "Thème Liquid écrit pour votre boutique, testé au fil de l’eau sur un thème de préproduction."
           }
         },
         "s4": {
@@ -220,42 +220,42 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Combien coûte une boutique Shopify sur mesure ?",
-            "answer": "<p>Le budget dépend du nombre de gabarits, de la complexité du catalogue et du volume de contenus à produire. Une refonte ciblée sur la fiche produit et le tunnel n'a pas le même périmètre qu'une création complète avec rédaction. Nous chiffrons après le diagnostic, sur un périmètre écrit — jamais sur une grille tarifaire fixe qui ne correspondrait à personne.</p>"
+            "question": "Combien coûte une boutique Shopify sur mesure ?",
+            "answer": "<p>Le budget dépend du nombre de gabarits, de la complexité du catalogue et du volume de contenus à produire. Une refonte ciblée sur la fiche produit et le tunnel n’a pas le même périmètre qu’une création complète avec rédaction. Nous chiffrons après le diagnostic, sur un périmètre écrit — jamais sur une grille tarifaire fixe qui ne correspondrait à personne.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il repartir de zéro ou peut-on garder le thème actuel ?",
-            "answer": "<p>Les deux sont possibles et le diagnostic tranche. Si votre thème est propre et que le problème vient du message ou du parcours, une optimisation coûte moins cher et va plus vite. Si le thème est saturé d'applications et de correctifs empilés, le reconstruire revient souvent moins cher que de continuer à le rafistoler.</p>"
+            "question": "Faut-il repartir de zéro ou peut-on garder le thème actuel ?",
+            "answer": "<p>Les deux sont possibles et le diagnostic tranche. Si votre thème est propre et que le problème vient du message ou du parcours, une optimisation coûte moins cher et va plus vite. Si le thème est saturé d’applications et de correctifs empilés, le reconstruire revient souvent moins cher que de continuer à le rafistoler.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Pourquoi limiter les applications ?",
+            "question": "Pourquoi limiter les applications ?",
             "answer": "<p>Chaque application ajoute du JavaScript chargé sur toutes les pages, un abonnement mensuel et une dépendance à un éditeur tiers. Quand une fonctionnalité est simple — compte à rebours, ventes complémentaires, onglets produit — la développer nativement supprime le coût récurrent et le poids. Nous gardons les applications qui apportent une vraie valeur, comme les avis clients ou la logistique.</p>"
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
-            "question": "Puis-je modifier le site moi-même ensuite ?",
-            "answer": "<p>Oui. Chaque section est éditable depuis l'éditeur de thème Shopify : textes, images, ordre des blocs, ajout ou suppression d'éléments. Vous n'avez pas besoin de nous pour faire vivre le contenu. Nous livrons également une documentation des sections et de leurs réglages.</p>"
+            "question": "Puis-je modifier le site moi-même ensuite ?",
+            "answer": "<p>Oui. Chaque section est éditable depuis l’éditeur de thème Shopify : textes, images, ordre des blocs, ajout ou suppression d’éléments. Vous n’avez pas besoin de nous pour faire vivre le contenu. Nous livrons également une documentation des sections et de leurs réglages.</p>"
           }
         },
         "q5": {
           "type": "qa",
           "settings": {
-            "question": "Combien de temps prend une refonte ?",
+            "question": "Combien de temps prend une refonte ?",
             "answer": "<p>Comptez généralement de quatre à huit semaines entre le cadrage et la mise en ligne, selon la taille du catalogue et la disponibilité des contenus. Le délai dépend surtout de la vitesse de validation et de la fourniture des visuels et textes de votre côté.</p>"
           }
         },
         "q6": {
           "type": "qa",
           "settings": {
-            "question": "Travaillez-vous hors de France ?",
+            "question": "Travaillez-vous hors de France ?",
             "answer": "<p>Oui, nous intervenons en France, en Belgique, en Suisse et au Luxembourg. Les échanges se font à distance, avec des points de validation planifiés à chaque phase.</p>"
           }
         }
@@ -330,7 +330,7 @@
           "type": "item",
           "settings": {
             "icon": "signal",
-            "title": "Apps Shopify : les 10 utiles",
+            "title": "Apps Shopify : les 10 utiles",
             "text": "Et celles qui ruinent la vitesse",
             "link": "/blogs/ressources/apps-shopify-utiles-et-a-eviter",
             "link_label": "Lire le guide"

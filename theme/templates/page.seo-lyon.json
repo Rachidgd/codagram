@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Lyon",
         "title": "Consultant SEO à Lyon, pour capter la demande locale",
-        "lead": "Deuxième pôle économique français, Lyon concentre un tissu dense de services aux entreprises, de santé et de logistique. La concurrence y est réelle mais nettement moins verrouillée qu'à Paris : les positions se gagnent encore en quelques mois de travail sérieux.",
+        "lead": "Deuxième pôle économique français, Lyon concentre un tissu dense de services aux entreprises, de santé et de logistique. La concurrence y est réelle mais nettement moins verrouillée qu’à Paris : les positions se gagnent encore en quelques mois de travail sérieux.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -21,7 +21,7 @@
         "reverse": false,
         "eyebrow": "Notre lecture",
         "title": "Vos clients sont à Villeurbanne, Bron ou Écully. Vos pages doivent y être.",
-        "text": "<p>La plupart des entreprises lyonnaises ciblent « Lyon » alors que leurs clients se trouvent à Villeurbanne, Bron, Vénissieux ou Écully. Les recherches suivent cette géographie réelle, pas le nom de la ville-centre.</p><p>Nous construisons donc l'arborescence sur les communes de la métropole où vous intervenez effectivement, avec une page mère lyonnaise qui les fédère.</p>"
+        "text": "<p>La plupart des entreprises lyonnaises ciblent « Lyon » alors que leurs clients se trouvent à Villeurbanne, Bron, Vénissieux ou Écully. Les recherches suivent cette géographie réelle, pas le nom de la ville-centre.</p><p>Nous construisons donc l’arborescence sur les communes de la métropole où vous intervenez effectivement, avec une page mère lyonnaise qui les fédère.</p>"
       },
       "blocks": {
         "b1": {
@@ -42,7 +42,7 @@
           "type": "point",
           "settings": {
             "title": "Contenus de fiabilité",
-            "text": "Sur la santé, l'exigence de sérieux est supérieure : auteurs identifiés, sources, mises à jour datées."
+            "text": "Sur la santé, l’exigence de sérieux est supérieure : auteurs identifiés, sources, mises à jour datées."
           }
         }
       },
@@ -66,7 +66,7 @@
           "settings": {
             "value": "Santé",
             "label": "pharmacie et biotechnologies",
-            "note": "Un secteur où les contenus doivent être irréprochables : les moteurs y appliquent des exigences de fiabilité renforcées."
+            "note": "Un secteur où les contenus doivent être irréprochables : les moteurs y appliquent des exigences de fiabilité renforcées."
           }
         },
         "s2": {
@@ -82,7 +82,7 @@
           "settings": {
             "value": "Logistique",
             "label": "position de carrefour",
-            "note": "L'axe rhodanien génère des recherches qui débordent largement la métropole."
+            "note": "L’axe rhodanien génère des recherches qui débordent largement la métropole."
           }
         }
       },
@@ -112,7 +112,7 @@
         "s2": {
           "type": "step",
           "settings": {
-            "title": "Traiter la commune d'abord",
+            "title": "Traiter la commune d’abord",
             "text": "Publier la page communale la plus accessible pour obtenir un premier résultat rapidement.",
             "duration": "Semaines 2-4"
           }
@@ -129,7 +129,7 @@
           "type": "step",
           "settings": {
             "title": "Attaquer Lyon",
-            "text": "Une fois l'autorité constituée, viser la requête métropolitaine devient réaliste.",
+            "text": "Une fois l’autorité constituée, viser la requête métropolitaine devient réaliste.",
             "duration": "Mois 3 et suivants"
           }
         }
@@ -157,15 +157,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Vaut-il mieux viser Lyon ou ma commune ?",
-            "answer": "<p>Les deux, dans cet ordre. La commune d'abord : elle est bien plus accessible et convertit mieux. Lyon ensuite, une fois que le site a gagné en autorité. Attaquer directement la requête métropolitaine est le meilleur moyen de n'apparaître nulle part pendant un an.</p>"
+            "question": "Vaut-il mieux viser Lyon ou ma commune ?",
+            "answer": "<p>Les deux, dans cet ordre. La commune d’abord : elle est bien plus accessible et convertit mieux. Lyon ensuite, une fois que le site a gagné en autorité. Attaquer directement la requête métropolitaine est le meilleur moyen de n’apparaître nulle part pendant un an.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Le secteur santé impose-t-il des contraintes particulières ?",
-            "answer": "<p>Oui. Les contenus touchant à la santé sont évalués avec une exigence renforcée sur l'expertise et la fiabilité de l'auteur. Concrètement : signature identifiable, qualifications affichées, sources citées et dates de mise à jour visibles. Un contenu anonyme ne se positionne plus dans ce domaine.</p>"
+            "question": "Le secteur santé impose-t-il des contraintes particulières ?",
+            "answer": "<p>Oui. Les contenus touchant à la santé sont évalués avec une exigence renforcée sur l’expertise et la fiabilité de l’auteur. Concrètement : signature identifiable, qualifications affichées, sources citées et dates de mise à jour visibles. Un contenu anonyme ne se positionne plus dans ce domaine.</p>"
           }
         }
       },

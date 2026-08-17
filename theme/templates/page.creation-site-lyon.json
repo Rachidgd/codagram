@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Création de site — Lyon",
         "title": "Création de site internet à Lyon, sur mesure et sans gabarit acheté",
-        "lead": "À Lyon, vos concurrents ont déjà un site correct. La question n'est donc plus d'en avoir un, mais de dire quelque chose que les autres ne disent pas — et c'est précisément là que la plupart des sites lyonnais se ressemblent.",
+        "lead": "À Lyon, vos concurrents ont déjà un site correct. La question n’est donc plus d’en avoir un, mais de dire quelque chose que les autres ne disent pas — et c’est précisément là que la plupart des sites lyonnais se ressemblent.",
         "cta_primary": "Cadrer mon projet",
         "parent_label": "Création de site vitrine",
         "parent_url": "/pages/creation-site-vitrine",
@@ -28,7 +28,7 @@
           "settings": {
             "value": "Densité",
             "label": "beaucoup de prestataires",
-            "note": "Sur la plupart des métiers, le prospect compare trois à cinq sites avant de contacter quelqu'un."
+            "note": "Sur la plupart des métiers, le prospect compare trois à cinq sites avant de contacter quelqu’un."
           }
         },
         "s2": {
@@ -36,7 +36,7 @@
           "settings": {
             "value": "Santé et chimie",
             "label": "des filières installées",
-            "note": "Un B2B technique où l'approximation se repère immédiatement et disqualifie."
+            "note": "Un B2B technique où l’approximation se repère immédiatement et disqualifie."
           }
         },
         "s3": {
@@ -60,8 +60,8 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Notre lecture",
-        "title": "Quand tous les sites se valent, c'est le contenu qui départage.",
-        "text": "<p>Sur un marché saturé, l'esthétique cesse d'être un avantage : tout le monde a fait l'effort. Ce qui reste rare, c'est un site qui annonce ses tarifs, décrit un cas en détail, et dit ce qu'il ne fait pas.</p><p>C'est inconfortable à écrire, et c'est exactement pour cela que peu de concurrents le font.</p>"
+        "title": "Quand tous les sites se valent, c’est le contenu qui départage.",
+        "text": "<p>Sur un marché saturé, l’esthétique cesse d’être un avantage : tout le monde a fait l’effort. Ce qui reste rare, c’est un site qui annonce ses tarifs, décrit un cas en détail, et dit ce qu’il ne fait pas.</p><p>C’est inconfortable à écrire, et c’est exactement pour cela que peu de concurrents le font.</p>"
       },
       "blocks": {
         "b1": {
@@ -75,7 +75,7 @@
           "type": "point",
           "settings": {
             "title": "Un cas raconté en entier",
-            "text": "Contexte, contraintes, résultat, limites. Bien plus convaincant qu'une galerie."
+            "text": "Contexte, contraintes, résultat, limites. Bien plus convaincant qu’une galerie."
           }
         },
         "b3": {
@@ -105,7 +105,7 @@
           "type": "step",
           "settings": {
             "title": "Cadrage",
-            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d'échange, pas un questionnaire.",
+            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d’échange, pas un questionnaire.",
             "duration": "Semaine 1"
           }
         },
@@ -113,7 +113,7 @@
           "type": "step",
           "settings": {
             "title": "Structure et contenus",
-            "text": "L'arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
+            "text": "L’arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
             "duration": "Semaines 2-3"
           }
         },
@@ -146,7 +146,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Ce qu'on nous demande sur ce marché.",
+        "title": "Ce qu’on nous demande sur ce marché.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -157,15 +157,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Afficher ses prix ne fait-il pas fuir ?",
-            "answer": "<p>Cela fait fuir ceux qui ne seraient jamais devenus clients, et c'est un gain de temps. Ceux qui restent arrivent avec un budget en tête et une conversation nettement plus avancée. Une fourchette suffit, il n'est pas nécessaire d'aller au détail.</p>"
+            "question": "Afficher ses prix ne fait-il pas fuir ?",
+            "answer": "<p>Cela fait fuir ceux qui ne seraient jamais devenus clients, et c’est un gain de temps. Ceux qui restent arrivent avec un budget en tête et une conversation nettement plus avancée. Une fourchette suffit, il n’est pas nécessaire d’aller au détail.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Comment se différencier quand on fait la même chose que les autres ?",
-            "answer": "<p>Par la façon dont vous travaillez plutôt que par ce que vous vendez. Le déroulé, les délais, l'interlocuteur, ce qui se passe après la livraison : ces éléments varient énormément d'un prestataire à l'autre, et presque personne ne les explique.</p>"
+            "question": "Comment se différencier quand on fait la même chose que les autres ?",
+            "answer": "<p>Par la façon dont vous travaillez plutôt que par ce que vous vendez. Le déroulé, les délais, l’interlocuteur, ce qui se passe après la livraison : ces éléments varient énormément d’un prestataire à l’autre, et presque personne ne les explique.</p>"
           }
         }
       },
@@ -188,7 +188,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Prix d'un site vitrine en 2026",
+            "title": "Prix d’un site vitrine en 2026",
             "text": "Les vraies fourchettes, poste par poste",
             "link": "/blogs/ressources/prix-site-vitrine-2026",
             "link_label": "Lire le guide"
@@ -226,7 +226,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Comparons votre site à ceux de vos trois concurrents lyonnais.",
-        "text": "Nous regardons ce qu'ils disent, ce que vous dites, et où se trouve l'écart que vous pouvez creuser sans refaire votre offre.",
+        "text": "Nous regardons ce qu’ils disent, ce que vous dites, et où se trouve l’écart que vous pouvez creuser sans refaire votre offre.",
         "cta_label": "Demander un diagnostic",
         "note": "Réponse sous 48 h",
         "link_label": "Voir le référencement à Lyon",

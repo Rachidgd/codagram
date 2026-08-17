@@ -5,8 +5,8 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Toulouse",
-        "title": "Agence SEO à Toulouse, pour être trouvé par les donneurs d'ordre",
-        "lead": "L'aéronautique et le spatial structurent l'économie toulousaine et sa chaîne de sous-traitance. Sur ces marchés, personne ne tape « prestataire Toulouse » : on cherche une norme, une certification, un procédé précis.",
+        "title": "Agence SEO à Toulouse, pour être trouvé par les donneurs d’ordre",
+        "lead": "L’aéronautique et le spatial structurent l’économie toulousaine et sa chaîne de sous-traitance. Sur ces marchés, personne ne tape « prestataire Toulouse » : on cherche une norme, une certification, un procédé précis.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -29,7 +29,7 @@
           "settings": {
             "icon": "target",
             "title": "Pages par compétence",
-            "text": "Une page par procédé, norme ou qualification — c'est le niveau auquel la recherche se fait réellement."
+            "text": "Une page par procédé, norme ou qualification — c’est le niveau auquel la recherche se fait réellement."
           }
         },
         "g2": {
@@ -37,7 +37,7 @@
           "settings": {
             "icon": "check",
             "title": "Preuves de conformité",
-            "text": "Certifications, agréments, références de donneurs d'ordre. Le premier filtre du prospect industriel."
+            "text": "Certifications, agréments, références de donneurs d’ordre. Le premier filtre du prospect industriel."
           }
         },
         "g3": {
@@ -52,7 +52,7 @@
           "type": "item",
           "settings": {
             "icon": "signal",
-            "title": "Pôles d'activité",
+            "title": "Pôles d’activité",
             "text": "Blagnac et Labège ne sont pas des quartiers toulousains mais des bassins autonomes."
           }
         }
@@ -70,15 +70,15 @@
         "surface": "paper",
         "reverse": true,
         "eyebrow": "Notre lecture",
-        "title": "Un contenu technique se positionne mieux qu'une page commerciale.",
-        "text": "<p>Sur un marché industriel, un article détaillant un procédé, ses contraintes et ses tolérances attire exactement le lecteur qui cherche un fournisseur. Il attire peu de monde, mais il attire les bonnes personnes.</p><p>Ces pages sont aussi les plus faciles à défendre : quasiment personne ne les produit, parce qu'elles demandent une expertise réelle.</p>"
+        "title": "Un contenu technique se positionne mieux qu’une page commerciale.",
+        "text": "<p>Sur un marché industriel, un article détaillant un procédé, ses contraintes et ses tolérances attire exactement le lecteur qui cherche un fournisseur. Il attire peu de monde, mais il attire les bonnes personnes.</p><p>Ces pages sont aussi les plus faciles à défendre : quasiment personne ne les produit, parce qu’elles demandent une expertise réelle.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
             "title": "Écrire à votre niveau",
-            "text": "Le vocabulaire technique n'est pas un obstacle : c'est ce que tape votre prospect."
+            "text": "Le vocabulaire technique n’est pas un obstacle : c’est ce que tape votre prospect."
           }
         },
         "b2": {
@@ -116,7 +116,7 @@
           "settings": {
             "value": "Aéronautique",
             "label": "une chaîne de sous-traitance",
-            "note": "Des donneurs d'ordre exigeants qui vérifient les qualifications avant de consulter."
+            "note": "Des donneurs d’ordre exigeants qui vérifient les qualifications avant de consulter."
           }
         },
         "s2": {
@@ -132,7 +132,7 @@
           "settings": {
             "value": "Étalement",
             "label": "une métropole étendue",
-            "note": "Blagnac, Colomiers, Labège : des pôles éloignés avec des recherches distinctes."
+            "note": "Blagnac, Colomiers, Labège : des pôles éloignés avec des recherches distinctes."
           }
         }
       },
@@ -159,14 +159,14 @@
           "type": "qa",
           "settings": {
             "question": "Mon activité est trop technique pour intéresser Google.",
-            "answer": "<p>C'est presque toujours faux, et c'est même l'inverse : les requêtes techniques ont peu de volume mais une intention commerciale très forte et quasiment aucune concurrence éditoriale. Ce sont les positions les plus rentables et les plus stables du référencement B2B.</p>"
+            "answer": "<p>C’est presque toujours faux, et c’est même l’inverse : les requêtes techniques ont peu de volume mais une intention commerciale très forte et quasiment aucune concurrence éditoriale. Ce sont les positions les plus rentables et les plus stables du référencement B2B.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Les donneurs d'ordre passent-ils vraiment par Google ?",
-            "answer": "<p>Pour identifier de nouveaux fournisseurs et vérifier ceux qu'on leur a recommandés, oui, systématiquement. Un site absent ou daté fait douter au moment précis où le prospect cherche à se rassurer avant de vous consulter.</p>"
+            "question": "Les donneurs d’ordre passent-ils vraiment par Google ?",
+            "answer": "<p>Pour identifier de nouveaux fournisseurs et vérifier ceux qu’on leur a recommandés, oui, systématiquement. Un site absent ou daté fait douter au moment précis où le prospect cherche à se rassurer avant de vous consulter.</p>"
           }
         }
       },
@@ -219,7 +219,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Obtenir plus d'avis Google",
+            "title": "Obtenir plus d’avis Google",
             "text": "8 façons sans enfreindre les règles",
             "link": "/blogs/ressources/obtenir-plus-avis-google",
             "link_label": "Lire le guide"

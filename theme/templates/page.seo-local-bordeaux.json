@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Bordeaux",
         "title": "Agence SEO à Bordeaux, sur un marché devenu concurrentiel",
-        "lead": "L'arrivée de la ligne à grande vitesse a transformé l'économie bordelaise : afflux d'entreprises, de cadres et de nouveaux entrants sur presque tous les métiers de service. Les positions acquises il y a cinq ans ne tiennent plus toutes seules.",
+        "lead": "L’arrivée de la ligne à grande vitesse a transformé l’économie bordelaise : afflux d’entreprises, de cadres et de nouveaux entrants sur presque tous les métiers de service. Les positions acquises il y a cinq ans ne tiennent plus toutes seules.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -36,7 +36,7 @@
           "settings": {
             "value": "LGV",
             "label": "nouveaux entrants",
-            "note": "Des concurrents parisiens qui s'installent avec un site déjà mature et une autorité existante."
+            "note": "Des concurrents parisiens qui s’installent avec un site déjà mature et une autorité existante."
           }
         },
         "s3": {
@@ -59,15 +59,15 @@
       "settings": {
         "surface": "paper",
         "eyebrow": "Déroulé",
-        "title": "Reprendre l'avantage en quatre temps.",
+        "title": "Reprendre l’avantage en quatre temps.",
         "text": ""
       },
       "blocks": {
         "s1": {
           "type": "step",
           "settings": {
-            "title": "Mesurer l'érosion",
-            "text": "Comparer vos positions actuelles à celles d'il y a deux ans. Beaucoup d'entreprises bordelaises ont reculé sans s'en apercevoir.",
+            "title": "Mesurer l’érosion",
+            "text": "Comparer vos positions actuelles à celles d’il y a deux ans. Beaucoup d’entreprises bordelaises ont reculé sans s’en apercevoir.",
             "duration": "Semaine 1"
           }
         },
@@ -82,8 +82,8 @@
         "s3": {
           "type": "step",
           "settings": {
-            "title": "Renforcer l'existant",
-            "text": "Mettre à niveau les pages qui reculent plutôt que d'en créer de nouvelles. Plus rapide et plus rentable.",
+            "title": "Renforcer l’existant",
+            "text": "Mettre à niveau les pages qui reculent plutôt que d’en créer de nouvelles. Plus rapide et plus rentable.",
             "duration": "Semaines 3-6"
           }
         },
@@ -91,7 +91,7 @@
           "type": "step",
           "settings": {
             "title": "Ouvrir un terrain",
-            "text": "Trouver l'angle que les nouveaux entrants ne couvrent pas — souvent l'ancrage local réel et les références locales.",
+            "text": "Trouver l’angle que les nouveaux entrants ne couvrent pas — souvent l’ancrage local réel et les références locales.",
             "duration": "Semaines 6-12"
           }
         }
@@ -109,29 +109,29 @@
         "surface": "paper",
         "reverse": true,
         "eyebrow": "Notre lecture",
-        "title": "Votre ancienneté locale est un actif, à condition de l'exposer.",
-        "text": "<p>Un concurrent fraîchement installé peut avoir un meilleur site. Il ne peut pas avoir vos quinze ans de chantiers, de clients et d'avis dans la région. C'est le seul terrain où il ne vous rattrapera pas rapidement.</p><p>Encore faut-il que cet historique soit visible sur le site : trop d'entreprises installées le laissent implicite.</p>"
+        "title": "Votre ancienneté locale est un actif, à condition de l’exposer.",
+        "text": "<p>Un concurrent fraîchement installé peut avoir un meilleur site. Il ne peut pas avoir vos quinze ans de chantiers, de clients et d’avis dans la région. C’est le seul terrain où il ne vous rattrapera pas rapidement.</p><p>Encore faut-il que cet historique soit visible sur le site : trop d’entreprises installées le laissent implicite.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
             "title": "Références datées et situées",
-            "text": "Des réalisations avec leur année et leur commune. Ce qu'un nouvel entrant ne peut pas produire."
+            "text": "Des réalisations avec leur année et leur commune. Ce qu’un nouvel entrant ne peut pas produire."
           }
         },
         "b2": {
           "type": "point",
           "settings": {
             "title": "Avis accumulés",
-            "text": "Un historique d'avis sur plusieurs années pèse plus qu'une dizaine d'avis récents."
+            "text": "Un historique d’avis sur plusieurs années pèse plus qu’une dizaine d’avis récents."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
-            "title": "Contenus d'expérience",
-            "text": "Ce que vous savez du marché local et que personne ne peut écrire sans l'avoir vécu."
+            "title": "Contenus d’expérience",
+            "text": "Ce que vous savez du marché local et que personne ne peut écrire sans l’avoir vécu."
           }
         }
       },
@@ -157,15 +157,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "J'ai perdu des positions ces deux dernières années, est-ce récupérable ?",
-            "answer": "<p>Le plus souvent oui, et plus vite qu'une création de zéro : votre domaine a de l'ancienneté et un historique. Un recul vient généralement de pages devenues moins complètes que celles des nouveaux entrants — les renforcer produit un effet en quelques semaines.</p>"
+            "question": "J’ai perdu des positions ces deux dernières années, est-ce récupérable ?",
+            "answer": "<p>Le plus souvent oui, et plus vite qu’une création de zéro : votre domaine a de l’ancienneté et un historique. Un recul vient généralement de pages devenues moins complètes que celles des nouveaux entrants — les renforcer produit un effet en quelques semaines.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "La filière viticole demande-t-elle une approche particulière ?",
-            "answer": "<p>Oui, sur le vocabulaire : appellations, millésimes, types de prestations œnotouristiques ont leurs formulations propres, très éloignées du langage marketing général. Une page rédigée sans cette précision se repère immédiatement et ne convainc ni les moteurs ni les professionnels.</p>"
+            "question": "La filière viticole demande-t-elle une approche particulière ?",
+            "answer": "<p>Oui, sur le vocabulaire : appellations, millésimes, types de prestations œnotouristiques ont leurs formulations propres, très éloignées du langage marketing général. Une page rédigée sans cette précision se repère immédiatement et ne convainc ni les moteurs ni les professionnels.</p>"
           }
         }
       },
@@ -178,8 +178,8 @@
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Comparons vos positions d'aujourd'hui à celles d'il y a deux ans.",
-        "text": "Nous identifions les pages qui ont reculé, les concurrents qui sont arrivés dessus, et ce qu'il faut renforcer en priorité.",
+        "title": "Comparons vos positions d’aujourd’hui à celles d’il y a deux ans.",
+        "text": "Nous identifions les pages qui ont reculé, les concurrents qui sont arrivés dessus, et ce qu’il faut renforcer en priorité.",
         "cta_label": "Demander un relevé de position",
         "note": "Réponse sous 48 h",
         "link_label": "Voir la prestation SEO",
@@ -218,7 +218,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Checklist d'audit SEO",
+            "title": "Checklist d’audit SEO",
             "text": "Les 12 points vérifiés en premier",
             "link": "/blogs/ressources/checklist-audit-seo",
             "link_label": "Lire le guide"

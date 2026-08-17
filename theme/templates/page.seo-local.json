@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement local",
         "title": "Être trouvé par les clients qui sont déjà à côté de vous.",
-        "lead": "Quand quelqu'un cherche un professionnel près de chez lui, Google regarde trois choses : votre proximité, la cohérence de vos informations et votre réputation. Nous travaillons ces trois signaux, dans cet ordre.",
+        "lead": "Quand quelqu’un cherche un professionnel près de chez lui, Google regarde trois choses : votre proximité, la cohérence de vos informations et votre réputation. Nous travaillons ces trois signaux, dans cet ordre.",
         "cta_primary": "Évaluer ma visibilité locale",
         "parent_label": "Expertises",
         "parent_url": "/pages/agence-seo",
@@ -28,7 +28,7 @@
           "settings": {
             "value": "Le trio local",
             "label": "Les trois fiches du haut",
-            "note": "Le bloc cartographique capte l'essentiel des clics sur une recherche de proximité. Y figurer change tout."
+            "note": "Le bloc cartographique capte l’essentiel des clics sur une recherche de proximité. Y figurer change tout."
           }
         },
         "s2": {
@@ -36,7 +36,7 @@
           "settings": {
             "value": "La distance",
             "label": "Un critère que vous ne contrôlez pas",
-            "note": "Google pondère l'éloignement du chercheur. D'où l'intérêt de pages par zone plutôt qu'une page générique."
+            "note": "Google pondère l’éloignement du chercheur. D’où l’intérêt de pages par zone plutôt qu’une page générique."
           }
         },
         "s3": {
@@ -61,15 +61,15 @@
         "density": "comfortable",
         "eyebrow": "Périmètre",
         "title": "Ce que couvre une mission de SEO local.",
-        "text": "L'ordre d'intervention dépend de votre point de départ : une fiche inexistante et une fiche mal optimisée n'appellent pas le même effort."
+        "text": "L’ordre d’intervention dépend de votre point de départ : une fiche inexistante et une fiche mal optimisée n’appellent pas le même effort."
       },
       "blocks": {
         "g1": {
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Fiche d'établissement",
-            "text": "Catégories, description, horaires, zones desservies, photos, questions-réponses. C'est ce qui produit un effet le plus vite."
+            "title": "Fiche d’établissement",
+            "text": "Catégories, description, horaires, zones desservies, photos, questions-réponses. C’est ce qui produit un effet le plus vite."
           }
         },
         "g2": {
@@ -93,7 +93,7 @@
           "settings": {
             "icon": "gauge",
             "title": "Avis clients",
-            "text": "Méthode de collecte régulière, réponse aux avis, traitement des avis négatifs. Un signal de classement autant qu'un signal de confiance."
+            "text": "Méthode de collecte régulière, réponse aux avis, traitement des avis négatifs. Un signal de classement autant qu’un signal de confiance."
           }
         },
         "g5": {
@@ -101,7 +101,7 @@
           "settings": {
             "icon": "check",
             "title": "Balisage local",
-            "text": "Données structurées d'établissement, horaires, zone d'intervention. Ce que les moteurs lisent sans ambiguïté."
+            "text": "Données structurées d’établissement, horaires, zone d’intervention. Ce que les moteurs lisent sans ambiguïté."
           }
         },
         "g6": {
@@ -109,7 +109,7 @@
           "settings": {
             "icon": "megaphone",
             "title": "Suivi par zone",
-            "text": "Positions mesurées depuis chaque secteur visé, pas depuis un point unique — un classement local varie d'un quartier à l'autre."
+            "text": "Positions mesurées depuis chaque secteur visé, pas depuis un point unique — un classement local varie d’un quartier à l’autre."
           }
         }
       },
@@ -127,9 +127,9 @@
       "settings": {
         "surface": "dark",
         "reverse": true,
-        "eyebrow": "L'erreur à éviter",
+        "eyebrow": "L’erreur à éviter",
         "title": "Dupliquer une page en changeant le nom de la ville ne marche plus.",
-        "text": "<p>C'est la méthode la plus répandue et la plus contre-productive : produire trente pages identiques où seul le toponyme change. Les moteurs identifient ces gabarits, n'en retiennent qu'une, et l'ensemble finit ignoré.</p><p>Une page locale doit dire quelque chose de vrai sur ce territoire : son tissu économique, la concurrence qui s'y trouve, les demandes spécifiques qu'on y reçoit. Sinon elle n'a aucune raison d'exister.</p>",
+        "text": "<p>C’est la méthode la plus répandue et la plus contre-productive : produire trente pages identiques où seul le toponyme change. Les moteurs identifient ces gabarits, n’en retiennent qu’une, et l’ensemble finit ignoré.</p><p>Une page locale doit dire quelque chose de vrai sur ce territoire : son tissu économique, la concurrence qui s’y trouve, les demandes spécifiques qu’on y reçoit. Sinon elle n’a aucune raison d’exister.</p>",
         "cta_label": "Relever mes positions locales",
         "cta_url": "/pages/reserver"
       },
@@ -145,7 +145,7 @@
           "type": "point",
           "settings": {
             "title": "Des preuves situées",
-            "text": "Réalisations, avis ou références rattachés à la zone quand ils existent — et rien d'inventé quand ils n'existent pas."
+            "text": "Réalisations, avis ou références rattachés à la zone quand ils existent — et rien d’inventé quand ils n’existent pas."
           }
         },
         "b3": {
@@ -183,7 +183,7 @@
           "type": "step",
           "settings": {
             "title": "Fiche et citations",
-            "text": "Corrections immédiates. C'est souvent ce qui produit le premier mouvement visible.",
+            "text": "Corrections immédiates. C’est souvent ce qui produit le premier mouvement visible.",
             "duration": "Semaines 1-2"
           }
         },
@@ -227,29 +227,29 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Puis-je apparaître dans une ville où je n'ai pas d'adresse ?",
-            "answer": "<p>Dans le bloc cartographique, non : il exige une présence physique vérifiable et Google sanctionne les adresses de complaisance. Dans les résultats classiques en revanche, oui — une page de service dédiée à cette zone peut se positionner si son contenu est réellement pertinent pour ce territoire.</p>"
+            "question": "Puis-je apparaître dans une ville où je n’ai pas d’adresse ?",
+            "answer": "<p>Dans le bloc cartographique, non : il exige une présence physique vérifiable et Google sanctionne les adresses de complaisance. Dans les résultats classiques en revanche, oui — une page de service dédiée à cette zone peut se positionner si son contenu est réellement pertinent pour ce territoire.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Combien de pages de villes faut-il créer ?",
-            "answer": "<p>Autant que vous pouvez en défendre sérieusement, pas plus. Cinq pages documentées valent mieux que trente coquilles. Nous partons de vos zones d'intervention réelles et de celles où vous acceptez effectivement de vous déplacer.</p>"
+            "question": "Combien de pages de villes faut-il créer ?",
+            "answer": "<p>Autant que vous pouvez en défendre sérieusement, pas plus. Cinq pages documentées valent mieux que trente coquilles. Nous partons de vos zones d’intervention réelles et de celles où vous acceptez effectivement de vous déplacer.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Les avis influencent-ils vraiment le classement ?",
+            "question": "Les avis influencent-ils vraiment le classement ?",
             "answer": "<p>Leur volume, leur régularité et leur fraîcheur comptent parmi les signaux locaux — et ils influencent surtout le taux de clic une fois affiché. Une fiche avec quarante avis récents est choisie devant une fiche à trois avis anciens, même mieux classée.</p>"
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
-            "question": "Intervenez-vous si j'ai plusieurs établissements ?",
-            "answer": "<p>Oui, et la logique change : il faut une fiche par établissement, une page par établissement, et une architecture qui évite que vos propres pages se concurrencent. C'est un cas fréquent que nous traitons régulièrement.</p>"
+            "question": "Intervenez-vous si j’ai plusieurs établissements ?",
+            "answer": "<p>Oui, et la logique change : il faut une fiche par établissement, une page par établissement, et une architecture qui évite que vos propres pages se concurrencent. C’est un cas fréquent que nous traitons régulièrement.</p>"
           }
         }
       },
@@ -265,7 +265,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Voyons où vous apparaissez réellement.",
-        "text": "Indiquez-nous votre activité et vos zones. Nous regardons votre position actuelle depuis chacune d'elles et l'état de votre fiche d'établissement.",
+        "text": "Indiquez-nous votre activité et vos zones. Nous regardons votre position actuelle depuis chacune d’elles et l’état de votre fiche d’établissement.",
         "cta_label": "Évaluer ma visibilité locale",
         "note": "Réponse sous 48 h",
         "link_label": "Voir toutes les zones",
@@ -324,7 +324,7 @@
           "type": "item",
           "settings": {
             "icon": "layers",
-            "title": "Obtenir plus d'avis Google",
+            "title": "Obtenir plus d’avis Google",
             "text": "8 façons sans enfreindre les règles",
             "link": "/blogs/ressources/obtenir-plus-avis-google",
             "link_label": "Lire le guide"

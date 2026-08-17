@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Luxembourg",
         "title": "Un marché petit, riche, et multilingue par nécessité.",
-        "lead": "Le Grand-Duché concentre un pouvoir d'achat élevé sur un territoire réduit, avec une main-d'œuvre frontalière massive venue de France, de Belgique et d'Allemagne. Les volumes de recherche y sont faibles, mais la valeur de chaque demande est sans commune mesure.",
+        "lead": "Le Grand-Duché concentre un pouvoir d’achat élevé sur un territoire réduit, avec une main-d'œuvre frontalière massive venue de France, de Belgique et d’Allemagne. Les volumes de recherche y sont faibles, mais la valeur de chaque demande est sans commune mesure.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -21,21 +21,21 @@
         "reverse": false,
         "eyebrow": "Notre lecture",
         "title": "Ici, cinquante recherches par mois peuvent suffire.",
-        "text": "<p>Les outils de mesure affichent des volumes qui paraîtraient dérisoires en France. Rapportés au niveau de prix pratiqué et à la valeur d'un client au Luxembourg, ils changent complètement de sens.</p><p>Nous raisonnons donc en valeur de demande entrante, jamais en volume de trafic — le second indicateur est trompeur sur ce marché.</p>"
+        "text": "<p>Les outils de mesure affichent des volumes qui paraîtraient dérisoires en France. Rapportés au niveau de prix pratiqué et à la valeur d’un client au Luxembourg, ils changent complètement de sens.</p><p>Nous raisonnons donc en valeur de demande entrante, jamais en volume de trafic — le second indicateur est trompeur sur ce marché.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
             "title": "Arbitrer par la valeur",
-            "text": "Une requête à cinquante recherches mensuelles peut être plus rentable qu'une requête à cinq mille en France."
+            "text": "Une requête à cinquante recherches mensuelles peut être plus rentable qu’une requête à cinq mille en France."
           }
         },
         "b2": {
           "type": "point",
           "settings": {
             "title": "Choisir les langues utilement",
-            "text": "Le français domine largement les services aux particuliers, l'anglais s'impose dans la finance."
+            "text": "Le français domine largement les services aux particuliers, l’anglais s’impose dans la finance."
           }
         },
         "b3": {
@@ -66,7 +66,7 @@
           "settings": {
             "value": "Frontaliers",
             "label": "une population pendulaire",
-            "note": "Des personnes qui vivent d'un côté de la frontière et consomment de l'autre — leurs recherches mélangent les deux."
+            "note": "Des personnes qui vivent d’un côté de la frontière et consomment de l’autre — leurs recherches mélangent les deux."
           }
         },
         "s2": {
@@ -82,7 +82,7 @@
           "settings": {
             "value": "Faible volume",
             "label": "forte valeur",
-            "note": "Peu de recherches mensuelles, mais un panier moyen et un pouvoir d'achat très supérieurs."
+            "note": "Peu de recherches mensuelles, mais un panier moyen et un pouvoir d’achat très supérieurs."
           }
         }
       },
@@ -104,8 +104,8 @@
         "s1": {
           "type": "step",
           "settings": {
-            "title": "Estimer la valeur d'une demande",
-            "text": "Point de départ obligatoire : ce que vaut un client luxembourgeois décide de tout le reste.",
+            "title": "Estimer la valeur d’une demande",
+            "text": "Point de départ obligatoire : ce que vaut un client luxembourgeois décide de tout le reste.",
             "duration": "Semaine 1"
           }
         },
@@ -113,7 +113,7 @@
           "type": "step",
           "settings": {
             "title": "Choisir les langues",
-            "text": "Français, anglais, allemand : on tranche à partir de votre clientèle réelle, pas d'un principe.",
+            "text": "Français, anglais, allemand : on tranche à partir de votre clientèle réelle, pas d’un principe.",
             "duration": "Semaine 2"
           }
         },
@@ -157,22 +157,22 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Les volumes de recherche sont très faibles, est-ce rentable ?",
-            "answer": "<p>Le volume est le mauvais indicateur ici. Ce qui compte, c'est la valeur d'un client et le taux de conversion d'une requête à forte intention. Sur beaucoup de métiers luxembourgeois, une poignée de demandes mensuelles bien qualifiées rentabilise largement le travail engagé.</p>"
+            "question": "Les volumes de recherche sont très faibles, est-ce rentable ?",
+            "answer": "<p>Le volume est le mauvais indicateur ici. Ce qui compte, c’est la valeur d’un client et le taux de conversion d’une requête à forte intention. Sur beaucoup de métiers luxembourgeois, une poignée de demandes mensuelles bien qualifiées rentabilise largement le travail engagé.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Dans quelle langue faut-il publier ?",
-            "answer": "<p>Le français couvre l'essentiel des services aux particuliers et une grande partie du B2B. L'anglais devient nécessaire dans la finance, le conseil international et les fonctions supports des grands groupes. L'allemand reste utile près de la frontière et sur certains publics résidents. La réponse dépend de votre clientèle réelle, pas d'un principe général.</p>"
+            "question": "Dans quelle langue faut-il publier ?",
+            "answer": "<p>Le français couvre l’essentiel des services aux particuliers et une grande partie du B2B. L’anglais devient nécessaire dans la finance, le conseil international et les fonctions supports des grands groupes. L’allemand reste utile près de la frontière et sur certains publics résidents. La réponse dépend de votre clientèle réelle, pas d’un principe général.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Puis-je viser aussi les frontaliers français et belges ?",
-            "answer": "<p>Oui, et c'est souvent négligé. Un habitant de Thionville ou d'Arlon qui travaille au Luxembourg y consomme aussi des services. Il cherche depuis chez lui, avec des formulations mêlant les deux pays — un terrain que peu de sites luxembourgeois couvrent explicitement.</p>"
+            "question": "Puis-je viser aussi les frontaliers français et belges ?",
+            "answer": "<p>Oui, et c’est souvent négligé. Un habitant de Thionville ou d’Arlon qui travaille au Luxembourg y consomme aussi des services. Il cherche depuis chez lui, avec des formulations mêlant les deux pays — un terrain que peu de sites luxembourgeois couvrent explicitement.</p>"
           }
         }
       },
@@ -236,7 +236,7 @@
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Search Console : les 5 rapports utiles",
+            "title": "Search Console : les 5 rapports utiles",
             "text": "Et comment les lire",
             "link": "/blogs/ressources/search-console-rapports-essentiels",
             "link_label": "Lire le guide"

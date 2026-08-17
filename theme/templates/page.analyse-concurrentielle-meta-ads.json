@@ -6,11 +6,11 @@
         "show_breadcrumb": true,
         "eyebrow": "Analyse concurrentielle publicitaire",
         "title": "Sachez ce qui fonctionne chez vos concurrents avant de dépenser.",
-        "lead": "Toutes les publicités actives sur Facebook et Instagram sont consultables publiquement. Nous en tirons ce qui est réellement exploitable : les angles qu'ils tiennent dans la durée, ceux qu'ils abandonnent, et l'espace qu'ils vous laissent.",
-        "cta_primary": "Demander l'analyse",
+        "lead": "Toutes les publicités actives sur Facebook et Instagram sont consultables publiquement. Nous en tirons ce qui est réellement exploitable : les angles qu’ils tiennent dans la durée, ceux qu’ils abandonnent, et l’espace qu’ils vous laissent.",
+        "cta_primary": "Demander l’analyse",
         "parent_label": "Audits",
         "parent_url": "/pages/audit-seo",
-        "cta_secondary": "Voir l'audit de mon compte",
+        "cta_secondary": "Voir l’audit de mon compte",
         "cta_secondary_url": "/pages/audit-meta-ads"
       }
     },
@@ -43,7 +43,7 @@
           "type": "step",
           "settings": {
             "title": "Lecture des angles",
-            "text": "Classement par promesse, par objection traitée et par format. C'est là que se trouve l'information utile.",
+            "text": "Classement par promesse, par objection traitée et par format. C’est là que se trouve l’information utile.",
             "duration": "Jours 4-5"
           }
         },
@@ -70,7 +70,7 @@
         "reverse": true,
         "eyebrow": "Comment nous lisons",
         "title": "Une publicité qui tourne depuis six mois vous dit quelque chose.",
-        "text": "<p>La durée de diffusion est le signal le plus fiable accessible publiquement : personne ne laisse tourner une création qui ne rapporte pas. Une annonce en ligne depuis plusieurs mois a fait ses preuves chez son annonceur.</p><p>À l'inverse, une profusion de créations lancées puis retirées en quelques jours signale une recherche encore infructueuse — et donc un angle disponible.</p>"
+        "text": "<p>La durée de diffusion est le signal le plus fiable accessible publiquement : personne ne laisse tourner une création qui ne rapporte pas. Une annonce en ligne depuis plusieurs mois a fait ses preuves chez son annonceur.</p><p>À l’inverse, une profusion de créations lancées puis retirées en quelques jours signale une recherche encore infructueuse — et donc un angle disponible.</p>"
       },
       "blocks": {
         "b1": {
@@ -91,7 +91,7 @@
           "type": "point",
           "settings": {
             "title": "Les zones vides",
-            "text": "Les objections que personne ne traite constituent souvent l'espace le plus rentable."
+            "text": "Les objections que personne ne traite constituent souvent l’espace le plus rentable."
           }
         }
       },
@@ -124,7 +124,7 @@
           "settings": {
             "icon": "target",
             "title": "Espaces disponibles",
-            "text": "Les terrains que personne n'occupe sérieusement, avec notre estimation de leur potentiel."
+            "text": "Les terrains que personne n’occupe sérieusement, avec notre estimation de leur potentiel."
           }
         },
         "g3": {
@@ -147,7 +147,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Questions fréquentes sur l'analyse concurrentielle.",
+        "title": "Questions fréquentes sur l’analyse concurrentielle.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -158,22 +158,22 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Est-ce légal de regarder les publicités des concurrents ?",
-            "answer": "<p>Oui, entièrement. Ces publicités sont rendues publiques par la plateforme elle-même dans un objectif de transparence. Nous n'accédons à aucune donnée privée : ni leurs budgets, ni leurs audiences, ni leurs résultats — seulement ce que tout le monde peut consulter.</p>"
+            "question": "Est-ce légal de regarder les publicités des concurrents ?",
+            "answer": "<p>Oui, entièrement. Ces publicités sont rendues publiques par la plateforme elle-même dans un objectif de transparence. Nous n’accédons à aucune donnée privée : ni leurs budgets, ni leurs audiences, ni leurs résultats — seulement ce que tout le monde peut consulter.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Allez-vous copier leurs publicités ?",
+            "question": "Allez-vous copier leurs publicités ?",
             "answer": "<p>Non. Copier une création revient à arriver second sur un terrain déjà occupé, avec moins de notoriété. Nous cherchons les angles qui fonctionnent sur le marché pour identifier ce qui reste disponible, puis nous construisons votre propre proposition.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Combien de concurrents analysez-vous ?",
-            "answer": "<p>Entre cinq et huit, ce qui couvre généralement l'essentiel des angles d'un marché. Au-delà, l'analyse se répète sans rien apprendre de neuf.</p>"
+            "question": "Combien de concurrents analysez-vous ?",
+            "answer": "<p>Entre cinq et huit, ce qui couvre généralement l’essentiel des angles d’un marché. Au-delà, l’analyse se répète sans rien apprendre de neuf.</p>"
           }
         }
       },
@@ -188,8 +188,8 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Dites-nous qui vous affrontez.",
-        "text": "Donnez-nous trois noms de concurrents. Nous vous montrons ce qu'ils diffusent en ce moment et depuis combien de temps.",
-        "cta_label": "Demander l'analyse",
+        "text": "Donnez-nous trois noms de concurrents. Nous vous montrons ce qu’ils diffusent en ce moment et depuis combien de temps.",
+        "cta_label": "Demander l’analyse",
         "note": "Réponse sous 48 h"
       },
       "blocks": {

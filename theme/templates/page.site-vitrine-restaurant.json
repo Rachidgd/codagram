@@ -20,7 +20,7 @@
         "surface": "dark",
         "eyebrow": "Ce qui se joue",
         "title": "Trois mécaniques propres à la restauration.",
-        "source": "Mécaniques observées dans le secteur. Leur intensité varie selon le type d'établissement et l'emplacement."
+        "source": "Mécaniques observées dans le secteur. Leur intensité varie selon le type d’établissement et l’emplacement."
       },
       "blocks": {
         "s1": {
@@ -44,7 +44,7 @@
           "settings": {
             "value": "Preuve visuelle",
             "label": "La photo décide",
-            "note": "Dans ce secteur, l'image porte la décision plus que le texte. Des visuels faibles annulent le reste."
+            "note": "Dans ce secteur, l’image porte la décision plus que le texte. Des visuels faibles annulent le reste."
           }
         }
       },
@@ -59,9 +59,9 @@
       "settings": {
         "surface": "paper",
         "reverse": true,
-        "eyebrow": "L'ordre des priorités",
-        "title": "Le menu et les horaires avant l'histoire de la maison.",
-        "text": "<p>La page d'accueil d'un restaurant s'ouvre le plus souvent sur un texte d'ambiance, tandis que le menu se cache derrière un fichier à télécharger. C'est l'exact inverse de ce que cherche le visiteur.</p><p>Nous plaçons en premier ce qui déclenche la venue, et nous gardons le récit pour ceux qui font défiler — ils existent, mais ils sont minoritaires.</p>",
+        "eyebrow": "L’ordre des priorités",
+        "title": "Le menu et les horaires avant l’histoire de la maison.",
+        "text": "<p>La page d’accueil d’un restaurant s’ouvre le plus souvent sur un texte d’ambiance, tandis que le menu se cache derrière un fichier à télécharger. C’est l’exact inverse de ce que cherche le visiteur.</p><p>Nous plaçons en premier ce qui déclenche la venue, et nous gardons le récit pour ceux qui font défiler — ils existent, mais ils sont minoritaires.</p>",
         "cta_label": "Parler de mon établissement",
         "cta_url": "/pages/reserver"
       },
@@ -70,21 +70,21 @@
           "type": "point",
           "settings": {
             "title": "Un menu lisible sur mobile, sans PDF",
-            "text": "Un document à télécharger n'est ni lisible sur mobile ni indexable. Le menu doit être du texte réel."
+            "text": "Un document à télécharger n’est ni lisible sur mobile ni indexable. Le menu doit être du texte réel."
           }
         },
         "b2": {
           "type": "point",
           "settings": {
             "title": "Réservation en deux clics",
-            "text": "Depuis n'importe quelle page, sans compte à créer, avec confirmation immédiate."
+            "text": "Depuis n’importe quelle page, sans compte à créer, avec confirmation immédiate."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
             "title": "Informations pratiques visibles",
-            "text": "Horaires à jour, adresse cliquable vers l'itinéraire, téléphone appelable d'un doigt."
+            "text": "Horaires à jour, adresse cliquable vers l’itinéraire, téléphone appelable d’un doigt."
           }
         }
       },
@@ -124,7 +124,7 @@
           "type": "item",
           "settings": {
             "icon": "signal",
-            "title": "Fiche d'établissement",
+            "title": "Fiche d’établissement",
             "text": "Photos, horaires, plats mis en avant, réponses aux avis. Souvent le premier point de contact réel."
           }
         },
@@ -133,7 +133,7 @@
           "settings": {
             "icon": "layers",
             "title": "Pages événements",
-            "text": "Privatisation, groupes, brunchs, service traiteur : des demandes à forte valeur, rarement traitées."
+            "text": "Privatisation, groupes, brunchs, service traiteur : des demandes à forte valeur, rarement traitées."
           }
         },
         "g5": {
@@ -178,22 +178,22 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Dois-je quitter les plateformes de réservation ?",
-            "answer": "<p>Non, et ce serait risqué. Elles apportent une clientèle de découverte que vous n'atteindriez pas autrement. L'objectif est de récupérer en direct les clients qui vous connaissent déjà — ce sont les plus rentables et ceux pour lesquels la commission est la moins justifiée.</p>"
+            "question": "Dois-je quitter les plateformes de réservation ?",
+            "answer": "<p>Non, et ce serait risqué. Elles apportent une clientèle de découverte que vous n’atteindriez pas autrement. L’objectif est de récupérer en direct les clients qui vous connaissent déjà — ce sont les plus rentables et ceux pour lesquels la commission est la moins justifiée.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Puis-je changer le menu moi-même ?",
-            "answer": "<p>Oui, c'est un point non négociable dans nos projets de restauration. Un menu qu'il faut faire modifier par un prestataire n'est jamais à jour. Vous modifiez plats, prix et suggestions depuis une interface simple, en quelques minutes.</p>"
+            "question": "Puis-je changer le menu moi-même ?",
+            "answer": "<p>Oui, c’est un point non négociable dans nos projets de restauration. Un menu qu’il faut faire modifier par un prestataire n’est jamais à jour. Vous modifiez plats, prix et suggestions depuis une interface simple, en quelques minutes.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Faites-vous les photos ?",
-            "answer": "<p>Non, ce n'est pas notre métier et un photographe culinaire fera bien mieux. Nous vous indiquons précisément ce dont le site a besoin — cadrages, formats, nombre de visuels — pour que la séance soit utile du premier coup.</p>"
+            "question": "Faites-vous les photos ?",
+            "answer": "<p>Non, ce n’est pas notre métier et un photographe culinaire fera bien mieux. Nous vous indiquons précisément ce dont le site a besoin — cadrages, formats, nombre de visuels — pour que la séance soit utile du premier coup.</p>"
           }
         }
       },
@@ -208,7 +208,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Parlons de votre établissement.",
-        "text": "Dites-nous où vous en êtes : site existant, plateformes utilisées, part de réservations en direct. Nous vous dirons ce qui est récupérable.",
+        "text": "Dites-nous où vous en êtes : site existant, plateformes utilisées, part de réservations en direct. Nous vous dirons ce qui est récupérable.",
         "cta_label": "Prendre contact",
         "note": "Réponse sous 48 h",
         "link_label": "Voir le référencement local",
@@ -257,7 +257,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Obtenir plus d'avis Google",
+            "title": "Obtenir plus d’avis Google",
             "text": "8 façons sans enfreindre les règles",
             "link": "/blogs/ressources/obtenir-plus-avis-google",
             "link_label": "Lire le guide"
@@ -267,7 +267,7 @@
           "type": "item",
           "settings": {
             "icon": "layers",
-            "title": "Anatomie d'une page contact qui convertit",
+            "title": "Anatomie d’une page contact qui convertit",
             "text": "7 éléments souvent absents",
             "link": "/blogs/ressources/page-contact-qui-convertit",
             "link_label": "Lire le guide"

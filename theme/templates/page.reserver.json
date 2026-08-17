@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Audit SEO offert",
         "title": "Trente minutes pour savoir si votre référencement mérite un investissement.",
-        "lead": "Nous relevons vos positions, l'état technique du site et ce que font vos concurrents, puis nous vous restituons trois priorités par téléphone. C'est gratuit, et cela ne vous engage à rien — pas même à nous rappeler.",
+        "lead": "Nous relevons vos positions, l’état technique du site et ce que font vos concurrents, puis nous vous restituons trois priorités par téléphone. C’est gratuit, et cela ne vous engage à rien — pas même à nous rappeler.",
         "cta_primary": "Réserver mon créneau",
         "cta_secondary": "Voir la prestation SEO",
         "cta_secondary_url": "/pages/agence-seo"
@@ -18,7 +18,7 @@
             "prefix": "",
             "value": "30",
             "suffix": " min",
-            "label": "d'échange"
+            "label": "d’échange"
           }
         },
         "p2": {
@@ -57,7 +57,7 @@
         "note": "Gratuit — réponse sous 48 h",
         "origine": "landing-reserver",
         "legal": "Vos informations servent uniquement à traiter votre demande. Aucune revente, aucune inscription automatique.",
-        "confirmation": "Nous revenons vers vous sous 48 h, à l'adresse indiquée."
+        "confirmation": "Nous revenons vers vous sous 48 h, à l’adresse indiquée."
       },
       "blocks": {
         "p1": {
@@ -90,9 +90,9 @@
       "settings": {
         "surface": "dark",
         "density": "comfortable",
-        "eyebrow": "Ce que contient l'échange",
+        "eyebrow": "Ce que contient l’échange",
         "title": "Quatre points, dans cet ordre.",
-        "text": "Nous préparons l'analyse avant l'appel : le temps d'échange sert à discuter des conclusions, pas à découvrir votre site ensemble."
+        "text": "Nous préparons l’analyse avant l’appel : le temps d’échange sert à discuter des conclusions, pas à découvrir votre site ensemble."
       },
       "blocks": {
         "g1": {
@@ -100,14 +100,14 @@
           "settings": {
             "icon": "signal",
             "title": "Vos positions actuelles",
-            "text": "Sur quelles requêtes vous apparaissez aujourd'hui, à quelle place, et depuis quelles zones géographiques."
+            "text": "Sur quelles requêtes vous apparaissez aujourd’hui, à quelle place, et depuis quelles zones géographiques."
           }
         },
         "g2": {
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "L'état technique",
+            "title": "L’état technique",
             "text": "Indexation, vitesse, structure, balisage. Ce qui bloque éventuellement tout le reste."
           }
         },
@@ -124,7 +124,7 @@
           "settings": {
             "icon": "check",
             "title": "Les trois priorités",
-            "text": "Ce par quoi commencer, dans quel ordre, avec un ordre de grandeur d'effort pour chacune."
+            "text": "Ce par quoi commencer, dans quel ordre, avec un ordre de grandeur d’effort pour chacune."
           }
         }
       },
@@ -139,13 +139,13 @@
       "type": "content-compare",
       "settings": {
         "surface": "paper",
-        "eyebrow": "Est-ce pour vous ?",
+        "eyebrow": "Est-ce pour vous ?",
         "title": "À qui cet audit sert, et à qui il ne sert pas.",
-        "text": "Nous préférons le dire avant : un créneau réservé pour rien coûte du temps aux deux parties.",
+        "text": "Nous préférons le dire avant : un créneau réservé pour rien coûte du temps aux deux parties.",
         "col_criteria": "Critère",
         "col_a": "Utile si",
         "col_b": "Inutile si",
-        "verdict": "Si votre site a moins de six mois, l'audit n'aura pas assez de données pour être utile. Écrivez-nous quand même : nous vous dirons quoi mettre en place en attendant."
+        "verdict": "Si votre site a moins de six mois, l’audit n’aura pas assez de données pour être utile. Écrivez-nous quand même : nous vous dirons quoi mettre en place en attendant."
       },
       "blocks": {
         "r1": {
@@ -153,7 +153,7 @@
           "settings": {
             "criteria": "Votre site",
             "value_a": "Il est en ligne depuis au moins six mois",
-            "value_b": "Il n'existe pas encore ou vient d'être lancé"
+            "value_b": "Il n’existe pas encore ou vient d’être lancé"
           }
         },
         "r2": {
@@ -226,7 +226,7 @@
           "type": "step",
           "settings": {
             "title": "Nous en parlons",
-            "text": "Trente minutes au téléphone ou en visioconférence, à l'heure qui vous arrange.",
+            "text": "Trente minutes au téléphone ou en visioconférence, à l’heure qui vous arrange.",
             "duration": "À votre convenance"
           }
         }
@@ -242,7 +242,7 @@
       "settings": {
         "surface": "paper",
         "eyebrow": "Questions fréquentes",
-        "title": "Ce qu'on nous demande avant de réserver.",
+        "title": "Ce qu’on nous demande avant de réserver.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -253,29 +253,29 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Pourquoi est-ce gratuit ?",
-            "answer": "<p>Parce que c'est notre façon de qualifier les projets. Nous préférons consacrer quelques heures à comprendre une situation plutôt que d'envoyer une proposition commerciale à l'aveugle. Une partie des personnes que nous auditons ne devient pas cliente, et cela fait partie du calcul.</p>"
+            "question": "Pourquoi est-ce gratuit ?",
+            "answer": "<p>Parce que c’est notre façon de qualifier les projets. Nous préférons consacrer quelques heures à comprendre une situation plutôt que d’envoyer une proposition commerciale à l’aveugle. Une partie des personnes que nous auditons ne devient pas cliente, et cela fait partie du calcul.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Vais-je subir un argumentaire de vente ?",
-            "answer": "<p>Non. Nous présentons les constats et les priorités. Si vous voulez ensuite savoir ce que coûterait une intervention de notre part, vous demandez — sinon nous ne l'abordons pas. Le document reste utilisable sans nous.</p>"
+            "question": "Vais-je subir un argumentaire de vente ?",
+            "answer": "<p>Non. Nous présentons les constats et les priorités. Si vous voulez ensuite savoir ce que coûterait une intervention de notre part, vous demandez — sinon nous ne l’abordons pas. Le document reste utilisable sans nous.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Que se passe-t-il si mon site n'a aucun problème ?",
-            "answer": "<p>Cela arrive, et nous vous le disons. L'échange sert alors à trouver ce qui vous bloque vraiment. Souvent votre offre, votre page ou vos publicités, plutôt que le référencement.</p>"
+            "question": "Que se passe-t-il si mon site n’a aucun problème ?",
+            "answer": "<p>Cela arrive, et nous vous le disons. L’échange sert alors à trouver ce qui vous bloque vraiment. Souvent votre offre, votre page ou vos publicités, plutôt que le référencement.</p>"
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il me préparer ?",
-            "answer": "<p>Non. Le formulaire suffit. Un accès en lecture à vos statistiques et à votre console de recherche rend l'analyse plus précise. Ce n'est pas indispensable pour un premier relevé.</p>"
+            "question": "Faut-il me préparer ?",
+            "answer": "<p>Non. Le formulaire suffit. Un accès en lecture à vos statistiques et à votre console de recherche rend l’analyse plus précise. Ce n’est pas indispensable pour un premier relevé.</p>"
           }
         }
       },
@@ -335,7 +335,7 @@
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Checklist d'audit SEO",
+            "title": "Checklist d’audit SEO",
             "text": "Les 12 points vérifiés en premier",
             "link": "/blogs/ressources/checklist-audit-seo",
             "link_label": "Lire le guide"

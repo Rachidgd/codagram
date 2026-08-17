@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Création de site — Marseille",
         "title": "Création de site internet à Marseille, écrit et développé pour votre métier",
-        "lead": "À Marseille, la première question d'un client n'est pas ce que vous faites, mais si vous vous déplacez chez lui. Un site qui ne nomme pas ses zones d'intervention laisse cette question sans réponse, et le prospect appelle le suivant.",
+        "lead": "À Marseille, la première question d’un client n’est pas ce que vous faites, mais si vous vous déplacez chez lui. Un site qui ne nomme pas ses zones d’intervention laisse cette question sans réponse, et le prospect appelle le suivant.",
         "cta_primary": "Cadrer mon projet",
         "parent_label": "Création de site vitrine",
         "parent_url": "/pages/creation-site-vitrine",
@@ -28,7 +28,7 @@
           "settings": {
             "value": "Étendue",
             "label": "une ville de villages",
-            "note": "Du 8e au 15e, les distances et les habitudes changent. Un client du sud ne suppose pas qu'on monte au nord."
+            "note": "Du 8e au 15e, les distances et les habitudes changent. Un client du sud ne suppose pas qu’on monte au nord."
           }
         },
         "s2": {
@@ -43,8 +43,8 @@
           "type": "stat",
           "settings": {
             "value": "Port",
-            "label": "une économie tournée vers l'extérieur",
-            "note": "Logistique, import, maritime : un B2B qui cherche des compétences précises, pas des prestataires génériques."
+            "label": "une économie tournée vers l’extérieur",
+            "note": "Logistique, import, maritime : un B2B qui cherche des compétences précises, pas des prestataires génériques."
           }
         }
       },
@@ -60,15 +60,15 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Notre lecture",
-        "title": "La question qu'on vous pose au téléphone doit déjà être réglée sur le site.",
-        "text": "<p>« Vous intervenez dans le 11e ? » Cette question revient à chaque appel, ce qui veut dire qu'elle a fait renoncer tous ceux qui n'ont pas appelé. Elle se règle avec une liste de quartiers visible, pas avec une carte décorative.</p><p>Nous construisons donc le site autour de la zone réellement servie, en l'écrivant noir sur blanc plutôt qu'en la suggérant.</p>"
+        "title": "La question qu’on vous pose au téléphone doit déjà être réglée sur le site.",
+        "text": "<p>« Vous intervenez dans le 11e ? » Cette question revient à chaque appel, ce qui veut dire qu’elle a fait renoncer tous ceux qui n’ont pas appelé. Elle se règle avec une liste de quartiers visible, pas avec une carte décorative.</p><p>Nous construisons donc le site autour de la zone réellement servie, en l’écrivant noir sur blanc plutôt qu’en la suggérant.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
             "title": "Les zones écrites en clair",
-            "text": "Les arrondissements et communes servis, nommés, pas déduits d'une carte."
+            "text": "Les arrondissements et communes servis, nommés, pas déduits d’une carte."
           }
         },
         "b2": {
@@ -105,7 +105,7 @@
           "type": "step",
           "settings": {
             "title": "Cadrage",
-            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d'échange, pas un questionnaire.",
+            "text": "Vos objectifs, vos clients, ce que le site doit produire. Une heure d’échange, pas un questionnaire.",
             "duration": "Semaine 1"
           }
         },
@@ -113,7 +113,7 @@
           "type": "step",
           "settings": {
             "title": "Structure et contenus",
-            "text": "L'arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
+            "text": "L’arborescence, les textes, les preuves. Le poste qui décide du résultat, et le plus souvent sous-estimé.",
             "duration": "Semaines 2-3"
           }
         },
@@ -146,7 +146,7 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Questions fréquentes",
-        "title": "Ce qu'on nous demande sur ce marché.",
+        "title": "Ce qu’on nous demande sur ce marché.",
         "text": "",
         "cta_label": "Poser une autre question",
         "open_first": true,
@@ -157,15 +157,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il une page par arrondissement ?",
-            "answer": "<p>Rarement au démarrage. Une page qui liste clairement les zones servies règle l'essentiel. Les pages par quartier ne se justifient que si vous y avez de vraies références à montrer — sinon elles se ressemblent toutes et aucune ne se positionne.</p>"
+            "question": "Faut-il une page par arrondissement ?",
+            "answer": "<p>Rarement au démarrage. Une page qui liste clairement les zones servies règle l’essentiel. Les pages par quartier ne se justifient que si vous y avez de vraies références à montrer — sinon elles se ressemblent toutes et aucune ne se positionne.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Mon activité marche au bouche-à-oreille, à quoi sert un site ?",
-            "answer": "<p>À convertir ce bouche-à-oreille. Aujourd'hui, la personne à qui l'on vous a recommandé cherche votre nom avant d'appeler. Ce qu'elle trouve — ou ne trouve pas — décide si la recommandation aboutit.</p>"
+            "question": "Mon activité marche au bouche-à-oreille, à quoi sert un site ?",
+            "answer": "<p>À convertir ce bouche-à-oreille. Aujourd’hui, la personne à qui l’on vous a recommandé cherche votre nom avant d’appeler. Ce qu’elle trouve — ou ne trouve pas — décide si la recommandation aboutit.</p>"
           }
         }
       },
@@ -188,7 +188,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Prix d'un site vitrine en 2026",
+            "title": "Prix d’un site vitrine en 2026",
             "text": "Les vraies fourchettes, poste par poste",
             "link": "/blogs/ressources/prix-site-vitrine-2026",
             "link_label": "Lire le guide"
@@ -225,8 +225,8 @@
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Voyons ce que trouve un Marseillais à qui l'on vous a recommandé.",
-        "text": "Donnez-nous votre métier et vos secteurs. Nous regardons ce qui apparaît à votre nom et ce qui manque pour déclencher l'appel.",
+        "title": "Voyons ce que trouve un Marseillais à qui l’on vous a recommandé.",
+        "text": "Donnez-nous votre métier et vos secteurs. Nous regardons ce qui apparaît à votre nom et ce qui manque pour déclencher l’appel.",
         "cta_label": "Demander un diagnostic",
         "note": "Réponse sous 48 h",
         "link_label": "Voir le référencement à Marseille",

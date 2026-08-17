@@ -5,8 +5,8 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Grenoble",
-        "title": "Agence SEO à Grenoble, sur des marchés où l'expertise se démontre",
-        "lead": "Microélectronique, énergie, instrumentation, montagne : le tissu grenoblois est probablement l'un des plus techniques de France. Les prospects y sont ingénieurs, ils lisent avant de contacter, et ils repèrent immédiatement l'argumentaire creux.",
+        "title": "Agence SEO à Grenoble, sur des marchés où l’expertise se démontre",
+        "lead": "Microélectronique, énergie, instrumentation, montagne : le tissu grenoblois est probablement l’un des plus techniques de France. Les prospects y sont ingénieurs, ils lisent avant de contacter, et ils repèrent immédiatement l’argumentaire creux.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -36,7 +36,7 @@
           "settings": {
             "value": "Montagne",
             "label": "un marché saisonnier propre",
-            "note": "Équipement, tourisme, services d'altitude : des recherches concentrées sur quelques mois."
+            "note": "Équipement, tourisme, services d’altitude : des recherches concentrées sur quelques mois."
           }
         },
         "s3": {
@@ -44,7 +44,7 @@
           "settings": {
             "value": "Vallées",
             "label": "une géographie contraignante",
-            "note": "Grenoble, Voiron, Grésivaudan : des bassins séparés par le relief autant que par la distance."
+            "note": "Grenoble, Voiron, Grésivaudan : des bassins séparés par le relief autant que par la distance."
           }
         }
       },
@@ -59,7 +59,7 @@
       "settings": {
         "surface": "paper",
         "eyebrow": "Déroulé",
-        "title": "Se rendre crédible auprès d'un public technique.",
+        "title": "Se rendre crédible auprès d’un public technique.",
         "text": ""
       },
       "blocks": {
@@ -67,7 +67,7 @@
           "type": "step",
           "settings": {
             "title": "Identifier le vocabulaire réel",
-            "text": "Relever les termes exacts employés dans votre filière. L'approximation se voit immédiatement.",
+            "text": "Relever les termes exacts employés dans votre filière. L’approximation se voit immédiatement.",
             "duration": "Semaine 1"
           }
         },
@@ -75,7 +75,7 @@
           "type": "step",
           "settings": {
             "title": "Produire de la documentation",
-            "text": "Notes techniques, cas d'application, contraintes et limites. Ce qui se lit et se partage entre pairs.",
+            "text": "Notes techniques, cas d’application, contraintes et limites. Ce qui se lit et se partage entre pairs.",
             "duration": "Semaines 2-8"
           }
         },
@@ -91,7 +91,7 @@
           "type": "step",
           "settings": {
             "title": "Couvrir les bassins",
-            "text": "Traiter séparément les vallées où vous intervenez : le relief structure les recherches.",
+            "text": "Traiter séparément les vallées où vous intervenez : le relief structure les recherches.",
             "duration": "Semaines 4-10"
           }
         }
@@ -110,7 +110,7 @@
         "reverse": true,
         "eyebrow": "Notre lecture",
         "title": "Donnez des chiffres à un prospect ingénieur, il vous consultera.",
-        "text": "<p>« Solutions innovantes » et « savoir-faire reconnu » n'ont aucun effet sur ce public — ils en ont même un négatif, en signalant l'absence de contenu réel. Ce qui convainc : des tolérances, des matériaux, des délais, des limites clairement énoncées.</p><p>C'est plus exigeant à produire, et c'est exactement pour cela que la concurrence y est faible.</p>"
+        "text": "<p>« Solutions innovantes » et « savoir-faire reconnu » n’ont aucun effet sur ce public — ils en ont même un négatif, en signalant l’absence de contenu réel. Ce qui convainc : des tolérances, des matériaux, des délais, des limites clairement énoncées.</p><p>C’est plus exigeant à produire, et c’est exactement pour cela que la concurrence y est faible.</p>"
       },
       "blocks": {
         "b1": {
@@ -158,14 +158,14 @@
           "type": "qa",
           "settings": {
             "question": "Mon marché est trop spécialisé pour le référencement.",
-            "answer": "<p>Un marché spécialisé est le terrain le plus favorable au référencement. Peu de volume, mais une intention d'achat presque systématique et quasiment aucun concurrent sérieux en face. Dix visiteurs par mois qui cherchent exactement votre procédé valent mieux que mille visiteurs curieux.</p>"
+            "answer": "<p>Un marché spécialisé est le terrain le plus favorable au référencement. Peu de volume, mais une intention d’achat presque systématique et quasiment aucun concurrent sérieux en face. Dix visiteurs par mois qui cherchent exactement votre procédé valent mieux que mille visiteurs curieux.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il traiter Voiron et le Grésivaudan séparément ?",
-            "answer": "<p>Oui, si vous y intervenez. Le relief structure les habitudes autant que l'administration : un client du Grésivaudan cherche rarement « Grenoble ». Ce sont des zones distinctes, avec une concurrence bien plus faible que sur la ville-centre.</p>"
+            "question": "Faut-il traiter Voiron et le Grésivaudan séparément ?",
+            "answer": "<p>Oui, si vous y intervenez. Le relief structure les habitudes autant que l’administration : un client du Grésivaudan cherche rarement « Grenoble ». Ce sont des zones distinctes, avec une concurrence bien plus faible que sur la ville-centre.</p>"
           }
         }
       },
@@ -218,7 +218,7 @@
           "type": "item",
           "settings": {
             "icon": "gauge",
-            "title": "Search Console : les 5 rapports utiles",
+            "title": "Search Console : les 5 rapports utiles",
             "text": "Et comment les lire",
             "link": "/blogs/ressources/search-console-rapports-essentiels",
             "link_label": "Lire le guide"

@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Nantes",
         "title": "Agence SEO à Nantes, pour capter les nouveaux arrivants",
-        "lead": "Nantes gagne des habitants et des entreprises chaque année. Cette croissance crée de la demande, mais elle attire aussi de nouveaux prestataires : sur beaucoup de métiers, le nombre de concurrents a doublé en quelques années.",
+        "lead": "Nantes gagne des habitants et des entreprises chaque année. Cette croissance crée de la demande, mais elle attire aussi de nouveaux prestataires : sur beaucoup de métiers, le nombre de concurrents a doublé en quelques années.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -61,28 +61,28 @@
         "reverse": false,
         "eyebrow": "Notre lecture",
         "title": "Les nouveaux arrivants cherchent tout, et ne connaissent personne.",
-        "text": "<p>Une métropole qui accueille chaque année des milliers de nouveaux habitants génère un flux permanent de recherches sans idée préconçue : médecin, artisan, garagiste, comptable. Ces personnes n'ont ni recommandation ni habitude — elles prennent le premier résultat crédible.</p><p>C'est une opportunité que peu d'entreprises locales exploitent explicitement.</p>"
+        "text": "<p>Une métropole qui accueille chaque année des milliers de nouveaux habitants génère un flux permanent de recherches sans idée préconçue : médecin, artisan, garagiste, comptable. Ces personnes n’ont ni recommandation ni habitude — elles prennent le premier résultat crédible.</p><p>C’est une opportunité que peu d’entreprises locales exploitent explicitement.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
-            "title": "Contenus d'orientation",
-            "text": "Répondre aux questions de quelqu'un qui ne connaît pas encore la ville capte une demande à faible concurrence."
+            "title": "Contenus d’orientation",
+            "text": "Répondre aux questions de quelqu’un qui ne connaît pas encore la ville capte une demande à faible concurrence."
           }
         },
         "b2": {
           "type": "point",
           "settings": {
             "title": "Preuves accessibles",
-            "text": "Sans bouche-à-oreille, le visiteur s'appuie entièrement sur ce que montre le site."
+            "text": "Sans bouche-à-oreille, le visiteur s’appuie entièrement sur ce que montre le site."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
             "title": "Fiche impeccable",
-            "text": "Pour un nouvel arrivant, la fiche d'établissement est souvent le seul point de comparaison."
+            "text": "Pour un nouvel arrivant, la fiche d’établissement est souvent le seul point de comparaison."
           }
         }
       },
@@ -106,8 +106,8 @@
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Contenus d'orientation",
-            "text": "Répondre aux questions de quelqu'un qui découvre la ville : une demande réelle, presque sans concurrence."
+            "title": "Contenus d’orientation",
+            "text": "Répondre aux questions de quelqu’un qui découvre la ville : une demande réelle, presque sans concurrence."
           }
         },
         "g2": {
@@ -115,15 +115,15 @@
           "settings": {
             "icon": "target",
             "title": "Fiche irréprochable",
-            "text": "Pour un arrivant sans réseau, votre fiche d'établissement est souvent le seul élément de comparaison."
+            "text": "Pour un arrivant sans réseau, votre fiche d’établissement est souvent le seul élément de comparaison."
           }
         },
         "g3": {
           "type": "item",
           "settings": {
             "icon": "signal",
-            "title": "Communes de l'agglomération",
-            "text": "Saint-Herblain, Rezé, Orvault : des recherches distinctes et bien plus accessibles que Nantes."
+            "title": "Communes de l’agglomération",
+            "text": "Saint-Herblain, Rezé, Orvault : des recherches distinctes et bien plus accessibles que Nantes."
           }
         },
         "g4": {
@@ -131,7 +131,7 @@
           "settings": {
             "icon": "gauge",
             "title": "Exigence de finition",
-            "text": "Sur un marché habitué au numérique, un site approximatif élimine avant même l'appel."
+            "text": "Sur un marché habitué au numérique, un site approximatif élimine avant même l’appel."
           }
         }
       },
@@ -158,15 +158,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Le milieu numérique nantais est-il un frein ou un atout ?",
-            "answer": "<p>Un atout, à condition d'assumer un niveau d'exigence supérieur. Ces clients détectent immédiatement un site bâclé ou un discours creux — mais ils reconnaissent aussi le travail sérieux et le recommandent volontiers.</p>"
+            "question": "Le milieu numérique nantais est-il un frein ou un atout ?",
+            "answer": "<p>Un atout, à condition d’assumer un niveau d’exigence supérieur. Ces clients détectent immédiatement un site bâclé ou un discours creux — mais ils reconnaissent aussi le travail sérieux et le recommandent volontiers.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il viser Saint-Herblain, Rezé ou Saint-Nazaire séparément ?",
-            "answer": "<p>Oui, si vous y intervenez réellement. Ces communes ont leurs propres recherches et une concurrence bien moindre que sur Nantes. Saint-Nazaire relève d'ailleurs d'un bassin distinct, avec son propre tissu industriel — la traiter comme une banlieue nantaise serait une erreur.</p>"
+            "question": "Faut-il viser Saint-Herblain, Rezé ou Saint-Nazaire séparément ?",
+            "answer": "<p>Oui, si vous y intervenez réellement. Ces communes ont leurs propres recherches et une concurrence bien moindre que sur Nantes. Saint-Nazaire relève d’ailleurs d’un bassin distinct, avec son propre tissu industriel — la traiter comme une banlieue nantaise serait une erreur.</p>"
           }
         }
       },
@@ -179,8 +179,8 @@
       "type": "content-cta",
       "settings": {
         "eyebrow": "Étape suivante",
-        "title": "Regardons si vous captez les Nantais qui viennent d'arriver.",
-        "text": "Indiquez-nous votre métier et vos communes. Nous mesurons votre visibilité auprès d'une clientèle qui ne vous connaît pas encore.",
+        "title": "Regardons si vous captez les Nantais qui viennent d’arriver.",
+        "text": "Indiquez-nous votre métier et vos communes. Nous mesurons votre visibilité auprès d’une clientèle qui ne vous connaît pas encore.",
         "cta_label": "Demander un relevé de position",
         "note": "Réponse sous 48 h",
         "link_label": "Voir la prestation SEO",

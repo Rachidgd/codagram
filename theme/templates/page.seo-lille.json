@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Lille",
         "title": "Agence SEO à Lille, sur un bassin transfrontalier négligé",
-        "lead": "La métropole lilloise fonctionne avec la Belgique : clients, fournisseurs et salariés traversent la frontière quotidiennement. Cette réalité change ce que vos clients tapent dans Google — et presque personne ne l'exploite.",
+        "lead": "La métropole lilloise fonctionne avec la Belgique : clients, fournisseurs et salariés traversent la frontière quotidiennement. Cette réalité change ce que vos clients tapent dans Google — et presque personne ne l’exploite.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -21,7 +21,7 @@
         "reverse": false,
         "eyebrow": "Notre lecture",
         "title": "La demande belge est accessible et peu disputée.",
-        "text": "<p>Un client de Mouscron ou de Tournai qui cherche un prestataire accepte souvent de venir à Lille — c'est plus proche que Bruxelles. Mais il formule sa recherche autrement, et les sites lillois ne se positionnent quasiment jamais sur ces requêtes.</p><p>Traiter explicitement cette zone représente un gain rapide, sur un terrain que vos concurrents laissent vide.</p>"
+        "text": "<p>Un client de Mouscron ou de Tournai qui cherche un prestataire accepte souvent de venir à Lille — c’est plus proche que Bruxelles. Mais il formule sa recherche autrement, et les sites lillois ne se positionnent quasiment jamais sur ces requêtes.</p><p>Traiter explicitement cette zone représente un gain rapide, sur un terrain que vos concurrents laissent vide.</p>"
       },
       "blocks": {
         "b1": {
@@ -35,14 +35,14 @@
           "type": "point",
           "settings": {
             "title": "Vocabulaire adapté",
-            "text": "Le français de Belgique a ses tournures. Les ignorer, c'est manquer la requête."
+            "text": "Le français de Belgique a ses tournures. Les ignorer, c’est manquer la requête."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
             "title": "Praticité affichée",
-            "text": "Distance, temps de trajet, modalités de facturation. Ce qui lève le doute d'un client étranger."
+            "text": "Distance, temps de trajet, modalités de facturation. Ce qui lève le doute d’un client étranger."
           }
         }
       },
@@ -82,7 +82,7 @@
           "settings": {
             "value": "Densité",
             "label": "communes imbriquées",
-            "note": "Roubaix, Tourcoing, Villeneuve-d'Ascq : des villes distinctes que les clients ne confondent jamais."
+            "note": "Roubaix, Tourcoing, Villeneuve-d’Ascq : des villes distinctes que les clients ne confondent jamais."
           }
         }
       },
@@ -105,7 +105,7 @@
           "type": "step",
           "settings": {
             "title": "Mesurer la demande belge",
-            "text": "Vérifier les volumes réels côté wallon sur votre métier avant d'investir quoi que ce soit.",
+            "text": "Vérifier les volumes réels côté wallon sur votre métier avant d’investir quoi que ce soit.",
             "duration": "Semaine 1"
           }
         },
@@ -113,7 +113,7 @@
           "type": "step",
           "settings": {
             "title": "Adapter le vocabulaire",
-            "text": "Relever les formulations propres au français de Belgique, qui diffèrent plus qu'on ne le croit.",
+            "text": "Relever les formulations propres au français de Belgique, qui diffèrent plus qu’on ne le croit.",
             "duration": "Semaine 2"
           }
         },
@@ -129,7 +129,7 @@
           "type": "step",
           "settings": {
             "title": "Couvrir la métropole",
-            "text": "Roubaix, Tourcoing, Villeneuve-d'Ascq traités séparément, avec leurs recherches propres.",
+            "text": "Roubaix, Tourcoing, Villeneuve-d’Ascq traités séparément, avec leurs recherches propres.",
             "duration": "Semaines 5-10"
           }
         }
@@ -157,15 +157,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Puis-je vraiment attirer des clients belges ?",
-            "answer": "<p>Oui, sur les métiers où le déplacement est acceptable. La frontière est une barrière administrative bien plus qu'une barrière commerciale : de nombreux habitants de la Wallonie occidentale font leurs achats et consultent leurs prestataires côté français. La concurrence sur ces requêtes est très faible.</p>"
+            "question": "Puis-je vraiment attirer des clients belges ?",
+            "answer": "<p>Oui, sur les métiers où le déplacement est acceptable. La frontière est une barrière administrative bien plus qu’une barrière commerciale : de nombreux habitants de la Wallonie occidentale font leurs achats et consultent leurs prestataires côté français. La concurrence sur ces requêtes est très faible.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il traiter Roubaix et Tourcoing à part ?",
-            "answer": "<p>Oui. Ce sont des villes avec leur identité propre et leurs propres recherches. Les englober dans « Lille métropole » vous fait manquer des requêtes nettement plus faciles à gagner que celles portant sur Lille.</p>"
+            "question": "Faut-il traiter Roubaix et Tourcoing à part ?",
+            "answer": "<p>Oui. Ce sont des villes avec leur identité propre et leurs propres recherches. Les englober dans « Lille métropole » vous fait manquer des requêtes nettement plus faciles à gagner que celles portant sur Lille.</p>"
           }
         }
       },
@@ -238,7 +238,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Search Console : les 5 rapports utiles",
+            "title": "Search Console : les 5 rapports utiles",
             "text": "Et comment les lire",
             "link": "/blogs/ressources/search-console-rapports-essentiels",
             "link_label": "Lire le guide"

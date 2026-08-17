@@ -5,8 +5,8 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Rennes",
-        "title": "Agence SEO à Rennes, pour un public qui compare avant d'appeler",
-        "lead": "Avec l'une des plus fortes proportions d'étudiants de France et un secteur numérique installé, Rennes a un public qui compare en ligne systématiquement. Un site incomplet ou daté élimine avant même le premier contact.",
+        "title": "Agence SEO à Rennes, pour un public qui compare avant d’appeler",
+        "lead": "Avec l’une des plus fortes proportions d’étudiants de France et un secteur numérique installé, Rennes a un public qui compare en ligne systématiquement. Un site incomplet ou daté élimine avant même le premier contact.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -61,14 +61,14 @@
         "reverse": false,
         "eyebrow": "Notre lecture",
         "title": "Un public qui lit vraiment les avis, et les réponses aux avis.",
-        "text": "<p>Sur un marché jeune et connecté, la réputation en ligne pèse au moins autant que le classement. Un professionnel bien positionné mais mal noté ne reçoit pas d'appel : le visiteur passe au suivant.</p><p>Nous traitons donc la collecte d'avis et la réponse aux avis comme une partie intégrante du référencement local, pas comme un sujet annexe.</p>"
+        "text": "<p>Sur un marché jeune et connecté, la réputation en ligne pèse au moins autant que le classement. Un professionnel bien positionné mais mal noté ne reçoit pas d’appel : le visiteur passe au suivant.</p><p>Nous traitons donc la collecte d’avis et la réponse aux avis comme une partie intégrante du référencement local, pas comme un sujet annexe.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
             "title": "Collecte régulière",
-            "text": "Quelques avis chaque mois valent mieux qu'une campagne ponctuelle suivie de deux ans de silence."
+            "text": "Quelques avis chaque mois valent mieux qu’une campagne ponctuelle suivie de deux ans de silence."
           }
         },
         "b2": {
@@ -82,7 +82,7 @@
           "type": "point",
           "settings": {
             "title": "Cohérence des plateformes",
-            "text": "Un profil soigné d'un côté et abandonné de l'autre crée un doute immédiat."
+            "text": "Un profil soigné d’un côté et abandonné de l’autre crée un doute immédiat."
           }
         }
       },
@@ -107,7 +107,7 @@
           "settings": {
             "icon": "gauge",
             "title": "Réputation en ligne",
-            "text": "Collecte régulière d'avis et réponses systématiques : sur ce public, cela pèse autant que le classement."
+            "text": "Collecte régulière d’avis et réponses systématiques : sur ce public, cela pèse autant que le classement."
           }
         },
         "g2": {
@@ -115,7 +115,7 @@
           "settings": {
             "icon": "signal",
             "title": "Vocabulaire de filière",
-            "text": "Sur l'agroalimentaire, les termes métier ouvrent des requêtes précises et très peu disputées."
+            "text": "Sur l’agroalimentaire, les termes métier ouvrent des requêtes précises et très peu disputées."
           }
         },
         "g3": {
@@ -123,7 +123,7 @@
           "settings": {
             "icon": "layers",
             "title": "Transparence des offres",
-            "text": "Un public qui compare attend des informations concrètes : périmètre, délais, ordres de prix."
+            "text": "Un public qui compare attend des informations concrètes : périmètre, délais, ordres de prix."
           }
         },
         "g4": {
@@ -131,7 +131,7 @@
           "settings": {
             "icon": "target",
             "title": "Communes de la métropole",
-            "text": "Cesson-Sévigné, Saint-Grégoire, Bruz : des zones à concurrence faible souvent oubliées."
+            "text": "Cesson-Sévigné, Saint-Grégoire, Bruz : des zones à concurrence faible souvent oubliées."
           }
         }
       },
@@ -158,15 +158,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "La population étudiante est-elle un marché intéressant ?",
-            "answer": "<p>Cela dépend entièrement du métier, et il faut être honnête : sur beaucoup d'activités, le pouvoir d'achat étudiant est faible. En revanche, le renouvellement permanent crée un flux de recherches sans habitude installée — ce qui profite aux nouveaux entrants bien positionnés.</p>"
+            "question": "La population étudiante est-elle un marché intéressant ?",
+            "answer": "<p>Cela dépend entièrement du métier, et il faut être honnête : sur beaucoup d’activités, le pouvoir d’achat étudiant est faible. En revanche, le renouvellement permanent crée un flux de recherches sans habitude installée — ce qui profite aux nouveaux entrants bien positionnés.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Comment se différencier sur un marché où tout le monde a un bon site ?",
-            "answer": "<p>Par la profondeur plutôt que par l'apparence. Quand tous les concurrents ont un site correct, la différence se fait sur le contenu. Tarifs annoncés, cas traités en détail, limites assumées. C'est plus difficile à copier qu'un design.</p>"
+            "question": "Comment se différencier sur un marché où tout le monde a un bon site ?",
+            "answer": "<p>Par la profondeur plutôt que par l’apparence. Quand tous les concurrents ont un site correct, la différence se fait sur le contenu. Tarifs annoncés, cas traités en détail, limites assumées. C’est plus difficile à copier qu’un design.</p>"
           }
         }
       },
@@ -180,7 +180,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Mesurons ce que voit un Rennais qui vous compare.",
-        "text": "Nous relevons votre position, l'état de vos avis et ce que trouvent vos prospects quand ils vérifient votre nom avant de vous appeler.",
+        "text": "Nous relevons votre position, l’état de vos avis et ce que trouvent vos prospects quand ils vérifient votre nom avant de vous appeler.",
         "cta_label": "Demander un relevé de position",
         "note": "Réponse sous 48 h",
         "link_label": "Voir la prestation SEO",
@@ -229,7 +229,7 @@
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Checklist d'audit SEO",
+            "title": "Checklist d’audit SEO",
             "text": "Les 12 points vérifiés en premier",
             "link": "/blogs/ressources/checklist-audit-seo",
             "link_label": "Lire le guide"

@@ -5,8 +5,8 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Plan du site",
-        "title": "Trouvez la page qu'il vous faut, en une vue.",
-        "lead": "Si vous cherchez quelque chose de précis, la recherche du site (Ctrl + K) est plus rapide. Cette page existe pour explorer l'ensemble.",
+        "title": "Trouvez la page qu’il vous faut, en une vue.",
+        "lead": "Si vous cherchez quelque chose de précis, la recherche du site (Ctrl + K) est plus rapide. Cette page existe pour explorer l’ensemble.",
         "cta_primary": "",
         "cta_secondary": "",
         "cta_secondary_url": ""
@@ -17,7 +17,7 @@
       "settings": {
         "eyebrow": "Navigation",
         "title": "Toutes les pages du site.",
-        "text": "Cette page se construit automatiquement depuis les menus : elle reste à jour sans intervention.",
+        "text": "Cette page se construit automatiquement depuis les menus : elle reste à jour sans intervention.",
         "blog": "ressources",
         "blog_title": "Guides"
       },

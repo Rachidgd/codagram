@@ -5,7 +5,7 @@
       "settings": {
         "show_breadcrumb": true,
         "eyebrow": "Référencement local par zone",
-        "title": "Trouvez votre ville et ce qui s'y gagne.",
+        "title": "Trouvez votre ville et ce qui s’y gagne.",
         "lead": "Chaque territoire a son tissu économique, son intensité concurrentielle et ses habitudes de recherche. Vous trouverez ici ce qui se gagne sur votre marché, et par quoi commencer chez vous.",
         "cta_primary": "Demander un relevé de position",
         "cta_secondary": "Voir la prestation SEO local",
@@ -19,7 +19,7 @@
         "reverse": false,
         "eyebrow": "Comment lire ces pages",
         "title": "Une page par zone, écrite pour cette zone.",
-        "text": "<p>La pratique courante consiste à produire une page type et à y remplacer le nom de la ville. Nous ne le faisons pas, pour deux raisons : les moteurs identifient ces gabarits et n'en retiennent qu'un, et surtout cela ne rend aucun service au lecteur.</p><p>Chaque page ci-dessous décrit un marché différent : ce qui s'y vend, qui s'y bat, et par où commencer.</p>",
+        "text": "<p>La pratique courante consiste à produire une page type et à y remplacer le nom de la ville. Nous ne le faisons pas, pour deux raisons : les moteurs identifient ces gabarits et n’en retiennent qu’un, et surtout cela ne rend aucun service au lecteur.</p><p>Chaque page ci-dessous décrit un marché différent : ce qui s’y vend, qui s’y bat, et par où commencer.</p>",
         "cta_label": "Voir ma zone en détail",
         "cta_url": "/pages/seo-local"
       },
@@ -28,7 +28,7 @@
           "type": "point",
           "settings": {
             "title": "Un contexte économique réel",
-            "text": "Secteurs dominants et dynamique locale, parce qu'ils changent la stratégie à appliquer."
+            "text": "Secteurs dominants et dynamique locale, parce qu’ils changent la stratégie à appliquer."
           }
         },
         "b2": {
@@ -42,7 +42,7 @@
           "type": "point",
           "settings": {
             "title": "Des priorités différentes",
-            "text": "Sur certaines zones, la fiche d'établissement prime. Sur d'autres, c'est le contenu technique."
+            "text": "Sur certaines zones, la fiche d’établissement prime. Sur d’autres, c’est le contenu technique."
           }
         }
       },
@@ -59,7 +59,7 @@
         "density": "dense",
         "eyebrow": "Zones couvertes",
         "title": "Quinze marchés que nous suivons régulièrement.",
-        "text": "Chaque zone a sa page, son contexte économique et ses priorités. Nous intervenons au-delà de cette liste : elle correspond aux marchés sur lesquels nous avons assez de recul pour publier une analyse."
+        "text": "Chaque zone a sa page, son contexte économique et ses priorités. Nous intervenons au-delà de cette liste : elle correspond aux marchés sur lesquels nous avons assez de recul pour publier une analyse."
       },
       "blocks": {
         "g1": {
@@ -97,7 +97,7 @@
           "settings": {
             "icon": "gauge",
             "title": "Bordeaux",
-            "text": "Un marché devenu nettement plus concurrentiel depuis l'arrivée de nouveaux entrants.",
+            "text": "Un marché devenu nettement plus concurrentiel depuis l’arrivée de nouveaux entrants.",
             "link": "/pages/agence-seo-bordeaux",
             "link_label": "Voir cette zone"
           }
@@ -107,7 +107,7 @@
           "settings": {
             "icon": "check",
             "title": "Nantes",
-            "text": "Une métropole qui accueille des milliers d'habitants sans réseau local chaque année.",
+            "text": "Une métropole qui accueille des milliers d’habitants sans réseau local chaque année.",
             "link": "/pages/agence-seo-nantes",
             "link_label": "Voir cette zone"
           }
@@ -117,7 +117,7 @@
           "settings": {
             "icon": "check",
             "title": "Rennes",
-            "text": "Un public jeune et connecté qui vérifie systématiquement les avis avant d'appeler.",
+            "text": "Un public jeune et connecté qui vérifie systématiquement les avis avant d’appeler.",
             "link": "/pages/consultant-seo-rennes",
             "link_label": "Voir cette zone"
           }
@@ -207,7 +207,7 @@
           "settings": {
             "icon": "target",
             "title": "Belgique francophone",
-            "text": "Bruxelles et la Wallonie, deux terrains qui n'ont ni la même concurrence ni le même vocabulaire.",
+            "text": "Bruxelles et la Wallonie, deux terrains qui n’ont ni la même concurrence ni le même vocabulaire.",
             "link": "/pages/consultant-seo-belgique",
             "link_label": "Voir cette zone"
           }
@@ -247,15 +247,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Vous n'êtes pas dans ma ville, est-ce un problème ?",
-            "answer": "<p>Non. Le travail de référencement se fait à distance et nous accompagnons des clients sur l'ensemble du territoire, ainsi qu'au Luxembourg, en Suisse et en Belgique. Ce qui compte, c'est de connaître le marché sur lequel vous vous battez — pas d'avoir un bureau à côté du vôtre.</p>"
+            "question": "Vous n’êtes pas dans ma ville, est-ce un problème ?",
+            "answer": "<p>Non. Le travail de référencement se fait à distance et nous accompagnons des clients sur l’ensemble du territoire, ainsi qu’au Luxembourg, en Suisse et en Belgique. Ce qui compte, c’est de connaître le marché sur lequel vous vous battez — pas d’avoir un bureau à côté du vôtre.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Ma ville n'est pas dans la liste.",
-            "answer": "<p>La liste correspond aux zones sur lesquelles nous avons assez d'observations pour publier une analyse sérieuse. Nous intervenons bien au-delà : dites-nous votre ville et nous vous ferons le même relevé de position, simplement sans page publique dédiée.</p>"
+            "question": "Ma ville n’est pas dans la liste.",
+            "answer": "<p>La liste correspond aux zones sur lesquelles nous avons assez d’observations pour publier une analyse sérieuse. Nous intervenons bien au-delà : dites-nous votre ville et nous vous ferons le même relevé de position, simplement sans page publique dédiée.</p>"
           }
         }
       },
@@ -269,7 +269,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Un relevé de position sur votre zone, gratuitement.",
-        "text": "Indiquez votre activité et vos communes. Nous mesurons où vous apparaissez aujourd'hui depuis chacune d'elles.",
+        "text": "Indiquez votre activité et vos communes. Nous mesurons où vous apparaissez aujourd’hui depuis chacune d’elles.",
         "cta_label": "Demander le relevé",
         "note": "Réponse sous 48 h"
       },

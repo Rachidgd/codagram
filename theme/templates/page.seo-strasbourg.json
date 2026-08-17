@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Strasbourg",
         "title": "Agence SEO à Strasbourg, sur un marché bilingue",
-        "lead": "Strasbourg vit avec l'Allemagne : clients, salariés et fournisseurs franchissent le Rhin quotidiennement. Une partie mesurable de la demande locale se formule en allemand, sur des requêtes que presque aucun site strasbourgeois ne couvre.",
+        "lead": "Strasbourg vit avec l’Allemagne : clients, salariés et fournisseurs franchissent le Rhin quotidiennement. Une partie mesurable de la demande locale se formule en allemand, sur des requêtes que presque aucun site strasbourgeois ne couvre.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -21,14 +21,14 @@
         "reverse": false,
         "eyebrow": "Notre lecture",
         "title": "La demande allemande est mesurable, et presque libre.",
-        "text": "<p>Un habitant de Kehl qui cherche un prestataire trouve d'abord des sites allemands. Les entreprises strasbourgeoises, à quelques kilomètres, sont invisibles pour lui — simplement parce qu'aucune page ne parle sa langue.</p><p>Quelques pages en allemand, correctement rédigées et balisées, ouvrent un marché de proximité que personne ne dispute.</p>"
+        "text": "<p>Un habitant de Kehl qui cherche un prestataire trouve d’abord des sites allemands. Les entreprises strasbourgeoises, à quelques kilomètres, sont invisibles pour lui — simplement parce qu’aucune page ne parle sa langue.</p><p>Quelques pages en allemand, correctement rédigées et balisées, ouvrent un marché de proximité que personne ne dispute.</p>"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
-            "title": "Mesurer d'abord",
-            "text": "Le volume de recherche allemand sur votre métier se vérifie. Il justifie ou non l'investissement."
+            "title": "Mesurer d’abord",
+            "text": "Le volume de recherche allemand sur votre métier se vérifie. Il justifie ou non l’investissement."
           }
         },
         "b2": {
@@ -105,7 +105,7 @@
           "type": "step",
           "settings": {
             "title": "Mesurer la demande allemande",
-            "text": "Volumes réels côté badois sur votre activité. C'est cette mesure qui décide, pas une intuition.",
+            "text": "Volumes réels côté badois sur votre activité. C’est cette mesure qui décide, pas une intuition.",
             "duration": "Semaine 1"
           }
         },
@@ -113,7 +113,7 @@
           "type": "step",
           "settings": {
             "title": "Choisir les pages à traduire",
-            "text": "Trois à cinq pages suffisent presque toujours. Traduire l'intégralité du site est rarement justifié.",
+            "text": "Trois à cinq pages suffisent presque toujours. Traduire l’intégralité du site est rarement justifié.",
             "duration": "Semaine 2"
           }
         },
@@ -121,7 +121,7 @@
           "type": "step",
           "settings": {
             "title": "Traduction et balisage",
-            "text": "Traduction professionnelle et déclaration correcte des versions, pour qu'elles ne se concurrencent pas.",
+            "text": "Traduction professionnelle et déclaration correcte des versions, pour qu’elles ne se concurrencent pas.",
             "duration": "Semaines 3-5"
           }
         },
@@ -157,15 +157,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il vraiment une version allemande ?",
-            "answer": "<p>Uniquement si le volume le justifie, et cela se mesure avant tout engagement. Sur les services aux particuliers proches de la frontière, c'est souvent rentable. Sur une activité tournée vers l'intérieur du territoire, non. Nous vérifions les volumes réels avant de recommander quoi que ce soit.</p>"
+            "question": "Faut-il vraiment une version allemande ?",
+            "answer": "<p>Uniquement si le volume le justifie, et cela se mesure avant tout engagement. Sur les services aux particuliers proches de la frontière, c’est souvent rentable. Sur une activité tournée vers l’intérieur du territoire, non. Nous vérifions les volumes réels avant de recommander quoi que ce soit.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Les institutions européennes représentent-elles un marché ?",
-            "answer": "<p>Indirectement, surtout. Le tissu de prestataires, de cabinets et de services qui gravite autour est bien plus accessible que les institutions, dont les achats passent par des marchés publics. C'est ce tissu périphérique que le référencement peut réellement atteindre.</p>"
+            "question": "Les institutions européennes représentent-elles un marché ?",
+            "answer": "<p>Indirectement, surtout. Le tissu de prestataires, de cabinets et de services qui gravite autour est bien plus accessible que les institutions, dont les achats passent par des marchés publics. C’est ce tissu périphérique que le référencement peut réellement atteindre.</p>"
           }
         }
       },

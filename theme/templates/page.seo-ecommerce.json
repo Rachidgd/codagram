@@ -6,11 +6,11 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement e-commerce",
         "title": "Vos catégories rapportent plus que vos fiches produit.",
-        "lead": "Vos acheteurs arrivent presque toujours par les pages de catégorie. Nous construisons d'abord cette architecture : c'est elle qui capte le trafic qui achète.",
+        "lead": "Vos acheteurs arrivent presque toujours par les pages de catégorie. Nous construisons d’abord cette architecture : c’est elle qui capte le trafic qui achète.",
         "cta_primary": "Auditer ma boutique",
         "parent_label": "Expertises",
         "parent_url": "/pages/agence-seo",
-        "cta_secondary": "Voir l'agence Shopify",
+        "cta_secondary": "Voir l’agence Shopify",
         "cta_secondary_url": "/pages/agence-shopify"
       },
       "blocks": {
@@ -20,7 +20,7 @@
             "prefix": "",
             "value": "1",
             "suffix": " page",
-            "label": "par intention d'achat"
+            "label": "par intention d’achat"
           }
         },
         "p2": {
@@ -44,8 +44,8 @@
         "surface": "paper",
         "reverse": false,
         "eyebrow": "Le principe",
-        "title": "Une intention d'achat, une page — et une seule.",
-        "text": "<p>« Chaussures de running », « chaussures de running femme », « chaussures de running trail » : trois intentions différentes, donc trois pages distinctes. À l'inverse, une même intention couverte par une catégorie, un filtre et une page de contenu crée trois concurrents internes qui s'annulent.</p><p>La première étape d'une mission e-commerce est presque toujours un travail de tri : quelles pages garder, lesquelles fusionner, lesquelles rediriger.</p>",
+        "title": "Une intention d’achat, une page — et une seule.",
+        "text": "<p>« Chaussures de running », « chaussures de running femme », « chaussures de running trail » : trois intentions différentes, donc trois pages distinctes. À l’inverse, une même intention couverte par une catégorie, un filtre et une page de contenu crée trois concurrents internes qui s’annulent.</p><p>La première étape d’une mission e-commerce est presque toujours un travail de tri : quelles pages garder, lesquelles fusionner, lesquelles rediriger.</p>",
         "cta_label": "Faire auditer ma boutique",
         "cta_url": "/pages/audit-ecommerce"
       },
@@ -61,14 +61,14 @@
           "type": "point",
           "settings": {
             "title": "Filtres maîtrisés",
-            "text": "Certaines combinaisons méritent d'être indexées, la plupart non. Sans arbitrage, un catalogue génère des milliers d'URL inutiles."
+            "text": "Certaines combinaisons méritent d’être indexées, la plupart non. Sans arbitrage, un catalogue génère des milliers d’URL inutiles."
           }
         },
         "b3": {
           "type": "point",
           "settings": {
             "title": "Fiches produit utiles",
-            "text": "Description propre, attributs structurés, avis, disponibilité. Elles convertissent plus qu'elles n'attirent — et c'est normal."
+            "text": "Description propre, attributs structurés, avis, disponibilité. Elles convertissent plus qu’elles n’attirent — et c’est normal."
           }
         }
       },
@@ -83,12 +83,12 @@
       "settings": {
         "surface": "dark",
         "eyebrow": "Où investir en premier",
-        "title": "Commencez par les catégories : elles rapportent plus vite.",
-        "text": "Le catalogue et la notoriété de vos marques déplacent le curseur, mais rarement l'ordre.",
+        "title": "Commencez par les catégories : elles rapportent plus vite.",
+        "text": "Le catalogue et la notoriété de vos marques déplacent le curseur, mais rarement l’ordre.",
         "col_criteria": "Critère",
         "col_a": "Pages de catégorie",
         "col_b": "Fiches produit",
-        "verdict": "Dans la majorité des boutiques que nous reprenons, l'effort part sur les fiches alors que les catégories captent la demande. Nous inversons cet ordre."
+        "verdict": "Dans la majorité des boutiques que nous reprenons, l’effort part sur les fiches alors que les catégories captent la demande. Nous inversons cet ordre."
       },
       "blocks": {
         "r1": {
@@ -119,7 +119,7 @@
           "type": "row",
           "settings": {
             "criteria": "Risque de duplication",
-            "value_a": "Faible si l'arbitrage est fait",
+            "value_a": "Faible si l’arbitrage est fait",
             "value_b": "Élevé — descriptions fournisseur"
           }
         },
@@ -171,8 +171,8 @@
           "type": "item",
           "settings": {
             "icon": "signal",
-            "title": "Recherche d'intentions",
-            "text": "Requêtes réelles de votre marché, classées par niveau de maturité d'achat."
+            "title": "Recherche d’intentions",
+            "text": "Requêtes réelles de votre marché, classées par niveau de maturité d’achat."
           }
         },
         "g3": {
@@ -196,7 +196,7 @@
           "settings": {
             "icon": "gauge",
             "title": "Performance",
-            "text": "Vitesse mobile, images, scripts. Sur une boutique, la lenteur coûte deux fois : classement et conversion."
+            "text": "Vitesse mobile, images, scripts. Sur une boutique, la lenteur coûte deux fois : classement et conversion."
           }
         },
         "g6": {
@@ -204,7 +204,7 @@
           "settings": {
             "icon": "target",
             "title": "Suivi commercial",
-            "text": "Positions rapprochées du chiffre d'affaires par catégorie, pas seulement du trafic."
+            "text": "Positions rapprochées du chiffre d’affaires par catégorie, pas seulement du trafic."
           }
         }
       },
@@ -224,7 +224,7 @@
         "density": "comfortable",
         "eyebrow": "Aller plus loin",
         "title": "Le flux produits se contrôle séparément.",
-        "text": "Le référencement place vos pages dans les résultats classiques. Le flux Merchant Center décide de votre présence dans Shopping et Performance Max : deux chantiers distincts, et le second est souvent négligé."
+        "text": "Le référencement place vos pages dans les résultats classiques. Le flux Merchant Center décide de votre présence dans Shopping et Performance Max : deux chantiers distincts, et le second est souvent négligé."
       },
       "blocks": {
         "g1": {
@@ -232,9 +232,9 @@
           "settings": {
             "icon": "cart",
             "title": "Audit Merchant Center",
-            "text": "Refus silencieux, attributs manquants, prix désynchronisés : nous reprenons le flux ligne par ligne.",
+            "text": "Refus silencieux, attributs manquants, prix désynchronisés : nous reprenons le flux ligne par ligne.",
             "link": "/pages/audit-merchant-center",
-            "link_label": "Voir l'audit du flux"
+            "link_label": "Voir l’audit du flux"
           }
         },
         "g2": {
@@ -244,7 +244,7 @@
             "title": "Audit e-commerce",
             "text": "Là où votre tunnel perd des commandes, marche par marche, sur mobile et sur ordinateur.",
             "link": "/pages/audit-ecommerce",
-            "link_label": "Voir l'audit de boutique"
+            "link_label": "Voir l’audit de boutique"
           }
         }
       },
@@ -257,7 +257,7 @@
       "type": "content-quote",
       "settings": {
         "eyebrow": "Ce que nous ne ferons pas",
-        "quote": "Nous ne produirons pas de texte de catégorie destiné aux moteurs et illisible pour vos clients. Si un paragraphe n'aide pas à choisir un produit, il n'a rien à faire sur la page — quel que soit son intérêt supposé pour le référencement.",
+        "quote": "Nous ne produirons pas de texte de catégorie destiné aux moteurs et illisible pour vos clients. Si un paragraphe n’aide pas à choisir un produit, il n’a rien à faire sur la page — quel que soit son intérêt supposé pour le référencement.",
         "attribution": "Clickscreation"
       }
     },
@@ -277,29 +277,29 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Que faire des descriptions fournisseur ?",
-            "answer": "<p>Les réécrire sur les produits qui comptent, et assumer de les laisser telles quelles sur la longue traîne. Réécrire dix mille fiches n'est ni finançable ni utile : mieux vaut traiter les deux cents références qui font l'essentiel du chiffre et structurer correctement le reste.</p>"
+            "question": "Que faire des descriptions fournisseur ?",
+            "answer": "<p>Les réécrire sur les produits qui comptent, et assumer de les laisser telles quelles sur la longue traîne. Réécrire dix mille fiches n’est ni finançable ni utile : mieux vaut traiter les deux cents références qui font l’essentiel du chiffre et structurer correctement le reste.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il indexer les pages de filtres ?",
-            "answer": "<p>Seulement celles qui correspondent à une vraie demande — une couleur ou une taille recherchées explicitement, par exemple. Les autres combinaisons doivent rester non indexées, sinon le catalogue génère des milliers d'URL quasi identiques qui diluent l'exploration.</p>"
+            "question": "Faut-il indexer les pages de filtres ?",
+            "answer": "<p>Seulement celles qui correspondent à une vraie demande — une couleur ou une taille recherchées explicitement, par exemple. Les autres combinaisons doivent rester non indexées, sinon le catalogue génère des milliers d’URL quasi identiques qui diluent l’exploration.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Comment gérer les produits épuisés ou supprimés ?",
-            "answer": "<p>Jamais par une suppression sèche renvoyant une erreur. Selon le cas : maintien de la page avec proposition d'alternatives si le produit revient, ou redirection vers la catégorie parente s'il disparaît définitivement. Un catalogue qui bouge sans plan de redirections perd du classement chaque saison.</p>"
+            "question": "Comment gérer les produits épuisés ou supprimés ?",
+            "answer": "<p>Jamais par une suppression sèche renvoyant une erreur. Selon le cas : maintien de la page avec proposition d’alternatives si le produit revient, ou redirection vers la catégorie parente s’il disparaît définitivement. Un catalogue qui bouge sans plan de redirections perd du classement chaque saison.</p>"
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
-            "question": "Travaillez-vous uniquement sur Shopify ?",
-            "answer": "<p>Non, mais c'est notre terrain principal et celui où nous intervenons directement dans le thème. Sur d'autres plateformes, nous produisons les recommandations et travaillons avec votre équipe technique pour la mise en œuvre.</p>"
+            "question": "Travaillez-vous uniquement sur Shopify ?",
+            "answer": "<p>Non, mais c’est notre terrain principal et celui où nous intervenons directement dans le thème. Sur d’autres plateformes, nous produisons les recommandations et travaillons avec votre équipe technique pour la mise en œuvre.</p>"
           }
         }
       },
@@ -315,10 +315,10 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Regardons ce que capte réellement votre catalogue.",
-        "text": "Communiquez-nous l'adresse de votre boutique et un accès en lecture à vos données de recherche. Nous identifions les pages qui se font concurrence et les intentions non couvertes.",
+        "text": "Communiquez-nous l’adresse de votre boutique et un accès en lecture à vos données de recherche. Nous identifions les pages qui se font concurrence et les intentions non couvertes.",
         "cta_label": "Auditer ma boutique",
         "note": "Réponse sous 48 h",
-        "link_label": "Voir l'audit e-commerce",
+        "link_label": "Voir l’audit e-commerce",
         "link_url": "/pages/audit-ecommerce"
       },
       "blocks": {
@@ -354,7 +354,7 @@
           "type": "item",
           "settings": {
             "icon": "layers",
-            "title": "Collections Shopify : l'architecture",
+            "title": "Collections Shopify : l’architecture",
             "text": "Celle qui fait ranker et vendre",
             "link": "/blogs/ressources/collections-shopify-architecture-seo",
             "link_label": "Lire le guide"

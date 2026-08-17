@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Optimisation de la conversion",
         "title": "Le même trafic peut produire deux fois plus de demandes.",
-        "lead": "Avant d'acheter de la visibilité supplémentaire, il est presque toujours plus rentable de convertir celle que vous avez déjà. Vous gardez le même trafic, vous obtenez plus de demandes : nous retirons une à une les raisons d'hésiter.",
+        "lead": "Avant d’acheter de la visibilité supplémentaire, il est presque toujours plus rentable de convertir celle que vous avez déjà. Vous gardez le même trafic, vous obtenez plus de demandes : nous retirons une à une les raisons d’hésiter.",
         "cta_primary": "Analyser mes parcours",
         "parent_label": "Expertises",
         "parent_url": "/pages/agence-seo",
@@ -55,16 +55,16 @@
         "reverse": false,
         "eyebrow": "Le diagnostic",
         "title": "Vos visiteurs sont prêts à acheter. Quelque chose les arrête.",
-        "text": "<p>La conclusion la plus fréquente — et la plus fausse — est d'accuser la qualité du trafic. Dans la plupart des cas que nous reprenons, les visiteurs étaient les bons. C'est la page qui ne répondait pas à leur question au bon moment.</p><p>Nous partons donc de l'observation, pas de l'opinion : enregistrements de sessions, points d'abandon, formulaires abandonnés à mi-parcours, requêtes internes sans résultat.</p>",
-        "cta_label": "Trouver mes points d'abandon",
+        "text": "<p>La conclusion la plus fréquente — et la plus fausse — est d’accuser la qualité du trafic. Dans la plupart des cas que nous reprenons, les visiteurs étaient les bons. C’est la page qui ne répondait pas à leur question au bon moment.</p><p>Nous partons donc de l’observation, pas de l’opinion : enregistrements de sessions, points d’abandon, formulaires abandonnés à mi-parcours, requêtes internes sans résultat.</p>",
+        "cta_label": "Trouver mes points d’abandon",
         "cta_url": "/pages/reserver"
       },
       "blocks": {
         "b1": {
           "type": "point",
           "settings": {
-            "title": "Là où l'attention se perd",
-            "text": "Analyse des parcours réels : ce que les visiteurs regardent, ignorent, et à quel endroit ils repartent."
+            "title": "Là où l’attention se perd",
+            "text": "Analyse des parcours réels : ce que les visiteurs regardent, ignorent, et à quel endroit ils repartent."
           }
         },
         "b2": {
@@ -101,7 +101,7 @@
           "type": "step",
           "settings": {
             "title": "Observer",
-            "text": "Données d'audience, enregistrements, entonnoirs, retours du service commercial. Aucune hypothèse sans matière.",
+            "text": "Données d’audience, enregistrements, entonnoirs, retours du service commercial. Aucune hypothèse sans matière.",
             "duration": "Semaine 1"
           }
         },
@@ -125,7 +125,7 @@
           "type": "step",
           "settings": {
             "title": "Mesurer",
-            "text": "Comparaison sur une durée suffisante pour être crédible. Un gain non reproductible n'est pas un gain.",
+            "text": "Comparaison sur une durée suffisante pour être crédible. Un gain non reproductible n’est pas un gain.",
             "duration": "Semaines 3-5"
           }
         }
@@ -151,7 +151,7 @@
           "type": "item",
           "settings": {
             "icon": "gauge",
-            "title": "Message d'accueil",
+            "title": "Message d’accueil",
             "text": "La première phrase décide de la suite. Nous la réécrivons à partir des mots de vos clients."
           }
         },
@@ -168,7 +168,7 @@
           "settings": {
             "icon": "layers",
             "title": "Hiérarchie mobile",
-            "text": "L'ordre des blocs sur petit écran n'est pas celui du bureau. Beaucoup de sites l'ignorent."
+            "text": "L’ordre des blocs sur petit écran n’est pas celui du bureau. Beaucoup de sites l’ignorent."
           }
         },
         "g4": {
@@ -184,15 +184,15 @@
           "settings": {
             "icon": "signal",
             "title": "Prix et engagement",
-            "text": "Un tarif absent n'élimine pas l'objection, il l'aggrave. Nous cadrons comment en parler."
+            "text": "Un tarif absent n’élimine pas l’objection, il l’aggrave. Nous cadrons comment en parler."
           }
         },
         "g6": {
           "type": "item",
           "settings": {
             "icon": "cart",
-            "title": "Tunnel d'achat",
-            "text": "Panier, livraison, paiement : les trois marches où l'on perd le plus de clients déjà décidés."
+            "title": "Tunnel d’achat",
+            "text": "Panier, livraison, paiement : les trois marches où l’on perd le plus de clients déjà décidés."
           }
         }
       },
@@ -211,11 +211,11 @@
         "surface": "dark",
         "eyebrow": "Deux formats",
         "title": "Deux façons de travailler, selon votre rythme.",
-        "text": "Le premier parcourt le chemin avec vous, le second vous en donne la carte. Ils ne s'adressent pas aux mêmes situations.",
+        "text": "Le premier parcourt le chemin avec vous, le second vous en donne la carte. Ils ne s’adressent pas aux mêmes situations.",
         "col_criteria": "Critère",
         "col_a": "Accompagnement continu",
         "col_b": "Audit ponctuel",
-        "verdict": "Si personne chez vous n'a le temps d'appliquer les recommandations, l'audit seul finit dans un dossier. Nous préférons le dire avant."
+        "verdict": "Si personne chez vous n’a le temps d’appliquer les recommandations, l’audit seul finit dans un dossier. Nous préférons le dire avant."
       },
       "blocks": {
         "r1": {
@@ -282,7 +282,7 @@
         "surface": "paper",
         "eyebrow": "Questions fréquentes",
         "title": "Questions fréquentes sur le CRO.",
-        "text": "L'optimisation de la conversion attire beaucoup de raccourcis. Voici où nous nous situons.",
+        "text": "L’optimisation de la conversion attire beaucoup de raccourcis. Voici où nous nous situons.",
         "cta_label": "Poser une autre question",
         "open_first": true,
         "single_open": false,
@@ -292,29 +292,29 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Faut-il beaucoup de trafic pour faire du CRO ?",
-            "answer": "<p>Pour des tests comparatifs statistiquement fiables, oui : en dessous d'un certain volume de conversions mensuelles, un écart observé relève du hasard. Mais l'essentiel du travail — clarté du message, preuves, allègement des formulaires, hiérarchie mobile — s'appuie sur l'observation qualitative et fonctionne à tout volume.</p>"
+            "question": "Faut-il beaucoup de trafic pour faire du CRO ?",
+            "answer": "<p>Pour des tests comparatifs statistiquement fiables, oui : en dessous d’un certain volume de conversions mensuelles, un écart observé relève du hasard. Mais l’essentiel du travail — clarté du message, preuves, allègement des formulaires, hiérarchie mobile — s’appuie sur l’observation qualitative et fonctionne à tout volume.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Allez-vous refaire tout mon site ?",
+            "question": "Allez-vous refaire tout mon site ?",
             "answer": "<p>Non, sauf si le diagnostic conclut que la structure elle-même est le frein. Nous modifions peu et nous mesurons, plutôt que de tout remplacer. Une refonte complète efface aussi les repères de vos visiteurs fidèles.</p>"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "question": "Comment mesurez-vous vos résultats ?",
-            "answer": "<p>Sur le taux de conversion de l'objectif défini avec vous — demande de devis, prise de rendez-vous, achat — et sur une période complète incluant vos variations habituelles. Nous documentons le point de départ avant toute modification : sans mesure initiale, aucune progression n'est démontrable.</p>"
+            "question": "Comment mesurez-vous vos résultats ?",
+            "answer": "<p>Sur le taux de conversion de l’objectif défini avec vous — demande de devis, prise de rendez-vous, achat — et sur une période complète incluant vos variations habituelles. Nous documentons le point de départ avant toute modification : sans mesure initiale, aucune progression n’est démontrable.</p>"
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
-            "question": "Travaillez-vous sur Shopify et sur les sites sur mesure ?",
-            "answer": "<p>Les deux, ainsi que sur WordPress. Les principes de décision d'achat sont identiques ; seules changent les modalités techniques d'application. Sur Shopify, nous intervenons directement dans le thème.</p>"
+            "question": "Travaillez-vous sur Shopify et sur les sites sur mesure ?",
+            "answer": "<p>Les deux, ainsi que sur WordPress. Les principes de décision d’achat sont identiques ; seules changent les modalités techniques d’application. Sur Shopify, nous intervenons directement dans le thème.</p>"
           }
         }
       },
@@ -330,7 +330,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Regardons où partent vos visiteurs.",
-        "text": "Décrivez votre site et l'action que vous voulez déclencher. Nous identifions les trois frictions les plus coûteuses et vous disons lesquelles se corrigent en quelques jours.",
+        "text": "Décrivez votre site et l’action que vous voulez déclencher. Nous identifions les trois frictions les plus coûteuses et vous disons lesquelles se corrigent en quelques jours.",
         "cta_label": "Analyser mes parcours",
         "note": "Réponse sous 48 h",
         "link_label": "Voir la prestation Shopify",
@@ -379,7 +379,7 @@
           "type": "item",
           "settings": {
             "icon": "check",
-            "title": "Anatomie d'une page contact qui convertit",
+            "title": "Anatomie d’une page contact qui convertit",
             "text": "7 éléments souvent absents",
             "link": "/blogs/ressources/page-contact-qui-convertit",
             "link_label": "Lire le guide"

@@ -6,7 +6,7 @@
         "show_breadcrumb": true,
         "eyebrow": "Référencement naturel — Marseille",
         "title": "Agence SEO à Marseille, où la recherche se joue au quartier",
-        "lead": "Peu de villes françaises ont une géographie commerciale aussi fragmentée. Entre le Vieux-Port, la Joliette, les quartiers sud et l'est marseillais, votre client cherche près de chez lui. Google le suit, et vous classe secteur par secteur.",
+        "lead": "Peu de villes françaises ont une géographie commerciale aussi fragmentée. Entre le Vieux-Port, la Joliette, les quartiers sud et l’est marseillais, votre client cherche près de chez lui. Google le suit, et vous classe secteur par secteur.",
         "cta_primary": "Évaluer ma visibilité",
         "parent_label": "SEO local",
         "parent_url": "/pages/seo-local",
@@ -28,8 +28,8 @@
           "type": "item",
           "settings": {
             "icon": "target",
-            "title": "Fiche d'établissement",
-            "text": "Sur un marché où le bloc cartographique capte l'essentiel des clics de proximité, c'est ce qui rapporte le plus vite."
+            "title": "Fiche d’établissement",
+            "text": "Sur un marché où le bloc cartographique capte l’essentiel des clics de proximité, c’est ce qui rapporte le plus vite."
           }
         },
         "g2": {
@@ -37,7 +37,7 @@
           "settings": {
             "icon": "signal",
             "title": "Pages par secteur",
-            "text": "Quartiers sud, centre, est : des zones que les clients distinguent nettement et que Google traite séparément."
+            "text": "Quartiers sud, centre, est : des zones que les clients distinguent nettement et que Google traite séparément."
           }
         },
         "g3": {
@@ -45,7 +45,7 @@
           "settings": {
             "icon": "gauge",
             "title": "Saisonnalité",
-            "text": "Anticiper les pics plutôt que les subir : les contenus doivent être en place deux mois avant la saison."
+            "text": "Anticiper les pics plutôt que les subir : les contenus doivent être en place deux mois avant la saison."
           }
         },
         "g4": {
@@ -53,7 +53,7 @@
           "settings": {
             "icon": "layers",
             "title": "Avis clients",
-            "text": "Dans les métiers de service marseillais, le volume d'avis pèse lourd dans la décision finale."
+            "text": "Dans les métiers de service marseillais, le volume d’avis pèse lourd dans la décision finale."
           }
         }
       },
@@ -70,8 +70,8 @@
         "surface": "paper",
         "reverse": true,
         "eyebrow": "Notre lecture",
-        "title": "La saisonnalité s'anticipe, elle ne se rattrape pas.",
-        "text": "<p>Sur les métiers liés au tourisme, à la restauration ou aux travaux extérieurs, la demande explose sur quelques mois. Publier un contenu en pleine saison revient à arriver quand tout est joué : une page a besoin de plusieurs semaines pour trouver sa position.</p><p>Nous calons donc le calendrier éditorial sur vos pics réels, avec une avance systématique.</p>"
+        "title": "La saisonnalité s’anticipe, elle ne se rattrape pas.",
+        "text": "<p>Sur les métiers liés au tourisme, à la restauration ou aux travaux extérieurs, la demande explose sur quelques mois. Publier un contenu en pleine saison revient à arriver quand tout est joué : une page a besoin de plusieurs semaines pour trouver sa position.</p><p>Nous calons donc le calendrier éditorial sur vos pics réels, avec une avance systématique.</p>"
       },
       "blocks": {
         "b1": {
@@ -124,7 +124,7 @@
           "settings": {
             "value": "Port",
             "label": "logistique et import-export",
-            "note": "Un tissu d'entreprises tourné vers l'international, qui cherche en français comme en anglais."
+            "note": "Un tissu d’entreprises tourné vers l’international, qui cherche en français comme en anglais."
           }
         },
         "s3": {
@@ -158,15 +158,15 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "question": "Je suis dans les quartiers sud, dois-je viser tout Marseille ?",
-            "answer": "<p>Rarement au début. Une page ancrée sur votre secteur réel se positionne beaucoup plus vite et attire des clients qui accepteront de se déplacer. La requête « Marseille » se travaille ensuite, une fois le site installé.</p>"
+            "question": "Je suis dans les quartiers sud, dois-je viser tout Marseille ?",
+            "answer": "<p>Rarement au début. Une page ancrée sur votre secteur réel se positionne beaucoup plus vite et attire des clients qui accepteront de se déplacer. La requête « Marseille » se travaille ensuite, une fois le site installé.</p>"
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
-            "question": "Le port et l'international changent-ils quelque chose ?",
-            "answer": "<p>Oui, si vos clients sont des entreprises de transport, de négoce ou de logistique : une partie de leurs recherches se fait en anglais. Cela peut justifier une version anglaise de quelques pages clés, mais seulement après vérification des volumes réels — pas par principe.</p>"
+            "question": "Le port et l’international changent-ils quelque chose ?",
+            "answer": "<p>Oui, si vos clients sont des entreprises de transport, de négoce ou de logistique : une partie de leurs recherches se fait en anglais. Cela peut justifier une version anglaise de quelques pages clés, mais seulement après vérification des volumes réels — pas par principe.</p>"
           }
         }
       },
@@ -180,7 +180,7 @@
       "settings": {
         "eyebrow": "Étape suivante",
         "title": "Relevons votre visibilité quartier par quartier.",
-        "text": "Nous mesurons votre classement depuis plusieurs points de Marseille : les écarts entre secteurs sont souvent considérables.",
+        "text": "Nous mesurons votre classement depuis plusieurs points de Marseille : les écarts entre secteurs sont souvent considérables.",
         "cta_label": "Demander un relevé de position",
         "note": "Réponse sous 48 h",
         "link_label": "Voir la prestation SEO",
@@ -229,7 +229,7 @@
           "type": "item",
           "settings": {
             "icon": "gauge",
-            "title": "Obtenir plus d'avis Google",
+            "title": "Obtenir plus d’avis Google",
             "text": "8 façons sans enfreindre les règles",
             "link": "/blogs/ressources/obtenir-plus-avis-google",
             "link_label": "Lire le guide"
