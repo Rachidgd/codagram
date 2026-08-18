@@ -1,0 +1,235 @@
+/* ===========================================================================
+   REFONTE — couche de surcharge, août 2026
+   ===========================================================================
+
+   Chargée après signal.css. Elle ne remplace rien : elle redéfinit les jetons
+   et les quelques règles qui décident de l'impression générale. On la retire
+   en supprimant une ligne dans theme.liquid.
+
+   Le diagnostic qui la motive tient en une phrase : si on se perd sur le site,
+   ce n'est pas à cause du volume de texte, c'est parce que le fond est sombre
+   du premier au dernier pixel et qu'aucune frontière ne sépare une section de
+   la suivante.
+
+   Et le choix du clair ne vient pas d'une mode. Il vient de l'acheteur. Sur
+   les douze questions posées dans les FAQ des pages artisan, restaurant,
+   indépendant et PME, aucune ne porte sur la technologie. Le fond sombre est
+   un code de l'industrie du logiciel ; un couvreur ou un restaurateur n'en
+   fait pas partie, et un code visuel qui ne s'adresse pas à vous vous fait
+   conclure que le service n'est pas pour vous.
+   ========================================================================= */
+
+:root {
+  /* --- Le sol : clair, légèrement chaud pour ne pas virer à l'hôpital ---- */
+  --ground:        #f7f8f4;
+  --ground-2:      #eef1ea;   /* bandes alternées                          */
+  --ground-line:   #dfe3da;
+
+  /* --- Les zones sombres : trois par page, pas quinze ------------------- */
+  --ink:           #0b0e0d;
+  --ink-2:         #101412;
+  --ink-line:      rgb(255 255 255 / 0.10);
+
+  /* --- Texte ------------------------------------------------------------ */
+  --on-ground:     #161c1a;   /* 14,8:1 sur --ground                       */
+  --on-ground-mut: #4b5651;   /*  7,1:1 sur --ground                       */
+  --on-ink:        #eef2ef;   /* 15,4:1 sur --ink                          */
+  --on-ink-mut:    #98a39e;   /*  7,3:1 sur --ink                          */
+
+  /* --- L'accent, unique -------------------------------------------------
+     Le vert acide reste : c'est la seule chose visuellement identifiable que
+     possède l'agence, et un dirigeant qui compare cinq devis s'en souvient.
+     Ce qui change, c'est la dose. En petite quantité sur fond clair il se lit
+     comme une signature ; en aplats sur fond noir il se lit comme une
+     startup. Même teinte, deux messages.
+
+     Règle absolue : sur fond clair, le vert est une surface, jamais du texte.
+     Le texte posé sur du vert est encré, jamais blanc.                    */
+  --volt:          #d6fb51;
+  --volt-deep:     #6f8a17;   /* le seul vert lisible en texte sur clair   */
+
+  /* --- Rayons : calmes, pas empruntés ------------------------------------
+     Les références SaaS montent à 40 px. Au-delà de 24, c'est leur code, pas
+     le nôtre.                                                             */
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* --- Rythme -----------------------------------------------------------
+     Large ENTRE les sections pour qu'il repère, dense À L'INTÉRIEUR pour
+     qu'il compare. Un site trop aéré signale « agence chère » à quelqu'un
+     qui hésite avec un indépendant à 3 500 €.                             */
+  --spacing-section:    clamp(4rem, 3rem + 4.5vw, 7.5rem);
+  --spacing-section-sm: clamp(2.75rem, 2.2rem + 2.2vw, 4.5rem);
+}
+
+/* ---------------------------------------------------------------------------
+   LE SOL BASCULE
+   Le corps du site devient clair. Les sections qui portent explicitement
+   surface-dark restent sombres et deviennent des accents de composition.
+   -------------------------------------------------------------------------*/
+html { background: var(--ground); }
+
+body {
+  background: var(--ground);
+  color: var(--on-ground);
+}
+
+body.surface-dark {
+  --surface-fg: var(--on-ground);
+  --surface-fg-muted: var(--on-ground-mut);
+  --surface-bg: var(--ground);
+  --surface-line: var(--ground-line);
+  background: var(--ground);
+  color: var(--on-ground);
+}
+
+/* Les sections claires existantes s'alignent sur le nouveau sol. */
+.surface-paper,
+[data-surface="paper"] {
+  --surface-fg: var(--on-ground);
+  --surface-fg-muted: var(--on-ground-mut);
+  --surface-bg: var(--ground);
+  --surface-line: var(--ground-line);
+  background: var(--ground);
+  color: var(--on-ground);
+}
+
+/* Une section sur trois passe en gris très clair : c'est la moitié du travail
+   de séparation, et elle ne coûte rien. */
+.surface-paper + .surface-paper,
+[data-surface="paper"] + [data-surface="paper"] {
+  background: var(--ground-2);
+}
+
+/* Les zones sombres restent sombres, mais posées sur du clair elles cessent
+   d'être le décor et redeviennent un signal. */
+section.surface-dark,
+section[data-surface="dark"] {
+  --surface-fg: var(--on-ink);
+  --surface-fg-muted: var(--on-ink-mut);
+  --surface-bg: var(--ink);
+  --surface-line: var(--ink-line);
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+/* ---------------------------------------------------------------------------
+   TYPOGRAPHIE — un cran plus large, et un titre qui porte
+   -------------------------------------------------------------------------*/
+:root {
+  --text-display: clamp(2rem, 1.5rem + 2.6vw, 3.75rem);
+  --text-h2:      clamp(1.5rem, 1.28rem + 1.1vw, 2.375rem);
+}
+
+h1 { letter-spacing: -0.032em; line-height: 1.05; }
+h2 { letter-spacing: -0.024em; }
+
+/* ---------------------------------------------------------------------------
+   BOUTONS — pilule, et le vert ne porte jamais de texte clair
+   -------------------------------------------------------------------------*/
+.btn {
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.btn--primary,
+.btn--solid {
+  background: var(--volt);
+  color: var(--ink);          /* encré, jamais blanc : c'est la règle       */
+  border-color: var(--volt);
+}
+
+.btn--primary:hover,
+.btn--solid:hover {
+  background: #c8ef3c;
+  border-color: #c8ef3c;
+}
+
+/* Le bouton fantôme sur fond clair a besoin d'un contour visible, sinon il
+   disparaît — c'est le défaut classique de la bascule clair. */
+[data-surface="paper"] .btn--ghost,
+body.surface-dark .btn--ghost {
+  color: var(--on-ground);
+  border-color: var(--ground-line);
+  background: #fff;
+}
+
+[data-surface="dark"] .btn--ghost {
+  color: var(--on-ink);
+  border-color: var(--ink-line);
+  background: transparent;
+}
+
+/* ---------------------------------------------------------------------------
+   CARTES ET BORDURES
+   Ombre longue et douce plutôt que trait dur : sur fond clair, l'ombre
+   sépare mieux que la bordure et fatigue moins.
+   -------------------------------------------------------------------------*/
+[data-surface="paper"] .card,
+body.surface-dark .card {
+  background: #fff;
+  border: 1px solid var(--ground-line);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 2px rgb(11 14 13 / 0.04),
+              0 12px 32px -16px rgb(11 14 13 / 0.12);
+}
+
+/* ---------------------------------------------------------------------------
+   L'INSTRUMENT DU HERO DISPARAÎT
+   Sa courbe est une sinusoïde calculée en JavaScript, affichée sous le
+   libellé « trafic organique » et une période réelle. Nous vendons un
+   service, pas un logiciel : un faux instrument coûte plus qu'il ne rapporte.
+   Les chiffres, eux, restent — avec leur nom de client.
+   -------------------------------------------------------------------------*/
+.cc-console__screen,
+.cc-console__axis { display: none; }
+
+.cc-console {
+  background: var(--ink-2);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--ink-line);
+}
+
+/* Un chiffre qui s'enroule évoque le compteur marketing ; imprimé, il évoque
+   le relevé. Avec deux cas documentés, c'est le second registre qu'il faut. */
+.cc-console__readout .metric,
+.cc-proofbar .metric { font-variant-numeric: tabular-nums; }
+
+/* ---------------------------------------------------------------------------
+   BARRE D'ACTION MOBILE
+   Sous 640 px, le bouton d'en-tête est masqué et la seule action se trouve au
+   fond du menu burger. Sur des requêtes majoritairement mobiles, c'est la
+   correction au meilleur rendement du chantier.
+   -------------------------------------------------------------------------*/
+.cc-mobilebar { display: none; }
+
+@media (max-width: 639px) {
+  .cc-mobilebar {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 90;
+    display: grid;
+    gap: 0.35rem;
+    justify-items: center;
+    padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
+    background: color-mix(in oklab, var(--ground) 92%, transparent);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--ground-line);
+    transform: translateY(110%);
+    transition: transform 0.28s var(--ease-out-quint, ease);
+  }
+  .cc-mobilebar.is-visible { transform: none; }
+  .cc-mobilebar .btn { width: 100%; justify-content: center; }
+  .cc-mobilebar span {
+    font-size: var(--text-micro, 0.75rem);
+    color: var(--on-ground-mut);
+  }
+  main { padding-bottom: 5.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-mobilebar { transition: none; }
+}

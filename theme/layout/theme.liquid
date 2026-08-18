@@ -4,21 +4,35 @@
   #
   # Le champ SEO natif de Shopify fait foi, et lui seul : page_title et
   # page_description renvoient ce qui est saisi dans « Référencement » côté
-  # admin, sinon le titre de l'objet. Un seul endroit à modifier, pas de
-  # métachamp parallèle qui écrase silencieusement la saisie.
+  # admin. Un seul endroit à modifier, éditable par le client sans toucher au
+  # thème.
+  #
+  # Ce fichier portait une surcharge codée en dur pour une quarantaine de
+  # gabarits — un « case template.suffix » qui réécrivait titre et description
+  # page par page. Elle a été retirée le 17 août pour trois raisons.
+  #
+  # Elle rendait les champs Shopify inopérants : les balises corrigées le
+  # 8 août dans l'admin ne s'affichaient nulle part, écrasées au rendu.
+  #
+  # Elle réintroduisait les défauts déjà refusés en relecture : suffixe
+  # « | Clickscreation » sur presque toutes les pages, titres à 62 et
+  # 70 caractères donc tronqués dans les résultats, et la même phrase à trou —
+  # « audit, requêtes, pages, technique et suivi localisé » — sur quinze pages
+  # villes.
+  #
+  # Elle plaçait enfin le contenu éditorial dans le code, là où le client ne
+  # peut pas le corriger lui-même.
   #
   # Les replis ci-dessous ne comblent qu'un champ laissé vide.
   # ---------------------------------------------------------------------------
   assign seo_title = page_title
   assign seo_description = page_description
-  assign seo_title_is_custom = false
   assign seo_noindex = false
 
   case request.page_type
     when 'index'
       assign seo_title = settings.home_meta_title | default: page_title
       assign seo_description = settings.home_meta_description | default: page_description
-      assign seo_title_is_custom = true
 
     when 'page'
       if page.metafields.editorial.noindex.value == true
@@ -34,28 +48,11 @@
       endif
 
     when 'blog'
-      # Le réglage blog_meta_title n'est jamais vide, donc seo_title_is_custom
-      # était toujours vrai et le suffixe d'étiquette ci-dessous ne s'ajoutait
-      # jamais : l'index, ses 3 pages de pagination et les 37 archives
-      # d'étiquettes partageaient un seul titre et une seule description.
-      # Les archives et les pages 2+ passent en noindex : 17 d'entre elles ne
-      # portent qu'un article et concurrencent donc cet article.
       assign seo_title = settings.blog_meta_title | default: page_title
       assign seo_description = settings.blog_meta_description | default: page_description
-      assign seo_title_is_custom = true
-      if current_tags
-        assign tag_courant = current_tags | join: ', '
-        assign seo_title = tag_courant | append: ' | Guides Clickscreation'
-        assign seo_description = 'Nos guides sur ' | append: tag_courant | append: ' : méthode, exemples et corrections à appliquer sur votre site.'
-        assign seo_noindex = true
-      endif
-      if current_page != 1
-        assign seo_title = seo_title | append: ' — Page ' | append: current_page
-        assign seo_noindex = true
-      endif
 
-    # Aucune de ces trois pages n'a de valeur dans un index de recherche, et
-    # le robots.txt de Shopify ne bloque pas /search.
+    # Aucune de ces trois pages n'a sa place dans un index de recherche, et le
+    # robots.txt de Shopify ne bloque pas /search.
     when 'search'
       assign seo_noindex = true
     when 'cart'
@@ -63,6 +60,24 @@
     when '404'
       assign seo_noindex = true
   endcase
+
+  # Les archives d'étiquettes et les pages de pagination portaient le même
+  # titre que l'index du blog : 41 URL pour une seule balise. Elles reçoivent
+  # leur propre intitulé et sortent de l'index — dix-sept d'entre elles ne
+  # contiennent qu'un article et lui font concurrence.
+  if current_tags
+    assign tag_text = current_tags | join: ', '
+    assign seo_title = seo_title | append: ' — ' | append: tag_text
+    if seo_description != blank
+      assign seo_description = seo_description | append: ' Thème : ' | append: tag_text | append: '.'
+    endif
+    assign seo_noindex = true
+  endif
+
+  if current_page != 1
+    assign seo_title = seo_title | append: ' — Page ' | append: current_page
+    assign seo_noindex = true
+  endif
 
   assign og_title = seo_title
   assign og_description = seo_description
@@ -76,7 +91,7 @@
     <link rel="canonical" href="{{ canonical_url }}">
     {%- if seo_noindex %}<meta name="robots" content="noindex, follow">{% endif -%}
 
-    <title>{{ seo_title | escape }}{% unless seo_title_is_custom %}{% if current_tags %} — {{ current_tags | join: ', ' }}{% endif %}{% if current_page != 1 %} — Page {{ current_page }}{% endif %}{% endunless %}</title>
+    <title>{{ seo_title | escape }}</title>
     {%- if seo_description != blank %}
       <meta name="description" content="{{ seo_description | strip_html | truncate: 300 | escape }}">
     {%- endif %}
@@ -107,6 +122,7 @@
     </style>
 
     {{ 'signal.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'refonte.css' | asset_url | stylesheet_tag }}
 
     {%- render 'meta-social', title: og_title, description: og_description -%}
     {%- render 'structured-data', title: seo_title, description: seo_description -%}
