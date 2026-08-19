@@ -1,0 +1,276 @@
+{%- liquid
+  comment
+    Les blocs « Catégorie » fixent l'ordre, l'icône et la largeur.
+    Les blocs « Question » s'y rattachent par le nom de la catégorie.
+    Shopify n'autorisant pas les blocs imbriqués, c'est ce rattachement
+    par nom qui tient lieu de hiérarchie.
+  endcomment
+  assign cat_names = ''
+  for block in section.blocks
+    if block.type == 'category' and block.settings.title != blank
+      if cat_names == blank
+        assign cat_names = block.settings.title
+      else
+        assign cat_names = cat_names | append: '~~' | append: block.settings.title
+      endif
+    endif
+  endfor
+  assign categories = cat_names | split: '~~'
+  assign cat_count = categories.size | plus: 0
+
+  assign question_total = 0
+  for block in section.blocks
+    if block.type == 'question' and block.settings.question != blank
+      assign question_total = question_total | plus: 1
+    endif
+  endfor
+-%}
+
+{%- if cat_count > 0 and question_total > 0 -%}
+  <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
+    <div class="k-container">
+      {%- if section.settings.show_nav -%}
+        <nav class="k-faqcat__nav" aria-label="{{ section.settings.nav_label }}">
+          {%- for category in categories -%}
+            {%- liquid
+              assign slug = category | handle
+              assign cat_icon = ''
+              assign cat_total = 0
+              for block in section.blocks
+                if block.type == 'category' and block.settings.title == category
+                  assign cat_icon = block.settings.icon
+                endif
+                if block.type == 'question' and block.settings.category == category and block.settings.question != blank
+                  assign cat_total = cat_total | plus: 1
+                endif
+              endfor
+            -%}
+            {%- if cat_total > 0 -%}
+              <a class="k-faqcat__tab" href="#faq-{{ slug }}-{{ section.id }}">
+                {%- if cat_icon != blank and cat_icon != 'none' -%}
+                  <span class="k-faqcat__tab-icon">{% render 'icon', name: cat_icon, class: 'k-icon--lg' %}</span>
+                {%- endif -%}
+                <span class="k-faqcat__tab-name">{{ category }}</span>
+                <span class="k-faqcat__tab-count">
+                  {{ cat_total }} {% if cat_total > 1 %}{{ section.settings.count_plural }}{% else %}{{ section.settings.count_singular }}{% endif %}
+                </span>
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </nav>
+      {%- endif -%}
+
+      <div class="k-faqcat">
+        {%- for category in categories -%}
+          {%- liquid
+            assign slug = category | handle
+            assign cat_icon = ''
+            assign cat_width = 'half'
+            assign cat_total = 0
+            for block in section.blocks
+              if block.type == 'category' and block.settings.title == category
+                assign cat_icon = block.settings.icon
+                assign cat_width = block.settings.width
+              endif
+              if block.type == 'question' and block.settings.category == category and block.settings.question != blank
+                assign cat_total = cat_total | plus: 1
+              endif
+            endfor
+          -%}
+          {%- if cat_total > 0 -%}
+            <section class="k-faqcat__panel k-faqcat__panel--{{ cat_width }}" id="faq-{{ slug }}-{{ section.id }}">
+              <h2 class="k-faqcat__title">
+                {%- if cat_icon != blank and cat_icon != 'none' -%}
+                  {% render 'icon', name: cat_icon, class: 'k-icon--sm' %}
+                {%- endif -%}
+                {{ category }}
+              </h2>
+              <div class="k-accordion k-faqcat__list">
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'question' and block.settings.category == category and block.settings.question != blank -%}
+                    <details
+                      class="k-accordion__item"
+                      {% if block.settings.open %}open{% endif %}
+                      {{ block.shopify_attributes }}
+                    >
+                      <summary class="k-accordion__summary">
+                        <span>{{ block.settings.question }}</span>
+                        <span class="k-accordion__icon" aria-hidden="true"></span>
+                      </summary>
+                      <div class="k-accordion__panel k-text">{{ block.settings.answer }}</div>
+                    </details>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </section>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.show_contact -%}
+        <div class="k-faqcat__contact">
+          {%- if section.settings.contact_icon != 'none' -%}
+            <span class="k-faqcat__contact-icon">
+              {% render 'icon', name: section.settings.contact_icon, class: 'k-icon--xl' %}
+            </span>
+          {%- endif -%}
+          {%- if section.settings.contact_heading != blank -%}
+            <h2 class="k-h3 k-faqcat__contact-title">{{ section.settings.contact_heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.contact_text != blank -%}
+            <p class="k-faqcat__contact-text">{{ section.settings.contact_text }}</p>
+          {%- endif -%}
+          {%- if section.settings.contact_email != blank or section.settings.contact_hours != blank -%}
+            <ul class="k-faqcat__contact-lines">
+              {%- if section.settings.contact_email != blank -%}
+                <li>
+                  {% render 'icon', name: 'mail', class: 'k-icon--sm' %}
+                  <a href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a>
+                </li>
+              {%- endif -%}
+              {%- if section.settings.contact_hours != blank -%}
+                <li>
+                  {% render 'icon', name: 'clock', class: 'k-icon--sm' %}
+                  <span>{{ section.settings.contact_hours }}</span>
+                </li>
+              {%- endif -%}
+            </ul>
+          {%- endif -%}
+          {%- if section.settings.contact_label != blank -%}
+            <a class="k-btn k-faqcat__contact-cta" href="{{ section.settings.contact_url }}">
+              {{ section.settings.contact_label }}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  {%- if section.settings.seo_schema -%}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {%- assign rendered = 0 -%}
+          {%- for category in categories -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'question' and block.settings.category == category and block.settings.question != blank and block.settings.answer != blank -%}
+                {%- if rendered > 0 %},{% endif -%}
+                {%- assign rendered = rendered | plus: 1 -%}
+                {
+                  "@type": "Question",
+                  "name": {{ block.settings.question | strip_html | json }},
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": {{ block.settings.answer | strip_html | json }}
+                  }
+                }
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        ]
+      }
+    </script>
+  {%- endif -%}
+{%- else -%}
+  {% render 'section-empty', message: "FAQ par catégories : ajoutez au moins une catégorie et une question." %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "FAQ par catégories",
+  "class": "k-faqcat-section",
+  "settings": [
+    { "type": "checkbox", "id": "show_nav", "label": "Afficher le sommaire", "default": true },
+    { "type": "text", "id": "nav_label", "label": "Intitulé du sommaire", "default": "Catégories de questions" },
+    { "type": "text", "id": "count_singular", "label": "Compteur au singulier", "default": "question" },
+    { "type": "text", "id": "count_plural", "label": "Compteur au pluriel", "default": "questions" },
+    { "type": "checkbox", "id": "seo_schema", "label": "Balisage FAQPage pour Google", "default": true },
+    { "type": "header", "content": "Encart contact" },
+    { "type": "checkbox", "id": "show_contact", "label": "Afficher l'encart", "default": true },
+    {
+      "type": "select",
+      "id": "contact_icon",
+      "label": "Pictogramme",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "headset", "label": "Casque" },
+        { "value": "mail", "label": "Enveloppe" },
+        { "value": "shield-check", "label": "Bouclier" }
+      ],
+      "default": "headset"
+    },
+    { "type": "text", "id": "contact_heading", "label": "Titre", "default": "Une équipe à votre écoute" },
+    { "type": "textarea", "id": "contact_text", "label": "Texte" },
+    { "type": "text", "id": "contact_email", "label": "Adresse email" },
+    { "type": "text", "id": "contact_hours", "label": "Horaires" },
+    { "type": "text", "id": "contact_label", "label": "Bouton", "default": "Nous contacter" },
+    { "type": "url", "id": "contact_url", "label": "Lien du bouton" },
+    { "type": "header", "content": "Apparence" },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" },
+        { "value": "blue-tint", "label": "Bleu très clair" }
+      ],
+      "default": "soft"
+    }
+  ],
+  "max_blocks": 50,
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Catégorie",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Nom", "info": "Reportez ce nom à l'identique dans les questions rattachées." },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Pictogramme",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "bottle", "label": "Flacon" },
+            { "value": "capsule", "label": "Gélule" },
+            { "value": "truck", "label": "Livraison" },
+            { "value": "credit-card", "label": "Carte bancaire" },
+            { "value": "package", "label": "Colis" },
+            { "value": "headset", "label": "Casque" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "shield-check", "label": "Bouclier" },
+            { "value": "flask", "label": "Fiole" }
+          ],
+          "default": "bottle"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Largeur du bloc",
+          "info": "Permet de reproduire la mise en page de la maquette.",
+          "options": [
+            { "value": "third", "label": "Un tiers" },
+            { "value": "half", "label": "Une moitié" },
+            { "value": "full", "label": "Pleine largeur" }
+          ],
+          "default": "half"
+        }
+      ]
+    },
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "category", "label": "Catégorie", "info": "Doit correspondre exactement au nom d'une catégorie." },
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "richtext", "id": "answer", "label": "Réponse" },
+        { "type": "checkbox", "id": "open", "label": "Ouverte au chargement", "default": false }
+      ]
+    }
+  ],
+  "presets": [{ "name": "FAQ par catégories" }]
+}
+{% endschema %}

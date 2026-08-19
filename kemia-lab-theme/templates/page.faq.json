@@ -5,125 +5,415 @@
       "settings": {
         "show_breadcrumb": true,
         "breadcrumb_label": "FAQ",
-        "eyebrow": "FAQ",
-        "heading": "Nous répondons à vos questions",
+        "eyebrow": "Centre d'aide",
+        "heading": "Questions",
+        "highlight": "fréquentes",
         "heading_style": "sans",
-        "text": "<p>Retrouvez ici les réponses aux questions les plus fréquentes concernant nos produits, leur utilisation et vos commandes.</p>",
-        "show_media": true,
+        "text": "<p>Produits, utilisation, commande, livraison, paiement, retours : retrouvez ici les réponses aux questions que l'on nous pose le plus souvent.</p>",
+        "show_media": false,
         "background": "soft"
       }
     },
     "faq": {
-      "type": "faq",
+      "type": "faq-categories",
       "blocks": {
-        "p1": {
+        "cat-1": {
+          "type": "category",
+          "settings": {
+            "title": "Produits & formules",
+            "icon": "bottle",
+            "width": "half"
+          }
+        },
+        "cat-2": {
+          "type": "category",
+          "settings": {
+            "title": "Utilisation",
+            "icon": "capsule",
+            "width": "half"
+          }
+        },
+        "cat-3": {
+          "type": "category",
+          "settings": {
+            "title": "Commande & livraison",
+            "icon": "truck",
+            "width": "third"
+          }
+        },
+        "cat-4": {
+          "type": "category",
+          "settings": {
+            "title": "Paiement",
+            "icon": "credit-card",
+            "width": "third"
+          }
+        },
+        "cat-5": {
+          "type": "category",
+          "settings": {
+            "title": "Retours & remboursements",
+            "icon": "package",
+            "width": "third"
+          }
+        },
+        "cat-6": {
+          "type": "category",
+          "settings": {
+            "title": "Service client",
+            "icon": "headset",
+            "width": "full"
+          }
+        },
+        "q-01": {
           "type": "question",
           "settings": {
-            "category": "Produits",
-            "icon": "bag",
+            "category": "Produits & formules",
+            "question": "Qui est Kemia Lab ?",
+            "answer": "<p>Kemia Lab est une marque française de compléments alimentaires. Nous développons des formules pensées avec exigence, en associant sélection rigoureuse des actifs, dosages affichés et transparence sur les compositions.</p>",
+            "open": true
+          }
+        },
+        "q-02": {
+          "type": "question",
+          "settings": {
+            "category": "Produits & formules",
             "question": "Qu'est-ce que 4 Vitality System ?",
-            "answer": "<p>4 Vitality System est un complément alimentaire qui réunit 7 actifs dans une seule formule, à raison de 2 gélules par jour, sur un programme de 30 jours.</p>"
+            "answer": "<p>4 Vitality System est notre première formule. Elle réunit 7 actifs autour de quatre piliers : énergie et endurance, clarté mentale, vitalité physique et bien-être intime.</p>",
+            "open": false
           }
         },
-        "p2": {
+        "q-03": {
           "type": "question",
           "settings": {
-            "category": "Produits",
-            "icon": "bag",
+            "category": "Produits & formules",
             "question": "À qui s'adresse 4 Vitality System ?",
-            "answer": "<p>La formule est réservée aux adultes. Elle est déconseillée aux femmes enceintes ou allaitantes. En cas de traitement médical, demandez l'avis de votre médecin ou de votre pharmacien.</p>"
+            "answer": "<p>Aux adultes dont le rythme quotidien est soutenu. La formule est réservée aux adultes et déconseillée aux femmes enceintes ou allaitantes.</p>",
+            "open": false
           }
         },
-        "p3": {
+        "q-04": {
           "type": "question",
           "settings": {
-            "category": "Produits",
-            "icon": "bag",
-            "question": "Quels sont les ingrédients de la formule ?",
-            "answer": "<p>La formule réunit L-Tyrosine, CDP-Choline, extrait de kola, extrait de ginseng, extrait de safran, zinc et vitamine D3. Le détail des dosages est indiqué sur la fiche produit.</p>"
+            "category": "Produits & formules",
+            "question": "Quels sont les ingrédients de 4 Vitality System ?",
+            "answer": "<p>L-Tyrosine 280 mg, CDP-Choline 200 mg, extrait de kola 208,3 mg, extrait de ginseng 200 mg, extrait de safran 30 mg, zinc 10 mg et vitamine D3 50 µg, pour 2 gélules par jour. Chaque quantité est affichée sur la fiche produit.</p>",
+            "open": false
           }
         },
-        "u1": {
+        "q-05": {
+          "type": "question",
+          "settings": {
+            "category": "Produits & formules",
+            "question": "Vos compléments sont-ils d'origine naturelle ?",
+            "answer": "<p>Nos formules associent des actifs d'origine naturelle et des nutriments comme le zinc et la vitamine D3. La composition complète de chaque produit est consultable sur sa fiche.</p>",
+            "open": false
+          }
+        },
+        "q-06": {
+          "type": "question",
+          "settings": {
+            "category": "Produits & formules",
+            "question": "Y a-t-il des allergènes dans vos formules ?",
+            "answer": "<p>La liste complète des ingrédients figure sur chaque fiche produit et sur l'étiquette. En cas d'allergie connue, vérifiez cette liste avant commande.</p>",
+            "open": false
+          }
+        },
+        "q-07": {
+          "type": "question",
+          "settings": {
+            "category": "Produits & formules",
+            "question": "Où sont fabriqués vos produits ?",
+            "answer": "<p>Nos produits sont fabriqués en France selon les plus hautes exigences de qualité.</p>",
+            "open": false
+          }
+        },
+        "q-08": {
           "type": "question",
           "settings": {
             "category": "Utilisation",
-            "icon": "user",
-            "question": "Quand prendre 4 Vitality System ?",
-            "answer": "<p>2 gélules par jour, de préférence le matin et/ou le midi, avec un grand verre d'eau.</p>"
+            "question": "Comment prendre 4 Vitality System ?",
+            "answer": "<p>2 gélules par jour, au cours du petit-déjeuner, avec un grand verre d'eau.</p>",
+            "open": false
           }
         },
-        "u2": {
+        "q-09": {
           "type": "question",
           "settings": {
             "category": "Utilisation",
-            "icon": "user",
             "question": "Combien de temps dure une cure ?",
-            "answer": "<p>Une boîte correspond à un programme de 30 jours. Les cures de 2 et 3 mois permettent de poursuivre sans interruption.</p>"
+            "answer": "<p>Une boîte couvre un programme de 30 jours. Les formats 2 et 3 mois permettent de prolonger au même rythme.</p>",
+            "open": false
           }
         },
-        "u3": {
+        "q-10": {
           "type": "question",
           "settings": {
             "category": "Utilisation",
-            "icon": "user",
-            "question": "La formule contient-elle de la caféine ?",
-            "answer": "<p>Oui, l'extrait de kola apporte 25 mg de caféine par dose journalière de 2 gélules. Tenez-en compte si vous consommez déjà du café ou du thé.</p>"
+            "question": "À quel moment de la journée le prendre ?",
+            "answer": "<p>Le matin. Si vous êtes sensible à la caféine, répartissez la prise : 1 gélule le matin et 1 gélule le midi. Évitez la prise après 16h, la dose journalière apportant 25 mg de caféine.</p>",
+            "open": false
           }
         },
-        "c1": {
+        "q-11": {
+          "type": "question",
+          "settings": {
+            "category": "Utilisation",
+            "question": "Peut-on le prendre à jeun ?",
+            "answer": "<p>Nous recommandons la prise au cours d'un repas, ce qui limite l'inconfort digestif que certaines personnes ressentent à jeun.</p>",
+            "open": false
+          }
+        },
+        "q-12": {
+          "type": "question",
+          "settings": {
+            "category": "Utilisation",
+            "question": "Peut-on associer plusieurs compléments Kemia Lab ?",
+            "answer": "<p>Si vous prenez déjà d'autres compléments, vérifiez les apports cumulés, en particulier en zinc et en vitamine D3, afin de ne pas dépasser les doses journalières recommandées.</p>",
+            "open": false
+          }
+        },
+        "q-13": {
+          "type": "question",
+          "settings": {
+            "category": "Utilisation",
+            "question": "Y a-t-il des précautions d'emploi ?",
+            "answer": "<p>Réservé aux adultes. Déconseillé aux femmes enceintes ou allaitantes. Ne pas dépasser la dose journalière recommandée. En cas de traitement médical, demandez l'avis de votre médecin ou de votre pharmacien.</p>",
+            "open": false
+          }
+        },
+        "q-14": {
           "type": "question",
           "settings": {
             "category": "Commande & livraison",
-            "icon": "truck",
             "question": "Quels sont les délais de livraison ?",
-            "answer": "<p>Les commandes sont préparées sous 24 à 48h ouvrées. Le délai de livraison dépend ensuite du transporteur sélectionné lors de la commande.</p>"
+            "answer": "<p>Votre commande est expédiée sous 24 à 48h ouvrées. Le délai de livraison dépend ensuite du transporteur choisi lors de la commande.</p>",
+            "open": false
           }
         },
-        "c2": {
+        "q-15": {
           "type": "question",
           "settings": {
             "category": "Commande & livraison",
-            "icon": "truck",
-            "question": "La livraison est-elle offerte ?",
-            "answer": "<p>La livraison est offerte à partir de 60€ d'achat.</p>"
+            "question": "La livraison est-elle gratuite ?",
+            "answer": "<p>La livraison est offerte dès 60 € d'achat.</p>",
+            "open": false
           }
         },
-        "pay1": {
+        "q-16": {
+          "type": "question",
+          "settings": {
+            "category": "Commande & livraison",
+            "question": "Livrez-vous à l'international ?",
+            "answer": "<p>Les destinations desservies s'affichent au moment du paiement, en fonction de votre adresse de livraison.</p>",
+            "open": false
+          }
+        },
+        "q-17": {
+          "type": "question",
+          "settings": {
+            "category": "Commande & livraison",
+            "question": "Comment suivre ma commande ?",
+            "answer": "<p>Un e-mail de confirmation vous est envoyé dès l'expédition, avec les informations de suivi.</p>",
+            "open": false
+          }
+        },
+        "q-18": {
+          "type": "question",
+          "settings": {
+            "category": "Commande & livraison",
+            "question": "Mon colis est-il discret ?",
+            "answer": "<p>Vos commandes sont expédiées dans un emballage neutre, sans mention du contenu à l'extérieur.</p>",
+            "open": false
+          }
+        },
+        "q-19": {
+          "type": "question",
+          "settings": {
+            "category": "Commande & livraison",
+            "question": "Que faire si mon colis est en retard ?",
+            "answer": "<p>Vérifiez d'abord les informations de suivi reçues par e-mail. Si la situation ne se débloque pas, écrivez-nous à hello@kemialab.com en précisant votre numéro de commande.</p>",
+            "open": false
+          }
+        },
+        "q-20": {
           "type": "question",
           "settings": {
             "category": "Paiement",
-            "icon": "lock",
             "question": "Quels moyens de paiement acceptez-vous ?",
-            "answer": "<p>Les moyens de paiement disponibles sont affichés au moment du règlement. Toutes les transactions sont sécurisées.</p>"
+            "answer": "<p>Carte bancaire, Apple Pay et PayPal. Les moyens disponibles s'affichent au moment du paiement.</p>",
+            "open": false
           }
         },
-        "r1": {
+        "q-21": {
           "type": "question",
           "settings": {
-            "category": "Retours",
-            "icon": "package",
-            "question": "Puis-je retourner ma commande ?",
-            "answer": "<p>Les conditions de retour sont détaillées dans notre politique de remboursement, accessible depuis le pied de page.</p>"
+            "category": "Paiement",
+            "question": "Le paiement est-il sécurisé ?",
+            "answer": "<p>Oui. Les transactions sont chiffrées et traitées par notre prestataire de paiement. Kemia Lab n'a jamais accès à vos données bancaires.</p>",
+            "open": false
+          }
+        },
+        "q-22": {
+          "type": "question",
+          "settings": {
+            "category": "Paiement",
+            "question": "Puis-je payer en plusieurs fois ?",
+            "answer": "<p>Les solutions de paiement fractionné disponibles s'affichent au moment du paiement, selon le montant de votre panier.</p>",
+            "open": false
+          }
+        },
+        "q-23": {
+          "type": "question",
+          "settings": {
+            "category": "Paiement",
+            "question": "Ma carte sera-t-elle débitée immédiatement ?",
+            "answer": "<p>Oui, le débit intervient à la validation de la commande.</p>",
+            "open": false
+          }
+        },
+        "q-24": {
+          "type": "question",
+          "settings": {
+            "category": "Retours & remboursements",
+            "question": "Puis-je retourner un produit ?",
+            "answer": "<p>Pour des raisons d'hygiène et de sécurité alimentaire, un complément descellé ne peut pas être repris. Un produit non ouvert et dans son emballage d'origine peut faire l'objet d'un retour.</p>",
+            "open": false
+          }
+        },
+        "q-25": {
+          "type": "question",
+          "settings": {
+            "category": "Retours & remboursements",
+            "question": "Quels sont les délais pour un retour ?",
+            "answer": "<p>Les conditions et délais applicables figurent dans nos conditions générales de vente.</p>",
+            "open": false
+          }
+        },
+        "q-26": {
+          "type": "question",
+          "settings": {
+            "category": "Retours & remboursements",
+            "question": "Comment être remboursé ?",
+            "answer": "<p>Une fois le retour réceptionné et vérifié, le remboursement est effectué sur le moyen de paiement utilisé lors de la commande.</p>",
+            "open": false
+          }
+        },
+        "q-27": {
+          "type": "question",
+          "settings": {
+            "category": "Retours & remboursements",
+            "question": "Mon produit est arrivé abîmé, que faire ?",
+            "answer": "<p>Écrivez-nous à hello@kemialab.com avec votre numéro de commande et une photo du produit reçu. Nous trouvons une solution.</p>",
+            "open": false
+          }
+        },
+        "q-28": {
+          "type": "question",
+          "settings": {
+            "category": "Service client",
+            "question": "Comment vous contacter ?",
+            "answer": "<p>Par e-mail à hello@kemialab.com, ou via le formulaire de la page Contact.</p>",
+            "open": false
+          }
+        },
+        "q-29": {
+          "type": "question",
+          "settings": {
+            "category": "Service client",
+            "question": "Quels sont vos horaires de réponse ?",
+            "answer": "<p>Du lundi au vendredi, de 10h à 18h, hors jours fériés. Nous faisons notre maximum pour répondre dans les meilleurs délais.</p>",
+            "open": false
+          }
+        },
+        "q-30": {
+          "type": "question",
+          "settings": {
+            "category": "Service client",
+            "question": "Où trouver mon numéro de commande ?",
+            "answer": "<p>Il figure dans l'e-mail de confirmation reçu après votre achat, et dans votre espace client.</p>",
+            "open": false
+          }
+        },
+        "q-31": {
+          "type": "question",
+          "settings": {
+            "category": "Service client",
+            "question": "Comment modifier mon adresse de livraison ?",
+            "answer": "<p>Écrivez-nous au plus vite à hello@kemialab.com. Si la commande n'est pas encore partie, nous pouvons la corriger.</p>",
+            "open": false
+          }
+        },
+        "q-32": {
+          "type": "question",
+          "settings": {
+            "category": "Service client",
+            "question": "Comment laisser un avis sur votre site ?",
+            "answer": "<p>Un e-mail vous est adressé après réception de votre commande pour recueillir votre retour.</p>",
+            "open": false
           }
         }
       },
-      "block_order": ["p1", "p2", "p3", "u1", "u2", "u3", "c1", "c2", "pay1", "r1"],
+      "block_order": [
+        "cat-1",
+        "cat-2",
+        "cat-3",
+        "cat-4",
+        "cat-5",
+        "cat-6",
+        "q-01",
+        "q-02",
+        "q-03",
+        "q-04",
+        "q-05",
+        "q-06",
+        "q-07",
+        "q-08",
+        "q-09",
+        "q-10",
+        "q-11",
+        "q-12",
+        "q-13",
+        "q-14",
+        "q-15",
+        "q-16",
+        "q-17",
+        "q-18",
+        "q-19",
+        "q-20",
+        "q-21",
+        "q-22",
+        "q-23",
+        "q-24",
+        "q-25",
+        "q-26",
+        "q-27",
+        "q-28",
+        "q-29",
+        "q-30",
+        "q-31",
+        "q-32"
+      ],
       "settings": {
-        "eyebrow": "",
-        "heading": "",
-        "show_rule": false,
-        "style": "card",
-        "show_tabs": true,
-        "show_all_tab": false,
-        "link_label": "",
-        "show_contact_card": true,
-        "contact_heading": "Vous ne trouvez pas la réponse à votre question ?",
-        "contact_text": "Notre service client est là pour vous aider.",
+        "show_nav": true,
+        "nav_label": "Catégories de questions",
+        "count_singular": "question",
+        "count_plural": "questions",
+        "seo_schema": true,
+        "background": "soft",
+        "show_contact": true,
+        "contact_icon": "headset",
+        "contact_heading": "Une équipe à votre écoute",
+        "contact_text": "Vous n'avez pas trouvé votre réponse ? Écrivez-nous, nous revenons vers vous avec une réponse claire et personnalisée.",
+        "contact_email": "hello@kemialab.com",
+        "contact_hours": "Du lundi au vendredi, de 10h à 18h",
         "contact_label": "Nous contacter",
-        "contact_url": "/pages/contact",
-        "background": "none"
+        "contact_url": "/pages/contact"
       }
     }
   },
-  "order": ["hero", "faq"]
+  "order": [
+    "hero",
+    "faq"
+  ]
 }

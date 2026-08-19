@@ -4730,3 +4730,211 @@
     padding-top: 18px;
   }
 }
+
+/* ------------------------------------------------------------------
+   FAQ par categories. Le sommaire renvoie vers chaque panneau plutot
+   que de filtrer : toutes les categories restent visibles, ce qui
+   correspond a la maquette et evite un etat masque au chargement.
+   ------------------------------------------------------------------ */
+.k-faqcat__nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  background: var(--k-border);
+  border: 1px solid var(--k-border);
+  border-radius: var(--k-radius-card);
+}
+
+.k-faqcat__tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 14px 18px;
+  background: var(--k-surface);
+  border-bottom: 3px solid transparent;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.k-faqcat__tab:hover,
+.k-faqcat__tab:focus-visible {
+  background: var(--k-bg-soft);
+  border-bottom-color: var(--k-gold);
+}
+
+.k-faqcat__tab-icon {
+  color: var(--k-navy);
+}
+
+.k-faqcat__tab-name {
+  font-family: var(--k-font-heading);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  color: var(--k-ink);
+}
+
+.k-faqcat__tab-count {
+  font-size: 12px;
+  color: var(--k-body);
+}
+
+.k-faqcat {
+  display: grid;
+  gap: 20px;
+  margin-top: 26px;
+}
+
+.k-faqcat__panel {
+  min-width: 0;
+  padding: 24px 22px 26px;
+  background: var(--k-surface);
+  border: 1px solid var(--k-border);
+  border-radius: var(--k-radius-card);
+}
+
+.k-faqcat__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  font-family: var(--k-font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--k-ink);
+}
+
+.k-faqcat__title .k-icon {
+  flex: 0 0 auto;
+  color: var(--k-navy);
+}
+
+.k-faqcat__list .k-accordion__item {
+  border-top: 1px solid var(--k-border-soft);
+}
+
+.k-faqcat__list .k-accordion__item:first-child {
+  border-top: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .k-faqcat__nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 990px) {
+  /* Grille de six colonnes : chaque categorie occupe un tiers, une
+     moitie ou toute la largeur selon son reglage, ce qui permet de
+     reproduire la mise en page de la maquette sans la figer. */
+  .k-faqcat__nav {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .k-faqcat {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .k-faqcat__panel--third { grid-column: span 2; }
+  .k-faqcat__panel--half  { grid-column: span 3; }
+  .k-faqcat__panel--full  { grid-column: span 6; }
+
+  .k-faqcat__panel--full .k-faqcat__list {
+    columns: 2;
+    column-gap: 28px;
+  }
+
+  .k-faqcat__panel--full .k-faqcat__list .k-accordion__item {
+    break-inside: avoid;
+  }
+}
+
+.k-faqcat__contact {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  margin-top: 46px;
+  padding: 40px 24px;
+  border-radius: var(--k-radius-card);
+  background: var(--k-navy);
+  color: #fff;
+  text-align: center;
+}
+
+.k-faqcat__contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--k-gold);
+}
+
+.k-faqcat__contact-title {
+  color: #fff;
+  margin: 0;
+}
+
+.k-faqcat__contact-text {
+  max-width: 56ch;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.65;
+}
+
+.k-faqcat__contact-lines {
+  display: grid;
+  gap: 8px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.k-faqcat__contact-lines li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.k-faqcat__contact-lines .k-icon {
+  color: var(--k-gold);
+  flex: none;
+}
+
+.k-faqcat__contact-lines a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.k-faqcat__contact-lines a:hover {
+  color: var(--k-gold);
+}
+
+.k-faqcat__contact-cta {
+  margin-top: 8px;
+}
+
+@media screen and (min-width: 750px) {
+  .k-faqcat__contact {
+    padding: 52px 40px;
+  }
+
+  .k-faqcat__contact-lines {
+    grid-auto-flow: column;
+    gap: 28px;
+  }
+}

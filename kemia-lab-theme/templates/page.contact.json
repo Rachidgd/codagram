@@ -54,10 +54,10 @@
         "button_label": "Envoyer le message",
         "aside_heading": "Autres moyens de contact",
         "email_label": "Email",
-        "email": "contact@kemialab.com",
+        "email": "hello@kemialab.com",
         "phone_label": "Téléphone",
         "phone": "",
-        "hours": "Du lundi au vendredi, 9h - 18h",
+        "hours": "Du lundi au vendredi, de 10h à 18h, hors jours fériés",
         "social_label": "Réseaux sociaux",
         "social_text": "Rejoignez-nous sur nos réseaux pour suivre nos actualités."
       }
