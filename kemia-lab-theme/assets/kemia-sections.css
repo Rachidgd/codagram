@@ -4510,3 +4510,223 @@
     display: flex;
   }
 }
+
+/* Taille des pictogrammes de reassurance, pilotee depuis le Theme Builder.
+   La classe agit sur le gabarit du picto et sur son cercle, pour que le
+   rapport entre les deux reste constant quelle que soit la taille. */
+.k-reassure--icons-lg .k-reassure__icon .k-icon {
+  width: 42px;
+  height: 42px;
+  stroke-width: 1.35;
+}
+
+.k-reassure--icons-xl .k-reassure__icon .k-icon {
+  width: 54px;
+  height: 54px;
+  stroke-width: 1.25;
+}
+
+.k-reassure--icons-lg .k-trust__title,
+.k-reassure--icons-xl .k-trust__title {
+  font-size: 13px;
+  letter-spacing: 0.07em;
+}
+
+.k-reassure--icons-lg.k-reassure--stacked .k-reassure__item,
+.k-reassure--icons-xl.k-reassure--stacked .k-reassure__item {
+  gap: 14px;
+}
+
+@media screen and (min-width: 750px) {
+  .k-reassure--icons-lg .k-reassure__icon .k-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .k-reassure--icons-xl .k-reassure__icon .k-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Nos produits : la meme section sert pour un produit unique presente
+   en grand comme pour une gamme entiere. Seule la classe de disposition
+   change, les cartes restent identiques.
+   ------------------------------------------------------------------ */
+.k-showcase {
+  display: grid;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.k-showcase__cell {
+  min-width: 0;
+}
+
+.k-showcard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--k-surface);
+  border: 1px solid var(--k-border);
+  border-radius: var(--k-radius-card);
+}
+
+.k-showcard__media {
+  position: relative;
+  display: block;
+  background: var(--k-bg-soft);
+}
+
+.k-showcard__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--k-gold);
+  color: #fff;
+  font-family: var(--k-font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.k-showcard__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px 20px 24px;
+}
+
+.k-showcard__title {
+  margin: 0;
+  font-family: var(--k-font-heading);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--k-ink);
+}
+
+.k-showcard__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.k-showcard__tagline {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--k-body);
+}
+
+.k-showcard__benefits {
+  display: grid;
+  gap: 8px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.k-showcard__benefit {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--k-ink);
+}
+
+.k-showcard__benefit .k-icon {
+  flex: 0 0 auto;
+  color: var(--k-gold-dark);
+}
+
+.k-showcard__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.k-showcase__more {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.k-showcase__nav {
+  display: none;
+  position: absolute;
+  top: calc(50% - 20px);
+  z-index: 2;
+}
+
+.k-showcase__nav--prev { left: -20px; }
+.k-showcase__nav--next { right: -20px; }
+
+.k-showcase--slider {
+  position: relative;
+}
+
+.k-showcase__track {
+  align-items: stretch;
+}
+
+.k-showcase__track > * {
+  height: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .k-showcase--duo,
+  .k-showcase--grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .k-showcase--grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .k-showcase__nav {
+    display: flex;
+  }
+
+  /* Produit unique : la carte s ouvre en deux colonnes pour occuper
+     la largeur sans etre etiree, ce que le client demande aujourd hui
+     avec une seule reference au catalogue. */
+  .k-showcard--solo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .k-showcard--solo .k-showcard__body {
+    gap: 14px;
+    padding: 40px 44px;
+  }
+
+  .k-showcard--solo .k-showcard__title {
+    font-size: 30px;
+  }
+
+  .k-showcard--solo .k-showcard__tagline {
+    font-size: 16px;
+  }
+
+  .k-showcard--solo .k-showcard__benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 18px;
+  }
+
+  .k-showcard--solo .k-showcard__foot {
+    padding-top: 18px;
+  }
+}

@@ -12,12 +12,45 @@
     "reassurance": {
       "type": "reassurance",
       "blocks": {
-        "r1": { "type": "item", "settings": { "icon": "truck", "title": "Livraison offerte", "text": "dès 60€ d'achat" } },
-        "r2": { "type": "item", "settings": { "icon": "lock", "title": "Paiement sécurisé", "text": "100% sécurisé" } },
-        "r3": { "type": "item", "settings": { "icon": "shield-check", "title": "Qualité contrôlée", "text": "Formules testées et approuvées" } },
-        "r4": { "type": "item", "settings": { "icon": "headset", "title": "Service client", "text": "Réponse sous 48h" } }
+        "r1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Livraison offerte",
+            "text": "dès 60€ d'achat"
+          }
+        },
+        "r2": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "title": "Paiement sécurisé",
+            "text": "100% sécurisé"
+          }
+        },
+        "r3": {
+          "type": "item",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Qualité contrôlée",
+            "text": "Formules testées et approuvées"
+          }
+        },
+        "r4": {
+          "type": "item",
+          "settings": {
+            "icon": "headset",
+            "title": "Service client",
+            "text": "Réponse rapide en semaine"
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3", "r4"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
       "settings": {
         "layout": "inline",
         "background": "card",
@@ -26,5 +59,8 @@
       }
     }
   },
-  "order": ["main", "reassurance"]
+  "order": [
+    "main",
+    "reassurance"
+  ]
 }

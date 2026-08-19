@@ -9,14 +9,14 @@
           "type": "item",
           "settings": {
             "icon": "truck",
-            "text": "Livraison offerte dès 60€ d'achat"
+            "text": "Livraison offerte dès 60€"
           }
         },
-        "quality": {
+        "dispatch": {
           "type": "item",
           "settings": {
-            "icon": "shield-check",
-            "text": "Qualité contrôlée"
+            "icon": "package",
+            "text": "Expédition 24/48h"
           }
         },
         "payment": {
@@ -25,9 +25,21 @@
             "icon": "lock",
             "text": "Paiement sécurisé"
           }
+        },
+        "support": {
+          "type": "item",
+          "settings": {
+            "icon": "headset",
+            "text": "Réponse rapide en semaine"
+          }
         }
       },
-      "block_order": ["shipping", "quality", "payment"],
+      "block_order": [
+        "shipping",
+        "dispatch",
+        "payment",
+        "support"
+      ],
       "settings": {
         "background": "#F8F1E9",
         "text_color": "#5C534A"
@@ -45,5 +57,8 @@
       }
     }
   },
-  "order": ["announcement-bar", "header"]
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
 }

@@ -1,0 +1,204 @@
+{%- liquid
+  assign items = ''
+  assign source = section.settings.collection
+
+  if source != blank
+    assign items = source.products
+  endif
+
+  assign manual = ''
+  for block in section.blocks
+    if block.settings.product != blank
+      assign manual = 'oui'
+      break
+    endif
+  endfor
+
+  assign total = 0
+  if manual == 'oui'
+    for block in section.blocks
+      if block.settings.product != blank
+        assign total = total | plus: 1
+      endif
+    endfor
+  else
+    assign total = items.size | plus: 0
+    assign cap = section.settings.max_items | plus: 0
+    if cap > 0 and total > cap
+      assign total = cap
+    endif
+  endif
+
+  assign layout = section.settings.layout
+  if layout == 'auto'
+    if total == 1
+      assign layout = 'solo'
+    elsif total == 2
+      assign layout = 'duo'
+    else
+      assign layout = 'grid'
+    endif
+  endif
+-%}
+
+{%- if total > 0 -%}
+  <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
+    <div class="k-container">
+      {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.intro != blank -%}
+        <div class="k-section-head">
+          {%- if section.settings.eyebrow != blank -%}
+            <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+          {%- endif -%}
+          {%- if section.settings.heading != blank -%}
+            <h2 class="k-h2">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.show_rule -%}<hr class="k-rule">{%- endif -%}
+          {%- if section.settings.intro != blank -%}
+            <p class="k-section-head__text">{{ section.settings.intro }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- capture cards -%}
+        {%- if manual == 'oui' -%}
+          {%- for block in section.blocks -%}
+            {%- if block.settings.product != blank -%}
+              <div class="k-showcase__cell" {{ block.shopify_attributes }}>
+                {% render 'showcase-card',
+                  card_product: block.settings.product,
+                  layout: layout,
+                  badge: block.settings.badge,
+                  cta_label: section.settings.cta_label,
+                  show_price: section.settings.show_price,
+                  show_benefits: section.settings.show_benefits %}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- for item in items limit: total -%}
+            <div class="k-showcase__cell">
+              {% render 'showcase-card',
+                card_product: item,
+                layout: layout,
+                badge: '',
+                cta_label: section.settings.cta_label,
+                show_price: section.settings.show_price,
+                show_benefits: section.settings.show_benefits %}
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+      {%- endcapture -%}
+
+      {%- if layout == 'slider' -%}
+        <div class="k-showcase k-showcase--slider k-carousel" data-k-rail>
+          {%- if total > 1 -%}
+            <button class="k-carousel__nav k-showcase__nav k-showcase__nav--prev" type="button" data-k-rail-prev aria-label="{{ 'general.previous' | t }}">
+              {% render 'icon', name: 'chevron-left', class: 'k-icon--sm' %}
+            </button>
+          {%- endif -%}
+          <div class="k-showcase__track k-rail k-rail--{{ section.settings.per_view }}" data-k-rail-track>
+            {{ cards }}
+          </div>
+          {%- if total > 1 -%}
+            <button class="k-carousel__nav k-showcase__nav k-showcase__nav--next" type="button" data-k-rail-next aria-label="{{ 'general.next' | t }}">
+              {% render 'icon', name: 'chevron-right', class: 'k-icon--sm' %}
+            </button>
+            <div class="k-carousel__dots" data-k-rail-dots></div>
+          {%- endif -%}
+        </div>
+      {%- else -%}
+        <div class="k-showcase k-showcase--{{ layout }}">
+          {{ cards }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.link_label != blank -%}
+        <div class="k-showcase__more">
+          <a class="k-btn k-btn--outline" href="{{ section.settings.link_url }}">
+            {{ section.settings.link_label }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+{%- else -%}
+  {% render 'section-empty', message: "Nos produits : choisissez une collection, ou ajoutez un bloc produit." %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Nos produits",
+  "class": "k-showcase-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Nos produits" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "La gamme Kemia Lab" },
+    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true },
+    { "type": "textarea", "id": "intro", "label": "Introduction" },
+    {
+      "type": "header",
+      "content": "Produits affichés",
+      "info": "Choisissez une collection, ou composez la sélection à la main avec des blocs produit. Les blocs l'emportent sur la collection."
+    },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "range", "id": "max_items", "label": "Nombre maximum", "min": 1, "max": 12, "step": 1, "default": 6 },
+    {
+      "type": "header",
+      "content": "Mise en page",
+      "info": "En automatique : un seul produit s'affiche en grand, deux côte à côte, trois ou plus en grille."
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Disposition",
+      "options": [
+        { "value": "auto", "label": "Automatique selon le nombre" },
+        { "value": "solo", "label": "Un produit en grand" },
+        { "value": "duo", "label": "Deux colonnes" },
+        { "value": "grid", "label": "Grille" },
+        { "value": "slider", "label": "Carrousel" }
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "select",
+      "id": "per_view",
+      "label": "Produits visibles en carrousel",
+      "options": [
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3"
+    },
+    { "type": "checkbox", "id": "show_price", "label": "Afficher le prix", "default": true },
+    { "type": "checkbox", "id": "show_benefits", "label": "Afficher les bénéfices", "default": true },
+    { "type": "text", "id": "cta_label", "label": "Bouton de la carte", "default": "Découvrir" },
+    { "type": "header", "content": "Lien sous les produits" },
+    { "type": "text", "id": "link_label", "label": "Libellé" },
+    { "type": "url", "id": "link_url", "label": "Lien" },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" },
+        { "value": "blue-tint", "label": "Bleu très clair" }
+      ],
+      "default": "none"
+    }
+  ],
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Produit",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Produit" },
+        { "type": "text", "id": "badge", "label": "Pastille", "info": "Optionnelle. Par exemple : Nouveauté, Best-seller." }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Nos produits" }]
+}
+{% endschema %}

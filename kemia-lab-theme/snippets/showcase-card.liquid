@@ -1,0 +1,77 @@
+{%- liquid
+  assign tagline = card_product.metafields.kemia.tagline.value
+  assign benefits = card_product.metafields.kemia.benefits.value
+  assign benefit_count = benefits.size | plus: 0
+
+  assign reviews_data = card_product.metafields.kemia.reviews_json.value
+  assign review_list = reviews_data.reviews
+  assign review_count = review_list.size | plus: 0
+  if review_count > 0
+    assign rating_total = 0
+    for entry in review_list
+      assign rating_total = rating_total | plus: entry.rating
+    endfor
+    assign rating = rating_total | times: 10 | divided_by: review_count | divided_by: 10.0
+  else
+    assign review_count = card_product.metafields.kemia.review_count.value | plus: 0
+    assign rating = card_product.metafields.kemia.rating.value
+  endif
+
+  assign is_solo = false
+  if layout == 'solo'
+    assign is_solo = true
+  endif
+-%}
+<article class="k-showcard{% if is_solo %} k-showcard--solo{% endif %}">
+  <a class="k-showcard__media" href="{{ card_product.url }}" tabindex="-1" aria-hidden="true">
+    {%- if is_solo -%}
+      {% render 'image', image: card_product.featured_image, ratio: '92%', fit: 'contain', sizes: '(min-width: 990px) 46vw, 92vw', placeholder_icon: 'bottle' %}
+    {%- else -%}
+      {% render 'image', image: card_product.featured_image, ratio: '104%', fit: 'contain', sizes: '(min-width: 990px) 30vw, 90vw', placeholder_icon: 'bottle' %}
+    {%- endif -%}
+    {%- if badge != blank -%}
+      <span class="k-showcard__badge">{{ badge }}</span>
+    {%- endif -%}
+  </a>
+
+  <div class="k-showcard__body">
+    <h3 class="k-showcard__title"><a href="{{ card_product.url }}">{{ card_product.title }}</a></h3>
+
+    {%- if tagline != blank -%}
+      <p class="k-showcard__tagline">{{ tagline }}</p>
+    {%- endif -%}
+
+    {%- if rating != blank and review_count > 0 -%}
+      <div class="k-rating k-showcard__rating">
+        {% render 'stars', rating: rating %}
+        <span class="k-rating__score">{{ rating | replace: '.', ',' }}/5</span>
+        <span class="k-rating__count">{{ review_count }} avis</span>
+      </div>
+    {%- endif -%}
+
+    {%- if show_benefits and benefit_count > 0 -%}
+      <ul class="k-showcard__benefits">
+        {%- for benefit in benefits limit: 4 -%}
+          <li class="k-showcard__benefit">
+            {% render 'icon', name: benefit.icon.value, class: 'k-icon--sm' %}
+            <span>{{ benefit.label.value }}</span>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    <div class="k-showcard__foot">
+      {%- if show_price -%}
+        <div class="k-price k-price--sm">
+          <span class="k-price__current">{{ card_product.price | money }}</span>
+          {%- if card_product.compare_at_price > card_product.price -%}
+            <span class="k-price__compare">{{ card_product.compare_at_price | money }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+      <a class="k-btn{% unless is_solo %} k-btn--outline{% endunless %} k-showcard__cta" href="{{ card_product.url }}">
+        {{ cta_label | default: 'Découvrir' }}
+      </a>
+    </div>
+  </div>
+</article>

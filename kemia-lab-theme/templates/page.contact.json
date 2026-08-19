@@ -8,7 +8,7 @@
         "eyebrow": "Contact",
         "heading": "Nous sommes là pour vous accompagner",
         "heading_style": "sans",
-        "text": "<p>Une question, un conseil ou un besoin d'informations ? Notre équipe vous répond sous 48h.</p>",
+        "text": "<p>Une question, un conseil ou un besoin d'informations ? Écrivez-nous, nous faisons notre maximum pour répondre dans les meilleurs délais.</p>",
         "show_media": true,
         "background": "soft"
       }
@@ -16,12 +16,37 @@
     "form": {
       "type": "contact-form",
       "blocks": {
-        "s1": { "type": "subject", "settings": { "label": "Question sur un produit" } },
-        "s2": { "type": "subject", "settings": { "label": "Suivi de commande" } },
-        "s3": { "type": "subject", "settings": { "label": "Livraison et retours" } },
-        "s4": { "type": "subject", "settings": { "label": "Autre demande" } }
+        "s1": {
+          "type": "subject",
+          "settings": {
+            "label": "Question sur un produit"
+          }
+        },
+        "s2": {
+          "type": "subject",
+          "settings": {
+            "label": "Suivi de commande"
+          }
+        },
+        "s3": {
+          "type": "subject",
+          "settings": {
+            "label": "Livraison et retours"
+          }
+        },
+        "s4": {
+          "type": "subject",
+          "settings": {
+            "label": "Autre demande"
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3", "s4"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
       "settings": {
         "form_heading": "Envoyez-nous un message",
         "subject_placeholder": "Choisissez un sujet",
@@ -40,11 +65,36 @@
     "promise": {
       "type": "reassurance",
       "blocks": {
-        "p1": { "type": "item", "settings": { "icon": "clock", "title": "Réponse rapide", "text": "Nous vous répondons sous 48h." } },
-        "p2": { "type": "item", "settings": { "icon": "headset", "title": "Écoute & conseil", "text": "Des conseils personnalisés adaptés à vos besoins." } },
-        "p3": { "type": "item", "settings": { "icon": "award", "title": "Satisfaction", "text": "Votre satisfaction est notre priorité." } }
+        "p1": {
+          "type": "item",
+          "settings": {
+            "icon": "clock",
+            "title": "Réponse rapide",
+            "text": "Du lundi au vendredi, 10h-18h, hors jours fériés."
+          }
+        },
+        "p2": {
+          "type": "item",
+          "settings": {
+            "icon": "headset",
+            "title": "Écoute & conseil",
+            "text": "Des conseils personnalisés adaptés à vos besoins."
+          }
+        },
+        "p3": {
+          "type": "item",
+          "settings": {
+            "icon": "award",
+            "title": "Satisfaction",
+            "text": "Votre satisfaction est notre priorité."
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3"],
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
       "settings": {
         "heading": "",
         "layout": "stacked",
@@ -54,5 +104,9 @@
       }
     }
   },
-  "order": ["hero", "form", "promise"]
+  "order": [
+    "hero",
+    "form",
+    "promise"
+  ]
 }
