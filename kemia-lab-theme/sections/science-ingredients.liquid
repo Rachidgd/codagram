@@ -11,6 +11,7 @@
         {%- if section.settings.eyebrow != blank -%}
           <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
         {%- endif -%}
+
         {%- if section.settings.heading != blank -%}
           <h2 class="k-h2{% if section.settings.heading_style == 'display' %} k-display{% endif %}">
             {{ ingredients.size }} {{ section.settings.heading }}
@@ -20,15 +21,40 @@
 
       <ul class="k-sciingredients">
         {%- for item in ingredients -%}
+          {%- liquid
+            assign ingredient_image = item.image.value
+            assign ingredient_key = item.name.value | handleize
+
+            for block in section.blocks
+              assign block_key = block.settings.ingredient_name | handleize
+
+              if block.type == 'ingredient_image' and block.settings.ingredient_name != blank and block_key == ingredient_key and block.settings.image != blank
+                assign ingredient_image = block.settings.image
+                break
+              endif
+            endfor
+          -%}
+
           <li class="k-sciingredients__item">
             <div class="k-sciingredients__media">
-              {% render 'image', image: item.image.value, ratio: '78%', fit: 'contain', sizes: '160px', placeholder_icon: 'leaf' %}
+              {% render 'image',
+                image: ingredient_image,
+                ratio: '78%',
+                fit: 'contain',
+                sizes: '160px',
+                placeholder_icon: 'leaf'
+              %}
             </div>
+
             <h3 class="k-sciingredients__name">{{ item.name.value }}</h3>
+
             {%- if item.detail.value != blank -%}
               <p class="k-sciingredients__detail">{{ item.detail.value }}</p>
             {%- endif -%}
-            <p class="k-sciingredients__dose">{{ item.amount.value }}{% if item.unit.value != blank %} {{ item.unit.value }}{% endif %}</p>
+
+            <p class="k-sciingredients__dose">
+              {{ item.amount.value }}{% if item.unit.value != blank %} {{ item.unit.value }}{% endif %}
+            </p>
           </li>
         {%- endfor -%}
       </ul>
@@ -47,21 +73,70 @@
   "name": "Actifs (page Science)",
   "class": "k-sciingredients-section",
   "settings": [
-    { "type": "product", "id": "product", "label": "Produit source", "info": "Les actifs proviennent du champ méta kemia.ingredients." },
-    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "La science derrière nos formules" },
-    { "type": "text", "id": "heading", "label": "Titre après le nombre", "default": "actifs soigneusement sélectionnés" },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit source",
+      "info": "Les actifs proviennent du champ méta kemia.ingredients."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "La science derrière nos formules"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre après le nombre",
+      "default": "actifs soigneusement sélectionnés"
+    },
     {
       "type": "select",
       "id": "heading_style",
       "label": "Style du titre",
       "options": [
-        { "value": "sans", "label": "Titres" },
-        { "value": "display", "label": "Éditorial" }
+        {
+          "value": "sans",
+          "label": "Titres"
+        },
+        {
+          "value": "display",
+          "label": "Éditorial"
+        }
       ],
       "default": "display"
     },
-    { "type": "text", "id": "note", "label": "Note de bas de bloc", "default": "VNR : Valeurs Nutritionnelles de Référence" }
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note de bas de bloc",
+      "default": "VNR : Valeurs Nutritionnelles de Référence"
+    }
   ],
-  "presets": [{ "name": "Actifs (page Science)" }]
+  "blocks": [
+    {
+      "type": "ingredient_image",
+      "name": "Image ingrédient",
+      "settings": [
+        {
+          "type": "text",
+          "id": "ingredient_name",
+          "label": "Nom de l'ingrédient",
+          "info": "Écrivez le même nom que celui du champ méta, par exemple : Magnésium, Caféine, Vitamine C."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image personnalisée"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Actifs (page Science)"
+    }
+  ]
 }
 {% endschema %}
