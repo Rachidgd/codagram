@@ -1,7 +1,7 @@
 <header class="k-header{% if section.settings.sticky %} k-header--sticky{% endif %}" data-k-header style="background: {{ section.settings.background }}">
   <div class="k-container k-header__inner">
-    <a class="k-header__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">
-      {% render 'logo' %}
+    <a class="k-header__logo" href="{{ routes.root_url }}" aria-label="{{ settings.brand_name | default: shop.name | escape }}">
+      {% render 'logo', background: section.settings.background %}
     </a>
 
     <nav class="k-header__nav" aria-label="Navigation principale">
@@ -64,7 +64,7 @@
   <div class="k-drawer__overlay" data-k-close></div>
   <div class="k-drawer__panel">
     <div class="k-drawer__head">
-      <span class="k-header__logo">{% render 'logo', logo_width: 150 %}</span>
+      <span class="k-header__logo">{% render 'logo', logo_width: 150, logo_height: 48 %}</span>
       <button class="k-modal__close" type="button" data-k-close aria-label="{{ 'accessibility.close_menu' | t }}">
         {% render 'icon', name: 'close' %}
       </button>

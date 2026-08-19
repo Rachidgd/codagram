@@ -1,23 +1,43 @@
 {%- liquid
   assign width = logo_width | default: settings.logo_width
-  assign tone = tone | default: 'gold'
+  assign height_cap = logo_height | default: settings.logo_height
+  assign brand = settings.brand_name | default: shop.name
+
+  assign bg = background | default: ''
+  assign dark = false
+  if bg != ''
+    assign brightness = bg | color_brightness
+    if brightness < 128
+      assign dark = true
+    endif
+  endif
+
+  assign mark = settings.logo
+  if dark and settings.logo_dark != blank
+    assign mark = settings.logo_dark
+  endif
+
+  assign tone = 'gold'
+  if dark
+    assign tone = 'light'
+  endif
 -%}
-{%- if settings.logo != blank -%}
+{%- if mark != blank -%}
   <img
     class="k-logo__image"
-    src="{{ settings.logo | image_url: width: 600 }}"
-    srcset="{{ settings.logo | image_url: width: 300 }} 300w, {{ settings.logo | image_url: width: 600 }} 600w"
+    src="{{ mark | image_url: width: 600 }}"
+    srcset="{{ mark | image_url: width: 300 }} 300w, {{ mark | image_url: width: 600 }} 600w, {{ mark | image_url: width: 900 }} 900w"
     sizes="{{ width }}px"
-    alt="{{ shop.name | escape }}"
-    width="{{ settings.logo.width }}"
-    height="{{ settings.logo.height }}"
-    style="width: {{ width }}px"
+    alt="{{ brand | escape }}"
+    width="{{ mark.width }}"
+    height="{{ mark.height }}"
+    style="width: {{ width }}px; max-height: {{ height_cap }}px"
   >
 {%- else -%}
   <span class="k-logo k-logo--{{ tone }}" style="--k-logo-width: {{ width }}px">
     {% render 'icon', name: 'logo-mark' %}
     <span class="k-logo__type">
-      <span class="k-logo__name">{{ settings.brand_name | default: shop.name }}</span>
+      <span class="k-logo__name">{{ brand }}</span>
       {%- if settings.brand_tagline != blank -%}
         <span class="k-logo__tagline">{{ settings.brand_tagline }}</span>
       {%- endif -%}

@@ -1,3 +1,14 @@
+.k-logo__image {
+  /* Le fichier charge depuis le Builder impose sa forme. La largeur
+     vient du reglage, la hauteur suit, et le plafond de hauteur evite
+     qu un fichier tres haut ne fasse grandir l en tete. */
+  display: block;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
 .k-logo {
   display: inline-flex;
   align-items: center;

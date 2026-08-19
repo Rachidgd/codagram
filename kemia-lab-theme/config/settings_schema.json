@@ -201,7 +201,13 @@
         "type": "image_picker",
         "id": "logo",
         "label": "Logo",
-        "info": "Si aucun logo n'est chargé, le monogramme et le nom de la boutique sont utilisés."
+        "info": "Format PNG ou SVG à fond transparent. Sans logo chargé, le monogramme et le nom de la boutique sont utilisés."
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_dark",
+        "label": "Logo sur fond sombre",
+        "info": "Version claire du logo, utilisée automatiquement quand l'en-tête ou le pied de page est foncé. Vide : le logo principal est conservé."
       },
       {
         "type": "image_picker",
@@ -217,6 +223,17 @@
         "step": 10,
         "unit": "px",
         "default": 200
+      },
+      {
+        "type": "range",
+        "id": "logo_height",
+        "label": "Hauteur maximale du logo",
+        "info": "Limite la hauteur quelle que soit la forme du fichier chargé, pour que l'en-tête garde sa hauteur.",
+        "min": 24,
+        "max": 120,
+        "step": 4,
+        "unit": "px",
+        "default": 64
       },
       {
         "type": "text",

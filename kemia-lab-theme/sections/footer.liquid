@@ -2,8 +2,8 @@
   <div class="k-container">
     <div class="k-footer__grid">
       <div class="k-footer__brand">
-        <a class="k-header__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">
-          {% render 'logo', logo_width: 170 %}
+        <a class="k-header__logo" href="{{ routes.root_url }}" aria-label="{{ settings.brand_name | default: shop.name | escape }}">
+          {% render 'logo', logo_width: 170, logo_height: 56, background: section.settings.background %}
         </a>
         {%- if section.settings.brand_text != blank -%}
           <p class="k-footer__brand-text">{{ section.settings.brand_text }}</p>
