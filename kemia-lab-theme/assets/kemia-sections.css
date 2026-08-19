@@ -2685,6 +2685,30 @@
   margin-top: 12px;
 }
 
+.k-label__hint {
+  margin-left: 6px;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--k-body);
+}
+
+.k-contact__legal {
+  margin: -4px 0 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--k-body);
+}
+
+.k-contact__legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.k-contact__legal a:hover {
+  color: var(--k-gold);
+}
+
 .k-ctacard {
   display: grid;
   gap: 20px;

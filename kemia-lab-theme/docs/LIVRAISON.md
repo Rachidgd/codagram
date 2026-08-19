@@ -760,3 +760,52 @@ Les trois champs méta sont maintenant épinglés, ils apparaissent donc directe
 ### Logos de paiement
 
 L'application qui les injecte pose son bloc dans le formulaire d'achat, où tous les éléments sont alignés à gauche. Une règle centre les éléments du formulaire qui ne portent pas de classe du thème, c'est-à-dire uniquement ceux venant d'une application. Le bloc d'urgence, seul élément du thème sans classe, en a reçu une pour rester à l'écart de cette règle.
+
+## 19. Ordre d'envoi : une section avant le gabarit qui l'utilise
+
+Un gabarit envoyé en même temps que la section dont il utilise les
+réglages est validé contre le schéma encore en place, et Shopify
+supprime silencieusement les réglages qu'il ne connaît pas. La
+mutation ne renvoie aucune erreur : le fichier est simplement accepté
+amputé.
+
+C'est arrivé sur la page contact : les douze réglages du nouveau
+formulaire ont disparu à la première tentative. Il a suffi de renvoyer
+le gabarit une fois la section en ligne pour que l'empreinte
+corresponde.
+
+La règle : envoyer d'abord le `.liquid` de la section, vérifier son
+empreinte, puis envoyer le gabarit et vérifier la sienne. Deux
+mutations, jamais une seule. Et toujours comparer l'empreinte du
+thème au `md5sum` local après coup — une taille inattendue est le
+seul signe visible d'un fichier amputé.
+
+## 20. Le logo se règle depuis le thème builder
+
+Paramètres du thème, section « Marque » :
+
+- **Logo** : le fichier principal, PNG ou SVG à fond transparent.
+- **Logo sur fond sombre** : version claire, retenue automatiquement
+  quand l'en-tête ou le pied de page est foncé. Laissé vide, le logo
+  principal est conservé.
+- **Largeur** et **Hauteur maximale** : la largeur pilote la taille,
+  la hauteur maximale empêche un fichier haut ou carré de faire
+  grandir l'en-tête. Les proportions du fichier sont toujours
+  conservées.
+- **Nom de marque** et **Signature** : servent au monogramme de repli,
+  au texte alternatif du logo et au libellé du lien vers l'accueil.
+
+Sans logo chargé, le monogramme dessiné dans le thème prend le relais,
+doré sur fond clair et blanc sur fond foncé.
+
+## 21. Formulaire de contact
+
+Six champs, dans l'ordre demandé : prénom, nom, adresse e-mail, sujet,
+numéro de commande et message. Seul le numéro de commande est
+facultatif ; il peut être retiré depuis le Builder. Tous les libellés,
+la mention facultative, les textes d'aide et la mention sous le
+formulaire se règlent depuis le Builder.
+
+Les horaires étaient jusqu'ici imbriqués dans le bloc téléphone : sans
+numéro renseigné, ils ne s'affichaient jamais. Ils forment désormais
+une ligne autonome avec son propre pictogramme.

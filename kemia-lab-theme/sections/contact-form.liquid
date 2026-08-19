@@ -1,3 +1,29 @@
+{%- liquid
+  assign label_first = section.settings.label_first_name
+  if label_first == blank
+    assign label_first = 'contact.first_name' | t
+  endif
+
+  assign label_last = section.settings.label_last_name
+  if label_last == blank
+    assign label_last = 'contact.name' | t
+  endif
+
+  assign label_email = section.settings.label_email
+  if label_email == blank
+    assign label_email = 'contact.email' | t
+  endif
+
+  assign label_subject = section.settings.label_subject
+  if label_subject == blank
+    assign label_subject = 'contact.subject' | t
+  endif
+
+  assign label_message = section.settings.label_message
+  if label_message == blank
+    assign label_message = 'contact.message' | t
+  endif
+-%}
 <section class="k-section">
   <div class="k-container">
     <div class="k-contact">
@@ -15,24 +41,53 @@
 
           <div class="k-contact__row">
             <div class="k-field">
-              <label class="k-label" for="contact-last">{{ 'contact.name' | t }}</label>
-              <input class="k-input" id="contact-last" type="text" name="contact[last_name]" autocomplete="family-name" required>
+              <label class="k-label" for="contact-first-{{ section.id }}">
+                {{ label_first }}
+              </label>
+              <input
+                class="k-input"
+                id="contact-first-{{ section.id }}"
+                type="text"
+                name="contact[first_name]"
+                autocomplete="given-name"
+                required
+              >
             </div>
             <div class="k-field">
-              <label class="k-label" for="contact-first">{{ 'contact.first_name' | t }}</label>
-              <input class="k-input" id="contact-first" type="text" name="contact[first_name]" autocomplete="given-name">
+              <label class="k-label" for="contact-last-{{ section.id }}">
+                {{ label_last }}
+              </label>
+              <input
+                class="k-input"
+                id="contact-last-{{ section.id }}"
+                type="text"
+                name="contact[last_name]"
+                autocomplete="family-name"
+                required
+              >
             </div>
           </div>
 
           <div class="k-field">
-            <label class="k-label" for="contact-email">{{ 'contact.email' | t }}</label>
-            <input class="k-input" id="contact-email" type="email" name="contact[email]" autocomplete="email" required>
+            <label class="k-label" for="contact-email-{{ section.id }}">
+              {{ label_email }}
+            </label>
+            <input
+              class="k-input"
+              id="contact-email-{{ section.id }}"
+              type="email"
+              name="contact[email]"
+              autocomplete="email"
+              required
+            >
           </div>
 
           {%- if section.blocks.size > 0 -%}
             <div class="k-field">
-              <label class="k-label" for="contact-subject">{{ 'contact.subject' | t }}</label>
-              <select class="k-select" id="contact-subject" name="contact[Sujet]">
+              <label class="k-label" for="contact-subject-{{ section.id }}">
+                {{ label_subject }}
+              </label>
+              <select class="k-select" id="contact-subject-{{ section.id }}" name="contact[Sujet]" required>
                 <option value="">{{ section.settings.subject_placeholder }}</option>
                 {%- for block in section.blocks -%}
                   <option value="{{ block.settings.label | escape }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</option>
@@ -41,10 +96,41 @@
             </div>
           {%- endif -%}
 
+          {%- if section.settings.show_order_number -%}
+            <div class="k-field">
+              <label class="k-label" for="contact-order-{{ section.id }}">
+                {{ section.settings.label_order_number }}
+                {% if section.settings.optional_hint != blank %}
+                  <span class="k-label__hint">{{ section.settings.optional_hint }}</span>
+                {% endif %}
+              </label>
+              <input
+                class="k-input"
+                id="contact-order-{{ section.id }}"
+                type="text"
+                name="contact[Numéro de commande]"
+                placeholder="{{ section.settings.order_number_placeholder | escape }}"
+                autocomplete="off"
+              >
+            </div>
+          {%- endif -%}
+
           <div class="k-field">
-            <label class="k-label" for="contact-body">{{ 'contact.message' | t }}</label>
-            <textarea class="k-textarea" id="contact-body" name="contact[body]" placeholder="{{ section.settings.message_placeholder | escape }}" required></textarea>
+            <label class="k-label" for="contact-body-{{ section.id }}">
+              {{ label_message }}
+            </label>
+            <textarea
+              class="k-textarea"
+              id="contact-body-{{ section.id }}"
+              name="contact[body]"
+              placeholder="{{ section.settings.message_placeholder | escape }}"
+              required
+            ></textarea>
           </div>
+
+          {%- if section.settings.legal_note != blank -%}
+            <p class="k-contact__legal">{{ section.settings.legal_note }}</p>
+          {%- endif -%}
 
           <button class="k-btn k-btn--block" type="submit">{{ section.settings.button_label }}</button>
         {% endform %}
@@ -71,9 +157,15 @@
               <div>
                 <span class="k-contact__label">{{ section.settings.phone_label }}</span>
                 <a href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone }}</a>
-                {%- if section.settings.hours != blank -%}
-                  <p class="k-contact__hours">{{ section.settings.hours }}</p>
-                {%- endif -%}
+              </div>
+            </li>
+          {%- endif -%}
+          {%- if section.settings.hours != blank -%}
+            <li class="k-contact__item">
+              <span class="k-contact__icon">{% render 'icon', name: 'clock', class: 'k-icon--sm' %}</span>
+              <div>
+                <span class="k-contact__label">{{ section.settings.hours_label }}</span>
+                <p class="k-contact__hours">{{ section.settings.hours }}</p>
               </div>
             </li>
           {%- endif -%}
@@ -114,8 +206,19 @@
   "class": "k-contact-section",
   "settings": [
     { "type": "text", "id": "form_heading", "label": "Titre du formulaire", "default": "Envoyez-nous un message" },
+    { "type": "header", "content": "Libellés des champs" },
+    { "type": "text", "id": "label_first_name", "label": "Prénom", "default": "Prénom" },
+    { "type": "text", "id": "label_last_name", "label": "Nom", "default": "Nom" },
+    { "type": "text", "id": "label_email", "label": "Adresse e-mail", "default": "Adresse e-mail" },
+    { "type": "text", "id": "label_subject", "label": "Sujet", "default": "Sujet" },
     { "type": "text", "id": "subject_placeholder", "label": "Choix par défaut du sujet", "default": "Choisissez un sujet" },
+    { "type": "checkbox", "id": "show_order_number", "label": "Champ numéro de commande", "default": true },
+    { "type": "text", "id": "label_order_number", "label": "Numéro de commande", "default": "Numéro de commande" },
+    { "type": "text", "id": "optional_hint", "label": "Mention facultative", "default": "(facultatif)" },
+    { "type": "text", "id": "order_number_placeholder", "label": "Aide du numéro de commande", "default": "Par exemple : #1042" },
+    { "type": "text", "id": "label_message", "label": "Message", "default": "Votre message" },
     { "type": "text", "id": "message_placeholder", "label": "Aide du champ message", "default": "Décrivez votre demande..." },
+    { "type": "textarea", "id": "legal_note", "label": "Mention sous le formulaire" },
     { "type": "text", "id": "button_label", "label": "Bouton", "default": "Envoyer le message" },
     { "type": "header", "content": "Autres moyens de contact" },
     { "type": "text", "id": "aside_heading", "label": "Titre", "default": "Autres moyens de contact" },
@@ -123,6 +226,7 @@
     { "type": "text", "id": "email", "label": "Adresse email" },
     { "type": "text", "id": "phone_label", "label": "Libellé téléphone", "default": "Téléphone" },
     { "type": "text", "id": "phone", "label": "Numéro de téléphone" },
+    { "type": "text", "id": "hours_label", "label": "Libellé horaires", "default": "Horaires" },
     { "type": "text", "id": "hours", "label": "Horaires", "default": "Du lundi au vendredi, de 10h à 18h, hors jours fériés" },
     { "type": "text", "id": "social_label", "label": "Libellé réseaux sociaux", "default": "Réseaux sociaux" },
     { "type": "text", "id": "social_text", "label": "Texte réseaux sociaux", "default": "Rejoignez-nous sur nos réseaux pour suivre nos actualités." }

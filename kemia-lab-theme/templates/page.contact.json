@@ -59,7 +59,18 @@
         "phone": "",
         "hours": "Du lundi au vendredi, de 10h à 18h, hors jours fériés",
         "social_label": "Réseaux sociaux",
-        "social_text": "Rejoignez-nous sur nos réseaux pour suivre nos actualités."
+        "social_text": "Rejoignez-nous sur nos réseaux pour suivre nos actualités.",
+        "label_first_name": "Prénom",
+        "label_last_name": "Nom",
+        "label_email": "Adresse e-mail",
+        "label_subject": "Sujet",
+        "show_order_number": true,
+        "label_order_number": "Numéro de commande",
+        "optional_hint": "(facultatif)",
+        "order_number_placeholder": "Par exemple : #1042",
+        "label_message": "Votre message",
+        "legal_note": "Les informations transmises servent uniquement à traiter votre demande.",
+        "hours_label": "Horaires"
       }
     },
     "promise": {
