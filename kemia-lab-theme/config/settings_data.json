@@ -25,6 +25,11 @@
     "logo_width": 200,
     "brand_name": "KEMIA LAB",
     "brand_tagline": "SCIENCE & NATURE",
+    "social_instagram": "#",
+    "social_tiktok": "#",
+    "social_facebook": "#",
+    "social_youtube": "#",
+    "social_whatsapp": "#",
     "show_sticky_atc": true,
     "cart_drawer": true,
     "money_suffix": "€"

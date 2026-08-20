@@ -8,28 +8,7 @@
         {%- if section.settings.brand_text != blank -%}
           <p class="k-footer__brand-text">{{ section.settings.brand_text }}</p>
         {%- endif -%}
-        {%- liquid
-          assign has_social = false
-          if settings.social_instagram != blank or settings.social_tiktok != blank or settings.social_facebook != blank or settings.social_youtube != blank
-            assign has_social = true
-          endif
-        -%}
-        {%- if has_social -%}
-          <ul class="k-footer__social">
-            {%- if settings.social_instagram != blank -%}
-              <li><a href="{{ settings.social_instagram }}" aria-label="Instagram" rel="noopener" target="_blank">{% render 'icon', name: 'instagram', class: 'k-icon--sm' %}</a></li>
-            {%- endif -%}
-            {%- if settings.social_tiktok != blank -%}
-              <li><a href="{{ settings.social_tiktok }}" aria-label="TikTok" rel="noopener" target="_blank">{% render 'icon', name: 'tiktok', class: 'k-icon--sm' %}</a></li>
-            {%- endif -%}
-            {%- if settings.social_facebook != blank -%}
-              <li><a href="{{ settings.social_facebook }}" aria-label="Facebook" rel="noopener" target="_blank">{% render 'icon', name: 'facebook', class: 'k-icon--sm' %}</a></li>
-            {%- endif -%}
-            {%- if settings.social_youtube != blank -%}
-              <li><a href="{{ settings.social_youtube }}" aria-label="YouTube" rel="noopener" target="_blank">{% render 'icon', name: 'youtube', class: 'k-icon--sm' %}</a></li>
-            {%- endif -%}
-          </ul>
-        {%- endif -%}
+        {% render 'social-links', class: 'k-footer__social' %}
       </div>
 
       {%- for block in section.blocks -%}

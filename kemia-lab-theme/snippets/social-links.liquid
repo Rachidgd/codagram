@@ -1,0 +1,40 @@
+{%- liquid
+  assign networks = 'instagram,tiktok,facebook,youtube,whatsapp' | split: ','
+  assign network_names = 'Instagram,TikTok,Facebook,YouTube,WhatsApp' | split: ','
+  assign list_class = class | default: 'k-footer__social'
+
+  assign filled = 0
+  for network in networks
+    assign key = 'social_' | append: network
+    if settings[key] != blank
+      assign filled = filled | plus: 1
+    endif
+  endfor
+-%}
+
+{%- if filled > 0 -%}
+  <ul class="{{ list_class }}">
+    {%- for network in networks -%}
+      {%- liquid
+        assign key = 'social_' | append: network
+        assign href = settings[key] | strip
+        assign name = network_names[forloop.index0]
+        assign external = true
+        if href == '#'
+          assign external = false
+        endif
+      -%}
+      {%- if href != blank -%}
+        <li>
+          <a
+            href="{{ href | escape }}"
+            aria-label="{{ name }}"
+            {%- if external %} rel="noopener" target="_blank"{% endif %}
+          >
+            {% render 'icon', name: network, class: 'k-icon--sm' %}
+          </a>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

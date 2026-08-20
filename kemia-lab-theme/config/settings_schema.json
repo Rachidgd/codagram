@@ -253,24 +253,33 @@
     "name": "Réseaux sociaux",
     "settings": [
       {
-        "type": "url",
+        "type": "paragraph",
+        "content": "Collez l'adresse complète de chaque profil. Laissez # tant que vous ne l'avez pas : le pictogramme s'affiche sans mener nulle part."
+      },
+      {
+        "type": "text",
         "id": "social_instagram",
         "label": "Instagram"
       },
       {
-        "type": "url",
+        "type": "text",
         "id": "social_tiktok",
         "label": "TikTok"
       },
       {
-        "type": "url",
+        "type": "text",
         "id": "social_facebook",
         "label": "Facebook"
       },
       {
-        "type": "url",
+        "type": "text",
         "id": "social_youtube",
         "label": "YouTube"
+      },
+      {
+        "type": "text",
+        "id": "social_whatsapp",
+        "label": "WhatsApp"
       }
     ]
   },

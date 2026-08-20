@@ -445,6 +445,7 @@
 
 .k-footer__social {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -5720,11 +5721,11 @@
      durée, remise, prix et note se calent au même niveau partout,
      quels que soient les champs remplis d'une variante à l'autre. */
   .k-cures__grid {
-    grid-template-rows: repeat(6, auto);
+    grid-template-rows: repeat(5, auto);
   }
 
   .k-cure {
-    grid-row: span 6;
+    grid-row: span 5;
     display: grid;
     grid-template-rows: subgrid;
     justify-items: center;
@@ -6265,6 +6266,26 @@
   width: 22px;
   height: 1px;
   background: rgba(255, 255, 255, 0.75);
+}
+
+/* Avec un bandeau « meilleure offre », celui-ci et la pastille de remise
+   se disputent le haut de la carte. Les cartes prennent alors une bande
+   supplementaire et la pastille descend dans l angle gauche, libre. Le
+   supplement s applique a toutes les cartes de la grille pour que les
+   rangees restent alignees. */
+.k-cures__grid--best .k-cure {
+  padding-top: 34px;
+}
+
+.k-cures__grid--best .k-cure__off {
+  top: 12px;
+  right: auto;
+  left: 8px;
+}
+
+.k-cures__grid--best .k-cure__check {
+  top: 12px;
+  right: 8px;
 }
 
 /* La coche ne se montre que sur la carte retenue : un cercle vide sur

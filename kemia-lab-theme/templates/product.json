@@ -34,7 +34,7 @@
           "settings": {
             "heading": "",
             "best_label": "",
-            "show_media": false,
+            "show_media": true,
             "show_compare": false,
             "show_note": false
           }

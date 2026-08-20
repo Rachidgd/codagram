@@ -177,20 +177,7 @@
                 {%- if section.settings.social_text != blank -%}
                   <p class="k-contact__hours">{{ section.settings.social_text }}</p>
                 {%- endif -%}
-                <ul class="k-footer__social k-contact__social">
-                  {%- if settings.social_instagram != blank -%}
-                    <li><a href="{{ settings.social_instagram }}" aria-label="Instagram" rel="noopener" target="_blank">{% render 'icon', name: 'instagram', class: 'k-icon--sm' %}</a></li>
-                  {%- endif -%}
-                  {%- if settings.social_tiktok != blank -%}
-                    <li><a href="{{ settings.social_tiktok }}" aria-label="TikTok" rel="noopener" target="_blank">{% render 'icon', name: 'tiktok', class: 'k-icon--sm' %}</a></li>
-                  {%- endif -%}
-                  {%- if settings.social_facebook != blank -%}
-                    <li><a href="{{ settings.social_facebook }}" aria-label="Facebook" rel="noopener" target="_blank">{% render 'icon', name: 'facebook', class: 'k-icon--sm' %}</a></li>
-                  {%- endif -%}
-                  {%- if settings.social_youtube != blank -%}
-                    <li><a href="{{ settings.social_youtube }}" aria-label="YouTube" rel="noopener" target="_blank">{% render 'icon', name: 'youtube', class: 'k-icon--sm' %}</a></li>
-                  {%- endif -%}
-                </ul>
+                {% render 'social-links', class: 'k-footer__social k-contact__social' %}
               </div>
             </li>
           {%- endif -%}

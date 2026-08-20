@@ -225,7 +225,7 @@
                 {%- if block.settings.heading != blank -%}
                   <legend class="k-cures__legend">{{ block.settings.heading }}</legend>
                 {%- endif -%}
-                <div class="k-cures__grid{% unless block.settings.show_media %} k-cures__grid--flat{% endunless %}">
+                <div class="k-cures__grid{% unless block.settings.show_media %} k-cures__grid--flat{% endunless %}{% if block.settings.best_label != blank %} k-cures__grid--best{% endif %}">
                   {%- for variant in product.variants -%}
                     {%- liquid
                       assign is_best = false
