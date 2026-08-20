@@ -1,9 +1,21 @@
+{%- liquid
+  assign compact = false
+  if section.settings.image == blank and section.settings.icon != 'none'
+    assign compact = true
+  endif
+-%}
+
 <div class="k-section k-section--tight">
   <div class="k-container">
-    <div class="k-ctacard k-ctacard--{{ section.settings.background }}">
-      <div class="k-ctacard__media">
-        {% render 'image', image: section.settings.image, ratio: '86%', fit: 'contain', sizes: '(min-width: 750px) 240px, 60vw', placeholder_icon: 'bottle' %}
-      </div>
+    <div class="k-ctacard k-ctacard--{{ section.settings.background }}{% if compact %} k-ctacard--compact{% endif %}">
+      {%- if compact -%}
+        <span class="k-ctacard__icon">{% render 'icon', name: section.settings.icon, class: 'k-icon--xl' %}</span>
+      {%- else -%}
+        <div class="k-ctacard__media">
+          {% render 'image', image: section.settings.image, ratio: '86%', fit: 'contain', sizes: '(min-width: 750px) 240px, 60vw', placeholder_icon: 'bottle' %}
+        </div>
+      {%- endif -%}
+
       <div class="k-ctacard__body">
         {%- if section.settings.eyebrow != blank -%}
           <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
@@ -14,13 +26,17 @@
         {%- if section.settings.text != blank -%}
           <p class="k-ctacard__text">{{ section.settings.text }}</p>
         {%- endif -%}
-        {%- if section.settings.button_label != blank -%}
-          <a class="k-btn k-btn--outline" href="{{ section.settings.button_link }}">
-            {{ section.settings.button_label }}
-            {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
-          </a>
-        {%- endif -%}
       </div>
+
+      {%- if section.settings.button_label != blank -%}
+        <a
+          class="k-btn{% if section.settings.button_style == 'outline' %} k-btn--outline{% elsif section.settings.button_style == 'light' %} k-btn--light{% endif %} k-ctacard__cta"
+          href="{{ section.settings.button_link }}"
+        >
+          {{ section.settings.button_label }}
+          {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+        </a>
+      {%- endif -%}
     </div>
   </div>
 </div>
@@ -30,7 +46,28 @@
   "name": "Encart produit",
   "class": "k-ctacard-section",
   "settings": [
+    {
+      "type": "paragraph",
+      "content": "Sans visuel chargé, l'encart prend sa forme compacte : pictogramme, texte et bouton sur une seule ligne."
+    },
     { "type": "image_picker", "id": "image", "label": "Visuel" },
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "Pictogramme",
+      "info": "Utilisé par la forme compacte, quand aucun visuel n'est chargé.",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "hand-heart", "label": "Main et cœur" },
+        { "value": "sparkle", "label": "Étincelle" },
+        { "value": "shield-star", "label": "Bien-être" },
+        { "value": "bolt", "label": "Éclair" },
+        { "value": "leaf", "label": "Feuille" },
+        { "value": "award", "label": "Médaille" },
+        { "value": "target", "label": "Cible" }
+      ],
+      "default": "sparkle"
+    },
     { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
     { "type": "text", "id": "heading", "label": "Titre", "default": "Prêt à révéler votre potentiel ?" },
     { "type": "textarea", "id": "text", "label": "Texte", "default": "Découvrez 4 Vitality System, notre première formule." },
@@ -38,12 +75,24 @@
     { "type": "url", "id": "button_link", "label": "Lien du bouton" },
     {
       "type": "select",
+      "id": "button_style",
+      "label": "Style du bouton",
+      "options": [
+        { "value": "solid", "label": "Doré plein" },
+        { "value": "outline", "label": "Doré contour" },
+        { "value": "light", "label": "Blanc" }
+      ],
+      "default": "outline"
+    },
+    {
+      "type": "select",
       "id": "background",
       "label": "Fond",
       "options": [
         { "value": "soft", "label": "Beige clair" },
         { "value": "beige", "label": "Beige" },
-        { "value": "blue-tint", "label": "Bleu très clair" }
+        { "value": "blue-tint", "label": "Bleu très clair" },
+        { "value": "navy", "label": "Bleu profond" }
       ],
       "default": "soft"
     }

@@ -125,12 +125,14 @@
       {%- endif -%}
 
       {%- if trust_count > 0 -%}
-        <ul class="k-hero__trust" style="--k-trust-cols: {{ trust_count }}">
+        <ul class="k-hero__trust k-hero__trust--{{ section.settings.trust_layout }}{% if section.settings.trust_circle %} k-hero__trust--circled{% endif %}" style="--k-trust-cols: {{ trust_count }}">
           {%- for block in section.blocks -%}
             {%- if block.type == 'trust' -%}
               <li class="k-hero__trust-item" {{ block.shopify_attributes }}>
                 {%- if block.settings.icon != 'none' -%}
-                  {% render 'icon', name: block.settings.icon, class: 'k-icon--lg' %}
+                  <span class="k-hero__trust-icon{% if section.settings.trust_circle %} k-icon-circle{% endif %}">
+                    {% render 'icon', name: block.settings.icon, class: 'k-icon--lg' %}
+                  </span>
                 {%- endif -%}
                 <span class="k-hero__trust-body">
                   <span class="k-trust__title">{{ block.settings.title }}</span>
@@ -259,6 +261,18 @@
       ],
       "default": "ghost"
     },
+    { "type": "header", "content": "Repères de confiance" },
+    {
+      "type": "select",
+      "id": "trust_layout",
+      "label": "Disposition des repères",
+      "options": [
+        { "value": "inline", "label": "Pictogramme à gauche du texte" },
+        { "value": "stack", "label": "Pictogramme au-dessus, centré" }
+      ],
+      "default": "inline"
+    },
+    { "type": "checkbox", "id": "trust_circle", "label": "Cercler les pictogrammes", "default": false },
     { "type": "header", "content": "Mention d'origine" },
     { "type": "text", "id": "origin_text", "label": "Texte" },
     {

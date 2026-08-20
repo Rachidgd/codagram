@@ -1,151 +1,190 @@
 {
   "sections": {
     "hero": {
-      "type": "page-hero",
-      "settings": {
-        "show_breadcrumb": true,
-        "breadcrumb_label": "À propos",
-        "eyebrow": "À propos de Kemia Lab",
-        "heading": "Notre mission : révéler votre potentiel",
-        "heading_style": "sans",
-        "text": "<p>Kemia Lab est né d'une conviction simple : la science et la nature, lorsqu'elles sont bien combinées, peuvent transformer le quotidien de celles et ceux qui veulent se dépasser.</p>",
-        "show_media": true,
-        "background": "soft"
-      }
-    },
-    "approach": {
-      "type": "rich-text",
-      "settings": {
-        "layout": "split",
-        "reverse": false,
-        "eyebrow": "Notre approche",
-        "heading": "La rigueur scientifique. Le meilleur de la nature.",
-        "heading_style": "sans",
-        "show_rule": false,
-        "text": "<p>Nous sélectionnons les actifs les plus étudiés, nous les dosons avec précision et nous les associons intelligemment pour proposer des formules cohérentes, sûres et bien tolérées.</p>",
-        "background": "none"
-      }
-    },
-    "commitments": {
-      "type": "features",
+      "type": "hero-split",
       "blocks": {
-        "c1": {
-          "type": "item",
+        "t1": {
+          "type": "trust",
           "settings": {
-            "icon": "award",
-            "title": "Qualité",
-            "text": "Des ingrédients premium et des contrôles stricts à chaque étape."
+            "icon": "leaf",
+            "title": "",
+            "text": "Science au service du bien-être"
           }
         },
-        "c2": {
-          "type": "item",
+        "t2": {
+          "type": "trust",
           "settings": {
-            "icon": "shield-check",
-            "title": "Transparence",
-            "text": "Des formules claires, des dosages affichés, sans superflu."
+            "icon": "flask",
+            "title": "",
+            "text": "Formules efficaces et rigoureuses"
           }
         },
-        "c3": {
-          "type": "item",
+        "t3": {
+          "type": "trust",
           "settings": {
-            "icon": "hexagon",
-            "title": "Fabrication",
-            "text": "Une fabrication conduite avec exigence et savoir-faire."
+            "icon": "search",
+            "title": "",
+            "text": "Transparence sur chaque composition"
           }
         },
-        "c4": {
-          "type": "item",
+        "t4": {
+          "type": "trust",
           "settings": {
-            "icon": "target",
-            "title": "Confiance",
-            "text": "Votre satisfaction et votre bien-être restent notre priorité."
+            "icon": "user",
+            "title": "",
+            "text": "Pour toutes celles et ceux qui avancent"
           }
         }
       },
       "block_order": [
-        "c1",
-        "c2",
-        "c3",
-        "c4"
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {
+        "show_breadcrumb": true,
+        "breadcrumb_label": "À propos",
+        "eyebrow": "À propos de Kemia Lab",
+        "heading_tag": "h1",
+        "heading_style": "sans",
+        "heading_case": "upper",
+        "heading": "Notre mission :\nrévéler votre potentiel",
+        "highlight": "",
+        "highlight_break": false,
+        "heading_suffix": "",
+        "show_rule": false,
+        "text": "<p>Chez KEMIA LAB, nous croyons que chacun peut agir pour révéler son potentiel et préserver son équilibre au quotidien.</p><p>Notre mission est de développer des formules pensées avec exigence, associant science, nature et transparence.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button2_label": "",
+        "button2_link": "",
+        "trust_layout": "stack",
+        "trust_circle": true,
+        "origin_text": "",
+        "origin_icon": "none",
+        "layout": "split",
+        "image": "",
+        "badge_text": "",
+        "badge_style": "circle",
+        "badge_icon": "none",
+        "background": "soft"
+      }
+    },
+    "histoire": {
+      "type": "rich-text",
+      "settings": {
+        "layout": "split",
+        "reverse": true,
+        "eyebrow": "Notre histoire",
+        "heading": "Née d'une quête personnelle\nde qualité et de sens",
+        "highlight": "",
+        "heading_style": "sans",
+        "show_rule": false,
+        "text": "<p>KEMIA LAB est née d'un constat simple : trouver des compléments alimentaires associant qualité, transparence et formulations soigneusement pensées n'était pas évident.</p><p>Cette recherche personnelle nous a conduits à vouloir faire les choses différemment : sélectionner avec exigence, comprendre ce que contient chaque formule et développer des produits auxquels nous-mêmes pourrions faire confiance.</p><p>C'est ainsi qu'est née KEMIA LAB : avec la volonté de créer des formules pensées pour accompagner chacun vers une meilleure version de soi-même.</p>",
+        "image": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "outline",
+        "background": "none"
+      }
+    },
+    "engagements": {
+      "type": "features",
+      "blocks": {
+        "e1": {
+          "type": "item",
+          "settings": {
+            "icon": "flask",
+            "title": "Science avant tout",
+            "text": "Des formules conçues à partir d'actifs scientifiquement étudiés et dosés avec précision."
+          }
+        },
+        "e2": {
+          "type": "item",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Exigence de qualité",
+            "text": "Ingrédients rigoureusement sélectionnés et contrôlés. Rien n'est laissé au hasard."
+          }
+        },
+        "e3": {
+          "type": "item",
+          "settings": {
+            "icon": "search",
+            "title": "Transparence totale",
+            "text": "Des compositions claires, des dosages justes et une information honnête."
+          }
+        },
+        "e4": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "title": "Progression durable",
+            "text": "Nous pensons à votre bien-être sur le long terme, avec des solutions efficaces et responsables."
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
       ],
       "settings": {
         "eyebrow": "",
         "heading": "Nos engagements",
         "heading_style": "caps",
-        "show_rule": true,
+        "show_rule": false,
+        "flanked": true,
+        "text": "<p>Des engagements forts pour des formules dignes de votre confiance.</p>",
         "icon_style": "circle",
         "accent": "gold",
-        "style": "card",
-        "dividers": false,
-        "background": "none"
+        "style": "plain",
+        "dividers": true,
+        "button_label": "",
+        "button_link": "",
+        "background": "boxed"
       }
     },
-    "statement": {
-      "type": "reassurance",
-      "blocks": {
-        "s1": {
-          "type": "item",
-          "settings": {
-            "icon": "bolt",
-            "title": "Énergie",
-            "text": ""
-          }
-        },
-        "s2": {
-          "type": "item",
-          "settings": {
-            "icon": "brain",
-            "title": "Concentration",
-            "text": ""
-          }
-        },
-        "s3": {
-          "type": "item",
-          "settings": {
-            "icon": "muscle",
-            "title": "Vitalité",
-            "text": ""
-          }
-        },
-        "s4": {
-          "type": "item",
-          "settings": {
-            "icon": "shield-star",
-            "title": "Bien-être",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "s1",
-        "s2",
-        "s3",
-        "s4"
-      ],
+    "univers": {
+      "type": "product-spotlight",
       "settings": {
-        "heading": "Kemia Lab, c'est plus qu'une marque, c'est un partenaire de votre progression.",
-        "layout": "stacked",
-        "background": "navy",
-        "dividers": true,
-        "compact": false
+        "product": "4-vitality-system",
+        "image": "",
+        "layout": "text-first",
+        "eyebrow": "L'univers Kemia Lab",
+        "heading": "Notre première formule :\n4 Vitality System",
+        "show_tagline": false,
+        "text": "<p>4 Vitality System est la première formule développée par KEMIA LAB.</p><p>Une formule complète pensée autour de quatre piliers essentiels pour vous aider à donner le meilleur de vous-même.</p>",
+        "button_label": "Découvrir 4 Vitality System",
+        "button_style": "navy",
+        "benefits_circle": true,
+        "benefits_note": "Une formule pour soutenir votre énergie, votre concentration, votre vitalité physique et votre bien-être intime.",
+        "background": "none",
+        "heading_case": "normal"
       }
     },
     "cta": {
       "type": "cta-card",
       "settings": {
+        "image": "",
+        "icon": "hand-heart",
+        "eyebrow": "",
         "heading": "Prêt à révéler votre potentiel ?",
-        "text": "Découvrez 4 Vitality System, notre première formule.",
-        "button_label": "Découvrir le produit",
+        "text": "Rejoignez des milliers de personnes qui font déjà confiance à Kemia Lab.",
+        "button_label": "Découvrir 4 Vitality System",
         "button_link": "/products/4-vitality-system",
-        "background": "soft"
+        "button_style": "solid",
+        "background": "navy"
       }
     }
   },
   "order": [
     "hero",
-    "approach",
-    "commitments",
-    "statement",
+    "histoire",
+    "engagements",
+    "univers",
     "cta"
   ]
 }

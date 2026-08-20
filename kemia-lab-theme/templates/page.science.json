@@ -75,7 +75,9 @@
         "badge_text": "7 actifs\nhautement\ndosés",
         "badge_style": "circle",
         "badge_icon": "none",
-        "background": "navy"
+        "background": "navy",
+        "trust_layout": "stack",
+        "trust_circle": false
       }
     },
     "approach": {

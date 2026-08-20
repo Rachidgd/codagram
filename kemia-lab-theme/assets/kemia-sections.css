@@ -2083,10 +2083,9 @@
   color: var(--k-gold);
 }
 
-/* Sur le bandeau bleu, les reperes s empilent et sont separes par un
-   filet, comme la maquette. Le hero clair de l accueil garde sa
-   presentation en ligne, deja validee. */
-.k-hero--navy .k-hero__trust-item {
+/* Repères empilés : pictogramme au-dessus, texte centré. Le hero clair
+   de l accueil garde sa presentation en ligne, deja validee. */
+.k-hero__trust--stack .k-hero__trust-item {
   flex-direction: column;
   align-items: center;
   gap: 8px;
@@ -2094,11 +2093,11 @@
   text-align: center;
 }
 
-.k-hero--navy .k-hero__trust-body {
+.k-hero__trust--stack .k-hero__trust-body {
   gap: 4px;
 }
 
-.k-hero--navy .k-trust__title {
+.k-hero__trust--stack .k-trust__title {
   font-family: var(--k-font-heading);
   font-size: 11px;
   font-weight: 700;
@@ -2107,9 +2106,29 @@
   line-height: 1.3;
 }
 
-.k-hero--navy .k-trust__text {
+.k-hero__trust--stack .k-trust__text {
   font-size: 11px;
   line-height: 1.4;
+}
+
+/* Pictogrammes cercles : le cercle porte la couleur, pas le trait. */
+.k-hero__trust--circled .k-hero__trust-icon {
+  color: var(--k-gold);
+}
+
+.k-hero__trust--circled .k-trust__text {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.k-hero__trust--circled .k-hero__trust-item .k-icon {
+  color: inherit;
+}
+
+/* Sans titre saisi, le repere n affiche qu une precision : elle prend
+   alors la place du titre pour rester lisible. */
+.k-hero__trust--stack .k-trust__title:empty {
+  display: none;
 }
 
 .k-hero--navy .k-breadcrumb,
@@ -2122,7 +2141,7 @@
 }
 
 .k-hero__breadcrumb {
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
 
 .k-hero--plain {
@@ -2324,8 +2343,11 @@
 
 .k-spotlight__title {
   margin-top: 10px;
-  text-transform: uppercase;
   letter-spacing: 0.01em;
+}
+
+.k-spotlight__title--upper {
+  text-transform: uppercase;
 }
 
 .k-spotlight__tagline {
@@ -2346,9 +2368,20 @@
   margin-top: 22px;
 }
 
+.k-spotlight__aside {
+  display: grid;
+  gap: 16px;
+}
+
 .k-spotlight__benefits {
   display: grid;
   gap: 18px;
+}
+
+.k-spotlight__note {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--k-body);
 }
 
 .k-spotlight__benefits li {
@@ -2365,6 +2398,26 @@
 .k-spotlight__benefit-icon {
   flex: 0 0 auto;
   color: var(--k-gold);
+}
+
+.k-spotlight__benefit-icon.k-icon-circle .k-icon {
+  color: inherit;
+}
+
+/* Texte, visuel, benefices : le visuel passe au centre sans toucher a
+   l ordre du markup, qui reste lisible sans feuille de style. */
+@media screen and (min-width: 990px) {
+  .k-spotlight--text-first .k-spotlight__media {
+    order: 2;
+  }
+
+  .k-spotlight--text-first .k-spotlight__body {
+    order: 1;
+  }
+
+  .k-spotlight--text-first .k-spotlight__aside {
+    order: 3;
+  }
 }
 
 .k-features {
@@ -2532,8 +2585,11 @@
     padding: 30px 30px 34px;
   }
 
-  .k-spotlight__benefits {
+  .k-spotlight__aside {
     grid-column: 1 / -1;
+  }
+
+  .k-spotlight__benefits {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -2574,11 +2630,11 @@
     gap: 14px;
   }
 
-  .k-hero--navy .k-hero__trust-item {
+  .k-hero--navy .k-hero__trust--stack .k-hero__trust-item {
     border-left: 1px solid rgba(255, 255, 255, 0.18);
   }
 
-  .k-hero--navy .k-hero__trust-item:first-child {
+  .k-hero--navy .k-hero__trust--stack .k-hero__trust-item:first-child {
     border-left: 0;
   }
 
@@ -2588,9 +2644,24 @@
     padding: 34px 40px 36px;
   }
 
+  /* Le bloc des benefices reprend sa colonne : sur trois colonnes il ne
+     doit plus s etaler sur toute la largeur comme en tablette. */
+  .k-spotlight__aside {
+    grid-column: auto;
+  }
+
   .k-spotlight__benefits {
     grid-column: auto;
     grid-template-columns: 1fr;
+  }
+
+  .k-spotlight--text-first {
+    grid-template-columns: 1fr 0.92fr 1.02fr;
+  }
+
+  .k-spotlight--text-first .k-spotlight__benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 16px;
   }
 
   .k-blogrow__grid {
@@ -3064,6 +3135,44 @@
   background: var(--k-blue-tint);
 }
 
+.k-ctacard--navy {
+  background: linear-gradient(120deg, var(--k-navy) 0%, #01173A 100%);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.k-ctacard--navy .k-ctacard__heading {
+  color: #fff;
+}
+
+.k-ctacard--navy .k-ctacard__text {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.k-ctacard--navy .k-eyebrow {
+  color: var(--k-gold);
+}
+
+/* Forme compacte : pictogramme, texte et bouton sur une seule ligne. */
+.k-ctacard__icon {
+  display: inline-flex;
+  color: var(--k-gold);
+}
+
+.k-ctacard--compact {
+  justify-items: center;
+  text-align: center;
+  padding: 20px 22px;
+}
+
+.k-ctacard--compact .k-ctacard__body {
+  align-items: center;
+  gap: 6px;
+}
+
+.k-ctacard--compact .k-ctacard__cta {
+  justify-self: center;
+}
+
 .k-ctacard__media {
   width: min(100%, 220px);
 }
@@ -3079,8 +3188,9 @@
   gap: 10px;
 }
 
-.k-ctacard__body .k-btn {
-  margin-top: 8px;
+.k-ctacard__cta {
+  margin-top: 4px;
+  justify-self: start;
 }
 
 .k-ctacard__text {
@@ -6951,4 +7061,39 @@
 
 .k-newsletter-band__note .k-icon {
   flex: 0 0 auto;
+}
+
+/* Panneau bordé : le titre et les colonnes tiennent dans un cadre, comme
+   sur la page À propos. */
+.k-features__panel {
+  padding: 26px 20px 28px;
+  border: 1px solid var(--k-border);
+  border-radius: var(--k-radius-card);
+  background: var(--k-surface);
+}
+
+@media screen and (min-width: 750px) {
+  .k-features__panel {
+    padding: 30px 32px 34px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .k-ctacard--compact {
+    grid-template-columns: auto 1fr auto;
+    justify-items: start;
+    text-align: left;
+    gap: 20px;
+    padding: 20px 28px;
+  }
+
+  .k-ctacard--compact .k-ctacard__body {
+    align-items: flex-start;
+  }
+
+  .k-ctacard--compact .k-ctacard__cta {
+    justify-self: end;
+    margin-top: 0;
+    white-space: nowrap;
+  }
 }

@@ -7,7 +7,7 @@
         {%- endif -%}
         {%- if section.settings.heading != blank -%}
           <h2 class="{% if section.settings.heading_style == 'display' %}k-h2 k-display{% elsif section.settings.heading_style == 'caps' %}k-title-caps k-h3{% else %}k-h2{% endif %} k-richtext__heading">
-            {{ section.settings.heading }}{% if section.settings.highlight != blank %} <span class="k-gold">{{ section.settings.highlight }}</span>{% endif %}
+            {{ section.settings.heading | newline_to_br }}{% if section.settings.highlight != blank %} <span class="k-gold">{{ section.settings.highlight }}</span>{% endif %}
           </h2>
         {%- endif -%}
         {%- if section.settings.show_rule -%}<hr class="k-rule k-richtext__rule">{%- endif -%}
@@ -49,7 +49,7 @@
     },
     { "type": "checkbox", "id": "reverse", "label": "Inverser le sens", "default": false },
     { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
-    { "type": "textarea", "id": "heading", "label": "Titre" },
+    { "type": "textarea", "id": "heading", "label": "Titre", "info": "Chaque retour à la ligne saisi ici crée une ligne de titre." },
     { "type": "text", "id": "highlight", "label": "Fin de titre en doré" },
     {
       "type": "select",

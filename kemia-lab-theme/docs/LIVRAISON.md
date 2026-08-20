@@ -937,3 +937,32 @@ lien à sa droite sont deux champs libres. Les cartes s'alignent entre
 elles par une sous-grille : catégorie, titre, résumé et pied se posent
 sur les mêmes lignes d'une carte à l'autre, même quand un article n'a pas
 d'étiquette.
+
+## 27. Page À propos
+
+Cinq sections, toutes réglables depuis le Builder :
+
+1. **Hero** : fil d'Ariane, sur-titre doré, titre en majuscules, deux
+   paragraphes, quatre repères. Les repères sont des blocs « Repère de
+   confiance ». Deux réglages nouveaux règlent leur présentation :
+   pictogramme à gauche du texte ou au-dessus et centré, et cerclé ou
+   non. Un repère peut n'avoir qu'une précision, sans titre.
+2. **Texte et visuel** pour « Notre histoire », visuel à gauche.
+3. **Colonnes à pictogrammes** pour les engagements, avec le nouveau
+   fond « Panneau bordé » et le titre entre filets dorés.
+4. **Mise en avant produit** pour « L'univers Kemia Lab ». La
+   disposition « Texte, visuel, bénéfices » place les trois colonnes
+   dans l'ordre de la maquette. Le titre, le texte et la casse du titre
+   se règlent ici ; les quatre piliers viennent du champ méta
+   `kemia.benefits` du produit, et une phrase peut être posée sous eux.
+5. **Encart produit** en forme compacte : sans visuel chargé, il devient
+   un bandeau à une ligne, pictogramme à gauche et bouton à droite. Le
+   fond bleu profond est une nouvelle option.
+
+Ces réglages servent au-delà de cette page : la disposition des repères
+du hero, le panneau bordé des colonnes, la forme compacte et le fond
+bleu de l'encart sont disponibles partout où ces sections sont posées.
+
+Un retour à la ligne saisi dans le titre de la section « Texte et
+visuel » était jusqu'ici ignoré. Il crée maintenant une ligne, comme sur
+les autres sections.

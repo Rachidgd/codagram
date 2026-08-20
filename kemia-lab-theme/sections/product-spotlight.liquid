@@ -3,13 +3,22 @@
   assign benefits = item.metafields.kemia.benefits.value
   assign benefit_count = benefits.size | plus: 0
   assign tagline = item.metafields.kemia.tagline.value
-  assign usp = item.metafields.kemia.short_usp.value
+
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = item.title
+  endif
+
+  assign body = section.settings.text
+  if body == blank
+    assign body = item.metafields.kemia.short_usp.value
+  endif
 -%}
 
 {%- if item != blank -%}
-  <section class="k-section">
+  <section class="k-section{% if section.settings.background != 'none' %} k-bg-{{ section.settings.background }}{% endif %}">
     <div class="k-container">
-      <div class="k-spotlight">
+      <div class="k-spotlight k-spotlight--{{ section.settings.layout }}">
         <div class="k-spotlight__media">
           {% render 'image',
             image: section.settings.image,
@@ -24,15 +33,20 @@
           {%- if section.settings.eyebrow != blank -%}
             <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
           {%- endif -%}
-          <h2 class="k-h3 k-spotlight__title">{{ item.title }}</h2>
-          {%- if tagline != blank -%}
+          {%- if heading != blank -%}
+            <h2 class="k-h3 k-spotlight__title k-spotlight__title--{{ section.settings.heading_case }}">{{ heading | newline_to_br }}</h2>
+          {%- endif -%}
+          {%- if section.settings.show_tagline and tagline != blank -%}
             <p class="k-spotlight__tagline">{{ tagline }}</p>
           {%- endif -%}
-          {%- if usp != blank -%}
-            <div class="k-spotlight__text k-text">{{ usp }}</div>
+          {%- if body != blank -%}
+            <div class="k-spotlight__text k-text">{{ body }}</div>
           {%- endif -%}
           {%- if section.settings.button_label != blank -%}
-            <a class="k-btn k-btn--outline k-spotlight__cta" href="{{ item.url }}">
+            <a
+              class="k-btn{% if section.settings.button_style == 'outline' %} k-btn--outline{% elsif section.settings.button_style == 'navy' %} k-btn--navy{% endif %} k-spotlight__cta"
+              href="{{ item.url }}"
+            >
               {{ section.settings.button_label }}
               {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
             </a>
@@ -40,14 +54,21 @@
         </div>
 
         {%- if benefit_count > 0 -%}
-          <ul class="k-spotlight__benefits">
-            {%- for benefit in benefits -%}
-              <li>
-                <span class="k-spotlight__benefit-icon">{% render 'icon', name: benefit.icon.value, class: 'k-icon--lg' %}</span>
-                <span>{{ benefit.label.value }}</span>
-              </li>
-            {%- endfor -%}
-          </ul>
+          <div class="k-spotlight__aside">
+            <ul class="k-spotlight__benefits">
+              {%- for benefit in benefits -%}
+                <li>
+                  <span class="k-spotlight__benefit-icon{% if section.settings.benefits_circle %} k-icon-circle{% endif %}">
+                    {% render 'icon', name: benefit.icon.value, class: 'k-icon--lg' %}
+                  </span>
+                  <span>{{ benefit.label.value }}</span>
+                </li>
+              {%- endfor -%}
+            </ul>
+            {%- if section.settings.benefits_note != blank -%}
+              <p class="k-spotlight__note">{{ section.settings.benefits_note | newline_to_br }}</p>
+            {%- endif -%}
+          </div>
         {%- endif -%}
       </div>
     </div>
@@ -65,11 +86,61 @@
       "type": "product",
       "id": "product",
       "label": "Produit",
-      "info": "Le nom, l'accroche, la description et les bénéfices proviennent de la fiche produit. Aucun prix n'est affiché."
+      "info": "Les bénéfices affichés proviennent du champ méta kemia.benefits de la fiche produit. Aucun prix n'est affiché."
     },
     { "type": "image_picker", "id": "image", "label": "Visuel" },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Disposition",
+      "options": [
+        { "value": "media-first", "label": "Visuel, texte, bénéfices" },
+        { "value": "text-first", "label": "Texte, visuel, bénéfices" }
+      ],
+      "default": "media-first"
+    },
+    { "type": "header", "content": "Texte" },
     { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Notre première formule" },
-    { "type": "text", "id": "button_label", "label": "Bouton", "default": "Découvrir le produit" }
+    { "type": "textarea", "id": "heading", "label": "Titre", "info": "Vide : le nom du produit. Chaque retour à la ligne crée une ligne." },
+    {
+      "type": "select",
+      "id": "heading_case",
+      "label": "Casse du titre",
+      "options": [
+        { "value": "upper", "label": "Majuscules" },
+        { "value": "normal", "label": "Telle que saisie" }
+      ],
+      "default": "upper"
+    },
+    { "type": "checkbox", "id": "show_tagline", "label": "Afficher l'accroche du produit", "default": true },
+    { "type": "richtext", "id": "text", "label": "Texte", "info": "Vide : la description courte de la fiche produit." },
+    { "type": "text", "id": "button_label", "label": "Bouton", "default": "Découvrir le produit" },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Style du bouton",
+      "options": [
+        { "value": "solid", "label": "Doré plein" },
+        { "value": "outline", "label": "Doré contour" },
+        { "value": "navy", "label": "Bleu profond" }
+      ],
+      "default": "outline"
+    },
+    { "type": "header", "content": "Bénéfices" },
+    { "type": "checkbox", "id": "benefits_circle", "label": "Cercler les pictogrammes", "default": false },
+    { "type": "textarea", "id": "benefits_note", "label": "Texte sous les bénéfices" },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" },
+        { "value": "blue-tint", "label": "Bleu très clair" }
+      ],
+      "default": "none"
+    }
   ],
   "presets": [{ "name": "Mise en avant produit" }]
 }
