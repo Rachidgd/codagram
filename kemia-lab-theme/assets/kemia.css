@@ -348,6 +348,17 @@ summary::-webkit-details-marker {
   color: #fff;
 }
 
+.k-btn--ghost {
+  background: transparent;
+  color: var(--k-ink);
+  border-color: var(--k-ink);
+}
+
+.k-btn--ghost:hover {
+  background: var(--k-ink);
+  color: #fff;
+}
+
 .k-btn--blue {
   background: transparent;
   color: var(--k-blue);

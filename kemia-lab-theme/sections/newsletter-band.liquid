@@ -1,10 +1,16 @@
 <div class="k-section k-section--tight">
   <div class="k-container">
-    <div class="k-newsletter-band k-newsletter-band--{{ section.settings.color_scheme }}{% if section.settings.image != blank %} k-newsletter-band--with-image{% endif %}">
+    <div class="k-newsletter-band k-newsletter-band--{{ section.settings.color_scheme }}{% if section.settings.image != blank %} k-newsletter-band--with-image{% endif %}{% if section.settings.icon != 'none' and section.settings.image == blank %} k-newsletter-band--with-icon{% endif %}">
       {%- if section.settings.image != blank -%}
         <div class="k-newsletter-band__media">
           {% render 'image', image: section.settings.image, ratio: '62%', sizes: '(min-width: 990px) 280px, 100vw', fit: 'cover' %}
         </div>
+      {%- endif -%}
+
+      {%- if section.settings.icon != 'none' -%}
+        <span class="k-newsletter-band__icon">
+          {% render 'icon', name: section.settings.icon, class: 'k-icon--xl' %}
+        </span>
       {%- endif -%}
 
       <div class="k-newsletter-band__text">
@@ -13,6 +19,9 @@
         {%- endif -%}
         {%- if section.settings.heading != blank -%}
           <p class="k-newsletter-band__heading">{{ section.settings.heading }}</p>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <p class="k-newsletter-band__body">{{ section.settings.text }}</p>
         {%- endif -%}
       </div>
 
@@ -71,6 +80,23 @@
       "id": "heading",
       "label": "Titre",
       "default": "Restez informé de nos cures et nouveautés."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Texte"
+    },
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "Pictogramme",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "mail", "label": "Enveloppe" },
+        { "value": "sparkle", "label": "Étincelle" },
+        { "value": "leaf", "label": "Feuille" }
+      ],
+      "default": "mail"
     },
     {
       "type": "text",

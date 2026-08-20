@@ -1,10 +1,18 @@
-<article class="k-review"{% if filter_value %} data-k-filter-item="{{ filter_value }}"{% endif %}>
+{%- liquid
+  assign centered = false
+  if card_style == 'centered'
+    assign centered = true
+  endif
+-%}
+<article class="k-review{% if centered %} k-review--centered{% endif %}"{% if filter_value %} data-k-filter-item="{{ filter_value }}"{% endif %}>
   <div class="k-review__head">
     {% render 'stars', rating: review.rating %}
     {%- if show_score and review.rating -%}
       <span class="k-review__score">{{ review.rating | replace: '.', ',' }}/5</span>
     {%- endif -%}
-    {% render 'icon', name: 'quote', class: 'k-review__quote' %}
+    {%- unless centered -%}
+      {% render 'icon', name: 'quote', class: 'k-review__quote' %}
+    {%- endunless -%}
   </div>
 
   {%- if review.title != blank -%}

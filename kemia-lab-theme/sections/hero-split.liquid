@@ -1,3 +1,47 @@
+{%- liquid
+  assign line_count = 0
+  for block in section.blocks
+    if block.type == 'line'
+      assign line_count = line_count | plus: 1
+    endif
+  endfor
+
+  assign trust_count = 0
+  for block in section.blocks
+    if block.type == 'trust'
+      assign trust_count = trust_count | plus: 1
+    endif
+  endfor
+
+  assign heading_class = 'k-hero__heading'
+  if section.settings.heading_style == 'display'
+    assign heading_class = heading_class | append: ' k-display'
+  endif
+  if section.settings.heading_case == 'upper'
+    assign heading_class = heading_class | append: ' k-hero__heading--upper'
+  endif
+-%}
+
+{%- capture heading_content -%}
+  {%- if line_count > 0 -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'line' -%}
+        <span class="k-hero__line" {{ block.shopify_attributes }}>{{ block.settings.text }}{% if block.settings.accent != blank %} <span class="k-gold">{{ block.settings.accent }}</span>{% endif %}</span>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- else -%}
+    {{- section.settings.heading | newline_to_br -}}
+    {%- if section.settings.highlight != blank -%}
+      {%- if section.settings.highlight_break -%}
+        <span class="k-hero__highlight k-gold">{{ section.settings.highlight }}</span>
+      {%- else -%}
+        <span class="k-gold"> {{ section.settings.highlight }}</span>
+      {%- endif -%}
+    {%- endif -%}
+    {{- section.settings.heading_suffix -}}
+  {%- endif -%}
+{%- endcapture -%}
+
 <section class="k-hero k-hero--{{ section.settings.background }}">
   <div class="k-container k-hero__inner">
     <div class="k-hero__text">
@@ -5,23 +49,11 @@
         <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
       {%- endif -%}
 
-      {%- if section.settings.heading != blank -%}
-        {%- capture heading_content -%}
-          {{- section.settings.heading | newline_to_br -}}
-          {%- if section.settings.highlight != blank -%}
-            {%- if section.settings.highlight_break -%}
-              <span class="k-hero__highlight k-gold">{{ section.settings.highlight }}</span>
-            {%- else -%}
-              <span class="k-gold"> {{ section.settings.highlight }}</span>
-            {%- endif -%}
-          {%- endif -%}
-          {{- section.settings.heading_suffix -}}
-        {%- endcapture -%}
-
+      {%- if heading_content != blank -%}
         {%- if section.settings.heading_tag == 'h1' -%}
-          <h1 class="k-hero__heading{% if section.settings.heading_style == 'display' %} k-display{% endif %}">{{ heading_content }}</h1>
+          <h1 class="{{ heading_class }}">{{ heading_content }}</h1>
         {%- else -%}
-          <h2 class="k-hero__heading{% if section.settings.heading_style == 'display' %} k-display{% endif %}">{{ heading_content }}</h2>
+          <h2 class="{{ heading_class }}">{{ heading_content }}</h2>
         {%- endif -%}
       {%- endif -%}
 
@@ -33,30 +65,52 @@
         <div class="k-hero__body k-text">{{ section.settings.text }}</div>
       {%- endif -%}
 
-      {%- if section.settings.button_label != blank -%}
-        <a
-          class="k-btn{% if section.settings.button_style == 'outline' %} k-btn--outline{% endif %} k-hero__cta"
-          href="{{ section.settings.button_link }}"
-        >
-          {{ section.settings.button_label }}
-          {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
-        </a>
+      {%- if section.settings.button_label != blank or section.settings.button2_label != blank -%}
+        <div class="k-hero__actions">
+          {%- if section.settings.button_label != blank -%}
+            <a
+              class="k-btn{% if section.settings.button_style == 'outline' %} k-btn--outline{% endif %} k-hero__cta"
+              href="{{ section.settings.button_link }}"
+            >
+              {{ section.settings.button_label }}
+            </a>
+          {%- endif -%}
+          {%- if section.settings.button2_label != blank -%}
+            <a
+              class="k-btn{% if section.settings.button2_style == 'ghost' %} k-btn--ghost{% else %} k-btn--outline{% endif %} k-hero__cta"
+              href="{{ section.settings.button2_link }}"
+            >
+              {{ section.settings.button2_label }}
+            </a>
+          {%- endif -%}
+        </div>
       {%- endif -%}
 
-      {%- if section.blocks.size > 0 -%}
+      {%- if section.settings.origin_text != blank -%}
+        <p class="k-hero__origin">
+          {%- if section.settings.origin_icon != 'none' -%}
+            {% render 'icon', name: section.settings.origin_icon, class: 'k-icon--sm' %}
+          {%- endif -%}
+          <span>{{ section.settings.origin_text }}</span>
+        </p>
+      {%- endif -%}
+
+      {%- if trust_count > 0 -%}
         <ul class="k-hero__trust">
           {%- for block in section.blocks -%}
-            <li class="k-hero__trust-item" {{ block.shopify_attributes }}>
-              {%- if block.settings.icon != 'none' -%}
-                {% render 'icon', name: block.settings.icon, class: 'k-icon--lg' %}
-              {%- endif -%}
-              <span class="k-hero__trust-body">
-                <span class="k-trust__title">{{ block.settings.title }}</span>
-                {%- if block.settings.text != blank -%}
-                  <span class="k-trust__text">{{ block.settings.text }}</span>
+            {%- if block.type == 'trust' -%}
+              <li class="k-hero__trust-item" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon != 'none' -%}
+                  {% render 'icon', name: block.settings.icon, class: 'k-icon--lg' %}
                 {%- endif -%}
-              </span>
-            </li>
+                <span class="k-hero__trust-body">
+                  <span class="k-trust__title">{{ block.settings.title }}</span>
+                  {%- if block.settings.text != blank -%}
+                    <span class="k-trust__text">{{ block.settings.text }}</span>
+                  {%- endif -%}
+                </span>
+              </li>
+            {%- endif -%}
           {%- endfor -%}
         </ul>
       {%- endif -%}
@@ -73,9 +127,11 @@
       %}
 
       {%- if section.settings.badge_text != blank -%}
-        <span class="k-hero__badge">
-          <span class="k-hero__badge-text">{{ section.settings.badge_text }}</span>
-          {%- if section.settings.badge_icon != 'none' -%}
+        <span class="k-hero__badge k-hero__badge--{{ section.settings.badge_style }}">
+          <span class="k-hero__badge-text">{{ section.settings.badge_text | newline_to_br }}</span>
+          {%- if section.settings.badge_style == 'circle' -%}
+            <span class="k-hero__badge-rule" aria-hidden="true"></span>
+          {%- elsif section.settings.badge_icon != 'none' -%}
             {% render 'icon', name: section.settings.badge_icon, class: 'k-icon--sm' %}
           {%- endif -%}
         </span>
@@ -89,7 +145,7 @@
   "name": "Hero",
   "class": "k-hero-section",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Science au service de votre potentiel" },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
     {
       "type": "select",
       "id": "heading_tag",
@@ -111,55 +167,98 @@
       "default": "sans"
     },
     {
+      "type": "select",
+      "id": "heading_case",
+      "label": "Casse du titre",
+      "options": [
+        { "value": "normal", "label": "Telle que saisie" },
+        { "value": "upper", "label": "Majuscules" }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "paragraph",
+      "content": "Ajoutez un bloc « Ligne de titre » par ligne. Sans aucun bloc de ce type, les trois champs ci-dessous prennent le relais."
+    },
+    {
       "type": "textarea",
       "id": "heading",
       "label": "Titre",
-      "default": "Votre énergie.\nVotre concentration.",
       "info": "Chaque retour à la ligne saisi ici crée une ligne de titre."
     },
-    {
-      "type": "text",
-      "id": "highlight",
-      "label": "Fin de titre en doré",
-      "default": "Votre équilibre."
-    },
+    { "type": "text", "id": "highlight", "label": "Fin de titre en doré" },
     {
       "type": "checkbox",
       "id": "highlight_break",
       "label": "Partie dorée sur sa propre ligne",
       "default": true
     },
-    {
-      "type": "text",
-      "id": "heading_suffix",
-      "label": "Texte après la partie dorée"
-    },
-    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true },
+    { "type": "text", "id": "heading_suffix", "label": "Texte après la partie dorée" },
+    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": false },
     {
       "type": "richtext",
       "id": "text",
       "label": "Texte",
       "default": "<p>Des formules développées avec rigueur scientifique pour accompagner votre vitalité au quotidien.</p>"
     },
-    { "type": "text", "id": "button_label", "label": "Bouton", "default": "Découvrir 4 Vitality System" },
-    { "type": "url", "id": "button_link", "label": "Lien du bouton" },
+    { "type": "header", "content": "Boutons" },
+    { "type": "text", "id": "button_label", "label": "Bouton principal", "default": "Découvrir 4 Vitality System" },
+    { "type": "url", "id": "button_link", "label": "Lien du bouton principal" },
     {
       "type": "select",
       "id": "button_style",
-      "label": "Style du bouton",
+      "label": "Style du bouton principal",
       "options": [
         { "value": "solid", "label": "Doré plein" },
         { "value": "outline", "label": "Doré contour" }
       ],
       "default": "solid"
     },
+    { "type": "text", "id": "button2_label", "label": "Bouton secondaire" },
+    { "type": "url", "id": "button2_link", "label": "Lien du bouton secondaire" },
+    {
+      "type": "select",
+      "id": "button2_style",
+      "label": "Style du bouton secondaire",
+      "options": [
+        { "value": "ghost", "label": "Contour discret" },
+        { "value": "outline", "label": "Doré contour" }
+      ],
+      "default": "ghost"
+    },
+    { "type": "header", "content": "Mention d'origine" },
+    { "type": "text", "id": "origin_text", "label": "Texte" },
+    {
+      "type": "select",
+      "id": "origin_icon",
+      "label": "Pictogramme",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "flag-fr", "label": "Drapeau français" },
+        { "value": "hexagon", "label": "Hexagone" },
+        { "value": "shield-check", "label": "Bouclier" },
+        { "value": "award", "label": "Médaille" }
+      ],
+      "default": "flag-fr"
+    },
     { "type": "header", "content": "Visuel" },
     { "type": "image_picker", "id": "image", "label": "Image" },
-    { "type": "textarea", "id": "badge_text", "label": "Pastille ronde", "default": "Formule exclusive avec des actifs sélectionnés" },
+    { "type": "textarea", "id": "badge_text", "label": "Pastille", "info": "Chaque retour à la ligne crée une ligne dans la pastille." },
+    {
+      "type": "select",
+      "id": "badge_style",
+      "label": "Forme de la pastille",
+      "options": [
+        { "value": "pill", "label": "Étiquette blanche" },
+        { "value": "circle", "label": "Médaillon doré" }
+      ],
+      "default": "circle"
+    },
     {
       "type": "select",
       "id": "badge_icon",
       "label": "Pictogramme de la pastille",
+      "info": "Utilisé uniquement par l'étiquette blanche.",
       "options": [
         { "value": "none", "label": "Aucun" },
         { "value": "leaf", "label": "Feuille" },
@@ -180,8 +279,16 @@
       "default": "light"
     }
   ],
-  "max_blocks": 4,
+  "max_blocks": 12,
   "blocks": [
+    {
+      "type": "line",
+      "name": "Ligne de titre",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Texte" },
+        { "type": "text", "id": "accent", "label": "Fin de ligne en doré" }
+      ]
+    },
     {
       "type": "trust",
       "name": "Repère de confiance",
@@ -211,10 +318,10 @@
     {
       "name": "Hero",
       "blocks": [
-        { "type": "trust", "settings": { "icon": "leaf", "title": "Ingrédients", "text": "de qualité" } },
-        { "type": "trust", "settings": { "icon": "flask", "title": "Formules", "text": "avancées" } },
-        { "type": "trust", "settings": { "icon": "shield-check", "title": "Qualité", "text": "contrôlée" } },
-        { "type": "trust", "settings": { "icon": "hexagon", "title": "Fabriqué", "text": "en France" } }
+        { "type": "line", "settings": { "text": "Retrouvez", "accent": "" } },
+        { "type": "line", "settings": { "text": "Votre", "accent": "énergie." } },
+        { "type": "line", "settings": { "text": "Votre", "accent": "concentration." } },
+        { "type": "line", "settings": { "text": "Votre", "accent": "équilibre." } }
       ]
     }
   ]

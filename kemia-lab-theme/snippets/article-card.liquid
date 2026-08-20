@@ -1,24 +1,45 @@
 {%- liquid
   assign category = article.tags.first
   assign filter_tags = article.tags | join: '|'
+  assign card_layout = layout | default: 'stack'
+  assign is_row = false
+  if card_layout == 'row'
+    assign is_row = true
+  endif
 -%}
-<article class="k-article-card"{% if use_filter %} data-k-filter-item="{{ filter_tags | escape }}"{% endif %}>
+<article class="k-article-card{% if is_row %} k-article-card--row{% endif %}"{% if use_filter %} data-k-filter-item="{{ filter_tags | escape }}"{% endif %}>
   <a class="k-article-card__media" href="{{ article.url }}" tabindex="-1" aria-hidden="true">
-    {% render 'image', image: article.image, ratio: '62%', sizes: '(min-width: 990px) 33vw, 90vw', placeholder_icon: 'image' %}
-    {%- if category != blank -%}
-      <span class="k-article-card__tag">{{ category }}</span>
+    {%- if is_row -%}
+      {% render 'image', image: article.image, ratio: '100%', sizes: '120px', placeholder_icon: 'image' %}
+    {%- else -%}
+      {% render 'image', image: article.image, ratio: '62%', sizes: '(min-width: 990px) 33vw, 90vw', placeholder_icon: 'image' %}
+      {%- if category != blank -%}
+        <span class="k-article-card__tag">{{ category }}</span>
+      {%- endif -%}
     {%- endif -%}
   </a>
   <div class="k-article-card__body">
+    {%- if is_row and category != blank -%}
+      <span class="k-article-card__tag k-article-card__tag--inline">{{ category }}</span>
+    {%- endif -%}
     <h3 class="k-article-card__title">
       <a href="{{ article.url }}">{{ article.title }}</a>
     </h3>
     {%- if show_excerpt and article.excerpt_or_content != blank -%}
       <p class="k-article-card__excerpt">{{ article.excerpt_or_content | strip_html | truncate: 140 }}</p>
     {%- endif -%}
-    <p class="k-article-card__meta">
-      <span>{% render 'date', date: article.published_at %}</span>
-      {% render 'reading-time', article: article %}
-    </p>
+    {%- if is_row -%}
+      {%- if read_label != blank -%}
+        <a class="k-article-card__more" href="{{ article.url }}">
+          {{ read_label }}
+          {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+        </a>
+      {%- endif -%}
+    {%- else -%}
+      <p class="k-article-card__meta">
+        <span>{% render 'date', date: article.published_at %}</span>
+        {% render 'reading-time', article: article %}
+      </p>
+    {%- endif -%}
   </div>
 </article>

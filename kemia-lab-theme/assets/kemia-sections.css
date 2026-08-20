@@ -644,6 +644,10 @@
     grid-template-columns: 220px 1fr auto;
   }
 
+  .k-newsletter-band--with-icon {
+    grid-template-columns: auto 1fr auto;
+  }
+
   .k-newsletter-band__form form {
     grid-template-columns: minmax(220px, 260px) auto;
   }
@@ -2005,12 +2009,24 @@
     display: flex;
   }
 
+  /* Trois ou quatre cartes exactement dans la largeur du conteneur,
+     sans amorce de la suivante : c est le cadrage de la maquette. Le
+     gap vaut --k-space-4, soit 16px. */
   .k-rail--3 {
-    --k-rail-item: 31.4%;
+    --k-rail-item: calc((100% - 32px) / 3);
   }
 
   .k-rail--4 {
-    --k-rail-item: 23.2%;
+    --k-rail-item: calc((100% - 48px) / 4);
+  }
+
+  /* Le debordement dans les gouttieres sert au defilement tactile sur
+     petit ecran. Sur ordinateur il laisserait depasser une amorce de
+     carte hors du conteneur : la piste reprend la largeur exacte. */
+  .k-rail--3,
+  .k-rail--4 {
+    margin-inline: 0;
+    padding-inline: 0;
   }
 }
 
@@ -2065,8 +2081,48 @@
   max-width: 46ch;
 }
 
-.k-hero__cta {
+.k-hero__heading--upper {
+  /* Les capitales occupent plus de largeur : le titre est calibre un
+     cran en dessous pour que chaque ligne tienne sans se couper. */
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  font-size: calc(clamp(1.75rem, 1rem + 3.05vw, 3rem) * var(--k-h-scale));
+  line-height: 1.16;
+}
+
+.k-hero__line {
+  display: block;
+}
+
+.k-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-top: 26px;
+}
+
+.k-hero__cta {
+  margin-top: 0;
+}
+
+.k-hero__origin {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-family: var(--k-font-heading);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--k-ink);
+}
+
+.k-hero__origin .k-icon {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
 }
 
 .k-hero__trust {
@@ -2136,6 +2192,28 @@
   width: 14px;
   height: 14px;
   color: var(--k-gold);
+}
+
+.k-hero__badge--circle {
+  width: clamp(104px, 13vw, 146px);
+  padding: 14px;
+  border: 0;
+  background: linear-gradient(150deg, var(--k-gold) 0%, var(--k-gold-dark) 100%);
+  box-shadow: 0 14px 30px rgba(164, 100, 15, 0.24);
+}
+
+.k-hero__badge--circle .k-hero__badge-text {
+  font-size: clamp(9px, 0.9vw, 11.5px);
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  color: #fff;
+}
+
+.k-hero__badge-rule {
+  width: 26px;
+  height: 1px;
+  margin-top: 2px;
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .k-spotlight {
@@ -2262,10 +2340,22 @@
 
 .k-blogrow__head {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.k-blogrow__title {
+  display: grid;
+  gap: 6px;
+}
+
+.k-blogrow__intro {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--k-body);
 }
 
 .k-blogrow__grid {
@@ -2378,7 +2468,7 @@
 
 @media screen and (min-width: 990px) {
   .k-hero__inner {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.06fr);
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     gap: 40px;
   }
 
@@ -3406,12 +3496,23 @@
   max-width: 46ch;
 }
 
+.k-benefitsband--split .k-benefitsband__head {
+  max-width: none;
+}
+
 .k-benefitsband__heading {
   font-family: var(--k-font-heading);
   font-size: clamp(19px, 2.1vw, 26px);
   font-weight: 700;
   line-height: 1.3;
   color: inherit;
+}
+
+.k-benefitsband--split .k-benefitsband__heading {
+  font-size: var(--k-fs-h2);
+  line-height: 1.18;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
 .k-benefitsband__intro {
@@ -3442,8 +3543,23 @@
 }
 
 .k-benefitsband__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
   color: currentColor;
-  opacity: 0.95;
+}
+
+.k-benefitsband--blue-tint .k-benefitsband__icon {
+  border-color: rgba(1, 31, 75, 0.18);
+}
+
+.k-benefitsband__icon .k-icon {
+  width: 26px;
+  height: 26px;
 }
 
 .k-benefitsband--navy .k-benefitsband__icon {
@@ -4975,4 +5091,408 @@
     grid-auto-flow: column;
     gap: 28px;
   }
+}
+
+.k-fronts {
+  display: grid;
+  gap: 0;
+}
+
+.k-fronts__media .k-media {
+  border-radius: 0;
+}
+
+.k-fronts__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(30px, 4.5vw, 56px) var(--k-gutter);
+  text-align: center;
+}
+
+.k-fronts__heading {
+  max-width: 22ch;
+}
+
+.k-fronts__intro {
+  max-width: 60ch;
+  margin-top: 14px;
+}
+
+.k-fronts__conclusion {
+  margin-top: 26px;
+  font-family: var(--k-font-heading);
+  font-size: clamp(13px, 1.15vw, 15px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  color: var(--k-blue);
+}
+
+.k-fronts__list {
+  display: grid;
+  gap: 26px;
+  width: 100%;
+  max-width: 720px;
+  margin-top: 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.k-fronts__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: left;
+}
+
+.k-fronts__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid var(--k-gold);
+  color: var(--k-gold);
+}
+
+.k-fronts__icon--blue {
+  border-color: var(--k-blue);
+  color: var(--k-blue);
+}
+
+.k-fronts__icon .k-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.k-fronts__title {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--k-font-heading);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--k-gold);
+}
+
+.k-fronts__title--blue {
+  color: var(--k-blue);
+}
+
+.k-fronts__detail {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--k-body);
+}
+
+@media screen and (min-width: 750px) {
+  .k-fronts__list--2,
+  .k-fronts__list--3,
+  .k-fronts__list--4 {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .k-fronts__list--2 .k-fronts__item + .k-fronts__item,
+  .k-fronts__list--3 .k-fronts__item + .k-fronts__item,
+  .k-fronts__list--4 .k-fronts__item + .k-fronts__item {
+    padding-left: 26px;
+    border-left: 1px solid var(--k-border);
+  }
+
+  .k-fronts__list--2 .k-fronts__item,
+  .k-fronts__list--3 .k-fronts__item,
+  .k-fronts__list--4 .k-fronts__item {
+    padding-right: 26px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  /* Le visuel touche le bord de la fenetre : c est ce debordement
+     hors conteneur qui donne a la section son cadrage de maquette. */
+  .k-fronts--media-left {
+    grid-template-columns: minmax(0, 32fr) minmax(0, 68fr);
+  }
+
+  .k-fronts--media-right {
+    grid-template-columns: minmax(0, 68fr) minmax(0, 32fr);
+  }
+
+  .k-fronts--media-right .k-fronts__media {
+    order: 2;
+  }
+
+  .k-fronts__media {
+    align-self: stretch;
+  }
+
+  /* La hauteur du visuel est celle de la colonne de texte : le
+     calage par ratio est neutralise, sinon l image imposerait sa
+     propre hauteur et laisserait un vide sous le texte. */
+  .k-fronts__media .k-media {
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .k-fronts__media .k-media::before {
+    display: none;
+  }
+
+  .k-fronts__body {
+    padding-inline: clamp(28px, 4vw, 64px);
+  }
+}
+
+.k-benefitsband__main {
+  display: grid;
+  gap: 26px;
+  justify-items: center;
+  width: 100%;
+}
+
+.k-benefitsband__media {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.k-benefitsband__media .k-media {
+  width: 100%;
+  background: transparent;
+}
+
+.k-benefitsband--split .k-benefitsband__head,
+.k-benefitsband--split .k-benefitsband__list {
+  text-align: center;
+}
+
+.k-benefitsband__figures--checks {
+  gap: 10px 26px;
+  padding-top: 20px;
+}
+
+.k-benefitsband__figures--checks li {
+  align-items: center;
+  gap: 8px;
+  font-family: var(--k-font-heading);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.k-benefitsband__figures--checks .k-icon {
+  width: 17px;
+  height: 17px;
+  color: var(--k-gold-soft);
+}
+
+.k-benefitsband--blue-tint .k-benefitsband__figures--checks .k-icon {
+  color: var(--k-blue);
+}
+
+.k-benefitsband__figures--checks .k-benefitsband__value {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.k-benefitsband--navy .k-benefitsband__figures--checks .k-benefitsband__value,
+.k-benefitsband--blue-tint .k-benefitsband__figures--checks .k-benefitsband__value {
+  color: inherit;
+}
+
+.k-benefitsband__figures--checks .k-benefitsband__unit {
+  font-size: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 1;
+}
+
+@media screen and (min-width: 990px) {
+  .k-benefitsband--split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .k-benefitsband--split .k-benefitsband__main {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: center;
+    gap: 40px;
+  }
+
+  .k-benefitsband--split .k-benefitsband__head,
+  .k-benefitsband--split .k-benefitsband__list {
+    grid-column: 1;
+    text-align: left;
+    justify-items: start;
+  }
+
+  .k-benefitsband--split .k-benefitsband__head {
+    justify-items: start;
+  }
+
+  .k-benefitsband--split .k-benefitsband__item {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .k-benefitsband--split .k-benefitsband__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px 14px;
+  }
+
+  .k-benefitsband--split .k-benefitsband__media {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    justify-items: end;
+  }
+}
+
+.k-reviews__tagline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px 0 0;
+  font-size: 13.5px;
+  color: var(--k-body);
+}
+
+.k-article-card--row {
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+}
+
+.k-article-card--row .k-article-card__media {
+  flex: 0 0 auto;
+  width: clamp(88px, 26%, 120px);
+}
+
+.k-article-card--row .k-article-card__media .k-media {
+  height: 100%;
+}
+
+.k-article-card--row .k-article-card__media .k-media::before {
+  display: none;
+}
+
+.k-article-card--row .k-article-card__body {
+  gap: 8px;
+  padding: 14px 16px 15px;
+  justify-content: center;
+}
+
+.k-article-card__tag--inline {
+  position: static;
+  align-self: flex-start;
+  padding: 4px 8px;
+  border: 1px solid var(--k-border);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--k-ink);
+  font-size: 9.5px;
+}
+
+.k-article-card--row .k-article-card__title {
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.k-article-card__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-family: var(--k-font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--k-gold);
+}
+
+.k-article-card__more:hover {
+  color: var(--k-gold-dark);
+}
+
+.k-article-card__more .k-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.k-newsletter-band__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 58px;
+  height: 58px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  color: #fff;
+}
+
+.k-newsletter-band--beige .k-newsletter-band__icon {
+  border-color: var(--k-border);
+  color: var(--k-gold);
+}
+
+.k-newsletter-band__body {
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.k-newsletter-band--beige .k-newsletter-band__body {
+  color: var(--k-body);
+}
+
+.k-newsletter-band--navy .k-newsletter-band__heading {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 990px) {
+  /* La ligne de reperes court sous les deux colonnes, elle ne fait
+     pas partie de la grille interne. */
+  .k-benefitsband--split .k-benefitsband__figures {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .k-benefitsband--split .k-benefitsband__media .k-btn {
+    align-self: end;
+  }
+}
+
+.k-review--centered {
+  align-items: center;
+  text-align: center;
+}
+
+.k-review--centered .k-review__head {
+  justify-content: center;
+}
+
+.k-review--centered .k-review__body {
+  font-style: italic;
+}
+
+.k-review--centered .k-review__foot {
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }

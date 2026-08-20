@@ -28,7 +28,13 @@
         {%- if section.settings.heading != blank -%}
           <h2 class="k-title-caps k-h3">{{ section.settings.heading }}</h2>
         {%- endif -%}
-        <hr class="k-rule">
+        {%- if section.settings.show_rule -%}<hr class="k-rule">{%- endif -%}
+        {%- if section.settings.tagline != blank -%}
+          <p class="k-reviews__tagline">
+            {% render 'stars', rating: rating %}
+            <span>{{ section.settings.tagline }}</span>
+          </p>
+        {%- endif -%}
         {%- if section.settings.show_summary and review_count > 0 -%}
           <div class="k-reviews__summary">
             <span>{{ review_count }} {{ section.settings.summary_label }}</span>
@@ -44,7 +50,7 @@
 
         <div class="k-reviews__track k-rail k-rail--{{ section.settings.per_view }}" data-k-rail-track>
           {%- for item in items limit: limit -%}
-            {% render 'review-card', review: item, show_score: section.settings.show_score, verified_label: section.settings.verified_label %}
+            {% render 'review-card', review: item, show_score: section.settings.show_score, verified_label: section.settings.verified_label, card_style: section.settings.card_style %}
           {%- endfor -%}
         </div>
 
@@ -78,6 +84,28 @@
       "id": "heading",
       "label": "Titre",
       "default": "Ils nous font confiance"
+    },
+    {
+      "type": "select",
+      "id": "card_style",
+      "label": "Style des cartes",
+      "options": [
+        { "value": "quote", "label": "Guillemet, texte à gauche" },
+        { "value": "centered", "label": "Centré" }
+      ],
+      "default": "quote"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rule",
+      "label": "Filet doré",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Accroche sous le titre",
+      "info": "Affichée avec les étoiles, sous le titre."
     },
     {
       "type": "checkbox",

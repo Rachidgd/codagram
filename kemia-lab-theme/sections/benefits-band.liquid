@@ -10,13 +10,14 @@
 {%- if benefit_count > 0 -%}
   <section class="k-section k-benefitsband-section">
     <div class="k-container">
-      <div class="k-benefitsband k-benefitsband--{{ section.settings.color_scheme }}">
+      <div class="k-benefitsband k-benefitsband--{{ section.settings.color_scheme }} k-benefitsband--{{ section.settings.layout }}">
+        <div class="k-benefitsband__main">
         <div class="k-benefitsband__head">
           {%- if section.settings.eyebrow != blank -%}
             <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
           {%- endif -%}
           {%- if section.settings.heading != blank -%}
-            <h2 class="k-benefitsband__heading">{{ section.settings.heading }}</h2>
+            <h2 class="k-benefitsband__heading">{{ section.settings.heading | newline_to_br }}</h2>
           {%- endif -%}
           {%- if section.settings.intro != blank -%}
             <div class="k-benefitsband__intro">{{ section.settings.intro }}</div>
@@ -35,22 +36,42 @@
           {%- endfor -%}
         </ul>
 
+        </div>
+
+        {%- if section.settings.layout == 'split' -%}
+          <div class="k-benefitsband__media">
+            {% render 'image',
+              image: section.settings.image,
+              ratio: '92%',
+              fit: 'contain',
+              sizes: '(min-width: 990px) 38vw, 90vw',
+              placeholder_icon: 'bottle'
+            %}
+            {%- if section.settings.button_label != blank -%}
+              <a class="k-btn{% if section.settings.button_style == 'light' %} k-btn--light{% endif %} k-benefitsband__cta" href="{{ section.settings.button_link | default: source.url }}">
+                {{ section.settings.button_label }}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- elsif section.settings.button_label != blank -%}
+          <a class="k-btn{% if section.settings.button_style == 'light' %} k-btn--light{% endif %} k-benefitsband__cta" href="{{ section.settings.button_link | default: source.url }}">
+            {{ section.settings.button_label }}
+            {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+          </a>
+        {%- endif -%}
+
         {%- if section.blocks.size > 0 -%}
-          <ul class="k-benefitsband__figures">
+          <ul class="k-benefitsband__figures k-benefitsband__figures--{{ section.settings.figures_style }}">
             {%- for block in section.blocks -%}
               <li {{ block.shopify_attributes }}>
+                {%- if section.settings.figures_style == 'checks' -%}
+                  {% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}
+                {%- endif -%}
                 <span class="k-benefitsband__value">{{ block.settings.value }}</span>
                 <span class="k-benefitsband__unit">{{ block.settings.label }}</span>
               </li>
             {%- endfor -%}
           </ul>
-        {%- endif -%}
-
-        {%- if section.settings.button_label != blank -%}
-          <a class="k-btn k-btn--light k-benefitsband__cta" href="{{ section.settings.button_link | default: source.url }}">
-            {{ section.settings.button_label }}
-            {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
-          </a>
         {%- endif -%}
       </div>
     </div>
@@ -76,6 +97,28 @@
     { "type": "checkbox", "id": "show_text", "label": "Afficher le texte sous chaque bénéfice", "default": true },
     {
       "type": "select",
+      "id": "layout",
+      "label": "Disposition",
+      "info": "En deux colonnes, le visuel du produit et le bouton passent à droite.",
+      "options": [
+        { "value": "centered", "label": "Centrée" },
+        { "value": "split", "label": "Deux colonnes avec visuel" }
+      ],
+      "default": "centered"
+    },
+    { "type": "image_picker", "id": "image", "label": "Visuel", "info": "Utilisé par la disposition en deux colonnes." },
+    {
+      "type": "select",
+      "id": "figures_style",
+      "label": "Style des chiffres clés",
+      "options": [
+        { "value": "numbers", "label": "Grands chiffres" },
+        { "value": "checks", "label": "Ligne de repères cochés" }
+      ],
+      "default": "numbers"
+    },
+    {
+      "type": "select",
       "id": "color_scheme",
       "label": "Fond",
       "options": [
@@ -85,7 +128,17 @@
       "default": "navy"
     },
     { "type": "text", "id": "button_label", "label": "Bouton", "default": "Découvrir la formule" },
-    { "type": "url", "id": "button_link", "label": "Lien du bouton", "info": "Vide : la fiche du produit source." }
+    { "type": "url", "id": "button_link", "label": "Lien du bouton", "info": "Vide : la fiche du produit source." },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Style du bouton",
+      "options": [
+        { "value": "gold", "label": "Doré plein" },
+        { "value": "light", "label": "Blanc" }
+      ],
+      "default": "gold"
+    }
   ],
   "max_blocks": 4,
   "blocks": [

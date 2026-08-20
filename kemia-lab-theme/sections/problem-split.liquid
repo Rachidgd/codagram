@@ -1,0 +1,156 @@
+{%- liquid
+  assign columns = 0
+  for block in section.blocks
+    unless block.settings.title == blank and block.settings.text == blank
+      assign columns = columns | plus: 1
+    endunless
+  endfor
+-%}
+
+{%- if columns > 0 or section.settings.heading != blank -%}
+  <section class="k-fronts-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
+    <div class="k-fronts k-fronts--media-{{ section.settings.media_side }}">
+      <div class="k-fronts__media">
+        {% render 'image',
+          image: section.settings.image,
+          ratio: '100%',
+          sizes: '(min-width: 990px) 34vw, 100vw',
+          placeholder_icon: 'user'
+        %}
+      </div>
+
+      <div class="k-fronts__body">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="k-h2 k-title-caps k-fronts__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.intro != blank -%}
+          <div class="k-fronts__intro k-text">{{ section.settings.intro }}</div>
+        {%- endif -%}
+
+        {%- if columns > 0 -%}
+          <ul class="k-fronts__list k-fronts__list--{{ columns }}">
+            {%- for block in section.blocks -%}
+              {%- unless block.settings.title == blank and block.settings.text == blank -%}
+                <li class="k-fronts__item" {{ block.shopify_attributes }}>
+                  {%- if block.settings.icon != 'none' -%}
+                    <span class="k-fronts__icon k-fronts__icon--{{ block.settings.tone }}">
+                      {% render 'icon', name: block.settings.icon, class: 'k-icon--lg' %}
+                    </span>
+                  {%- endif -%}
+                  <div class="k-fronts__text">
+                    {%- if block.settings.title != blank -%}
+                      <span class="k-fronts__title k-fronts__title--{{ block.settings.tone }}">{{ block.settings.title }}</span>
+                    {%- endif -%}
+                    {%- if block.settings.text != blank -%}
+                      <p class="k-fronts__detail">{{ block.settings.text }}</p>
+                    {%- endif -%}
+                  </div>
+                </li>
+              {%- endunless -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.conclusion != blank -%}
+          <p class="k-fronts__conclusion">{{ section.settings.conclusion }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{%- else -%}
+  {% render 'section-empty', message: "Constat illustré : ajoutez un titre et au moins une colonne." %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Constat illustré",
+  "class": "k-fronts-wrap",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
+    { "type": "textarea", "id": "heading", "label": "Titre", "default": "La fatigue attaque sur deux fronts" },
+    { "type": "richtext", "id": "intro", "label": "Introduction" },
+    {
+      "type": "text",
+      "id": "conclusion",
+      "label": "Phrase de conclusion",
+      "info": "Affichée sous les colonnes, centrée et mise en avant."
+    },
+    { "type": "header", "content": "Visuel" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    {
+      "type": "select",
+      "id": "media_side",
+      "label": "Position du visuel",
+      "options": [
+        { "value": "left", "label": "À gauche" },
+        { "value": "right", "label": "À droite" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" },
+        { "value": "blue-tint", "label": "Bleu très clair" }
+      ],
+      "default": "soft"
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "front",
+      "name": "Colonne",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Pictogramme",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "user", "label": "Silhouette" },
+            { "value": "brain", "label": "Cerveau" },
+            { "value": "muscle", "label": "Vitalité" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "moon", "label": "Lune" },
+            { "value": "target", "label": "Cible" },
+            { "value": "shield-star", "label": "Bien-être" },
+            { "value": "clock", "label": "Horloge" }
+          ],
+          "default": "user"
+        },
+        {
+          "type": "select",
+          "id": "tone",
+          "label": "Couleur du pictogramme",
+          "options": [
+            { "value": "gold", "label": "Doré" },
+            { "value": "blue", "label": "Bleu" }
+          ],
+          "default": "gold"
+        },
+        { "type": "text", "id": "title", "label": "Titre", "default": "Votre corps" },
+        { "type": "textarea", "id": "text", "label": "Texte" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Constat illustré",
+      "blocks": [
+        { "type": "front", "settings": { "icon": "user", "tone": "gold", "title": "Votre corps" } },
+        { "type": "front", "settings": { "icon": "brain", "tone": "blue", "title": "Votre esprit" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

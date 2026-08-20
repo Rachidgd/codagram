@@ -3,59 +3,63 @@
     "hero": {
       "type": "hero-split",
       "blocks": {
-        "t1": {
-          "type": "trust",
+        "l1": {
+          "type": "line",
           "settings": {
-            "icon": "leaf",
-            "title": "Ingrédients",
-            "text": "de qualité"
+            "text": "Retrouvez",
+            "accent": ""
           }
         },
-        "t2": {
-          "type": "trust",
+        "l2": {
+          "type": "line",
           "settings": {
-            "icon": "flask",
-            "title": "Formules",
-            "text": "avancées"
+            "text": "Votre",
+            "accent": "énergie."
           }
         },
-        "t3": {
-          "type": "trust",
+        "l3": {
+          "type": "line",
           "settings": {
-            "icon": "shield-check",
-            "title": "Qualité",
-            "text": "contrôlée"
+            "text": "Votre",
+            "accent": "concentration."
           }
         },
-        "t4": {
-          "type": "trust",
+        "l4": {
+          "type": "line",
           "settings": {
-            "icon": "hexagon",
-            "title": "Fabriqué",
-            "text": "en France"
+            "text": "Votre",
+            "accent": "équilibre."
           }
         }
       },
       "block_order": [
-        "t1",
-        "t2",
-        "t3",
-        "t4"
+        "l1",
+        "l2",
+        "l3",
+        "l4"
       ],
       "settings": {
-        "eyebrow": "Fabriqué en France, vegan et sans OGM",
+        "eyebrow": "",
         "heading_tag": "h1",
         "heading_style": "sans",
-        "heading": "Le complément alimentaire contre la fatigue physique et mentale",
+        "heading_case": "upper",
+        "heading": "",
         "highlight": "",
         "highlight_break": true,
-        "show_rule": true,
-        "text": "<p>Pensé pour les journées qui tirent sur le corps et sur la tête.</p>",
+        "heading_suffix": "",
+        "show_rule": false,
+        "text": "<p>4 Vitality System, la synergie de 7 actifs sélectionnés pour soutenir votre énergie, votre mental et votre vitalité au quotidien.</p>",
         "button_label": "Découvrir 4 Vitality System",
         "button_link": "/products/4-vitality-system",
         "button_style": "solid",
-        "image": "shopify://shop_images/8EE624E9-E3F8-4147-9488-4CBA0B10D70A.png",
-        "badge_text": "Formule exclusive à 7 actifs",
+        "button2_label": "En savoir plus",
+        "button2_link": "/pages/science",
+        "button2_style": "ghost",
+        "origin_text": "Fabriqué en France",
+        "origin_icon": "flag-fr",
+        "image": "shopify://shop_images/complement-alimentaire-cure-1-mois-kemia-lab-4-vitality-system-carre.webp",
+        "badge_text": "7 actifs\nhautement\ndosés",
+        "badge_style": "circle",
         "badge_icon": "leaf",
         "background": "light"
       }
@@ -74,9 +78,9 @@
         "r2": {
           "type": "item",
           "settings": {
-            "icon": "clock",
-            "title": "Expédition rapide",
-            "text": "24 à 48h ouvrées"
+            "icon": "package",
+            "title": "Expédition 24/48h",
+            "text": "en France métropolitaine"
           }
         },
         "r3": {
@@ -84,7 +88,7 @@
           "settings": {
             "icon": "lock",
             "title": "Paiement sécurisé",
-            "text": "100% sécurisé"
+            "text": "crypté et 100% sécurisé"
           }
         },
         "r4": {
@@ -92,7 +96,7 @@
           "settings": {
             "icon": "headset",
             "title": "Service client",
-            "text": "Réponse rapide en semaine"
+            "text": "réponse rapide en semaine"
           }
         }
       },
@@ -104,72 +108,67 @@
       ],
       "settings": {
         "heading": "",
-        "layout": "inline",
-        "background": "card",
+        "layout": "stacked",
+        "icon_size": "xl",
+        "background": "none",
         "dividers": true,
-        "compact": true
+        "compact": false
       }
     },
-    "story": {
-      "type": "storytelling",
+    "fronts": {
+      "type": "problem-split",
       "blocks": {
-        "p1": {
-          "type": "point",
+        "f1": {
+          "type": "front",
           "settings": {
-            "icon": "bolt",
-            "text": "Le réveil qui coûte plus cher"
+            "icon": "user",
+            "tone": "gold",
+            "title": "Votre corps",
+            "text": "Manque d'énergie, baisse de performance, récupération plus lente, vitalité en berne."
           }
         },
-        "p2": {
-          "type": "point",
+        "f2": {
+          "type": "front",
           "settings": {
             "icon": "brain",
-            "text": "Le coup de barre de 15h"
-          }
-        },
-        "p3": {
-          "type": "point",
-          "settings": {
-            "icon": "capsule",
-            "text": "L'énergie qui ne tient pas la journée"
+            "tone": "blue",
+            "title": "Votre esprit",
+            "text": "Manque de concentration, mental saturé, motivation en dents de scie."
           }
         }
       },
       "block_order": [
-        "p1",
-        "p2",
-        "p3"
+        "f1",
+        "f2"
       ],
       "settings": {
-        "eyebrow": "Le constat",
+        "eyebrow": "",
         "heading": "La fatigue attaque sur deux fronts",
-        "text": "<p>Le corps décroche, la tête suit. Une baisse d'énergie s'accompagne presque toujours d'une baisse de concentration.</p>",
-        "transition": "Traiter l'un sans l'autre, c'est traiter à moitié.",
-        "layout": "bubbles",
-        "button_label": "Voir notre réponse",
-        "button_link": "/products/4-vitality-system",
-        "button_style": "outline",
+        "intro": "",
+        "conclusion": "4 Vitality System agit là où cela compte vraiment.",
+        "image": "shopify://shop_images/kemia_lab_complement_sportif.png",
+        "media_side": "left",
         "background": "soft"
       }
     },
-    "benefits": {
+    "piliers": {
       "type": "benefits-band",
       "blocks": {
-        "f1": {
+        "c1": {
           "type": "figure",
           "settings": {
             "value": "7",
             "label": "actifs"
           }
         },
-        "f2": {
+        "c2": {
           "type": "figure",
           "settings": {
             "value": "2",
-            "label": "gélules par jour"
+            "label": "gélules / jour"
           }
         },
-        "f3": {
+        "c3": {
           "type": "figure",
           "settings": {
             "value": "30",
@@ -178,292 +177,97 @@
         }
       },
       "block_order": [
-        "f1",
-        "f2",
-        "f3"
+        "c1",
+        "c2",
+        "c3"
       ],
       "settings": {
         "product": "4-vitality-system",
-        "eyebrow": "Ce que la cure vous apporte",
-        "heading": "Énergie, concentration, vitalité, immunité",
-        "intro": "<p>Quatre bénéfices couverts par une seule prise quotidienne.</p>",
-        "show_text": true,
+        "eyebrow": "",
+        "heading": "4 piliers essentiels.\nUne seule formule.",
+        "intro": "",
+        "show_text": false,
+        "layout": "split",
+        "image": "shopify://shop_images/kemia_labb_complement_alimentaire.png",
+        "figures_style": "checks",
         "color_scheme": "navy",
-        "button_label": "Découvrir la formule",
-        "button_link": ""
+        "button_label": "Découvrir le produit",
+        "button_link": "/products/4-vitality-system",
+        "button_style": "gold"
       }
     },
-    "actifs": {
-      "type": "actifs-constellation",
-      "settings": {
-        "product": "4-vitality-system",
-        "eyebrow": "La composition",
-        "heading": "Ce que contient une cure contre la fatigue",
-        "show_count": false,
-        "show_rule": true,
-        "intro": "Ginseng, safran, kola, zinc, vitamine D3 : chaque actif a un rôle et un dosage affiché.",
-        "image": "shopify://shop_images/8EE624E9-E3F8-4147-9488-4CBA0B10D70A.png",
-        "center_label": "2 gélules par jour",
-        "show_dosage": false,
-        "composition_link": "Voir la composition complète",
-        "composition_title": "Composition complète",
-        "background": "none"
-      }
-    },
-    "expert_quotes_nVzbPk": {
-      "type": "expert-quotes",
+    "pourquoi": {
+      "type": "features",
       "blocks": {
-        "quote_HwJKQA": {
-          "type": "quote",
+        "i1": {
+          "type": "item",
           "settings": {
-            "quote": "Lors de fatigue chronique et de fort stress je recommande 200 à 300 mg d'extrait de ginseng. Pour renforcer le système immunitaire 100 à 200 mg sont suffisants. Attention à choisir un ginseng titré à au moins 5 % de ginsénosides pour une efficacité optimale. Le ginseng se prend de préférence le matin à jeun avant le petit déjeuner.",
-            "name": "Extrait de ginseng",
-            "role": "Maxime Mességué",
-            "detail": "Diététicien nutritionniste",
-            "image": "shopify://shop_images/maxime-messegue.jpg",
-            "source_label": "",
-            "source_url": ""
+            "icon": "microscope",
+            "title": "Science & expertise",
+            "text": "Des formules développées à partir des dernières recherches scientifiques."
           }
         },
-        "quote_bW4qpV": {
-          "type": "quote",
+        "i2": {
+          "type": "item",
           "settings": {
-            "quote": "Le kola est naturellement riche en caféine, un stimulant associé à l'éveil et à l'énergie.",
-            "name": "Extrait de kola",
-            "role": "Julia Zumpano",
-            "detail": "Diététicienne, Cleveland Clinic",
-            "image": "",
-            "source_label": "Voir l'article",
-            "source_url": "https://health.clevelandclinic.org/kola-nut"
+            "icon": "leaf",
+            "title": "Ingrédients premium",
+            "text": "Des actifs rigoureusement sélectionnés pour leur qualité et leur efficacité."
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Qualité contrôlée",
+            "text": "Fabriqué en France selon les normes les plus exigeantes et contrôlé en laboratoire."
+          }
+        },
+        "i4": {
+          "type": "item",
+          "settings": {
+            "icon": "target",
+            "title": "Pensé pour progresser",
+            "text": "Des formules complètes pour vous accompagner jour après jour vers votre meilleure version."
           }
         }
       },
       "block_order": [
-        "quote_HwJKQA",
-        "quote_bW4qpV"
+        "i1",
+        "i2",
+        "i3",
+        "i4"
       ],
       "settings": {
-        "eyebrow": "Paroles de professionnels",
-        "heading": "Ce que disent les spécialistes des actifs",
-        "show_rule": true,
-        "note": "Ces avis portent sur les actifs pris isolément et non sur 4 Vitality System. Aucun de ces professionnels n'a de lien commercial avec Kemia Lab.",
-        "background": "none"
-      }
-    },
-    "spotlight": {
-      "type": "product-spotlight",
-      "settings": {
-        "product": "4-vitality-system",
-        "image": "shopify://shop_images/8EE624E9-E3F8-4147-9488-4CBA0B10D70A.png",
-        "eyebrow": "La formule",
-        "button_label": "Voir le produit et les cures"
-      }
-    },
-    "comparison": {
-      "type": "product-comparison",
-      "blocks": {
-        "row_eRkPbf": {
-          "type": "row",
-          "settings": {
-            "brand_text": "Vegan et sans OGM",
-            "other_text": "Gélules d'origine animale, ingrédients transformés"
-          }
-        },
-        "row-1": {
-          "type": "row",
-          "settings": {
-            "brand_text": "Une seule formule, 4 bénéfices essentiels",
-            "other_text": "Plusieurs produits pour des bénéfices isolés"
-          }
-        },
-        "row-2": {
-          "type": "row",
-          "settings": {
-            "brand_text": "Une prise le matin, et c'est réglé",
-            "other_text": "Plusieurs prises à répartir dans la journée"
-          }
-        },
-        "row-3": {
-          "type": "row",
-          "settings": {
-            "brand_text": "Des dosages affichés pour chaque actif",
-            "other_text": "Des compositions difficiles à comparer"
-          }
-        },
-        "row-4": {
-          "type": "row",
-          "settings": {
-            "brand_text": "Un seul budget à suivre",
-            "other_text": "Un budget réparti sur plusieurs produits"
-          }
-        }
-      },
-      "block_order": [
-        "row_eRkPbf",
-        "row-1",
-        "row-2",
-        "row-3",
-        "row-4"
-      ],
-      "settings": {
-        "eyebrow": "Comparatif",
-        "heading": "Quel complément alimentaire choisir contre la fatigue ?",
-        "show_rule": true,
-        "column_brand": "4 Vitality System",
-        "column_other": "Compléments classiques",
+        "eyebrow": "",
+        "heading": "Pourquoi choisir Kemia Lab ?",
+        "heading_style": "caps",
+        "show_rule": false,
+        "text": "",
+        "icon_style": "plain",
+        "accent": "gold",
+        "style": "plain",
+        "dividers": true,
         "button_label": "",
         "button_link": "",
-        "background": "soft"
-      }
-    },
-    "steps": {
-      "type": "how-to-use",
-      "blocks": {
-        "s1": {
-          "type": "step",
-          "settings": {
-            "title": "Le matin",
-            "text": "2 gélules au petit-déjeuner, avec un grand verre d'eau. Rien d'autre à prévoir dans la journée."
-          }
-        },
-        "s2": {
-          "type": "step",
-          "settings": {
-            "title": "Pendant 30 jours",
-            "text": "Une boîte couvre un programme complet. C'est la durée que nous recommandons avant de faire le point."
-          }
-        },
-        "s3": {
-          "type": "step",
-          "settings": {
-            "title": "Puis vous décidez",
-            "text": "Vous poursuivez avec une cure de 2 ou 3 mois, ou vous vous arrêtez. Pas d'abonnement, pas de reconduction."
-          }
-        }
-      },
-      "block_order": [
-        "s1",
-        "s2",
-        "s3"
-      ],
-      "settings": {
-        "eyebrow": "En pratique",
-        "heading": "Trois gestes, trente jours",
-        "show_rule": true,
-        "intro": "",
-        "note": "",
         "background": "none"
       }
     },
-    "reviews": {
+    "avis": {
       "type": "reviews",
       "settings": {
         "product": "4-vitality-system",
-        "heading": "Ils ont commencé leur cure",
+        "heading": "Ils ont choisi Kemia Lab",
+        "show_rule": false,
+        "tagline": "+500 clients déjà convaincus",
         "show_summary": false,
         "summary_label": "clients satisfaits",
         "show_score": false,
         "verified_label": "Client vérifié",
-        "limit": 6,
         "per_view": "3",
         "show_dots": true,
-        "background": "soft"
-      }
-    },
-    "objections": {
-      "type": "faq",
-      "blocks": {
-        "q1": {
-          "type": "question",
-          "settings": {
-            "category": "",
-            "icon": "none",
-            "question": "Quel complément alimentaire prendre contre la fatigue ?",
-            "answer": "<p>Contre une fatigue à la fois physique et mentale, une formule qui couvre les deux dimensions évite d'empiler les produits. 4 Vitality System réunit 7 actifs en 2 gélules par jour : L-Tyrosine, CDP-Choline, kola, ginseng, safran, zinc et vitamine D3. L'extrait de kola aide à réduire la fatigue, le ginseng soutient le tonus, le zinc contribue à une fonction cognitive normale.</p>"
-          }
-        },
-        "q2": {
-          "type": "question",
-          "settings": {
-            "category": "",
-            "icon": "none",
-            "question": "Au bout de combien de temps un complément contre la fatigue fait-il effet ?",
-            "answer": "<p>Une cure se juge sur 30 jours, à raison de 2 gélules par jour sans interruption. La perception varie d'une personne à l'autre : nous recommandons d'aller au bout du programme avant de faire le point.</p>"
-          }
-        },
-        "q3": {
-          "type": "question",
-          "settings": {
-            "category": "",
-            "icon": "none",
-            "question": "Pourquoi 7 actifs plutôt qu'un seul ?",
-            "answer": "<p>Chaque actif couvre un aspect différent de la fatigue, physique ou mentale. Les dosages complets sont affichés sur la fiche produit, sans mélange caché.</p>"
-          }
-        },
-        "q4": {
-          "type": "question",
-          "settings": {
-            "category": "",
-            "icon": "none",
-            "question": "La formule contient-elle de la caféine ?",
-            "answer": "<p>Oui, 25 mg par dose journalière, apportés par l'extrait de kola, soit environ un quart d'un café filtre. C'est pourquoi la prise est recommandée le matin et/ou le midi.</p>"
-          }
-        },
-        "q5": {
-          "type": "question",
-          "settings": {
-            "category": "",
-            "icon": "none",
-            "question": "Fatigue passagère ou fatigue installée : dans quel cas une cure est-elle utile ?",
-            "answer": "<p>Une cure de complément alimentaire s'adresse aux baisses d'énergie du quotidien, liées au rythme, au manque de sommeil ou aux périodes chargées. Une fatigue qui s'installe sans raison apparente, ou qui s'accompagne d'autres symptômes, relève d'un avis médical : un complément ne remplace ni un diagnostic ni un traitement.</p>"
-          }
-        },
-        "q6": {
-          "type": "question",
-          "settings": {
-            "category": "",
-            "icon": "none",
-            "question": "Peut-on prendre un complément anti-fatigue toute l'année ?",
-            "answer": "<p>Nous recommandons de fonctionner par cures plutôt qu'en continu : un programme de 30 jours, puis un point sur ce que vous ressentez. Les cures de 2 et 3 mois existent pour les périodes qui le demandent, comme une reprise intense ou un changement de saison.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "q1",
-        "q2",
-        "q5",
-        "q3",
-        "q6",
-        "q4"
-      ],
-      "settings": {
-        "eyebrow": "Vos questions",
-        "heading": "Complément alimentaire et fatigue : ce qu'il faut savoir",
-        "show_rule": true,
-        "seo_schema": true,
-        "style": "card",
-        "show_tabs": false,
-        "show_all_tab": false,
-        "all_tab_label": "Toutes",
-        "link_label": "Voir toutes les questions fréquentes",
-        "link_url": "/pages/faq",
-        "show_contact_card": false,
-        "contact_heading": "Vous ne trouvez pas la réponse à votre question ?",
-        "contact_text": "Notre service client est là pour vous aider.",
-        "contact_label": "Nous contacter",
-        "contact_url": "",
-        "background": "soft"
-      }
-    },
-    "closing": {
-      "type": "cta-card",
-      "settings": {
-        "eyebrow": "Prêt à commencer",
-        "heading": "Votre première cure commence aujourd'hui",
-        "text": "Faites le point dans un mois.",
-        "button_label": "Choisir ma cure",
-        "button_link": "/products/4-vitality-system",
-        "background": "none"
+        "background": "none",
+        "card_style": "centered"
       }
     },
     "blog": {
@@ -471,7 +275,10 @@
       "settings": {
         "blog": "blog",
         "heading": "Le blog Kemia Lab",
+        "intro": "Conseils, sciences et bonnes pratiques pour progresser chaque jour.",
         "link_label": "Voir tous les articles",
+        "card_layout": "row",
+        "read_label": "Lire l'article",
         "slides_count": 6,
         "per_view": "3",
         "show_dots": true
@@ -480,27 +287,24 @@
     "newsletter": {
       "type": "newsletter-band",
       "settings": {
-        "color_scheme": "beige",
+        "color_scheme": "navy",
+        "icon": "mail",
         "eyebrow": "",
-        "heading": "Restez informé de nos cures et nouveautés.",
+        "heading": "Recevez nos conseils exclusifs",
+        "text": "Inscrivez-vous à notre newsletter et recevez nos meilleurs conseils pour booster votre énergie, votre mental et votre vitalité.",
         "placeholder": "Votre email",
-        "button_label": "S'inscrire"
+        "button_label": "S'inscrire",
+        "image": ""
       }
     }
   },
   "order": [
     "hero",
     "reassurance",
-    "story",
-    "benefits",
-    "actifs",
-    "expert_quotes_nVzbPk",
-    "comparison",
-    "spotlight",
-    "steps",
-    "reviews",
-    "objections",
-    "closing",
+    "fronts",
+    "piliers",
+    "pourquoi",
+    "avis",
     "blog",
     "newsletter"
   ]

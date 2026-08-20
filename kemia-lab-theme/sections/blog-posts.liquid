@@ -12,9 +12,14 @@
   <section class="k-section">
     <div class="k-container">
       <div class="k-blogrow__head">
-        {%- if section.settings.heading != blank -%}
-          <h2 class="k-title-caps k-h3">{{ section.settings.heading }}</h2>
-        {%- endif -%}
+        <div class="k-blogrow__title">
+          {%- if section.settings.heading != blank -%}
+            <h2 class="k-title-caps k-h3">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.intro != blank -%}
+            <p class="k-blogrow__intro">{{ section.settings.intro }}</p>
+          {%- endif -%}
+        </div>
         {%- if section.settings.link_label != blank -%}
           <a class="k-link k-link--caps" href="{{ target.url }}">
             {{ section.settings.link_label }}
@@ -32,7 +37,10 @@
 
         <div class="k-blogrow__track k-rail k-rail--{{ section.settings.per_view }}" data-k-rail-track>
           {%- for article in target.articles limit: count -%}
-            {% render 'article-card', article: article %}
+            {% render 'article-card',
+              article: article,
+              layout: section.settings.card_layout,
+              read_label: section.settings.read_label %}
           {%- endfor -%}
         </div>
 
@@ -59,7 +67,19 @@
   "settings": [
     { "type": "blog", "id": "blog", "label": "Blog" },
     { "type": "text", "id": "heading", "label": "Titre", "default": "Le blog Kemia Lab" },
+    { "type": "textarea", "id": "intro", "label": "Sous-titre" },
     { "type": "text", "id": "link_label", "label": "Lien", "default": "Voir tous les articles" },
+    {
+      "type": "select",
+      "id": "card_layout",
+      "label": "Forme des cartes",
+      "options": [
+        { "value": "stack", "label": "Visuel au-dessus" },
+        { "value": "row", "label": "Visuel à gauche" }
+      ],
+      "default": "row"
+    },
+    { "type": "text", "id": "read_label", "label": "Lien de lecture", "default": "Lire l'article", "info": "Utilisé par les cartes à visuel à gauche." },
     { "type": "range", "id": "slides_count", "label": "Nombre d'articles dans le slider", "min": 2, "max": 12, "step": 1, "default": 6 },
     {
       "type": "select",
