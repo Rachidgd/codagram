@@ -47,28 +47,29 @@
           {%- if product.media.size > 0 -%}
             {%- for media in product.media -%}
               <div class="k-pdp-gallery__slide" data-k-gallery-slide="{{ forloop.index }}">
-                {% render 'image', image: media.preview_image, ratio: '112%', fit: 'contain', sizes: '(min-width: 990px) 46vw, 100vw', loading: 'eager', placeholder_icon: 'bottle' %}
+                {% render 'image', image: media.preview_image, ratio: '92%', fit: 'contain', sizes: '(min-width: 990px) 46vw, 100vw', loading: 'eager', placeholder_icon: 'bottle' %}
               </div>
             {%- endfor -%}
           {%- else -%}
             <div class="k-pdp-gallery__slide" data-k-gallery-slide="1">
-              {% render 'image', ratio: '112%', placeholder_icon: 'bottle', loading: 'eager' %}
+              {% render 'image', ratio: '92%', placeholder_icon: 'bottle', loading: 'eager' %}
             </div>
           {%- endif -%}
         </div>
 
-        {%- if product.media.size > 1 -%}
-          <button class="k-carousel__nav k-pdp-gallery__nav k-pdp-gallery__nav--prev" type="button" data-k-gallery-prev aria-label="{{ 'general.previous' | t }}">
-            {% render 'icon', name: 'chevron-left', class: 'k-icon--sm' %}
-          </button>
-          <button class="k-carousel__nav k-pdp-gallery__nav k-pdp-gallery__nav--next" type="button" data-k-gallery-next aria-label="{{ 'general.next' | t }}">
-            {% render 'icon', name: 'chevron-right', class: 'k-icon--sm' %}
-          </button>
+        {%- if section.settings.badge_text != blank -%}
+          <span class="k-pdp-gallery__badge">
+            <span class="k-pdp-gallery__badge-text">{{ section.settings.badge_text | newline_to_br }}</span>
+            <span class="k-pdp-gallery__badge-rule" aria-hidden="true"></span>
+          </span>
         {%- endif -%}
       </div>
 
       {%- if product.media.size > 1 -%}
         <div class="k-pdp-gallery__thumbs">
+          <button class="k-carousel__nav k-pdp-gallery__nav k-pdp-gallery__nav--prev" type="button" data-k-gallery-prev aria-label="{{ 'general.previous' | t }}">
+            {% render 'icon', name: 'chevron-left', class: 'k-icon--sm' %}
+          </button>
           <div class="k-pdp-gallery__thumbs-track">
             {%- for media in product.media -%}
               <button
@@ -82,6 +83,9 @@
               </button>
             {%- endfor -%}
           </div>
+          <button class="k-carousel__nav k-pdp-gallery__nav k-pdp-gallery__nav--next" type="button" data-k-gallery-next aria-label="{{ 'general.next' | t }}">
+            {% render 'icon', name: 'chevron-right', class: 'k-icon--sm' %}
+          </button>
         </div>
       {%- endif -%}
     </div>
@@ -119,6 +123,34 @@
               <div class="k-buybox__usp k-text" {{ block.shopify_attributes }}>{{ usp }}</div>
             {%- endif -%}
 
+          {%- when 'pillars' -%}
+            {%- liquid
+              assign pillars = product.metafields.kemia.benefits.value
+              assign pillar_count = pillars.size | plus: 0
+            -%}
+            {%- if pillar_count > 0 -%}
+              <ul class="k-buybox__pillars" {{ block.shopify_attributes }}>
+                {%- for pillar in pillars -%}
+                  <li class="k-buybox__pillar">
+                    <span class="k-buybox__pillar-icon">
+                      {% render 'icon', name: pillar.icon.value, class: 'k-icon--lg' %}
+                    </span>
+                    <span class="k-buybox__pillar-label">{{ pillar.label.value }}</span>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+
+          {%- when 'origin' -%}
+            {%- if block.settings.text != blank -%}
+              <p class="k-buybox__origin" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon != 'none' -%}
+                  {% render 'icon', name: block.settings.icon, class: 'k-icon--sm' %}
+                {%- endif -%}
+                <span>{{ block.settings.text }}</span>
+              </p>
+            {%- endif -%}
+
           {%- when 'trust' -%}
             <ul class="k-buybox__trust" {{ block.shopify_attributes }}>
               {%- for i in (1..4) -%}
@@ -144,7 +176,9 @@
             {%- if rating != blank and review_count > 0 -%}
               <div class="k-rating" {{ block.shopify_attributes }}>
                 {% render 'stars', rating: rating %}
-                <span class="k-rating__score">{{ rating | replace: '.', ',' }}/5</span>
+                {%- if block.settings.show_score -%}
+                  <span class="k-rating__score">{{ rating | replace: '.', ',' }}/5</span>
+                {%- endif -%}
                 <span class="k-rating__count">
                   {{ block.settings.prefix }}
                   <button class="k-rating__link" type="button" data-k-open="k-reviews-modal" data-k-track="review_modal_opened">{{ review_count }}</button>
@@ -191,7 +225,7 @@
                 {%- if block.settings.heading != blank -%}
                   <legend class="k-cures__legend">{{ block.settings.heading }}</legend>
                 {%- endif -%}
-                <div class="k-cures__grid">
+                <div class="k-cures__grid{% unless block.settings.show_media %} k-cures__grid--flat{% endunless %}">
                   {%- for variant in product.variants -%}
                     {%- liquid
                       assign is_best = false
@@ -226,16 +260,20 @@
                       {%- if is_best -%}
                         <span class="k-badge k-badge--blue k-cure__best">{{ block.settings.best_label }}</span>
                       {%- endif -%}
+                      {%- if percent > 0 -%}
+                        <span class="k-cure__off">-{{ percent }} %</span>
+                      {%- endif -%}
                       <span class="k-cure__check" aria-hidden="true">{% render 'icon', name: 'check', class: 'k-icon--xs' %}</span>
-                      <span class="k-cure__media">
-                        {% render 'image', image: variant.image, ratio: '100%', fit: 'contain', sizes: '120px', placeholder_icon: 'bottle' %}
-                      </span>
+                      {%- if block.settings.show_media -%}
+                        <span class="k-cure__media">
+                          {% render 'image', image: variant.image, ratio: '100%', fit: 'contain', sizes: '120px', placeholder_icon: 'bottle' %}
+                        </span>
+                      {%- endif -%}
                       <span class="k-cure__title">{{ variant.title }}</span>
                       <span class="k-cure__duration">{{ duration }}</span>
-                      <span class="k-cure__discount">{% if percent > 0 %}-{{ percent }} %{% endif %}</span>
                       <span class="k-cure__prices">
                         <span class="k-cure__price">{{ variant.price | money }}</span>
-                        {%- if variant.compare_at_price > variant.price -%}
+                        {%- if variant.compare_at_price > variant.price and block.settings.show_compare -%}
                           <s class="k-cure__compare">{{ variant.compare_at_price | money }}</s>
                         {%- endif -%}
                       </span>
@@ -261,7 +299,19 @@
             </div>
 
           {%- when 'buy' -%}
-            <div class="k-buybox__actions" data-k-sticky-anchor {{ block.shopify_attributes }}>
+            <div class="k-buybox__actions{% if block.settings.show_quantity %} k-buybox__actions--with-qty{% endif %}" data-k-sticky-anchor {{ block.shopify_attributes }}>
+              {%- if block.settings.show_quantity -%}
+                <div class="k-quantity" data-k-quantity>
+                  <label class="k-visually-hidden" for="quantity-{{ section.id }}">{{ block.settings.quantity_label }}</label>
+                  <button class="k-quantity__btn" type="button" data-k-qty-step="-1" aria-label="{{ 'products.decrease' | t }}">
+                    {% render 'icon', name: 'minus', class: 'k-icon--sm' %}
+                  </button>
+                  <input class="k-quantity__input" id="quantity-{{ section.id }}" type="number" name="quantity" value="1" min="1">
+                  <button class="k-quantity__btn" type="button" data-k-qty-step="1" aria-label="{{ 'products.increase' | t }}">
+                    {% render 'icon', name: 'plus', class: 'k-icon--sm' %}
+                  </button>
+                </div>
+              {%- endif -%}
               <button
                 class="k-btn k-btn--block k-btn--lg"
                 type="submit"
@@ -358,6 +408,12 @@
   "class": "k-pdp-section",
   "settings": [
     {
+      "type": "textarea",
+      "id": "badge_text",
+      "label": "Médaillon sur le visuel",
+      "info": "Chaque retour à la ligne crée une ligne dans le médaillon. Vide : aucun médaillon."
+    },
+    {
       "type": "checkbox",
       "id": "show_benefit_rail",
       "label": "Afficher les bénéfices à côté de la galerie",
@@ -401,6 +457,37 @@
     },
     { "type": "usp", "name": "Description courte", "limit": 1, "settings": [] },
     {
+      "type": "pillars",
+      "name": "Piliers du produit",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Les piliers proviennent du champ méta kemia.benefits du produit."
+        }
+      ]
+    },
+    {
+      "type": "origin",
+      "name": "Mention d'origine",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "text", "label": "Texte", "default": "Fabriqué en France" },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Pictogramme",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "flag-fr", "label": "Drapeau français" },
+            { "value": "hexagon", "label": "Hexagone" },
+            { "value": "shield-check", "label": "Bouclier" }
+          ],
+          "default": "flag-fr"
+        }
+      ]
+    },
+    {
       "type": "trust",
       "name": "Réassurance produit",
       "limit": 1,
@@ -424,6 +511,7 @@
       "name": "Note et avis",
       "limit": 1,
       "settings": [
+        { "type": "checkbox", "id": "show_score", "label": "Afficher la note chiffrée", "default": true },
         { "type": "text", "id": "prefix", "label": "Texte avant le nombre", "default": "basé sur" },
         { "type": "text", "id": "suffix", "label": "Texte après le nombre", "default": "avis clients" }
       ]
@@ -464,7 +552,9 @@
       "limit": 1,
       "settings": [
         { "type": "text", "id": "heading", "label": "Titre", "default": "Choisissez votre offre" },
-        { "type": "text", "id": "best_label", "label": "Badge meilleure offre", "default": "Meilleure offre" }
+        { "type": "text", "id": "best_label", "label": "Badge meilleure offre", "default": "Meilleure offre" },
+        { "type": "checkbox", "id": "show_media", "label": "Visuel de la variante", "default": false },
+        { "type": "checkbox", "id": "show_compare", "label": "Prix barré", "default": false }
       ]
     },
     {
@@ -477,7 +567,11 @@
       "type": "buy",
       "name": "Bouton d'achat",
       "limit": 1,
-      "settings": [{ "type": "text", "id": "label", "label": "Libellé", "default": "Ajouter au panier" }]
+      "settings": [
+        { "type": "text", "id": "label", "label": "Libellé", "default": "Ajouter au panier" },
+        { "type": "checkbox", "id": "show_quantity", "label": "Sélecteur de quantité à gauche du bouton", "default": true },
+        { "type": "text", "id": "quantity_label", "label": "Intitulé de la quantité", "default": "Quantité" }
+      ]
     },
     {
       "type": "reassurance",

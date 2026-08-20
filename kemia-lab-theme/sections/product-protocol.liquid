@@ -1,0 +1,202 @@
+{%- liquid
+  assign source = section.settings.product
+  if source == blank and product != blank
+    assign source = product
+  endif
+  assign actifs = source.metafields.kemia.ingredients.value
+  assign actif_count = actifs.size | plus: 0
+
+  assign steps = 0
+  for block in section.blocks
+    unless block.settings.title == blank and block.settings.text == blank
+      assign steps = steps | plus: 1
+    endunless
+  endfor
+-%}
+
+{%- if actif_count > 0 or steps > 0 -%}
+  <section class="k-section">
+    <div class="k-container">
+      <div class="k-protocol">
+        {%- if actif_count > 0 -%}
+          <div class="k-protocol__panel k-protocol__panel--actifs">
+            {%- if section.settings.actifs_heading != blank -%}
+              <h2 class="k-title-caps k-h4 k-protocol__title">
+                {%- if section.settings.show_count -%}{{ actif_count }} {% endif -%}
+                {{ section.settings.actifs_heading }}
+              </h2>
+            {%- endif -%}
+            <hr class="k-rule k-protocol__rule">
+
+            <ul class="k-protocol__actifs">
+              {%- for actif in actifs -%}
+                {%- liquid
+                  assign actif_image = actif.image.value
+                  assign actif_key = actif.name.value | handleize
+                  for block in section.blocks
+                    assign block_key = block.settings.actif_name | handleize
+                    if block.type == 'actif_image' and block.settings.actif_name != blank and block_key == actif_key and block.settings.image != blank
+                      assign actif_image = block.settings.image
+                      break
+                    endif
+                  endfor
+                -%}
+                <li class="k-protocol__actif">
+                  <span class="k-protocol__actif-media">
+                    {% render 'image',
+                      image: actif_image,
+                      ratio: '100%',
+                      fit: 'contain',
+                      sizes: '110px',
+                      placeholder_icon: 'leaf'
+                    %}
+                  </span>
+                  <span class="k-protocol__actif-name">{{ actif.name.value }}</span>
+                  <span class="k-protocol__actif-dose">
+                    {{ actif.amount.value }}{% if actif.unit.value != blank %} {{ actif.unit.value }}{% endif %}
+                  </span>
+                  {%- if actif.detail.value != blank -%}
+                    <span class="k-protocol__actif-detail">{{ actif.detail.value }}</span>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+
+            {%- if section.settings.note != blank -%}
+              <p class="k-protocol__note">{{ section.settings.note }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if steps > 0 -%}
+          <div class="k-protocol__panel k-protocol__panel--steps">
+            {%- if section.settings.steps_heading != blank -%}
+              <h2 class="k-title-caps k-h4 k-protocol__title k-protocol__title--blue">
+                {{ section.settings.steps_heading }}
+              </h2>
+            {%- endif -%}
+            <hr class="k-rule k-protocol__rule">
+
+            <div class="k-protocol__body">
+              <ul class="k-protocol__steps">
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'step' -%}
+                    {%- unless block.settings.title == blank and block.settings.text == blank -%}
+                      <li class="k-protocol__step" {{ block.shopify_attributes }}>
+                        {%- if block.settings.icon != 'none' -%}
+                          <span class="k-protocol__step-icon">
+                            {% render 'icon', name: block.settings.icon, class: 'k-icon--sm' %}
+                          </span>
+                        {%- endif -%}
+                        <span class="k-protocol__step-body">
+                          {%- if block.settings.title != blank -%}
+                            <span class="k-protocol__step-title">{{ block.settings.title }}</span>
+                          {%- endif -%}
+                          {%- if block.settings.text != blank -%}
+                            <span class="k-protocol__step-text">{{ block.settings.text }}</span>
+                          {%- endif -%}
+                        </span>
+                      </li>
+                    {%- endunless -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+
+              {%- if section.settings.show_scale -%}
+                <figure class="k-protocol__scale">
+                  {% render 'image',
+                    image: section.settings.scale_image,
+                    ratio: '112%',
+                    fit: 'contain',
+                    sizes: '160px',
+                    placeholder_icon: 'capsule'
+                  %}
+                  {%- if section.settings.scale_label != blank -%}
+                    <figcaption class="k-protocol__scale-label">
+                      <span>{{ section.settings.scale_label }}</span>
+                    </figcaption>
+                  {%- endif -%}
+                </figure>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{%- else -%}
+  {% render 'section-empty', message: "Actifs et protocole : sélectionnez un produit dont le champ méta kemia.ingredients est renseigné, ou ajoutez une étape." %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Actifs et protocole",
+  "class": "k-protocol-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit source",
+      "info": "Les actifs proviennent du champ méta kemia.ingredients. Sur une fiche produit, laisser vide."
+    },
+    { "type": "header", "content": "Panneau des actifs" },
+    { "type": "text", "id": "actifs_heading", "label": "Titre", "default": "actifs hautement dosés" },
+    { "type": "checkbox", "id": "show_count", "label": "Précéder le titre du nombre d'actifs", "default": true },
+    { "type": "text", "id": "note", "label": "Note de bas de panneau", "default": "*VNR : Valeurs Nutritionnelles de Référence" },
+    { "type": "header", "content": "Panneau du protocole" },
+    { "type": "text", "id": "steps_heading", "label": "Titre", "default": "Protocole simple et efficace" },
+    { "type": "checkbox", "id": "show_scale", "label": "Afficher le visuel de taille réelle", "default": true },
+    { "type": "image_picker", "id": "scale_image", "label": "Visuel de la gélule" },
+    { "type": "text", "id": "scale_label", "label": "Légende du visuel", "default": "Taille réelle" }
+  ],
+  "max_blocks": 16,
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Étape",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Pictogramme",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "calendar", "label": "Calendrier" },
+            { "value": "capsule", "label": "Gélule" },
+            { "value": "clock", "label": "Horloge" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "check-circle", "label": "Validé" },
+            { "value": "target", "label": "Cible" }
+          ],
+          "default": "capsule"
+        },
+        { "type": "text", "id": "title", "label": "Titre", "default": "2 gélules par jour" },
+        { "type": "text", "id": "text", "label": "Précision", "default": "Dose optimale" }
+      ]
+    },
+    {
+      "type": "actif_image",
+      "name": "Image d'actif",
+      "settings": [
+        {
+          "type": "text",
+          "id": "actif_name",
+          "label": "Nom de l'actif",
+          "info": "Écrivez le même nom que dans le champ méta, par exemple : Zinc, Safran."
+        },
+        { "type": "image_picker", "id": "image", "label": "Image personnalisée" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Actifs et protocole",
+      "blocks": [
+        { "type": "step", "settings": { "icon": "capsule", "title": "2 gélules par jour", "text": "Dose optimale" } },
+        { "type": "step", "settings": { "icon": "calendar", "title": "30 jours de cure", "text": "Pour des résultats durables" } },
+        { "type": "step", "settings": { "icon": "leaf", "title": "Routine simple et efficace", "text": "Intègre parfaitement votre quotidien" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -3,9 +3,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "eyebrow": {
-          "type": "eyebrow",
-          "settings": {}
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_score": false,
+            "prefix": "",
+            "suffix": "avis clients vérifiés"
+          }
         },
         "title": {
           "type": "title",
@@ -13,556 +17,173 @@
         },
         "tagline": {
           "type": "tagline",
-          "settings": {}
+          "settings": {
+            "text": "L'énergie, la concentration et la vitalité au quotidien."
+          }
         },
         "usp": {
           "type": "usp",
           "settings": {}
         },
-        "trust": {
-          "type": "trust",
-          "settings": {
-            "icon_1": "hexagon",
-            "title_1": "Fabriqué",
-            "text_1": "en France",
-            "icon_2": "leaf",
-            "title_2": "Ingrédients",
-            "text_2": "premium",
-            "icon_3": "shield-check",
-            "title_3": "Qualité",
-            "text_3": "contrôlée",
-            "icon_4": "award",
-            "title_4": "Normes",
-            "text_4": "strictes"
-          }
-        },
-        "rating": {
-          "type": "rating",
-          "settings": {
-            "prefix": "basé sur",
-            "suffix": "avis clients"
-          }
-        },
-        "price": {
-          "type": "price",
+        "pillars": {
+          "type": "pillars",
           "settings": {}
-        },
-        "installment": {
-          "type": "installment",
-          "settings": {
-            "enabled": false
-          }
         },
         "cures": {
           "type": "cures",
           "settings": {
-            "heading": "Choisissez votre offre",
-            "best_label": "Meilleure offre"
-          }
-        },
-        "urgency": {
-          "type": "urgency",
-          "settings": {
-            "enabled": true,
-            "cutoff_hour": 23,
-            "cutoff_minute": 59,
-            "transit_days": 2,
-            "skip_weekend": true,
-            "text_before": "Commandez dans",
-            "text_after": "pour être livré le",
-            "fallback": "Expédition sous 24 à 48h ouvrées"
-          }
-        },
-        "quantity": {
-          "type": "quantity",
-          "settings": {
-            "label": "Quantité"
+            "heading": "",
+            "best_label": "",
+            "show_media": false,
+            "show_compare": false
           }
         },
         "buy": {
           "type": "buy",
           "settings": {
-            "label": "Ajouter au panier"
+            "label": "Ajouter au panier",
+            "show_quantity": true,
+            "quantity_label": "Quantité"
           }
         },
         "reassurance": {
           "type": "reassurance",
           "settings": {
             "icon_1": "truck",
-            "text_1": "Livraison 24/48h",
-            "icon_2": "lock",
-            "text_2": "Paiement sécurisé",
-            "icon_3": "headset",
-            "text_3": "Service client - réponse rapide en semaine",
-            "icon_4": "shield-check",
-            "text_4": ""
+            "text_1": "Livraison offerte dès 60€",
+            "icon_2": "package",
+            "text_2": "Expédition 24/48h",
+            "icon_3": "lock",
+            "text_3": "Paiement sécurisé",
+            "icon_4": "headset",
+            "text_4": "Réponse rapide en semaine"
           }
         },
-        "acc-description": {
-          "type": "accordion",
+        "origin": {
+          "type": "origin",
           "settings": {
-            "title": "Description",
-            "source": "description",
-            "content": "",
-            "open": false
-          }
-        },
-        "acc-usage": {
-          "type": "accordion",
-          "settings": {
-            "title": "Conseils d'utilisation",
-            "source": "custom",
-            "content": "<p>2 gélules par jour, avec un grand verre d'eau.</p><p>Prenez les 2 gélules ensemble le matin, au cours du petit-déjeuner. Si vous êtes sensible à la caféine, répartissez la prise : 1 gélule le matin et 1 gélule le midi.</p><p>Évitez la prise après 16h : la formule apporte 25 mg de caféine par dose journalière, soit environ un quart d'un café filtre.</p><p>À suivre sur un programme de 30 jours, sans interruption.</p>",
-            "open": false
-          }
-        },
-        "acc-precautions": {
-          "type": "accordion",
-          "settings": {
-            "title": "Précautions d'emploi",
-            "source": "precautions",
-            "content": "",
-            "open": false
+            "text": "Fabriqué en France",
+            "icon": "flag-fr"
           }
         }
       },
       "block_order": [
-        "eyebrow",
-        "title",
         "rating",
+        "title",
         "tagline",
-        "price",
-        "installment",
         "usp",
+        "pillars",
         "cures",
-        "urgency",
-        "quantity",
         "buy",
         "reassurance",
-        "trust",
-        "acc-description",
-        "acc-usage",
-        "acc-precautions"
+        "origin"
       ],
       "settings": {
-        "show_benefit_rail": true,
-        "sticky_label": "Ajouter"
+        "show_benefit_rail": false,
+        "sticky_label": "Ajouter",
+        "badge_text": "7 actifs\nhautement\ndosés"
       }
     },
-    "story": {
-      "type": "storytelling",
-      "blocks": {
-        "p1": {
-          "type": "point",
-          "settings": {
-            "icon": "clock",
-            "text": "Les tâches simples qui prennent le double de temps"
-          }
-        },
-        "p2": {
-          "type": "point",
-          "settings": {
-            "icon": "bolt",
-            "text": "La séance de sport repoussée à demain, encore"
-          }
-        },
-        "p3": {
-          "type": "point",
-          "settings": {
-            "icon": "moon",
-            "text": "Les soirées où il ne reste plus rien pour soi"
-          }
-        }
-      },
-      "block_order": [
-        "p1",
-        "p2",
-        "p3"
-      ],
-      "settings": {
-        "eyebrow": "Pourquoi cette formule",
-        "heading": "Votre journée ne s'arrête pas à 15h",
-        "text": "<p>Ce n'est pas un manque de volonté. C'est une baisse d'énergie qui touche le corps et la tête en même temps — et que la plupart des compléments alimentaires contre la fatigue ne traitent qu'à moitié : un pot pour le tonus, un autre pour la concentration, une routine qui s'allonge sans que rien ne se règle.</p>",
-        "transition": "4 Vitality System a été formulé pour couvrir les deux, dans une seule prise.",
-        "layout": "split",
-        "image": "",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "outline",
-        "background": "soft"
-      }
-    },
-    "benefits": {
+    "pouvoir": {
       "type": "benefits-band",
-      "blocks": {
-        "f1": {
-          "type": "figure",
-          "settings": {
-            "value": "7",
-            "label": "actifs dosés"
-          }
-        },
-        "f2": {
-          "type": "figure",
-          "settings": {
-            "value": "1",
-            "label": "prise le matin"
-          }
-        },
-        "f3": {
-          "type": "figure",
-          "settings": {
-            "value": "30",
-            "label": "jours, sans abonnement"
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3"
-      ],
+      "blocks": {},
+      "block_order": [],
       "settings": {
-        "eyebrow": "La promesse",
-        "heading": "Trente jours pour retrouver des journées qui tiennent jusqu'au soir",
-        "intro": "<p>Sept actifs travaillent en parallèle sur la fatigue physique <em>et</em> sur la fatigue mentale, chacun à une quantité que vous pouvez lire sur la boîte. Une seule prise le matin suffit à couvrir la journée. Trente jours plus tard, vous jugez sur pièces : ni reconduction automatique, ni pot supplémentaire dans le placard.</p>",
+        "product": "",
+        "eyebrow": "Le pouvoir du 4",
+        "heading": "Quatre piliers essentiels.\nUne seule formule.",
+        "intro": "<p>4 Vitality System associe des actifs naturels et scientifiquement sélectionnés pour soutenir votre énergie, votre concentration, votre vitalité et votre bien-être intime.</p>",
         "show_text": true,
+        "layout": "aside",
+        "image": "",
+        "figures_style": "checks",
         "color_scheme": "navy",
         "button_label": "",
-        "button_link": ""
-      }
-    },
-    "fit": {
-      "type": "product-fit",
-      "blocks": {
-        "r1": {
-          "type": "item",
-          "settings": {
-            "situation": "Vos journées enchaînent le travail, les trajets et l'entraînement.",
-            "outcome": "Une seule formule qui vise les deux fatigues à la fois : la physique et la mentale."
-          }
-        },
-        "r2": {
-          "type": "item",
-          "settings": {
-            "situation": "Votre attention baisse en milieu d'après-midi, au pire moment.",
-            "outcome": "Le zinc contribue à une fonction cognitive normale ; le ginseng et le kola sont traditionnellement utilisés contre la fatigue intellectuelle."
-          }
-        },
-        "r3": {
-          "type": "item",
-          "settings": {
-            "situation": "Vous n'avez pas le temps d'une routine à trois pots.",
-            "outcome": "Deux gélules au petit-déjeuner, et la journée est couverte."
-          }
-        },
-        "r4": {
-          "type": "item",
-          "settings": {
-            "situation": "Vous voulez savoir exactement ce que vous prenez.",
-            "outcome": "La quantité de chaque actif est affichée ici, comme sur la boîte."
-          }
-        },
-        "r5": {
-          "type": "item",
-          "settings": {
-            "situation": "Vous préférez juger sur pièces avant de vous engager.",
-            "outcome": "Une boîte couvre 30 jours. Aucun abonnement, aucune reconduction."
-          }
-        }
-      },
-      "block_order": [
-        "r1",
-        "r2",
-        "r3",
-        "r4",
-        "r5"
-      ],
-      "settings": {
-        "eyebrow": "Fait pour vous",
-        "heading": "Conçu pour des journées comme les vôtres",
-        "show_rule": true,
-        "intro": "Cinq situations du quotidien, et la réponse de la formule pour chacune.",
-        "col_situation": "Votre quotidien",
-        "col_outcome": "Ce que 4 Vitality System y apporte",
-        "note": "",
-        "button_label": "",
         "button_link": "",
-        "background": "none"
+        "button_style": "gold"
       }
     },
-    "actifs": {
-      "type": "actifs-constellation",
-      "settings": {
-        "eyebrow": "Ce qu'il y a dans la gélule",
-        "heading": "actifs, un rôle et une quantité pour chacun",
-        "show_count": true,
-        "show_rule": true,
-        "intro": "Pas de « complexe » qui masque les proportions : la quantité de chaque actif est indiquée ici comme sur la boîte.",
-        "image": "",
-        "center_label": "2 gélules par jour",
-        "show_dosage": true,
-        "composition_link": "Voir la composition complète",
-        "composition_title": "Composition complète",
-        "background": "soft"
-      }
-    },
-    "experts": {
-      "type": "expert-quotes",
+    "protocole": {
+      "type": "product-protocol",
       "blocks": {
-        "e1": {
-          "type": "quote",
+        "s1": {
+          "type": "step",
           "settings": {
-            "quote": "Le ginseng est traditionnellement utilisé contre la fatigue et la sensation de faiblesse. L'Agence européenne des médicaments reconnaît cet usage et retient l'indication des symptômes d'asthénie.",
-            "name": "Extrait de ginseng",
-            "role": "Agence européenne des médicaments",
-            "detail": "Monographie Panax ginseng C.A. Meyer, radix",
-            "source_label": "Voir la monographie",
-            "source_url": "https://www.ema.europa.eu/en/medicines/herbal/ginseng-radix",
-            "image": ""
+            "icon": "calendar",
+            "title": "2 gélules par jour",
+            "text": "Dose optimale"
           }
         },
-        "e2": {
-          "type": "quote",
+        "s2": {
+          "type": "step",
           "settings": {
-            "quote": "Le kola est traditionnellement utilisé contre la fatigue physique et intellectuelle. L'Agence européenne des médicaments retient l'indication du soulagement des symptômes de fatigue et de sensation de faiblesse.",
-            "name": "Extrait de kola",
-            "role": "Agence européenne des médicaments",
-            "detail": "Monographie Colae semen",
-            "source_label": "Voir la monographie",
-            "source_url": "https://www.ema.europa.eu/en/medicines/herbal/colae-semen",
-            "image": ""
+            "icon": "calendar",
+            "title": "30 jours de cure",
+            "text": "Pour des résultats durables"
           }
         },
-        "e3": {
-          "type": "quote",
-          "settings": {
-            "quote": "Le safran est étudié pour son action sur l'humeur et sur la gestion du stress. Un essai randomisé en double aveugle contre placebo a évalué 30 mg par jour pendant huit semaines chez des adultes en bonne santé rapportant une humeur basse, de l'anxiété ou du stress.",
-            "name": "Extrait de safran",
-            "role": "Frontiers in Nutrition, 2021",
-            "detail": "Kell G. et coll., essai randomisé en double aveugle",
-            "source_label": "Voir l'étude",
-            "source_url": "https://pubmed.ncbi.nlm.nih.gov/33598475/",
-            "image": ""
-          }
-        },
-        "e4": {
-          "type": "quote",
-          "settings": {
-            "quote": "Le zinc contribue à une fonction cognitive normale et au maintien d'un taux normal de testostérone dans le sang. La vitamine D contribue au fonctionnement normal du système immunitaire.",
-            "name": "Zinc et vitamine D3",
-            "role": "Commission européenne",
-            "detail": "Libellés officiels du règlement (UE) n° 432/2012",
-            "source_label": "Consulter le règlement",
-            "source_url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:02012R0432-20170822",
-            "image": ""
-          }
-        }
-      },
-      "block_order": [
-        "e1",
-        "e2",
-        "e3",
-        "e4"
-      ],
-      "settings": {
-        "eyebrow": "Les références",
-        "heading": "Ce que disent les monographies et les études",
-        "show_rule": true,
-        "note": "Chaque énoncé renvoie à la source qui le fonde. Les mentions du zinc et de la vitamine D3 sont les libellés officiels du règlement européen. Les autres reprennent la position de la source citée, restituée en français.",
-        "background": "none"
-      }
-    },
-    "comparison": {
-      "type": "product-comparison",
-      "blocks": {
-        "row-1": {
-          "type": "row",
-          "settings": {
-            "brand_text": "25 mg de caféine annoncés : vous savez à quelle heure prendre la dose",
-            "other_text": "Des plantes stimulantes présentes, rarement quantifiées"
-          }
-        },
-        "row-2": {
-          "type": "row",
-          "settings": {
-            "brand_text": "7 actifs retenus pour un rôle précis, à des quantités utiles",
-            "other_text": "Une liste d'ingrédients à rallonge, quelques milligrammes chacun"
-          }
-        },
-        "row-3": {
-          "type": "row",
-          "settings": {
-            "brand_text": "Fabriqué en France, contrôlé lot par lot",
-            "other_text": "Lieu de fabrication rarement précisé"
-          }
-        },
-        "row-4": {
-          "type": "row",
-          "settings": {
-            "brand_text": "Une boîte = un programme de 30 jours. Vous seul décidez de la suite",
-            "other_text": "Abonnement reconduit automatiquement par défaut"
-          }
-        },
-        "row-5": {
-          "type": "row",
-          "settings": {
-            "brand_text": "Chaque énoncé de cette page renvoie à sa source",
-            "other_text": "Des promesses fortes, sans référence vérifiable"
-          }
-        }
-      },
-      "block_order": [
-        "row-1",
-        "row-2",
-        "row-3",
-        "row-4",
-        "row-5"
-      ],
-      "settings": {
-        "eyebrow": "Sur l'étiquette",
-        "heading": "Ce que la plupart des étiquettes ne disent pas",
-        "show_rule": true,
-        "column_brand": "4 Vitality System",
-        "column_other": "La plupart des compléments anti-fatigue",
-        "button_label": "",
-        "button_link": "",
-        "background": "soft"
-      }
-    },
-    "reviews": {
-      "type": "reviews",
-      "settings": {
-        "heading": "Ce qu'ils en disent après leur cure",
-        "show_summary": true,
-        "summary_label": "avis vérifiés",
-        "show_score": true,
-        "verified_label": "Client vérifié",
-        "limit": 8,
-        "per_view": "3",
-        "show_dots": true,
-        "background": "none"
-      }
-    },
-    "faq": {
-      "type": "faq",
-      "blocks": {
-        "q1": {
-          "type": "question",
-          "settings": {
-            "question": "Quelle différence entre la cure de 1 mois, 2 mois et 3 mois ?",
-            "answer": "<p>La gélule est exactement la même. Seule la durée change : 1 boîte couvre 30 jours, les formats 2 et 3 mois couvrent 60 et 90 jours au même rythme de 2 gélules par jour. Ils existent pour ceux qui souhaitent prolonger après un premier programme, à un prix au jour plus avantageux.</p>"
-          }
-        },
-        "q2": {
-          "type": "question",
-          "settings": {
-            "question": "Je bois déjà deux ou trois cafés par jour, est-ce compatible ?",
-            "answer": "<p>La dose journalière apporte 25 mg de caféine, soit environ un quart d'un café filtre. Elle s'ajoute à ce que vous consommez déjà : tenez-en compte dans votre total de la journée et évitez la prise après 16h.</p>"
-          }
-        },
-        "q3": {
-          "type": "question",
-          "settings": {
-            "question": "Faut-il prendre les gélules à jeun ou pendant un repas ?",
-            "answer": "<p>Au cours du petit-déjeuner, accompagnées d'un verre d'eau. Les prendre pendant un repas limite l'inconfort digestif que certaines personnes ressentent à jeun.</p>"
-          }
-        },
-        "q4": {
-          "type": "question",
-          "settings": {
-            "question": "Que faire si j'oublie une prise ?",
-            "answer": "<p>Reprenez simplement le lendemain matin, au rythme habituel. Ne doublez pas la dose pour compenser : la dose journalière recommandée est de 2 gélules et ne doit pas être dépassée.</p>"
-          }
-        },
-        "q5": {
-          "type": "question",
-          "settings": {
-            "question": "Puis-je l'associer à d'autres compléments alimentaires ?",
-            "answer": "<p>La formule réunit 7 actifs et se suffit à elle-même dans la plupart des routines. Si vous prenez déjà d'autres compléments, vérifiez les apports cumulés, en particulier en zinc et en vitamine D3.</p>"
-          }
-        },
-        "q6": {
-          "type": "question",
-          "settings": {
-            "question": "La formule est-elle vegan, sans OGM et fabriquée en France ?",
-            "answer": "<p>Oui pour les trois. La gélule est d'origine végétale, la formule ne contient aucun ingrédient issu d'OGM, et la fabrication a lieu en France.</p>"
-          }
-        },
-        "q7": {
-          "type": "question",
-          "settings": {
-            "question": "Sous quel délai vais-je recevoir ma commande ?",
-            "answer": "<p>Votre commande est expédiée sous 24 à 48h ouvrées. La livraison est offerte dès 60 € d'achat. La date de livraison estimée s'affiche au-dessus du bouton d'ajout au panier.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5",
-        "q6",
-        "q7"
-      ],
-      "settings": {
-        "eyebrow": "Questions pratiques",
-        "heading": "Ce qu'on nous demande juste avant de commander",
-        "show_rule": true,
-        "seo_schema": true,
-        "style": "card",
-        "show_tabs": false,
-        "link_label": "Voir toutes les questions fréquentes",
-        "link_url": "/pages/faq",
-        "background": "soft"
-      }
-    },
-    "closing": {
-      "type": "cta-card",
-      "settings": {
-        "image": "",
-        "eyebrow": "À vous de jouer",
-        "heading": "Commencez vos 30 jours",
-        "text": "Sans abonnement ni reconduction : vous choisissez votre format, et vous décidez seul de la suite.",
-        "button_label": "Commander ma cure",
-        "button_link": "/products/4-vitality-system#shopify-section-main",
-        "background": "beige"
-      }
-    },
-    "reassurance": {
-      "type": "reassurance",
-      "blocks": {
-        "r1": {
-          "type": "item",
-          "settings": {
-            "icon": "truck",
-            "title": "Livraison offerte",
-            "text": "dès 60€ d'achat"
-          }
-        },
-        "r2": {
-          "type": "item",
-          "settings": {
-            "icon": "lock",
-            "title": "Paiement sécurisé",
-            "text": "100% sécurisé"
-          }
-        },
-        "r3": {
-          "type": "item",
-          "settings": {
-            "icon": "shield-check",
-            "title": "Qualité contrôlée",
-            "text": "Formules testées et approuvées"
-          }
-        },
-        "r4": {
-          "type": "item",
+        "s3": {
+          "type": "step",
           "settings": {
             "icon": "leaf",
-            "title": "Ingrédients premium",
-            "text": "sélectionnés avec exigence"
+            "title": "Routine simple et efficace",
+            "text": "Intègre parfaitement votre quotidien"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "product": "",
+        "actifs_heading": "actifs hautement dosés",
+        "show_count": true,
+        "note": "*VNR : Valeurs Nutritionnelles de Référence",
+        "steps_heading": "Protocole simple et efficace",
+        "show_scale": true,
+        "scale_image": "",
+        "scale_label": "Taille réelle"
+      }
+    },
+    "comparatif": {
+      "type": "product-comparison",
+      "blocks": {
+        "r1": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Une seule formule",
+            "brand_note": "4 bénéfices essentiels",
+            "other_text": "Plusieurs produits",
+            "other_note": "Bénéfices isolés"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "brand_text": "2 gélules par jour",
+            "brand_note": "Routine simple et efficace",
+            "other_text": "Plusieurs prises quotidiennes",
+            "other_note": "Contraignant à suivre"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Formule complète pensée pour agir en synergie",
+            "brand_note": "",
+            "other_text": "Ingrédients souvent pris séparément",
+            "other_note": ""
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "brand_text": "Gain de temps et d'argent",
+            "brand_note": "",
+            "other_text": "Coût plus élevé",
+            "other_note": "au quotidien"
           }
         }
       },
@@ -573,24 +194,71 @@
         "r4"
       ],
       "settings": {
-        "layout": "inline",
-        "background": "none",
-        "dividers": false,
-        "compact": true
+        "eyebrow": "",
+        "heading": "Pourquoi choisir 4 Vitality System ?",
+        "show_rule": true,
+        "style": "panels",
+        "versus_label": "VS",
+        "column_brand": "4 Vitality System",
+        "column_other": "Compléments classiques",
+        "button_label": "",
+        "button_link": "",
+        "background": "none"
+      }
+    },
+    "avis": {
+      "type": "reviews",
+      "settings": {
+        "product": "",
+        "heading": "Ils ont choisi 4 Vitality System",
+        "show_rule": false,
+        "tagline": "103 avis clients vérifiés",
+        "card_style": "centered",
+        "show_summary": false,
+        "summary_label": "avis vérifiés",
+        "show_score": false,
+        "verified_label": "Client vérifié",
+        "limit": 9,
+        "per_view": "3",
+        "show_dots": true,
+        "background": "none"
+      }
+    },
+    "blog": {
+      "type": "blog-posts",
+      "settings": {
+        "blog": "blog",
+        "heading": "Le blog Kemia Lab",
+        "intro": "Conseils, sciences et bonnes pratiques pour progresser chaque jour.",
+        "link_label": "Voir tous les articles",
+        "card_layout": "row",
+        "read_label": "Lire l'article",
+        "slides_count": 6,
+        "per_view": "3",
+        "show_dots": false
+      }
+    },
+    "newsletter": {
+      "type": "newsletter-band",
+      "settings": {
+        "color_scheme": "navy",
+        "icon": "mail",
+        "eyebrow": "",
+        "heading": "Recevez nos conseils exclusifs",
+        "text": "Inscrivez-vous à notre newsletter et recevez nos meilleurs conseils pour booster votre énergie, votre mental et votre vitalité.",
+        "image": "",
+        "placeholder": "Votre email",
+        "button_label": "S'inscrire"
       }
     }
   },
   "order": [
     "main",
-    "story",
-    "benefits",
-    "fit",
-    "actifs",
-    "experts",
-    "comparison",
-    "reviews",
-    "faq",
-    "closing",
-    "reassurance"
+    "pouvoir",
+    "protocole",
+    "comparatif",
+    "avis",
+    "blog",
+    "newsletter"
   ]
 }

@@ -12,21 +12,63 @@
       </div>
 
       <div class="k-compare k-compare--standalone">
-        <div class="k-compare__table">
-          <div class="k-compare__header k-compare__header--brand">{{ section.settings.column_brand }}</div>
-          <div class="k-compare__header k-compare__header--other">{{ section.settings.column_other }}</div>
+        {%- if section.settings.style == 'panels' -%}
+          <div class="k-versus">
+            <div class="k-versus__side k-versus__side--brand">
+              <p class="k-versus__header">{{ section.settings.column_brand }}</p>
+              <ul class="k-versus__list">
+                {%- for block in section.blocks -%}
+                  <li class="k-versus__row" {{ block.shopify_attributes }}>
+                    {% render 'icon', name: 'check-circle-solid', class: 'k-icon--sm' %}
+                    <span class="k-versus__body">
+                      <span class="k-versus__label">{{ block.settings.brand_text }}</span>
+                      {%- if block.settings.brand_note != blank -%}
+                        <span class="k-versus__note">{{ block.settings.brand_note }}</span>
+                      {%- endif -%}
+                    </span>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
 
-          {%- for block in section.blocks -%}
-            <div class="k-compare__cell k-compare__cell--brand" {{ block.shopify_attributes }}>
-              {% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}
-              <span>{{ block.settings.brand_text }}</span>
+            {%- if section.settings.versus_label != blank -%}
+              <span class="k-versus__badge" aria-hidden="true">{{ section.settings.versus_label }}</span>
+            {%- endif -%}
+
+            <div class="k-versus__side k-versus__side--other">
+              <p class="k-versus__header">{{ section.settings.column_other }}</p>
+              <ul class="k-versus__list">
+                {%- for block in section.blocks -%}
+                  <li class="k-versus__row">
+                    {% render 'icon', name: 'x-circle', class: 'k-icon--sm' %}
+                    <span class="k-versus__body">
+                      <span class="k-versus__label">{{ block.settings.other_text }}</span>
+                      {%- if block.settings.other_note != blank -%}
+                        <span class="k-versus__note">{{ block.settings.other_note }}</span>
+                      {%- endif -%}
+                    </span>
+                  </li>
+                {%- endfor -%}
+              </ul>
             </div>
-            <div class="k-compare__cell k-compare__cell--other">
-              {% render 'icon', name: 'x-circle', class: 'k-icon--sm' %}
-              <span>{{ block.settings.other_text }}</span>
-            </div>
-          {%- endfor -%}
-        </div>
+          </div>
+        {%- else -%}
+          <div class="k-compare__table">
+            <div class="k-compare__header k-compare__header--brand">{{ section.settings.column_brand }}</div>
+            <div class="k-compare__header k-compare__header--other">{{ section.settings.column_other }}</div>
+
+            {%- for block in section.blocks -%}
+              <div class="k-compare__cell k-compare__cell--brand" {{ block.shopify_attributes }}>
+                {% render 'icon', name: 'check-circle', class: 'k-icon--sm' %}
+                <span>{{ block.settings.brand_text }}</span>
+              </div>
+              <div class="k-compare__cell k-compare__cell--other">
+                {% render 'icon', name: 'x-circle', class: 'k-icon--sm' %}
+                <span>{{ block.settings.other_text }}</span>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
 
         {%- if section.settings.button_label != blank -%}
           <div class="k-compare__cta">
@@ -46,6 +88,17 @@
     { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
     { "type": "text", "id": "heading", "label": "Titre", "default": "Pourquoi choisir cette formule ?" },
     { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Présentation",
+      "options": [
+        { "value": "panels", "label": "Deux panneaux face à face" },
+        { "value": "table", "label": "Tableau à deux colonnes" }
+      ],
+      "default": "panels"
+    },
+    { "type": "text", "id": "versus_label", "label": "Pastille centrale", "default": "VS" },
     { "type": "text", "id": "column_brand", "label": "Colonne marque", "default": "4 Vitality System" },
     { "type": "text", "id": "column_other", "label": "Colonne comparée", "default": "Compléments classiques" },
     { "type": "text", "id": "button_label", "label": "Bouton sous le tableau" },
@@ -67,6 +120,8 @@
       "type": "row",
       "name": "Ligne",
       "settings": [
+        { "type": "text", "id": "brand_note", "label": "Précision colonne de gauche" },
+        { "type": "text", "id": "other_note", "label": "Précision colonne de droite" },
         { "type": "textarea", "id": "brand_text", "label": "Colonne marque", "default": "Une seule formule, 4 bénéfices essentiels" },
         { "type": "textarea", "id": "other_text", "label": "Colonne comparée", "default": "Plusieurs produits pour des bénéfices isolés" }
       ]

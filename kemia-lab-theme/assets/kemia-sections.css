@@ -825,20 +825,14 @@
   background: transparent;
 }
 
+/* Les fleches encadrent la bande de vignettes, comme la maquette. Elles
+   ne sont plus posees sur l image : elles restent visibles sans masquer
+   le produit. */
 .k-pdp-gallery__nav {
-  position: absolute;
-  top: calc(50% - 19px);
-  z-index: 2;
-  width: 38px;
-  height: 38px;
-}
-
-.k-pdp-gallery__nav--prev {
-  left: 4px;
-}
-
-.k-pdp-gallery__nav--next {
-  right: 4px;
+  position: static;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
 }
 
 /* Les logos de paiement sont injectes par une application, toujours en fin
@@ -917,11 +911,12 @@
 
 .k-buybox__tagline {
   margin-top: 8px;
+  max-width: 26ch;
   font-family: var(--k-font-heading);
   font-size: clamp(17px, 1.5vw, 20px);
-  font-weight: 600;
-  color: var(--k-gold);
-  line-height: 1.3;
+  font-weight: 700;
+  color: var(--k-navy);
+  line-height: 1.35;
 }
 
 .k-buybox__usp {
@@ -1041,7 +1036,7 @@
   position: absolute;
   z-index: 2;
   top: 7px;
-  left: 7px;
+  right: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1166,18 +1161,42 @@
 }
 
 .k-buybox__reassurance {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
+  /* Une colonne par repere : le texte se replie dans sa colonne au lieu
+     de renvoyer le repere entier a la ligne suivante. */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 0;
   width: 100%;
 }
 
 .k-buybox__reassurance li {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 7px;
+  padding-inline: 10px;
   font-size: 11.5px;
+  line-height: 1.35;
+  text-align: left;
   color: var(--k-body);
+}
+
+.k-buybox__reassurance li + li {
+  border-left: 1px solid var(--k-border);
+}
+
+.k-buybox__reassurance li:nth-child(3) {
+  border-left: 0;
+}
+
+@media screen and (min-width: 560px) {
+  .k-buybox__reassurance {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .k-buybox__reassurance li:nth-child(3) {
+    border-left: 1px solid var(--k-border);
+  }
 }
 
 .k-buybox__reassurance .k-icon {
@@ -5720,4 +5739,542 @@
     margin-top: 0;
     align-self: start;
   }
+}
+
+.k-buybox__pillars {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 4px 0 2px;
+  padding: 0;
+  list-style: none;
+}
+
+.k-buybox__pillar {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.k-buybox__pillar + .k-buybox__pillar {
+  border-left: 1px solid var(--k-border);
+}
+
+.k-buybox__pillar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--k-gold);
+  color: var(--k-gold);
+}
+
+.k-buybox__pillar:nth-child(even) .k-buybox__pillar-icon {
+  border-color: var(--k-blue);
+  color: var(--k-blue);
+}
+
+.k-buybox__pillar-icon .k-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.k-buybox__pillar-label {
+  font-family: var(--k-font-heading);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  color: var(--k-ink);
+}
+
+.k-buybox__origin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 2px 0 0;
+  font-family: var(--k-font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--k-ink);
+}
+
+.k-buybox__origin .k-icon {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+}
+
+/* Quantite et bouton sur une seule ligne, comme la maquette. */
+.k-buybox__actions--with-qty {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.k-buybox__actions--with-qty .k-quantity {
+  flex: 0 0 auto;
+}
+
+.k-buybox__actions--with-qty .k-btn {
+  flex: 1 1 auto;
+  width: auto;
+}
+
+.k-buybox__actions--with-qty [data-k-atc-error] {
+  flex: 1 0 100%;
+}
+
+/* Remise posee en angle de la carte : elle ne prend plus de rangee et
+   n influe donc plus sur la hauteur des cartes voisines. */
+.k-cure__off {
+  position: absolute;
+  z-index: 3;
+  top: -9px;
+  right: -6px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: var(--k-gold);
+  color: #fff;
+  font-family: var(--k-font-heading);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.k-cures__grid--flat .k-cure {
+  padding-top: 16px;
+}
+
+@supports (grid-template-rows: subgrid) {
+  /* Sans visuel de variante la grille perd une rangee. */
+  .k-cures__grid--flat {
+    grid-template-rows: repeat(4, auto);
+  }
+
+  .k-cures__grid--flat .k-cure {
+    grid-row: span 4;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  /* Colonne de texte a gauche, piliers detailles a droite. */
+  .k-benefitsband--aside .k-benefitsband__main {
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+    align-items: start;
+    gap: 44px;
+  }
+
+  .k-benefitsband--aside .k-benefitsband__head {
+    grid-column: 1;
+    max-width: none;
+    justify-items: start;
+    text-align: left;
+  }
+
+  .k-benefitsband--aside .k-benefitsband__list {
+    grid-column: 2;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .k-benefitsband--aside .k-benefitsband__item {
+    padding-inline: 18px;
+  }
+
+  .k-benefitsband--aside .k-benefitsband__item + .k-benefitsband__item {
+    border-left: 1px solid rgba(255, 255, 255, 0.16);
+  }
+}
+
+.k-benefitsband--aside .k-benefitsband__heading {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.28;
+}
+
+.k-benefitsband--aside .k-eyebrow {
+  font-size: 15px;
+  letter-spacing: 0.09em;
+}
+
+.k-benefitsband--aside .k-benefitsband__intro {
+  font-size: 13.5px;
+  line-height: 1.65;
+  opacity: 0.82;
+}
+
+.k-benefitsband--aside .k-benefitsband__text {
+  font-size: 12.5px;
+  line-height: 1.55;
+  opacity: 0.78;
+}
+
+.k-protocol {
+  display: grid;
+  gap: 20px;
+}
+
+.k-protocol__panel {
+  padding: 26px 22px 28px;
+  border-radius: var(--k-radius-card);
+}
+
+.k-protocol__panel--actifs {
+  background: var(--k-bg-soft);
+}
+
+.k-protocol__panel--steps {
+  background: var(--k-blue-tint);
+}
+
+.k-protocol__title {
+  margin: 0;
+}
+
+.k-protocol__title--blue {
+  color: var(--k-blue);
+}
+
+.k-protocol__rule {
+  margin: 12px 0 22px;
+}
+
+.k-protocol__actifs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.k-protocol__actif {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.k-protocol__actif-media {
+  width: 62px;
+  margin-bottom: 4px;
+}
+
+.k-protocol__actif-media .k-media {
+  background: transparent;
+}
+
+.k-protocol__actif-name {
+  font-family: var(--k-font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  color: var(--k-ink);
+}
+
+.k-protocol__actif-dose {
+  font-size: 12px;
+  color: var(--k-body);
+}
+
+.k-protocol__actif-detail {
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: var(--k-body);
+  opacity: 0.85;
+}
+
+.k-protocol__note {
+  margin: 22px 0 0;
+  font-size: 10.5px;
+  color: var(--k-body);
+  opacity: 0.85;
+}
+
+.k-protocol__body {
+  display: grid;
+  gap: 22px;
+  align-items: center;
+}
+
+.k-protocol__steps {
+  display: grid;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.k-protocol__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.k-protocol__step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--k-surface);
+  color: var(--k-blue);
+}
+
+.k-protocol__step-body {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.k-protocol__step-title {
+  font-family: var(--k-font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--k-blue);
+}
+
+.k-protocol__step-text {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--k-body);
+}
+
+.k-protocol__scale {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  justify-self: center;
+  width: min(200px, 100%);
+}
+
+.k-protocol__scale .k-media {
+  background: transparent;
+}
+
+/* Le trait de mesure encadre le visuel : il indique que la gelule est
+   reproduite a sa taille reelle. */
+.k-protocol__scale-label {
+  display: flex;
+  align-items: center;
+  writing-mode: vertical-rl;
+  padding-left: 8px;
+  border-left: 1px solid var(--k-border);
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--k-body);
+}
+
+@media screen and (min-width: 750px) {
+  .k-protocol__actifs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .k-protocol__body {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .k-protocol__scale {
+    width: 160px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .k-protocol {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: stretch;
+  }
+
+  .k-protocol__panel {
+    padding: 30px 28px 32px;
+  }
+}
+
+.k-versus {
+  position: relative;
+  display: grid;
+  gap: 16px;
+}
+
+.k-versus__side {
+  overflow: hidden;
+  border: 1px solid var(--k-border);
+  border-radius: var(--k-radius-card);
+  background: var(--k-surface);
+}
+
+.k-versus__header {
+  margin: 0;
+  padding: 13px 16px;
+  font-family: var(--k-font-heading);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.k-versus__side--brand .k-versus__header {
+  background: var(--k-navy);
+  color: #fff;
+}
+
+.k-versus__side--other .k-versus__header {
+  background: var(--k-bg-soft);
+  color: var(--k-body);
+}
+
+.k-versus__list {
+  padding: 0;
+  list-style: none;
+}
+
+.k-versus__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.k-versus__row + .k-versus__row {
+  border-top: 1px solid var(--k-border-soft);
+}
+
+.k-versus__row .k-icon {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  width: 20px;
+  height: 20px;
+}
+
+.k-versus__side--brand .k-icon {
+  color: var(--k-blue);
+}
+
+.k-versus__side--other .k-icon {
+  color: var(--k-body);
+  opacity: 0.5;
+}
+
+.k-versus__body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.k-versus__label {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--k-ink);
+}
+
+.k-versus__side--other .k-versus__label {
+  font-weight: 500;
+  color: var(--k-body);
+}
+
+.k-versus__note {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--k-body);
+  opacity: 0.85;
+}
+
+.k-versus__badge {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid var(--k-bg);
+  background: var(--k-gold);
+  color: #fff;
+  font-family: var(--k-font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+@media screen and (min-width: 750px) {
+  .k-versus {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 34px;
+    align-items: start;
+  }
+
+  /* La pastille se pose entre les deux panneaux sans occuper de
+     colonne : les panneaux gardent la meme largeur. */
+  .k-versus__badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+}
+
+.k-pdp-gallery__badge {
+  position: absolute;
+  z-index: 2;
+  top: 7%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: clamp(88px, 11vw, 116px);
+  aspect-ratio: 1;
+  padding: 12px;
+  border-radius: 50%;
+  background: linear-gradient(150deg, var(--k-gold) 0%, var(--k-gold-dark) 100%);
+  box-shadow: 0 12px 26px rgba(164, 100, 15, 0.28);
+  text-align: center;
+}
+
+.k-pdp-gallery__badge-text {
+  font-family: var(--k-font-heading);
+  font-size: clamp(8px, 0.78vw, 10px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.k-pdp-gallery__badge-rule {
+  width: 22px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+/* La coche ne se montre que sur la carte retenue : un cercle vide sur
+   les autres se confondrait avec la pastille de remise posee au meme
+   angle. Le cadre dore signale deja la carte selectionnable. */
+.k-cure__check {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.k-cure.is-selected .k-cure__check {
+  opacity: 1;
 }
