@@ -5496,3 +5496,185 @@
   align-items: center;
   gap: 4px;
 }
+
+.k-hero--cover {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.k-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* L image remplit le bandeau : le calage par ratio du composant media
+   est neutralise, la hauteur vient du reglage du Builder. */
+.k-hero__bg .k-media {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  border-radius: 0;
+  background: transparent;
+}
+
+.k-hero__bg .k-media::before {
+  display: none;
+}
+
+.k-hero__bg .k-media > img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.k-hero__scrim {
+  position: absolute;
+  inset: 0;
+}
+
+.k-hero__scrim--flat {
+  background: rgba(254, 253, 252, var(--k-hero-overlay, 0.35));
+}
+
+.k-hero__scrim--side {
+  background: linear-gradient(
+    100deg,
+    rgba(254, 253, 252, calc(var(--k-hero-overlay, 0.35) + 0.5)) 0%,
+    rgba(254, 253, 252, var(--k-hero-overlay, 0.35)) 42%,
+    rgba(254, 253, 252, 0) 78%
+  );
+}
+
+.k-hero__scrim--bottom {
+  background: linear-gradient(
+    0deg,
+    rgba(254, 253, 252, calc(var(--k-hero-overlay, 0.35) + 0.45)) 0%,
+    rgba(254, 253, 252, var(--k-hero-overlay, 0.35)) 55%,
+    rgba(254, 253, 252, 0) 100%
+  );
+}
+
+.k-hero--on-light .k-hero__scrim--flat {
+  background: rgba(1, 31, 75, var(--k-hero-overlay, 0.35));
+}
+
+.k-hero--on-light .k-hero__scrim--side {
+  background: linear-gradient(
+    100deg,
+    rgba(1, 31, 75, calc(var(--k-hero-overlay, 0.35) + 0.5)) 0%,
+    rgba(1, 31, 75, var(--k-hero-overlay, 0.35)) 42%,
+    rgba(1, 31, 75, 0) 78%
+  );
+}
+
+.k-hero--on-light .k-hero__scrim--bottom {
+  background: linear-gradient(
+    0deg,
+    rgba(1, 31, 75, calc(var(--k-hero-overlay, 0.35) + 0.45)) 0%,
+    rgba(1, 31, 75, var(--k-hero-overlay, 0.35)) 55%,
+    rgba(1, 31, 75, 0) 100%
+  );
+}
+
+.k-hero--cover .k-hero__inner {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: var(--k-hero-min, 600px);
+  align-content: center;
+}
+
+.k-hero--cover .k-hero__text {
+  /* Assez large pour que « VOTRE CONCENTRATION. » tienne sur une ligne
+     en capitales, sans pour autant couvrir tout le visuel. */
+  max-width: 43rem;
+}
+
+/* En pleine largeur la colonne visuelle n a plus de contenu : elle ne
+   sert qu a caler la pastille sur le bord du conteneur, sans occuper
+   de place dans la grille. */
+.k-hero--cover .k-hero__media {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.k-hero--cover .k-hero__badge {
+  pointer-events: auto;
+}
+
+.k-hero--on-light .k-hero__heading,
+.k-hero--on-light .k-hero__origin,
+.k-hero--on-light .k-eyebrow {
+  color: #fff;
+}
+
+.k-hero--on-light .k-hero__body {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.k-hero--on-light .k-btn--ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.k-hero--on-light .k-btn--ghost:hover {
+  background: #fff;
+  color: var(--k-ink);
+}
+
+@media screen and (max-width: 989px) {
+  /* Sur petit ecran le texte passe sous l image plutot que par-dessus :
+     un titre pose sur une photo cadree en portrait devient illisible. */
+  .k-hero--cover {
+    overflow: visible;
+  }
+
+  .k-hero--cover .k-hero__bg {
+    position: relative;
+    inset: auto;
+  }
+
+  .k-hero--cover .k-hero__bg .k-media {
+    position: relative;
+    inset: auto;
+    height: auto;
+  }
+
+  .k-hero--cover .k-hero__bg .k-media::before {
+    display: block;
+  }
+
+  /* Le texte n est plus pose sur l image : le voile n a plus de raison
+     d etre et ternirait la photo. */
+  .k-hero--cover .k-hero__scrim {
+    display: none;
+  }
+
+  .k-hero--cover .k-hero__inner {
+    min-height: 0;
+  }
+
+  .k-hero--on-light .k-hero__heading,
+  .k-hero--on-light .k-hero__origin,
+  .k-hero--on-light .k-eyebrow {
+    color: var(--k-ink);
+  }
+
+  .k-hero--on-light .k-hero__body {
+    color: var(--k-body);
+  }
+
+  .k-hero--on-light .k-btn--ghost {
+    color: var(--k-ink);
+    border-color: var(--k-ink);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .k-hero--cover .k-hero__badge {
+    top: 12%;
+    right: var(--k-gutter);
+  }
+}

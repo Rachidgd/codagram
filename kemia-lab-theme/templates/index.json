@@ -61,7 +61,12 @@
         "badge_text": "7 actifs\nhautement\ndosés",
         "badge_style": "circle",
         "badge_icon": "leaf",
-        "background": "light"
+        "background": "light",
+        "layout": "cover",
+        "cover_height": 600,
+        "overlay": 35,
+        "overlay_style": "side",
+        "text_color": "ink"
       }
     },
     "reassurance": {

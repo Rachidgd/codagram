@@ -13,6 +13,11 @@
     endif
   endfor
 
+  assign cover = false
+  if section.settings.layout == 'cover'
+    assign cover = true
+  endif
+
   assign heading_class = 'k-hero__heading'
   if section.settings.heading_style == 'display'
     assign heading_class = heading_class | append: ' k-display'
@@ -42,7 +47,23 @@
   {%- endif -%}
 {%- endcapture -%}
 
-<section class="k-hero k-hero--{{ section.settings.background }}">
+<section
+  class="k-hero k-hero--{{ section.settings.background }}{% if cover %} k-hero--cover k-hero--on-{{ section.settings.text_color }}{% endif %}"
+  {% if cover %}style="--k-hero-min: {{ section.settings.cover_height }}px; --k-hero-overlay: {{ section.settings.overlay | divided_by: 100.0 }}"{% endif %}
+>
+  {%- if cover -%}
+    <div class="k-hero__bg">
+      {% render 'image',
+        image: section.settings.image,
+        ratio: '56%',
+        sizes: '100vw',
+        loading: 'eager',
+        placeholder_icon: 'bottle'
+      %}
+      <span class="k-hero__scrim k-hero__scrim--{{ section.settings.overlay_style }}" aria-hidden="true"></span>
+    </div>
+  {%- endif -%}
+
   <div class="k-container k-hero__inner">
     <div class="k-hero__text">
       {%- if section.settings.eyebrow != blank -%}
@@ -117,14 +138,16 @@
     </div>
 
     <div class="k-hero__media">
-      {% render 'image',
-        image: section.settings.image,
-        ratio: '104%',
-        fit: 'contain',
-        sizes: '(min-width: 990px) 50vw, 100vw',
-        loading: 'eager',
-        placeholder_icon: 'bottle'
-      %}
+      {%- unless cover -%}
+        {% render 'image',
+          image: section.settings.image,
+          ratio: '104%',
+          fit: 'contain',
+          sizes: '(min-width: 990px) 50vw, 100vw',
+          loading: 'eager',
+          placeholder_icon: 'bottle'
+        %}
+      {%- endunless -%}
 
       {%- if section.settings.badge_text != blank -%}
         <span class="k-hero__badge k-hero__badge--{{ section.settings.badge_style }}">
@@ -242,7 +265,61 @@
       "default": "flag-fr"
     },
     { "type": "header", "content": "Visuel" },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Disposition",
+      "info": "En pleine largeur, l'image occupe tout le bandeau et le texte se pose par-dessus.",
+      "options": [
+        { "value": "cover", "label": "Image pleine largeur, texte par-dessus" },
+        { "value": "split", "label": "Texte à gauche, image à droite" }
+      ],
+      "default": "cover"
+    },
     { "type": "image_picker", "id": "image", "label": "Image" },
+    {
+      "type": "range",
+      "id": "cover_height",
+      "label": "Hauteur du bandeau",
+      "info": "S'applique à la disposition pleine largeur.",
+      "min": 360,
+      "max": 820,
+      "step": 20,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "overlay",
+      "label": "Voile sur l'image",
+      "info": "Assombrit ou éclaircit l'image pour que le texte reste lisible.",
+      "min": 0,
+      "max": 85,
+      "step": 5,
+      "unit": "%",
+      "default": 35
+    },
+    {
+      "type": "select",
+      "id": "overlay_style",
+      "label": "Forme du voile",
+      "options": [
+        { "value": "side", "label": "Dégradé depuis le côté du texte" },
+        { "value": "flat", "label": "Voile uniforme" },
+        { "value": "bottom", "label": "Dégradé depuis le bas" }
+      ],
+      "default": "side"
+    },
+    {
+      "type": "select",
+      "id": "text_color",
+      "label": "Couleur du texte sur l'image",
+      "options": [
+        { "value": "ink", "label": "Sombre" },
+        { "value": "light", "label": "Clair" }
+      ],
+      "default": "ink"
+    },
     { "type": "textarea", "id": "badge_text", "label": "Pastille", "info": "Chaque retour à la ligne crée une ligne dans la pastille." },
     {
       "type": "select",
