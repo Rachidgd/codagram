@@ -268,22 +268,43 @@
 
     var current = 0;
 
+    function offsetOf(index) {
+      // Mesuré par rapport à la première vue, jamais au conteneur : les
+      // deux n'ont pas forcément le même parent de positionnement.
+      return slides[index].offsetLeft - slides[0].offsetLeft;
+    }
+
     function goTo(index, smooth) {
       var target = Math.max(0, Math.min(index, slides.length - 1));
+      // La position est retenue tout de suite : deux clics rapprochés
+      // avancent de deux vues, alors qu'attendre la fin du défilement
+      // ferait relire une position périmée et le second clic serait perdu.
+      current = target;
+      applyState(target);
       track.scrollTo({
-        left: slides[target].offsetLeft - track.offsetLeft,
+        left: offsetOf(target),
         behavior: smooth === false ? 'auto' : 'smooth'
       });
     }
 
-    // Le défilement fait autorité : la molette, le geste tactile et les flèches
-    // passent tous par lui, l'état s'aligne donc sur une seule source.
-    function sync() {
-      var width = track.clientWidth || 1;
-      var index = Math.round(track.scrollLeft / width);
-      index = Math.max(0, Math.min(index, slides.length - 1));
-      if (index !== current) current = index;
+    function nearestIndex() {
+      // La vue la plus proche est cherchée par comparaison des positions
+      // réelles. Diviser par la largeur du conteneur dérive dès qu'un
+      // espacement sépare les vues, et l'écart grandit vue après vue.
+      var position = track.scrollLeft;
+      var best = 0;
+      var bestGap = Infinity;
+      for (var i = 0; i < slides.length; i++) {
+        var gap = Math.abs(offsetOf(i) - position);
+        if (gap < bestGap) {
+          bestGap = gap;
+          best = i;
+        }
+      }
+      return best;
+    }
 
+    function applyState(index) {
       thumbs.forEach(function (thumb, i) {
         var active = i === index;
         thumb.classList.toggle('is-active', active);
@@ -292,6 +313,13 @@
       if (main) main.setAttribute('data-active', index + 1);
       if (prev) prev.disabled = index === 0;
       if (next) next.disabled = index === slides.length - 1;
+    }
+
+    // Le défilement fait autorité : la molette, le geste tactile et les
+    // flèches passent tous par lui, l'état s'aligne sur une seule source.
+    function sync() {
+      current = nearestIndex();
+      applyState(current);
     }
 
     if (prev) prev.addEventListener('click', function () { goTo(current - 1); });

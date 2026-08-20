@@ -231,21 +231,15 @@
                         {% render 'image', image: variant.image, ratio: '100%', fit: 'contain', sizes: '120px', placeholder_icon: 'bottle' %}
                       </span>
                       <span class="k-cure__title">{{ variant.title }}</span>
-                      {%- if duration != blank -%}
-                        <span class="k-cure__duration">{{ duration }}</span>
-                      {%- endif -%}
-                      {%- if percent > 0 -%}
-                        <span class="k-cure__discount">-{{ percent }} %</span>
-                      {%- endif -%}
+                      <span class="k-cure__duration">{{ duration }}</span>
+                      <span class="k-cure__discount">{% if percent > 0 %}-{{ percent }} %{% endif %}</span>
                       <span class="k-cure__prices">
                         <span class="k-cure__price">{{ variant.price | money }}</span>
                         {%- if variant.compare_at_price > variant.price -%}
                           <s class="k-cure__compare">{{ variant.compare_at_price | money }}</s>
                         {%- endif -%}
                       </span>
-                      {%- if note != blank -%}
-                        <span class="k-cure__note">{{ note }}</span>
-                      {%- endif -%}
+                      <span class="k-cure__note">{{ note }}</span>
                     </label>
                   {%- endfor -%}
                 </div>
