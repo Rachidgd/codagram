@@ -809,3 +809,39 @@ formulaire se règlent depuis le Builder.
 Les horaires étaient jusqu'ici imbriqués dans le bloc téléphone : sans
 numéro renseigné, ils ne s'affichaient jamais. Ils forment désormais
 une ligne autonome avec son propre pictogramme.
+
+## 22. Visuels de variante dans les cartes de cure
+
+Chaque cure affiche l'image rattachée à sa variante dans le tableau de
+bord Shopify. L'option se règle sur le bloc « Cures » de la fiche
+produit : **Visuel de la variante**. Décochée, les cartes reprennent
+leur présentation compacte sans image.
+
+Pour changer une image, il suffit de la remplacer sur la variante dans
+Produits, 4 Vitality System, Variantes. Aucune intervention sur le
+thème n'est nécessaire.
+
+Les cartes s'alignent entre elles par une sous-grille : titre, durée,
+prix et mention se posent sur les mêmes lignes d'une carte à l'autre,
+même quand une variante n'a pas de durée ou pas de prix barré. Le
+nombre de lignes suit l'option : cinq avec le visuel, quatre sans.
+
+Le bandeau « meilleure offre » et la pastille de remise se disputaient
+le haut de la carte quand les deux étaient actifs. Les cartes prennent
+désormais une bande supplémentaire et la pastille descend dans l'angle
+gauche resté libre. Le supplément vaut pour toutes les cartes de la
+grille afin que les lignes restent alignées.
+
+## 23. Réseaux sociaux
+
+Paramètres du thème, section « Réseaux sociaux » : Instagram, TikTok,
+Facebook, YouTube et WhatsApp. Les pictogrammes apparaissent dans le
+pied de page et dans le panneau latéral de la page contact.
+
+Les cinq champs sont livrés à `#`, en attendant les vraies adresses :
+le pictogramme s'affiche mais n'ouvre rien. Dès qu'un champ reçoit une
+adresse complète, le lien s'ouvre dans un nouvel onglet. Un champ vidé
+retire simplement son pictogramme.
+
+Ce sont des champs de texte libre et non des champs de lien, parce que
+Shopify refuse `#` dans un champ de lien.
