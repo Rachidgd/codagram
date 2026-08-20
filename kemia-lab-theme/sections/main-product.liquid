@@ -237,7 +237,10 @@
                         assign percent = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price
                       endif
                       assign duration = variant.metafields.kemia.duration.value
-                      assign note = variant.metafields.kemia.note.value
+                      assign note = ''
+                      if block.settings.show_note
+                        assign note = variant.metafields.kemia.note.value
+                      endif
                     -%}
                     <label
                       class="k-cure{% if variant == current_variant %} is-selected{% endif %}{% unless variant.available %} is-unavailable{% endunless %}"
@@ -554,6 +557,7 @@
         { "type": "text", "id": "heading", "label": "Titre", "default": "Choisissez votre offre" },
         { "type": "text", "id": "best_label", "label": "Badge meilleure offre", "default": "Meilleure offre" },
         { "type": "checkbox", "id": "show_media", "label": "Visuel de la variante", "default": false },
+        { "type": "checkbox", "id": "show_note", "label": "Mention sous le prix", "info": "Provient du champ méta kemia.note de chaque variante.", "default": false },
         { "type": "checkbox", "id": "show_compare", "label": "Prix barré", "default": false }
       ]
     },

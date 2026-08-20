@@ -35,7 +35,8 @@
             "heading": "",
             "best_label": "",
             "show_media": false,
-            "show_compare": false
+            "show_compare": false,
+            "show_note": false
           }
         },
         "buy": {
