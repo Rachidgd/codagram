@@ -45,6 +45,15 @@
             <p class="k-form-message k-form-message--error">{{ 'general.newsletter.error' | t }}</p>
           {%- endif -%}
         {% endform %}
+
+        {%- if section.settings.note != blank -%}
+          <p class="k-newsletter-band__note">
+            {%- if section.settings.note_icon != 'none' -%}
+              {% render 'icon', name: section.settings.note_icon, class: 'k-icon--xs' %}
+            {%- endif -%}
+            <span>{{ section.settings.note }}</span>
+          </p>
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -85,6 +94,24 @@
       "type": "textarea",
       "id": "text",
       "label": "Texte"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Mention sous le formulaire",
+      "info": "Par exemple : Aucun spam. Désinscription en 1 clic."
+    },
+    {
+      "type": "select",
+      "id": "note_icon",
+      "label": "Pictogramme de la mention",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "lock", "label": "Cadenas" },
+        { "value": "shield-check", "label": "Bouclier" },
+        { "value": "check-circle", "label": "Validé" }
+      ],
+      "default": "lock"
     },
     {
       "type": "select",

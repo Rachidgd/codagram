@@ -2,15 +2,23 @@
   assign category = article.tags.first
   assign filter_tags = article.tags | join: '|'
   assign card_layout = layout | default: 'stack'
+
   assign is_row = false
   if card_layout == 'row'
     assign is_row = true
   endif
+
+  assign is_blog = false
+  if card_layout == 'blog'
+    assign is_blog = true
+  endif
 -%}
-<article class="k-article-card{% if is_row %} k-article-card--row{% endif %}"{% if use_filter %} data-k-filter-item="{{ filter_tags | escape }}"{% endif %}>
+<article class="k-article-card{% if is_row %} k-article-card--row{% endif %}{% if is_blog %} k-article-card--blog{% endif %}"{% if use_filter %} data-k-filter-item="{{ filter_tags | escape }}"{% endif %}>
   <a class="k-article-card__media" href="{{ article.url }}" tabindex="-1" aria-hidden="true">
     {%- if is_row -%}
       {% render 'image', image: article.image, ratio: '100%', sizes: '120px', placeholder_icon: 'image' %}
+    {%- elsif is_blog -%}
+      {% render 'image', image: article.image, ratio: '66%', sizes: '(min-width: 990px) 25vw, 90vw', placeholder_icon: 'image' %}
     {%- else -%}
       {% render 'image', image: article.image, ratio: '62%', sizes: '(min-width: 990px) 33vw, 90vw', placeholder_icon: 'image' %}
       {%- if category != blank -%}
@@ -21,6 +29,9 @@
   <div class="k-article-card__body">
     {%- if is_row and category != blank -%}
       <span class="k-article-card__tag k-article-card__tag--inline">{{ category }}</span>
+    {%- endif -%}
+    {%- if is_blog -%}
+      <span class="k-article-card__tag k-article-card__tag--plain">{{ category }}</span>
     {%- endif -%}
     <h3 class="k-article-card__title">
       <a href="{{ article.url }}">{{ article.title }}</a>
@@ -35,6 +46,17 @@
           {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
         </a>
       {%- endif -%}
+    {%- elsif is_blog -%}
+      <p class="k-article-card__meta k-article-card__meta--footer">
+        <span class="k-article-card__metaitem">
+          {% render 'icon', name: 'calendar', class: 'k-icon--xs' %}
+          <span>{% render 'date', date: article.published_at %}</span>
+        </span>
+        <span class="k-article-card__metaitem">
+          {% render 'icon', name: 'clock', class: 'k-icon--xs' %}
+          {% render 'reading-time', article: article, hide_dot: true %}
+        </span>
+      </p>
     {%- else -%}
       <p class="k-article-card__meta">
         <span>{% render 'date', date: article.published_at %}</span>

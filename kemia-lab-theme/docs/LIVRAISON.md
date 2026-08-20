@@ -893,3 +893,47 @@ Cinq sections, toutes réglables depuis le Builder :
 
 Les flèches et les points du carrousel n'apparaissent qu'à partir de
 deux formules. Une seule formule affiche simplement son panneau.
+
+## 26. Page Blog
+
+Trois sections, toutes réglables depuis le Builder :
+
+1. **En-tête de page** : fil d'Ariane, titre, signature sur une ligne
+   (« Comprendre. Progresser. Prendre soin de soi. »), filet doré et
+   texte d'introduction. La signature et le filet sont deux nouveaux
+   réglages, utilisables sur n'importe quelle page.
+2. **Blog** : la rangée des catégories, l'article à la une et la grille.
+3. **Bandeau newsletter**, avec sa mention sous le formulaire.
+
+### Les catégories
+
+Elles viennent des étiquettes posées sur les articles, dans Boutique en
+ligne, Articles de blog. Le thème n'a rien à déclarer : une nouvelle
+étiquette apparaît d'elle-même dans la rangée.
+
+Pour donner un pictogramme à une catégorie, ajoutez un bloc
+« Pictogramme de catégorie » et écrivez l'étiquette exactement comme sur
+les articles. Sans bloc, la catégorie prend le pictogramme par défaut
+réglé sur la section.
+
+Le nombre d'articles par catégorie s'affiche entre parenthèses. Il se
+masque tout seul si le blog dépasse ce que Shopify permet de compter en
+une seule fois : mieux vaut aucun chiffre qu'un chiffre faux.
+
+### L'article à la une
+
+C'est le plus récent du blog. Il porte le ruban doré, sa catégorie, son
+auteur, sa date et son temps de lecture, et il est retiré de la grille
+pour ne pas apparaître deux fois. Sur une page filtrée par catégorie, il
+laisse la place à la grille seule.
+
+Le ruban, la mention avant l'auteur et le libellé du bouton se règlent
+depuis le Builder. L'auteur peut être masqué.
+
+### La grille
+
+Trois ou quatre articles par ligne, au choix. Le titre de la grille et le
+lien à sa droite sont deux champs libres. Les cartes s'alignent entre
+elles par une sous-grille : catégorie, titre, résumé et pied se posent
+sur les mêmes lignes d'une carte à l'autre, même quand un article n'a pas
+d'étiquette.

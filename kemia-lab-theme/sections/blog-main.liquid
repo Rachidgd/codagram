@@ -7,19 +7,30 @@
     assign featured = blog.articles.first
   endif
   assign per_page = section.settings.per_page
+
+  assign total = blog.articles_count | plus: 0
+  assign loaded = blog.articles.size | plus: 0
+
+  assign show_counts = false
+  if section.settings.show_counts and loaded >= total
+    assign show_counts = true
+  endif
 -%}
 
 <section class="k-section k-section--flush-top">
   <div class="k-container">
     {%- if section.settings.show_tabs and blog.all_tags.size > 0 -%}
-      <div class="k-tabs k-blog__tabs" aria-label="Catégories" data-k-blog-tabs>
-        <a class="k-tab{% if current_tags == blank %} is-active{% endif %}" href="{{ blog.url }}">
-          {%- if section.settings.all_icon != 'none' -%}{% render 'icon', name: section.settings.all_icon, class: 'k-icon--sm' %}{%- endif -%}
-          {{ section.settings.all_label }}
+      <div class="k-blogcats" aria-label="Catégories" data-k-blog-tabs>
+        <a class="k-blogcat k-blogcat--all{% if current_tags == blank %} is-active{% endif %}" href="{{ blog.url }}">
+          <span class="k-blogcat__label">{{ section.settings.all_label }}</span>
+          {%- if show_counts -%}
+            <span class="k-blogcat__count">({{ total }})</span>
+          {%- endif -%}
         </a>
+
         {%- for tag in blog.all_tags -%}
           {%- liquid
-            assign tag_icon = ''
+            assign tag_icon = section.settings.default_icon
             for block in section.blocks
               assign block_tag = block.settings.tag | downcase | strip
               assign loop_tag = tag | downcase | strip
@@ -28,10 +39,26 @@
                 break
               endif
             endfor
+
+            assign tag_count = 0
+            if show_counts
+              for item in blog.articles
+                if item.tags contains tag
+                  assign tag_count = tag_count | plus: 1
+                endif
+              endfor
+            endif
           -%}
-          <a class="k-tab{% if current_tags contains tag %} is-active{% endif %}" href="{{ blog.url }}/tagged/{{ tag | handle }}">
-            {%- if tag_icon != blank and tag_icon != 'none' -%}{% render 'icon', name: tag_icon, class: 'k-icon--sm' %}{%- endif -%}
-            {{ tag }}
+          <a class="k-blogcat{% if current_tags contains tag %} is-active{% endif %}" href="{{ blog.url }}/tagged/{{ tag | handle }}">
+            {%- if tag_icon != blank and tag_icon != 'none' -%}
+              <span class="k-blogcat__icon k-icon-circle">
+                {% render 'icon', name: tag_icon, class: 'k-icon--lg' %}
+              </span>
+            {%- endif -%}
+            <span class="k-blogcat__label">{{ tag }}</span>
+            {%- if show_counts -%}
+              <span class="k-blogcat__count">({{ tag_count }})</span>
+            {%- endif -%}
           </a>
         {%- endfor -%}
       </div>
@@ -39,43 +66,74 @@
 
     <div data-k-blog-results>
     {%- if show_featured -%}
-      <div class="k-blog__featured-wrap">
+      <article class="k-featured">
         {%- if section.settings.featured_label != blank -%}
-          <h2 class="k-title-caps k-blog__label">{{ section.settings.featured_label }}</h2>
+          <span class="k-featured__ribbon">{{ section.settings.featured_label }}</span>
         {%- endif -%}
-        <article class="k-featured">
-          <a class="k-featured__media" href="{{ featured.url }}" tabindex="-1" aria-hidden="true">
-            {% render 'image', image: featured.image, ratio: '64%', sizes: '(min-width: 990px) 55vw, 100vw', loading: 'eager', placeholder_icon: 'image' %}
-          </a>
-          <div class="k-featured__body">
-            {%- if featured.tags.first != blank -%}
-              <span class="k-eyebrow">{{ featured.tags.first }}</span>
+
+        <a class="k-featured__media" href="{{ featured.url }}" tabindex="-1" aria-hidden="true">
+          {% render 'image', image: featured.image, ratio: '76%', sizes: '(min-width: 990px) 40vw, 100vw', loading: 'eager', placeholder_icon: 'image' %}
+        </a>
+
+        <div class="k-featured__body">
+          {%- if featured.tags.first != blank -%}
+            <span class="k-eyebrow k-eyebrow--blue">{{ featured.tags.first }}</span>
+          {%- endif -%}
+
+          <h2 class="k-featured__title"><a href="{{ featured.url }}">{{ featured.title }}</a></h2>
+
+          <p class="k-featured__excerpt">{{ featured.excerpt_or_content | strip_html | truncate: 220 }}</p>
+
+          <p class="k-featured__meta">
+            {%- if section.settings.show_author and featured.author != blank -%}
+              <span class="k-featured__metaitem">
+                {% render 'icon', name: 'user', class: 'k-icon--sm' %}
+                <span>{{ section.settings.author_prefix }} <b>{{ featured.author }}</b></span>
+              </span>
             {%- endif -%}
-            <h3 class="k-h3 k-featured__title"><a href="{{ featured.url }}">{{ featured.title }}</a></h3>
-            <p class="k-featured__excerpt">{{ featured.excerpt_or_content | strip_html | truncate: 220 }}</p>
-            <p class="k-article-card__meta">
+            <span class="k-featured__metaitem">
+              {% render 'icon', name: 'calendar', class: 'k-icon--sm' %}
               <span>{% render 'date', date: featured.published_at %}</span>
-              {% render 'reading-time', article: featured %}
-            </p>
-            <a class="k-link" href="{{ featured.url }}">
+            </span>
+            <span class="k-featured__metaitem">
+              {% render 'icon', name: 'clock', class: 'k-icon--sm' %}
+              {% render 'reading-time', article: featured, hide_dot: true %}
+            </span>
+          </p>
+
+          {%- if section.settings.read_label != blank -%}
+            <a class="k-btn k-btn--navy k-featured__cta" href="{{ featured.url }}">
               {{ section.settings.read_label }}
               {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
             </a>
-          </div>
-        </article>
-      </div>
+          {%- endif -%}
+        </div>
+      </article>
     {%- endif -%}
 
-    {%- if section.settings.grid_label != blank -%}
-      <h2 class="k-title-caps k-blog__label k-blog__label--grid">{{ section.settings.grid_label }}</h2>
+    {%- if section.settings.grid_label != blank or section.settings.all_link_label != blank -%}
+      <div class="k-blogrow__head">
+        {%- if section.settings.grid_label != blank -%}
+          <h2 class="k-title-caps k-h3 k-blogrow__title">
+            {{ section.settings.grid_label }}
+            <hr class="k-rule">
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.all_link_label != blank -%}
+          <a class="k-link k-link--caps k-blogrow__all" href="{{ blog.url }}">
+            {{ section.settings.all_link_label }}
+            {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+          </a>
+        {%- endif -%}
+      </div>
     {%- endif -%}
 
     {%- paginate blog.articles by per_page -%}
       {%- if blog.articles.size > 0 -%}
-        <div class="k-blogrow__grid">
+        <div class="k-blogrow__grid k-blogrow__grid--{{ section.settings.per_row }}">
           {%- for article in blog.articles -%}
             {%- unless show_featured and forloop.first and paginate.current_page == 1 -%}
-              {% render 'article-card', article: article, show_excerpt: true %}
+              {% render 'article-card', article: article, show_excerpt: true, layout: 'blog' %}
             {%- endunless -%}
           {%- endfor -%}
         </div>
@@ -114,25 +172,49 @@
   "name": "Blog",
   "class": "k-blog-section",
   "settings": [
+    { "type": "header", "content": "Catégories" },
     { "type": "checkbox", "id": "show_tabs", "label": "Afficher les catégories", "default": true },
     { "type": "text", "id": "all_label", "label": "Libellé toutes catégories", "default": "Tous les articles" },
     {
+      "type": "checkbox",
+      "id": "show_counts",
+      "label": "Afficher le nombre d'articles",
+      "info": "Masqué automatiquement quand le blog dépasse ce que Shopify permet de compter en une fois, pour ne jamais afficher un chiffre faux.",
+      "default": true
+    },
+    {
       "type": "select",
-      "id": "all_icon",
-      "label": "Pictogramme toutes catégories",
+      "id": "default_icon",
+      "label": "Pictogramme par défaut",
+      "info": "Utilisé pour toute catégorie sans bloc dédié.",
       "options": [
         { "value": "none", "label": "Aucun" },
-        { "value": "bag", "label": "Sac" },
         { "value": "sparkle", "label": "Étincelle" },
-        { "value": "calendar", "label": "Calendrier" }
+        { "value": "leaf", "label": "Feuille" },
+        { "value": "molecule", "label": "Molécule" }
       ],
-      "default": "calendar"
+      "default": "sparkle"
     },
+    { "type": "header", "content": "Article à la une" },
     { "type": "checkbox", "id": "show_featured", "label": "Article à la une", "default": true },
-    { "type": "text", "id": "featured_label", "label": "Titre article à la une", "default": "À la une" },
-    { "type": "text", "id": "read_label", "label": "Lien de lecture", "default": "Lire l'article" },
-    { "type": "text", "id": "grid_label", "label": "Titre de la grille", "default": "Tous les articles" },
-    { "type": "range", "id": "per_page", "label": "Articles par page", "min": 3, "max": 24, "step": 3, "default": 9 }
+    { "type": "text", "id": "featured_label", "label": "Ruban", "default": "À la une" },
+    { "type": "checkbox", "id": "show_author", "label": "Afficher l'auteur", "default": true },
+    { "type": "text", "id": "author_prefix", "label": "Mention avant l'auteur", "default": "Par" },
+    { "type": "text", "id": "read_label", "label": "Bouton de lecture", "default": "Lire l'article" },
+    { "type": "header", "content": "Grille des articles" },
+    { "type": "text", "id": "grid_label", "label": "Titre de la grille", "default": "Nos derniers articles" },
+    { "type": "text", "id": "all_link_label", "label": "Lien à droite du titre", "default": "Voir tous les articles" },
+    {
+      "type": "select",
+      "id": "per_row",
+      "label": "Articles par ligne",
+      "options": [
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "4"
+    },
+    { "type": "range", "id": "per_page", "label": "Articles par page", "min": 4, "max": 24, "step": 1, "default": 9 }
   ],
   "blocks": [
     {
@@ -153,7 +235,10 @@
             { "value": "moon", "label": "Sommeil" },
             { "value": "leaf", "label": "Nutrition" },
             { "value": "molecule", "label": "Science" },
-            { "value": "capsule", "label": "Gélule" }
+            { "value": "capsule", "label": "Gélule" },
+            { "value": "flask", "label": "Fiole" },
+            { "value": "droplet", "label": "Goutte" },
+            { "value": "sparkle", "label": "Étincelle" }
           ],
           "default": "bolt"
         }

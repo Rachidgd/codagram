@@ -8,7 +8,7 @@
       </nav>
     {%- endif -%}
 
-    <div class="k-pagehero__inner{% if section.settings.image != blank %} k-pagehero__inner--split{% endif %}">
+    <div class="k-pagehero__inner{% if section.settings.image != blank or section.settings.show_media %} k-pagehero__inner--split{% endif %}">
       <div class="k-pagehero__text">
         {%- if section.settings.eyebrow != blank -%}
           <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
@@ -17,6 +17,12 @@
           <h1 class="k-pagehero__heading{% if section.settings.heading_style == 'display' %} k-display{% endif %}">
             {{ section.settings.heading }}{% if section.settings.highlight != blank %} <span class="k-gold">{{ section.settings.highlight }}</span>{% endif %}
           </h1>
+        {%- endif -%}
+        {%- if section.settings.tagline != blank -%}
+          <p class="k-pagehero__tagline">{{ section.settings.tagline }}</p>
+        {%- endif -%}
+        {%- if section.settings.show_rule -%}
+          <hr class="k-rule k-pagehero__rule">
         {%- endif -%}
         {%- if section.settings.text != blank -%}
           <div class="k-pagehero__body k-text">{{ section.settings.text }}</div>
@@ -69,6 +75,8 @@
       ],
       "default": "sans"
     },
+    { "type": "text", "id": "tagline", "label": "Signature sous le titre", "info": "Une ligne courte, par exemple : Comprendre. Progresser. Prendre soin de soi." },
+    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": false },
     { "type": "richtext", "id": "text", "label": "Texte" },
     { "type": "text", "id": "button_label", "label": "Bouton" },
     { "type": "url", "id": "button_link", "label": "Lien du bouton" },

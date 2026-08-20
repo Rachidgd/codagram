@@ -5,33 +5,87 @@
       "settings": {
         "show_breadcrumb": true,
         "breadcrumb_label": "Blog",
-        "eyebrow": "Le blog Kemia Lab",
-        "heading": "Comprendre. Progresser. Prendre soin de soi.",
+        "eyebrow": "",
+        "heading": "Le blog Kemia Lab",
+        "highlight": "",
         "heading_style": "sans",
-        "text": "<p>Des articles scientifiques et pratiques pour vous aider à améliorer votre énergie, votre concentration, votre vitalité et votre bien-être au quotidien.</p>",
+        "tagline": "Comprendre. Progresser. Prendre soin de soi.",
+        "show_rule": true,
+        "text": "<p>Des conseils fondés sur la science et l'expérience pour vous aider à retrouver énergie, clarté mentale, vitalité et équilibre au quotidien.</p>",
+        "button_label": "",
+        "button_link": "",
         "show_media": true,
+        "image": "",
         "background": "soft"
       }
     },
     "blog": {
       "type": "blog-main",
       "blocks": {
-        "t1": { "type": "tag_icon", "settings": { "tag": "Énergie", "icon": "bolt" } },
-        "t2": { "type": "tag_icon", "settings": { "tag": "Concentration", "icon": "brain" } },
-        "t3": { "type": "tag_icon", "settings": { "tag": "Vitalité", "icon": "muscle" } },
-        "t4": { "type": "tag_icon", "settings": { "tag": "Bien-être", "icon": "shield-star" } },
-        "t5": { "type": "tag_icon", "settings": { "tag": "Sommeil", "icon": "moon" } },
-        "t6": { "type": "tag_icon", "settings": { "tag": "Nutrition", "icon": "leaf" } }
+        "t1": {
+          "type": "tag_icon",
+          "settings": {
+            "tag": "Énergie",
+            "icon": "bolt"
+          }
+        },
+        "t2": {
+          "type": "tag_icon",
+          "settings": {
+            "tag": "Concentration",
+            "icon": "brain"
+          }
+        },
+        "t3": {
+          "type": "tag_icon",
+          "settings": {
+            "tag": "Vitalité",
+            "icon": "muscle"
+          }
+        },
+        "t4": {
+          "type": "tag_icon",
+          "settings": {
+            "tag": "Bien-être",
+            "icon": "shield-star"
+          }
+        },
+        "t5": {
+          "type": "tag_icon",
+          "settings": {
+            "tag": "Sommeil",
+            "icon": "moon"
+          }
+        },
+        "t6": {
+          "type": "tag_icon",
+          "settings": {
+            "tag": "Nutrition",
+            "icon": "leaf"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4", "t5", "t6"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5",
+        "t6"
+      ],
       "settings": {
         "show_tabs": true,
         "all_label": "Tous les articles",
-        "all_icon": "calendar",
+        "show_counts": true,
+        "default_icon": "sparkle",
         "show_featured": true,
         "featured_label": "À la une",
+        "show_author": true,
+        "author_prefix": "Par",
         "read_label": "Lire l'article",
-        "grid_label": "Tous les articles",
+        "grid_label": "Nos derniers articles",
+        "all_link_label": "Voir tous les articles",
+        "per_row": "4",
         "per_page": 9
       }
     },
@@ -39,11 +93,21 @@
       "type": "newsletter-band",
       "settings": {
         "color_scheme": "navy",
-        "heading": "Des conseils exclusifs pour votre énergie et votre bien-être.",
+        "image": "",
+        "eyebrow": "",
+        "heading": "Recevez nos conseils exclusifs",
+        "text": "Des contenus pratiques, des conseils scientifiques et des offres exclusives, directement dans votre boîte mail.",
+        "note": "Aucun spam. Désinscription en 1 clic.",
+        "note_icon": "lock",
+        "icon": "mail",
         "placeholder": "Votre email",
         "button_label": "S'inscrire"
       }
     }
   },
-  "order": ["hero", "blog", "newsletter"]
+  "order": [
+    "hero",
+    "blog",
+    "newsletter"
+  ]
 }
