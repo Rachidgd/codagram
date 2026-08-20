@@ -107,6 +107,76 @@
     "protocole": {
       "type": "product-protocol",
       "blocks": {
+        "a1": {
+          "type": "actif",
+          "settings": {
+            "image": "",
+            "name": "L-Tyrosine",
+            "amount": "280",
+            "unit": "mg",
+            "detail": ""
+          }
+        },
+        "a2": {
+          "type": "actif",
+          "settings": {
+            "image": "",
+            "name": "CDP-Choline",
+            "amount": "200",
+            "unit": "mg",
+            "detail": ""
+          }
+        },
+        "a3": {
+          "type": "actif",
+          "settings": {
+            "image": "",
+            "name": "Extrait de kola",
+            "amount": "208,3",
+            "unit": "mg",
+            "detail": "dont caféine : 25 mg"
+          }
+        },
+        "a4": {
+          "type": "actif",
+          "settings": {
+            "image": "",
+            "name": "Extrait de ginseng",
+            "amount": "200",
+            "unit": "mg",
+            "detail": "dont ginsénosides : 20 mg"
+          }
+        },
+        "a5": {
+          "type": "actif",
+          "settings": {
+            "image": "",
+            "name": "Extrait de safran",
+            "amount": "30",
+            "unit": "mg",
+            "detail": "3 % crocines / 2 % safranal"
+          }
+        },
+        "a6": {
+          "type": "actif",
+          "settings": {
+            "image": "",
+            "name": "Zinc",
+            "amount": "10",
+            "unit": "mg",
+            "detail": "100 % VNR*"
+          }
+        },
+        "a7": {
+          "type": "actif",
+          "settings": {
+            "image": "",
+            "name": "Vitamine D3",
+            "amount": "50",
+            "unit": "µg / 2000 UI",
+            "detail": "1000 % VNR*"
+          }
+        },
         "s1": {
           "type": "step",
           "settings": {
@@ -133,6 +203,13 @@
         }
       },
       "block_order": [
+        "a1",
+        "a2",
+        "a3",
+        "a4",
+        "a5",
+        "a6",
+        "a7",
         "s1",
         "s2",
         "s3"

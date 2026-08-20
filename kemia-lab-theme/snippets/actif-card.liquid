@@ -1,0 +1,45 @@
+{%- liquid
+  assign card_style = style | default: 'card'
+  assign dose = amount
+  if unit != blank
+    assign dose = dose | append: ' ' | append: unit
+  endif
+-%}
+
+{%- if card_style == 'compact' -%}
+  <li class="k-protocol__actif" {{ attributes }}>
+    <span class="k-protocol__actif-media">
+      {% render 'image', image: image, ratio: '100%', fit: 'contain', sizes: '110px', placeholder_icon: 'leaf' %}
+    </span>
+    <span class="k-protocol__actif-name">{{ name }}</span>
+    {%- if dose != blank -%}
+      <span class="k-protocol__actif-dose">{{ dose }}</span>
+    {%- endif -%}
+    {%- if detail != blank -%}
+      <span class="k-protocol__actif-detail">{{ detail }}</span>
+    {%- endif -%}
+  </li>
+{%- else -%}
+  <li class="k-sciactif" {{ attributes }}>
+    <span class="k-sciactif__media">
+      {% render 'image', image: image, ratio: '100%', fit: 'contain', sizes: '(min-width: 990px) 160px, 40vw', placeholder_icon: 'leaf' %}
+    </span>
+    <h3 class="k-sciactif__name">{{ name }}</h3>
+    {%- comment -%}
+      Les emplacements facultatifs sont toujours posés : la sous-grille
+      aligne alors dosage, précision, description et étiquette d'une
+      carte à l'autre, même quand un actif n'a pas tout renseigné.
+    {%- endcomment -%}
+    <p class="k-sciactif__dose">{{ dose }}</p>
+    <p class="k-sciactif__detail">{{ detail }}</p>
+    <p class="k-sciactif__text">{{ text }}</p>
+    <span class="k-sciactif__tag">
+      {%- if tag_label != blank -%}
+        {%- if tag_icon != blank and tag_icon != 'none' -%}
+          {% render 'icon', name: tag_icon, class: 'k-icon--sm' %}
+        {%- endif -%}
+        <span>{{ tag_label }}</span>
+      {%- endif -%}
+    </span>
+  </li>
+{%- endif -%}

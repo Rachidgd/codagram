@@ -2059,6 +2059,72 @@
   background: var(--k-bg-soft);
 }
 
+/* Bandeau scientifique : fond bleu profond, texte clair. Les regles
+   suivent celles de la version sur image pour ne pas les dupliquer. */
+.k-hero--navy {
+  background: linear-gradient(150deg, var(--k-navy) 0%, #01173A 100%);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.k-hero--navy .k-hero__heading,
+.k-hero--navy .k-hero__origin,
+.k-hero--navy .k-trust__title {
+  color: #fff;
+}
+
+.k-hero--navy .k-eyebrow,
+.k-hero--navy .k-hero__body,
+.k-hero--navy .k-trust__text {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.k-hero--navy .k-hero__trust-item > .k-icon,
+.k-hero--navy .k-hero__origin .k-icon {
+  color: var(--k-gold);
+}
+
+/* Sur le bandeau bleu, les reperes s empilent et sont separes par un
+   filet, comme la maquette. Le hero clair de l accueil garde sa
+   presentation en ligne, deja validee. */
+.k-hero--navy .k-hero__trust-item {
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 12px;
+  text-align: center;
+}
+
+.k-hero--navy .k-hero__trust-body {
+  gap: 4px;
+}
+
+.k-hero--navy .k-trust__title {
+  font-family: var(--k-font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.k-hero--navy .k-trust__text {
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.k-hero--navy .k-breadcrumb,
+.k-hero--navy .k-breadcrumb a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.k-hero--navy .k-breadcrumb a:hover {
+  color: #fff;
+}
+
+.k-hero__breadcrumb {
+  margin-bottom: 4px;
+}
+
 .k-hero--plain {
   background: var(--k-bg);
 }
@@ -2482,6 +2548,14 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .k-features--5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .k-features--6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
   .k-features--dividers:not(.k-features--cards) .k-features__item + .k-features__item {
     border-left: 1px solid var(--k-border);
   }
@@ -2494,8 +2568,17 @@
   }
 
   .k-hero__trust {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    /* Le nombre de colonnes suit le nombre de blocs poses dans le Builder. */
+    grid-template-columns: repeat(var(--k-trust-cols, 4), minmax(0, 1fr));
     gap: 14px;
+  }
+
+  .k-hero--navy .k-hero__trust-item {
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .k-hero--navy .k-hero__trust-item:first-child {
+    border-left: 0;
   }
 
   .k-spotlight {
@@ -2616,70 +2699,119 @@
   margin-top: 24px;
 }
 
-.k-sciingredients {
+.k-sciactifs {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px 12px;
+  align-items: stretch;
+  gap: 12px;
   margin-top: 34px;
 }
 
-.k-sciingredients__item {
-  display: grid;
+.k-sciactif {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 6px;
-  justify-items: center;
+  padding: 20px 14px 16px;
+  border: 1px solid var(--k-border);
+  border-radius: var(--k-radius-card);
+  background: var(--k-surface);
   text-align: center;
-  padding-inline: 8px;
 }
 
-.k-sciingredients__media {
-  width: min(100%, 132px);
-  margin-bottom: 6px;
+.k-sciactif__media {
+  width: min(100%, 118px);
+  margin-bottom: 4px;
 }
 
-.k-sciingredients__media .k-media {
+.k-sciactif__media .k-media {
   background: transparent;
 }
 
-.k-sciingredients__name {
+.k-sciactif__name {
   font-family: var(--k-font-heading);
-  font-size: 13.5px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   color: var(--k-ink);
   line-height: 1.3;
 }
 
-.k-sciingredients__detail {
+.k-sciactif__dose {
+  font-family: var(--k-font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--k-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.k-sciactif__detail {
   font-size: 11.5px;
   color: var(--k-body);
   line-height: 1.4;
 }
 
-.k-sciingredients__dose {
-  font-size: 13px;
+.k-sciactif__text {
+  margin-top: 6px;
+  font-size: 12px;
   color: var(--k-body);
-  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
 }
 
-.k-sciingredients__note {
+/* Les emplacements facultatifs gardent leur place pour que les lignes
+   restent alignees d une carte a l autre, sans rien peindre. */
+.k-sciactif__dose:empty,
+.k-sciactif__detail:empty,
+.k-sciactif__text:empty,
+.k-sciactif__tag:empty {
+  visibility: hidden;
+}
+
+.k-sciactif__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 12px;
+  font-family: var(--k-font-heading);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--k-ink);
+}
+
+.k-sciactif__tag .k-icon {
+  flex: 0 0 auto;
+  color: var(--k-gold);
+}
+
+.k-sciactifs__note {
   margin-top: 22px;
   font-size: 11.5px;
   color: var(--k-body);
+  text-align: center;
 }
 
 .k-formulas {
-  display: grid;
-  gap: 20px;
+  position: relative;
   margin-top: 30px;
+  padding: 16px;
+  border: 1px solid var(--k-border);
+  border-radius: var(--k-radius-card);
+  background: var(--k-bg-soft);
 }
 
 .k-formula {
   display: grid;
-  gap: 20px;
+  gap: 18px;
   align-items: center;
-  padding: 24px 22px;
+  padding: 20px 18px;
   background: var(--k-surface);
   border: 1px solid var(--k-border);
   border-radius: var(--k-radius-card);
+  scroll-snap-align: start;
 }
 
 .k-formula__media .k-media {
@@ -2690,19 +2822,15 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 10px;
+}
+
+.k-formula__badge {
+  align-self: flex-start;
 }
 
 .k-formula__title {
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-}
-
-.k-formula__tagline {
-  font-family: var(--k-font-heading);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--k-gold);
+  letter-spacing: 0.02em;
 }
 
 .k-formula__text {
@@ -2711,21 +2839,102 @@
   color: var(--k-body);
 }
 
-.k-formula__body .k-link {
-  margin-top: 8px;
+.k-formula__pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 10px;
+  width: 100%;
+  margin-top: 4px;
 }
 
-.k-formula--upcoming {
-  justify-items: center;
+.k-formula__pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   text-align: center;
-  gap: 12px;
-  background: transparent;
-  border-style: dashed;
-  border-color: var(--k-gold-soft);
 }
 
-.k-formula__placeholder {
-  color: var(--k-gold-soft);
+.k-formula__pillar-icon {
+  display: inline-flex;
+  color: var(--k-gold);
+}
+
+.k-formula__pillar-label {
+  font-family: var(--k-font-heading);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  color: var(--k-ink);
+}
+
+.k-formula__cta {
+  margin-top: 6px;
+}
+
+.k-formulas__dots {
+  margin-top: 14px;
+}
+
+.k-formulas__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+}
+
+.k-formulas__nav--prev {
+  left: 2px;
+}
+
+.k-formulas__nav--next {
+  right: 2px;
+}
+
+/* Bandeau des formules a venir : une ligne calme sous le carrousel. */
+.k-upcoming {
+  display: grid;
+  gap: 14px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 20px;
+  padding: 18px 20px;
+  border: 1px solid var(--k-gold-soft);
+  border-radius: var(--k-radius-card);
+  background: var(--k-surface);
+  text-align: center;
+}
+
+.k-upcoming__icon {
+  display: inline-flex;
+  color: var(--k-gold);
+}
+
+.k-upcoming__body {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.k-upcoming__title {
+  font-family: var(--k-font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--k-ink);
+}
+
+.k-upcoming__text {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--k-body);
+}
+
+.k-upcoming__cta {
+  white-space: nowrap;
 }
 
 .k-contact {
@@ -3226,17 +3435,25 @@
 }
 
 @media screen and (min-width: 750px) {
-  .k-sciingredients {
+  .k-sciactifs {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .k-formula {
-    grid-template-columns: 0.85fr 1.15fr;
-    padding: 28px 28px;
+    grid-template-columns: 0.8fr 1.2fr;
+    padding: 26px 28px;
   }
 
-  .k-formula--upcoming {
-    grid-template-columns: 1fr;
+  .k-formula__pillars {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .k-upcoming {
+    grid-template-columns: auto 1fr auto;
+    justify-items: start;
+    text-align: left;
+    gap: 18px;
+    padding: 18px 24px;
   }
 
   .k-contact {
@@ -3293,22 +3510,17 @@
     order: 2;
   }
 
-  .k-sciingredients {
+  .k-sciactifs {
     grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 0;
+    gap: 10px;
   }
 
-  .k-sciingredients__item {
-    padding-inline: 12px;
-    border-left: 1px solid var(--k-border);
-  }
-
-  .k-sciingredients__item:first-child {
-    border-left: 0;
+  .k-sciactif {
+    padding: 20px 10px 16px;
   }
 
   .k-formulas {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 22px 52px;
   }
 }
 
@@ -6298,4 +6510,180 @@
 
 .k-cure.is-selected .k-cure__check {
   opacity: 1;
+}
+
+@supports (grid-template-rows: subgrid) {
+  .k-sciactifs {
+    grid-template-rows: repeat(6, auto);
+  }
+
+  .k-sciactif {
+    grid-row: span 6;
+    display: grid;
+    grid-template-rows: subgrid;
+    justify-items: center;
+    align-content: stretch;
+    row-gap: 6px;
+  }
+
+  .k-sciactif__tag {
+    margin-top: 0;
+    align-self: end;
+  }
+}
+
+.k-section-head--flanked h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.k-section-head--flanked h2::before,
+.k-section-head--flanked h2::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 34px;
+  height: 2px;
+  background: var(--k-gold);
+}
+
+.k-rail--1 {
+  --k-rail-item: 100%;
+}
+
+.k-btn--navy {
+  background: var(--k-navy);
+  border-color: var(--k-navy);
+  color: #fff;
+}
+
+.k-btn--navy:hover {
+  background: #01173A;
+  border-color: #01173A;
+}
+
+/* Bandeau qualite : texte a gauche, engagements au centre, visuel a
+   droite qui file jusqu au bord de l ecran. */
+.k-quality {
+  position: relative;
+  overflow: hidden;
+  padding-block: 34px;
+}
+
+.k-quality--navy {
+  background: linear-gradient(150deg, var(--k-navy) 0%, #01173A 100%);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.k-quality--blue-tint {
+  background: var(--k-blue-tint);
+  color: var(--k-body);
+}
+
+.k-quality__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 22px;
+}
+
+.k-quality__heading {
+  color: var(--k-ink);
+}
+
+.k-quality--navy .k-quality__heading {
+  color: #fff;
+}
+
+.k-quality__intro {
+  margin-top: 8px;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.k-quality__items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 14px;
+}
+
+.k-quality__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.k-quality__icon {
+  display: inline-flex;
+  color: var(--k-gold);
+}
+
+.k-quality__title {
+  font-family: var(--k-font-heading);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  color: var(--k-ink);
+}
+
+.k-quality--navy .k-quality__title {
+  color: #fff;
+}
+
+.k-quality__text-item {
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.k-quality__media {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .k-quality__items {
+    grid-template-columns: repeat(var(--k-quality-cols, 5), minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .k-quality {
+    padding-block: 40px;
+  }
+
+  .k-quality__inner {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.6fr);
+    align-items: center;
+    gap: 34px;
+  }
+
+  .k-quality--with-image .k-quality__inner {
+    padding-right: 26%;
+  }
+
+  .k-quality--with-image .k-quality__media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 30%;
+  }
+
+  .k-quality--with-image .k-quality__media .k-media {
+    height: 100%;
+    padding-bottom: 0;
+  }
+
+  /* Le visuel se fond dans le bandeau plutot que de s y coller net. */
+  .k-quality--with-image.k-quality--navy .k-quality__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--k-navy) 0%, rgba(1, 31, 75, 0.55) 34%, rgba(1, 31, 75, 0.2) 100%);
+  }
 }

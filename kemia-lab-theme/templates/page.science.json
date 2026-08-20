@@ -2,22 +2,80 @@
   "sections": {
     "hero": {
       "type": "hero-split",
+      "blocks": {
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "leaf",
+            "title": "Naturelle",
+            "text": "Ingrédients d'origine naturelle sélectionnés"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "flask",
+            "title": "Scientifique",
+            "text": "Formules basées sur des données fiables"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Efficace",
+            "text": "Dosages optimisés pour des résultats concrets"
+          }
+        },
+        "t4": {
+          "type": "trust",
+          "settings": {
+            "icon": "beaker",
+            "title": "Transparente",
+            "text": "Composition claire, sans compromis"
+          }
+        },
+        "t5": {
+          "type": "trust",
+          "settings": {
+            "icon": "hexagon",
+            "title": "Fabriqué en France",
+            "text": "Avec exigence et savoir-faire"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
       "settings": {
-        "eyebrow": "La science au service de votre potentiel",
+        "show_breadcrumb": true,
+        "breadcrumb_label": "Science",
+        "eyebrow": "",
         "heading_tag": "h1",
-        "heading_style": "display",
-        "heading": "Une formule pensée, basée sur la",
-        "highlight": "science",
-        "heading_suffix": ".",
-        "show_rule": true,
-        "text": "<p>Chez Kemia Lab, chaque ingrédient est sélectionné avec exigence et chaque dosage est étudié pour créer des formules cohérentes, efficaces et simples à intégrer au quotidien.</p>",
-        "button_label": "Découvrir 4 Vitality System",
-        "button_link": "/products/4-vitality-system",
-        "button_style": "outline",
-        "badge_text": "",
+        "heading_style": "sans",
+        "heading_case": "upper",
+        "heading": "La science\nau service de",
+        "highlight": "votre meilleure version",
+        "highlight_break": true,
+        "heading_suffix": "",
+        "show_rule": false,
+        "text": "<p>Chez Kemia Lab, nous associons la puissance de la nature aux avancées scientifiques pour développer des formules efficaces, sûres et transparentes.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button2_label": "",
+        "button2_link": "",
+        "origin_text": "",
+        "origin_icon": "none",
+        "layout": "split",
+        "image": "",
+        "badge_text": "7 actifs\nhautement\ndosés",
+        "badge_style": "circle",
         "badge_icon": "none",
-        "background": "light",
-        "highlight_break": false
+        "background": "navy"
       }
     },
     "approach": {
@@ -26,52 +84,65 @@
         "a1": {
           "type": "item",
           "settings": {
-            "icon": "leaf",
-            "title": "Sélection exigeante",
-            "text": "Nous sélectionnons uniquement des ingrédients de qualité, reconnus et sourcés avec soin."
+            "icon": "search",
+            "title": "Sélection rigoureuse",
+            "text": "Nous sélectionnons les meilleurs ingrédients naturels et actifs scientifiquement reconnus."
           }
         },
         "a2": {
           "type": "item",
           "settings": {
             "icon": "flask",
-            "title": "Formulation réfléchie",
-            "text": "Chaque dosage est étudié pour assurer un équilibre cohérent entre les différents actifs."
+            "title": "Dosages optimisés",
+            "text": "Chaque dosage est défini pour garantir efficacité, sécurité et biodisponibilité."
           }
         },
         "a3": {
           "type": "item",
           "settings": {
-            "icon": "shield-check",
-            "title": "Fabrication contrôlée",
-            "text": "Nos formules sont produites selon des standards de qualité élevés et contrôlés."
+            "icon": "dna",
+            "title": "Synergie des actifs",
+            "text": "Nos formules sont pensées pour agir en synergie et renforcer les bénéfices de chaque actif."
+          }
+        },
+        "a4": {
+          "type": "item",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Tests & contrôles",
+            "text": "Nos ingrédients et formules sont contrôlés par des laboratoires indépendants."
+          }
+        },
+        "a5": {
+          "type": "item",
+          "settings": {
+            "icon": "france",
+            "title": "Fabrication française",
+            "text": "Nos produits sont fabriqués en France selon les plus hautes exigences de qualité."
           }
         }
       },
       "block_order": [
         "a1",
         "a2",
-        "a3"
+        "a3",
+        "a4",
+        "a5"
       ],
       "settings": {
-        "eyebrow": "Notre approche",
-        "heading": "",
-        "show_rule": true,
+        "eyebrow": "",
+        "heading": "Notre approche scientifique",
+        "heading_style": "caps",
+        "show_rule": false,
+        "flanked": true,
+        "text": "<p>Chaque formule Kemia Lab suit un protocole rigoureux à chaque étape de sa conception.</p>",
         "icon_style": "circle",
-        "accent": "gold",
+        "accent": "blue",
         "style": "plain",
         "dividers": true,
-        "background": "soft"
-      }
-    },
-    "actifs": {
-      "type": "science-ingredients",
-      "settings": {
-        "eyebrow": "La science derrière 4 Vitality System",
-        "heading": "actifs soigneusement sélectionnés",
-        "heading_style": "display",
-        "note": "",
-        "product": "4-vitality-system"
+        "button_label": "",
+        "button_link": "",
+        "background": "none"
       }
     },
     "formulas": {
@@ -80,90 +151,222 @@
         "f1": {
           "type": "formula",
           "settings": {
-            "text": "7 actifs sélectionnés pour soutenir votre énergie, votre bien-être et vos performances au quotidien.",
-            "button_label": "Découvrir la formule",
-            "product": "4-vitality-system"
+            "product": "4-vitality-system",
+            "image": "",
+            "badge": "Notre formule phare",
+            "heading": "4 Vitality System",
+            "text": "7 actifs hautement dosés pour soutenir votre énergie,\nvotre concentration, votre vitalité physique et votre bien-être intime.",
+            "button_label": "Découvrir la science de cette formule",
+            "button_link": ""
           }
         },
-        "f2": {
+        "up": {
           "type": "upcoming",
           "settings": {
-            "badge": "Bientôt",
-            "text": "De nouvelles formules scientifiquement élaborées arrivent bientôt. Restez connectés."
+            "icon": "leaf",
+            "heading": "D'autres formules arrivent bientôt",
+            "text": "Restez connectés, de nouvelles solutions naturelles et scientifiques sont en préparation pour vous accompagner encore plus loin.",
+            "button_label": "Découvrir nos produits",
+            "button_link": "/collections/all"
           }
         }
       },
       "block_order": [
         "f1",
-        "f2"
+        "up"
       ],
       "settings": {
-        "eyebrow": "Découvrez la science derrière nos formules",
-        "heading": "",
-        "background": "soft"
+        "eyebrow": "",
+        "heading": "La science derrière nos formules",
+        "heading_style": "caps",
+        "flanked": true,
+        "intro": "Découvrez la composition et le rôle de chaque actif dans nos produits.",
+        "prev_label": "Formule précédente",
+        "next_label": "Formule suivante",
+        "background": "none"
       }
     },
-    "pillars": {
-      "type": "features",
+    "actifs": {
+      "type": "science-ingredients",
+      "settings": {
+        "product": "4-vitality-system",
+        "eyebrow": "",
+        "heading": "actifs clés",
+        "show_count": true,
+        "heading_style": "caps",
+        "flanked": true,
+        "intro": "Chaque ingrédient a été choisi pour son efficacité prouvée et son rôle complémentaire.",
+        "note": "*VNR : Valeurs Nutritionnelles de Référence",
+        "background": "none",
+        "heading_prefix": "Zoom sur nos"
+      },
       "blocks": {
-        "p1": {
-          "type": "item",
+        "a1": {
+          "type": "actif",
           "settings": {
-            "icon": "award",
-            "title": "Dosages transparents",
-            "text": "Des informations claires sur chaque ingrédient et son dosage."
+            "image": "",
+            "name": "L-Tyrosine",
+            "amount": "280",
+            "unit": "mg",
+            "detail": "",
+            "text": "Acide aminé essentiel impliqué dans la synthèse des neurotransmetteurs pour soutenir l'énergie mentale et physique.",
+            "tag_icon": "brain",
+            "tag_label": "Concentration & vitalité"
           }
         },
-        "p2": {
-          "type": "item",
+        "a2": {
+          "type": "actif",
           "settings": {
-            "icon": "leaf",
-            "title": "Matières premières sélectionnées",
-            "text": "Des ingrédients de qualité, choisis pour leur pureté et leur efficacité."
+            "image": "",
+            "name": "CDP-Choline",
+            "amount": "200",
+            "unit": "mg",
+            "detail": "",
+            "text": "Source de choline hautement biodisponible, elle contribue au fonctionnement normal du cerveau et à la mémoire.",
+            "tag_icon": "brain",
+            "tag_label": "Fonction cognitive"
           }
         },
-        "p3": {
-          "type": "item",
+        "a3": {
+          "type": "actif",
           "settings": {
-            "icon": "shield-check",
-            "title": "Qualité contrôlée",
-            "text": "Formules testées et approuvées à chaque étape de production."
+            "image": "",
+            "name": "Extrait de kola",
+            "amount": "208,3",
+            "unit": "mg",
+            "detail": "dont caféine : 25 mg",
+            "text": "Stimule naturellement l'énergie et la vigilance grâce à sa caféine naturelle.",
+            "tag_icon": "bolt",
+            "tag_label": "Énergie & endurance"
           }
         },
-        "p4": {
-          "type": "item",
+        "a4": {
+          "type": "actif",
           "settings": {
-            "icon": "beaker",
-            "title": "Sources & études",
-            "text": "Nos choix sont basés sur des données scientifiques sérieuses et actualisées."
+            "image": "",
+            "name": "Extrait de ginseng",
+            "amount": "200",
+            "unit": "mg",
+            "detail": "dont ginsénosides : 20 mg",
+            "text": "Plante adaptogène reconnue pour réduire la fatigue et améliorer les performances physiques et mentales.",
+            "tag_icon": "muscle",
+            "tag_label": "Tonus & résistance"
+          }
+        },
+        "a5": {
+          "type": "actif",
+          "settings": {
+            "image": "",
+            "name": "Extrait de safran",
+            "amount": "30",
+            "unit": "mg",
+            "detail": "3 % crocines / 2 % safranal",
+            "text": "Contribue à l'équilibre émotionnel, au bien-être et à une activité sexuelle saine.",
+            "tag_icon": "shield-star",
+            "tag_label": "Bien-être intime"
+          }
+        },
+        "a6": {
+          "type": "actif",
+          "settings": {
+            "image": "",
+            "name": "Zinc",
+            "amount": "10",
+            "unit": "mg",
+            "detail": "100 % VNR*",
+            "text": "Minéral essentiel qui contribue au maintien d'un taux normal de testostérone dans le sang.",
+            "tag_icon": "molecule",
+            "tag_label": "Hormonal & immunité"
+          }
+        },
+        "a7": {
+          "type": "actif",
+          "settings": {
+            "image": "",
+            "name": "Vitamine D3",
+            "amount": "50",
+            "unit": "µg / 2000 UI",
+            "detail": "1000 % VNR*",
+            "text": "Contribue au fonctionnement normal du système immunitaire et au maintien d'une fonction musculaire normale.",
+            "tag_icon": "shield-check",
+            "tag_label": "Immunité & muscles"
           }
         }
       },
       "block_order": [
-        "p1",
-        "p2",
-        "p3",
-        "p4"
+        "a1",
+        "a2",
+        "a3",
+        "a4",
+        "a5",
+        "a6",
+        "a7"
+      ]
+    },
+    "quality": {
+      "type": "quality-band",
+      "blocks": {
+        "q1": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "title": "Ingrédients premium",
+            "text": "Des ingrédients naturels rigoureusement sélectionnés pour leur pureté et leur efficacité."
+          }
+        },
+        "q2": {
+          "type": "item",
+          "settings": {
+            "icon": "flask",
+            "title": "Testés en laboratoire",
+            "text": "Chaque lot est testé par des laboratoires indépendants pour garantir qualité et sécurité."
+          }
+        },
+        "q3": {
+          "type": "item",
+          "settings": {
+            "icon": "molecule",
+            "title": "Formulation sans superflu",
+            "text": "Sans OGM, sans colorants artificiels, sans conservateurs inutiles."
+          }
+        },
+        "q4": {
+          "type": "item",
+          "settings": {
+            "icon": "france",
+            "title": "Fabriqué en France",
+            "text": "Production française selon les normes les plus strictes de l'industrie."
+          }
+        },
+        "q5": {
+          "type": "item",
+          "settings": {
+            "icon": "shield-check",
+            "title": "Transparence totale",
+            "text": "Composition claire, dosages précis et traçabilité complète de nos produits."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
       ],
       "settings": {
-        "eyebrow": "",
-        "heading": "",
-        "show_rule": false,
-        "icon_style": "plain",
-        "accent": "blue",
-        "style": "plain",
-        "dividers": false,
-        "background": "blue-tint",
-        "button_label": "Consulter nos sources scientifiques",
-        "button_link": "/pages/contact"
+        "heading": "Qualité, sécurité et transparence",
+        "text": "Votre confiance est notre priorité. Nous nous engageons\nà vous offrir le meilleur, sans compromis.",
+        "image": "",
+        "color_scheme": "navy"
       }
     }
   },
   "order": [
     "hero",
     "approach",
-    "actifs",
     "formulas",
-    "pillars"
+    "actifs",
+    "quality"
   ]
 }

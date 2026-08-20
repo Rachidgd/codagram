@@ -1,0 +1,114 @@
+{%- liquid
+  assign items = 0
+  for block in section.blocks
+    unless block.settings.title == blank and block.settings.text == blank
+      assign items = items | plus: 1
+    endunless
+  endfor
+-%}
+
+{%- if section.settings.heading != blank or items > 0 -%}
+  <section class="k-quality k-quality--{{ section.settings.color_scheme }}{% if section.settings.image != blank %} k-quality--with-image{% endif %}">
+    <div class="k-container k-quality__inner">
+      <div class="k-quality__text">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="k-title-caps k-h3 k-quality__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <p class="k-quality__intro">{{ section.settings.text | newline_to_br }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- if items > 0 -%}
+        <ul class="k-quality__items" style="--k-quality-cols: {{ items }}">
+          {%- for block in section.blocks -%}
+            {%- unless block.settings.title == blank and block.settings.text == blank -%}
+              <li class="k-quality__item" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon != 'none' -%}
+                  <span class="k-quality__icon">{% render 'icon', name: block.settings.icon, class: 'k-icon--lg' %}</span>
+                {%- endif -%}
+                {%- if block.settings.title != blank -%}
+                  <span class="k-quality__title">{{ block.settings.title }}</span>
+                {%- endif -%}
+                <span class="k-quality__text-item">{{ block.settings.text }}</span>
+              </li>
+            {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.image != blank -%}
+      <div class="k-quality__media" aria-hidden="true">
+        {% render 'image', image: section.settings.image, ratio: '68%', sizes: '(min-width: 990px) 34vw, 100vw' %}
+      </div>
+    {%- endif -%}
+  </section>
+{%- else -%}
+  {% render 'section-empty', message: "Qualité et transparence : renseignez un titre ou ajoutez un engagement." %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Qualité et transparence",
+  "class": "k-quality-wrap",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Qualité, sécurité et transparence" },
+    { "type": "textarea", "id": "text", "label": "Texte" },
+    { "type": "image_picker", "id": "image", "label": "Visuel de droite" },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Fond",
+      "options": [
+        { "value": "navy", "label": "Bleu profond" },
+        { "value": "blue-tint", "label": "Bleu très clair" }
+      ],
+      "default": "navy"
+    }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Engagement",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Pictogramme",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "flask", "label": "Fiole" },
+            { "value": "beaker", "label": "Éprouvette" },
+            { "value": "microscope", "label": "Microscope" },
+            { "value": "clipboard", "label": "Contrôles" },
+            { "value": "france", "label": "Carte de France" },
+            { "value": "flag-fr", "label": "Drapeau français" },
+            { "value": "lock", "label": "Cadenas" },
+            { "value": "shield-check", "label": "Bouclier" },
+            { "value": "award", "label": "Médaille" },
+            { "value": "molecule", "label": "Molécule" }
+          ],
+          "default": "leaf"
+        },
+        { "type": "text", "id": "title", "label": "Titre", "default": "Ingrédients premium" },
+        { "type": "textarea", "id": "text", "label": "Texte", "default": "Des ingrédients naturels rigoureusement sélectionnés pour leur pureté et leur efficacité." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Qualité et transparence",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "leaf", "title": "Ingrédients premium", "text": "Des ingrédients naturels rigoureusement sélectionnés pour leur pureté et leur efficacité." } },
+        { "type": "item", "settings": { "icon": "flask", "title": "Testés en laboratoire", "text": "Chaque lot est testé par des laboratoires indépendants pour garantir qualité et sécurité." } },
+        { "type": "item", "settings": { "icon": "molecule", "title": "Formulation sans superflu", "text": "Sans OGM, sans colorants artificiels, sans conservateurs inutiles." } },
+        { "type": "item", "settings": { "icon": "france", "title": "Fabriqué en France", "text": "Production française selon les normes les plus strictes de l'industrie." } },
+        { "type": "item", "settings": { "icon": "shield-check", "title": "Transparence totale", "text": "Composition claire, dosages précis et traçabilité complète de nos produits." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,12 +1,12 @@
 <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
   <div class="k-container">
     {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
-      <div class="k-section-head k-features__head">
+      <div class="k-section-head k-features__head{% if section.settings.flanked %} k-section-head--flanked{% endif %}">
         {%- if section.settings.eyebrow != blank -%}
           <span class="k-eyebrow{% if section.settings.accent == 'blue' %} k-eyebrow--blue{% endif %}">{{ section.settings.eyebrow }}</span>
         {%- endif -%}
         {%- if section.settings.heading != blank -%}
-          <h2 class="{% if section.settings.heading_style == 'caps' %}k-title-caps k-h3{% elsif section.settings.heading_style == 'display' %}k-h2 k-display{% else %}k-h2{% endif %}">{{ section.settings.heading }}</h2>
+          <h2 class="{% if section.settings.heading_style == 'caps' %}k-title-caps k-h3{% elsif section.settings.heading_style == 'display' %}k-h2 k-display{% else %}k-h2{% endif %}"><span>{{ section.settings.heading }}</span></h2>
         {%- endif -%}
         {%- if section.settings.show_rule -%}<hr class="k-rule">{%- endif -%}
         {%- if section.settings.text != blank -%}
@@ -62,7 +62,8 @@
       ],
       "default": "caps"
     },
-    { "type": "checkbox", "id": "show_rule", "label": "Filet doré", "default": true },
+    { "type": "checkbox", "id": "show_rule", "label": "Filet doré sous le titre", "default": true },
+    { "type": "checkbox", "id": "flanked", "label": "Filets dorés de part et d'autre du titre", "default": false },
     { "type": "richtext", "id": "text", "label": "Texte d'introduction" },
     {
       "type": "select",
@@ -110,7 +111,7 @@
       "default": "none"
     }
   ],
-  "max_blocks": 4,
+  "max_blocks": 6,
   "blocks": [
     {
       "type": "item",
@@ -140,7 +141,13 @@
             { "value": "capsule", "label": "Gélule" },
             { "value": "truck", "label": "Livraison" },
             { "value": "headset", "label": "Service client" },
-            { "value": "lock", "label": "Cadenas" }
+            { "value": "lock", "label": "Cadenas" },
+            { "value": "microscope", "label": "Microscope" },
+            { "value": "clipboard", "label": "Contrôles" },
+            { "value": "france", "label": "Carte de France" },
+            { "value": "flag-fr", "label": "Drapeau français" },
+            { "value": "droplet", "label": "Goutte" },
+            { "value": "search", "label": "Loupe" }
           ],
           "default": "molecule"
         },

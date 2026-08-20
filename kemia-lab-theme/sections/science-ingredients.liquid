@@ -1,142 +1,181 @@
 {%- liquid
-  assign source = section.settings.product
-  assign ingredients = source.metafields.kemia.ingredients.value
-  assign total = ingredients.size | plus: 0
+  assign actifs = section.settings.product.metafields.kemia.ingredients.value
+
+  assign block_actifs = 0
+  for block in section.blocks
+    if block.type == 'actif' and block.settings.name != blank
+      assign block_actifs = block_actifs | plus: 1
+    endif
+  endfor
+
+  if block_actifs > 0
+    assign total = block_actifs
+  else
+    assign total = actifs.size | plus: 0
+  endif
+
+  assign heading = section.settings.heading
+  if heading != blank
+    if section.settings.show_count
+      assign heading = total | append: ' ' | append: heading
+    endif
+    if section.settings.heading_prefix != blank
+      assign heading = section.settings.heading_prefix | append: ' ' | append: heading
+    endif
+  endif
 -%}
 
 {%- if total > 0 -%}
-  <section class="k-section">
+  <section class="k-section{% if section.settings.background != 'none' %} k-bg-{{ section.settings.background }}{% endif %}">
     <div class="k-container">
-      <div class="k-section-head">
-        {%- if section.settings.eyebrow != blank -%}
-          <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
-        {%- endif -%}
+      {%- if section.settings.eyebrow != blank or heading != blank or section.settings.intro != blank -%}
+        <div class="k-section-head{% if section.settings.flanked %} k-section-head--flanked{% endif %}">
+          {%- if section.settings.eyebrow != blank -%}
+            <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
+          {%- endif -%}
+          {%- if heading != blank -%}
+            <h2 class="{% if section.settings.heading_style == 'display' %}k-h2 k-display{% elsif section.settings.heading_style == 'caps' %}k-title-caps k-h3{% else %}k-h2{% endif %}">
+              <span>{{ heading }}</span>
+            </h2>
+          {%- endif -%}
+          {%- if section.settings.intro != blank -%}
+            <p class="k-section-head__text">{{ section.settings.intro }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
 
-        {%- if section.settings.heading != blank -%}
-          <h2 class="k-h2{% if section.settings.heading_style == 'display' %} k-display{% endif %}">
-            {{ ingredients.size }} {{ section.settings.heading }}
-          </h2>
-        {%- endif -%}
-      </div>
-
-      <ul class="k-sciingredients">
-        {%- for item in ingredients -%}
-          {%- liquid
-            assign ingredient_image = item.image.value
-            assign ingredient_key = item.name.value | handleize
-
-            for block in section.blocks
-              assign block_key = block.settings.ingredient_name | handleize
-
-              if block.type == 'ingredient_image' and block.settings.ingredient_name != blank and block_key == ingredient_key and block.settings.image != blank
-                assign ingredient_image = block.settings.image
-                break
-              endif
-            endfor
-          -%}
-
-          <li class="k-sciingredients__item">
-            <div class="k-sciingredients__media">
-              {% render 'image',
-                image: ingredient_image,
-                ratio: '78%',
-                fit: 'contain',
-                sizes: '160px',
-                placeholder_icon: 'leaf'
+      <ul class="k-sciactifs">
+        {%- if block_actifs > 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'actif' and block.settings.name != blank -%}
+              {% render 'actif-card',
+                attributes: block.shopify_attributes,
+                image: block.settings.image,
+                name: block.settings.name,
+                amount: block.settings.amount,
+                unit: block.settings.unit,
+                detail: block.settings.detail,
+                text: block.settings.text,
+                tag_icon: block.settings.tag_icon,
+                tag_label: block.settings.tag_label
               %}
-            </div>
-
-            <h3 class="k-sciingredients__name">{{ item.name.value }}</h3>
-
-            {%- if item.detail.value != blank -%}
-              <p class="k-sciingredients__detail">{{ item.detail.value }}</p>
             {%- endif -%}
-
-            <p class="k-sciingredients__dose">
-              {{ item.amount.value }}{% if item.unit.value != blank %} {{ item.unit.value }}{% endif %}
-            </p>
-          </li>
-        {%- endfor -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- for actif in actifs -%}
+            {% render 'actif-card',
+              image: actif.image.value,
+              name: actif.name.value,
+              amount: actif.amount.value,
+              unit: actif.unit.value,
+              detail: actif.detail.value,
+              text: actif.description.value,
+              tag_icon: 'sparkle',
+              tag_label: actif.short_benefit.value
+            %}
+          {%- endfor -%}
+        {%- endif -%}
       </ul>
 
       {%- if section.settings.note != blank -%}
-        <p class="k-sciingredients__note">{{ section.settings.note }}</p>
+        <p class="k-sciactifs__note">{{ section.settings.note }}</p>
       {%- endif -%}
     </div>
   </section>
 {%- else -%}
-  {% render 'section-empty', message: "Section Actifs : sélectionnez un produit dont le champ méta kemia.ingredients est renseigné." %}
+  {% render 'section-empty', message: "Zoom sur les actifs : ajoutez un bloc Actif, ou sélectionnez un produit dont le champ méta kemia.ingredients est renseigné." %}
 {%- endif -%}
 
 {% schema %}
 {
-  "name": "Actifs (page Science)",
-  "class": "k-sciingredients-section",
+  "name": "Zoom sur les actifs",
+  "class": "k-sciactifs-section",
   "settings": [
+    {
+      "type": "paragraph",
+      "content": "Ajoutez un bloc « Actif » par ingrédient pour régler ici le nom, le dosage, la description et l'image. Sans aucun bloc de ce type, les actifs du champ méta du produit ci-dessous prennent le relais."
+    },
     {
       "type": "product",
       "id": "product",
       "label": "Produit source",
-      "info": "Les actifs proviennent du champ méta kemia.ingredients."
+      "info": "Utilisé seulement si vous n'ajoutez aucun bloc « Actif »."
     },
+    { "type": "header", "content": "Titre" },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
     {
       "type": "text",
-      "id": "eyebrow",
-      "label": "Sur-titre",
-      "default": "La science derrière nos formules"
+      "id": "heading_prefix",
+      "label": "Début du titre",
+      "info": "Placé avant le nombre, sur la même ligne. Par exemple : Zoom sur nos.",
+      "default": "Zoom sur nos"
     },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Titre après le nombre",
-      "default": "actifs soigneusement sélectionnés"
-    },
+    { "type": "text", "id": "heading", "label": "Suite du titre", "default": "actifs clés" },
+    { "type": "checkbox", "id": "show_count", "label": "Insérer le nombre d'actifs", "default": true },
     {
       "type": "select",
       "id": "heading_style",
       "label": "Style du titre",
       "options": [
-        {
-          "value": "sans",
-          "label": "Titres"
-        },
-        {
-          "value": "display",
-          "label": "Éditorial"
-        }
+        { "value": "caps", "label": "Majuscules" },
+        { "value": "sans", "label": "Titres" },
+        { "value": "display", "label": "Éditorial" }
       ],
-      "default": "display"
+      "default": "caps"
     },
+    { "type": "checkbox", "id": "flanked", "label": "Filets dorés de part et d'autre du titre", "default": true },
+    { "type": "text", "id": "intro", "label": "Texte d'introduction" },
+    { "type": "text", "id": "note", "label": "Note de bas de section", "default": "*VNR : Valeurs Nutritionnelles de Référence" },
     {
-      "type": "text",
-      "id": "note",
-      "label": "Note de bas de bloc",
-      "default": "VNR : Valeurs Nutritionnelles de Référence"
+      "type": "select",
+      "id": "background",
+      "label": "Fond",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "soft", "label": "Beige clair" },
+        { "value": "beige", "label": "Beige" },
+        { "value": "blue-tint", "label": "Bleu très clair" }
+      ],
+      "default": "none"
     }
   ],
+  "max_blocks": 16,
   "blocks": [
     {
-      "type": "ingredient_image",
-      "name": "Image ingrédient",
+      "type": "actif",
+      "name": "Actif",
       "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "name", "label": "Nom", "default": "Zinc" },
+        { "type": "text", "id": "amount", "label": "Dosage", "default": "10" },
+        { "type": "text", "id": "unit", "label": "Unité", "default": "mg" },
+        { "type": "text", "id": "detail", "label": "Précision", "info": "Affichée sous le dosage, par exemple : 100 % VNR." },
+        { "type": "textarea", "id": "text", "label": "Description" },
         {
-          "type": "text",
-          "id": "ingredient_name",
-          "label": "Nom de l'ingrédient",
-          "info": "Écrivez le même nom que celui du champ méta, par exemple : Magnésium, Caféine, Vitamine C."
+          "type": "select",
+          "id": "tag_icon",
+          "label": "Pictogramme de l'étiquette",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "brain", "label": "Cerveau" },
+            { "value": "muscle", "label": "Vitalité" },
+            { "value": "shield-star", "label": "Bien-être" },
+            { "value": "shield-check", "label": "Bouclier" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "molecule", "label": "Molécule" },
+            { "value": "droplet", "label": "Goutte" },
+            { "value": "sparkle", "label": "Étincelle" },
+            { "value": "target", "label": "Cible" }
+          ],
+          "default": "sparkle"
         },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image personnalisée"
-        }
+        { "type": "text", "id": "tag_label", "label": "Étiquette", "default": "Énergie & endurance" }
       ]
     }
   ],
   "presets": [
-    {
-      "name": "Actifs (page Science)"
-    }
+    { "name": "Zoom sur les actifs" }
   ]
 }
 {% endschema %}

@@ -4,14 +4,27 @@
     assign source = product
   endif
   assign actifs = source.metafields.kemia.ingredients.value
-  assign actif_count = actifs.size | plus: 0
 
+  assign block_actifs = 0
   assign steps = 0
   for block in section.blocks
-    unless block.settings.title == blank and block.settings.text == blank
-      assign steps = steps | plus: 1
-    endunless
+    if block.type == 'actif'
+      unless block.settings.name == blank
+        assign block_actifs = block_actifs | plus: 1
+      endunless
+    endif
+    if block.type == 'step'
+      unless block.settings.title == blank and block.settings.text == blank
+        assign steps = steps | plus: 1
+      endunless
+    endif
   endfor
+
+  if block_actifs > 0
+    assign actif_count = block_actifs
+  else
+    assign actif_count = actifs.size | plus: 0
+  endif
 -%}
 
 {%- if actif_count > 0 or steps > 0 -%}
@@ -29,37 +42,32 @@
             <hr class="k-rule k-protocol__rule">
 
             <ul class="k-protocol__actifs">
-              {%- for actif in actifs -%}
-                {%- liquid
-                  assign actif_image = actif.image.value
-                  assign actif_key = actif.name.value | handleize
-                  for block in section.blocks
-                    assign block_key = block.settings.actif_name | handleize
-                    if block.type == 'actif_image' and block.settings.actif_name != blank and block_key == actif_key and block.settings.image != blank
-                      assign actif_image = block.settings.image
-                      break
-                    endif
-                  endfor
-                -%}
-                <li class="k-protocol__actif">
-                  <span class="k-protocol__actif-media">
-                    {% render 'image',
-                      image: actif_image,
-                      ratio: '100%',
-                      fit: 'contain',
-                      sizes: '110px',
-                      placeholder_icon: 'leaf'
+              {%- if block_actifs > 0 -%}
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'actif' and block.settings.name != blank -%}
+                    {% render 'actif-card',
+                      style: 'compact',
+                      attributes: block.shopify_attributes,
+                      image: block.settings.image,
+                      name: block.settings.name,
+                      amount: block.settings.amount,
+                      unit: block.settings.unit,
+                      detail: block.settings.detail
                     %}
-                  </span>
-                  <span class="k-protocol__actif-name">{{ actif.name.value }}</span>
-                  <span class="k-protocol__actif-dose">
-                    {{ actif.amount.value }}{% if actif.unit.value != blank %} {{ actif.unit.value }}{% endif %}
-                  </span>
-                  {%- if actif.detail.value != blank -%}
-                    <span class="k-protocol__actif-detail">{{ actif.detail.value }}</span>
                   {%- endif -%}
-                </li>
-              {%- endfor -%}
+                {%- endfor -%}
+              {%- else -%}
+                {%- for actif in actifs -%}
+                  {% render 'actif-card',
+                    style: 'compact',
+                    image: actif.image.value,
+                    name: actif.name.value,
+                    amount: actif.amount.value,
+                    unit: actif.unit.value,
+                    detail: actif.detail.value
+                  %}
+                {%- endfor -%}
+              {%- endif -%}
             </ul>
 
             {%- if section.settings.note != blank -%}
@@ -125,7 +133,7 @@
     </div>
   </section>
 {%- else -%}
-  {% render 'section-empty', message: "Actifs et protocole : sélectionnez un produit dont le champ méta kemia.ingredients est renseigné, ou ajoutez une étape." %}
+  {% render 'section-empty', message: "Actifs et protocole : ajoutez un bloc Actif ou une étape, ou sélectionnez un produit dont le champ méta kemia.ingredients est renseigné." %}
 {%- endif -%}
 
 {% schema %}
@@ -137,9 +145,13 @@
       "type": "product",
       "id": "product",
       "label": "Produit source",
-      "info": "Les actifs proviennent du champ méta kemia.ingredients. Sur une fiche produit, laisser vide."
+      "info": "Utilisé seulement si vous n'ajoutez aucun bloc « Actif ». Sur une fiche produit, laisser vide."
     },
     { "type": "header", "content": "Panneau des actifs" },
+    {
+      "type": "paragraph",
+      "content": "Ajoutez un bloc « Actif » par ingrédient pour régler ici le nom, le dosage et l'image. Sans aucun bloc de ce type, les actifs du champ méta du produit prennent le relais."
+    },
     { "type": "text", "id": "actifs_heading", "label": "Titre", "default": "actifs hautement dosés" },
     { "type": "checkbox", "id": "show_count", "label": "Précéder le titre du nombre d'actifs", "default": true },
     { "type": "text", "id": "note", "label": "Note de bas de panneau", "default": "*VNR : Valeurs Nutritionnelles de Référence" },
@@ -149,7 +161,7 @@
     { "type": "image_picker", "id": "scale_image", "label": "Visuel de la gélule" },
     { "type": "text", "id": "scale_label", "label": "Légende du visuel", "default": "Taille réelle" }
   ],
-  "max_blocks": 16,
+  "max_blocks": 24,
   "blocks": [
     {
       "type": "step",
@@ -175,16 +187,14 @@
       ]
     },
     {
-      "type": "actif_image",
-      "name": "Image d'actif",
+      "type": "actif",
+      "name": "Actif",
       "settings": [
-        {
-          "type": "text",
-          "id": "actif_name",
-          "label": "Nom de l'actif",
-          "info": "Écrivez le même nom que dans le champ méta, par exemple : Zinc, Safran."
-        },
-        { "type": "image_picker", "id": "image", "label": "Image personnalisée" }
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "name", "label": "Nom", "default": "Zinc" },
+        { "type": "text", "id": "amount", "label": "Dosage", "default": "10" },
+        { "type": "text", "id": "unit", "label": "Unité", "default": "mg" },
+        { "type": "text", "id": "detail", "label": "Précision" }
       ]
     }
   ],

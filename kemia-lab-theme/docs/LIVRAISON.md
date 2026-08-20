@@ -845,3 +845,51 @@ retire simplement son pictogramme.
 
 Ce sont des champs de texte libre et non des champs de lien, parce que
 Shopify refuse `#` dans un champ de lien.
+
+## 24. Les actifs se règlent depuis le thème builder
+
+Le bloc **Actif** porte le nom, le dosage, l'unité, la précision et
+l'image. Il existe à deux endroits :
+
+- **Fiche produit**, section « Actifs et protocole » : image, nom,
+  dosage, unité, précision.
+- **Page Science**, section « Zoom sur les actifs » : les mêmes champs,
+  plus la description et l'étiquette de bas de carte.
+
+Pour changer un dosage ou charger l'image d'un actif, il suffit d'ouvrir
+le bloc correspondant dans le Builder. L'ordre des blocs fait l'ordre
+d'affichage.
+
+Sans aucun bloc « Actif », les deux sections retombent sur le champ méta
+`kemia.ingredients` du produit sélectionné, comme avant. C'est le repli :
+dès qu'un bloc est posé, les blocs font foi et le champ méta est ignoré.
+
+Les deux sections ont chacune leur liste. Renseigner un actif à deux
+endroits est le prix de ce réglage depuis le Builder. Si vous préférez
+une source unique, laissez les deux sections sans bloc « Actif » et
+renseignez les actifs dans Contenu, Métaobjets, Actif Kemia : le champ
+**Visuel** y accepte aussi une image, et les deux pages la reprennent.
+
+## 25. Page Science
+
+Cinq sections, toutes réglables depuis le Builder :
+
+1. **Hero** en bleu profond, avec fil d'Ariane, titre à partie dorée,
+   médaillon et cinq repères. Les repères sont des blocs « Repère de
+   confiance » : le nombre de colonnes suit le nombre de blocs.
+2. **Colonnes à pictogrammes** pour l'approche scientifique. Le titre
+   accepte des filets dorés de part et d'autre, et la section monte
+   désormais jusqu'à six colonnes.
+3. **Nos formules** : un carrousel d'un panneau par formule. Les quatre
+   piliers affichés dans le panneau viennent du champ méta
+   `kemia.benefits` du produit, ils ne se saisissent pas ici. Le bandeau
+   « d'autres formules arrivent bientôt » est un bloc de cette section :
+   supprimez-le quand il n'a plus lieu d'être.
+4. **Zoom sur les actifs**, décrit au point 24. Le titre se compose d'un
+   début, du nombre d'actifs calculé, puis de la suite : « Zoom sur nos »
+   + « 7 » + « actifs clés ».
+5. **Qualité et transparence** : bandeau bleu avec un bloc par
+   engagement et un visuel à droite qui file jusqu'au bord.
+
+Les flèches et les points du carrousel n'apparaissent qu'à partir de
+deux formules. Une seule formule affiche simplement son panneau.
