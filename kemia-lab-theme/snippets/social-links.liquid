@@ -1,6 +1,7 @@
 {%- liquid
   assign networks = 'instagram,tiktok,facebook,youtube,whatsapp' | split: ','
   assign network_names = 'Instagram,TikTok,Facebook,YouTube,WhatsApp' | split: ','
+  assign network_icons = 'fa-instagram,fa-tiktok,fa-facebook-f,fa-youtube,fa-whatsapp' | split: ','
   assign list_class = class | default: 'k-footer__social'
 
   assign filled = 0
@@ -19,6 +20,7 @@
         assign key = 'social_' | append: network
         assign href = settings[key] | strip
         assign name = network_names[forloop.index0]
+        assign logo = network_icons[forloop.index0]
         assign external = true
         if href == '#'
           assign external = false
@@ -31,7 +33,7 @@
             aria-label="{{ name }}"
             {%- if external %} rel="noopener" target="_blank"{% endif %}
           >
-            {% render 'icon', name: network, class: 'k-icon--sm' %}
+            <i class="fa-brands {{ logo }}" aria-hidden="true"></i>
           </a>
         </li>
       {%- endif -%}

@@ -13,10 +13,16 @@
           {%- if block.settings.icon != 'none' -%}
             {% render 'icon', name: block.settings.icon, class: 'k-icon--sm' %}
           {%- endif -%}
+          {%- capture item_text -%}
+            <span class="k-announcement__text">{{ block.settings.text }}</span>
+            {%- if block.settings.note != blank -%}
+              <span class="k-announcement__note">{{ block.settings.note }}</span>
+            {%- endif -%}
+          {%- endcapture -%}
           {%- if block.settings.link != blank -%}
-            <a href="{{ block.settings.link }}">{{ block.settings.text }}</a>
+            <a href="{{ block.settings.link }}">{{ item_text }}</a>
           {%- else -%}
-            <span>{{ block.settings.text }}</span>
+            <span>{{ item_text }}</span>
           {%- endif -%}
         </li>
       {%- endfor -%}
@@ -92,6 +98,12 @@
           "id": "text",
           "label": "Texte",
           "default": "Livraison offerte dès 60€ d'achat"
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "label": "Seconde ligne",
+          "info": "Affichée sous le texte, en doré. Laisser vide pour une seule ligne."
         },
         {
           "type": "url",

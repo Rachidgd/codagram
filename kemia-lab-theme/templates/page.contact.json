@@ -5,17 +5,55 @@
       "settings": {
         "show_breadcrumb": true,
         "breadcrumb_label": "Contact",
-        "eyebrow": "Contact",
-        "heading": "Nous sommes là pour vous accompagner",
+        "eyebrow": "",
+        "heading": "Nous sommes là\npour vous",
+        "highlight": ".",
         "heading_style": "sans",
-        "text": "<p>Une question, un conseil ou un besoin d'informations ? Écrivez-nous, nous faisons notre maximum pour répondre dans les meilleurs délais.</p>",
+        "tagline": "",
+        "show_rule": true,
+        "text": "<p>Une question, un conseil ou besoin d'accompagnement ?<br>Notre équipe est à votre écoute et vous répond dans <strong>les meilleurs délais.</strong></p>",
+        "button_label": "",
+        "button_link": "",
         "show_media": true,
-        "background": "soft"
+        "image": "",
+        "background": "soft",
+        "heading_case": "upper",
+        "highlight_spacing": "attached"
       }
     },
     "form": {
       "type": "contact-form",
       "blocks": {
+        "c1": {
+          "type": "channel",
+          "settings": {
+            "icon": "mail",
+            "title": "Par email",
+            "text": "hello@kemialab.com",
+            "link_type": "mail",
+            "note": "Réponse rapide en semaine"
+          }
+        },
+        "c2": {
+          "type": "channel",
+          "settings": {
+            "icon": "quote",
+            "title": "Formulaire de contact",
+            "text": "Envoyez-nous votre demande via le formulaire ci-contre.",
+            "link_type": "none",
+            "note": ""
+          }
+        },
+        "c3": {
+          "type": "channel",
+          "settings": {
+            "icon": "clock",
+            "title": "Horaires de réponse",
+            "text": "Du lundi au vendredi",
+            "link_type": "none",
+            "note": "10h - 18h (hors jours fériés)"
+          }
+        },
         "s1": {
           "type": "subject",
           "settings": {
@@ -42,6 +80,9 @@
         }
       },
       "block_order": [
+        "c1",
+        "c2",
+        "c3",
         "s1",
         "s2",
         "s3",
@@ -49,75 +90,32 @@
       ],
       "settings": {
         "form_heading": "Envoyez-nous un message",
-        "subject_placeholder": "Choisissez un sujet",
-        "message_placeholder": "Décrivez votre demande...",
-        "button_label": "Envoyer le message",
-        "aside_heading": "Autres moyens de contact",
-        "email_label": "Email",
-        "email": "hello@kemialab.com",
-        "phone_label": "Téléphone",
-        "phone": "",
-        "hours": "Du lundi au vendredi, de 10h à 18h, hors jours fériés",
-        "social_label": "Réseaux sociaux",
-        "social_text": "Rejoignez-nous sur nos réseaux pour suivre nos actualités.",
         "label_first_name": "Prénom",
+        "first_name_placeholder": "Votre prénom",
         "label_last_name": "Nom",
-        "label_email": "Adresse e-mail",
+        "last_name_placeholder": "Votre nom",
+        "label_email": "Email",
+        "email_placeholder": "Votre email",
         "label_subject": "Sujet",
+        "subject_placeholder": "Sélectionnez un sujet",
         "show_order_number": true,
-        "label_order_number": "Numéro de commande",
+        "label_order_number": "N° de commande",
         "optional_hint": "(facultatif)",
-        "order_number_placeholder": "Par exemple : #1042",
+        "order_number_placeholder": "Ex : #12345",
         "label_message": "Votre message",
-        "legal_note": "Les informations transmises servent uniquement à traiter votre demande.",
-        "hours_label": "Horaires"
-      }
-    },
-    "promise": {
-      "type": "reassurance",
-      "blocks": {
-        "p1": {
-          "type": "item",
-          "settings": {
-            "icon": "clock",
-            "title": "Réponse rapide",
-            "text": "Du lundi au vendredi, 10h-18h, hors jours fériés."
-          }
-        },
-        "p2": {
-          "type": "item",
-          "settings": {
-            "icon": "headset",
-            "title": "Écoute & conseil",
-            "text": "Des conseils personnalisés adaptés à vos besoins."
-          }
-        },
-        "p3": {
-          "type": "item",
-          "settings": {
-            "icon": "award",
-            "title": "Satisfaction",
-            "text": "Votre satisfaction est notre priorité."
-          }
-        }
-      },
-      "block_order": [
-        "p1",
-        "p2",
-        "p3"
-      ],
-      "settings": {
-        "heading": "",
-        "layout": "stacked",
-        "background": "navy",
-        "dividers": true,
-        "compact": false
+        "message_placeholder": "Décrivez votre demande en détail...",
+        "button_label": "Envoyer ma demande",
+        "legal_note": "Vos informations sont sécurisées et confidentielles.",
+        "legal_icon": "lock",
+        "team_icon": "headset",
+        "team_heading": "Une équipe\nà votre écoute",
+        "team_text": "Nous faisons notre maximum\npour répondre à vos demandes\ndans les meilleurs délais.",
+        "social_label": "Suivez-nous"
       }
     }
   },
   "order": [
     "hero",
-    "form",
-    "promise"
+    "form"
   ]
 }

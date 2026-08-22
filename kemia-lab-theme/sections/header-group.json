@@ -30,7 +30,8 @@
           "type": "item",
           "settings": {
             "icon": "headset",
-            "text": "Réponse rapide en semaine"
+            "text": "Service client",
+            "note": "Réponse rapide en semaine"
           }
         }
       },

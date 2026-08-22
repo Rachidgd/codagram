@@ -14,8 +14,15 @@
           <span class="k-eyebrow">{{ section.settings.eyebrow }}</span>
         {%- endif -%}
         {%- if section.settings.heading != blank -%}
-          <h1 class="k-pagehero__heading{% if section.settings.heading_style == 'display' %} k-display{% endif %}">
-            {{ section.settings.heading }}{% if section.settings.highlight != blank %} <span class="k-gold">{{ section.settings.highlight }}</span>{% endif %}
+          <h1 class="k-pagehero__heading{% if section.settings.heading_style == 'display' %} k-display{% endif %}{% if section.settings.heading_case == 'upper' %} k-pagehero__heading--upper{% endif %}">
+            {{- section.settings.heading | newline_to_br -}}
+            {%- if section.settings.highlight != blank -%}
+              {%- if section.settings.highlight_spacing == 'attached' -%}
+                <span class="k-gold">{{ section.settings.highlight }}</span>
+              {%- else -%}
+                <span class="k-gold"> {{ section.settings.highlight }}</span>
+              {%- endif -%}
+            {%- endif -%}
           </h1>
         {%- endif -%}
         {%- if section.settings.tagline != blank -%}
@@ -62,9 +69,31 @@
       "type": "textarea",
       "id": "heading",
       "label": "Titre",
+      "info": "Chaque retour à la ligne saisi ici crée une ligne de titre.",
       "default": "Titre de la page"
     },
     { "type": "text", "id": "highlight", "label": "Fin de titre en doré" },
+    {
+      "type": "select",
+      "id": "highlight_spacing",
+      "label": "Espace avant la partie dorée",
+      "info": "Collée : pour une ponctuation, par exemple un point.",
+      "options": [
+        { "value": "space", "label": "Séparée par une espace" },
+        { "value": "attached", "label": "Collée au titre" }
+      ],
+      "default": "space"
+    },
+    {
+      "type": "select",
+      "id": "heading_case",
+      "label": "Casse du titre",
+      "options": [
+        { "value": "normal", "label": "Telle que saisie" },
+        { "value": "upper", "label": "Majuscules" }
+      ],
+      "default": "normal"
+    },
     {
       "type": "select",
       "id": "heading_style",

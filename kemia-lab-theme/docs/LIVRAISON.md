@@ -966,3 +966,48 @@ bleu de l'encart sont disponibles partout où ces sections sont posées.
 Un retour à la ligne saisi dans le titre de la section « Texte et
 visuel » était jusqu'ici ignoré. Il crée maintenant une ligne, comme sur
 les autres sections.
+
+## 28. Réseaux sociaux : logos Font Awesome
+
+Les pictogrammes des réseaux du pied de page et de la page contact
+viennent des marques officielles de Font Awesome Free : `fa-instagram`,
+`fa-tiktok`, `fa-facebook-f`, `fa-youtube`, `fa-whatsapp`. La feuille est
+chargée une seule fois depuis l'en-tête du thème, plus à chaque instance
+de section comme auparavant.
+
+## 29. Page Contact
+
+Deux sections :
+
+1. **En-tête de page** : fil d'Ariane, titre en majuscules avec un point
+   doré collé au dernier mot, filet et texte d'introduction. Deux
+   réglages nouveaux servent partout : la casse du titre, et l'espace
+   avant la partie dorée, à coller pour une ponctuation.
+2. **Formulaire de contact**, en trois colonnes.
+
+### Colonne de gauche
+
+Chaque moyen de contact est un bloc « Moyen de contact » : pictogramme
+cerclé, titre, texte et une précision dorée en dessous. Le texte peut
+devenir un lien e-mail ou téléphone. Ajoutez, retirez et réordonnez ces
+blocs librement.
+
+### Le formulaire
+
+Prénom et nom sur une ligne, e-mail et sujet sur la suivante, puis le
+numéro de commande et le message. Les sujets de la liste déroulante sont
+des blocs « Sujet ». Tous les libellés, les textes d'aide, le bouton et
+la mention de sécurité se règlent depuis le Builder.
+
+### Le panneau bleu
+
+Pictogramme cerclé, titre, texte, puis les réseaux sociaux du thème.
+Videz son titre et son texte pour le retirer : la page repasse alors à
+deux colonnes.
+
+## 30. Barre d'annonce : seconde ligne
+
+Chaque information de la barre accepte une seconde ligne, affichée en
+doré sous la première. Le quatrième repère suit la dernière maquette
+reçue : « Service client » puis « Réponse rapide en semaine ». Videz la
+seconde ligne pour revenir à une seule.
