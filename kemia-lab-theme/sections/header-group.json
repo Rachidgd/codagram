@@ -46,15 +46,17 @@
         "support"
       ],
       "settings": {
-        "background": "#F8F1E9",
-        "text_color": "#5C534A"
+        "rotate": "mobile",
+        "interval": 3,
+        "background": "#f8f1e9",
+        "text_color": "#000000"
       }
     },
     "header": {
       "type": "header",
       "settings": {
         "menu": "main-menu",
-        "background": "#FEFDFC",
+        "background": "#fefdfc",
         "logo_width": 180,
         "logo_scale": 135,
         "drawer_logo_width": 180,
