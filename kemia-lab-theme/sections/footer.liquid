@@ -5,9 +5,11 @@
         <a class="k-header__logo" href="{{ routes.root_url }}" aria-label="{{ settings.brand_name | default: shop.name | escape }}">
           {% render 'logo', logo_width: 170, logo_height: 56, background: section.settings.background %}
         </a>
+
         {%- if section.settings.brand_text != blank -%}
           <p class="k-footer__brand-text">{{ section.settings.brand_text }}</p>
         {%- endif -%}
+
         {% render 'social-links', class: 'k-footer__social' %}
       </div>
 
@@ -18,23 +20,29 @@
               {%- if block.settings.heading != blank -%}
                 <h2 class="k-footer__heading">{{ block.settings.heading }}</h2>
               {%- endif -%}
+
               <ul class="k-footer__links">
                 {%- for link in block.settings.menu.links -%}
                   <li><a href="{{ link.url }}">{{ link.title }}</a></li>
                 {%- endfor -%}
               </ul>
             </nav>
+
           {%- when 'newsletter' -%}
             <div class="k-footer__col k-footer__newsletter" {{ block.shopify_attributes }}>
               {%- if block.settings.heading != blank -%}
                 <h2 class="k-footer__heading">{{ block.settings.heading }}</h2>
               {%- endif -%}
+
               {%- if block.settings.text != blank -%}
                 <p class="k-footer__newsletter-text">{{ block.settings.text }}</p>
               {%- endif -%}
+
               {% form 'customer', class: 'k-footer__form' %}
                 <input type="hidden" name="contact[tags]" value="newsletter">
+
                 <label class="k-visually-hidden" for="footer-email">{{ block.settings.placeholder }}</label>
+
                 <input
                   class="k-input"
                   id="footer-email"
@@ -44,7 +52,11 @@
                   autocomplete="email"
                   required
                 >
-                <button class="k-btn" type="submit" data-k-track="email_submitted">{{ block.settings.button_label }}</button>
+
+                <button class="k-btn" type="submit" data-k-track="email_submitted">
+                  {{ block.settings.button_label }}
+                </button>
+
                 {%- if form.posted_successfully? -%}
                   <p class="k-form-message k-form-message--success">{{ 'general.newsletter.success' | t }}</p>
                 {%- elsif form.errors -%}
@@ -58,6 +70,7 @@
 
     <div class="k-footer__bottom">
       <p class="k-footer__copy">{{ section.settings.copyright }}</p>
+
       {%- if section.settings.legal_menu != blank -%}
         <ul class="k-footer__legal">
           {%- for link in section.settings.legal_menu.links -%}
@@ -68,6 +81,37 @@
     </div>
   </div>
 </footer>
+
+<style>
+  #shopify-section-{{ section.id }} .k-footer__brand-text,
+  #shopify-section-{{ section.id }} .k-footer__heading,
+  #shopify-section-{{ section.id }} .k-footer__newsletter-text,
+  #shopify-section-{{ section.id }} .k-footer__copy,
+  #shopify-section-{{ section.id }} .k-footer__links a,
+  #shopify-section-{{ section.id }} .k-footer__legal a,
+  #shopify-section-{{ section.id }} .k-footer__social a,
+  #shopify-section-{{ section.id }} .k-form-message {
+    color: #000 !important;
+  }
+
+  #shopify-section-{{ section.id }} .k-footer__social svg {
+    color: #000 !important;
+    fill: currentColor;
+    stroke: currentColor;
+  }
+
+  #shopify-section-{{ section.id }} .k-footer__form .k-input {
+    color: #000;
+  }
+
+  #shopify-section-{{ section.id }} .k-footer__form .k-input::placeholder {
+    color: rgba(0, 0, 0, 0.62);
+  }
+
+  #shopify-section-{{ section.id }} .k-footer__form .k-btn {
+    color: inherit;
+  }
+</style>
 
 {% schema %}
 {

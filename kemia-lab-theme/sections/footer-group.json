@@ -33,19 +33,23 @@
             "menu": "footer-aide"
           }
         },
-        "newsletter": {
-          "type": "newsletter",
+        "menu_fEaLnk": {
+          "type": "menu",
           "settings": {
-            "heading": "Newsletter",
-            "text": "Recevez nos conseils et nouveautés.",
-            "placeholder": "Votre email",
-            "button_label": "S'inscrire"
+            "heading": "Légal",
+            "menu": "footer-aide"
           }
         }
       },
-      "block_order": ["produit", "science", "marque", "aide", "newsletter"],
+      "block_order": [
+        "produit",
+        "science",
+        "marque",
+        "aide",
+        "menu_fEaLnk"
+      ],
       "settings": {
-        "background": "#F8F1E9",
+        "background": "#ffffff",
         "brand_text": "Des formules pensées avec la science et la nature pour révéler votre potentiel.",
         "legal_menu": "footer",
         "copyright": "© 2026 KEMIA LAB - Tous droits réservés"
@@ -58,5 +62,8 @@
       }
     }
   },
-  "order": ["footer", "email-popup"]
+  "order": [
+    "footer",
+    "email-popup"
+  ]
 }

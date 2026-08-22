@@ -1,7 +1,20 @@
-<header class="k-header{% if section.settings.sticky %} k-header--sticky{% endif %}" data-k-header style="background: {{ section.settings.background }}">
+<header
+  class="k-header{% if section.settings.sticky %} k-header--sticky{% endif %}"
+  data-k-header
+  style="
+    background: {{ section.settings.background }};
+    --k-header-logo-width: {{ section.settings.logo_width }}px;
+    --k-header-logo-scale: {{ section.settings.logo_scale | divided_by: 100.0 }};
+    --k-header-drawer-logo-width: {{ section.settings.drawer_logo_width }}px;
+  "
+>
   <div class="k-container k-header__inner">
     <a class="k-header__logo" href="{{ routes.root_url }}" aria-label="{{ settings.brand_name | default: shop.name | escape }}">
-      {% render 'logo', background: section.settings.background %}
+      {% render 'logo',
+        logo_width: section.settings.logo_width,
+        logo_height: 72,
+        background: section.settings.background
+      %}
     </a>
 
     <nav class="k-header__nav" aria-label="Navigation principale">
@@ -18,11 +31,14 @@
                 {% render 'icon', name: 'chevron-down', class: 'k-icon--xs' %}
               {%- endif -%}
             </a>
+
             {%- if link.links.size > 0 -%}
               <ul class="k-header__submenu">
                 {%- for child in link.links -%}
                   <li>
-                    <a class="k-header__sublink{% if child.active %} is-active{% endif %}" href="{{ child.url }}">{{ child.title }}</a>
+                    <a class="k-header__sublink{% if child.active %} is-active{% endif %}" href="{{ child.url }}">
+                      {{ child.title }}
+                    </a>
                   </li>
                 {%- endfor -%}
               </ul>
@@ -62,13 +78,22 @@
 
 <div class="k-drawer k-drawer--menu" id="k-menu-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation">
   <div class="k-drawer__overlay" data-k-close></div>
+
   <div class="k-drawer__panel">
     <div class="k-drawer__head">
-      <span class="k-header__logo">{% render 'logo', logo_width: 150, logo_height: 48 %}</span>
+      <span class="k-header__logo k-header__logo--drawer">
+        {% render 'logo',
+          logo_width: section.settings.drawer_logo_width,
+          logo_height: 58,
+          background: section.settings.background
+        %}
+      </span>
+
       <button class="k-modal__close" type="button" data-k-close aria-label="{{ 'accessibility.close_menu' | t }}">
         {% render 'icon', name: 'close' %}
       </button>
     </div>
+
     <div class="k-drawer__body">
       <ul class="k-menu-list">
         {%- for link in section.settings.menu.links -%}
@@ -79,26 +104,92 @@
                   {{ link.title }}
                   <span class="k-accordion__icon" aria-hidden="true"></span>
                 </summary>
+
                 <ul class="k-menu-list__children">
                   {%- for child in link.links -%}
-                    <li><a class="k-menu-list__child" href="{{ child.url }}">{{ child.title }}</a></li>
+                    <li>
+                      <a class="k-menu-list__child" href="{{ child.url }}">{{ child.title }}</a>
+                    </li>
                   {%- endfor -%}
                 </ul>
               </details>
             {%- else -%}
-              <a class="k-menu-list__link{% if link.active %} is-active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+              <a class="k-menu-list__link{% if link.active %} is-active{% endif %}" href="{{ link.url }}">
+                {{ link.title }}
+              </a>
             {%- endif -%}
           </li>
         {%- endfor -%}
       </ul>
     </div>
+
     {%- if section.settings.drawer_cta_label != blank -%}
       <div class="k-drawer__foot">
-        <a class="k-btn k-btn--block" href="{{ section.settings.drawer_cta_link }}">{{ section.settings.drawer_cta_label }}</a>
+        <a class="k-btn k-btn--block" href="{{ section.settings.drawer_cta_link }}">
+          {{ section.settings.drawer_cta_label }}
+        </a>
       </div>
     {%- endif -%}
   </div>
 </div>
+
+<style>
+  #shopify-section-{{ section.id }} .k-header__logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+    width: var(--k-header-logo-width);
+    line-height: 0;
+    transform: scale(var(--k-header-logo-scale, 1.18));
+    transform-origin: left center;
+    z-index: 2;
+  }
+
+  #shopify-section-{{ section.id }} .k-header__logo img,
+  #shopify-section-{{ section.id }} .k-header__logo svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 58px;
+    object-fit: contain;
+  }
+
+  #shopify-section-{{ section.id }} .k-header__logo--drawer {
+    width: var(--k-header-drawer-logo-width);
+    transform: none;
+  }
+
+  #shopify-section-{{ section.id }} .k-header__logo--drawer img,
+  #shopify-section-{{ section.id }} .k-header__logo--drawer svg {
+    max-height: 58px;
+  }
+
+  @media screen and (max-width: 989px) {
+    #shopify-section-{{ section.id }} .k-header__logo {
+      width: min(var(--k-header-logo-width), 172px);
+      transform: scale(1.08);
+    }
+
+    #shopify-section-{{ section.id }} .k-header__logo img,
+    #shopify-section-{{ section.id }} .k-header__logo svg {
+      max-height: 48px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .k-header__logo {
+      width: min(var(--k-header-logo-width), 148px);
+      transform: scale(1.06);
+    }
+
+    #shopify-section-{{ section.id }} .k-header__logo img,
+    #shopify-section-{{ section.id }} .k-header__logo svg {
+      max-height: 44px;
+    }
+  }
+</style>
 
 {% schema %}
 {
@@ -117,6 +208,37 @@
       "id": "background",
       "label": "Fond",
       "default": "#FEFDFC"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "Largeur du logo",
+      "min": 130,
+      "max": 260,
+      "step": 10,
+      "unit": "px",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "logo_scale",
+      "label": "Grossissement visuel du logo",
+      "min": 100,
+      "max": 135,
+      "step": 5,
+      "unit": "%",
+      "default": 115,
+      "info": "Agrandit le logo visuellement sans augmenter la hauteur du header."
+    },
+    {
+      "type": "range",
+      "id": "drawer_logo_width",
+      "label": "Largeur du logo dans le menu mobile",
+      "min": 130,
+      "max": 230,
+      "step": 10,
+      "unit": "px",
+      "default": 180
     },
     {
       "type": "checkbox",

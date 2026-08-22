@@ -9,21 +9,24 @@
           "type": "item",
           "settings": {
             "icon": "truck",
-            "text": "Livraison offerte dès 60€"
+            "text": "Livraison offerte dès 60€",
+            "link": ""
           }
         },
         "dispatch": {
           "type": "item",
           "settings": {
             "icon": "package",
-            "text": "Expédition 24/48h"
+            "text": "Expédition 24/48h",
+            "link": ""
           }
         },
         "payment": {
           "type": "item",
           "settings": {
             "icon": "lock",
-            "text": "Paiement sécurisé"
+            "text": "Paiement sécurisé",
+            "link": ""
           }
         },
         "support": {
@@ -31,7 +34,8 @@
           "settings": {
             "icon": "headset",
             "text": "Service client",
-            "note": "Réponse rapide en semaine"
+            "note": "Réponse rapide en semaine",
+            "link": ""
           }
         }
       },
@@ -51,6 +55,9 @@
       "settings": {
         "menu": "main-menu",
         "background": "#FEFDFC",
+        "logo_width": 180,
+        "logo_scale": 135,
+        "drawer_logo_width": 180,
         "sticky": true,
         "show_search": false,
         "drawer_cta_label": "Découvrir 4 Vitality System",
