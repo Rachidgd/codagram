@@ -1,15 +1,30 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+>
+
 <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
   <div class="k-container">
-    <div class="{% if section.settings.background == 'boxed' %}k-features__panel{% endif %}">
     {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
       <div class="k-section-head k-features__head{% if section.settings.flanked %} k-section-head--flanked{% endif %}">
         {%- if section.settings.eyebrow != blank -%}
-          <span class="k-eyebrow{% if section.settings.accent == 'blue' %} k-eyebrow--blue{% endif %}">{{ section.settings.eyebrow }}</span>
+          <span class="k-eyebrow{% if section.settings.accent == 'blue' %} k-eyebrow--blue{% endif %}">
+            {{ section.settings.eyebrow }}
+          </span>
         {%- endif -%}
+
         {%- if section.settings.heading != blank -%}
-          <h2 class="{% if section.settings.heading_style == 'caps' %}k-title-caps k-h3{% elsif section.settings.heading_style == 'display' %}k-h2 k-display{% else %}k-h2{% endif %}"><span>{{ section.settings.heading }}</span></h2>
+          <h2 class="{% if section.settings.heading_style == 'caps' %}k-title-caps k-h3{% elsif section.settings.heading_style == 'display' %}k-h2 k-display{% else %}k-h2{% endif %}">
+            <span>{{ section.settings.heading }}</span>
+          </h2>
         {%- endif -%}
-        {%- if section.settings.show_rule -%}<hr class="k-rule">{%- endif -%}
+
+        {%- if section.settings.show_rule -%}
+          <hr class="k-rule">
+        {%- endif -%}
+
         {%- if section.settings.text != blank -%}
           <div class="k-section-head__text k-text">{{ section.settings.text }}</div>
         {%- endif -%}
@@ -18,15 +33,77 @@
 
     <ul class="k-features k-features--{{ section.blocks.size }}{% if section.settings.dividers %} k-features--dividers{% endif %}{% if section.settings.style == 'card' %} k-features--cards{% endif %}{% if section.settings.accent == 'blue' %} k-features--blue{% endif %}">
       {%- for block in section.blocks -%}
+        {%- liquid
+          assign icon_value = block.settings.icon | default: 'fa-atom'
+          assign fa_icon = icon_value
+
+          unless icon_value contains 'fa-'
+            case icon_value
+              when 'molecule'
+                assign fa_icon = 'fa-atom'
+              when 'leaf'
+                assign fa_icon = 'fa-leaf'
+              when 'shield-check'
+                assign fa_icon = 'fa-shield-halved'
+              when 'chart-up'
+                assign fa_icon = 'fa-chart-line'
+              when 'flask'
+                assign fa_icon = 'fa-flask'
+              when 'beaker'
+                assign fa_icon = 'fa-vial'
+              when 'award'
+                assign fa_icon = 'fa-award'
+              when 'target'
+                assign fa_icon = 'fa-bullseye'
+              when 'sparkle'
+                assign fa_icon = 'fa-wand-magic-sparkles'
+              when 'bolt'
+                assign fa_icon = 'fa-bolt'
+              when 'brain'
+                assign fa_icon = 'fa-brain'
+              when 'muscle'
+                assign fa_icon = 'fa-dumbbell'
+              when 'shield-star'
+                assign fa_icon = 'fa-shield-halved'
+              when 'hexagon'
+                assign fa_icon = 'fa-cube'
+              when 'dna'
+                assign fa_icon = 'fa-dna'
+              when 'capsule'
+                assign fa_icon = 'fa-capsules'
+              when 'truck'
+                assign fa_icon = 'fa-truck-fast'
+              when 'headset'
+                assign fa_icon = 'fa-headset'
+              when 'lock'
+                assign fa_icon = 'fa-lock'
+              when 'microscope'
+                assign fa_icon = 'fa-microscope'
+              when 'clipboard'
+                assign fa_icon = 'fa-clipboard-check'
+              when 'france'
+                assign fa_icon = 'fa-location-dot'
+              when 'flag-fr'
+                assign fa_icon = 'fa-flag'
+              when 'droplet'
+                assign fa_icon = 'fa-droplet'
+              when 'search'
+                assign fa_icon = 'fa-magnifying-glass'
+            endcase
+          endunless
+        -%}
+
         <li class="k-features__item" {{ block.shopify_attributes }}>
-          {%- if block.settings.icon != 'none' -%}
-            <span class="k-features__icon{% if section.settings.icon_style == 'circle' %} k-icon-circle{% endif %}">
-              {% render 'icon', name: block.settings.icon, class: 'k-icon--lg' %}
+          {%- if icon_value != 'none' -%}
+            <span class="k-features__icon k-features__icon--{{ block.settings.icon_tone }}{% if section.settings.icon_style == 'circle' %} k-icon-circle{% endif %}" aria-hidden="true">
+              <i class="fa-solid {{ fa_icon }}"></i>
             </span>
           {%- endif -%}
+
           {%- if block.settings.title != blank -%}
             <h3 class="k-features__title">{{ block.settings.title }}</h3>
           {%- endif -%}
+
           {%- if block.settings.text != blank -%}
             <p class="k-features__text">{{ block.settings.text }}</p>
           {%- endif -%}
@@ -38,13 +115,61 @@
       <div class="k-features__cta">
         <a class="k-btn {% if section.settings.accent == 'blue' %}k-btn--blue{% else %}k-btn--outline{% endif %}" href="{{ section.settings.button_link }}">
           {{ section.settings.button_label }}
-          {% render 'icon', name: 'arrow-right', class: 'k-icon--sm' %}
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
     {%- endif -%}
-    </div>
   </div>
 </section>
+
+<style>
+  #shopify-section-{{ section.id }} .k-features__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .k-features__icon i {
+    font-size: clamp(34px, 3vw, 46px);
+    line-height: 1;
+  }
+
+  #shopify-section-{{ section.id }} .k-features__icon--gold-metallic i {
+    background: linear-gradient(135deg, #fff1bf 0%, #d59a2f 30%, #8f5c13 52%, #f4d47b 72%, #b8791d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 2px rgba(213, 154, 47, 0.32));
+  }
+
+  #shopify-section-{{ section.id }} .k-features__icon--blue-lightning-metallic i {
+    background: linear-gradient(135deg, #d8ecff 0%, #2d69bd 28%, #061a3d 52%, #7fb4ff 74%, #0b2f6f 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 3px rgba(11, 47, 111, 0.42));
+  }
+
+  #shopify-section-{{ section.id }} .k-features__icon--gold-metallic.k-icon-circle {
+    border-color: rgba(213, 154, 47, 0.56) !important;
+    background:
+      radial-gradient(circle at 35% 25%, rgba(255, 241, 191, 0.18), transparent 42%),
+      rgba(213, 154, 47, 0.08) !important;
+  }
+
+  #shopify-section-{{ section.id }} .k-features__icon--blue-lightning-metallic.k-icon-circle {
+    border-color: rgba(11, 47, 111, 0.56) !important;
+    background:
+      radial-gradient(circle at 35% 25%, rgba(180, 218, 255, 0.2), transparent 42%),
+      rgba(11, 47, 111, 0.09) !important;
+  }
+
+  #shopify-section-{{ section.id }} .k-features__cta .fa-arrow-right {
+    margin-left: 8px;
+  }
+</style>
 
 {% schema %}
 {
@@ -108,8 +233,7 @@
         { "value": "none", "label": "Aucun" },
         { "value": "soft", "label": "Beige clair" },
         { "value": "beige", "label": "Beige" },
-        { "value": "blue-tint", "label": "Bleu très clair" },
-        { "value": "boxed", "label": "Panneau bordé" }
+        { "value": "blue-tint", "label": "Bleu très clair" }
       ],
       "default": "none"
     }
@@ -123,36 +247,47 @@
         {
           "type": "select",
           "id": "icon",
-          "label": "Pictogramme",
+          "label": "Pictogramme Font Awesome",
           "options": [
             { "value": "none", "label": "Aucun" },
-            { "value": "molecule", "label": "Molécule" },
-            { "value": "leaf", "label": "Feuille" },
-            { "value": "shield-check", "label": "Bouclier" },
-            { "value": "chart-up", "label": "Progression" },
-            { "value": "flask", "label": "Fiole" },
-            { "value": "beaker", "label": "Éprouvette" },
-            { "value": "award", "label": "Médaille" },
-            { "value": "target", "label": "Cible" },
-            { "value": "sparkle", "label": "Étincelle" },
-            { "value": "bolt", "label": "Éclair" },
-            { "value": "brain", "label": "Cerveau" },
-            { "value": "muscle", "label": "Vitalité" },
-            { "value": "shield-star", "label": "Bien-être" },
-            { "value": "hexagon", "label": "Hexagone" },
-            { "value": "dna", "label": "ADN" },
-            { "value": "capsule", "label": "Gélule" },
-            { "value": "truck", "label": "Livraison" },
-            { "value": "headset", "label": "Service client" },
-            { "value": "lock", "label": "Cadenas" },
-            { "value": "microscope", "label": "Microscope" },
-            { "value": "clipboard", "label": "Contrôles" },
-            { "value": "france", "label": "Carte de France" },
-            { "value": "flag-fr", "label": "Drapeau français" },
-            { "value": "droplet", "label": "Goutte" },
-            { "value": "search", "label": "Loupe" }
+            { "value": "fa-atom", "label": "Atome" },
+            { "value": "fa-leaf", "label": "Feuille" },
+            { "value": "fa-shield-halved", "label": "Bouclier" },
+            { "value": "fa-chart-line", "label": "Progression" },
+            { "value": "fa-flask", "label": "Fiole" },
+            { "value": "fa-vial", "label": "Éprouvette" },
+            { "value": "fa-award", "label": "Médaille" },
+            { "value": "fa-bullseye", "label": "Cible" },
+            { "value": "fa-wand-magic-sparkles", "label": "Étincelle" },
+            { "value": "fa-bolt", "label": "Éclair" },
+            { "value": "fa-brain", "label": "Cerveau" },
+            { "value": "fa-dumbbell", "label": "Vitalité" },
+            { "value": "fa-dna", "label": "ADN" },
+            { "value": "fa-capsules", "label": "Gélules" },
+            { "value": "fa-truck-fast", "label": "Livraison" },
+            { "value": "fa-headset", "label": "Service client" },
+            { "value": "fa-lock", "label": "Cadenas" },
+            { "value": "fa-microscope", "label": "Microscope" },
+            { "value": "fa-clipboard-check", "label": "Contrôles" },
+            { "value": "fa-flag", "label": "Drapeau" },
+            { "value": "fa-location-dot", "label": "Localisation" },
+            { "value": "fa-droplet", "label": "Goutte" },
+            { "value": "fa-magnifying-glass", "label": "Loupe" },
+            { "value": "fa-circle-check", "label": "Check" },
+            { "value": "fa-star", "label": "Étoile" },
+            { "value": "fa-fire", "label": "Feu" }
           ],
-          "default": "molecule"
+          "default": "fa-atom"
+        },
+        {
+          "type": "select",
+          "id": "icon_tone",
+          "label": "Couleur du pictogramme",
+          "options": [
+            { "value": "gold-metallic", "label": "Doré métallique" },
+            { "value": "blue-lightning-metallic", "label": "Bleu marine éclair métallique" }
+          ],
+          "default": "gold-metallic"
         },
         { "type": "text", "id": "title", "label": "Titre", "default": "Science & expertise" },
         { "type": "textarea", "id": "text", "label": "Texte", "default": "Nos formules sont élaborées à partir d'études scientifiques et d'une expertise pointue." }
@@ -163,10 +298,10 @@
     {
       "name": "Colonnes à pictogrammes",
       "blocks": [
-        { "type": "item", "settings": { "icon": "molecule", "title": "Science & expertise", "text": "Nos formules sont élaborées à partir d'études scientifiques et d'une expertise pointue." } },
-        { "type": "item", "settings": { "icon": "leaf", "title": "Ingrédients premium", "text": "Nous sélectionnons des ingrédients de la plus haute qualité pour leur pureté, leur traçabilité et leur efficacité." } },
-        { "type": "item", "settings": { "icon": "shield-check", "title": "Qualité contrôlée", "text": "De la sélection des matières premières à la fabrication, chaque étape est contrôlée." } },
-        { "type": "item", "settings": { "icon": "chart-up", "title": "Pensé pour progresser", "text": "Des formules pensées pour soutenir votre vitalité au quotidien et vos performances." } }
+        { "type": "item", "settings": { "icon": "fa-atom", "icon_tone": "gold-metallic", "title": "Science & expertise", "text": "Nos formules sont élaborées à partir d'études scientifiques et d'une expertise pointue." } },
+        { "type": "item", "settings": { "icon": "fa-leaf", "icon_tone": "blue-lightning-metallic", "title": "Ingrédients premium", "text": "Nous sélectionnons des ingrédients de la plus haute qualité pour leur pureté, leur traçabilité et leur efficacité." } },
+        { "type": "item", "settings": { "icon": "fa-shield-halved", "icon_tone": "gold-metallic", "title": "Qualité contrôlée", "text": "De la sélection des matières premières à la fabrication, chaque étape est contrôlée." } },
+        { "type": "item", "settings": { "icon": "fa-chart-line", "icon_tone": "blue-lightning-metallic", "title": "Pensé pour progresser", "text": "Des formules pensées pour soutenir votre vitalité au quotidien et vos performances." } }
       ]
     }
   ]
