@@ -7,6 +7,7 @@
 
 <section class="k-section{% if section.settings.background == 'soft' %} k-bg-soft{% elsif section.settings.background == 'beige' %} k-bg-beige{% elsif section.settings.background == 'blue-tint' %} k-bg-blue-tint{% endif %}">
   <div class="k-container">
+    <div class="{% if section.settings.background == 'boxed' %}k-features__panel{% endif %}">
     {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
       <div class="k-section-head k-features__head{% if section.settings.flanked %} k-section-head--flanked{% endif %}">
         {%- if section.settings.eyebrow != blank -%}
@@ -119,6 +120,7 @@
         </a>
       </div>
     {%- endif -%}
+    </div>
   </div>
 </section>
 
@@ -233,7 +235,8 @@
         { "value": "none", "label": "Aucun" },
         { "value": "soft", "label": "Beige clair" },
         { "value": "beige", "label": "Beige" },
-        { "value": "blue-tint", "label": "Bleu très clair" }
+        { "value": "blue-tint", "label": "Bleu très clair" },
+        { "value": "boxed", "label": "Panneau bordé" }
       ],
       "default": "none"
     }
