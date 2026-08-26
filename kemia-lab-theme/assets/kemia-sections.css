@@ -3400,9 +3400,11 @@ a.k-contact__value:hover {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
+/* Une icone televersee occupe la meme place qu un pictogramme de la
+   liste, soit la taille de k-icon--lg, sans toucher au cercle. */
 .k-blogcat__icon-img {
-  width: 24px;
-  height: 24px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
 }
 
@@ -7363,6 +7365,16 @@ a.k-contact__value:hover {
   .k-blogcats > .k-blogcat:not(.k-blogcat--all) {
     flex: 0 0 calc((100% - 16px) / 3);
     min-width: 0;
+  }
+}
+
+/* Au-dela du mobile, les categories se partagent la rangee a parts
+   egales : les cercles sont alors espaces regulierement, quelle que
+   soit la longueur des libelles. */
+@media screen and (min-width: 750px) {
+  .k-blogcats > .k-blogcat:not(.k-blogcat--all) {
+    flex: 1 1 0;
+    min-width: 96px;
   }
 }
 
