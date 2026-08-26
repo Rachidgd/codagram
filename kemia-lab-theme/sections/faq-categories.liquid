@@ -120,18 +120,50 @@
           {%- if section.settings.contact_text != blank -%}
             <p class="k-faqcat__contact-text">{{ section.settings.contact_text }}</p>
           {%- endif -%}
-          {%- if section.settings.contact_email != blank or section.settings.contact_hours != blank -%}
+          {%- liquid
+            assign whatsapp_label = section.settings.contact_whatsapp
+            assign whatsapp_url = section.settings.contact_whatsapp_url | strip
+            assign show_whatsapp = false
+            if whatsapp_label != blank and whatsapp_url != blank
+              assign show_whatsapp = true
+            endif
+          -%}
+          {%- if section.settings.contact_email != blank or show_whatsapp or section.settings.contact_hours != blank -%}
             <ul class="k-faqcat__contact-lines">
               {%- if section.settings.contact_email != blank -%}
                 <li>
                   {% render 'icon', name: 'mail', class: 'k-icon--sm' %}
-                  <a href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a>
+                  <span class="k-faqcat__contact-line">
+                    <a href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a>
+                    {%- if section.settings.contact_email_note != blank -%}
+                      <span class="k-faqcat__contact-hint">{{ section.settings.contact_email_note }}</span>
+                    {%- endif -%}
+                  </span>
+                </li>
+              {%- endif -%}
+              {%- if show_whatsapp -%}
+                <li>
+                  {% render 'icon', name: 'whatsapp', class: 'k-icon--sm' %}
+                  <span class="k-faqcat__contact-line">
+                    <a
+                      href="{{ whatsapp_url | escape }}"
+                      {%- unless whatsapp_url == '#' %} target="_blank" rel="noopener"{% endunless %}
+                    >{{ whatsapp_label }}</a>
+                    {%- if section.settings.contact_whatsapp_note != blank -%}
+                      <span class="k-faqcat__contact-hint">{{ section.settings.contact_whatsapp_note }}</span>
+                    {%- endif -%}
+                  </span>
                 </li>
               {%- endif -%}
               {%- if section.settings.contact_hours != blank -%}
                 <li>
                   {% render 'icon', name: 'clock', class: 'k-icon--sm' %}
-                  <span>{{ section.settings.contact_hours }}</span>
+                  <span class="k-faqcat__contact-line">
+                    <span>{{ section.settings.contact_hours }}</span>
+                    {%- if section.settings.contact_hours_note != blank -%}
+                      <span class="k-faqcat__contact-hint">{{ section.settings.contact_hours_note }}</span>
+                    {%- endif -%}
+                  </span>
                 </li>
               {%- endif -%}
             </ul>
@@ -204,7 +236,17 @@
     { "type": "text", "id": "contact_heading", "label": "Titre", "default": "Une équipe à votre écoute" },
     { "type": "textarea", "id": "contact_text", "label": "Texte" },
     { "type": "text", "id": "contact_email", "label": "Adresse email" },
+    { "type": "text", "id": "contact_email_note", "label": "Précision sous l'email", "info": "Affichée en doré. Par exemple : Réponse rapide." },
+    { "type": "text", "id": "contact_whatsapp", "label": "Libellé WhatsApp", "default": "WhatsApp" },
+    {
+      "type": "text",
+      "id": "contact_whatsapp_url",
+      "label": "Lien WhatsApp",
+      "info": "Par exemple https://wa.me/33600000000. Laisser vide pour ne pas afficher la ligne."
+    },
+    { "type": "text", "id": "contact_whatsapp_note", "label": "Précision sous WhatsApp", "info": "Affichée en doré." },
     { "type": "text", "id": "contact_hours", "label": "Horaires" },
+    { "type": "text", "id": "contact_hours_note", "label": "Précision sous les horaires", "info": "Affichée en doré." },
     { "type": "text", "id": "contact_label", "label": "Bouton", "default": "Nous contacter" },
     { "type": "url", "id": "contact_url", "label": "Lien du bouton" },
     { "type": "header", "content": "Apparence" },

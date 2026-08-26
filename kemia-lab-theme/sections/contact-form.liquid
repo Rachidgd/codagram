@@ -52,7 +52,10 @@
             {%- for block in section.blocks -%}
               {%- if block.type == 'channel' -%}
                 {%- unless block.settings.title == blank and block.settings.text == blank -%}
-                  <li class="k-contact__item" {{ block.shopify_attributes }}>
+                  <li
+                    class="k-contact__item{% if block.settings.highlight %} k-contact__item--highlight{% endif %}"
+                    {{ block.shopify_attributes }}
+                  >
                     {%- if block.settings.icon != 'none' -%}
                       <span class="k-contact__icon k-icon-circle">
                         {% render 'icon', name: block.settings.icon, class: 'k-icon--lg' %}
@@ -60,7 +63,12 @@
                     {%- endif -%}
                     <div class="k-contact__body">
                       {%- if block.settings.title != blank -%}
-                        <span class="k-contact__label">{{ block.settings.title }}</span>
+                        <span class="k-contact__label">
+                          {{ block.settings.title }}
+                          {%- if block.settings.badge != blank -%}
+                            <span class="k-contact__badge">{{ block.settings.badge }}</span>
+                          {%- endif -%}
+                        </span>
                       {%- endif -%}
                       {%- if block.settings.text != blank -%}
                         {%- if block.settings.link_type == 'mail' -%}
@@ -75,6 +83,23 @@
                         <p class="k-contact__note">{{ block.settings.note }}</p>
                       {%- endif -%}
                     </div>
+                    {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
+                      {%- liquid
+                        assign cta_href = block.settings.button_link | strip
+                        assign cta_externe = true
+                        if cta_href == '#'
+                          assign cta_externe = false
+                        endif
+                      -%}
+                      <a
+                        class="k-btn k-btn--navy k-contact__cta"
+                        href="{{ cta_href | escape }}"
+                        {%- if cta_externe %} target="_blank" rel="noopener"{% endif %}
+                      >
+                        {{ block.settings.button_label }}
+                        {% render 'icon', name: 'external-link', class: 'k-icon--sm' %}
+                      </a>
+                    {%- endif -%}
                   </li>
                 {%- endunless -%}
               {%- endif -%}
@@ -308,11 +333,13 @@
             { "value": "quote", "label": "Bulle" },
             { "value": "headset", "label": "Casque" },
             { "value": "package", "label": "Colis" },
+            { "value": "whatsapp", "label": "WhatsApp" },
             { "value": "sparkle", "label": "Étincelle" }
           ],
           "default": "mail"
         },
         { "type": "text", "id": "title", "label": "Titre", "default": "Par email" },
+        { "type": "text", "id": "badge", "label": "Pastille à côté du titre", "info": "Par exemple : Nouveau. Laisser vide pour ne rien afficher." },
         { "type": "textarea", "id": "text", "label": "Texte", "default": "hello@kemialab.com" },
         {
           "type": "select",
@@ -325,7 +352,15 @@
           ],
           "default": "none"
         },
-        { "type": "text", "id": "note", "label": "Précision dorée" }
+        { "type": "text", "id": "note", "label": "Précision dorée" },
+        { "type": "checkbox", "id": "highlight", "label": "Mettre en avant sur fond beige", "default": false },
+        { "type": "text", "id": "button_label", "label": "Bouton" },
+        {
+          "type": "text",
+          "id": "button_link",
+          "label": "Lien du bouton",
+          "info": "Par exemple https://wa.me/33600000000. Mettre # tant que le lien n'est pas connu."
+        }
       ]
     },
     {

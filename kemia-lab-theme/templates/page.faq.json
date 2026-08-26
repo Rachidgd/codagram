@@ -406,9 +406,14 @@
         "contact_heading": "Une équipe à votre écoute",
         "contact_text": "Vous n'avez pas trouvé votre réponse ? Écrivez-nous, nous revenons vers vous avec une réponse claire et personnalisée.",
         "contact_email": "hello@kemialab.com",
-        "contact_hours": "Du lundi au vendredi, de 10h à 18h",
+        "contact_hours": "Du lundi au vendredi",
         "contact_label": "Nous contacter",
-        "contact_url": "/pages/contact"
+        "contact_url": "/pages/contact",
+        "contact_email_note": "Réponse rapide",
+        "contact_whatsapp": "WhatsApp",
+        "contact_whatsapp_url": "#",
+        "contact_whatsapp_note": "Réponse rapide",
+        "contact_hours_note": "10h - 18h (hors jours fériés)"
       }
     }
   },

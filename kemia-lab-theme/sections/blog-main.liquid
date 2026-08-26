@@ -31,11 +31,13 @@
         {%- for tag in blog.all_tags -%}
           {%- liquid
             assign tag_icon = section.settings.default_icon
+            assign tag_image = blank
             for block in section.blocks
               assign block_tag = block.settings.tag | downcase | strip
               assign loop_tag = tag | downcase | strip
               if block_tag == loop_tag
                 assign tag_icon = block.settings.icon
+                assign tag_image = block.settings.custom_icon
                 break
               endif
             endfor
@@ -50,7 +52,18 @@
             endif
           -%}
           <a class="k-blogcat{% if current_tags contains tag %} is-active{% endif %}" href="{{ blog.url }}/tagged/{{ tag | handle }}">
-            {%- if tag_icon != blank and tag_icon != 'none' -%}
+            {%- if tag_image != blank -%}
+              <span class="k-blogcat__icon k-icon-circle">
+                <img
+                  class="k-blogcat__icon-img"
+                  src="{{ tag_image | image_url: width: 96 }}"
+                  alt=""
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                >
+              </span>
+            {%- elsif tag_icon != blank and tag_icon != 'none' -%}
               <span class="k-blogcat__icon k-icon-circle">
                 {% render 'icon', name: tag_icon, class: 'k-icon--lg' %}
               </span>
@@ -222,6 +235,12 @@
       "name": "Pictogramme de catégorie",
       "settings": [
         { "type": "text", "id": "tag", "label": "Étiquette d'article", "info": "Doit correspondre exactement à l'étiquette utilisée sur les articles." },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Icône téléversée",
+          "info": "Si une image est déposée ici, elle remplace le pictogramme choisi dans la liste."
+        },
         {
           "type": "select",
           "id": "icon",

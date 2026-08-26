@@ -3086,6 +3086,7 @@
 
 .k-contact__item {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   gap: 14px;
   padding: 22px 0;
@@ -3112,10 +3113,15 @@
 .k-contact__body {
   display: grid;
   gap: 4px;
+  flex: 1 1 0;
   min-width: 0;
 }
 
 .k-contact__label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
   font-family: var(--k-font-heading);
   font-size: 13px;
   font-weight: 700;
@@ -3138,6 +3144,46 @@ a.k-contact__value:hover {
   font-size: 13px;
   line-height: 1.5;
   color: var(--k-gold);
+}
+
+/* Un moyen de contact peut etre mis en avant : fond beige, pastille a
+   cote du titre et bouton sous le texte. */
+.k-contact__item--highlight {
+  background: var(--k-bg-soft);
+  border-radius: var(--k-radius-card);
+  padding-inline: 18px;
+}
+
+.k-contact__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--k-gold);
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* La colonne des moyens de contact est etroite : le bouton passe sous le
+   pictogramme, sur toute la largeur de la carte, et resserre sa
+   typographie pour tenir sur une seule ligne. */
+.k-contact__cta {
+  flex: 1 0 100%;
+  gap: 6px;
+  min-height: 46px;
+  margin-top: -2px;
+  padding-inline: 8px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.k-contact__cta .k-icon {
+  flex: 0 0 auto;
 }
 
 /* Panneau bleu : pictogramme cercle, titre, texte, puis les reseaux. */
@@ -3352,6 +3398,12 @@ a.k-contact__value:hover {
 .k-blogcat__icon {
   color: var(--k-blue);
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.k-blogcat__icon-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .k-blogcat__label {
@@ -5697,6 +5749,19 @@ a.k-contact__value:hover {
   color: rgba(255, 255, 255, 0.86);
 }
 
+/* Chaque ligne peut porter une precision doree sur une seconde ligne. */
+.k-faqcat__contact-line {
+  display: grid;
+  gap: 2px;
+  justify-items: center;
+}
+
+.k-faqcat__contact-hint {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: var(--k-gold);
+}
+
 .k-faqcat__contact-lines .k-icon {
   color: var(--k-gold);
   flex: none;
@@ -7378,5 +7443,102 @@ a.k-contact__value:hover {
 
   .k-protocol__actifs > :nth-child(4n + 1):nth-last-child(3) {
     grid-column-start: 2;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Grilles a deux colonnes : quand le nombre d elements est impair, le
+   dernier se retrouve seul sur sa rangee. Il occupe alors les deux
+   colonnes mais garde la largeur d une seule, centree. La largeur vaut
+   la moitie de la rangee moins la moitie de la gouttiere, soit
+   exactement une colonne.
+   Chaque regle est bornee a la plage ou sa grille est en deux colonnes.
+   ------------------------------------------------------------------ */
+@media screen and (max-width: 749px) {
+  .k-features > :nth-child(2n + 1):last-child,
+  .k-quality__items > :nth-child(2n + 1):last-child,
+  .k-reassure > :nth-child(2n + 1):last-child,
+  .k-formula__pillars > :nth-child(2n + 1):last-child,
+  .k-product-grid > :nth-child(2n + 1):last-child,
+  .k-benefitsband__list > :nth-child(2n + 1):last-child,
+  .k-orbit > :nth-child(2n + 1):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .k-features > :nth-child(2n + 1):last-child {
+    width: calc(50% - 9px);
+  }
+
+  .k-quality__items > :nth-child(2n + 1):last-child,
+  .k-reassure > :nth-child(2n + 1):last-child,
+  .k-product-grid > :nth-child(2n + 1):last-child {
+    width: calc(50% - 7px);
+  }
+
+  .k-formula__pillars > :nth-child(2n + 1):last-child {
+    width: calc(50% - 5px);
+  }
+
+  .k-benefitsband__list > :nth-child(2n + 1):last-child,
+  .k-orbit > :nth-child(2n + 1):last-child {
+    width: calc(50% - 8px);
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .k-hero__trust > :nth-child(2n + 1):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 7px);
+  }
+}
+
+@media screen and (max-width: 559px) {
+  .k-buybox__reassurance > :nth-child(2n + 1):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .k-blogrow__grid > :nth-child(2n + 1):last-child,
+  .k-blogrow__grid--4 > :nth-child(2n + 1):last-child,
+  .k-spotlight__benefits > :nth-child(2n + 1):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .k-blogrow__grid > :nth-child(2n + 1):last-child,
+  .k-blogrow__grid--4 > :nth-child(2n + 1):last-child {
+    width: calc(50% - 10px);
+  }
+
+  .k-spotlight__benefits > :nth-child(2n + 1):last-child {
+    width: calc(50% - 9px);
+  }
+
+  .k-showcase--grid > :nth-child(2n + 1):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 11px);
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .k-experts--4 > :nth-child(2n + 1):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 9px);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .k-spotlight--text-first .k-spotlight__benefits > :nth-child(2n + 1):last-child,
+  .k-showcard--solo .k-showcard__benefits > :nth-child(2n + 1):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 9px);
   }
 }
