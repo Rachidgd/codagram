@@ -6459,6 +6459,14 @@ a.k-contact__value:hover {
   color: var(--k-blue);
 }
 
+/* Une icone televersee occupe la place d un pictogramme de la liste,
+   sans changer la taille du cercle qui la contient. */
+.k-buybox__pillar-img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
 .k-buybox__pillar-icon .k-icon {
   width: 22px;
   height: 22px;

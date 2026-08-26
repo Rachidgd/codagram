@@ -23,11 +23,26 @@
         },
         "usp": {
           "type": "usp",
-          "settings": {}
+          "settings": {
+            "content": "<p>La synergie de 7 actifs rigoureusement sélectionnés pour soutenir votre énergie, votre concentration, votre vitalité physique et votre bien-être intime.</p>"
+          }
         },
         "pillars": {
           "type": "pillars",
-          "settings": {}
+          "settings": {
+            "label_1": "Énergie & endurance",
+            "icon_1": "bolt",
+            "image_1": "",
+            "label_2": "Clarté mentale",
+            "icon_2": "brain",
+            "image_2": "",
+            "label_3": "Vitalité physique",
+            "icon_3": "muscle",
+            "image_3": "",
+            "label_4": "Bien-être intime",
+            "icon_4": "shield-star",
+            "image_4": ""
+          }
         },
         "cures": {
           "type": "cures",
@@ -35,8 +50,8 @@
             "heading": "",
             "best_label": "",
             "show_media": true,
-            "show_compare": false,
-            "show_note": false
+            "show_note": false,
+            "show_compare": false
           }
         },
         "buy": {
@@ -80,25 +95,70 @@
         "origin"
       ],
       "settings": {
+        "badge_text": "",
         "show_benefit_rail": false,
-        "sticky_label": "Ajouter",
-        "badge_text": "7 actifs\nhautement\ndosés"
+        "sticky_label": "Ajouter"
       }
     },
     "pouvoir": {
       "type": "benefits-band",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "benefit_8zAQhd": {
+          "type": "benefit",
+          "settings": {
+            "label": "Énergie & endurance",
+            "text": "Pour un corps plein d'énergie et une endurance au quotidien.",
+            "icon": "fa-bolt",
+            "icon_tone": "gold-metallic"
+          }
+        },
+        "benefit_xt9ArJ": {
+          "type": "benefit",
+          "settings": {
+            "label": "clarté mentale",
+            "text": "Pour une concentration nette et un esprit performant",
+            "icon": "fa-brain",
+            "icon_tone": "blue-lightning-metallic"
+          }
+        },
+        "benefit_dEDCWd": {
+          "type": "benefit",
+          "settings": {
+            "label": "vitalité physique",
+            "text": "Pour soutenir votre force, vos muscles et votre mobilité.",
+            "icon": "fa-dumbbell",
+            "icon_tone": "gold-metallic"
+          }
+        },
+        "benefit_8p7dzw": {
+          "type": "benefit",
+          "settings": {
+            "label": "Bien-être intime",
+            "text": "Pour la confiance,la vitalité et l'harmonie au quotidien.",
+            "icon": "fa-heart-pulse",
+            "icon_tone": "blue-lightning-metallic"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_8zAQhd",
+        "benefit_xt9ArJ",
+        "benefit_dEDCWd",
+        "benefit_8p7dzw"
+      ],
       "settings": {
-        "product": "",
+        "product": "4-vitality-system",
+        "background_image": "shopify://shop_images/banner-kemia-lab-4-vitality-system-bleu.webp",
+        "background_position": "center center",
+        "banner_height": 420,
+        "overlay_opacity": 25,
+        "icon_tone": "gold-metallic",
+        "figure_icon_tone": "gold-metallic",
         "eyebrow": "Le pouvoir du 4",
         "heading": "Quatre piliers essentiels.\nUne seule formule.",
         "intro": "<p>4 Vitality System associe des actifs naturels et scientifiquement sélectionnés pour soutenir votre énergie, votre concentration, votre vitalité et votre bien-être intime.</p>",
         "show_text": true,
-        "layout": "aside",
-        "image": "",
         "figures_style": "checks",
-        "color_scheme": "navy",
         "button_label": "",
         "button_link": "",
         "button_style": "gold"
@@ -110,7 +170,7 @@
         "a1": {
           "type": "actif",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/L-tyrosine-sans-fond.png",
             "name": "L-Tyrosine",
             "amount": "280",
             "unit": "mg",
@@ -120,7 +180,7 @@
         "a2": {
           "type": "actif",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/CDP-CHOLINE-SANS-FOND.png",
             "name": "CDP-Choline",
             "amount": "200",
             "unit": "mg",
@@ -130,7 +190,7 @@
         "a3": {
           "type": "actif",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/EXTRAIT-DE-KOLA.png",
             "name": "Extrait de kola",
             "amount": "208,3",
             "unit": "mg",
@@ -140,7 +200,7 @@
         "a4": {
           "type": "actif",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/EXTRAIT_DE_GINSENG.png",
             "name": "Extrait de ginseng",
             "amount": "200",
             "unit": "mg",
@@ -150,7 +210,7 @@
         "a5": {
           "type": "actif",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/extrait-de-safran.png",
             "name": "Extrait de safran",
             "amount": "30",
             "unit": "mg",
@@ -160,7 +220,7 @@
         "a6": {
           "type": "actif",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/zinc-sf.png",
             "name": "Zinc",
             "amount": "10",
             "unit": "mg",
@@ -170,7 +230,7 @@
         "a7": {
           "type": "actif",
           "settings": {
-            "image": "",
+            "image": "shopify://shop_images/vitamine-d3.png",
             "name": "Vitamine D3",
             "amount": "50",
             "unit": "µg / 2000 UI",
@@ -221,8 +281,8 @@
         "note": "*VNR : Valeurs Nutritionnelles de Référence",
         "steps_heading": "Protocole simple et efficace",
         "show_scale": true,
-        "scale_image": "",
-        "scale_label": "Taille réelle"
+        "scale_image": "shopify://shop_images/gelules-transparentes-poudre-bronze-marbre-blanc.webp",
+        "scale_label": ""
       }
     },
     "comparatif": {
@@ -231,37 +291,37 @@
         "r1": {
           "type": "row",
           "settings": {
-            "brand_text": "Une seule formule",
             "brand_note": "4 bénéfices essentiels",
-            "other_text": "Plusieurs produits",
-            "other_note": "Bénéfices isolés"
+            "other_note": "Bénéfices isolés",
+            "brand_text": "Une seule formule",
+            "other_text": "Plusieurs produits"
           }
         },
         "r2": {
           "type": "row",
           "settings": {
-            "brand_text": "2 gélules par jour",
             "brand_note": "Routine simple et efficace",
-            "other_text": "Plusieurs prises quotidiennes",
-            "other_note": "Contraignant à suivre"
+            "other_note": "Contraignant à suivre",
+            "brand_text": "2 gélules par jour",
+            "other_text": "Plusieurs prises quotidiennes"
           }
         },
         "r3": {
           "type": "row",
           "settings": {
-            "brand_text": "Formule complète pensée pour agir en synergie",
             "brand_note": "",
-            "other_text": "Ingrédients souvent pris séparément",
-            "other_note": ""
+            "other_note": "",
+            "brand_text": "Formule complète pensée pour agir en synergie",
+            "other_text": "Ingrédients souvent pris séparément"
           }
         },
         "r4": {
           "type": "row",
           "settings": {
-            "brand_text": "Gain de temps et d'argent",
             "brand_note": "",
-            "other_text": "Coût plus élevé",
-            "other_note": "au quotidien"
+            "other_note": "",
+            "brand_text": "Gain de temps et d'argent",
+            "other_text": "Coût plus élevé au quotidien"
           }
         }
       },
@@ -289,9 +349,9 @@
       "settings": {
         "product": "",
         "heading": "Ils ont choisi 4 Vitality System",
+        "card_style": "centered",
         "show_rule": false,
         "tagline": "103 avis clients vérifiés",
-        "card_style": "centered",
         "show_summary": false,
         "summary_label": "avis vérifiés",
         "show_score": false,
@@ -320,11 +380,12 @@
       "type": "newsletter-band",
       "settings": {
         "color_scheme": "navy",
-        "icon": "mail",
         "eyebrow": "",
         "heading": "Recevez nos conseils exclusifs",
         "text": "Inscrivez-vous à notre newsletter et recevez nos meilleurs conseils pour booster votre énergie, votre mental et votre vitalité.",
-        "image": "",
+        "note": "",
+        "note_icon": "lock",
+        "icon": "mail",
         "placeholder": "Votre email",
         "button_label": "S'inscrire"
       }

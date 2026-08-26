@@ -39,6 +39,8 @@
         "l4"
       ],
       "settings": {
+        "show_breadcrumb": false,
+        "breadcrumb_label": "",
         "eyebrow": "",
         "heading_tag": "h1",
         "heading_style": "sans",
@@ -55,18 +57,20 @@
         "button2_label": "En savoir plus",
         "button2_link": "/pages/science",
         "button2_style": "ghost",
+        "trust_layout": "inline",
+        "trust_circle": false,
         "origin_text": "Fabriqué en France",
         "origin_icon": "flag-fr",
-        "image": "shopify://shop_images/complement-alimentaire-cure-1-mois-kemia-lab-4-vitality-system-carre.webp",
-        "badge_text": "7 actifs\nhautement\ndosés",
-        "badge_style": "circle",
-        "badge_icon": "leaf",
-        "background": "light",
         "layout": "cover",
+        "image": "shopify://shop_images/banner-kemia-lab-4-vitality-system-marbre-blanc.webp",
         "cover_height": 600,
         "overlay": 35,
         "overlay_style": "side",
-        "text_color": "ink"
+        "text_color": "ink",
+        "badge_text": "7 actifs\nhautement\ndosés",
+        "badge_style": "circle",
+        "badge_icon": "leaf",
+        "background": "light"
       }
     },
     "reassurance": {
@@ -126,6 +130,7 @@
         "f1": {
           "type": "front",
           "settings": {
+            "custom_icon": "shopify://shop_images/kemia_lab_corps.png",
             "icon": "user",
             "tone": "gold",
             "title": "Votre corps",
@@ -135,6 +140,7 @@
         "f2": {
           "type": "front",
           "settings": {
+            "custom_icon": "shopify://shop_images/esprit_kemiz_lab.png",
             "icon": "brain",
             "tone": "blue",
             "title": "Votre esprit",
@@ -159,6 +165,42 @@
     "piliers": {
       "type": "benefits-band",
       "blocks": {
+        "benefit_hbnbTH": {
+          "type": "benefit",
+          "settings": {
+            "label": "Énergie & endurance",
+            "text": "Un soutien ciblé pour accompagner votre vitalité au quotidien.",
+            "icon": "fa-bolt",
+            "icon_tone": "gold-metallic"
+          }
+        },
+        "benefit_J3qYzV": {
+          "type": "benefit",
+          "settings": {
+            "label": "clarté mentale",
+            "text": "Un soutien ciblé pour accompagner votre vitalité au quotidien.",
+            "icon": "fa-brain",
+            "icon_tone": "blue-lightning-metallic"
+          }
+        },
+        "benefit_Q8anX4": {
+          "type": "benefit",
+          "settings": {
+            "label": "vitalité  physique",
+            "text": "Un soutien ciblé pour accompagner votre vitalité au quotidien.",
+            "icon": "fa-heart-pulse",
+            "icon_tone": "gold-metallic"
+          }
+        },
+        "benefit_yErKMK": {
+          "type": "benefit",
+          "settings": {
+            "label": "bien-être intime",
+            "text": "Un soutien ciblé pour accompagner votre vitalité au quotidien.",
+            "icon": "fa-fire",
+            "icon_tone": "blue-lightning-metallic"
+          }
+        },
         "c1": {
           "type": "figure",
           "settings": {
@@ -182,20 +224,27 @@
         }
       },
       "block_order": [
+        "benefit_hbnbTH",
+        "benefit_J3qYzV",
+        "benefit_Q8anX4",
+        "benefit_yErKMK",
         "c1",
         "c2",
         "c3"
       ],
       "settings": {
         "product": "4-vitality-system",
+        "background_image": "shopify://shop_images/banner-kemia-lab-4-vitality-system-bleu.webp",
+        "background_position": "center center",
+        "banner_height": 460,
+        "overlay_opacity": 45,
+        "icon_tone": "gold-metallic",
+        "figure_icon_tone": "gold-metallic",
         "eyebrow": "",
         "heading": "4 piliers essentiels.\nUne seule formule.",
         "intro": "",
         "show_text": false,
-        "layout": "split",
-        "image": "shopify://shop_images/kemia_labb_complement_alimentaire.png",
         "figures_style": "checks",
-        "color_scheme": "navy",
         "button_label": "Découvrir le produit",
         "button_link": "/products/4-vitality-system",
         "button_style": "gold"
@@ -208,6 +257,7 @@
           "type": "item",
           "settings": {
             "icon": "microscope",
+            "icon_tone": "gold-metallic",
             "title": "Science & expertise",
             "text": "Des formules développées à partir des dernières recherches scientifiques."
           }
@@ -216,6 +266,7 @@
           "type": "item",
           "settings": {
             "icon": "leaf",
+            "icon_tone": "blue-lightning-metallic",
             "title": "Ingrédients premium",
             "text": "Des actifs rigoureusement sélectionnés pour leur qualité et leur efficacité."
           }
@@ -224,6 +275,7 @@
           "type": "item",
           "settings": {
             "icon": "shield-check",
+            "icon_tone": "gold-metallic",
             "title": "Qualité contrôlée",
             "text": "Fabriqué en France selon les normes les plus exigeantes et contrôlé en laboratoire."
           }
@@ -232,6 +284,7 @@
           "type": "item",
           "settings": {
             "icon": "target",
+            "icon_tone": "blue-lightning-metallic",
             "title": "Pensé pour progresser",
             "text": "Des formules complètes pour vous accompagner jour après jour vers votre meilleure version."
           }
@@ -248,6 +301,7 @@
         "heading": "Pourquoi choisir Kemia Lab ?",
         "heading_style": "caps",
         "show_rule": false,
+        "flanked": false,
         "text": "",
         "icon_style": "plain",
         "accent": "gold",
@@ -263,16 +317,17 @@
       "settings": {
         "product": "4-vitality-system",
         "heading": "Ils ont choisi Kemia Lab",
+        "card_style": "centered",
         "show_rule": false,
-        "tagline": "+500 clients déjà convaincus",
+        "tagline": "+50 clients déjà convaincus",
         "show_summary": false,
         "summary_label": "clients satisfaits",
         "show_score": false,
         "verified_label": "Client vérifié",
+        "limit": 12,
         "per_view": "3",
         "show_dots": true,
-        "background": "none",
-        "card_style": "centered"
+        "background": "none"
       }
     },
     "blog": {
@@ -293,13 +348,14 @@
       "type": "newsletter-band",
       "settings": {
         "color_scheme": "navy",
-        "icon": "mail",
         "eyebrow": "",
         "heading": "Recevez nos conseils exclusifs",
         "text": "Inscrivez-vous à notre newsletter et recevez nos meilleurs conseils pour booster votre énergie, votre mental et votre vitalité.",
+        "note": "",
+        "note_icon": "lock",
+        "icon": "mail",
         "placeholder": "Votre email",
-        "button_label": "S'inscrire",
-        "image": ""
+        "button_label": "S'inscrire"
       }
     }
   },

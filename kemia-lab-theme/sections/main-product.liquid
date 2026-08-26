@@ -1,8 +1,16 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+>
+
 {%- liquid
   assign benefits = product.metafields.kemia.benefits.value
   assign reviews_data = product.metafields.kemia.reviews_json.value
   assign review_list = reviews_data.reviews
   assign review_count = review_list.size | plus: 0
+
   if review_count > 0
     assign rating_total = 0
     for entry in review_list
@@ -13,6 +21,7 @@
     assign review_count = product.metafields.kemia.review_count.value | plus: 0
     assign rating = product.metafields.kemia.rating.value
   endif
+
   assign current_variant = product.selected_or_first_available_variant
 
   assign best_index = 0
@@ -26,7 +35,18 @@
       endif
     endif
   endfor
+
+  assign origin_text = ''
+  assign origin_icon = 'none'
 -%}
+
+{%- for setup_block in section.blocks -%}
+  {%- if setup_block.type == 'origin' -%}
+    {%- assign origin_text = setup_block.settings.text -%}
+    {%- assign origin_icon = setup_block.settings.icon -%}
+    {%- capture origin_shopify_attributes -%}{{ setup_block.shopify_attributes }}{%- endcapture -%}
+  {%- endif -%}
+{%- endfor -%}
 
 <div class="k-pdp-hero" data-k-product data-money-format="{{ shop.money_format | strip_html | escape }}">
   <div class="k-pdp-hero__gallery" data-k-gallery>
@@ -70,6 +90,7 @@
           <button class="k-carousel__nav k-pdp-gallery__nav k-pdp-gallery__nav--prev" type="button" data-k-gallery-prev aria-label="{{ 'general.previous' | t }}">
             {% render 'icon', name: 'chevron-left', class: 'k-icon--sm' %}
           </button>
+
           <div class="k-pdp-gallery__thumbs-track">
             {%- for media in product.media -%}
               <button
@@ -83,6 +104,7 @@
               </button>
             {%- endfor -%}
           </div>
+
           <button class="k-carousel__nav k-pdp-gallery__nav k-pdp-gallery__nav--next" type="button" data-k-gallery-next aria-label="{{ 'general.next' | t }}">
             {% render 'icon', name: 'chevron-right', class: 'k-icon--sm' %}
           </button>
@@ -93,12 +115,14 @@
 
   <div class="k-pdp-hero__info">
     {%- assign added_message = 'products.added' | t -%}
+
     {%- form 'product', product, id: 'buybox-form', class: 'k-buybox', data-k-atc-form: 'true', data-added-message: added_message -%}
       <input type="hidden" name="id" value="{{ current_variant.id }}" data-k-variant-id>
 
+      {%- assign origin_rendered = false -%}
+
       {%- for block in section.blocks -%}
         {%- case block.type -%}
-
           {%- when 'eyebrow' -%}
             {%- assign eyebrow_text = block.settings.text | default: product.type -%}
             {%- if eyebrow_text != blank -%}
@@ -118,7 +142,10 @@
             {%- endif -%}
 
           {%- when 'usp' -%}
-            {%- assign usp = product.metafields.kemia.short_usp.value -%}
+            {%- assign usp = block.settings.content -%}
+            {%- if usp == blank -%}
+              {%- assign usp = product.metafields.kemia.short_usp.value -%}
+            {%- endif -%}
             {%- if usp != blank -%}
               <div class="k-buybox__usp k-text" {{ block.shopify_attributes }}>{{ usp }}</div>
             {%- endif -%}
@@ -127,8 +154,48 @@
             {%- liquid
               assign pillars = product.metafields.kemia.benefits.value
               assign pillar_count = pillars.size | plus: 0
+
+              assign manual_pillars = 0
+              for i in (1..4)
+                assign label_key = 'label_' | append: i
+                if block.settings[label_key] != blank
+                  assign manual_pillars = manual_pillars | plus: 1
+                endif
+              endfor
             -%}
-            {%- if pillar_count > 0 -%}
+            {%- if manual_pillars > 0 -%}
+              <ul class="k-buybox__pillars" {{ block.shopify_attributes }}>
+                {%- for i in (1..4) -%}
+                  {%- liquid
+                    assign label_key = 'label_' | append: i
+                    assign icon_key = 'icon_' | append: i
+                    assign image_key = 'image_' | append: i
+                    assign pillar_label = block.settings[label_key]
+                    assign pillar_icon = block.settings[icon_key]
+                    assign pillar_image = block.settings[image_key]
+                  -%}
+                  {%- if pillar_label != blank -%}
+                    <li class="k-buybox__pillar">
+                      <span class="k-buybox__pillar-icon">
+                        {%- if pillar_image != blank -%}
+                          <img
+                            class="k-buybox__pillar-img"
+                            src="{{ pillar_image | image_url: width: 136 }}"
+                            alt=""
+                            width="34"
+                            height="34"
+                            loading="lazy"
+                          >
+                        {%- elsif pillar_icon != 'none' -%}
+                          {% render 'icon', name: pillar_icon, class: 'k-icon--lg' %}
+                        {%- endif -%}
+                      </span>
+                      <span class="k-buybox__pillar-label">{{ pillar_label }}</span>
+                    </li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            {%- elsif pillar_count > 0 -%}
               <ul class="k-buybox__pillars" {{ block.shopify_attributes }}>
                 {%- for pillar in pillars -%}
                   <li class="k-buybox__pillar">
@@ -142,14 +209,7 @@
             {%- endif -%}
 
           {%- when 'origin' -%}
-            {%- if block.settings.text != blank -%}
-              <p class="k-buybox__origin" {{ block.shopify_attributes }}>
-                {%- if block.settings.icon != 'none' -%}
-                  {% render 'icon', name: block.settings.icon, class: 'k-icon--sm' %}
-                {%- endif -%}
-                <span>{{ block.settings.text }}</span>
-              </p>
-            {%- endif -%}
+            {%- comment -%}Le bloc origine est rendu automatiquement sous la réassurance.{%- endcomment -%}
 
           {%- when 'trust' -%}
             <ul class="k-buybox__trust" {{ block.shopify_attributes }}>
@@ -159,10 +219,28 @@
                   assign title_key = 'title_' | append: i
                   assign text_key = 'text_' | append: i
                   assign trust_title = block.settings[title_key]
+                  assign trust_icon = block.settings[icon_key]
+                  assign trust_fa_icon = 'fa-circle-check'
+
+                  case trust_icon
+                    when 'shield-check'
+                      assign trust_fa_icon = 'fa-shield-halved'
+                    when 'leaf'
+                      assign trust_fa_icon = 'fa-leaf'
+                    when 'hexagon'
+                      assign trust_fa_icon = 'fa-cube'
+                    when 'award'
+                      assign trust_fa_icon = 'fa-award'
+                    when 'flask'
+                      assign trust_fa_icon = 'fa-flask'
+                    when 'check-circle'
+                      assign trust_fa_icon = 'fa-circle-check'
+                  endcase
                 -%}
+
                 {%- if trust_title != blank -%}
                   <li class="k-buybox__trust-item">
-                    {% render 'icon', name: block.settings[icon_key], class: 'k-icon--lg' %}
+                    <i class="fa-solid {{ trust_fa_icon }}" aria-hidden="true"></i>
                     <span class="k-trust__title">{{ trust_title }}</span>
                     {%- if block.settings[text_key] != blank -%}
                       <span class="k-trust__text">{{ block.settings[text_key] }}</span>
@@ -225,6 +303,7 @@
                 {%- if block.settings.heading != blank -%}
                   <legend class="k-cures__legend">{{ block.settings.heading }}</legend>
                 {%- endif -%}
+
                 <div class="k-cures__grid{% unless block.settings.show_media %} k-cures__grid--flat{% endunless %}{% if block.settings.best_label != blank %} k-cures__grid--best{% endif %}">
                   {%- for variant in product.variants -%}
                     {%- liquid
@@ -232,16 +311,19 @@
                       if forloop.index == best_index and block.settings.best_label != blank
                         assign is_best = true
                       endif
+
                       assign percent = 0
                       if variant.compare_at_price > variant.price
                         assign percent = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price
                       endif
+
                       assign duration = variant.metafields.kemia.duration.value
                       assign note = ''
                       if block.settings.show_note
                         assign note = variant.metafields.kemia.note.value
                       endif
                     -%}
+
                     <label
                       class="k-cure{% if variant == current_variant %} is-selected{% endif %}{% unless variant.available %} is-unavailable{% endunless %}"
                       data-k-cure-option
@@ -260,18 +342,23 @@
                         {% if variant == current_variant %}checked{% endif %}
                         {% unless variant.available %}disabled{% endunless %}
                       >
+
                       {%- if is_best -%}
                         <span class="k-badge k-badge--blue k-cure__best">{{ block.settings.best_label }}</span>
                       {%- endif -%}
+
                       {%- if percent > 0 -%}
                         <span class="k-cure__off">-{{ percent }} %</span>
                       {%- endif -%}
+
                       <span class="k-cure__check" aria-hidden="true">{% render 'icon', name: 'check', class: 'k-icon--xs' %}</span>
+
                       {%- if block.settings.show_media -%}
                         <span class="k-cure__media">
                           {% render 'image', image: variant.image, ratio: '100%', fit: 'contain', sizes: '120px', placeholder_icon: 'bottle' %}
                         </span>
                       {%- endif -%}
+
                       <span class="k-cure__title">{{ variant.title }}</span>
                       <span class="k-cure__duration">{{ duration }}</span>
                       <span class="k-cure__prices">
@@ -315,6 +402,7 @@
                   </button>
                 </div>
               {%- endif -%}
+
               <button
                 class="k-btn k-btn--block k-btn--lg"
                 type="submit"
@@ -330,6 +418,7 @@
                   {%- if current_variant.available -%}{{ block.settings.label }}{%- else -%}{{ 'products.sold_out' | t }}{%- endif -%}
                 </span>
               </button>
+
               <p class="k-form-message k-form-message--error" data-k-atc-error hidden></p>
             </div>
 
@@ -339,15 +428,47 @@
                 {%- liquid
                   assign icon_key = 'icon_' | append: i
                   assign text_key = 'text_' | append: i
+                  assign reassurance_icon = block.settings[icon_key]
+                  assign reassurance_fa_icon = 'fa-circle-check'
+
+                  case reassurance_icon
+                    when 'truck'
+                      assign reassurance_fa_icon = 'fa-truck-fast'
+                    when 'lock'
+                      assign reassurance_fa_icon = 'fa-lock'
+                    when 'package'
+                      assign reassurance_fa_icon = 'fa-box'
+                    when 'headset'
+                      assign reassurance_fa_icon = 'fa-headset'
+                    when 'clock'
+                      assign reassurance_fa_icon = 'fa-clock'
+                    when 'shield-check'
+                      assign reassurance_fa_icon = 'fa-shield-halved'
+                  endcase
                 -%}
+
                 {%- if block.settings[text_key] != blank -%}
                   <li>
-                    {% render 'icon', name: block.settings[icon_key], class: 'k-icon--sm' %}
+                    <i class="fa-solid {{ reassurance_fa_icon }}" aria-hidden="true"></i>
                     <span>{{ block.settings[text_key] }}</span>
                   </li>
                 {%- endif -%}
               {%- endfor -%}
             </ul>
+
+            {%- if origin_text != blank -%}
+              <p class="k-buybox__origin k-buybox__origin--under-reassurance" {{ origin_shopify_attributes }}>
+                {%- if origin_icon == 'flag-fr' -%}
+                  <span class="k-buybox__origin-flag" aria-hidden="true">🇫🇷</span>
+                {%- elsif origin_icon == 'hexagon' -%}
+                  <i class="fa-solid fa-cube" aria-hidden="true"></i>
+                {%- elsif origin_icon == 'shield-check' -%}
+                  <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                {%- endif -%}
+                <span>{{ origin_text }}</span>
+              </p>
+              {%- assign origin_rendered = true -%}
+            {%- endif -%}
 
           {%- when 'accordion' -%}
             {%- liquid
@@ -380,9 +501,21 @@
             {%- if block.settings.content != blank -%}
               <div class="k-buybox__text k-text" {{ block.shopify_attributes }}>{{ block.settings.content }}</div>
             {%- endif -%}
-
         {%- endcase -%}
       {%- endfor -%}
+
+      {%- if origin_text != blank and origin_rendered == false -%}
+        <p class="k-buybox__origin k-buybox__origin--under-reassurance" {{ origin_shopify_attributes }}>
+          {%- if origin_icon == 'flag-fr' -%}
+            <span class="k-buybox__origin-flag" aria-hidden="true">🇫🇷</span>
+          {%- elsif origin_icon == 'hexagon' -%}
+            <i class="fa-solid fa-cube" aria-hidden="true"></i>
+          {%- elsif origin_icon == 'shield-check' -%}
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          {%- endif -%}
+          <span>{{ origin_text }}</span>
+        </p>
+      {%- endif -%}
     {%- endform -%}
   </div>
 </div>
@@ -404,6 +537,68 @@
 {%- if reviews_data != blank or review_count > 0 -%}
   {% render 'reviews-modal', product: product, rating: rating, review_count: review_count %}
 {%- endif -%}
+
+<style>
+  #shopify-section-{{ section.id }} .k-cure__off {
+    background: linear-gradient(135deg, #0a2a66 0%, #061a3d 55%, #103f8f 100%) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.28) !important;
+    box-shadow: 0 10px 22px rgba(6, 26, 61, 0.28) !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.02em;
+    text-shadow: none !important;
+  }
+
+  #shopify-section-{{ section.id }} .k-buybox__reassurance {
+    order: 90 !important;
+    color: #101820 !important;
+  }
+
+  #shopify-section-{{ section.id }} .k-buybox__reassurance li,
+  #shopify-section-{{ section.id }} .k-buybox__reassurance span,
+  #shopify-section-{{ section.id }} .k-buybox__reassurance i {
+    color: #101820 !important;
+    font-weight: 800 !important;
+  }
+
+  #shopify-section-{{ section.id }} .k-buybox__reassurance i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  #shopify-section-{{ section.id }} .k-buybox__origin--under-reassurance {
+    order: 91 !important;
+    grid-column: 1 / -1;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    margin: 14px auto 0 !important;
+    color: #101820 !important;
+    font-weight: 900 !important;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .k-buybox__origin--under-reassurance span,
+  #shopify-section-{{ section.id }} .k-buybox__origin--under-reassurance i {
+    color: #101820 !important;
+    font-weight: 900 !important;
+  }
+
+  #shopify-section-{{ section.id }} .k-buybox__origin-flag {
+    font-size: 1.15em;
+    line-height: 1;
+  }
+
+  #shopify-section-{{ section.id }} .k-buybox__trust-item,
+  #shopify-section-{{ section.id }} .k-buybox__trust-item span,
+  #shopify-section-{{ section.id }} .k-buybox__trust-item i {
+    font-weight: 800 !important;
+  }
+</style>
 
 {% schema %}
 {
@@ -444,7 +639,12 @@
         }
       ]
     },
-    { "type": "title", "name": "Nom du produit", "limit": 1, "settings": [] },
+    {
+      "type": "title",
+      "name": "Nom du produit",
+      "limit": 1,
+      "settings": []
+    },
     {
       "type": "tagline",
       "name": "Accroche dorée",
@@ -458,7 +658,19 @@
         }
       ]
     },
-    { "type": "usp", "name": "Description courte", "limit": 1, "settings": [] },
+    {
+      "type": "usp",
+      "name": "Description courte",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Description courte",
+          "info": "Vide : reprend le champ méta produit kemia.short_usp."
+        }
+      ]
+    },
     {
       "type": "pillars",
       "name": "Piliers du produit",
@@ -466,8 +678,92 @@
       "settings": [
         {
           "type": "paragraph",
-          "content": "Les piliers proviennent du champ méta kemia.benefits du produit."
-        }
+          "content": "Renseignez un titre ci-dessous pour piloter les piliers depuis le thème. Si les quatre titres restent vides, les piliers proviennent du champ méta kemia.benefits du produit."
+        },
+        { "type": "text", "id": "label_1", "label": "Titre 1", "default": "Énergie & endurance" },
+        {
+          "type": "select",
+          "id": "icon_1",
+          "label": "Pictogramme 1",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "brain", "label": "Cerveau" },
+            { "value": "muscle", "label": "Vitalité" },
+            { "value": "shield-star", "label": "Bien-être" },
+            { "value": "shield-check", "label": "Bouclier" },
+            { "value": "moon", "label": "Lune" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "target", "label": "Cible" },
+            { "value": "capsule", "label": "Gélule" },
+            { "value": "sparkle", "label": "Étincelle" }
+          ],
+          "default": "bolt"
+        },
+        { "type": "image_picker", "id": "image_1", "label": "Icône téléversée 1", "info": "Remplace le pictogramme, à la même taille." },
+        { "type": "text", "id": "label_2", "label": "Titre 2", "default": "Clarté mentale" },
+        {
+          "type": "select",
+          "id": "icon_2",
+          "label": "Pictogramme 2",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "brain", "label": "Cerveau" },
+            { "value": "muscle", "label": "Vitalité" },
+            { "value": "shield-star", "label": "Bien-être" },
+            { "value": "shield-check", "label": "Bouclier" },
+            { "value": "moon", "label": "Lune" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "target", "label": "Cible" },
+            { "value": "capsule", "label": "Gélule" },
+            { "value": "sparkle", "label": "Étincelle" }
+          ],
+          "default": "brain"
+        },
+        { "type": "image_picker", "id": "image_2", "label": "Icône téléversée 2", "info": "Remplace le pictogramme, à la même taille." },
+        { "type": "text", "id": "label_3", "label": "Titre 3", "default": "Vitalité physique" },
+        {
+          "type": "select",
+          "id": "icon_3",
+          "label": "Pictogramme 3",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "brain", "label": "Cerveau" },
+            { "value": "muscle", "label": "Vitalité" },
+            { "value": "shield-star", "label": "Bien-être" },
+            { "value": "shield-check", "label": "Bouclier" },
+            { "value": "moon", "label": "Lune" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "target", "label": "Cible" },
+            { "value": "capsule", "label": "Gélule" },
+            { "value": "sparkle", "label": "Étincelle" }
+          ],
+          "default": "muscle"
+        },
+        { "type": "image_picker", "id": "image_3", "label": "Icône téléversée 3", "info": "Remplace le pictogramme, à la même taille." },
+        { "type": "text", "id": "label_4", "label": "Titre 4", "default": "Bien-être intime" },
+        {
+          "type": "select",
+          "id": "icon_4",
+          "label": "Pictogramme 4",
+          "options": [
+            { "value": "none", "label": "Aucun" },
+            { "value": "bolt", "label": "Éclair" },
+            { "value": "brain", "label": "Cerveau" },
+            { "value": "muscle", "label": "Vitalité" },
+            { "value": "shield-star", "label": "Bien-être" },
+            { "value": "shield-check", "label": "Bouclier" },
+            { "value": "moon", "label": "Lune" },
+            { "value": "leaf", "label": "Feuille" },
+            { "value": "target", "label": "Cible" },
+            { "value": "capsule", "label": "Gélule" },
+            { "value": "sparkle", "label": "Étincelle" }
+          ],
+          "default": "shield-star"
+        },
+        { "type": "image_picker", "id": "image_4", "label": "Icône téléversée 4", "info": "Remplace le pictogramme, à la même taille." }
       ]
     },
     {
@@ -475,14 +771,19 @@
       "name": "Mention d'origine",
       "limit": 1,
       "settings": [
-        { "type": "text", "id": "text", "label": "Texte", "default": "Fabriqué en France" },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Fabriqué en France"
+        },
         {
           "type": "select",
           "id": "icon",
           "label": "Pictogramme",
           "options": [
             { "value": "none", "label": "Aucun" },
-            { "value": "flag-fr", "label": "Drapeau français" },
+            { "value": "flag-fr", "label": "Drapeau France" },
             { "value": "hexagon", "label": "Hexagone" },
             { "value": "shield-check", "label": "Bouclier" }
           ],
@@ -519,7 +820,12 @@
         { "type": "text", "id": "suffix", "label": "Texte après le nombre", "default": "avis clients" }
       ]
     },
-    { "type": "price", "name": "Prix", "limit": 1, "settings": [] },
+    {
+      "type": "price",
+      "name": "Prix",
+      "limit": 1,
+      "settings": []
+    },
     {
       "type": "installment",
       "name": "Paiement fractionné",
@@ -535,10 +841,7 @@
       "name": "Urgence livraison",
       "limit": 1,
       "settings": [
-        {
-          "type": "paragraph",
-          "content": "N'activer que si le délai annoncé est réellement tenu par la logistique."
-        },
+        { "type": "paragraph", "content": "N'activer que si le délai annoncé est réellement tenu par la logistique." },
         { "type": "checkbox", "id": "enabled", "label": "Afficher", "default": true },
         { "type": "range", "id": "cutoff_hour", "label": "Heure limite de commande", "min": 0, "max": 23, "step": 1, "unit": "h", "default": 23 },
         { "type": "range", "id": "cutoff_minute", "label": "Minute limite", "min": 0, "max": 59, "step": 1, "unit": "min", "default": 59 },
