@@ -279,11 +279,14 @@
     line-height: 1;
   }
 
-  /* Une icone televersee occupe exactement la place d une icone de la
-     liste, la meme mesure que le font-size ci-dessus. */
+  /* Un glyphe Font Awesome n est pas carre : il mesure une fois le
+     font-size en hauteur mais sa largeur suit le dessin. Une image
+     enfermee dans un carre paraissait donc plus petite. Elle est ici
+     pilotee par sa hauteur, largeur libre, taille reglable. */
   #shopify-section-{{ section.id }} .k-benefitsband__icon-img {
-    width: clamp(30px, 2.4vw, 42px);
-    height: clamp(30px, 2.4vw, 42px);
+    width: auto;
+    max-width: 100%;
+    height: {{ section.settings.custom_icon_size }}px;
     object-fit: contain;
   }
 
@@ -401,8 +404,7 @@
     }
 
     #shopify-section-{{ section.id }} .k-benefitsband__icon-img {
-      width: 32px;
-      height: 32px;
+      height: {{ section.settings.custom_icon_size | times: 0.76 | round }}px;
     }
   }
 </style>
@@ -465,6 +467,17 @@
         { "value": "blue-lightning-metallic", "label": "Bleu marine éclair métallique" }
       ],
       "default": "gold-metallic"
+    },
+    {
+      "type": "range",
+      "id": "custom_icon_size",
+      "label": "Taille des icônes téléversées",
+      "min": 24,
+      "max": 76,
+      "step": 2,
+      "unit": "px",
+      "default": 48,
+      "info": "Hauteur de l'image, la largeur suit. Un glyphe de la liste mesure environ 35 px de haut mais déborde en largeur : partez de 48 px pour un rendu équivalent."
     },
     {
       "type": "select",
