@@ -33,9 +33,18 @@
     <p class="k-sciactif__dose">{{ dose }}</p>
     <p class="k-sciactif__detail">{{ detail }}</p>
     <p class="k-sciactif__text">{{ text }}</p>
-    <span class="k-sciactif__tag">
+    <span class="k-sciactif__tag"{% if tag_color != blank %} style="--k-tag-icon: {{ tag_color }}"{% endif %}>
       {%- if tag_label != blank -%}
-        {%- if tag_icon != blank and tag_icon != 'none' -%}
+        {%- if tag_image != blank -%}
+          <img
+            class="k-sciactif__tag-img"
+            src="{{ tag_image | image_url: width: 64 }}"
+            alt=""
+            width="16"
+            height="16"
+            loading="lazy"
+          >
+        {%- elsif tag_icon != blank and tag_icon != 'none' -%}
           {% render 'icon', name: tag_icon, class: 'k-icon--sm' %}
         {%- endif -%}
         <span>{{ tag_label }}</span>

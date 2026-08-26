@@ -57,6 +57,8 @@
                 detail: block.settings.detail,
                 text: block.settings.text,
                 tag_icon: block.settings.tag_icon,
+                tag_image: block.settings.tag_image,
+                tag_color: block.settings.tag_color,
                 tag_label: block.settings.tag_label
               %}
             {%- endif -%}
@@ -170,6 +172,13 @@
           ],
           "default": "sparkle"
         },
+        {
+          "type": "image_picker",
+          "id": "tag_image",
+          "label": "Icône téléversée",
+          "info": "Remplace le pictogramme choisi ci-dessus. La couleur ne s'applique pas à une image téléversée."
+        },
+        { "type": "color", "id": "tag_color", "label": "Couleur du pictogramme" },
         { "type": "text", "id": "tag_label", "label": "Étiquette", "default": "Énergie & endurance" }
       ]
     }
