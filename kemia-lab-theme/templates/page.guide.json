@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "guide": {
+      "type": "guide-access",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "image": "",
+            "icon": "capsule",
+            "title": "2 gélules par jour",
+            "text": "Le matin, avec un grand verre d'eau."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "image": "",
+            "icon": "calendar",
+            "title": "30 jours de cure",
+            "text": "Pour des résultats durables."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "image": "",
+            "icon": "leaf",
+            "title": "Une routine simple",
+            "text": "À intégrer à votre quotidien."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "pdf_url": "",
+        "button_label": "Télécharger le guide",
+        "read_label": "Lire en ligne",
+        "pending_note": "Le guide sera disponible ici très prochainement.",
+        "auto_download": false,
+        "auto_delay": 1,
+        "logo": "",
+        "logo_width": 150,
+        "eyebrow": "Accès réservé",
+        "heading": "Votre guide\nd'utilisation",
+        "show_rule": true,
+        "intro": "<p>Merci pour votre confiance. Retrouvez ici tout ce qu'il faut savoir pour tirer le meilleur de votre cure 4 Vitality System.</p>",
+        "note": "Accès réservé aux clients Kemia Lab",
+        "help_text": "Une question sur votre cure ?",
+        "help_link_label": "Écrivez-nous",
+        "help_link": "/pages/contact"
+      }
+    }
+  },
+  "order": [
+    "guide"
+  ]
+}
