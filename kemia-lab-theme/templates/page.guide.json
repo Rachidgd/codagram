@@ -38,12 +38,8 @@
       ],
       "settings": {
         "pdf_url": "",
-        "button_label": "Télécharger le guide",
-        "read_url": "",
         "read_label": "Lire le guide",
         "pending_note": "Le guide sera disponible ici très prochainement.",
-        "auto_download": false,
-        "auto_delay": 1,
         "logo": "",
         "logo_width": 150,
         "eyebrow": "Accès réservé",
