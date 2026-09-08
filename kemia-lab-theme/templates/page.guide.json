@@ -39,9 +39,8 @@
       "settings": {
         "pdf_url": "",
         "button_label": "Télécharger le guide",
-        "busy_label": "Préparation du guide…",
-        "file_name": "Guide-4-Vitality-System.pdf",
-        "read_label": "Lire en ligne",
+        "read_url": "",
+        "read_label": "Lire le guide",
         "pending_note": "Le guide sera disponible ici très prochainement.",
         "auto_download": false,
         "auto_delay": 1,

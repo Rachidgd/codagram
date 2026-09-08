@@ -5,6 +5,22 @@
     assign has_pdf = true
   endif
 
+  assign read = section.settings.read_url | strip
+  if read == blank or read == '#'
+    assign read = pdf
+  endif
+  assign has_read = false
+  if read != blank and read != '#'
+    if section.settings.read_label != blank
+      assign has_read = true
+    endif
+  endif
+
+  assign has_guide = false
+  if has_pdf or has_read
+    assign has_guide = true
+  endif
+
   assign steps = 0
   for block in section.blocks
     if block.type == 'step' and block.settings.title != blank
@@ -47,7 +63,7 @@
           <a
             class="k-btn k-btn--lg k-guide__cta"
             href="{{ pdf | escape }}"
-            download="{{ section.settings.file_name | escape }}"
+            download
             data-k-guide-download
           >
             <svg class="k-guide__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -55,25 +71,32 @@
               <path d="M7.8 10.2l4.2 4.2 4.2-4.2"/>
               <path d="M4.2 16.4v2.2a2 2 0 002 2h11.6a2 2 0 002-2v-2.2"/>
             </svg>
-            <span data-k-guide-label>{{ section.settings.button_label }}</span>
+            <span>{{ section.settings.button_label }}</span>
           </a>
-
-          {%- if section.settings.read_label != blank -%}
-            <a class="k-btn k-btn--ghost k-guide__read" href="{{ pdf | escape }}" target="_blank" rel="noopener">
-              <span>{{ section.settings.read_label }}</span>
-              <svg class="k-guide__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M14 4h6v6"/>
-                <path d="M20 4l-8.4 8.4"/>
-                <path d="M18.5 14.4v4.1a2 2 0 01-2 2H5.5a2 2 0 01-2-2V7.5a2 2 0 012-2h4.1"/>
-              </svg>
-            </a>
-          {%- endif -%}
-        {%- else -%}
-          <p class="k-guide__pending">{{ section.settings.pending_note }}</p>
         {%- endif -%}
+
+        {%- if has_read -%}
+          {%- if has_pdf -%}
+            {%- assign read_class = 'k-btn k-btn--ghost k-guide__read' -%}
+          {%- else -%}
+            {%- assign read_class = 'k-btn k-btn--lg k-guide__read k-guide__read--solo' -%}
+          {%- endif -%}
+          <a class="{{ read_class }}" href="{{ read | escape }}" target="_blank" rel="noopener">
+            <span>{{ section.settings.read_label }}</span>
+            <svg class="k-guide__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M14 4h6v6"/>
+              <path d="M20 4l-8.4 8.4"/>
+              <path d="M18.5 14.4v4.1a2 2 0 01-2 2H5.5a2 2 0 01-2-2V7.5a2 2 0 012-2h4.1"/>
+            </svg>
+          </a>
+        {%- endif -%}
+
+        {%- unless has_guide -%}
+          <p class="k-guide__pending">{{ section.settings.pending_note }}</p>
+        {%- endunless -%}
       </div>
 
-      {%- if has_pdf and section.settings.note != blank -%}
+      {%- if has_guide and section.settings.note != blank -%}
         <p class="k-guide__note">
           <svg class="k-guide__icon k-guide__icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <rect x="4.5" y="10.5" width="15" height="10.5" rx="2"/>
@@ -303,84 +326,21 @@
   }
 </style>
 
-{%- if has_pdf -%}
+{%- if has_pdf and section.settings.auto_download -%}
   <script>
     (function () {
-      var section = document.getElementById('shopify-section-{{ section.id }}');
-      if (!section) return;
-
-      var lien = section.querySelector('[data-k-guide-download]');
-      if (!lien) return;
-
-      var etiquette = lien.querySelector('[data-k-guide-label]');
-      var texteRepos = etiquette ? etiquette.textContent : '';
-      var texteOccupe = {{ section.settings.busy_label | json }};
-      var nomFichier = {{ section.settings.file_name | json }};
-      var occupe = false;
-
-      // Le PDF est servi par le CDN Shopify, donc par un autre domaine que
-      // la boutique. Dans ce cas le navigateur ignore l attribut download
-      // et se contente d ouvrir le fichier. On le recupere donc nous-memes
-      // avant de declencher l enregistrement. Si le CDN refuse la lecture,
-      // on ouvre le fichier comme avant plutot que de ne rien faire.
-      var ouvrir = function () {
-        window.location.href = lien.href;
+      var lancer = function () {
+        var lien = document.querySelector('#shopify-section-{{ section.id }} [data-k-guide-download]');
+        if (!lien) return;
+        window.setTimeout(function () {
+          lien.click();
+        }, {{ section.settings.auto_delay | times: 1000 }});
       };
-
-      var reposer = function () {
-        occupe = false;
-        lien.removeAttribute('aria-busy');
-        if (etiquette) etiquette.textContent = texteRepos;
-      };
-
-      lien.addEventListener('click', function (evenement) {
-        if (occupe) {
-          evenement.preventDefault();
-          return;
-        }
-        if (!window.fetch || !window.URL || !window.URL.createObjectURL) return;
-
-        evenement.preventDefault();
-        occupe = true;
-        lien.setAttribute('aria-busy', 'true');
-        if (etiquette && texteOccupe) etiquette.textContent = texteOccupe;
-
-        window.fetch(lien.href, { mode: 'cors', credentials: 'omit' })
-          .then(function (reponse) {
-            if (!reponse.ok) throw new Error('reponse ' + reponse.status);
-            return reponse.blob();
-          })
-          .then(function (contenu) {
-            var adresse = window.URL.createObjectURL(contenu);
-            var temporaire = document.createElement('a');
-            temporaire.href = adresse;
-            temporaire.download = nomFichier || 'guide.pdf';
-            document.body.appendChild(temporaire);
-            temporaire.click();
-            document.body.removeChild(temporaire);
-            window.setTimeout(function () {
-              window.URL.revokeObjectURL(adresse);
-            }, 4000);
-            reposer();
-          })
-          .catch(function () {
-            reposer();
-            ouvrir();
-          });
-      });
-
-      {%- if section.settings.auto_download %}
-        var lancer = function () {
-          window.setTimeout(function () {
-            lien.click();
-          }, {{ section.settings.auto_delay | times: 1000 }});
-        };
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', lancer);
-        } else {
-          lancer();
-        }
-      {%- endif %}
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', lancer);
+      } else {
+        lancer();
+      }
     })();
   </script>
 {%- endif -%}
@@ -397,36 +357,28 @@
     {
       "type": "text",
       "id": "pdf_url",
-      "label": "Adresse du guide",
-      "info": "Adresse du PDF téléversé dans Contenu, Fichiers. Laisser vide tant que le guide n'est pas prêt."
+      "label": "Adresse de téléchargement",
+      "info": "Adresse du PDF téléversé dans Contenu, Fichiers. Vide : seul le bouton de lecture reste affiché."
     },
     { "type": "text", "id": "button_label", "label": "Bouton de téléchargement", "default": "Télécharger le guide" },
     {
       "type": "text",
-      "id": "busy_label",
-      "label": "Libellé pendant le téléchargement",
-      "info": "Affiché le temps que le fichier soit récupéré.",
-      "default": "Préparation du guide…"
-    },
-    {
-      "type": "text",
-      "id": "file_name",
-      "label": "Nom du fichier enregistré",
-      "info": "Nom que verra le client dans ses téléchargements. Terminez par .pdf.",
-      "default": "Guide-Kemia-Lab.pdf"
+      "id": "read_url",
+      "label": "Adresse de lecture en ligne",
+      "info": "Vide : le bouton de lecture ouvre l'adresse de téléchargement."
     },
     {
       "type": "text",
       "id": "read_label",
-      "label": "Second bouton",
-      "info": "Ouvre le guide dans un onglet au lieu de le télécharger. Vide pour n'afficher que le bouton principal.",
-      "default": "Lire en ligne"
+      "label": "Bouton de lecture",
+      "info": "Ouvre le guide dans un onglet. Vide pour n'afficher que le bouton de téléchargement.",
+      "default": "Lire le guide"
     },
     {
       "type": "text",
       "id": "pending_note",
       "label": "Message sans guide",
-      "info": "Affiché tant qu'aucune adresse n'est renseignée.",
+      "info": "Affiché tant qu'aucune des deux adresses n'est renseignée.",
       "default": "Le guide sera disponible ici très prochainement."
     },
     { "type": "header", "content": "Téléchargement automatique" },
