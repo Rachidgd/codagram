@@ -47,7 +47,7 @@
           <a
             class="k-btn k-btn--lg k-guide__cta"
             href="{{ pdf | escape }}"
-            download
+            download="{{ section.settings.file_name | escape }}"
             data-k-guide-download
           >
             <svg class="k-guide__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -55,7 +55,7 @@
               <path d="M7.8 10.2l4.2 4.2 4.2-4.2"/>
               <path d="M4.2 16.4v2.2a2 2 0 002 2h11.6a2 2 0 002-2v-2.2"/>
             </svg>
-            <span>{{ section.settings.button_label }}</span>
+            <span data-k-guide-label>{{ section.settings.button_label }}</span>
           </a>
 
           {%- if section.settings.read_label != blank -%}
@@ -303,21 +303,84 @@
   }
 </style>
 
-{%- if has_pdf and section.settings.auto_download -%}
+{%- if has_pdf -%}
   <script>
     (function () {
-      var lancer = function () {
-        var lien = document.querySelector('#shopify-section-{{ section.id }} [data-k-guide-download]');
-        if (!lien) return;
-        window.setTimeout(function () {
-          lien.click();
-        }, {{ section.settings.auto_delay | times: 1000 }});
+      var section = document.getElementById('shopify-section-{{ section.id }}');
+      if (!section) return;
+
+      var lien = section.querySelector('[data-k-guide-download]');
+      if (!lien) return;
+
+      var etiquette = lien.querySelector('[data-k-guide-label]');
+      var texteRepos = etiquette ? etiquette.textContent : '';
+      var texteOccupe = {{ section.settings.busy_label | json }};
+      var nomFichier = {{ section.settings.file_name | json }};
+      var occupe = false;
+
+      // Le PDF est servi par le CDN Shopify, donc par un autre domaine que
+      // la boutique. Dans ce cas le navigateur ignore l attribut download
+      // et se contente d ouvrir le fichier. On le recupere donc nous-memes
+      // avant de declencher l enregistrement. Si le CDN refuse la lecture,
+      // on ouvre le fichier comme avant plutot que de ne rien faire.
+      var ouvrir = function () {
+        window.location.href = lien.href;
       };
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', lancer);
-      } else {
-        lancer();
-      }
+
+      var reposer = function () {
+        occupe = false;
+        lien.removeAttribute('aria-busy');
+        if (etiquette) etiquette.textContent = texteRepos;
+      };
+
+      lien.addEventListener('click', function (evenement) {
+        if (occupe) {
+          evenement.preventDefault();
+          return;
+        }
+        if (!window.fetch || !window.URL || !window.URL.createObjectURL) return;
+
+        evenement.preventDefault();
+        occupe = true;
+        lien.setAttribute('aria-busy', 'true');
+        if (etiquette && texteOccupe) etiquette.textContent = texteOccupe;
+
+        window.fetch(lien.href, { mode: 'cors', credentials: 'omit' })
+          .then(function (reponse) {
+            if (!reponse.ok) throw new Error('reponse ' + reponse.status);
+            return reponse.blob();
+          })
+          .then(function (contenu) {
+            var adresse = window.URL.createObjectURL(contenu);
+            var temporaire = document.createElement('a');
+            temporaire.href = adresse;
+            temporaire.download = nomFichier || 'guide.pdf';
+            document.body.appendChild(temporaire);
+            temporaire.click();
+            document.body.removeChild(temporaire);
+            window.setTimeout(function () {
+              window.URL.revokeObjectURL(adresse);
+            }, 4000);
+            reposer();
+          })
+          .catch(function () {
+            reposer();
+            ouvrir();
+          });
+      });
+
+      {%- if section.settings.auto_download %}
+        var lancer = function () {
+          window.setTimeout(function () {
+            lien.click();
+          }, {{ section.settings.auto_delay | times: 1000 }});
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', lancer);
+        } else {
+          lancer();
+        }
+      {%- endif %}
     })();
   </script>
 {%- endif -%}
@@ -338,6 +401,20 @@
       "info": "Adresse du PDF téléversé dans Contenu, Fichiers. Laisser vide tant que le guide n'est pas prêt."
     },
     { "type": "text", "id": "button_label", "label": "Bouton de téléchargement", "default": "Télécharger le guide" },
+    {
+      "type": "text",
+      "id": "busy_label",
+      "label": "Libellé pendant le téléchargement",
+      "info": "Affiché le temps que le fichier soit récupéré.",
+      "default": "Préparation du guide…"
+    },
+    {
+      "type": "text",
+      "id": "file_name",
+      "label": "Nom du fichier enregistré",
+      "info": "Nom que verra le client dans ses téléchargements. Terminez par .pdf.",
+      "default": "Guide-Kemia-Lab.pdf"
+    },
     {
       "type": "text",
       "id": "read_label",
