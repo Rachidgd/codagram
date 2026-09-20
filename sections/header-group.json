@@ -7,7 +7,7 @@
       "settings": {
         "afficher": true,
         "message": "Premier rendez-vous : bilan cutané offert, sans engagement.",
-        "libelle_lien": "Réserver",
+        "libelle_lien": "Prendre rendez-vous",
         "lien": ""
       }
     },
@@ -90,7 +90,7 @@
       "settings": {
         "libelle_protocoles": "Protocoles",
         "menu_secondaire": "main-menu",
-        "note_menu": "Chaque protocole commence par un bilan. Aucun soin n'est vendu sans indication.",
+        "note_menu": "Chaque protocole commence par un bilan. Aucun soin n'est préconisé sans indication.",
         "afficher_telephone": true
       }
     }

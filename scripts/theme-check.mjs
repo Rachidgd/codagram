@@ -146,6 +146,19 @@ function verifierTemplate(fichier) {
 for (const f of lister('templates', '.json')) verifierTemplate(f);
 for (const f of lister('sections', '.json')) verifierTemplate(f);
 
+/* ------------------------------ 2 bis. Liens internes cités par le thème
+   Un lien vers une page inexistante ne casse rien à la compilation : il
+   produit une 404 en production, et dans le fil d'Ariane structuré il
+   fait remonter une erreur dans la Search Console. On les liste pour
+   pouvoir les confronter au contenu réel de la boutique. */
+const liensInternes = new Set();
+for (const fichier of [...lister('templates', '.json'), ...lister('sections', '.json')]) {
+  for (const m of lire(fichier).matchAll(/\/(?:pages|blogs)\/[a-z0-9\-/]+/g)) liensInternes.add(m[0]);
+}
+for (const fichier of [...lister('sections', '.liquid'), ...lister('snippets', '.liquid')]) {
+  for (const m of lire(fichier).matchAll(/['"](\/(?:pages|blogs)\/[a-z0-9\-/]+)/g)) liensInternes.add(m[1]);
+}
+
 /* ------------------------------------------------------------- 3. Snippets */
 const snippets = new Set(lister('snippets', '.liquid').map((f) => basename(f, '.liquid')));
 const sourcesLiquid = [
