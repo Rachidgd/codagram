@@ -1,0 +1,530 @@
+{%- liquid
+  assign code = section.settings.code | strip
+  assign cle = section.id | handle | replace: '-', '_'
+  assign jours = section.settings.frequency
+-%}
+
+{%- if section.settings.enabled -%}
+  <div
+    class="k-launch{% unless section.settings.show_mobile %} k-launch--no-mobile{% endunless %}{% unless section.settings.show_desktop %} k-launch--no-desktop{% endunless %}"
+    id="k-launch-{{ section.id }}"
+    role="dialog"
+    aria-modal="true"
+    aria-label="{{ section.settings.heading | strip_html | escape }}"
+    data-k-launch
+    data-cle="kemia_launch_{{ cle }}"
+    data-delai="{{ section.settings.delay }}"
+    data-jours="{{ jours }}"
+    data-memoriser-vue="{% if section.settings.remember_on_view %}1{% else %}0{% endif %}"
+  >
+    <div class="k-launch__voile" data-k-launch-fermer></div>
+
+    <div class="k-launch__boite" role="document">
+      <button
+        class="k-launch__fermer"
+        type="button"
+        data-k-launch-fermer
+        aria-label="{{ section.settings.close_label | escape }}"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6.4 6.4l11.2 11.2"/>
+          <path d="M17.6 6.4L6.4 17.6"/>
+        </svg>
+      </button>
+
+      {%- if section.settings.image != blank -%}
+        <div class="k-launch__media">
+          <img
+            src="{{ section.settings.image | image_url: width: 760 }}"
+            srcset="{{ section.settings.image | image_url: width: 380 }} 380w, {{ section.settings.image | image_url: width: 760 }} 760w"
+            sizes="(min-width: 750px) 300px, 100vw"
+            alt=""
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
+
+      <div class="k-launch__corps">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="k-eyebrow k-launch__eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="k-h3 k-title-caps k-launch__titre">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <p class="k-text k-launch__texte">{{ section.settings.text }}</p>
+        {%- endif -%}
+
+        {%- if code != blank -%}
+          <div class="k-launch__code">
+            {%- if section.settings.code_label != blank -%}
+              <span class="k-launch__code-label">{{ section.settings.code_label }}</span>
+            {%- endif -%}
+            <div class="k-launch__code-ligne">
+              <span class="k-launch__code-valeur" data-k-launch-code>{{ code }}</span>
+              <button
+                class="k-launch__copier"
+                type="button"
+                data-k-launch-copier
+                data-libelle="{{ section.settings.copy_label | escape }}"
+                data-libelle-ok="{{ section.settings.copied_label | escape }}"
+              >
+                {{ section.settings.copy_label }}
+              </button>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.cta_label != blank -%}
+          <a
+            class="k-btn k-btn--block k-launch__cta"
+            href="{{ section.settings.cta_link | default: routes.root_url }}"
+            data-k-launch-cta
+          >
+            {{ section.settings.cta_label }}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.refuse_label != blank -%}
+          <button class="k-launch__refus" type="button" data-k-launch-fermer>
+            {{ section.settings.refuse_label }}
+          </button>
+        {%- endif -%}
+
+        {%- if section.settings.legal != blank -%}
+          <p class="k-launch__legal">{{ section.settings.legal }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #shopify-section-{{ section.id }} .k-launch {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__voile {
+      position: absolute;
+      inset: 0;
+      background: rgba(18, 20, 24, 0.55);
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__boite {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: min(100%, 420px);
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      background: var(--k-surface, #fff);
+      border-radius: var(--k-radius-card, 10px);
+      box-shadow: 0 24px 60px rgba(18, 20, 24, 0.22);
+      transform: translateY(14px);
+      transition: transform 0.25s ease;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch.is-open .k-launch__boite {
+      transform: translateY(0);
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__fermer {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: var(--k-surface, #fff);
+      color: var(--k-ink, #1B1B1B);
+      cursor: pointer;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__fermer svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--k-radius-card, 10px) var(--k-radius-card, 10px) 0 0;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__corps {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 30px 26px 26px;
+      text-align: center;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__titre {
+      margin: 0;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__texte {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__code {
+      width: 100%;
+      margin-top: 2px;
+      padding: 14px 16px;
+      border: 1px dashed var(--k-gold, #B9802A);
+      border-radius: var(--k-radius-card, 10px);
+      background: var(--k-gold-soft, #F6EEE1);
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__code-label {
+      display: block;
+      margin-bottom: 7px;
+      font-family: var(--k-font-heading, inherit);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--k-body, #5C534A);
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__code-ligne {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__code-valeur {
+      font-family: var(--k-font-heading, inherit);
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      line-height: 1.1;
+      color: var(--k-ink, #1B1B1B);
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__copier {
+      padding: 0;
+      border: 0;
+      background: none;
+      font-family: var(--k-font-heading, inherit);
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--k-gold, #B9802A);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__cta {
+      margin-top: 4px;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__refus {
+      padding: 0;
+      border: 0;
+      background: none;
+      font-size: 12.5px;
+      color: var(--k-body, #5C534A);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    #shopify-section-{{ section.id }} .k-launch__legal {
+      margin: 0;
+      font-size: 11.5px;
+      line-height: 1.5;
+      color: var(--k-body, #5C534A);
+    }
+
+    @media screen and (max-width: 749px) {
+      #shopify-section-{{ section.id }} .k-launch--no-mobile {
+        display: none;
+      }
+
+      #shopify-section-{{ section.id }} .k-launch__corps {
+        padding: 26px 20px 22px;
+      }
+
+      #shopify-section-{{ section.id }} .k-launch__code-valeur {
+        font-size: 21px;
+      }
+    }
+
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} .k-launch--no-desktop {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #shopify-section-{{ section.id }} .k-launch,
+      #shopify-section-{{ section.id }} .k-launch__boite {
+        transition: none;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      var racine = document.getElementById('shopify-section-{{ section.id }}');
+      if (!racine) return;
+      var boite = racine.querySelector('[data-k-launch]');
+      if (!boite || boite.dataset.kPret === '1') return;
+      boite.dataset.kPret = '1';
+
+      var editeur = window.Shopify && window.Shopify.designMode;
+      var cle = boite.getAttribute('data-cle');
+      var jours = parseInt(boite.getAttribute('data-jours'), 10) || 30;
+      var delai = (parseFloat(boite.getAttribute('data-delai')) || 0) * 1000;
+      var memoriserVue = boite.getAttribute('data-memoriser-vue') === '1';
+      var duree = jours * 86400;
+      var minuteur = null;
+      var ouvreur = null;
+      var overflowAvant = '';
+
+      function lireCookie() {
+        var morceaux = ('; ' + document.cookie).split('; ' + cle + '=');
+        return morceaux.length === 2 ? morceaux.pop().split(';').shift() : '';
+      }
+
+      function dejaVu() {
+        if (editeur) return false;
+        var valeur = '';
+        try { valeur = window.localStorage.getItem(cle) || ''; } catch (erreur) {}
+        if (!valeur) valeur = lireCookie();
+        var pose = parseInt(valeur, 10);
+        if (!pose) return false;
+        return Date.now() - pose < duree * 1000;
+      }
+
+      function memoriser() {
+        if (editeur) return;
+        var maintenant = String(Date.now());
+        try { document.cookie = cle + '=' + maintenant + ';path=/;max-age=' + duree + ';SameSite=Lax'; } catch (erreur) {}
+        try { window.localStorage.setItem(cle, maintenant); } catch (erreur) {}
+      }
+
+      function focusables() {
+        return Array.prototype.filter.call(
+          boite.querySelectorAll('a[href], button:not([disabled]), input, select, textarea'),
+          function (el) { return el.offsetWidth > 0 || el.offsetHeight > 0; }
+        );
+      }
+
+      function auClavier(evenement) {
+        if (evenement.key === 'Escape') {
+          fermer();
+          return;
+        }
+        if (evenement.key !== 'Tab') return;
+        var liste = focusables();
+        if (!liste.length) return;
+        var premier = liste[0];
+        var dernier = liste[liste.length - 1];
+        if (evenement.shiftKey && document.activeElement === premier) {
+          evenement.preventDefault();
+          dernier.focus();
+        } else if (!evenement.shiftKey && document.activeElement === dernier) {
+          evenement.preventDefault();
+          premier.focus();
+        }
+      }
+
+      function ouvrir() {
+        if (boite.classList.contains('is-open')) return;
+        ouvreur = document.activeElement;
+        boite.classList.add('is-open');
+        overflowAvant = document.documentElement.style.overflow;
+        document.documentElement.style.overflow = 'hidden';
+        document.addEventListener('keydown', auClavier);
+        if (memoriserVue) memoriser();
+        window.requestAnimationFrame(function () {
+          var cible = boite.querySelector('[data-k-launch-copier]') || focusables()[0];
+          if (cible) cible.focus();
+        });
+      }
+
+      function fermer() {
+        if (!boite.classList.contains('is-open')) return;
+        memoriser();
+        boite.classList.remove('is-open');
+        document.documentElement.style.overflow = overflowAvant;
+        document.removeEventListener('keydown', auClavier);
+        if (ouvreur && document.contains(ouvreur)) ouvreur.focus();
+      }
+
+      boite.addEventListener('click', function (evenement) {
+        if (evenement.target.closest('[data-k-launch-fermer]')) {
+          evenement.preventDefault();
+          fermer();
+          return;
+        }
+        if (evenement.target.closest('[data-k-launch-cta]')) {
+          memoriser();
+          return;
+        }
+        var copier = evenement.target.closest('[data-k-launch-copier]');
+        if (!copier) return;
+        evenement.preventDefault();
+        memoriser();
+        var valeur = (boite.querySelector('[data-k-launch-code]') || {}).textContent || '';
+        valeur = valeur.replace(/^\s+|\s+$/g, '');
+        var fini = function () {
+          copier.textContent = copier.getAttribute('data-libelle-ok');
+          window.setTimeout(function () {
+            copier.textContent = copier.getAttribute('data-libelle');
+          }, 2500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(valeur).then(fini, function () { recopierVieux(valeur, fini); });
+        } else {
+          recopierVieux(valeur, fini);
+        }
+      });
+
+      function recopierVieux(valeur, fini) {
+        var zone = document.createElement('textarea');
+        zone.value = valeur;
+        zone.setAttribute('readonly', '');
+        zone.style.position = 'fixed';
+        zone.style.top = '-999px';
+        document.body.appendChild(zone);
+        zone.select();
+        try { document.execCommand('copy'); fini(); } catch (erreur) {}
+        document.body.removeChild(zone);
+      }
+
+      function programmer() {
+        window.clearTimeout(minuteur);
+        if (dejaVu()) return;
+        minuteur = window.setTimeout(function () {
+          if (dejaVu()) return;
+          if (window.KemiaOverlay && window.KemiaOverlay.active && window.KemiaOverlay.active.length) return;
+          ouvrir();
+        }, delai);
+      }
+
+      if (editeur) {
+        document.addEventListener('shopify:section:select', function (evenement) {
+          if (evenement.detail && evenement.target === racine) ouvrir();
+        });
+        document.addEventListener('shopify:section:deselect', function (evenement) {
+          if (evenement.detail && evenement.target === racine) fermer();
+        });
+      }
+
+      programmer();
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Popup lancement",
+  "class": "k-launch-section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Fenêtre d'accueil pour le lancement. Si le popup email est actif, désactivez-le pour éviter deux fenêtres l'une sur l'autre."
+    },
+    { "type": "checkbox", "id": "enabled", "label": "Activer", "default": true },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Lancement" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Kemia Lab ouvre ses portes" },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Texte",
+      "default": "Pour fêter le lancement, la livraison est offerte sur votre première commande."
+    },
+    { "type": "header", "content": "Code promo" },
+    { "type": "text", "id": "code_label", "label": "Mention au-dessus du code", "default": "Votre code" },
+    { "type": "text", "id": "code", "label": "Code promo", "default": "4VS" },
+    { "type": "text", "id": "copy_label", "label": "Bouton copier", "default": "Copier" },
+    { "type": "text", "id": "copied_label", "label": "Confirmation de copie", "default": "Code copié" },
+    { "type": "header", "content": "Boutons" },
+    { "type": "text", "id": "cta_label", "label": "Bouton principal", "default": "Profiter de l'offre" },
+    { "type": "url", "id": "cta_link", "label": "Lien du bouton" },
+    {
+      "type": "text",
+      "id": "refuse_label",
+      "label": "Lien de refus",
+      "info": "Vide pour n'afficher que la croix de fermeture.",
+      "default": "Non merci"
+    },
+    { "type": "text", "id": "close_label", "label": "Libellé de la croix", "default": "Fermer" },
+    {
+      "type": "textarea",
+      "id": "legal",
+      "label": "Mention légale",
+      "default": "Offre valable sur votre première commande, non cumulable avec une autre promotion."
+    },
+    { "type": "header", "content": "Comportement" },
+    {
+      "type": "range",
+      "id": "delay",
+      "label": "Délai avant affichage",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "s",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "frequency",
+      "label": "Ne pas réafficher pendant",
+      "min": 1,
+      "max": 90,
+      "step": 1,
+      "unit": "j",
+      "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "remember_on_view",
+      "label": "Compter comme vu dès l'affichage",
+      "default": true,
+      "info": "Décoché, le popup revient tant que le client ne l'a pas fermé lui-même."
+    },
+    { "type": "checkbox", "id": "show_desktop", "label": "Afficher sur ordinateur", "default": true },
+    { "type": "checkbox", "id": "show_mobile", "label": "Afficher sur mobile", "default": true }
+  ],
+  "presets": [{ "name": "Popup lancement" }]
+}
+{% endschema %}
