@@ -884,25 +884,30 @@ class ElySommaire extends HTMLElement {
 
     this.signal = new AbortController();
 
-    titres.forEach((titre, i) => {
-      if (!titre.id) {
-        const base =
-          titre.textContent
-            .toLowerCase()
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '')
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/^-+|-+$/g, '')
-            .slice(0, 48) || 'section';
-        titre.id = `${base}-${i}`;
-      }
-      const lien = document.createElement('a');
-      lien.className = 'sommaire__lien';
-      lien.href = `#${titre.id}`;
-      lien.dataset.niveau = titre.tagName === 'H3' ? '3' : '2';
-      lien.textContent = titre.textContent;
-      nav.appendChild(lien);
-    });
+    // Si Liquid a d\u00e9j\u00e0 \u00e9crit la liste, on n'y touche pas : elle est dans la page
+    // servie. Sinon, on la construit, pour les articles dont les titres n'ont
+    // pas d'identifiant.
+    if (!nav.children.length) {
+      titres.forEach((titre, i) => {
+        if (!titre.id) {
+          const base =
+            titre.textContent
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-+|-+$/g, '')
+              .slice(0, 48) || 'section';
+          titre.id = `${base}-${i}`;
+        }
+        const lien = document.createElement('a');
+        lien.className = 'sommaire__lien';
+        lien.href = `#${titre.id}`;
+        lien.dataset.niveau = titre.tagName === 'H3' ? '3' : '2';
+        lien.textContent = titre.textContent;
+        nav.appendChild(lien);
+      });
+    }
 
     this.hidden = false;
 

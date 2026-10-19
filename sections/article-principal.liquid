@@ -69,10 +69,34 @@
   <div class="lisiere section">
     <div class="grille-12 gap-y-10">
       {%- if section.settings.sommaire -%}
+        {%- comment -%}
+          Le sommaire est écrit par Liquid, à partir des titres de niveau 2 qui
+          portent un identifiant dans le corps de l'article. Il est donc présent
+          dans la page servie, lisible sans script et lu par les moteurs. Le
+          composant se contente alors de suivre la lecture. S'il ne trouve
+          aucun identifiant, il construit la liste lui-même, comme avant.
+        {%- endcomment -%}
+        {%- assign tranches = article.content | split: '<h2 id="' -%}
+        {%- assign jalons = tranches.size | minus: 1 -%}
         <aside class="col-span-12 lg:col-span-3 lg:order-2 lg:col-start-10">
-          <ely-sommaire class="sommaire block" data-cible="#corps-article" hidden>
+          <ely-sommaire
+            class="sommaire block"
+            data-cible="#corps-article"
+            {% if jalons < 2 %}hidden{% endif %}
+          >
             <p class="surtitre">{{ 'journal.sommaire' | t }}</p>
-            <nav class="sommaire__liste" aria-label="{{ 'journal.sommaire' | t }}"></nav>
+            <nav class="sommaire__liste" aria-label="{{ 'journal.sommaire' | t }}">
+              {%- if jalons > 1 -%}
+                {%- for tranche in tranches offset: 1 -%}
+                  {%- assign ancre = tranche | split: '"' | first -%}
+                  {%- assign segments = tranche | split: '>' -%}
+                  {%- assign intitule = segments[1] | split: '</h2' | first -%}
+                  <a class="sommaire__lien" href="#{{ ancre }}" data-niveau="2">
+                    {{- intitule | strip_html | strip -}}
+                  </a>
+                {%- endfor -%}
+              {%- endif -%}
+            </nav>
           </ely-sommaire>
         </aside>
       {%- endif -%}
