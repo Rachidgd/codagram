@@ -546,7 +546,8 @@
         "surtitre": "Retours",
         "titre": "Ce qu'en disent celles et ceux qui reviennent.",
         "libelle_avis": "Lire tous les avis"
-      }
+      },
+      "disabled": true
     },
     "journal": {
       "type": "journal-apercu",
@@ -714,6 +715,7 @@
     "orientation",
     "expertise",
     "journal",
-    "questions"
+    "questions",
+    "temoignages"
   ]
 }

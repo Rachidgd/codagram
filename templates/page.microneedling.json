@@ -102,7 +102,8 @@
         "surtitre": "Le soin en images",
         "titre": "Ce que vous verrez en arrivant.",
         "chapo": "Le lieu, le matériel et le geste, photographiés au cabinet. Aucune image de banque : ce que vous voyez ici est ce que vous trouverez sur place."
-      }
+      },
+      "disabled": true
     },
     "avant_apres": {
       "type": "avant-apres",
@@ -440,6 +441,7 @@
     "tarifs",
     "questions",
     "lectures",
-    "associes"
+    "associes",
+    "en_images"
   ]
 }

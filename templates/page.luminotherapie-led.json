@@ -102,7 +102,8 @@
         "surtitre": "Le soin en images",
         "titre": "Ce que vous verrez en arrivant.",
         "chapo": "Le lieu, le matériel et le geste, photographiés au cabinet. Aucune image de banque : ce que vous voyez ici est ce que vous trouverez sur place."
-      }
+      },
+      "disabled": true
     },
     "avant_apres": {
       "type": "avant-apres",
@@ -140,7 +141,8 @@
         "libelle_apres": "Après",
         "libelle_curseur": "Faire glisser pour comparer l'avant et l'après",
         "mention": "Photographies non retouchées, publiées avec l'accord écrit des personnes concernées. Les résultats présentés sont individuels : ils dépendent de la peau, de l'âge, du mode de vie et de l'observance du protocole, et ne constituent pas une garantie."
-      }
+      },
+      "disabled": true
     },
     "deroule": {
       "type": "protocole-deroule",
@@ -439,6 +441,8 @@
     "tarifs",
     "questions",
     "lectures",
-    "associes"
+    "associes",
+    "en_images",
+    "avant_apres"
   ]
 }

@@ -170,6 +170,19 @@ function verifierTemplate(fichier) {
   for (const id of data.order || []) {
     if (!sections[id]) err(`${nom} — order cite la section « ${id} » qui n'existe pas`);
   }
+
+  // Shopify refuse le fichier entier si une section n'apparaît pas dans
+  // « order », et l'import depuis une archive échoue sans rien dire. Pour
+  // masquer une section, on la laisse dans l'ordre et on la marque
+  // « disabled » : sa configuration survit et l'éditeur la retrouve.
+  const ordre = new Set(data.order || []);
+  for (const cle of Object.keys(sections)) {
+    if (!ordre.has(cle)) {
+      err(
+        `${nom} — la section « ${cle} » n'est pas dans order, Shopify refuse le fichier (la masquer avec "disabled": true en la laissant dans l'ordre)`
+      );
+    }
+  }
 }
 
 for (const f of lister('templates', '.json')) verifierTemplate(f);
