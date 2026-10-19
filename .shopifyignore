@@ -1,0 +1,11 @@
+# Fichiers du dépôt qui n'appartiennent pas au thème.
+src/
+scripts/
+journal/
+apps/
+node_modules/
+package.json
+package-lock.json
+README.md
+tailwind.config.*
+codagram.xcworkspace.zip

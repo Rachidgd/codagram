@@ -58,6 +58,12 @@ for (const fichier of lister('sections', '.liquid')) {
     schemas.set(type, {
       blocs: new Set((schema.blocks || []).map((b) => b.type)),
       reglages: new Set((schema.settings || []).map((s) => s.id).filter(Boolean)),
+      reglagesBlocs: new Map(
+        (schema.blocks || []).map((b) => [
+          b.type,
+          new Set((b.settings || []).map((s) => s.id).filter(Boolean)),
+        ])
+      ),
     });
 
     // Shopify rejette une valeur par défaut vide sur les champs de saisie
@@ -126,9 +132,32 @@ function verifierTemplate(fichier) {
       err(`${nom} — section « ${cle} » référence le type inexistant « ${type} »`);
       continue;
     }
+    // Un réglage que la section ne déclare pas est retiré par Shopify à
+    // l'import, sans un mot. Le gabarit paraît alors complet dans le dépôt
+    // alors que la valeur n'atteint jamais la page : c'est ainsi qu'un libellé
+    // de bouton est resté mort pendant des semaines.
+    const declares = schemas.get(type).reglages;
+    for (const id of Object.keys(section.settings || {})) {
+      if (!declares.has(id)) {
+        err(`${nom} — section « ${cle} » pose le réglage « ${id} », que « ${type} » ne déclare pas`);
+      }
+    }
+
+    const blocsDeclares = schemas.get(type).reglagesBlocs;
+
     for (const [cleBloc, bloc] of Object.entries(section.blocks || {})) {
       if (!schemas.get(type).blocs.has(bloc.type)) {
         err(`${nom} — bloc « ${cleBloc} » de type « ${bloc.type} » absent du schéma de « ${type} »`);
+        continue;
+      }
+      const attendus = blocsDeclares.get(bloc.type);
+      if (!attendus) continue;
+      for (const id of Object.keys(bloc.settings || {})) {
+        if (!attendus.has(id)) {
+          err(
+            `${nom} — bloc « ${cleBloc} » pose le réglage « ${id} », que le bloc « ${bloc.type} » de « ${type} » ne déclare pas`
+          );
+        }
       }
     }
     for (const id of section.block_order || []) {
