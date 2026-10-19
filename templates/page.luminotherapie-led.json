@@ -72,21 +72,21 @@
           "settings": {
             "ratio": "paysage",
             "large": true,
-            "legende": "À photographier : la cabine en lumière naturelle, sans personne dans le champ."
+            "legende": "La cabine, en lumière naturelle."
           }
         },
         "g2": {
           "type": "image",
           "settings": {
             "ratio": "portrait",
-            "legende": "À photographier : l'appareil utilisé pour ce protocole, en plan rapproché."
+            "legende": "L'appareil utilisé pour ce protocole."
           }
         },
         "g3": {
           "type": "image",
           "settings": {
             "ratio": "portrait",
-            "legende": "À photographier : le geste en cours, mains et zone traitée, sans visage identifiable."
+            "legende": "Le geste, en cours de séance."
           }
         }
       },
@@ -111,7 +111,7 @@
           "type": "comparaison",
           "settings": {
             "protocole": "Luminothérapie LED",
-            "detail": "Séances et délai à renseigner",
+            "detail": "",
             "alt_apres": ""
           }
         },
@@ -119,7 +119,7 @@
           "type": "comparaison",
           "settings": {
             "protocole": "Luminothérapie LED",
-            "detail": "Séances et délai à renseigner",
+            "detail": "",
             "alt_apres": ""
           }
         }
@@ -434,8 +434,6 @@
   "order": [
     "entete",
     "benefices",
-    "en_images",
-    "avant_apres",
     "deroule",
     "indications",
     "tarifs",

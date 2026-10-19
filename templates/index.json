@@ -257,9 +257,10 @@
         "c3": {
           "type": "chiffre",
           "settings": {
-            "valeur": "94",
-            "suffixe": "%",
-            "libelle": "des plans de soin sont réajustés en cours de protocole"
+            "valeur": "2",
+            "prefixe": "",
+            "suffixe": "",
+            "libelle": "cabinets, à Paris et à Casablanca"
           }
         },
         "c4": {
@@ -282,7 +283,7 @@
         "index": "05",
         "surtitre": "Ce que ça donne",
         "titre": "Des chiffres tenus, pas des promesses.",
-        "source": "Relevés internes sur les protocoles conduits au cabinet. Les résultats varient selon la peau, l'âge, le mode de vie et l'observance du protocole. Aucun résultat n'est garanti."
+        "source": "Ces repères décrivent la méthode du cabinet, et non des résultats mesurés. Le résultat d'un protocole varie selon la peau, l'âge, le mode de vie et l'observance, et aucun n'est garanti."
       }
     },
     "orientation": {
@@ -655,25 +656,31 @@
         "c1": {
           "type": "comparaison",
           "settings": {
-            "protocole": "Protocole à renseigner",
-            "detail": "Séances et délai à renseigner",
-            "alt_apres": ""
+            "image_avant": "shopify://shop_images/IMG_8947.jpg",
+            "image_apres": "shopify://shop_images/IMG_8948.jpg",
+            "alt_apres": "Teint après une séance d'Hydrofacial, photographié au cabinet dans le même cadrage et la même lumière que la photo précédente.",
+            "protocole": "Hydrofacial",
+            "detail": ""
           }
         },
         "c2": {
           "type": "comparaison",
           "settings": {
-            "protocole": "Protocole à renseigner",
-            "detail": "Séances et délai à renseigner",
-            "alt_apres": ""
+            "image_avant": "shopify://shop_images/0ee3472d-8611-4cb9-8347-8d3ee323f0fe.jpg",
+            "image_apres": "shopify://shop_images/2f1da640-e7b8-437c-893f-51822a20733d.jpg",
+            "alt_apres": "Ovale après un protocole de HIFU et radiofréquence, photographié au cabinet dans le même cadrage et la même lumière que la photo précédente.",
+            "protocole": "HIFU et radiofréquence",
+            "detail": ""
           }
         },
         "c3": {
           "type": "comparaison",
           "settings": {
-            "protocole": "Protocole à renseigner",
-            "detail": "Séances et délai à renseigner",
-            "alt_apres": ""
+            "image_avant": "shopify://shop_images/80ef9eec-ef20-4bf1-aac8-916da32f94e7.jpg",
+            "image_apres": "shopify://shop_images/edc06c75-bff5-4bca-812c-82f67058b8e6.jpg",
+            "alt_apres": "Peau après quatre séances de microneedling, photographiée au cabinet dans le même cadrage et la même lumière que la photo précédente.",
+            "protocole": "Microneedling",
+            "detail": "4 séances"
           }
         }
       },
@@ -689,7 +696,7 @@
         "index": "06",
         "surtitre": "Ce que ça donne",
         "titre": "Faites glisser, jugez par vous-même.",
-        "chapo": "Photos prises au cabinet, dans les mêmes conditions de lumière et de cadrage, sans retouche. Le protocole suivi et le nombre de séances figurent sous chaque comparaison.",
+        "chapo": "Photos prises au cabinet, dans les mêmes conditions de lumière et de cadrage, sans retouche. Le protocole suivi figure sous chaque comparaison.",
         "libelle_avant": "Avant",
         "libelle_apres": "Après",
         "libelle_curseur": "Faire glisser pour comparer l'avant et l'après",
@@ -706,7 +713,6 @@
     "preuves",
     "orientation",
     "expertise",
-    "temoignages",
     "journal",
     "questions"
   ]

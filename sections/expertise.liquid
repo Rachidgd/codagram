@@ -9,29 +9,47 @@
 <section
   id="{{ section.settings.ancre | default: 'expertise' | handleize }}" class="section {{ section.settings.surface }}">
   <div class="lisiere">
+    {%- comment -%}
+      Tant qu'il n'y a ni portrait ni nom, la colonne de gauche n'a rien à
+      montrer : elle laisserait un cadre vide au milieu de la page d'accueil.
+      Le texte prend alors toute la mesure.
+    {%- endcomment -%}
+    {%- liquid
+      assign a_portrait = false
+      if section.settings.portrait != blank or section.settings.nom != blank
+        assign a_portrait = true
+      endif
+    -%}
+
     <div class="grille-12 gap-y-10">
-      <div class="col-span-12 md:col-span-5 lg:col-span-4">
-        <div data-reveal>
-          {%- render 'image-reactive',
-            image: section.settings.portrait,
-            ratio: 'portrait',
-            tailles: '(min-width: 64rem) 30vw, (min-width: 48rem) 42vw, 92vw',
-            alt: section.settings.nom,
-            zoom: true
-          -%}
+      {%- if a_portrait -%}
+        <div class="col-span-12 md:col-span-5 lg:col-span-4">
+          {%- if section.settings.portrait != blank -%}
+            <div data-reveal>
+              {%- render 'image-reactive',
+                image: section.settings.portrait,
+                ratio: 'portrait',
+                tailles: '(min-width: 64rem) 30vw, (min-width: 48rem) 42vw, 92vw',
+                alt: section.settings.nom,
+                zoom: true
+              -%}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.nom != blank -%}
+            <div class="mt-5 flex flex-col gap-1" data-reveal style="--reveal-delay: 80ms">
+              <p class="font-display text-lg">{{ section.settings.nom }}</p>
+              {%- if section.settings.fonction != blank -%}
+                <p class="text-xs uppercase tracking-[0.14em] text-grain">{{ section.settings.fonction }}</p>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
         </div>
+      {%- endif -%}
 
-        {%- if section.settings.nom != blank -%}
-          <div class="mt-5 flex flex-col gap-1" data-reveal style="--reveal-delay: 80ms">
-            <p class="font-display text-lg">{{ section.settings.nom }}</p>
-            {%- if section.settings.fonction != blank -%}
-              <p class="text-xs uppercase tracking-[0.14em] text-grain">{{ section.settings.fonction }}</p>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
-      </div>
-
-      <div class="col-span-12 md:col-span-6 md:col-start-7 lg:col-span-6 lg:col-start-7">
+      <div
+        class="col-span-12 {% if a_portrait %}md:col-span-6 md:col-start-7 lg:col-span-6 lg:col-start-7{% else %}lg:col-span-8{% endif %}"
+      >
         {%- if section.settings.surtitre != blank -%}
           <p
             class="surtitre"

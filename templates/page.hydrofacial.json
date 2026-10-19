@@ -72,21 +72,21 @@
           "settings": {
             "ratio": "paysage",
             "large": true,
-            "legende": "À photographier : la cabine en lumière naturelle, sans personne dans le champ."
+            "legende": "La cabine, en lumière naturelle."
           }
         },
         "g2": {
           "type": "image",
           "settings": {
             "ratio": "portrait",
-            "legende": "À photographier : l'appareil utilisé pour ce protocole, en plan rapproché."
+            "legende": "L'appareil utilisé pour ce protocole."
           }
         },
         "g3": {
           "type": "image",
           "settings": {
             "ratio": "portrait",
-            "legende": "À photographier : le geste en cours, mains et zone traitée, sans visage identifiable."
+            "legende": "Le geste, en cours de séance."
           }
         }
       },
@@ -110,23 +110,16 @@
         "c1": {
           "type": "comparaison",
           "settings": {
+            "image_avant": "shopify://shop_images/IMG_8947.jpg",
+            "image_apres": "shopify://shop_images/IMG_8948.jpg",
+            "alt_apres": "Teint après une séance d'Hydrofacial, photographié au cabinet dans le même cadrage et la même lumière que la photo précédente.",
             "protocole": "Hydrofacial",
-            "detail": "Séances et délai à renseigner",
-            "alt_apres": ""
-          }
-        },
-        "c2": {
-          "type": "comparaison",
-          "settings": {
-            "protocole": "Hydrofacial",
-            "detail": "Séances et délai à renseigner",
-            "alt_apres": ""
+            "detail": ""
           }
         }
       },
       "block_order": [
-        "c1",
-        "c2"
+        "c1"
       ],
       "settings": {
         "surface": "surface-craie",
@@ -135,7 +128,7 @@
         "index": "03",
         "surtitre": "Résultats",
         "titre": "Faites glisser, jugez par vous-même.",
-        "chapo": "Photos prises au cabinet, dans les mêmes conditions de lumière et de cadrage, sans retouche. Le nombre de séances est indiqué sous chaque comparaison.",
+        "chapo": "Photo prise au cabinet, dans les mêmes conditions de lumière et de cadrage, sans retouche.",
         "libelle_avant": "Avant",
         "libelle_apres": "Après",
         "libelle_curseur": "Faire glisser pour comparer l'avant et l'après",
@@ -443,7 +436,6 @@
   "order": [
     "entete",
     "benefices",
-    "en_images",
     "avant_apres",
     "deroule",
     "indications",
