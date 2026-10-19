@@ -246,30 +246,78 @@
     display: none;
   }
 
-  /* Le contenu reste lisible si le JS ne se charge pas : aucune opacité 0
-     permanente n'est posée en CSS seul — elle est conditionnée par [data-js]. */
+  /* L'emphase se marque à 500, jamais au gras du navigateur : les deux fichiers
+     de police s'arrêtent à cette graisse, et le texte garde sa finesse. */
+  strong,
+  b {
+    font-weight: 500;
+  }
+
+  /* Le contenu est visible par défaut, script ou pas. Ce sont les blocs situés
+     sous la ligne de flottaison que le script masque lui-même, avant que le
+     lecteur n'y arrive : le haut de page se peint donc sans attendre le
+     module, et le plus grand élément affiché ne dépend plus du JavaScript. */
   [data-reveal] {
     opacity: 1;
   }
-  html[data-js="on"] [data-reveal] {
+  [data-reveal].a-reveler {
     opacity: 0;
     transform: translate3d(0, 14px, 0);
     transition:
       opacity var(--dur-base) var(--ease-ely) var(--reveal-delay, 0ms),
       transform var(--dur-base) var(--ease-ely) var(--reveal-delay, 0ms);
-    will-change: opacity, transform;
   }
-  html[data-js="on"] [data-reveal].est-visible {
+  [data-reveal].a-reveler.est-visible {
     opacity: 1;
     transform: none;
-    will-change: auto;
+  }
+
+  /* Haut de page : l'apparition passe par une animation CSS, qui démarre à la
+     première peinture. Le navigateur enregistre l'affichage dès les premières
+     images de la transition, là où une opacité nulle maintenue jusqu'au module
+     décalait la mesure de plusieurs centaines de millisecondes. */
+  [data-reveal-amorce] [data-reveal] {
+    animation: ely-amorce var(--dur-base) var(--ease-ely) var(--reveal-delay, 0ms) both;
+  }
+
+  /* Décalage des groupes du haut de page : porté par le CSS, puisque le script
+     n'a pas encore tourné au moment où l'animation démarre. */
+  [data-reveal-amorce] [data-reveal-groupe] > [data-reveal]:nth-child(2) {
+    --reveal-delay: 70ms;
+  }
+  [data-reveal-amorce] [data-reveal-groupe] > [data-reveal]:nth-child(3) {
+    --reveal-delay: 140ms;
+  }
+  [data-reveal-amorce] [data-reveal-groupe] > [data-reveal]:nth-child(4) {
+    --reveal-delay: 210ms;
+  }
+  [data-reveal-amorce] [data-reveal-groupe] > [data-reveal]:nth-child(n + 5) {
+    --reveal-delay: 280ms;
+  }
+
+  @keyframes ely-amorce {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 14px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* L'interrupteur d'apparitions de l'éditeur de thème coupe aussi l'amorce. */
+  body[data-anim-apparitions="false"] [data-reveal-amorce] [data-reveal] {
+    animation: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    html[data-js="on"] [data-reveal] {
+    [data-reveal].a-reveler,
+    [data-reveal-amorce] [data-reveal] {
       opacity: 1;
       transform: none;
       transition: none;
+      animation: none;
     }
   }
 }
@@ -343,17 +391,33 @@
     background: var(--color-lisere-fort);
     transform-origin: left center;
   }
-  html[data-js="on"] .filet[data-reveal-rule] {
+  .filet[data-reveal-rule].a-reveler {
     transform: scaleX(0);
     transition: transform var(--dur-rule) var(--ease-ely-out);
   }
-  html[data-js="on"] .filet[data-reveal-rule].est-visible {
+  .filet[data-reveal-rule].a-reveler.est-visible {
     transform: scaleX(1);
   }
+  [data-reveal-amorce] .filet[data-reveal-rule] {
+    animation: ely-filet var(--dur-rule) var(--ease-ely-out) both;
+  }
+  body[data-anim-filets="false"] [data-reveal-amorce] .filet[data-reveal-rule] {
+    animation: none;
+  }
+  @keyframes ely-filet {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
-    html[data-js="on"] .filet[data-reveal-rule] {
+    .filet[data-reveal-rule].a-reveler,
+    [data-reveal-amorce] .filet[data-reveal-rule] {
       transform: none;
       transition: none;
+      animation: none;
     }
   }
 

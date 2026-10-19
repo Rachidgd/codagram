@@ -8,32 +8,46 @@
     top: 0;
     z-index: 60;
     display: block;
-    /* Le fond ne se pose qu'à la condensation : au repos, l'en-tête laisse
-       passer le premier bloc de la page. */
-    transition:
-      background-color var(--dur-base) var(--ease-ely),
-      box-shadow var(--dur-base) var(--ease-ely);
+    /* La place réservée dans le flux ne bouge jamais. La barre se resserre à la
+       condensation, mais le document garde la même hauteur : sans cela, la page
+       remontait de douze pixels au moment du resserrement, en pleine lecture.
+       La bande laissée libre sous la barre condensée ne capte pas le pointeur. */
+    height: var(--header-h);
+    pointer-events: none;
   }
 
   .entete__barre {
     position: relative;
+    pointer-events: auto;
     border-bottom: 1px solid transparent;
     transition:
       border-color var(--dur-base) var(--ease-ely),
-      background-color var(--dur-base) var(--ease-ely),
-      backdrop-filter var(--dur-base) var(--ease-ely);
+      background-color var(--dur-base) var(--ease-ely);
   }
 
+  /* Le flou du fond se recalcule à chaque image du défilement. Rayon court,
+     pas de saturation, et le fond remonté à 92 % : l'effet est le même à l'œil
+     et le compositeur a beaucoup moins à faire sur une barre collante. */
   .entete.est-condense .entete__barre {
-    background-color: color-mix(in oklab, var(--color-porcelaine) 88%, transparent);
+    background-color: color-mix(in oklab, var(--color-porcelaine) 92%, transparent);
     border-bottom-color: var(--color-lisere);
-    backdrop-filter: saturate(140%) blur(14px);
-    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   @supports not (backdrop-filter: blur(1px)) {
     .entete.est-condense .entete__barre {
       background-color: var(--color-porcelaine);
+    }
+  }
+
+  /* Sur petit écran, le flou coûte le plus et se voit le moins : la barre
+     devient simplement opaque. */
+  @media (max-width: 47.9375rem) {
+    .entete.est-condense .entete__barre {
+      background-color: var(--color-porcelaine);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
   }
 
@@ -461,17 +475,21 @@
     top: 0;
     left: 0;
     z-index: 200;
-    width: 10px;
-    height: 10px;
+    /* La boîte garde sa taille maximale et c'est l'échelle qui varie : le
+       grossissement au survol reste sur le compositeur, là où une transition de
+       largeur et de hauteur relançait le calcul de mise en page à chaque image.
+       Le script ne pilote que `translate`, les deux propriétés se composent. */
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background: var(--color-absolu);
     pointer-events: none;
     opacity: 0;
-    transform: translate3d(-50%, -50%, 0);
+    transform: translate(-50%, -50%);
+    scale: 0.238;
     transition:
       opacity var(--dur-fast) linear,
-      width var(--dur-base) var(--ease-ely),
-      height var(--dur-base) var(--ease-ely),
+      scale var(--dur-base) var(--ease-ely),
       background-color var(--dur-base) var(--ease-ely);
     mix-blend-mode: difference;
   }
@@ -479,8 +497,7 @@
     opacity: 0.85;
   }
   .curseur.est-actif {
-    width: 42px;
-    height: 42px;
+    scale: 1;
     background: var(--color-peau);
   }
   @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {

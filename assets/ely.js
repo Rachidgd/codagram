@@ -22,14 +22,13 @@ function apparitions() {
   const cibles = document.querySelectorAll('[data-reveal], [data-reveal-rule]');
   if (!cibles.length) return;
 
-  const actif = reglage('animApparitions') && !reduit.matches;
-  if (!actif) {
-    cibles.forEach((el) => el.classList.add('est-visible'));
-    return;
-  }
+  if (!reglage('animApparitions') || reduit.matches) return;
 
   // Décalage automatique dans les groupes : évite d'écrire un délai par élément.
+  // Les groupes du haut de page sont décalés par le CSS, à la peinture : y
+  // toucher après coup relancerait une animation déjà jouée.
   document.querySelectorAll('[data-reveal-groupe]').forEach((groupe) => {
+    if (groupe.closest('[data-reveal-amorce]')) return;
     const pas = Number(groupe.dataset.revealPas || 70);
     groupe.querySelectorAll(':scope > [data-reveal]').forEach((enfant, i) => {
       if (!enfant.style.getPropertyValue('--reveal-delay')) {
@@ -49,13 +48,25 @@ function apparitions() {
     { rootMargin: '0px 0px -8% 0px', threshold: 0.06 }
   );
 
+  const hauteur = window.innerHeight;
+  const aMasquer = [];
+
+  // Toutes les mesures d'abord, les écritures ensuite : intercaler les deux
+  // forcerait le navigateur à recalculer la mise en page à chaque élément.
   cibles.forEach((el) => {
-    // Ce qui est déjà à l'écran au chargement ne doit pas clignoter.
+    // Le haut de page est déjà animé par le CSS, à la première peinture.
+    if (el.closest('[data-reveal-amorce]')) return;
+
+    // Ce qui est à l'écran au chargement reste en place : on ne masque, puis on
+    // ne révèle, que ce que le lecteur n'a pas encore sous les yeux.
     const boite = el.getBoundingClientRect();
-    if (boite.top < window.innerHeight * 0.92 && boite.bottom > 0) {
-      el.classList.add('est-visible');
-      return;
-    }
+    if (boite.top < hauteur * 0.92 && boite.bottom > 0) return;
+
+    aMasquer.push(el);
+  });
+
+  aMasquer.forEach((el) => {
+    el.classList.add('a-reveler');
     observateur.observe(el);
   });
 }
@@ -126,11 +137,27 @@ function curseur() {
 
   const signal = new AbortController();
 
+  // La boucle ne tourne que pendant le rattrapage : au repos, elle s'arrête, et
+  // le navigateur retrouve ses images libres au lieu d'en consommer une sur
+  // soixante pour un point qui ne bouge pas.
   const rendu = () => {
-    cx += (x - cx) * 0.18;
-    cy += (y - cy) * 0.18;
-    point.style.transform = `translate3d(${cx}px, ${cy}px, 0) translate(-50%, -50%)`;
+    const dx = x - cx;
+    const dy = y - cy;
+    cx += dx * 0.18;
+    cy += dy * 0.18;
+    point.style.translate = `${cx}px ${cy}px`;
+
+    if (Math.abs(dx) < 0.25 && Math.abs(dy) < 0.25) {
+      cx = x;
+      cy = y;
+      boucle = 0;
+      return;
+    }
     boucle = requestAnimationFrame(rendu);
+  };
+
+  const relancer = () => {
+    if (!boucle) boucle = requestAnimationFrame(rendu);
   };
 
   document.addEventListener(
@@ -142,6 +169,7 @@ function curseur() {
       point.classList.add('est-visible');
       const survole = e.target instanceof Element ? e.target.closest('a, button, [data-curseur]') : null;
       point.classList.toggle('est-actif', Boolean(survole));
+      relancer();
     },
     { passive: true, signal: signal.signal }
   );
@@ -151,8 +179,6 @@ function curseur() {
     () => point.classList.remove('est-visible'),
     { signal: signal.signal }
   );
-
-  boucle = requestAnimationFrame(rendu);
 
   // Démontage propre si la préférence change en cours de session.
   reduit.addEventListener('change', () => {
@@ -444,6 +470,8 @@ class ElyIndex extends HTMLElement {
     this.actif = false;
     this.boucle = 0;
 
+    // La boucle ne tourne que quand le pointeur est sur l'index : ailleurs sur
+    // la page, elle est à l'arrêt et ne prend rien au défilement.
     const rendu = () => {
       this.cx += (this.x - this.cx) * 0.14;
       this.cy += (this.y - this.cy) * 0.14;
@@ -463,6 +491,7 @@ class ElyIndex extends HTMLElement {
           this.cx = this.x;
           this.cy = this.y;
         }
+        if (!this.boucle) this.boucle = requestAnimationFrame(rendu);
       },
       { passive: true, signal: s }
     );
@@ -491,11 +520,11 @@ class ElyIndex extends HTMLElement {
       () => {
         this.actif = false;
         this.apercu.classList.remove('est-visible');
+        cancelAnimationFrame(this.boucle);
+        this.boucle = 0;
       },
       { signal: s }
     );
-
-    this.boucle = requestAnimationFrame(rendu);
   }
 
   disconnectedCallback() {
