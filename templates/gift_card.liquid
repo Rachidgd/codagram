@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ shop.name }} — {{ 'panier.titre' | t }}</title>
+    <title>{{ settings.marque | default: shop.name }} · {{ 'panier.titre' | t }}</title>
     <link rel="stylesheet" href="{{ 'ely.css' | asset_url }}">
     <style>
       @font-face { font-family: "Jost"; font-weight: 100 900; font-display: swap;
@@ -19,7 +19,7 @@
   <body>
     <main class="section">
       <div class="lisiere carte-cadeau">
-        <p class="surtitre">{{ shop.name }}</p>
+        <p class="surtitre">{{ settings.marque | default: shop.name }}</p>
         <h1 class="mt-5 equilibre">{{ gift_card.balance | money }}</h1>
         <span class="filet mt-7 mb-9 w-full max-w-25" aria-hidden="true"></span>
 
@@ -38,7 +38,7 @@
             </p>
           {%- endif -%}
           <div class="mt-9">
-            <a class="btn" href="{{ shop.url }}">{{ shop.name }}</a>
+            <a class="btn" href="{{ shop.url }}">{{ settings.marque | default: shop.name }}</a>
           </div>
         {%- endif -%}
       </div>

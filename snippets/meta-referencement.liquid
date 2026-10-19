@@ -7,6 +7,7 @@
 
 {%- liquid
   assign titre = page_title
+  assign marque = settings.marque | default: shop.name
 
   comment
     Ordre de repli : description SEO saisie dans l'admin, puis contenu propre
@@ -50,13 +51,13 @@
 <title>
   {{- titre -}}
   {%- if current_tags -%}
-    {{- ' — ' }}{{ current_tags | join: ', ' -}}
+    {{- ' · ' }}{{ current_tags | join: ', ' -}}
   {%- endif -%}
   {%- if current_page != 1 -%}
-    {{- ' — ' }}{{ 'referencement.page' | t: numero: current_page -}}
+    {{- ' · ' }}{{ 'referencement.page' | t: numero: current_page -}}
   {%- endif -%}
-  {%- unless titre contains shop.name -%}
-    {{- ' · ' }}{{ shop.name -}}
+  {%- unless titre contains marque -%}
+    {{- ' · ' }}{{ marque -}}
   {%- endunless -%}
 </title>
 
@@ -64,7 +65,7 @@
   <meta name="description" content="{{ description | escape }}">
 {%- endif -%}
 
-<meta property="og:site_name" content="{{ shop.name | escape }}">
+<meta property="og:site_name" content="{{ marque | escape }}">
 <meta property="og:url" content="{{ canonical_url }}">
 <meta property="og:title" content="{{ titre | escape }}">
 <meta property="og:locale" content="{{ request.locale.iso_code }}">

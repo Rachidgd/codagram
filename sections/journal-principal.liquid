@@ -78,7 +78,7 @@
                       {{ article_une.published_at | date: '%d.%m.%Y' }}
                     </time>
                     {%- if article_une.tags.size > 0 -%}
-                      <span class="journal__separateur" aria-hidden="true">—</span>
+                      <span class="journal__separateur" aria-hidden="true">·</span>
                       <span>{{ article_une.tags.first }}</span>
                     {%- endif -%}
                   </span>

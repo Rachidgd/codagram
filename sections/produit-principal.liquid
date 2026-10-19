@@ -72,7 +72,7 @@
                           disabled
                         {% endunless %}
                       >
-                        {{ variante.title }} — {{ variante.price | money }}
+                        {{ variante.title }} · {{ variante.price | money }}
                         {%- unless variante.available %} ({{ 'panier.epuise' | t }}){% endunless -%}
                       </option>
                     {%- endfor -%}

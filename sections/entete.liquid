@@ -14,18 +14,19 @@
 >
   <div class="entete__barre">
     <div class="lisiere flex h-(--header-h) items-center justify-between gap-4">
-      {%- comment -%} — Marque — {%- endcomment -%}
+      {%- assign marque = settings.marque | default: shop.name -%}
+      {%- comment -%} Marque {%- endcomment -%}
       <a
         class="entete__marque"
         href="{{ routes.root_url }}"
-        aria-label="{{ shop.name | escape }} — {{ 'accessibilite.accueil' | t }}"
+        aria-label="{{ marque | escape }}, {{ 'accessibilite.accueil' | t }}"
         data-curseur="lien"
       >
         {%- if settings.logo != blank -%}
           <img
             class="entete__logo entete__logo--sombre"
             src="{{ settings.logo | image_url: height: 120 }}"
-            alt="{{ shop.name | escape }}"
+            alt="{{ marque | escape }}"
             width="{{ settings.logo.width }}"
             height="{{ settings.logo.height }}"
             style="height: {{ settings.logo_hauteur | default: 28 }}px; width: auto;"
@@ -42,7 +43,7 @@
             >
           {%- endif -%}
         {%- else -%}
-          <span class="entete__mot">{{ shop.name }}</span>
+          <span class="entete__mot">{{ marque }}</span>
         {%- endif -%}
       </a>
 

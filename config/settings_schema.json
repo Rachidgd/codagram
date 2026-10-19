@@ -3,7 +3,7 @@
     "name": "theme_info",
     "theme_name": "Ély'Skin Paris",
     "theme_version": "1.0.0",
-    "theme_author": "Studio — sur mesure",
+    "theme_author": "Studio, sur mesure",
     "theme_documentation_url": "https://github.com/rachidgd/codagram",
     "theme_support_url": "https://github.com/rachidgd/codagram/issues"
   },
@@ -13,6 +13,13 @@
       {
         "type": "header",
         "content": "Marque"
+      },
+      {
+        "type": "text",
+        "id": "marque",
+        "label": "Nom de la marque",
+        "default": "Ély'Skin",
+        "info": "Repris dans l'en-tête, le pied de page et à la fin de chaque balise titre. Garder la forme courte : le nom complet du cabinet se règle plus bas."
       },
       {
         "type": "image_picker",
@@ -40,7 +47,7 @@
         "type": "text",
         "id": "signature",
         "label": "Signature de marque",
-        "default": "Cabinet de soin esthétique — Paris",
+        "default": "Cabinet de soin esthétique, Paris et Casablanca",
         "info": "Affichée sous le logo dans le pied de page."
       },
       {
@@ -71,19 +78,19 @@
       {
         "type": "color",
         "id": "c_porcelaine",
-        "label": "Porcelaine — fond principal",
+        "label": "Porcelaine, fond principal",
         "default": "#f6f3ef"
       },
       {
         "type": "color",
         "id": "c_craie",
-        "label": "Craie — surface secondaire",
+        "label": "Craie, surface secondaire",
         "default": "#ebe5dd"
       },
       {
         "type": "color",
         "id": "c_lin",
-        "label": "Lin — surface appuyée",
+        "label": "Lin, surface appuyée",
         "default": "#ded5c9"
       },
       {
@@ -93,13 +100,13 @@
       {
         "type": "color",
         "id": "c_encre",
-        "label": "Encre — texte principal",
+        "label": "Encre, texte principal",
         "default": "#191512"
       },
       {
         "type": "color",
         "id": "c_grain",
-        "label": "Grain — texte secondaire",
+        "label": "Grain, texte secondaire",
         "default": "#75695f",
         "info": "Doit conserver un contraste ≥ 4,5:1 sur le fond porcelaine."
       },
@@ -110,7 +117,7 @@
       {
         "type": "color",
         "id": "c_absolu",
-        "label": "Vert absolu — couleur signature",
+        "label": "Vert absolu, couleur signature",
         "default": "#1b3a31"
       },
       {
@@ -122,7 +129,7 @@
       {
         "type": "color",
         "id": "c_brume",
-        "label": "Brume — texte secondaire sur vert",
+        "label": "Brume, texte secondaire sur vert",
         "default": "#9fb3aa"
       },
       {
@@ -159,7 +166,7 @@
       {
         "type": "text",
         "id": "cabinet_rue",
-        "label": "Adresse — rue"
+        "label": "Adresse, rue"
       },
       {
         "type": "text",
@@ -193,7 +200,7 @@
         "type": "text",
         "id": "cabinet_lat",
         "label": "Latitude",
-        "info": "Optionnel — améliore le référencement local."
+        "info": "Optionnel, améliore le référencement local."
       },
       {
         "type": "text",
@@ -204,7 +211,7 @@
         "type": "textarea",
         "id": "cabinet_horaires",
         "label": "Horaires (affichage)",
-        "default": "Mardi — Vendredi : 10h — 19h\nSamedi : 10h — 17h",
+        "default": "Du mardi au vendredi : 10h à 19h\nSamedi : 10h à 17h",
         "info": "Une ligne par plage. Affiché tel quel."
       },
       {

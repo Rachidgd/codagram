@@ -1,13 +1,38 @@
 {%- comment -%}
   Aperçu du journal.
 
-  Le premier article occupe une place éditoriale ; les suivants sont listés en
-  filets. Alimente le maillage interne et l'autorité thématique du cabinet.
+  Deux formats. En « éditorial », le premier article occupe une place large et
+  les suivants sont listés en filets : c'est l'usage en page d'accueil. En
+  « liste », la section se réduit à quelques lignes, de quoi la poser au bas
+  d'une page de protocole.
+
+  Le réglage « étiquette » restreint la sélection aux articles portant cette
+  rubrique. C'est ce qui referme le cocon sémantique : chaque page de soin
+  renvoie vers les articles de son sujet, et la liste se met à jour seule à
+  mesure que le journal se remplit.
 {%- endcomment -%}
 
 {%- liquid
   assign source = blogs[section.settings.blog]
-  assign articles = source.articles
+  assign etiquette = section.settings.etiquette | strip
+  assign format = section.settings.format | default: 'editorial'
+
+  comment
+    Le tri se fait au fil de la boucle plutôt que dans une variable : Liquid ne
+    sait pas construire un tableau d'articles.
+  endcomment
+  assign retenus = 0
+  for article in source.articles
+    if etiquette == blank or article.tags contains etiquette
+      assign retenus = retenus | plus: 1
+    endif
+  endfor
+
+  if format == 'liste'
+    assign plafond = section.settings.nombre
+  else
+    assign plafond = section.settings.nombre | plus: 1
+  endif
 -%}
 
 <section
@@ -34,42 +59,17 @@
       </div>
     </div>
 
-    {%- if articles.size > 0 -%}
-      <div class="mt-12 grid gap-x-10 gap-y-12 lg:mt-16 lg:grid-cols-12">
-        {%- comment -%} — Article mis en avant — {%- endcomment -%}
-        {%- assign une = articles.first -%}
-        <article class="lg:col-span-6" data-reveal>
-          <a class="journal__une group block" href="{{ une.url }}" data-curseur="lien">
-            {%- render 'image-reactive',
-              image: une.image,
-              ratio: 'paysage',
-              tailles: '(min-width: 64rem) 46vw, 92vw',
-              alt: une.title,
-              zoom: true
-            -%}
-            <div class="mt-6 flex flex-col gap-3">
-              <span class="journal__meta">
-                <time datetime="{{ une.published_at | date: '%Y-%m-%d' }}">
-                  {{ une.published_at | date: '%d.%m.%Y' }}
-                </time>
-                {%- if une.tags.size > 0 -%}
-                  <span class="journal__separateur" aria-hidden="true">—</span>
-                  <span>{{ une.tags.first }}</span>
-                {%- endif -%}
-              </span>
-              <h3 class="journal__titre">{{ une.title }}</h3>
-              {%- if une.excerpt_or_content != blank -%}
-                <p class="journal__extrait">
-                  {{ une.excerpt_or_content | strip_html | truncate: 170 }}
-                </p>
-              {%- endif -%}
-            </div>
-          </a>
-        </article>
+    {%- if retenus > 0 -%}
+      {%- assign rang = 0 -%}
 
-        {%- comment -%} — Suite en index — {%- endcomment -%}
-        <div class="lg:col-span-5 lg:col-start-8" data-reveal-groupe data-reveal-pas="80">
-          {%- for article in articles offset: 1 limit: section.settings.nombre -%}
+      {%- if format == 'liste' -%}
+        <div class="journal__index mt-10" data-reveal-groupe data-reveal-pas="80">
+          {%- for article in source.articles -%}
+            {%- if etiquette != blank -%}
+              {%- unless article.tags contains etiquette -%}{%- continue -%}{%- endunless -%}
+            {%- endif -%}
+            {%- if rang >= plafond -%}{%- break -%}{%- endif -%}
+            {%- assign rang = rang | plus: 1 -%}
             <article data-reveal>
               <a class="journal__ligne" href="{{ article.url }}" data-curseur="lien">
                 <span class="journal__meta">
@@ -83,7 +83,63 @@
             </article>
           {%- endfor -%}
         </div>
-      </div>
+      {%- else -%}
+        <div class="mt-12 grid gap-x-10 gap-y-12 lg:mt-16 lg:grid-cols-12">
+          {%- comment -%} Article mis en avant, puis la suite en filets. {%- endcomment -%}
+          {%- for article in source.articles -%}
+            {%- if etiquette != blank -%}
+              {%- unless article.tags contains etiquette -%}{%- continue -%}{%- endunless -%}
+            {%- endif -%}
+            {%- if rang >= plafond -%}{%- break -%}{%- endif -%}
+            {%- assign rang = rang | plus: 1 -%}
+
+            {%- if rang == 1 -%}
+              <article class="lg:col-span-6" data-reveal>
+                <a class="journal__une group block" href="{{ article.url }}" data-curseur="lien">
+                  {%- render 'image-reactive',
+                    image: article.image,
+                    ratio: 'paysage',
+                    tailles: '(min-width: 64rem) 46vw, 92vw',
+                    alt: article.title,
+                    zoom: true
+                  -%}
+                  <div class="mt-6 flex flex-col gap-3">
+                    <span class="journal__meta">
+                      <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                        {{ article.published_at | date: '%d.%m.%Y' }}
+                      </time>
+                      {%- if article.tags.size > 0 -%}
+                        <span class="journal__separateur" aria-hidden="true">·</span>
+                        <span>{{ article.tags.first }}</span>
+                      {%- endif -%}
+                    </span>
+                    <h3 class="journal__titre">{{ article.title }}</h3>
+                    {%- if article.excerpt_or_content != blank -%}
+                      <p class="journal__extrait">
+                        {{ article.excerpt_or_content | strip_html | truncate: 170 }}
+                      </p>
+                    {%- endif -%}
+                  </div>
+                </a>
+              </article>
+              <div class="journal__index lg:col-span-5 lg:col-start-8" data-reveal-groupe data-reveal-pas="80">
+            {%- else -%}
+              <article data-reveal>
+                <a class="journal__ligne" href="{{ article.url }}" data-curseur="lien">
+                  <span class="journal__meta">
+                    <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                      {{ article.published_at | date: '%d.%m.%Y' }}
+                    </time>
+                  </span>
+                  <span class="journal__ligne-titre">{{ article.title }}</span>
+                  {%- render 'icone', nom: 'ui.fleche-diagonale', taille: 14, classe: 'journal__ligne-fleche' -%}
+                </a>
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if rang > 0 -%}</div>{%- endif -%}
+        </div>
+      {%- endif -%}
     {%- else -%}
       <p class="mt-12 text-sm text-grain" data-reveal>{{ 'journal.aucun_article' | t }}</p>
     {%- endif -%}
@@ -112,6 +168,23 @@
       ]
     },
     { "type": "blog", "id": "blog", "label": "Blog source" },
+    {
+      "type": "select",
+      "id": "format",
+      "label": "Format",
+      "options": [
+        { "value": "editorial", "label": "Éditorial, un article en avant" },
+        { "value": "liste", "label": "Liste de liens" }
+      ],
+      "default": "editorial",
+      "info": "La liste convient au bas d'une page de protocole."
+    },
+    {
+      "type": "text",
+      "id": "etiquette",
+      "label": "Rubrique",
+      "info": "Ne garde que les articles portant cette rubrique. Laisser vide pour tout le journal. Exemple : Cicatrices et marques"
+    },
     { "type": "text", "id": "index", "label": "Index", "default": "08" },
     { "type": "text", "id": "surtitre", "label": "Surtitre", "default": "Le journal" },
     {

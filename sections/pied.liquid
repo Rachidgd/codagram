@@ -1,8 +1,10 @@
 {%- comment -%}
-  Pied de page — surface sombre, structure éditoriale.
+  Pied de page, surface sombre, structure éditoriale.
   Porte les coordonnées réelles du cabinet (référencement local) et la
   dernière relance de prise de rendez-vous.
 {%- endcomment -%}
+
+{%- assign marque = settings.marque | default: shop.name -%}
 
 <footer class="pied surface-sombre" data-entete-inverse role="contentinfo">
   {%- if section.settings.afficher_relance -%}
@@ -10,7 +12,7 @@
       <div class="lisiere">
         <div class="pied__relance-grille">
           <div>
-            <p class="surtitre" data-index="{{ section.settings.index_relance | default: '—' }}">
+            <p class="surtitre" data-index="{{ section.settings.index_relance | default: '00' }}">
               {{ section.settings.surtitre_relance }}
             </p>
             <p class="pied__relance-titre equilibre">{{ section.settings.titre_relance }}</p>
@@ -34,11 +36,11 @@
     <div class="pied__grille">
       {%- comment -%} — Marque — {%- endcomment -%}
       <div class="pied__marque">
-        <a href="{{ routes.root_url }}" class="pied__logo-lien" aria-label="{{ shop.name | escape }}">
+        <a href="{{ routes.root_url }}" class="pied__logo-lien" aria-label="{{ marque | escape }}">
           {%- if settings.logo_clair != blank -%}
             <img
               src="{{ settings.logo_clair | image_url: height: 120 }}"
-              alt="{{ shop.name | escape }}"
+              alt="{{ marque | escape }}"
               width="{{ settings.logo_clair.width }}"
               height="{{ settings.logo_clair.height }}"
               style="height: {{ settings.logo_hauteur | default: 28 | plus: 4 }}px; width: auto;"
@@ -46,13 +48,13 @@
           {%- elsif settings.logo != blank -%}
             <img
               src="{{ settings.logo | image_url: height: 120 }}"
-              alt="{{ shop.name | escape }}"
+              alt="{{ marque | escape }}"
               width="{{ settings.logo.width }}"
               height="{{ settings.logo.height }}"
               style="height: {{ settings.logo_hauteur | default: 28 | plus: 4 }}px; width: auto;"
             >
           {%- else -%}
-            <span class="pied__mot">{{ shop.name }}</span>
+            <span class="pied__mot">{{ marque }}</span>
           {%- endif -%}
         </a>
 
@@ -165,7 +167,7 @@
 
       <div class="pied__legal">
         <p class="pied__copyright">
-          © {{ 'now' | date: '%Y' }} {{ settings.copyright | default: shop.name }}
+          © {{ 'now' | date: '%Y' }} {{ settings.copyright | default: marque }}
         </p>
         {%- if section.settings.menu_legal != blank -%}
           <ul role="list" class="pied__legal-liens">

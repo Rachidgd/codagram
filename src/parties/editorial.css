@@ -41,6 +41,12 @@
     color: var(--color-grain);
   }
 
+  /* Liste de liens posée au bas d'une page de protocole : la mesure reste
+     celle du texte, pour que les titres ne s'étirent pas sur toute la page. */
+  .journal__index {
+    max-width: 46rem;
+  }
+
   .journal__ligne {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
