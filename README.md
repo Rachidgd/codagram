@@ -168,7 +168,7 @@ affecter le gabarit correspondant (champ « Modèle de thème ») :
 
 | Page à créer | Handle attendu | Gabarit à choisir |
 |---|---|---|
-| Hydrafacial | `hydrafacial` | `page.hydrafacial` |
+| Hydrofacial | `hydrofacial` | `page.hydrofacial` |
 | Microneedling | `microneedling` | `page.microneedling` |
 | Peeling | `peeling` | `page.peeling` |
 | Diagnostic infirmier | `diagnostic-infirmier` | `page.diagnostic-infirmier` |
@@ -281,7 +281,7 @@ Le barème est en tête de `assets/diagnostic.js`, en clair et modifiable.
   Une photographie avant/après en esthétique engage : mêmes conditions de
   lumière et de cadrage, aucune retouche, accord écrit de la personne.
 - **Les tarifs affichés sont des ordres de grandeur** repris du brief initial
-  (140 € l'Hydrafacial, 220 € le microneedling…). Ils doivent être confirmés ou
+  (140 € l'Hydrofacial, 220 € le microneedling…). Ils doivent être confirmés ou
   corrigés avant publication : ils apparaissent aussi dans les données
   structurées lues par Google.
 - **Les chiffres de la section « Résultats » sont des valeurs d'exemple.** Ils

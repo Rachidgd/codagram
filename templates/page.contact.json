@@ -8,7 +8,7 @@
         "s3": { "type": "sujet", "settings": { "libelle": "Vérifier une contre-indication" } },
         "s4": { "type": "sujet", "settings": { "libelle": "Demander un devis" } },
         "s5": { "type": "sujet", "settings": { "libelle": "Autre demande" } },
-        "p1": { "type": "protocole", "settings": { "nom": "Hydrafacial" } },
+        "p1": { "type": "protocole", "settings": { "nom": "Hydrofacial" } },
         "p2": { "type": "protocole", "settings": { "nom": "Microneedling" } },
         "p3": { "type": "protocole", "settings": { "nom": "Peeling" } },
         "p4": { "type": "protocole", "settings": { "nom": "Diagnostic infirmier" } },
