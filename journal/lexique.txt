@@ -17,6 +17,7 @@ antibiotique
 antibiotiques
 anticoagulant
 anticoagulants
+antifongique
 antioxydant
 antioxydants
 aréole
@@ -82,6 +83,7 @@ croûteuse
 cryothérapie
 crème
 crèmes
+cumulatif
 cumulative
 cutané
 cutanée
@@ -119,12 +121,15 @@ démaquiller
 dépigmentant
 dépigmentante
 dépigmentants
+dépigmentées
 dépoli
 dépolie
 déprimée
+désencombrant
 désencombre
 désencombrement
 désencombrer
+désencombré
 déshydratante
 détergent
 détergents
@@ -164,6 +169,7 @@ fragiliser
 fragilisée
 frilosité
 froncement
+glycation
 glycolique
 gommage
 gommages
@@ -177,6 +183,7 @@ hormonale
 hormonales
 hormonaux
 humidificateur
+hyaluronique
 hydratant
 hydratante
 hydratantes
@@ -263,6 +270,7 @@ niacinamide
 nodulaire
 nodulaires
 observance
+occlusif
 occlusive
 ondulée
 orbitaire
@@ -276,6 +284,7 @@ paupières
 peeling
 peelings
 peptides
+perfusé
 perméabilité
 perçages
 photosensibilisant
@@ -293,6 +302,7 @@ picoter
 pigment
 pigmentaire
 pigmentaires
+pigmente
 pigments
 pigmenté
 pigmentée
@@ -338,6 +348,7 @@ retend
 retendent
 ridule
 ridules
+rigidifient
 rosacée
 rougeur
 rougeurs
@@ -353,6 +364,7 @@ réguler
 réhydratation
 réhydrater
 rénale
+réticulé
 rétinol
 rétinoïde
 rétinoïdes
@@ -363,6 +375,7 @@ rétroplanning
 réverbération
 saisonnalité
 salicylique
+silicone
 siliconé
 siliconée
 siliconées
@@ -393,7 +406,11 @@ temporo
 tensioactif
 tensioactifs
 thyroïdienne
+tiraille
+tiraillent
 tiraillé
+topique
+transitoirement
 trichloracétique
 trimestre
 trimestres
