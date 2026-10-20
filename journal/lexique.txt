@@ -165,6 +165,7 @@ folliculaire
 follicule
 follicules
 fragilise
+fragilisent
 fragiliser
 fragilisée
 frilosité
@@ -207,6 +208,7 @@ inflammation
 inflammations
 inflammatoire
 inflammatoires
+inhomogène
 interrogatoire
 interstitiel
 intervalle
@@ -276,6 +278,7 @@ ondulée
 orbitaire
 orbite
 ovale
+papules
 partum
 patch
 patchs
@@ -287,6 +290,7 @@ peptides
 perfusé
 perméabilité
 perçages
+photochimique
 photosensibilisant
 photosensibilisants
 photosensibilité
@@ -306,6 +310,7 @@ pigmente
 pigments
 pigmenté
 pigmentée
+pigmentées
 platysma
 pommette
 pommettes
@@ -425,6 +430,7 @@ virgule
 week
 échauffée
 éclaircissant
+éclaircissants
 élastine
 ély
 épaissie
