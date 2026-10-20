@@ -1,3 +1,4 @@
+abrasion
 accouchement
 acné
 acnéique
@@ -6,6 +7,7 @@ actinique
 adeli
 adhérente
 allaitement
+allergène
 allègement
 aminci
 amincir
@@ -109,6 +111,7 @@ dosage
 dosages
 dosé
 dosée
+drainantes
 décapage
 décaper
 décapé
@@ -191,6 +194,7 @@ hydratantes
 hydratent
 hydrater
 hydratée
+hydrique
 hydrofacial
 hydrolysé
 hydrolysés
@@ -229,6 +233,7 @@ led
 lentigo
 lentigos
 lifting
+lingettes
 lipidique
 luisant
 luisante
@@ -236,6 +241,7 @@ luminothérapie
 lupus
 lymphatique
 lymphe
+légumineuses
 mandibulaire
 mandélique
 manœuvre
@@ -318,6 +324,7 @@ porphyrie
 porteuse
 post
 postinflammatoire
+potassium
 praticien
 praticienne
 praticiens
@@ -328,6 +335,8 @@ préconise
 préconiser
 préconisé
 préconisée
+préférentiellement
+purifiants
 purpura
 pérenne
 quadrillé
@@ -336,6 +345,7 @@ ras
 rasante
 rebouche
 reboucher
+recoloration
 reconstruction
 reconstruire
 recreuse
@@ -442,4 +452,5 @@ week
 œdème
 œdèmes
 œil
+œstrogènes
 œuvre
