@@ -73,9 +73,11 @@ contre-indiquée
 contre-indiquées
 contre-indiqués
 corps
+corticoïdes
 cortisol
 couperose
 crisse
+cryothérapie
 crème
 crèmes
 cutané
@@ -146,6 +148,9 @@ exfoliées
 fibreuse
 fibreux
 fibroblastes
+fibroser
+fibrosé
+fibrosée
 floutante
 folliculaire
 follicule
@@ -180,6 +185,7 @@ illuminateur
 immune
 indication
 indications
+induration
 infirmier
 infirmiers
 infirmière
@@ -189,6 +195,7 @@ inflammations
 inflammatoire
 inflammatoires
 interrogatoire
+interstitiel
 intervalle
 intervalles
 isotrétinoïne
@@ -213,6 +220,7 @@ luminothérapie
 lupus
 lymphatique
 lymphe
+mandibulaire
 mandélique
 manœuvre
 manœuvres
@@ -227,7 +235,9 @@ maturation
 maturer
 menton
 mentonnière
+micellaires
 microcirculation
+microkyste
 microneedling
 millimètre
 mousseuses
@@ -238,11 +248,13 @@ mélasma
 ménopausée
 nanomètre
 nanomètres
+nettoyages
 nettoyante
 nettoyantes
 nettoyants
 niacinamide
 nodulaire
+nodulaires
 observance
 occlusive
 ondulée
@@ -257,6 +269,7 @@ paupières
 peeling
 peelings
 perméabilité
+perçages
 photosensibilisant
 photosensibilisants
 photosensibilité
@@ -271,9 +284,11 @@ picotent
 picoter
 pigment
 pigmentaire
+pigmentaires
 pigments
 pigmenté
 pigmentée
+platysma
 pommette
 pommettes
 porphyrie
@@ -310,6 +325,7 @@ repositionne
 repulpant
 repulpants
 retend
+ridule
 ridules
 rosacée
 rougeur
@@ -318,6 +334,7 @@ rougissent
 rougit
 rppsi
 rppss
+rythmicité
 régularité
 régule
 réguler
@@ -331,10 +348,12 @@ rétracter
 rétraction
 rétracté
 réverbération
+saisonnalité
 salicylique
 siliconé
 siliconée
 siliconées
+siliconés
 sillon
 sillons
 skin
