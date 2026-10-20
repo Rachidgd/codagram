@@ -22,6 +22,7 @@ anticoagulants
 antifongique
 antioxydant
 antioxydants
+aponévrose
 aréole
 aréoles
 assombrissement
@@ -50,6 +51,7 @@ chauffe
 chauffer
 chauffée
 chevilles
+chimiquement
 chéloïde
 chéloïdes
 chéloïdien
@@ -80,6 +82,8 @@ corps
 corticoïdes
 cortisol
 couperose
+couvrance
+couvrants
 crisse
 croûteuse
 cryothérapie
@@ -96,6 +100,7 @@ céramides
 césarienne
 cœur
 densification
+densifie
 dermatite
 dermatologique
 dermatologue
@@ -106,6 +111,7 @@ desquamation
 desquame
 desquament
 desquamer
+diffusants
 dixième
 dosage
 dosages
@@ -164,6 +170,7 @@ fibroser
 fibrosé
 fibrosée
 floutante
+floute
 folliculaire
 follicule
 follicules
@@ -175,10 +182,12 @@ frilosité
 froncement
 glycation
 glycolique
+glycémique
 gommage
 gommages
 granuleuse
 granuleux
+grignotages
 hammam
 herpès
 hifu
@@ -213,6 +222,7 @@ inflammations
 inflammatoire
 inflammatoires
 inhomogène
+insulinémique
 interrogatoire
 interstitiel
 intervalle
@@ -278,6 +288,7 @@ niacinamide
 nodulaire
 nodulaires
 observance
+observationnelles
 occlusif
 occlusive
 ondulée
@@ -330,6 +341,7 @@ praticienne
 praticiens
 profondeur
 profondeurs
+protéiques
 précancéreuse
 préconise
 préconiser
@@ -339,6 +351,7 @@ préférentiellement
 purifiants
 purpura
 pérenne
+périnéale
 quadrillé
 radiofréquence
 ras
@@ -443,6 +456,7 @@ week
 éclaircissants
 élastine
 ély
+émoussent
 épaissie
 épaissir
 épaississant
