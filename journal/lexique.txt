@@ -2,6 +2,7 @@ accouchement
 acné
 acnéique
 acnéiques
+actinique
 adeli
 adhérente
 allaitement
@@ -77,9 +78,11 @@ corticoïdes
 cortisol
 couperose
 crisse
+croûteuse
 cryothérapie
 crème
 crèmes
+cumulative
 cutané
 cutanée
 cutanées
@@ -122,6 +125,7 @@ déprimée
 désencombre
 désencombrement
 désencombrer
+déshydratante
 détergent
 détergents
 elyskin
@@ -180,6 +184,8 @@ hydratent
 hydrater
 hydratée
 hydrofacial
+hydrolysé
+hydrolysés
 hyperpigmentation
 illuminateur
 immune
@@ -207,6 +213,7 @@ kératine
 kératinocytes
 kératolytique
 kératolytiques
+kératose
 labial
 lactique
 led
@@ -268,6 +275,7 @@ paupière
 paupières
 peeling
 peelings
+peptides
 perméabilité
 perçages
 photosensibilisant
@@ -300,10 +308,12 @@ praticienne
 praticiens
 profondeur
 profondeurs
+précancéreuse
 préconise
 préconiser
 préconisé
 préconisée
+purpura
 pérenne
 quadrillé
 radiofréquence
@@ -325,6 +335,7 @@ repositionne
 repulpant
 repulpants
 retend
+retendent
 ridule
 ridules
 rosacée
@@ -335,6 +346,7 @@ rougit
 rppsi
 rppss
 rythmicité
+réapplication
 régularité
 régule
 réguler
@@ -347,6 +359,7 @@ rétinoïdes
 rétracter
 rétraction
 rétracté
+rétroplanning
 réverbération
 saisonnalité
 salicylique
@@ -360,6 +373,7 @@ skin
 sous-mentonnière
 spf
 squalane
+squameuse
 stimulation
 stimuler
 stimulé
@@ -375,9 +389,11 @@ sérums
 tamponner
 tempe
 tempes
+temporo
 tensioactif
 tensioactifs
 thyroïdienne
+tiraillé
 trichloracétique
 trimestre
 trimestres
