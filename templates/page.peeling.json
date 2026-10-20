@@ -346,29 +346,57 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "La peau va-t-elle peler ?",
+            "question": "La peau pèle-t-elle après un peeling ?",
             "reponse": "<p>Cela dépend de la concentration utilisée. Aux dosages d'entrée, la desquamation est fine et souvent à peine visible. Sur les concentrations plus élevées, elle apparaît au deuxième ou troisième jour et dure deux à trois jours. On vous annonce à quoi vous attendre avant la séance, jamais après.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Peut-on en faire en été ?",
+            "question": "Peut-on faire un peeling en été ?",
             "reponse": "<p>Oui, mais aux dosages les plus bas et avec une protection solaire stricte, appliquée toutes les deux heures. Les protocoles dépigmentants soutenus sont en revanche réservés à la période d'octobre à mars : le risque de rebond pigmentaire est trop élevé le reste de l'année.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Combien de séances pour voir une différence sur les taches ?",
+            "question": "Combien de séances de peeling pour voir une différence sur les taches ?",
             "reponse": "<p>Les marques post-inflammatoires réagissent souvent dès la deuxième ou troisième séance. Les taches solaires anciennes demandent quatre à six séances, et exigent un entretien : sans protection solaire quotidienne, elles reviennent.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "question": "Est-ce compatible avec une peau sensible ?",
+            "question": "Un peeling est-il compatible avec une peau sensible ?",
             "reponse": "<p>Oui, en adaptant l'acide et la concentration. Sur une peau réactive, on privilégie l'acide mandélique ou lactique, dont la molécule pénètre plus lentement. La première séance sert alors de test de tolérance sur une zone limitée.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Quel acide est utilisé pour un peeling, et comment se choisit-il ?",
+            "reponse": "<p>Le choix se fait sur la cible et sur la carnation, jamais sur une grille toute faite. L'acide glycolique travaille le grain et l'éclat, le salicylique les follicules encombrés et les peaux acnéiques, le mandélique et le lactique les peaux réactives, l'azélaïque les rougeurs et le pigment.</p><p>La concentration compte autant que la molécule. Un acide réputé doux à forte dose fait plus de dégâts qu'un acide puissant à dose basse, et c'est le dosage qui se réévalue à chaque séance.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Un peeling agit-il sur les cicatrices d'acné ?",
+            "reponse": "<p>Sur les marques colorées, oui : le pigment déposé par l'inflammation s'évacue plus vite quand on accélère le renouvellement. C'est souvent la part qui gêne le plus, et elle répond en quelques séances.</p><p>Sur les creux, non. Une perte de matière dans le derme ne se comble pas par la surface, et aucun peeling ne la remonte. Le relief demande une reconstruction de collagène, ce qui est le registre du microneedling.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "Comment préparer sa peau avant un peeling ?",
+            "reponse": "<p>Arrêter les exfoliants et les rétinoïdes cinq à sept jours avant, hydrater davantage pendant les quinze jours qui précèdent, et ne pas s'exposer au soleil. Pas d'épilation à la cire ni de laser sur la zone dans les deux semaines.</p><p>Sur les phototypes les plus mats, une phase de préparation plus longue est préconisée avant la première séance, pour limiter le risque de réaction pigmentaire. Elle se décide au bilan et ne se raccourcit pas pour tenir une date.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "Quelles sont les contre-indications à un peeling ?",
+            "reponse": "<p>Une peau bronzée, même légèrement, une poussée d'acné inflammatoire, un herpès labial en cours ou récurrent sans précaution, un rétinoïde oral récent, une grossesse ou un allaitement selon l'acide envisagé, et une peau en pleine réaction quelle qu'en soit la cause.</p><p>Dans ces cas on décale, ou l'on conduit autre chose. Un bilan sert d'abord à cela : savoir ce qu'on écarte, et pourquoi.</p>"
           }
         }
       },
@@ -376,7 +404,11 @@
         "q1",
         "q2",
         "q3",
-        "q4"
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
       ],
       "settings": {
         "surface": "",

@@ -328,29 +328,57 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Est-ce vraiment efficace seul ?",
+            "question": "La luminothérapie LED est-elle efficace seule ?",
             "reponse": "<p>Sur l'inflammation et sur l'acné légère à modérée, oui, à condition de respecter le rythme : deux séances par semaine pendant quatre à six semaines. En séance isolée et espacée, l'effet reste marginal. C'est un protocole de fréquence, pas d'intensité.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Y a-t-il un risque pour les yeux ?",
+            "question": "La LED présente-t-elle un risque pour les yeux ?",
             "reponse": "<p>Des protections oculaires sont posées systématiquement pendant toute l'exposition. Les longueurs d'onde utilisées ne contiennent pas d'ultraviolets. En cas de pathologie rétinienne connue, un avis ophtalmologique est demandé avant la première séance.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Peut-on l'enchaîner après un autre soin ?",
+            "question": "Peut-on enchaîner une séance de LED après un autre soin ?",
             "reponse": "<p>Oui, et c'est l'un de ses meilleurs usages. Après un Hydrofacial, elle calme la rougeur d'extraction ; après un peeling ou un microneedling, elle raccourcit la phase inflammatoire. C'est aussi le seul protocole réalisable sur une peau qui n'en supporte aucun autre.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "question": "Combien de temps l'effet dure-t-il ?",
+            "question": "Combien de temps l'effet de la LED dure-t-il ?",
             "reponse": "<p>Sur l'acné, plusieurs mois si la routine à domicile suit, avec un entretien mensuel. Sur les rougeurs, l'effet s'estompe plus vite et demande des séances régulières. Le rythme d'entretien se fixe en fin de protocole, en fonction de ce qui a été observé.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de séances de LED faut-il prévoir ?",
+            "reponse": "<p>Six à dix séances pour une cure, à raison de deux par semaine. C'est la répétition qui fait le résultat : huit séances étalées sur quatre mois donnent beaucoup moins que huit séances sur un mois.</p><p>Ensuite, un entretien mensuel suffit à tenir ce qui a été gagné. Une séance isolée garde en revanche son intérêt dans un cas précis : la veille d'un événement, pour calmer une peau qui réagit.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Quelle couleur de LED pour quel objectif ?",
+            "reponse": "<p>Le bleu agit sur la bactérie impliquée dans l'acné. Le rouge travaille l'inflammation du derme et accompagne la réparation de la barrière cutanée. Le proche infrarouge pénètre plus profond et soutient la cicatrisation.</p><p>Dans la pratique, une séance combine presque toujours plusieurs longueurs d'onde, et c'est l'objectif qui décide de la dominante. Choisir sa couleur soi-même n'a pas de sens : c'est le réglage qui compte, pas la teinte.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "La LED convient-elle à une peau en pleine poussée d'acné ?",
+            "reponse": "<p>Oui, et c'est le seul protocole du cabinet dans ce cas. Pendant une poussée, un peeling ajouterait de l'inflammation, un microneedling déplacerait des bactéries, une extraction sur une lésion non mûre créerait une cicatrice.</p><p>La LED n'impose ni contact, ni chaleur, ni suites, et on repart sans rougeur supplémentaire. Elle ne remplace pas pour autant un traitement dermatologique sur une acné sévère, nodulaire ou cicatricielle : dans ce cas, l'orientation vers un médecin est la seule conduite acceptable.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "Quelles sont les contre-indications à la luminothérapie LED ?",
+            "reponse": "<p>Un traitement photosensibilisant en cours, dont certains antibiotiques et certains anti-inflammatoires, une pathologie rétinienne connue sans avis ophtalmologique, un lupus ou une porphyrie, et une épilepsie photosensible.</p><p>La liste est courte, et c'est ce qui fait de la LED le protocole le plus largement accessible du cabinet. Elle se vérifie quand même au bilan, avec vos traitements en cours sur la table.</p>"
           }
         }
       },
@@ -358,7 +386,11 @@
         "q1",
         "q2",
         "q3",
-        "q4"
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
       ],
       "settings": {
         "surface": "",

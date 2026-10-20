@@ -327,29 +327,57 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Est-ce douloureux ?",
+            "question": "Le microneedling est-il douloureux ?",
             "reponse": "<p>La crème anesthésiante posée en début de séance rend le passage supportable pour la très grande majorité des personnes. La sensation ressemble à une vibration chaude. Sur le front et la mâchoire, où l'os est proche, elle est plus marquée, et le rythme ralentit dès que vous le demandez.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "À quoi ressemble la peau après ?",
+            "question": "À quoi ressemble la peau après un microneedling ?",
             "reponse": "<p>À un coup de soleil marqué pendant vingt-quatre à quarante-huit heures, avec une sensation de chaleur et de tiraillement. Une desquamation fine peut apparaître au troisième jour. Le maquillage redevient possible après vingt-quatre heures, la vie sociale normale après quarante-huit dans la plupart des cas.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Au bout de combien de temps voit-on le résultat ?",
+            "question": "Au bout de combien de temps voit-on le résultat d'un microneedling ?",
             "reponse": "<p>Le teint s'unifie dès la deuxième semaine, mais le travail de fond sur le relief prend trois à six mois. C'est pour cette raison que les photos de référence sont prises dès la première séance : sans elles, la progression lente est très difficile à percevoir.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "question": "Peut-on le combiner avec un peeling ?",
+            "question": "Peut-on combiner un microneedling et un peeling ?",
             "reponse": "<p>Pas le même jour. Les deux protocoles s'alternent en revanche très bien sur un même trimestre : le peeling travaille la surface et les taches, le microneedling la structure et le relief. L'ordre et l'espacement sont fixés au bilan.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de séances de microneedling pour des cicatrices d'acné ?",
+            "reponse": "<p>Trois à cinq séances espacées de quatre à six semaines, soit un protocole de quatre à sept mois, puis une maturation du collagène qui se poursuit trois à six mois après la dernière séance.</p><p>L'espacement ne se comprime pas : c'est le délai dont le derme a besoin pour terminer un cycle de réparation. Rapprocher les séances n'accélère rien, cela empile de l'inflammation sur une reconstruction inachevée.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Le microneedling convient-il aux peaux mates ?",
+            "reponse": "<p>Oui, et c'est même l'un de ses avantages sur les protocoles exfoliants : il ne retire pas de pigment et ne crée donc pas de zone éclaircie.</p><p>La prudence porte ailleurs. Sur les carnations mates, toute inflammation prolongée dépose du pigment. On règle donc la profondeur plus finement, on espace davantage, et la protection solaire après chaque séance n'est pas négociable.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "Quelles sont les contre-indications au microneedling ?",
+            "reponse": "<p>Un antécédent de cicatrice chéloïde, une poussée d'acné inflammatoire, un herpès labial récurrent sans prévention, un traitement anticoagulant, un rétinoïde oral récent avec un délai qui se compte en mois, une grossesse ou un allaitement, et une peau bronzée.</p><p>Le terrain chéloïdien est le plus important de la liste : il transforme une tentative d'amélioration en aggravation, et il se recherche systématiquement à l'interrogatoire.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "Le microneedling se pratique-t-il ailleurs que sur le visage ?",
+            "reponse": "<p>Oui, sur les vergetures, les cicatrices de chirurgie et les zones du corps où le tissu est fibreux. La peau y est plus épaisse, donc les profondeurs sont plus importantes et les séances plus espacées, six à huit semaines.</p><p>Le nombre de séances est aussi plus élevé, souvent cinq à huit selon l'ancienneté et l'étendue. Sur une cicatrice, un délai de six mois après la fermeture est la règle, et il se prolonge si la zone est encore rouge.</p>"
           }
         }
       },
@@ -357,7 +385,11 @@
         "q1",
         "q2",
         "q3",
-        "q4"
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
       ],
       "settings": {
         "surface": "",

@@ -335,29 +335,57 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Le résultat est-il durable ?",
+            "question": "Le résultat d'un drainage lymphatique est-il durable ?",
             "reponse": "<p>Une séance isolée agit deux à trois jours. C'est un protocole de rythme : quatre à huit séances rapprochées installent un état de base plus stable, ensuite entretenu une à deux fois par mois. Sans entretien, la stagnation revient à son niveau initial.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Est-ce le même geste qu'un massage ?",
+            "question": "Le drainage lymphatique est-il un massage ?",
             "reponse": "<p>Non, et c'est la confusion la plus fréquente. Un massage travaille le muscle en profondeur avec une pression soutenue. Le drainage travaille la circulation lymphatique juste sous la peau, avec une pression très légère et un rythme lent imposé. Une pression forte écraserait les vaisseaux qu'on cherche à solliciter.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Peut-on le faire après une injection ou un HIFU ?",
+            "question": "Peut-on faire un drainage lymphatique après une injection ou un HIFU ?",
             "reponse": "<p>Oui, en respectant un délai qui dépend du geste réalisé, de quelques jours à deux semaines. Le drainage aide alors à évacuer l'œdème et à affiner le résultat. Ce délai est fixé au bilan, selon le protocole que vous avez suivi.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "question": "À quelle fréquence faut-il venir ?",
+            "question": "À quelle fréquence faire un drainage lymphatique du visage ?",
             "reponse": "<p>Une à deux fois par semaine pendant la phase initiale, puis une fois par mois en entretien. Sur une rétention marquée, on démarre parfois à deux séances hebdomadaires pendant quinze jours avant d'espacer.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de temps dure une séance de drainage lymphatique ?",
+            "reponse": "<p>Soixante minutes, et la lenteur n'est pas une question de confort. Le réseau lymphatique n'a pas de pompe : il avance au rythme des mouvements du corps, et des manœuvres rapides ne font rien circuler.</p><p>La séance remonte du visage vers les points de déversement situés au-dessus des clavicules, jamais l'inverse. C'est ce trajet, répété et lent, qui explique pourquoi un drainage ne se comprime pas en vingt minutes.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Le drainage lymphatique fait-il maigrir le visage ?",
+            "reponse": "<p>Non. Il évacue du liquide, pas de la graisse. Ce qui part est l'œdème qui empâtait les traits, et le visage paraît effectivement plus fin à la sortie de séance.</p><p>La différence se mesure facilement : un gonflement est plus marqué le matin et après un repas salé, une graisse installée ne bouge pas d'une heure à l'autre. Le premier répond au drainage, le second non, et le confondre revient à attendre d'un soin ce qu'il ne peut pas donner.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "Peut-on faire un drainage lymphatique soi-même ?",
+            "reponse": "<p>Quelques gestes du matin aident réellement : du nez vers les oreilles sur les joues, du centre du front vers les tempes, puis du bas des oreilles vers le creux au-dessus des clavicules. Une pression minimale, du plat du doigt, sans jamais frotter.</p><p>Le point le plus souvent raté est justement la pression. Les vaisseaux lymphatiques se trouvent juste sous la peau : appuyer fort les écrase et bloque l'évacuation. Les rouleaux de pierre passés en force font exactement l'inverse de ce qu'on cherche.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "Quelles sont les contre-indications au drainage lymphatique ?",
+            "reponse": "<p>Une infection en cours, une pathologie thyroïdienne non suivie, une insuffisance cardiaque ou rénale, un antécédent de phlébite ou de thrombose, un cancer en cours de traitement sans accord de l'équipe soignante, et une lésion cutanée sur le trajet.</p><p>Un gonflement qui ne cède pas dans la journée, qui touche un seul côté sans explication de posture, ou qui s'accompagne d'une fatigue inhabituelle demande d'ailleurs un avis médical avant toute séance. Dans ces cas, le drainage n'est pas la réponse.</p>"
           }
         }
       },
@@ -365,7 +393,11 @@
         "q1",
         "q2",
         "q3",
-        "q4"
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
       ],
       "settings": {
         "surface": "",

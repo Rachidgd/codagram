@@ -329,29 +329,57 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Combien de temps le résultat tient-il ?",
+            "question": "Combien de temps le résultat d'un Hydrofacial tient-il ?",
             "reponse": "<p>Trois à quatre semaines sur une peau normale, un peu moins sur une peau à tendance grasse. C'est ce qui fixe le rythme d'entretien : une séance par mois suffit à maintenir le résultat une fois le protocole initial terminé.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Peut-on le faire juste avant un événement ?",
-            "reponse": "<p>Oui, et c'est même l'un de ses intérêts : il n'y a ni rougeur durable ni desquamation. On recommande néanmoins de prévoir la séance deux à trois jours avant plutôt que la veille, le temps que la peau se stabilise complètement.</p>"
+            "question": "Peut-on faire un Hydrofacial juste avant un événement ?",
+            "reponse": "<p>Oui, et c'est l'un de ses intérêts : il n'y a ni rougeur durable ni desquamation. On préconise néanmoins de prévoir la séance deux à trois jours avant plutôt que la veille, le temps que la peau se stabilise complètement.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Est-ce adapté à une peau sensible ?",
+            "question": "L'Hydrofacial convient-il à une peau sensible ?",
             "reponse": "<p>Dans la grande majorité des cas, oui. L'intensité d'aspiration et la concentration des acides sont réglées séance par séance. Sur une peau très réactive, on démarre au dosage le plus bas et on ne monte que si la tolérance le permet.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "question": "Quelle différence avec un nettoyage de peau classique ?",
+            "question": "Quelle différence entre un Hydrofacial et un nettoyage de peau classique ?",
             "reponse": "<p>Le nettoyage traditionnel repose sur l'extraction manuelle, qui traumatise davantage et laisse des marques. Ici, l'extraction, l'exfoliation et l'hydratation se font en un seul passage mécanique, avec un dosage mesurable et reproductible d'une séance à l'autre.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de séances d'Hydrofacial faut-il prévoir ?",
+            "reponse": "<p>Une séance suffit à désencombrer une peau et à relancer l'éclat avant une date précise. Pour corriger un encombrement installé, on compte trois à quatre séances espacées de trois à quatre semaines.</p><p>Au-delà, on passe en entretien : une séance par mois sur une peau grasse, une toutes les six à huit semaines sur une peau normale. Le rythme se fixe sur ce qu'on observe, pas sur un forfait décidé d'avance.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "L'Hydrofacial agit-il sur les pores dilatés et les points noirs ?",
+            "reponse": "<p>Sur les points noirs, directement : l'aspiration retire le sébum oxydé sans comprimer la paroi du follicule, ce que des doigts ou une pince ne savent pas faire. L'effet se voit le jour même.</p><p>Sur le calibre du pore, l'action est indirecte. Un follicule vidé ne projette plus d'ombre, il paraît donc plus petit. Mais un pore n'a ni muscle ni charnière : aucun protocole ne le referme, et il se remplira de nouveau en trois à cinq semaines.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "L'Hydrofacial est-il indiqué sur une peau acnéique ?",
+            "reponse": "<p>Sur une peau à tendance acnéique sans poussée en cours, oui, et il fait partie des protocoles les mieux tolérés : il désencombre sans agresser et n'impose aucune suite visible.</p><p>Sur une peau en pleine poussée inflammatoire, non. Le geste déplacerait des bactéries d'une lésion vers une zone saine. On commence alors par calmer, et la luminothérapie LED est le seul protocole conduit dans cette période.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "Quelles sont les contre-indications à l'Hydrofacial ?",
+            "reponse": "<p>Une poussée d'acné inflammatoire, un herpès labial en cours, une plaie ou une lésion non cicatrisée sur la zone, une peau brûlée par le soleil, et certains traitements rétinoïdes récents, dont le délai se compte en semaines.</p><p>Elles se vérifient au bilan, avec vos traitements en cours sur la table. C'est précisément ce qu'une lecture préalable sert à écarter, et il arrive qu'une séance soit décalée pour cette raison.</p>"
           }
         }
       },
@@ -359,7 +387,11 @@
         "q1",
         "q2",
         "q3",
-        "q4"
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
       ],
       "settings": {
         "surface": "",

@@ -307,29 +307,57 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "S'agit-il d'une consultation médicale ?",
+            "question": "Le diagnostic infirmier est-il une consultation médicale ?",
             "reponse": "<p>Non. Il s'agit d'un bilan cutané esthétique réalisé par une infirmière diplômée d'État. Il ne pose pas de diagnostic médical, ne prescrit pas et ne remplace pas une consultation dermatologique. Lorsqu'une lésion ou une pathologie est suspectée, vous êtes orienté vers un médecin.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Suis-je engagée à faire un soin ensuite ?",
+            "question": "Le bilan cutané engage-t-il à faire un soin ensuite ?",
             "reponse": "<p>Non, et le plan de soin vous est remis quoi qu'il arrive. Vous pouvez le faire réaliser ailleurs, ou ne rien faire du tout. Le bilan est facturé pour lui-même, précisément pour qu'il n'ait aucun protocole à défendre.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Le bilan est-il déduit si je poursuis ?",
+            "question": "Le bilan cutané est-il déduit si je poursuis ?",
             "reponse": "<p>Oui, il est déduit du montant du premier protocole engagé dans les trente jours. Au-delà, il reste dû : la lecture de la peau a une durée de validité, et un protocole démarré six mois plus tard demande une réévaluation.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "question": "Que se passe-t-il si rien n'est indiqué ?",
+            "question": "Que se passe-t-il si le diagnostic infirmier ne retient aucun protocole ?",
             "reponse": "<p>On vous le dit, et le bilan s'arrête là. C'est une issue normale : peau en poussée, traitement en cours, attentes relevant d'un acte médical. Vous repartez avec l'explication écrite et, quand c'est pertinent, l'orientation vers le bon interlocuteur.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de temps dure un diagnostic infirmier ?",
+            "reponse": "<p>Quarante minutes, et aucun soin n'est réalisé pendant ce temps. La lecture de la peau se fait en deux lumières, naturelle puis rasante, parce que la première montre la couleur et la seconde le relief.</p><p>Le reste du rendez-vous est un interrogatoire : traitements en cours, antécédents de cicatrisation, exposition solaire réelle, et le nombre de jours pendant lesquels vous pouvez rester discrète. Cette dernière réponse écarte ou retient des protocoles entiers.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Que faut-il apporter à son bilan cutané ?",
+            "reponse": "<p>La liste de vos traitements en cours, tous, y compris ceux qui ne semblent pas concerner la peau. Une photo de vos boîtes suffit. Vos produits de soin, ou leur photo, avec la fréquence réelle d'application.</p><p>Et, si vous en avez, une photo de votre peau à une autre saison. Une image de février éclaire beaucoup une consultation de novembre : elle montre ce qui bouge avec le soleil, donc ce sur quoi la protection a prise.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "Faut-il un bilan cutané avant chaque soin ?",
+            "reponse": "<p>Non. Un bilan complet ouvre un protocole, et il reste valable tant que la peau n'a pas changé. Chaque séance suivante commence en revanche par un point court sur ce que la peau a fait depuis la précédente, et le dosage s'ajuste sur cette observation.</p><p>Un nouveau bilan devient nécessaire après six mois d'interruption, après un changement de traitement, ou quand la demande porte sur une autre zone.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "Qu'apporte un diagnostic infirmier par rapport à une lecture de peau en institut ?",
+            "reponse": "<p>La formation soignante ne change pas le geste, elle change ce qu'on regarde avant de le poser. Un anticoagulant modifie la conduite d'un microneedling, un antibiotique de la famille des cyclines rend la peau photosensible, un rétinoïde oral impose un délai de plusieurs mois. Ces informations ne sortent pas d'elles-mêmes : il faut savoir les demander.</p><p>Elle ne confère en revanche aucune compétence médicale esthétique, ne permet aucun acte réservé au médecin, et ne remplace pas une consultation de dermatologie.</p>"
           }
         }
       },
@@ -337,7 +365,11 @@
         "q1",
         "q2",
         "q3",
-        "q4"
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
       ],
       "settings": {
         "surface": "",
