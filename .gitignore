@@ -6,4 +6,3 @@ node_modules/
 # Artefacts de la recette éditoriale
 journal/articles.jsonl
 journal/corpus.txt
-journal/lexique.txt
